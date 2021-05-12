@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/33/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-编程语言/Objective-C/使用URL来读写字符串数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E4%BD%BF%E7%94%A8URL%E6%9D%A5%E8%AF%BB%E5%86%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2019-07-17T16:00:00.000Z" itemprop="datePublished">2019-07-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E4%BD%BF%E7%94%A8URL%E6%9D%A5%E8%AF%BB%E5%86%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE/">使用URL来读写字符串数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>优势：既可以读写本地磁盘文件，还可以读写网页文件、ftp服务器上的文件<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4v5t795j30br02pq4i.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4vb18afj30js04675w.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4vgr3ssj30jz039ac6.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/字符串的比较：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-16T16:00:00.000Z" itemprop="datePublished">2019-07-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83%EF%BC%9A/">字符串的比较：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4vy1kf8j308o081tak.jpg"><br>2）忽略大小写的比较<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4w5qs9wj30bk093gni.jpg"><br>3）只比较字符串中数字的大小【格式相同】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4wefctkj30af024wf7.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/字符串的开始和结束判断：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BC%80%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F%E5%88%A4%E6%96%AD%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-15T16:00:00.000Z" itemprop="datePublished">2019-07-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BC%80%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F%E5%88%A4%E6%96%AD%EF%BC%9A/">字符串的开始和结束判断：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>判断字符串是否以指定的字符串开头：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4wvn0qrj30a7033t9t.jpg"></p>
+<p>判断字符串是否以指定的字符串结尾：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4x19zmej30at02pab9.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/字符串的搜索：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%90%9C%E7%B4%A2%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%90%9C%E7%B4%A2%EF%BC%9A/">字符串的搜索：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>在主串中搜索子串：</p>
+<p>1）这个方法是从前往后搜索，第一次匹配的子串：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xgefenj308n04dq4j.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xmsu37j308o06cgn9.jpg"></p>
+<p>2）从后往前搜索<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xtjkr0j30dc069mz7.jpg"><br>NSRange结构体：是Foundation框架中定义的一个结构体，结构体变量一般用来表示一段范围</p>
+<p>声明并初始化结构体变量的方式：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4y13jrrj304701laaa.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4y87sdpj304n01lglp.jpg"><br>3）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4yf6eo7j308c01lt8x.jpg"><br>4）Foundation框架中定义了一个函数，这个函数可以快速的创建一个NSRange结构体变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ylayunj30bw01kwf1.jpg"><br>5）Foundation框架中定义了一个函数，可以将一个NSRange结构体变量转换为NSString<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ysii0yj30bw01xwf7.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/字符串的截取：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%88%AA%E5%8F%96%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-13T16:00:00.000Z" itemprop="datePublished">2019-07-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%88%AA%E5%8F%96%EF%BC%9A/">字符串的截取：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）从指定的下标处一直截取到最后<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4zb5xh6j30bw04a0ty.jpg"><br>2）从第0个开始截取指定的个数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4zhmnfcj30bw079q4c.jpg"><br>3）截取指定的一段范围<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4zpwv7tj30cm062dha.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/字符串的替换：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9B%BF%E6%8D%A2%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-12T16:00:00.000Z" itemprop="datePublished">2019-07-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9B%BF%E6%8D%A2%EF%BC%9A/">字符串的替换：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>将字符串中的第一个参数替换为第二个参数（全部替换）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly50a3ikwj30ga07amzb.jpg"><br>这个方法还可以做删除，原理是将其替换为@“”</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/字符串的类型转换：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-11T16:00:00.000Z" itemprop="datePublished">2019-07-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%9A/">字符串的类型转换：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly50pcdbvj308k02oq4f.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly50vjti2j30b907ataq.jpg"></p>
+<p>注意：从头开始转换，能转换多少就是多少，当遇到不能转换的时候就停止转换<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly512f5guj30b506t404.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/字符串的其他常用方法：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-10T16:00:00.000Z" itemprop="datePublished">2019-07-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A/">字符串的其他常用方法：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）去掉字符串前后的空格，中间的空格无法去掉<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly51qgsy0j30fx06tad7.jpg"><br>2）将字符串转换为大写或小写<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly51x9y6qj30cb06840r.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly524pxi8j30a8068mz3.jpg"><br>3）去掉字符串前后的小写字母或大写字母<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly52cqs2cj30i903m0u7.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly52iprgaj30jc037409.jpg"><br>4）去掉头尾指定的字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly52pho42j30i804tad2.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/NSMutableString：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSMutableString%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-09T16:00:00.000Z" itemprop="datePublished">2019-07-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSMutableString%EF%BC%9A/">NSMutableString：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>会耗费很长的时间，每次循环的时候都会创建一个新的字符串对象，因为字符串的恒定性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly53lb14dj309j02uab2.jpg"></p>
+<p>NSMutableString是Foundation框架中的一个类，从NSString继承，所以NSMutableString对象是用来存储字符串数据的，NSMutableString在父类NSString的基础之上做了扩展，存储在NSMutableString对象中的字符串数据可以更改，具备可变性</p>
+<p>往可变字符串对象中追加字符串【第二个是以拼接的方式追加】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly53s1pjpj30do070acc.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly53z5gynj30ac02rgmw.jpg"></p>
+<p>NSMutableString从NSString继承，在使用NSString的地方完全可以使用NSMutableString</p>
+<p>使用NSMutableString来做大批量的字符串拼接：【NSMutableString只有一个，每次修改的时候直接修改的是这个对象中的数据】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly546qf6vj309a037jsf.jpg"></p>
+<p>平时使用NSString，做大量拼接的时候使用NSMutableString</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/NSArray：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/09/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSArray%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-08T16:00:00.000Z" itemprop="datePublished">2019-07-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/09/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSArray%EF%BC%9A/">NSArray：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>是Foundation框架中的一个类，这个类的对象是来存储多个数据的，具备数组的功能，所以NSArray是OC中的数组<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly54r5m1kj30bk029q3z.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly54y4dt3j30am02sjsl.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly554f48oj309n04n75b.jpg"><br>最常用的创建数组的方式：【只能存储OC对象】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly55biuvaj30f906jdha.jpg"><br>简写方式：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly55i1ayhj308n05gab6.jpg"></p>
+<p>取出对应的元素的值：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly55ou6yzj3085073gna.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly55v4cuuj308505u0u3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly561562gj30ax02b0tp.jpg"></p>
+<p>NSArray数组的其他常用方法：<br>1）得到数组中元素的个数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly568u6knj309r05utae.jpg"><br>2）判断数组中是否包含指定的元素<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly56fpr1qj309r08qtav.jpg"><br>3）查找指定的元素在NSArray数组中第一次出现的下标<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly56mqmepj30bc01pdgl.jpg"></p>
+<p>NSArray数组的遍历：<br>1）使用for循环<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly56ua7zxj30bc06vdii.jpg"><br>2）声明在for()中的变量叫做迭代变量【执行原理：将数组中的第一个元素的值赋值给迭代变量，执行循环体，再将数组中的第二个元素的值赋值给迭代变量，再执行循环体】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly571nnsbj30bc06vgo9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly577p421j30bc092q5y.jpg"><br> 3）使用block遍历<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly57ef4cnj30ef08042f.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/32/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/34/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

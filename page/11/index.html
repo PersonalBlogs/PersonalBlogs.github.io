@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/11/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-操作系统原理/操作系统原理/文件存储和目录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E5%92%8C%E7%9B%AE%E5%BD%95/" class="article-date">
+      <time datetime="2020-10-08T16:00:00.000Z" itemprop="datePublished">2020-10-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E5%92%8C%E7%9B%AE%E5%BD%95/">文件存储和目录</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>文件存储和目录：</p>
+<p>存储空间管理功能：记录磁盘使用情况，管理和分配、回收存储空间</p>
+<p>记录磁盘空闲块的方法：</p>
+<p>1）空闲文件目录</p>
+<p>空闲文件：把连续空闲区看成一个特殊文件，由多个连续空闲块组成</p>
+<p>空闲文件目录：<br>1）所有空闲文件代表存储设备全部空闲空间<br>2）为空闲文件建立的专门目录：空闲文件目录<br>3）每个表项对应一个空闲文件，包括第一个空闲块号，空闲块个数等信息<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord92en7xj315d0fs0xy.jpg"></p>
+<p>2）空闲块链</p>
+<ol>
+<li>把所有空闲块链接在一起</li>
+<li>当申请者需要空闲块时，链头开始搜索所需空闲块</li>
+<li>当回收空闲块时，把释放的空闲块逐个加在链尾</li>
+</ol>
+<p>3）位示图：从内存中划出若干个字节，每个bit表示一个存储块空闲或占用状态<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord9a5cogj30n708swgv.jpg"></p>
+<p>文件目录管理：</p>
+<p>文件目录：<br>1）文件名址录，记录文件名和存放地址的目录表<br>2）具有将文件名转换为外存物理位置的功能<br>3）文件属性也记录在目录中</p>
+<p>目录文件：文件目录以文件形式存于外存，这个文件叫目录文件</p>
+<p>目录结构：单级目录、二级目录、多级目录（树型目录）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord9hstroj31at0hw12g.jpg"></p>
+<p>文件全名和路径：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord9s4p80j30qq0hiaho.jpg"></p>
+<p>Linux文件目录：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorda021mlj30mo0f776g.jpg"></p>
+<p>文件的保护：对文件的访问系统首先要检查访问权限<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorda8bvkxj30mz0m4qav.jpg"></p>
+<p>文件和目录操作：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gordagmobnj31dn0pzgvo.jpg"></p>
+<p>典型的文件系统：FAT16、FAT32、NTFS、EXT2、EXT3、EXT4</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用触发器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/" class="article-date">
+      <time datetime="2020-10-07T16:00:00.000Z" itemprop="datePublished">2020-10-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/">使用触发器</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用触发器</p>
+<p>触发器是MySQL响应以下任意语句而自动执行的一条MySQL语句（或位于BEGIN和END语句之间的一组语句）：<br>                 DELETE;<br>                 INSERT;<br>                 UPDATE;<br>其他MySQL语句不支持触发器</p>
+<p>在创建触发器时，需要给出4条信息：<br>1）唯一的触发器名<br>2）触发器关联的表<br>3）触发器应该响应的活动（DELETE、INSERT、UPDATE）<br>4）触发器何时执行（处理之前或之后）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx7ksl98j30cq04341u.jpg"></p>
+<p>1）创建触发器<br>CREATE TRIGGER newproduct AFTER INSERT ON products<br>FOR EACH ROW SELECT ‘Product added’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx80epvrj30db04oq5e.jpg"></p>
+<p>只有表才支持触发器，视图不支持（临时表也不支持）；触发器按每个表每个事件每次的定义，每个表每个事件每次只允许一个触发器，因此每个表最多支持6个触发器（每条INSERT、UPDATE、DELETE的之前和之后）。单一触发器不能与多个事件或多个表关联，所以，如果你需要一个对INSERT和UPDATE操作执行的触发器，则应该定义两个触发器。<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8byu9ej30cs02bmz1.jpg"></p>
+<p>2）删除触发器<br>DROP TRIGGER newproduct;<br>触发器不能更新或覆盖，为了修改一个触发器，必须先删除它，然后再重新创建</p>
+<p>3）使用触发器<br>（1）INSERT触发器<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8l7mumj30d905ognh.jpg"><br>CREATE TRIGGER neworder AFTER INSERT ON orders<br>FOR EACH ROW SELECT NEW.order_num;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8xpv7oj30d904340m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx95mnoxj30d908wq6k.jpg"></p>
+<p>(2)DELETE触发器</p>
+<p>【原书缺页？？？？】</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/管理事务处理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/" class="article-date">
+      <time datetime="2020-10-06T16:00:00.000Z" itemprop="datePublished">2020-10-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/">管理事务处理</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>管理事务处理</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxalt67nj30cs04vq71.jpg"></p>
+<p>事务处理可以用来维护数据库的完整性，它保证成批的MySQL操作要么完全执行，要么完全不执行</p>
+<p>事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果，利用事务处理，可以保证一组操作不会中途停止，它们或者作为整体执行，或者完全不执行（除非明确指示），如果没有发生错误，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxatr9omj30dg06876c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxb1qcl4j30dg0cj41g.jpg"></p>
+<p>事务：指一组SQL语句<br>回退：指撤销指定SQL语句的过程<br>提交：指将未存储的SQL语句结果写入数据库表<br>保留点：指事务处理中设置的临时占位符，你可以对它发布回退（与回退整个事务处理不同）</p>
+<p>1）START TRANSACTION标识事务的开始</p>
+<p>2）MySQL的ROLLBACK命令用来回退（撤销）MySQL语句：<br>SELECT * FROM ordertotals;<br>START TRANSACTION;<br>DELETE FROM ordertotals;<br>SELECT * FROM ordertotals;<br>ROLLBACK;<br>SELECT * FROM ordertotals;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbcn65zj30dg08wwjg.jpg"></p>
+<p>3)一般的MySQL语句都是直接针对数据库表执行和编写的，这就是所谓的隐含提交，即提交（写或保存）操作是自动进行的；但是，在事务处理块中，提交不会隐含的进行。为进行明确的提交，使用COMMIT语句<br>START TRANSACTION;<br>DELETE FROM orderitems WHERE order_num=20010;<br>DELETE FROM orders WHERE order_num=20010;<br>COMMIT;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbll0v0j30dg03ign9.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbtebtmj30cr01ogmw.jpg"></p>
+<p>使用保留点：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxc0363yj30dc05lacf.jpg"><br>这些占位符称为保留点</p>
+<p>创建占位符：<br>SAVEPOINT deletel;</p>
+<p>每个保留点都取标识它的唯一名字，以便在回退时，MySQL知道要回退到何处。为了回退到本例给出的保留点，可如下进行：<br>ROLLBACK TO deletel;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxcakymdj30cr05f78a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxctcr4mj30dl083788.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/全球化和本地化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%85%A8%E7%90%83%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96/" class="article-date">
+      <time datetime="2020-10-05T16:00:00.000Z" itemprop="datePublished">2020-10-06</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%85%A8%E7%90%83%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96/">全球化和本地化</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/安全管理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" class="article-date">
+      <time datetime="2020-10-04T16:00:00.000Z" itemprop="datePublished">2020-10-05</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/">安全管理</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/数据库维护" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%B4%E6%8A%A4/" class="article-date">
+      <time datetime="2020-10-03T16:00:00.000Z" itemprop="datePublished">2020-10-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%B4%E6%8A%A4/">数据库维护</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/改善性能" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%94%B9%E5%96%84%E6%80%A7%E8%83%BD/" class="article-date">
+      <time datetime="2020-10-02T16:00:00.000Z" itemprop="datePublished">2020-10-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%94%B9%E5%96%84%E6%80%A7%E8%83%BD/">改善性能</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/概念、功能、组成、分类" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A6%82%E5%BF%B5%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%84%E6%88%90%E3%80%81%E5%88%86%E7%B1%BB/" class="article-date">
+      <time datetime="2020-08-30T16:00:00.000Z" itemprop="datePublished">2020-08-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A6%82%E5%BF%B5%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%84%E6%88%90%E3%80%81%E5%88%86%E7%B1%BB/">概念、功能、组成、分类</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>概念、功能、组成、分类：</p>
+<p>计算机网络：是一个将分散的、具有独立功能的计算机系统，通过通信设备与线路连接起来，由功能完善的软件实现资源共享和信息传递的系统</p>
+<p>计算机网络是互连的【互联互通、通信链路】、自治的【无主从关系】计算机集合</p>
+<p>计算机网络的功能：<br>1）数据通信（连通性）<br>2）资源共享（硬件、软件、数据）<br>3）分布式处理：多台计算机各自承担同一工作任务的不同部分（Hadoop平台）<br>4）提高可靠性<br>5）负载均衡（各计算机之间更亲密）</p>
+<p>计算机网络的组成：<br>1）按组成部分分类：硬件、软件、协议<br>2）按工作方式分类：边缘部分（用户直接使用：C/S方式、P2P方式）、核心部分（为边缘部分服务）<br>3）按功能组成分类：通信子网（实现数据通信）、资源子网（实现资源共享/数据处理）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosd9rga3qj30xg0gath7.jpg"></p>
+<p>计算机网络的分类：<br>1）按分布范围分：广域网（WAN、使用交换技术）、城域网（MAN）、局域网（LAN、使用广播技术）、个人区域网（PAN）<br>2）按使用者分：公用网、专用网<br>3）按交换技术分：电路交换、报文交换、分组交换<br>4）按拓扑结构分：总线型、星型、环型、网状型（常用于广域网）<br>5）按传输技术分：广播式网络（共享公共通信信道）、点对点网络（使用分组存储转发和路由选择机制）</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/标准化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A0%87%E5%87%86%E5%8C%96/" class="article-date">
+      <time datetime="2020-08-29T16:00:00.000Z" itemprop="datePublished">2020-08-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A0%87%E5%87%86%E5%8C%96/">标准化</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>标准化：</p>
+<p>要实现不同厂商的硬、软件之间相互连通，必须遵守统一的标准</p>
+<p>标准的分类：<br>1）法定标准（由权威机构制定的正式的、合法的标准：OSI）<br>2）事实标准（某些公司的产品在竞争中占据了主流，时间长了，这些产品中的协议和技术就成了标准：TCP/IP）</p>
+<p>RFC（Request For Comments）：因特网标准的形式</p>
+<p>RFC要上升为因特网正式标准的四个阶段：<br>1）因特网草案：这个阶段还不是RFC文档<br>2）建议标准：从这个阶段开始成为RFC文档<br>3）因特网标准</p>
+<p>标准化工作的相关组织：<br>1）国际标准化组织ISO：OSI参考模型、HDLC协议<br>2）国际电信联盟ITU：制定通信规则<br>3）国际电气电子工程师协会IEEE：学术机构、IEEE802系列标准、5G<br>4）Internet工程任务组IETF：负责因特网相关标准的制定</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/速率、带宽、吞吐量" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E9%80%9F%E7%8E%87%E3%80%81%E5%B8%A6%E5%AE%BD%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F/" class="article-date">
+      <time datetime="2020-08-28T16:00:00.000Z" itemprop="datePublished">2020-08-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E9%80%9F%E7%8E%87%E3%80%81%E5%B8%A6%E5%AE%BD%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F/">速率、带宽、吞吐量</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>速率、带宽、吞吐量：</p>
+<p>速率：即数据率、数据传输率、比特率，连接在计算机网络上的主机在数字信道上传送数据位数的速率（b/s、kb/s、Mb/s、Gb/s、Tb/s）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosdbsjhmbj31cu09x0zr.jpg"></p>
+<p>带宽：原本指某个信号具有的频带宽度，即最高频率与最低频率之差，单位是赫兹（Hz）；计算机网络中，带宽用来表示网络的通信线路传送数据的能力，通常是指单位时间内从网络中的某一点到另一点所能通过的最高数据率（b/s、kb/s、Mb/s、Gb/s、Tb/s），网络设备所支持的最高速度</p>
+<p>吞吐量：表示在单位时间内通过某个网络（或信道、接口）的数据量（b/s、kb/s、Mb/s、Gb/s、Tb/s），吞吐量受网络的带宽或网络的额定速率的限制</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/10/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/12/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

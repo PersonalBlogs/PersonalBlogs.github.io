@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-iOS开发-项目/多线程实战/NSThread" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/28/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/NSThread/" class="article-date">
+      <time datetime="2020-11-27T16:00:00.000Z" itemprop="datePublished">2020-11-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/28/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/NSThread/">NSThread</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">    </span><br><span class="line">    //方式1</span><br><span class="line">    //NSThread *thread=[[NSThread alloc] initWithTarget:self selector:@selector(demo) object:nil];</span><br><span class="line">    //[thread start];</span><br><span class="line">    </span><br><span class="line">    //方式2</span><br><span class="line">    //[NSThread detachNewThreadSelector:@selector(demo) toTarget:self withObject:nil];</span><br><span class="line">    </span><br><span class="line">    //方式3</span><br><span class="line">    //[self performSelectorInBackground:@selector(demo) withObject:nil];</span><br><span class="line">    </span><br><span class="line">    //带参数</span><br><span class="line">    NSThread *thread=[[NSThread alloc] initWithTarget:self selector:@selector(demo:) object:@&quot;小明&quot;];</span><br><span class="line">    [thread start];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)demo:(NSString *)name&#123;</span><br><span class="line">    NSLog(@&quot;hello %@&quot;,name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//- (void)demo&#123;</span><br><span class="line">//    NSLog(@&quot;hello  %@&quot;,[NSThread currentThread]);</span><br><span class="line">//&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" rel="tag">多线程实战</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发-项目/UI/项目4.QQ登陆界面" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/27/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E9%A1%B9%E7%9B%AE4.QQ%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2/" class="article-date">
+      <time datetime="2020-11-26T16:00:00.000Z" itemprop="datePublished">2020-11-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/27/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E9%A1%B9%E7%9B%AE4.QQ%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2/">项目4.QQ登陆界面</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>项目要求：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxx3q65mvj30az06fgna.jpg"></p>
+<p>实现细节：</p>
+<ol>
+<li><p>Placeholder属性：文本框中会有文字提示，用户输入文字时会自动消失<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxx3yohedj30j906fdgp.jpg"></p>
+</li>
+<li><p>文本框只能输入数字：Keyboard Type—Number Pad<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxx46cmixj30m706fq3s.jpg"></p>
+</li>
+<li><p>密码文本框的文字必须是暗文显示（掩码显示）：勾上Secure Text Entry<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxx4d3jg9j30j906f754.jpg"></p>
+</li>
+<li><p>文本框一直显示清除按钮：Clear Button—Is always visible<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxx4xgjooj30m706ft9k.jpg"></p>
+</li>
+</ol>
+<p>结果演示：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goc96aib7mj31400mzjxp.jpg"></p>
+<p>项目代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//</span><br><span class="line">//  ViewController.m</span><br><span class="line">//  QQ登陆界面</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/20.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">- (IBAction)login;//登陆方法</span><br><span class="line">@property (weak, nonatomic) IBOutlet UITextField *textQQ;//QQ属性</span><br><span class="line">@property (weak, nonatomic) IBOutlet UITextField *textpassword;//密码属性</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//登陆方法的实现</span><br><span class="line">- (IBAction)login &#123;</span><br><span class="line">    </span><br><span class="line">    //拿到QQ和密码</span><br><span class="line">    NSString *qq=self.textQQ.text;</span><br><span class="line">    NSString *pwd=self.textpassword.text;</span><br><span class="line">    </span><br><span class="line">    //将QQ和密码输出</span><br><span class="line">    NSLog(@&quot;QQ:%@,密码:%@&quot;,qq,pwd);</span><br><span class="line">    </span><br><span class="line">    //收回键盘</span><br><span class="line">    [self.view endEditing:YES];</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goc9a4pd7hj30gk0jiq5y.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发-项目/UI/控件的属性和方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/26/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E6%8E%A7%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95/" class="article-date">
+      <time datetime="2020-11-25T16:00:00.000Z" itemprop="datePublished">2020-11-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/26/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E6%8E%A7%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95/">控件的属性和方法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>控件的属性： </p>
+<ol>
+<li><p>frame</p>
+</li>
+<li><p>center</p>
+</li>
+<li><p>bounds</p>
+</li>
+<li><p>transform</p>
+</li>
+<li><p>subviews：获取当前控制器所管理的view下的所有子控件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(UIView *view in self.view.subviews)&#123;</span><br><span class="line">    view.backgroundColor=[UIColor redColor];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>superview：获取自己的父控件对象<br><code>self.text1.superview.backgroundColor=[UIColor yellowColor];</code></p>
+</li>
+<li><p>viewWithTag：控件的ID标识，父控件可以通过tag来找到对应的控件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UITextField *txt=(UITextField *)[self.view viewWithTag:100];</span><br><span class="line">txt.text=@&quot;我的tag值是100&quot;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>控件的方法：</p>
+<ol>
+<li><p>addSubview添加一个子控件view</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//把动态创建的按钮加到控制器所管理的那个view中</span><br><span class="line">[self.view addSubview:button];</span><br></pre></td></tr></table></figure></li>
+<li><p>removeFromSuperview：从父控件中移除所有的子控件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while(self.view.subviews.firstObject)&#123;</span><br><span class="line">    [self.view.subviews.firstObject removeFromSuperview];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发-项目/UI/项目5.图片浏览器(plist文件)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/25/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E9%A1%B9%E7%9B%AE5.%E5%9B%BE%E7%89%87%E6%B5%8F%E8%A7%88%E5%99%A8(plist%E6%96%87%E4%BB%B6)/" class="article-date">
+      <time datetime="2020-11-24T16:00:00.000Z" itemprop="datePublished">2020-11-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/25/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E9%A1%B9%E7%9B%AE5.%E5%9B%BE%E7%89%87%E6%B5%8F%E8%A7%88%E5%99%A8(plist%E6%96%87%E4%BB%B6)/">项目5.图片浏览器(plist文件)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>创建plist文件：New File-iOS-Resource-Property List</p>
+<p>plist文件：注意是从Item 0开始的，数组下面包含字典，字典下面要注意类型是String还是Number<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goelzhw07cj30vn09ymza.jpg"></p>
+<p>项目演示：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goem4wrk4fj31400mxk1f.jpg"></p>
+<p>项目代码：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goem861vrvj30pf1hjwlf.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//</span><br><span class="line">//  ViewController.m</span><br><span class="line">//  图片浏览器</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/21.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">//声明picture属性为了重写它的getter方法，懒加载数据</span><br><span class="line">@property(nonatomic,strong)NSArray *picture;</span><br><span class="line"></span><br><span class="line">//自己写一个索引，来控制当前显示的是第几张图片，这个属性一开始没有赋值就是0</span><br><span class="line">@property(nonatomic,assign) int index;</span><br><span class="line"></span><br><span class="line">@property (weak, nonatomic) IBOutlet UILabel *suoyin;</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIImageView *tupian;</span><br><span class="line">@property (weak, nonatomic) IBOutlet UILabel *biaoti;</span><br><span class="line"></span><br><span class="line">- (IBAction)last;//点击上一张箭头</span><br><span class="line">- (IBAction)next;//点击下一张箭头</span><br><span class="line"></span><br><span class="line">//设置&quot;上一张&quot;“下一张”按钮是否可以点击</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIButton *lastButton;</span><br><span class="line">@property (weak, nonatomic) IBOutlet UIButton *nextButton;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">//重写picture属性的getter方法（懒加载数据）</span><br><span class="line">- (NSArray *)picture&#123;</span><br><span class="line">    if(_picture==nil)&#123;</span><br><span class="line">        </span><br><span class="line">        //写代码加载picture.plist文件中的数据到_picture</span><br><span class="line">        </span><br><span class="line">        //1.获取picture.plist文件的路径赋值给path变量，[NSBundle mainBundle]表示获取这个app安装到手机时的根目录，然后在app安装的根目录下搜索picture.plist文件的路径</span><br><span class="line">        NSString *path=[[NSBundle mainBundle] pathForResource:@&quot;picture.plist&quot; ofType:nil];</span><br><span class="line">        //2.读取文件</span><br><span class="line">        NSArray *array=[NSArray arrayWithContentsOfFile:path];</span><br><span class="line">        _picture=array;</span><br><span class="line">    &#125;</span><br><span class="line">    return _picture;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//控制器的view加载完毕以后执行的方法</span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">    </span><br><span class="line">    self.index=-1;</span><br><span class="line"></span><br><span class="line">    //这行代码的作用：控制器view加载完毕之后，执行‘下一张图片’的方法，index=0，再执行setData方法来设置控件的数据，将picture字典中的数据加载进来</span><br><span class="line">    [self next];</span><br><span class="line">    </span><br><span class="line">    //手动写plist代码，如果要永久的保存数据，就要创建plist文件</span><br><span class="line">//    NSDictionary *dict1=@&#123;@&quot;name&quot; : @&quot;张三&quot;, @&quot;age&quot; : @18, @&quot;height&quot; : @180&#125;;</span><br><span class="line">//    NSDictionary *dict2=@&#123;@&quot;name&quot; : @&quot;李四&quot;, @&quot;age&quot; : @19, @&quot;height&quot; : @190&#125;;</span><br><span class="line">//    NSDictionary *dict3=@&#123;@&quot;name&quot; : @&quot;王五&quot;, @&quot;age&quot; : @17, @&quot;height&quot; : @178&#125;;</span><br><span class="line">//    NSArray *students=@[dict1,dict2,dict3];</span><br><span class="line">//    NSLog(@&quot;%@&quot;,students);//打印出数据</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//上一张图片</span><br><span class="line">- (IBAction)last &#123;</span><br><span class="line">    </span><br><span class="line">    self.index--;//让索引--</span><br><span class="line">    </span><br><span class="line">    [self setData];//设置控件数据</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//下一张图片</span><br><span class="line">- (IBAction)next &#123;</span><br><span class="line">    </span><br><span class="line">    self.index++;//让索引++</span><br><span class="line">    </span><br><span class="line">    [self setData];//设置控件数据</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)setData&#123;</span><br><span class="line">    </span><br><span class="line">    //1.从数组中获取当前这张图片的数据</span><br><span class="line">    NSDictionary *dict=self.picture[self.index];</span><br><span class="line">    </span><br><span class="line">    //2.把获取到的数据设置给界面上的控件</span><br><span class="line">    </span><br><span class="line">       //设置索引</span><br><span class="line">    self.suoyin.text=[NSString stringWithFormat:@&quot;%d/%ld&quot;,self.index+1,self.picture.count];</span><br><span class="line">       //通过image属性来设置图片框里面的图片</span><br><span class="line">    self.tupian.image=[UIImage imageNamed:dict[@&quot;图片名称&quot;]];</span><br><span class="line">       //设置这张图片的标题</span><br><span class="line">    self.biaoti.text=dict[@&quot;图片标题&quot;];</span><br><span class="line">    </span><br><span class="line">    //3.设置&quot;上一张&quot;“下一张”按钮是否可以点击</span><br><span class="line">    self.lastButton.enabled=(self.index != 0);</span><br><span class="line">    self.nextButton.enabled=(self.index != (self.picture.count-1));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发-项目/UI/项目6.会说话的汤姆猫" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/24/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E9%A1%B9%E7%9B%AE6.%E4%BC%9A%E8%AF%B4%E8%AF%9D%E7%9A%84%E6%B1%A4%E5%A7%86%E7%8C%AB/" class="article-date">
+      <time datetime="2020-11-23T16:00:00.000Z" itemprop="datePublished">2020-11-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/24/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E9%A1%B9%E7%9B%AE6.%E4%BC%9A%E8%AF%B4%E8%AF%9D%E7%9A%84%E6%B1%A4%E5%A7%86%E7%8C%AB/">项目6.会说话的汤姆猫</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>UIImageView帧动画相关属性和方法：</p>
+<p>1）需要播放的序列帧图片数组（里面都是UIImage对象，会按顺序显示里面的图片）<br><code>@property (nullable, nonatomic, copy) NSArray&lt;UIImage *&gt; *animationImages;</code></p>
+<p>2）帧动画的持续时间<br><code>@property (nonatomic) NSTimeInterval animationDuration;</code></p>
+<p>3）帧动画的执行次数（默认是无限循环）<br><code>@property (nonatomic) NSInteger animationRepeatCount;</code></p>
+<p>4）开始执行帧动画<br><code>- (void)startAnimating;</code></p>
+<p>5）停止执行帧动画<br><code>- (void)stopAnimating;</code></p>
+<p>6）是否正在执行帧动画<br><code>- (BOOL)isAnimating;</code></p>
+<p>第一种加载图片的方式，使用清空图片集合的方法后，内存依旧没有被释放，原因？</p>
+<p>使用第一种方式加载图片，加载起来的图片即便没有强类型指针引用也不会销毁，会被缓存；使用第二种加载图片的方式，只要没有强类型指针引用就会被销毁了：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goexi3gf6hj30u90u0gqc.jpg"></p>
+<p>项目演示：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goexu5oa0rj31400mxdx5.jpg"></p>
+<p>项目代码：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goey19h0ooj30u02m2anm.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  ViewController.m</span><br><span class="line">//  会说话的汤姆猫</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/21.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">@property (weak, nonatomic) IBOutlet UIImageView *imageViewCat;</span><br><span class="line"></span><br><span class="line">- (IBAction)angrytail;//1.踩尾巴</span><br><span class="line">- (IBAction)blink;//2.眨眼睛</span><br><span class="line">- (IBAction)cymbal;//3.击打乐器</span><br><span class="line">- (IBAction)drinkmilk;//4.喝牛奶</span><br><span class="line">- (IBAction)eat;//5.吃</span><br><span class="line">- (IBAction)fart;//6.放屁</span><br><span class="line">- (IBAction)footleft;//7.左脚</span><br><span class="line">- (IBAction)footright;//8.右脚</span><br><span class="line">- (IBAction)happy;//9.很高兴</span><br><span class="line">- (IBAction)happysimple;//10.一点高兴</span><br><span class="line">- (IBAction)knock;//11.敲头</span><br><span class="line">- (IBAction)listen;//12.听</span><br><span class="line">- (IBAction)pie;//13.扔馅饼</span><br><span class="line">- (IBAction)scratch;//14.刮屏幕</span><br><span class="line">- (IBAction)sneeze;//15.打喷嚏</span><br><span class="line">- (IBAction)stomach;//16.胃疼</span><br><span class="line">- (IBAction)talk;//17.说话</span><br><span class="line">- (IBAction)yawn;//18.打哈欠</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//1.踩尾巴的动画</span><br><span class="line">- (IBAction)angrytail &#123;</span><br><span class="line">    [self startAnimating:26 picName:@&quot;cat_angry&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//2.眨眼睛的动画</span><br><span class="line">- (IBAction)blink &#123;</span><br><span class="line">    [self startAnimating:3 picName:@&quot;cat_blink&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//3.击打乐器的动画</span><br><span class="line">- (IBAction)cymbal &#123;</span><br><span class="line">    [self startAnimating:13 picName:@&quot;cat_cymbal&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//4.喝牛奶的动画</span><br><span class="line">- (IBAction)drinkmilk &#123;</span><br><span class="line">    [self startAnimating:81 picName:@&quot;cat_drink&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//5.吃的动画</span><br><span class="line">- (IBAction)eat &#123;</span><br><span class="line">    [self startAnimating:40 picName:@&quot;cat_eat&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//6.放屁的动画</span><br><span class="line">- (IBAction)fart &#123;</span><br><span class="line">    [self startAnimating:28 picName:@&quot;cat_fart&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//7.左脚的动画</span><br><span class="line">- (IBAction)footleft &#123;</span><br><span class="line">    [self startAnimating:30 picName:@&quot;cat_foot_left&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//8.右脚的动画</span><br><span class="line">- (IBAction)footright &#123;</span><br><span class="line">    [self startAnimating:30 picName:@&quot;cat_foot_right&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//9.很高兴的动画</span><br><span class="line">- (IBAction)happy &#123;</span><br><span class="line">    [self startAnimating:29 picName:@&quot;cat_happy&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//10.一点高兴的动画</span><br><span class="line">- (IBAction)happysimple &#123;</span><br><span class="line">    [self startAnimating:25 picName:@&quot;cat_happy_simple&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//11.敲头的动画</span><br><span class="line">- (IBAction)knock &#123;</span><br><span class="line">    [self startAnimating:81 picName:@&quot;cat_knockout&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//12.听的动画</span><br><span class="line">- (IBAction)listen &#123;</span><br><span class="line">    [self startAnimating:12 picName:@&quot;cat_listen&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//13.扔馅饼的动画</span><br><span class="line">- (IBAction)pie &#123;</span><br><span class="line">    [self startAnimating:23 picName:@&quot;pie&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//14.刮屏幕的动画</span><br><span class="line">- (IBAction)scratch &#123;</span><br><span class="line">    [self startAnimating:56 picName:@&quot;cat_scratch&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//15.打喷嚏的动画</span><br><span class="line">- (IBAction)sneeze &#123;</span><br><span class="line">    [self startAnimating:14 picName:@&quot;cat_sneeze&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//16.胃疼的动画</span><br><span class="line">- (IBAction)stomach &#123;</span><br><span class="line">    [self startAnimating:34 picName:@&quot;cat_stomach&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//17.说话的动画</span><br><span class="line">- (IBAction)talk &#123;</span><br><span class="line">    [self startAnimating:16 picName:@&quot;cat_talk&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//18.打哈欠的动画</span><br><span class="line">- (IBAction)yawn &#123;</span><br><span class="line">    [self startAnimating:31 picName:@&quot;cat_zeh&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//执行动画的方法</span><br><span class="line">- (void)startAnimating:(int)count picName:(NSString *)picName&#123;</span><br><span class="line">    </span><br><span class="line">    //如果当前图片框正在执行动画，那么直接return，什么都不做(不开启一个新动画)</span><br><span class="line">    if(self.imageViewCat.isAnimating)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //1.动态加载图片到一个NSArray中</span><br><span class="line">    NSMutableArray *arrayM=[NSMutableArray array];</span><br><span class="line">    for(int i=0;i&lt;count;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        //拼接图片名称</span><br><span class="line">        NSString *imgName=[NSString stringWithFormat:@&quot;%@%0004d.jpg&quot;,picName,i];</span><br><span class="line">        </span><br><span class="line">        //第一种加载图片的方式：</span><br><span class="line">        //根据imageNamed图片名称加载图片，加载好的图片会一直保存写在内存中，不会释放，这样下次如果再使用同样的图片的时候就不需要再重新加载了，因为内存里面已经有了；缺点就是如果加载了大量的图片，那么这些图片会一直保留在内存中，导致应用程序占用内存过大(这就叫缓存)</span><br><span class="line">        // UIImage *imgCat=[UIImage imageNamed:imgName];</span><br><span class="line">        </span><br><span class="line">        //第二种加载图片的方式</span><br><span class="line">        //1.获取图片的完整路径</span><br><span class="line">        NSString *path=[[NSBundle mainBundle] pathForResource:imgName ofType:nil];</span><br><span class="line">        //2.这里的参数不能再传递图片名称了，这里需要传递一个图片的完整路径</span><br><span class="line">        UIImage *imgCat=[UIImage imageWithContentsOfFile:path];</span><br><span class="line">        </span><br><span class="line">        //把图片加载到数组中</span><br><span class="line">        [arrayM addObject:imgCat];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //2.设置UIImageView（图片框）的animationImages属性，这个属性中包含的就是所有那些要执行动画的图片</span><br><span class="line">    self.imageViewCat.animationImages=arrayM;</span><br><span class="line">    </span><br><span class="line">    //3.设置动画持续时间</span><br><span class="line">    self.imageViewCat.animationDuration=self.imageViewCat.animationImages.count*0.1;</span><br><span class="line">    </span><br><span class="line">    //4.设置动画重复的次数</span><br><span class="line">    self.imageViewCat.animationRepeatCount=1;</span><br><span class="line">    </span><br><span class="line">    //5.开启动画</span><br><span class="line">    [self.imageViewCat startAnimating];</span><br><span class="line">    </span><br><span class="line">    //清空图片集合（用第二种加载图片的方式执行完动画后内存被释放）:</span><br><span class="line">    //这样写的问题是，当动画启动以后，动画还没开始执行，就已经让图片集合清空了</span><br><span class="line">    //self.imageViewCat.animationImages=nil;</span><br><span class="line">    </span><br><span class="line">    //方法：设置图片框在调用setAnimationImages:nil方法的时候延迟执行</span><br><span class="line">    [self.imageViewCat performSelector:@selector(setAnimationImages:) withObject:nil afterDelay:self.imageViewCat.animationImages.count*0.1];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发-项目/UI/UIButton和UIImageView的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/23/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/UIButton%E5%92%8CUIImageView%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+      <time datetime="2020-11-22T16:00:00.000Z" itemprop="datePublished">2020-11-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/23/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/UIButton%E5%92%8CUIImageView%E7%9A%84%E5%8C%BA%E5%88%AB/">UIButton和UIImageView的区别</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>相同点：都能显示图片</p>
+<p>不同点：</p>
+<ol>
+<li>UIButton默认情况下就能监听点击事件，而UIImageView默认情况下不能【UIButton先继承自UIControl，UIControl继承自UIView；UIImageView直接继承自UIView；所以UIButton默认情况下能监听点击事件】</li>
+<li>UIButton可以在不同状态下显示不同的图片</li>
+<li>UIButton既能显示文字，又能显示图片（能显示两张图片，backgroundImage和Image）</li>
+</ol>
+<p>如何选择：<br>UIImageView：仅仅需要显示图片，点击图片后不需要做任何事情<br>UIButton：需要显示图片，点击图片后需要做一些特定的操作</p>
+<p>文档注释：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gofnzuqra8j30co0gfgo2.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发-项目/UI/应用管理(字典转模型、xib、MVC)：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/22/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86(%E5%AD%97%E5%85%B8%E8%BD%AC%E6%A8%A1%E5%9E%8B%E3%80%81xib%E3%80%81MVC)%EF%BC%9A/" class="article-date">
+      <time datetime="2020-11-21T16:00:00.000Z" itemprop="datePublished">2020-11-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/22/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86(%E5%AD%97%E5%85%B8%E8%BD%AC%E6%A8%A1%E5%9E%8B%E3%80%81xib%E3%80%81MVC)%EF%BC%9A/">应用管理(字典转模型、xib、MVC)：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>字典转模型（把字典中的数据使用模型来保存，新建一个类，根据字典中键值对的个数来编写这个类中的属性，用这个类的对象的属性来保存字典中每个键对应的值）：<br>1）字典缺陷：写代码的时候字典的键没有智能提示，但是模型的属性可以有智能提示；“键”是字符串，如果写错了，编译器在编译的时候不报错，运行时可能出错，出错了很难找错；使用“模型”可以更方便的使用面向对象的三大特征进行扩展<br>2）“模型”就是自定义的类，通过为“类”增加各种属性来保存数据</p>
+<p>id与instancetype：<br>1）使用id作为方法返回值，在接收方法的返回值的时候可以使用任何类型来接收，编译都不报错，但是运行可能出错<br>2）instancetype在类型表示上与id意思一样，都表示任何对象类型<br>3）instancetype只能用做返回值类型，不能向id一样声明变量，用作参数等<br>4）使用instancetype，编译器会检测instancetype的真实类型，如果类型不匹配，编译时就报错了（instancetype出现在哪个类中就表示对应的类）</p>
+<p>每次字典转模型的时候都要声明实现一个对象方法和类方法，这是规范：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxx9jruu4j30jm0joajh.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxx9sjhedj30lf0avn2g.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  App.h</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/24.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line"></span><br><span class="line">**@interface** App : NSObject</span><br><span class="line"></span><br><span class="line">**@property**(**nonatomic**,**copy**)NSString *name;</span><br><span class="line">**@property**(**nonatomic**,**copy**)NSString *icon;</span><br><span class="line"></span><br><span class="line">- (**instancetype**)initWithDict:(NSDictionary *)dict;</span><br><span class="line">+ (**instancetype**)appWithDict:(NSDictionary *)dict;</span><br><span class="line"></span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxa0jzqoj30ly0cd0yl.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  App.m</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/24.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import “App.h”</span><br><span class="line"></span><br><span class="line">**@implementation** App</span><br><span class="line"></span><br><span class="line">- (**instancetype**)initWithDict:(NSDictionary *)dict&#123;</span><br><span class="line">    **if**(**self**=[**super** init])&#123;</span><br><span class="line">        **self**.name=dict[@“name”];</span><br><span class="line">        **self**.icon=dict[@“icon”];</span><br><span class="line">    &#125;</span><br><span class="line">    **return** **self**;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (**instancetype**)appWithDict:(NSDictionary *)dict&#123;</span><br><span class="line">    **return** [[**self** alloc] initWithDict:dict];</span><br><span class="line">&#125;</span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxbfotn5j30qk0kiwpf.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxbllx08j31400nktkd.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  ViewController.m</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/24.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import “ViewController.h”</span><br><span class="line">#import “App.h”</span><br><span class="line"></span><br><span class="line">**@interface** ViewController ()</span><br><span class="line">//用来保存所有应用的数据</span><br><span class="line">**@property**(**nonatomic**,**strong**)NSArray *apps;</span><br><span class="line"></span><br><span class="line">**@end**</span><br><span class="line"></span><br><span class="line">**@implementation** ViewController</span><br><span class="line"></span><br><span class="line">//重写apps属性的getter方法，进行懒加载数据</span><br><span class="line">- (NSArray *)apps&#123;</span><br><span class="line">    **if**(_apps==**nil**)&#123;</span><br><span class="line">        //加载数据</span><br><span class="line">        //1.获取app.plist文件在手机上的路径</span><br><span class="line">        NSString *path=[[NSBundle mainBundle] pathForResource:@“app.plist” ofType:**nil**];</span><br><span class="line">        //2.根据路径加载数据</span><br><span class="line">        NSArray *arrayDict=[NSArray arrayWithContentsOfFile:path];</span><br><span class="line">        //3.创建一个可变数组用来保存一个一个的模型对象</span><br><span class="line">        NSMutableArray *arrayModels=[NSMutableArray array];//一个空的可变数组</span><br><span class="line">        //4.循环字典数组，把每个字典对象转换成一个模型对象</span><br><span class="line">        **for**(NSDictionary *dict **in** arrayDict)&#123;</span><br><span class="line">            //创建一个模型</span><br><span class="line">            //App *model=[[App alloc] initWithDict:dict];//调用对象方法</span><br><span class="line">            App *model=[App appWithDict:dict];//调用类方法</span><br><span class="line">            //把模型加到arrayModels中</span><br><span class="line">            [arrayModels addObject:model];</span><br><span class="line">        &#125;</span><br><span class="line">        _apps=arrayModels;</span><br><span class="line">    &#125;</span><br><span class="line">    **return** _apps;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (**void**)viewDidLoad &#123;</span><br><span class="line">    [**super** viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">    </span><br><span class="line">    //假设每行的应用的个数</span><br><span class="line">    **int** columns=3;</span><br><span class="line">    //获取控制器所管理的view的宽度</span><br><span class="line">    CGFloat viewWidth=**self**.view.frame.size.width;</span><br><span class="line">    </span><br><span class="line">    //每个应用的高和宽</span><br><span class="line">    CGFloat appW=75;</span><br><span class="line">    CGFloat appH=90;</span><br><span class="line">    CGFloat marginTop=100;//第一行距离顶部的距离</span><br><span class="line">    CGFloat marginX=(viewWidth-columns*appW)/(columns+1);</span><br><span class="line">    CGFloat marginY=marginX;//假设每行之间的间距与marginX相等</span><br><span class="line">    </span><br><span class="line">    **for**(**int** I=0;i&lt;**self**.apps.count;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        //获取当前这个应用的数据字典</span><br><span class="line">        App *appModel=**self**.apps[I];</span><br><span class="line">        </span><br><span class="line">        //1.创建每个应用（UIView）</span><br><span class="line">        UIView *appView=[[UIView alloc]init];</span><br><span class="line">        </span><br><span class="line">        //2.设置appView的属性</span><br><span class="line">        //设置appView的背景色</span><br><span class="line">        //appView.backgroundColor=[UIColor blueColor];</span><br><span class="line">        //设置appView的frame属性</span><br><span class="line">        //计算每个单元格所在列的索引</span><br><span class="line">        **int** colIdx=I%columns;</span><br><span class="line">        //计算每个单元格的行索引</span><br><span class="line">        **int** rowIdx=I/columns;</span><br><span class="line">        CGFloat appx=marginX+colIdx*(appW+marginX);</span><br><span class="line">        CGFloat appY=marginTop+rowIdx*(appH+marginY);</span><br><span class="line">        appView.frame=CGRectMake(appx, appY, appW, appH);</span><br><span class="line">        </span><br><span class="line">        //3.将appView加到self.view（控制器所管理的那个view）</span><br><span class="line">        [**self**.view addSubview:appView];</span><br><span class="line">        </span><br><span class="line">        //4.向UIView中增加子控件</span><br><span class="line">        //4.1.增加一个图片框</span><br><span class="line">        UIImageView *imgViewIcon=[[UIImageView alloc]init];</span><br><span class="line">        //设置背景色</span><br><span class="line">        //imgViewIcon.backgroundColor=[UIColor yellowColor];</span><br><span class="line">        //设置frame</span><br><span class="line">        CGFloat iconW=45;</span><br><span class="line">        CGFloat iconH=45;</span><br><span class="line">        CGFloat iconX=(appView.frame.size.width-iconW)*0.5;</span><br><span class="line">        CGFloat iconY=0;</span><br><span class="line">        imgViewIcon.frame=CGRectMake(iconX, iconY, iconW, iconH);</span><br><span class="line">        //把图片框添加到appView中</span><br><span class="line">        [appView addSubview:imgViewIcon];</span><br><span class="line">        </span><br><span class="line">        //设置图片框的数据</span><br><span class="line">        imgViewIcon.image=[UIImage imageNamed:appModel.icon];</span><br><span class="line">        </span><br><span class="line">        //4.2.增加一个Label标签</span><br><span class="line">        //创建Label</span><br><span class="line">        UILabel *lblName=[[UILabel alloc] init];</span><br><span class="line">        //设置背景色</span><br><span class="line">        //lblName.backgroundColor=[UIColor redColor];</span><br><span class="line">        //设置frame</span><br><span class="line">        CGFloat nameW=appView.frame.size.width;</span><br><span class="line">        CGFloat nameH=20;</span><br><span class="line">        CGFloat nameY=iconH;</span><br><span class="line">        CGFloat nameX=0;</span><br><span class="line">        lblName.frame=CGRectMake(nameX, nameY, nameW, nameH);</span><br><span class="line">        //添加到appView中</span><br><span class="line">        [appView addSubview:lblName];</span><br><span class="line">        </span><br><span class="line">        //设置Label的数据（标题）</span><br><span class="line">        lblName.text=appModel.name;</span><br><span class="line">        //设置Label的文字的字体大小</span><br><span class="line">        lblName.font=[UIFont systemFontOfSize:12];</span><br><span class="line">        //设置文字居中对齐</span><br><span class="line">        lblName.textAlignment=NSTextAlignmentCenter;</span><br><span class="line">        </span><br><span class="line">        //4.3.增加一个按钮（UIButton）</span><br><span class="line">        UIButton *btnDownload=[[UIButton alloc] init];</span><br><span class="line">        //设置背景色</span><br><span class="line">        //btnDownload.backgroundColor=[UIColor greenColor];</span><br><span class="line">        //设置frame</span><br><span class="line">        CGFloat btnW=iconW;</span><br><span class="line">        CGFloat btnH=20;</span><br><span class="line">        CGFloat btnX=iconX;</span><br><span class="line">        CGFloat btnY=nameY+nameH;</span><br><span class="line">        btnDownload.frame=CGRectMake(btnX, btnY, btnW, btnH);</span><br><span class="line"></span><br><span class="line">        //添加到appView中</span><br><span class="line">        [appView addSubview:btnDownload];</span><br><span class="line">        </span><br><span class="line">        //设置按钮的数据</span><br><span class="line">        //设置按钮上的文字</span><br><span class="line">        [btnDownload setTitle:@“下载” forState:UIControlStateNormal];</span><br><span class="line">        [btnDownload setTitle:@“已安装” forState:UIControlStateDisabled];</span><br><span class="line">        </span><br><span class="line">        //设置按钮的背景图</span><br><span class="line">        [btnDownload setBackgroundImage:[UIImage imageNamed:@“绿色1.jpg”] forState:UIControlStateNormal];</span><br><span class="line">        [btnDownload setBackgroundImage:[UIImage imageNamed:@“绿色2.jpg”] forState:UIControlStateHighlighted];</span><br><span class="line">        </span><br><span class="line">        //设置按钮的文字的大小</span><br><span class="line">        btnDownload.titleLabel.font=[UIFont systemFontOfSize:14];</span><br><span class="line">        </span><br><span class="line">        //为按钮注册一个单击事件</span><br><span class="line">        //[btnDownload addTarget:self action:@selector(btnDownloadClick) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//- (void)btnDownloadClick&#123;</span><br><span class="line">//    NSLog(@“….”);</span><br><span class="line">//&#125;</span><br><span class="line"></span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+<p>～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～进行完字典转模型，未进行xib封装的代码⬆️</p>
+<p>xib：<br>1）用来描述软件界面的文件<br>2）如果没有xib，所有的界面都需要通过代码来手动创建；有了xib以后，可以在xib中进行可视化开发，然后加载xib文件的时候，系统自动生成对应的代码来创建界面<br>3）与xib类似的还有storyboard文件</p>
+<p>xib与storyboard的区别：<br>1）xib是轻量级的，一般只用来描述一个界面中的某部分内容（用来描述局部UI界面）<br>2）storyboard是重量级的，一般用来描述软件的多个界面，以及不同界面之间的跳转关系</p>
+<p>//shift+option+command+左（折叠所有的代码）<br>//shift+option+command+右（展开所有的代码）</p>
+<p>Xib文件的加载过程：<br>1）根据路径，搜索对应的xib文件（nib文件）<br>2）加载xib文件的时候，会按顺序加载xib文件中的每个控件<br>3）对于每个控件，创建的时候都会查找对应的Class属性中配置的是哪个类，那么就创建对应的类的对象<br>4）创建好某个控件以后，按照在xib中配置的属性的值，依次为对象的属性赋值<br>5）创建该控件下的子控件，并设置属性值，然后把该控件加到父控件中<br>6）最后返回一个数组，这个数组中包含创建的根元素对象</p>
+<p>～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～进行完xib封装以后的代码（完整）⬇️<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxbyd870j31400nkk3a.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxcbbcmlj31400nkam1.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxcjo5inj31400nkwpx.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  APPView.h</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/25.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">**@class** App;</span><br><span class="line"></span><br><span class="line">**@interface** APPView : UIView</span><br><span class="line"></span><br><span class="line">**@property**(**nonatomic**,**strong**)App *model;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//为自定义view封装一个类方法，这个类方法的作用就是创建一个view对象</span><br><span class="line">+ (**instancetype**)appView;</span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxcr14y1j30n10fg7ba.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  APPView.m</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/25.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import “APPView.h”</span><br><span class="line">#import “App.h”</span><br><span class="line"></span><br><span class="line">**@interface** APPView()</span><br><span class="line"></span><br><span class="line">**@property** (**weak**, **nonatomic**) **IBOutlet** UIImageView *imgViewIcon;</span><br><span class="line">**@property** (**weak**, **nonatomic**) **IBOutlet** UILabel *lblName;</span><br><span class="line">**@property** (**weak**, **nonatomic**) **IBOutlet** UIButton *btnDownload;</span><br><span class="line"></span><br><span class="line">**@end**</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**@implementation** APPView</span><br><span class="line"></span><br><span class="line">//重写model属性的setter方法</span><br><span class="line">- (**void**)setModel:(App *)model&#123;</span><br><span class="line">    //解析模型数据，把模型数据赋值给UIView中的各个子控件</span><br><span class="line">    **self**.imgViewIcon.image=[UIImage imageNamed:model.icon];</span><br><span class="line">    **self**.lblName.text=model.name;</span><br><span class="line">    </span><br><span class="line">    //赋值</span><br><span class="line">    _model=model;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (**instancetype**)appView&#123;</span><br><span class="line">       //1.通过xib创建每个应用（UIView）</span><br><span class="line">       //通过动态加载xib文件创建里面的view</span><br><span class="line">       </span><br><span class="line">       //1.1.找到应用的根目录</span><br><span class="line">       NSBundle *rootBundle=[NSBundle mainBundle];  //NSLog(@“%@“,[mainBundle bundlePath]);</span><br><span class="line">       //1.2.在应用程序根目录下去搜索对应的xib(nib)文件</span><br><span class="line">       **return** [[rootBundle loadNibNamed:@“APPView” owner:**nil** options:**nil**] lastObject];</span><br><span class="line">&#125;</span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxd21id5j30us0nmwqr.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  App.h</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/24.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &lt;Foundation/Foundation.h&gt;</span><br><span class="line"></span><br><span class="line">**@interface** App : NSObject</span><br><span class="line"></span><br><span class="line">**@property**(**nonatomic**,**copy**)NSString *name;</span><br><span class="line">**@property**(**nonatomic**,**copy**)NSString *icon;</span><br><span class="line"></span><br><span class="line">- (**instancetype**)initWithDict:(NSDictionary *)dict;</span><br><span class="line">+ (**instancetype**)appWithDict:(NSDictionary *)dict;</span><br><span class="line"></span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxdd74qej30ob0f5tfv.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  App.m</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/24.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import “App.h”</span><br><span class="line"></span><br><span class="line">**@implementation** App</span><br><span class="line"></span><br><span class="line">- (**instancetype**)initWithDict:(NSDictionary *)dict&#123;</span><br><span class="line">    **if**(**self**=[**super** init])&#123;</span><br><span class="line">        **self**.name=dict[@“name”];</span><br><span class="line">        **self**.icon=dict[@“icon”];</span><br><span class="line">    &#125;</span><br><span class="line">    **return** **self**;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (**instancetype**)appWithDict:(NSDictionary *)dict&#123;</span><br><span class="line">    **return** [[**self** alloc] initWithDict:dict];</span><br><span class="line">&#125;</span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxdllee4j30ob0f5qa3.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  ViewController.m</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/24.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import “ViewController.h”</span><br><span class="line">#import “App.h”</span><br><span class="line">#import “APPView.h”</span><br><span class="line"></span><br><span class="line">**@interface** ViewController ()</span><br><span class="line">//用来保存所有应用的数据</span><br><span class="line">**@property**(**nonatomic**,**strong**)NSArray *apps;</span><br><span class="line"></span><br><span class="line">**@end**</span><br><span class="line"></span><br><span class="line">**@implementation** ViewController</span><br><span class="line"></span><br><span class="line">//重写apps属性的getter方法，进行懒加载数据</span><br><span class="line">- (NSArray *)apps&#123;</span><br><span class="line">    **if**(_apps==**nil**)&#123;</span><br><span class="line">        //加载数据</span><br><span class="line">        //1.获取app.plist文件在手机上的路径</span><br><span class="line">        NSString *path=[[NSBundle mainBundle] pathForResource:@“app.plist” ofType:**nil**];</span><br><span class="line">        //2.根据路径加载数据</span><br><span class="line">        NSArray *arrayDict=[NSArray arrayWithContentsOfFile:path];</span><br><span class="line">        //3.创建一个可变数组用来保存一个一个的模型对象</span><br><span class="line">        NSMutableArray *arrayModels=[NSMutableArray array];//一个空的可变数组</span><br><span class="line">        //4.循环字典数组，把每个字典对象转换成一个模型对象</span><br><span class="line">        **for**(NSDictionary *dict **in** arrayDict)&#123;</span><br><span class="line">            //创建一个模型</span><br><span class="line">            //App *model=[[App alloc] initWithDict:dict];//调用对象方法</span><br><span class="line">            App *model=[App appWithDict:dict];//调用类方法</span><br><span class="line">            //把模型加到arrayModels中</span><br><span class="line">            [arrayModels addObject:model];</span><br><span class="line">        &#125;</span><br><span class="line">        _apps=arrayModels;</span><br><span class="line">    &#125;</span><br><span class="line">    **return** _apps;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (**void**)viewDidLoad &#123;</span><br><span class="line">    [**super** viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">    </span><br><span class="line">    //假设每行的应用的个数</span><br><span class="line">    **int** columns=3;</span><br><span class="line">    //获取控制器所管理的view的宽度</span><br><span class="line">    CGFloat viewWidth=**self**.view.frame.size.width;</span><br><span class="line">    </span><br><span class="line">    //每个应用的高和宽</span><br><span class="line">    CGFloat appW=75;</span><br><span class="line">    CGFloat appH=90;</span><br><span class="line">    CGFloat marginTop=100;//第一行距离顶部的距离</span><br><span class="line">    CGFloat marginX=(viewWidth-columns*appW)/(columns+1);</span><br><span class="line">    CGFloat marginY=marginX;//假设每行之间的间距与marginX相等</span><br><span class="line">    </span><br><span class="line">    **for**(**int** I=0;i&lt;**self**.apps.count;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        //获取当前这个应用的数据字典</span><br><span class="line">        App *appModel=**self**.apps[I];</span><br><span class="line">        </span><br><span class="line">        //创建view</span><br><span class="line">        APPView *appView=[APPView appView];</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        //2.设置appView的属性</span><br><span class="line">        //设置appView的frame属性</span><br><span class="line">        //计算每个单元格所在列的索引</span><br><span class="line">        **int** colIdx=I%columns;</span><br><span class="line">        //计算每个单元格的行索引</span><br><span class="line">        **int** rowIdx=I/columns;</span><br><span class="line">        CGFloat appx=marginX+colIdx*(appW+marginX);</span><br><span class="line">        CGFloat appY=marginTop+rowIdx*(appH+marginY);</span><br><span class="line">        appView.frame=CGRectMake(appx, appY, appW, appH);</span><br><span class="line">        </span><br><span class="line">        //3.将appView加到self.view（控制器所管理的那个view）</span><br><span class="line">        [**self**.view addSubview:appView];</span><br><span class="line">        </span><br><span class="line">        //4.设置appView中的子控件的数据</span><br><span class="line">        //把模型数据设置给自定义view的model属性，然后重写model属性的setter方法，在setter方法中解析模型对象中的属性，并把属性值设置给自定义view的各个子控件</span><br><span class="line">        appView.model=appModel;</span><br><span class="line">     </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxdvmuq5j31400nm14k.jpg"></p>
+<p>～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～～增加下载按钮的单击事件⬇️</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  APPView.m</span><br><span class="line">//  8.应用管理</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/25.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import “APPView.h”</span><br><span class="line">#import “App.h”</span><br><span class="line"></span><br><span class="line">**@interface** APPView()</span><br><span class="line"></span><br><span class="line">**@property** (**weak**, **nonatomic**) **IBOutlet** UIImageView *imgViewIcon;</span><br><span class="line">**@property** (**weak**, **nonatomic**) **IBOutlet** UILabel *lblName;</span><br><span class="line">**@property** (**weak**, **nonatomic**) **IBOutlet** UIButton *btnDownload;</span><br><span class="line"></span><br><span class="line">- (**IBAction**)btnDownloadClick:(UIButton *)sender;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**@end**</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**@implementation** APPView</span><br><span class="line"></span><br><span class="line">//重写model属性的setter方法</span><br><span class="line">- (**void**)setModel:(App *)model&#123;</span><br><span class="line">    //解析模型数据，把模型数据赋值给UIView中的各个子控件</span><br><span class="line">    **self**.imgViewIcon.image=[UIImage imageNamed:model.icon];</span><br><span class="line">    **self**.lblName.text=model.name;</span><br><span class="line">    </span><br><span class="line">    //赋值</span><br><span class="line">    _model=model;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (**instancetype**)appView&#123;</span><br><span class="line">       //1.通过xib创建每个应用（UIView）</span><br><span class="line">       //通过动态加载xib文件创建里面的view</span><br><span class="line">       </span><br><span class="line">       //1.1.找到应用的根目录</span><br><span class="line">       NSBundle *rootBundle=[NSBundle mainBundle];  //NSLog(@“%@“,[mainBundle bundlePath]);</span><br><span class="line">       //1.2.在应用程序根目录下去搜索对应的xib(nib)文件</span><br><span class="line">       **return** [[rootBundle loadNibNamed:@“APPView” owner:**nil** options:**nil**] lastObject];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//下载按钮的单击事件</span><br><span class="line">- (**IBAction**)btnDownloadClick:(UIButton *)sender &#123;</span><br><span class="line">    //1.禁用当前被点击的按钮</span><br><span class="line">    sender.enabled=**NO**;</span><br><span class="line">    //2.弹出一个消息提醒框（这个消息提醒框其实就是一个UILabel）</span><br><span class="line">    UILabel *lblMsg=[[UILabel alloc] init];</span><br><span class="line">    //2.1.设置lblMsg的显示文字</span><br><span class="line">    lblMsg.text=@“正在下载。。。”;</span><br><span class="line">    //2.2.设置lblMsg的背景色</span><br><span class="line">    lblMsg.backgroundColor=[UIColor blackColor];</span><br><span class="line">    //2.3.设置lblMsg的frame</span><br><span class="line">    CGFloat viewW=**self**.superview.frame.size.width;</span><br><span class="line">    CGFloat viewH=**self**.superview.frame.size.height;</span><br><span class="line">    CGFloat msgW=200;</span><br><span class="line">    CGFloat msgH=30;</span><br><span class="line">    CGFloat msgX=(viewW-msgW)/2;</span><br><span class="line">    CGFloat msgY=(viewH-msgH)*0.5;</span><br><span class="line">    lblMsg.frame=CGRectMake(msgX, msgY, msgW, msgH);</span><br><span class="line">    //2.4.设置label的文字颜色</span><br><span class="line">    lblMsg.textColor=[UIColor redColor];</span><br><span class="line">    //2.5.设置label居中显示</span><br><span class="line">    lblMsg.textAlignment=NSTextAlignmentCenter;</span><br><span class="line">    //2.6.设置文字粗体</span><br><span class="line">    lblMsg.font=[UIFont boldSystemFontOfSize:17];</span><br><span class="line">    //2.7.设置label的透明度</span><br><span class="line">    lblMsg.alpha=0.0;//一开始把透明度设置为0，然后通过动画的方式慢慢的改变透明度</span><br><span class="line">    //2.8.设置label为“圆角”</span><br><span class="line">    lblMsg.layer.cornerRadius=10;//设置四个角的半径</span><br><span class="line">    lblMsg.layer.masksToBounds=**YES**;//把多余的部分给剪掉</span><br><span class="line">    </span><br><span class="line">    //2.9.通过动画的方式来显示Label</span><br><span class="line">    //开启一个动画，这个动画要执行1.5秒钟</span><br><span class="line">    [UIView animateWithDuration:1.5 animations:^&#123;</span><br><span class="line">        //将透明度变成0.6</span><br><span class="line">        lblMsg.alpha=0.6;</span><br><span class="line">    &#125; completion:^(**BOOL** finished) &#123;</span><br><span class="line">        //当上面的动画执行完毕以后执行这个代码</span><br><span class="line">        **if**(finished)&#123;</span><br><span class="line">            //隔一段时间后再启动另外一个动画</span><br><span class="line">            //这个动画的执行时间是1.5秒钟，但是这个动画会在1.0秒之后再开始执行</span><br><span class="line">            //</span><br><span class="line">            [UIView animateWithDuration:1.5 delay:1.0 options:UIViewAnimationOptionCurveLinear animations:^&#123;</span><br><span class="line">                lblMsg.alpha=0;</span><br><span class="line">            &#125; completion:^(**BOOL** finished) &#123;</span><br><span class="line">                **if**(finished)&#123;</span><br><span class="line">                //当Label的透明度变成0以后，再把这个Label从view中移除</span><br><span class="line">                [lblMsg removeFromSuperview];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">    //3.把lblMsg加到控制器所管理的那个view上</span><br><span class="line">    [**self**.superview addSubview:lblMsg];</span><br><span class="line">&#125;</span><br><span class="line">**@end**</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxefp83xj31400nmk32.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发-项目/UI/超级猜图：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/21/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E8%B6%85%E7%BA%A7%E7%8C%9C%E5%9B%BE%EF%BC%9A/" class="article-date">
+      <time datetime="2020-11-20T16:00:00.000Z" itemprop="datePublished">2020-11-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/21/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E8%B6%85%E7%BA%A7%E7%8C%9C%E5%9B%BE%EF%BC%9A/">超级猜图：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxf1owfnj3061078ac1.jpg"></p>
+<p>1）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//改变状态栏的文字颜色为白色(默认是黑色)</span><br><span class="line">- (UIStatusBarStyle)preferredStatusBarStyle&#123;</span><br><span class="line">    **return** UIStatusBarStyleLightContent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//隐藏状态栏</span><br><span class="line">- (**BOOL**)prefersStatusBarHidden&#123;</span><br><span class="line">    **return** **YES**;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxf9g7baj30cd098wfq.jpg"></p>
+<p>2）User Interaction Enabled设置是否允许按钮和用户交互，把勾去掉后用户点击按钮无效果（金币按钮）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfhll10j307803r0sz.jpg"></p>
+<p>3）实现图片的相框效果<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfogfiqj302s02rjrt.jpg"><br>先添加按钮的白色背景图片，再把图片添加进按钮，设置内边距都为5</p>
+<p>4）把按钮的Highlighted Adjusts Image的勾去掉：可以和用户交互，但是点击按钮无反应（图片按钮）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfzi5sgj307601nmxa.jpg"></p>
+<p>5）实现大图/小图功能</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">//记录头像按钮原始的frame</span><br><span class="line">**@property**(**nonatomic**,**assign**) CGRect iconFrame;</span><br><span class="line">//用来引用那个阴影按钮的属性</span><br><span class="line">**@property**(**weak**,**nonatomic**) UIButton *cover;</span><br><span class="line"></span><br><span class="line">//显示大图</span><br><span class="line">- (**IBAction**)bigImage:(**id**)sender&#123;</span><br><span class="line">    </span><br><span class="line">    //记录一下头像按钮的原始frame</span><br><span class="line">    **self**.iconFrame=**self**.btnIcon.frame;</span><br><span class="line">    </span><br><span class="line">    //1.创建大小与self.view一样的按钮，把这个按钮作为一个阴影</span><br><span class="line">    UIButton *btnCover=[[UIButton alloc] init];</span><br><span class="line">    //设置按钮大小</span><br><span class="line">    btnCover.frame=**self**.view.bounds;</span><br><span class="line">    //设置按钮背景色</span><br><span class="line">    btnCover.backgroundColor=[UIColor blackColor];</span><br><span class="line">    //设置按钮透明度</span><br><span class="line">    btnCover.alpha=0.0;</span><br><span class="line">    </span><br><span class="line">    //把按钮加到self.view中</span><br><span class="line">    [**self**.view addSubview:btnCover];</span><br><span class="line">    </span><br><span class="line">    //为阴影按钮注册一个单击事件</span><br><span class="line">    [btnCover addTarget:**self** action:**@selector**(smallImage) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">    </span><br><span class="line">    //2.把图片设置到阴影的上面</span><br><span class="line">    //把self.view中的所有子控件中，只把self.btnIcon显示到最上层</span><br><span class="line">    [**self**.view bringSubviewToFront:**self**.btnIcon];</span><br><span class="line">    </span><br><span class="line">    //通过self.cover来引用btnCover</span><br><span class="line">    **self**.cover=btnCover;</span><br><span class="line">    </span><br><span class="line">    //3.通过动画的方式把图片变大</span><br><span class="line">    CGFloat iconW=**self**.view.frame.size.width;</span><br><span class="line">    CGFloat iconH=iconW;</span><br><span class="line">    CGFloat iconX=0;</span><br><span class="line">    CGFloat iconY=(**self**.view.frame.size.height-iconH)*0.5;</span><br><span class="line">    </span><br><span class="line">    [UIView animateWithDuration:0.7 animations:^&#123;</span><br><span class="line">        //设置按钮透明度</span><br><span class="line">        btnCover.alpha=0.6;</span><br><span class="line">        </span><br><span class="line">        //设置图片的新frame</span><br><span class="line">        **self**.btnIcon.frame=CGRectMake(iconX,iconY,iconW,iconH);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//阴影的单击事件</span><br><span class="line">- (**void**)smallImage&#123;</span><br><span class="line">    [UIView animateWithDuration:0.7 animations:^&#123;</span><br><span class="line">       //1.设置btnIcon(头像)按钮的frame还原</span><br><span class="line">       **self**.btnIcon.frame=**self**.iconFrame;</span><br><span class="line">       //2.让阴影按钮的透明度变成0</span><br><span class="line">        **self**.cover.alpha=0.0;</span><br><span class="line">    &#125;completion:^(**BOOL** finished)&#123;</span><br><span class="line">        **if**(finished)&#123;</span><br><span class="line">            //移除阴影按钮</span><br><span class="line">            [**self**.cover removeFromSuperview];</span><br><span class="line">            //当头像图片变成小图以后，再把self.cover设置成nil</span><br><span class="line">            **self**.cover=**nil**;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">//头像按钮的单击事件</span><br><span class="line">- (**IBAction**)btnIconClick:(**id**)sender&#123;</span><br><span class="line">    **if**(**self**.cover==**nil**)&#123;</span><br><span class="line">        //显示大图</span><br><span class="line">        [**self** bigImage:**nil**];</span><br><span class="line">    &#125;**else**&#123;</span><br><span class="line">        [**self** smallImage];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>6）动态创建“答案按钮”</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-硬件基础/《汇编语言(第4版)》/基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/31/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="article-date">
+      <time datetime="2020-10-30T16:00:00.000Z" itemprop="datePublished">2020-10-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/31/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>——————————————————<br>1.1.机器语言<br>1.2.汇编语言的产生<br>1.3.汇编语言的组成<br>1.4.存储器<br>1.5.指令和数据<br>1.6.存储单元<br>1.7.CPU对存储器的读写<br>1.8.地址总线<br>1.9.数据总线<br>1.10.控制总线<br>1.11.内存地址空间(概述)<br>1.12.主板<br>1.13.接口卡<br>1.14.各类存储器芯片<br>1.15.内存地址空间<br>——————————————————</p>
+<p>汇编语言是直接在硬件之上工作的编程语言，首先要了解硬件系统的结构，才能有效的应用汇编语言对其编程</p>
+<p>机器语言是机器指令的集合，机器指令展开来讲就是一台机器可以正确执行的命令，电子计算机的机器指令是一列二进制数字，计算机将之转变为一列高低电平，以使计算机的电子器件受到驱动，进行运算</p>
+<p>CPU是一种微处理器，每一种微处理器，由于硬件设计和内部结构的不同，就需要不同的电平脉冲来控制，使他工作，所以每一种微处理器都有自己的机器指令集，也就是机器语言<br>————————</p>
+<p>汇编语言的主体是汇编指令</p>
+<p>汇编指令和机器指令的差别在于指令的表示方法上，汇编指令是机器指令便于记忆的书写格式，汇编指令是机器指令的助记符</p>
+<p>寄存器，简单的讲是CPU中可以存储数据的器件，一个CPU中有多个寄存器，AX是其中一个寄存器的代号，BX是另一个寄存器的代号<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8lthws7j30bl02xaai.jpg"><br>————————</p>
+<p>汇编语言由以下三类组成：<br>1）汇编指令（机器码的助记符，有对应的机器码）<br>2）伪指令（没有对应的机器码，由编译器执行，计算机并不执行）<br>3）其他符号如+-*/（由编译器识别，没有对应的机器码）</p>
+<p>汇编语言的核心是汇编指令，它决定了汇编语言的特性<br>————————</p>
+<p>CPU是计算机的核心部件，它控制着整个计算机的运作并进行运算，要想让一个CPU工作，就必须向它提供指令和数据，指令和数据在存储器中存放，也就是平时所说的内存</p>
+<p>在一台PC机中内存的作用仅次于CPU，离开了内存，性能再好的CPU也无法工作，磁盘不同于内存，磁盘上的数据或程序如果不读到内存中，就无法被CPU使用<br>————————</p>
+<p>指令和数据是应用上的概念，在内存或磁盘上，指令和数据没有任何区别，都是二进制信息<br>————————</p>
+<p>存储器被划分为若干个存储单元，每个存储单元从0开始顺序编号【电子计算机的最小信息单位是bit（比特），也就是一个二进制位，8个bit组成一个Byte（字节），微型机存储器的存储单位可以存储一个Byte】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8mb0lbkj30ga09s79g.jpg"><br>—————————</p>
+<p>CPU要想进行数据的读写，必须和外部器件（芯片）进行三类信息的交互：<br>1）地址信息：存储单元的地址<br>2）控制信息：器件的选择，读或写命令<br>3）数据信息：读或写的数据</p>
+<p>每一个CPU芯片都有许多管脚，这些管脚和总线相连，也可以说，这些管脚引出总线，一个CPU可以引出三种总线的宽度标志着这个CPU的不同方面的性能：<br>地址总线的宽度决定了CPU的寻址能力<br>数据总线的宽度决定了CPU与其他器件进行数据传送时的一次数据传送量<br>控制总线的宽度决定了CPU对系统中其他器件的控制能力</p>
+<p>电子计算机能处理、传输的信息都是电信号，电信号当然要用导线传送，在计算机中专门有连接CPU和其他芯片的导线，通常称为总线<br>物理上：一根根导线的集合<br>逻辑上划分为：<br>1）地址总线：CPU是通过地址总线来指定存储单元的，地址总线上能传送多少个不同的信息，CPU就可以对多少个存储单元进行寻址</p>
+<p>一个CPU有N根地址总线，则可以说这个CPU的地址总线的宽度为N，这样的CPU最多可以寻找2的N次方个内存单元</p>
+<p>2）数据总线：CPU与内存或其他器件之间的数据传送是通过数据总线来进行的，数据总线的宽度决定了CPU和外界的数据传送速度</p>
+<p>8088CPU的数据总线宽度为8，8086CPU的数据总线宽度为16</p>
+<p>3）控制总线：CPU对外部器件的控制是通过控制总线来进行的，在这里控制总线是个总称，控制总线是一些不同控制线的集合，有多少根控制总线，就意味着CPU提供了对外部器件的多少种控制，所以，控制总线的宽度决定了CPU对外部器件的控制能力</p>
+<p>要让一个计算机或微处理器工作，应向它输入能够驱动它进行工作的电平信号（机器码）<br>——————————</p>
+<p>一个CPU的地址线宽度为10，那么可以寻址1024个内存单元，这1024个可寻到的内存单元就构成了这个CPU的内存地址空间<br>——————————</p>
+<p>在每一台PC机中，都有一个主板，主板上有核心器件和一些主要器件，这些器件通过总线（地址总线、数据总线、控制总线）相连，这些器件有CPU、存储器、外围芯片组、扩展插槽等，扩展插槽上一般插有RAM内存条和各类接口卡<br>——————————</p>
+<p>计算机系统中，所有可用程序控制其互作的设备，必须受到CPU的控制，CPU对外部设备不能直接控制，如显示器、音箱、打印机等，直接控制这些设备进行工作的是插在扩展插槽上的接口卡，扩展插槽通过总线和CPU相连，所以接口卡也通过总线同CPU相连<br>——————————</p>
+<p>各类存储器芯片：<br>1）从读写属性上看分为两类：随机存储器（RAM）和只读存储器（ROM），随机存储器可读可写，但必须带电存储，关机后存储的内容丢失；只读存储器只能读取不能写入，关机后其中的内容不丢失<br>2）从功能和连接上分类：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8mt9rgpj30bl05mjta.jpg"></p>
+<p>这些存储器在物理上是独立的器件：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8n32ur5j30fm0cqwgj.jpg"></p>
+<p>但是它们在以下两点上相同：<br>1）都和CPU的总线相连<br>2）CPU对它们进行读或写的时候都通过控制线发出内存读写命令<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8nmj07vj30fm0cigpr.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8nvqh13j30fm06on1b.jpg"></p>
+<p>不同的计算机系统的内存地址空间分配情况是不同的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8o3v5oqj30cx0coq4l.jpg"></p>
+<p>内存地址空间的大小受CPU地址总线宽度的限制</p>
+<p>对CPU来讲，系统中的所有存储器中的存储单元都处于一个统一的逻辑存储器中，它的容量受CPU寻址能力的限制，这个逻辑存储器即是我们所说的内存地址空间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8oeidamj30c402gaax.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/">硬件基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/数据库基本术语" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/" class="article-date">
+      <time datetime="2020-10-30T16:00:00.000Z" itemprop="datePublished">2020-10-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">数据库基本术语</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort1gucs5j30m705e43y.jpg"></p>
+<p>数据库：保存有组织的数据的容器（通常是一个文件或一组文件）</p>
+<p>表：某种特定类型数据的结构化清单，数据库中的每个表都有一个名字，用来标识自己，此名字是唯一的，这表示数据库中没有其他表具有相同的名字【虽然在相同数据库中不能两次使用相同的表名，但在不同数据库中却可以使用相同的表名】</p>
+<p>模式：关于数据库和表的布局及特性的信息</p>
+<p>列：表中的一个字段，所有表都是由一个或多个列组成的</p>
+<p>数据类型：所容许的数据的类型，每个表列都有相应的数据类型，它限制（或容许）该列中存储的数据</p>
+<p>行：表中的一个记录</p>
+<p>主键：一列（或一组列），其值能够唯一区分表中每个行</p>
+<p>表中的任何列都可以作为主键，只要他满足以下条件：<br>1）任意两行都不具有相同的主键值<br>2）每个行都必须具有一个主键值（主键列不允许NULL值）</p>
+<p>ps aux | grep mysql</p>
+<p>/usr/local/mysql/bin/mysql -u root -p<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort1r34ntj30dm03tabl.jpg"></p>
+<p>关键字：作为MySQL语言组成部分的一个保留字，绝不要用关键字命名一个表或列</p>
+<p>SQL语句不区分大小写！！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/6/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

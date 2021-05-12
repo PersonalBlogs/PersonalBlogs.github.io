@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/20/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/KMP算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/KMP%E7%AE%97%E6%B3%95/" class="article-date">
+      <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">2020-01-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/KMP%E7%AE%97%E6%B3%95/">KMP算法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>朴素模式匹配算法的缺点：当某些子串与模式串能部分匹配时，主串的扫描指针i经常回溯，导致时间开销增加</p>
+<p>改进思路：主串指针不回溯，只有模式串指针回溯</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooexhl0i6j31970u0wi9.jpg"></p>
+<p>求模式串的next数组：当模式串的第j个字符匹配失败时，令模式串跳到next[j]再继续匹配</p>
+<p>串的前缀：包含第一个字符，且不包含最后一个字符的子串<br>串的后缀：包含最后一个字符，且不包含第一个字符的子串</p>
+<p>手写求next：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1googecuxk4j30ny0ev74q.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goohhr9anej30i20r30uz.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAXIEN 255  //预定义最大串长为255</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char ch[MAXIEN];  //每个分量存储一个字符</span><br><span class="line">    int length;  //串的实际长度</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line">//求模式串T的next数组</span><br><span class="line">void get_next(SString *T,int next[])&#123;</span><br><span class="line">    int i=1,j=0;</span><br><span class="line">    next[1]=0;</span><br><span class="line">    while(i&lt;T-&gt;length)&#123;</span><br><span class="line">        if(j==0 || T-&gt;ch[i] == T-&gt;ch[j])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">            //若pi=pj，则next[j+1]=next[j]+1</span><br><span class="line">            next[i]=j;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            //否则令j=next[j]，循环继续</span><br><span class="line">            j=next[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//KMP算法代码【平均时间复杂度O(n+m)】</span><br><span class="line">int Index_KMP(SString *S,SString *T)&#123;</span><br><span class="line">    int i=1,j=1;</span><br><span class="line">    int next[T-&gt;length+1];</span><br><span class="line">    get_next(T, next);  //求模式串的next数组</span><br><span class="line">    while(i&lt;=S-&gt;length &amp;&amp; j&lt;=T-&gt;length)&#123;</span><br><span class="line">        if(j==0 || S-&gt;ch[i] == T-&gt;ch[i])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;  //继续比较后继字符</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            j=next[j];  //模式串向右移动</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(j&gt;T-&gt;length)&#123;</span><br><span class="line">        return i-T-&gt;length;  //匹配成功</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    SString S;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>KMP算法存在的问题：多进行了一次无意义的对比</p>
+<p>KMP算法进一步优化：nextval数组<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooihh0098j30u00zbwh9.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/LeetCode/145-大小写转换(C)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/145-%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2(C)/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/145-%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2(C)/">145-大小写转换(C)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln567lmirj30n00m5t8w.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln56noqfhj30nd0bn3zj.jpg"></p>
+<p>———</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">**void** sw(**char** ch)&#123;</span><br><span class="line">    **if**(ch &gt;= ‘a’ &amp;&amp; ch &lt;= ‘z’)&#123;</span><br><span class="line">        printf(“%c\n”,ch-32);</span><br><span class="line">    &#125;</span><br><span class="line">    **else**&#123;</span><br><span class="line">        printf(“%c\n”,ch+32);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**int** main()&#123;</span><br><span class="line">    **char** ch;</span><br><span class="line">    scanf(“%c”,&amp;ch);</span><br><span class="line">    sw(ch);</span><br><span class="line"></span><br><span class="line">    **return** 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>———</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/LeetCode/146-大小写转换II(C)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/146-%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2II(C)/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/146-%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2II(C)/">146-大小写转换II(C)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln57cbib4j30n00vrgm6.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln57m9ufnj30jo0eijsz.jpg"></p>
+<p>———</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">**char*** fun(**char** a[100])</span><br><span class="line">&#123;</span><br><span class="line">    **int** I;</span><br><span class="line">    **for** (I = 0; a[I] != ‘\0’; I++)&#123;</span><br><span class="line">        **if** (a[I] &gt;= ‘a’ &amp;&amp; a[I] &lt;= ‘z’)&#123;</span><br><span class="line">            a[I] -= 32;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    **return** a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**int** main()</span><br><span class="line">&#123;</span><br><span class="line">    **char** a[100];</span><br><span class="line">    printf(“请输入一个字符串：\n”);</span><br><span class="line">    fgets(a,100,stdin);  //不能用gets()函数</span><br><span class="line">    printf(“结果为：%s\n”,fun(a));</span><br><span class="line">    **return** 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>———</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/LeetCode/222-Getter与Setter(C++)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/222-Getter%E4%B8%8ESetter(C++)/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/222-Getter%E4%B8%8ESetter(C++)/">222-Getter与Setter(C++)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln582tvb3j30n00memy0.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln58f9fklj30l50ftt8v.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/LeetCode/225、用队列实现栈" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/225%E3%80%81%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/225%E3%80%81%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/">225、用队列实现栈</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln59nkhryj30i7073ab6.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5a232bfj30km0p7dhy.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/LeetCode/225-在链表中找节点" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/225-%E5%9C%A8%E9%93%BE%E8%A1%A8%E4%B8%AD%E6%89%BE%E8%8A%82%E7%82%B9/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/225-%E5%9C%A8%E9%93%BE%E8%A1%A8%E4%B8%AD%E6%89%BE%E8%8A%82%E7%82%B9/">225-在链表中找节点</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln58riz5uj30n00pfjry.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/LeetCode/37-反转一个3位整数(C、Java)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/37-%E5%8F%8D%E8%BD%AC%E4%B8%80%E4%B8%AA3%E4%BD%8D%E6%95%B4%E6%95%B0(C%E3%80%81Java)/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/37-%E5%8F%8D%E8%BD%AC%E4%B8%80%E4%B8%AA3%E4%BD%8D%E6%95%B4%E6%95%B0(C%E3%80%81Java)/">37-反转一个3位整数(C、Java)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>———————————————</p>
+<p>问题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln53usj0uj30n00q5wf1.jpg"></p>
+<p>——————————————————</p>
+<p>C解答：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**int** main()&#123;</span><br><span class="line">    //m是指输入的3位整数；a指百位；b指十位；c指个位；n指输出的反转的数</span><br><span class="line">    **int** m,n,a,b,c;</span><br><span class="line">    printf(“请输入一个三位整数：”);</span><br><span class="line">    scanf(“%d”,&amp;m);</span><br><span class="line">    </span><br><span class="line">    a=m/100;</span><br><span class="line">    c=m%10;</span><br><span class="line">    b=m/10%10;</span><br><span class="line">    </span><br><span class="line">    n=c*100+b*10+a;</span><br><span class="line">    printf(“反转后的三位整数是：%d\n”,n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln548q86cj30lw08sjsg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln54g1qiqj30lw01uaaa.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln54n3kk0j30lw01u3yq.jpg"></p>
+<p>————————</p>
+<p>Java解答：</p>
+<p>public class Solution{<br>    public int reverseInteger(int number){<br>        //获取个位数<br>        int num1=number % 10;<br>        //获取十位数<br>        int num2=(number / 10) % 10;<br>        //获取百位数<br>        int num3 =((number / 10) /10) % 10;<br>        //相加<br>        return num3+num2<em>10+num1</em>100;<br>    }<br>}</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln55eywzpj30an05ejs3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln55m1yplj30an05eq31.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/LeetCode/7、整数反转" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/7%E3%80%81%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/7%E3%80%81%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">整数反转</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln598wxoej30ll2ffk84.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/树的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">树的基本概念</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>树是n(n&gt;=0)个结点的有限集合，n=0时，称为空树</p>
+<p>而任意非空树应满足：</p>
+<ol>
+<li>有且仅有一个特定的称为根的结点</li>
+<li>当n&gt;1时，其余结点可分为m(m&gt;0)个互不相交的有限集合，其中每一个集合本身又是一棵树，称为根结点的子树</li>
+</ol>
+<p>基本术语：</p>
+<p>祖先结点和子孙结点、双亲结点和孩子结点、兄弟结点</p>
+<p>树中一个结点的子结点的个数称为该结点的度；<br>树中各结点度的最大值称为树的度</p>
+<p>度大于0的结点称为分支结点<br>度为0的结点称为叶子结点</p>
+<p>结点的层数【自顶向下】<br>结点的高度【自底向上】<br>结点的深度【自顶向下】<br>树的高度(深度)是树中结点的最大层数<br>树中每一层结点个数的最大值称为树的宽度</p>
+<p>路径：树中两个结点之间的路径是由这两个结点之间所经过的结点序列构成的【树中的分支是有向的，即从双亲结点指向孩子结点，所以路径一定是自上而下的】</p>
+<p>路径长度：路径上所经历边的个数</p>
+<p>有序树：树中任意结点的子结点之间有顺序关系<br>无序树：树中任意结点的子结点之间没有顺序关系，也叫自由树</p>
+<p>树的性质：</p>
+<ol>
+<li>n个结点的树中只有n-1条边</li>
+<li>树中的结点数等于所有结点的度数+1</li>
+<li>度为m的树中第i层上至多有m^(i-1)个结点(i&gt;=1)</li>
+<li>高度为h的m叉树至多有(m^h-1)/(m-1)个结点</li>
+<li>具有n个结点的m叉树的最小高度为<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goox9wo751j30bs03ca9w.jpg"></li>
+</ol>
+<p>森林：m(m&gt;=0)棵互不相交的树的集合</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/二叉树的概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/12/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5/" class="article-date">
+      <time datetime="2019-12-30T16:00:00.000Z" itemprop="datePublished">2019-12-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/12/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5/">二叉树的概念</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>二叉树是n(n&gt;=0)个结点的有限集合<br>1）n=0时，二叉树为空<br>2）n&gt;0时，由根结点和两个互不相交的被称为根的左子树和右子树组成，左子树和右子树也分别是一棵二叉树</p>
+<p>特点：</p>
+<ol>
+<li>每个结点最多有两颗子树，所以二叉树中不存在度大于2的结点</li>
+<li>二叉树的左右子树不能任意颠倒，如果某结点只有一棵子树，一定要指明它是左子树还是右子树</li>
+</ol>
+<p>二叉树 VS 度为2的有序树：<br>1）二叉树可以为空，而度为2的有序树至少有三个结点<br>2）二叉树的孩子结点始终有左右之分，而度为2的有序树的孩子结点次序是相对的</p>
+<p>斜树：所有结点都只有左子树的二叉树称为左斜树，所有结点都只有右子树的二叉树称为右斜树</p>
+<ol>
+<li>每一层只有一个结点</li>
+<li>斜树的结点个数与其深度相同</li>
+</ol>
+<p>满二叉树：一棵高度为h，且含有2^h-1个结点的二叉树为满二叉树【在一棵二叉树中，所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上】</p>
+<ol>
+<li>叶子只能出现在最下一层</li>
+<li>只有度为0和度为2的结点</li>
+</ol>
+<p>完全二叉树：设一个高度为h、有n个结点的二叉树，当且仅当其每个结点都与高度为h的满二叉树中编号1～n的结点一一对应时，称为完全二叉树</p>
+<ol>
+<li>深度为k的完全二叉树在k-1层是满二叉树</li>
+<li>叶子结点只能出现在最下两层，且最下层的叶子结点都集中在左侧连续的位置</li>
+<li>如果有度为1的结点，只可能有一个，且该结点只有左孩子<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooy3q1zfpj31ex0gawfe.jpg"></li>
+</ol>
+<p>完全二叉树的性质：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooy8enjvwj30sh0ct3zp.jpg"></p>
+<p>二叉排序树：一棵二叉树，若树非空则具有如下性质：对任意结点若存在左子树或右子树，则其左子树上所有结点的关键字均小于该结点，右子树上所有结点的关键字均大于该结点<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooyenczv9j30k20gbdfz.jpg"></p>
+<p>平衡二叉树：树上任意结点的左子树和右子树的高度差不超过1</p>
+<p>二叉树的性质：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gop2wubrjzj31100u0jvq.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/19/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/21/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

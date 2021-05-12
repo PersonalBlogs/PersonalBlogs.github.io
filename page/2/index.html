@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-代码仓库/iOS-功能demo/CALayer渐变" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/22/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E6%B8%90%E5%8F%98/" class="article-date">
+      <time datetime="2021-04-21T16:00:00.000Z" itemprop="datePublished">2021-04-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/22/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E6%B8%90%E5%8F%98/">CALayer渐变</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//CALayer渐变</span><br><span class="line">        //CALayer和UIView相似地方是，CALayer层也可以嵌套多个子CALayer层，从而实现多种多样的效果</span><br><span class="line">        </span><br><span class="line">        let rect = CGRect(x: 20, y: 60, width: 240, height: 240)</span><br><span class="line">        let gradientView = UIView(frame: rect)</span><br><span class="line">        </span><br><span class="line">        //创建了一个渐变层，并设置渐变层的frame属性与视图的frame属性相同</span><br><span class="line">        let gradientLayer = CAGradientLayer()</span><br><span class="line">        gradientLayer.frame = gradientView.frame</span><br><span class="line">        </span><br><span class="line">        //这三个颜色将作为渐变线上的起始颜色、中间颜色、结束颜色</span><br><span class="line">        let fromColor = UIColor.yellow.cgColor</span><br><span class="line">        let midColor = UIColor.blue.cgColor</span><br><span class="line">        let toColor = UIColor.red.cgColor</span><br><span class="line">        </span><br><span class="line">        gradientLayer.colors = [fromColor,midColor,toColor]</span><br><span class="line">        </span><br><span class="line">        gradientLayer.startPoint = CGPoint(x: 0, y: 0)  //渐变层的起始位置</span><br><span class="line">        gradientLayer.endPoint = CGPoint(x: 1, y: 1)  //渐变层的终点位置</span><br><span class="line">        </span><br><span class="line">        gradientLayer.locations = [0,0.3,1]  //设置了渐变层的各颜色点在颜色线中的分布情况：蓝色将位于渐变线30%的位置</span><br><span class="line">        </span><br><span class="line">        gradientView.layer.addSublayer(gradientLayer)</span><br><span class="line">        self.view.addSubview(gradientView)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/以模态方式弹出视图控制器并传参" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/21/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E4%BB%A5%E6%A8%A1%E6%80%81%E6%96%B9%E5%BC%8F%E5%BC%B9%E5%87%BA%E8%A7%86%E5%9B%BE%E6%8E%A7%E5%88%B6%E5%99%A8%E5%B9%B6%E4%BC%A0%E5%8F%82/" class="article-date">
+      <time datetime="2021-04-20T16:00:00.000Z" itemprop="datePublished">2021-04-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/21/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E4%BB%A5%E6%A8%A1%E6%80%81%E6%96%B9%E5%BC%8F%E5%BC%B9%E5%87%BA%E8%A7%86%E5%9B%BE%E6%8E%A7%E5%88%B6%E5%99%A8%E5%B9%B6%E4%BC%A0%E5%8F%82/">以模态方式弹出视图控制器并传参</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    var label: UILabel!  //该标签用来显示从模态窗口中返回的数据</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //UIViewController:视图控制器</span><br><span class="line">        //UITabBarController:标签控制器</span><br><span class="line">        //UINavigationController:导航控制器</span><br><span class="line">        </span><br><span class="line">        //以模态方式弹出视图控制器并传参</span><br><span class="line">        </span><br><span class="line">        //在ViewController.swift中添加一个按钮，当用户点击按钮时，以模态的方式弹出另一个视图控制器，同时向该视图控制器中传入参数</span><br><span class="line">        </span><br><span class="line">        self.view.backgroundColor = UIColor.brown</span><br><span class="line">        </span><br><span class="line">        label = UILabel(frame: CGRect(x: 40, y: 100, width: 240, height: 44))</span><br><span class="line">        label.text = &quot;&quot;</span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line">        </span><br><span class="line">        let button = UIButton(frame: CGRect(x: 40, y: 180, width: 240, height: 44))</span><br><span class="line">        button.setTitle(&quot;打开新的视图控制器&quot;, for: .normal)</span><br><span class="line">        button.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        //给按钮绑定了点击事件，当用户点击该按钮时，将调用相应的方法</span><br><span class="line">        button.addTarget(self, action: #selector(ViewController.openViewController), for: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(button)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    @objc func openViewController() &#123;</span><br><span class="line">        </span><br><span class="line">        let newViewController = NewViewController()</span><br><span class="line">        newViewController.labelTxt = &quot;传递的参数!&quot;</span><br><span class="line">        newViewController.viewController = self  //设置viewController属性为当前的视图控制器，该属性将被用来从模态视图控制器向当前的视图控制器中返回数据</span><br><span class="line">        self.present(newViewController, animated: true, completion: nil)  //以模态的方式显示新的视图控制器，第一个参数表示需要打开的视图控制器实例，第二个参数表示是否以动画的方式打开视图控制器，第三个参数表示视图控制器被打开后的回调方法</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class NewViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    weak var viewController: ViewController?  //弹出当前视图控制器的源视图控制器</span><br><span class="line">    var labelTxt = &quot;&quot;  //表示从源视图控制器中传进来的数据</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //在该类中添加一个标签对象的属性，用来显示从前一个视图控制器传递进来的数据</span><br><span class="line">        //还需要添加一个按钮对象，当用户点击该按钮时，退出当前的视图控制器，并返回原来的视图控制器，同时向原来的视图控制器返回数据</span><br><span class="line">        </span><br><span class="line">        self.view.backgroundColor = UIColor.purple</span><br><span class="line">        </span><br><span class="line">        let label = UILabel(frame: CGRect(x: 40, y: 100, width: 240, height: 44))</span><br><span class="line">        label.text = labelTxt</span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line">        </span><br><span class="line">        let button = UIButton(frame: CGRect(x: 40, y: 180, width: 240, height: 44))</span><br><span class="line">        button.setTitle(&quot;关闭&quot;, for: .normal)</span><br><span class="line">        button.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        //当用户点击按钮时，将退出当前的视图控制器，并返回源视图控制器</span><br><span class="line">        button.addTarget(self, action: #selector(NewViewController.dismissSelf), for: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(button)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func dismissSelf() &#123;</span><br><span class="line">        </span><br><span class="line">        viewController?.label.text = &quot;返回的参数.&quot;</span><br><span class="line">        self.dismiss(animated: true, completion: nil)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIScrollView" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/20/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIScrollView/" class="article-date">
+      <time datetime="2021-04-19T16:00:00.000Z" itemprop="datePublished">2021-04-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/20/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIScrollView/">UIScrollView</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class FirstViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        self.view.backgroundColor = UIColor.brown</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class SecondViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        self.view.backgroundColor = UIColor.purple</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">//让该类遵循UIScrollViewDelegate协议，从而可以检测滚动视图的状态</span><br><span class="line">class PageControlViewController: UIViewController, UIScrollViewDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    //在滚动ScrollView时可通过PageControl中的小白点来观察当前页面的位置，也可通过点击PageControl中的小白点来滚动到指定的页面</span><br><span class="line">    var scrollView = UIScrollView()  //滚动视图对象</span><br><span class="line">    var pageControl = UIPageControl()  //页面控制对象</span><br><span class="line">    </span><br><span class="line">    var isPageControlUsed = false  //用来判断是否使用了pageControl对象，如果没有使用pageControl对象，而是使用手指滑动scrollView进行内容的滚动查看，则在查看内容时可实时更新pageControl对象的状态</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //UIScrollView：UIScrollView是一个能够滚动的视图控件，可以用来展示大量内容，用户可通过在UIScrollView上滑动手指查看多个视图控制器中的内容</span><br><span class="line">        </span><br><span class="line">        //获得当前屏幕的frame属性以及相应的宽度和高度信息</span><br><span class="line">        var screenFrame = UIScreen.main.bounds</span><br><span class="line">        let screenWidth = screenFrame.size.width</span><br><span class="line">        let screenHeight = screenFrame.size.height</span><br><span class="line">        </span><br><span class="line">        scrollView.frame = screenFrame  //设置scrollView的显示区域与屏幕尺寸相同，以进行全屏显示</span><br><span class="line">        scrollView.isPagingEnabled = true  //即scrollView将以一整页为单位进行翻页操作</span><br><span class="line">        scrollView.contentSize = CGSize(width: screenWidth*2, height: screenHeight)  //因为我们需要scrollView在两个页面中分别显示两个视图控制器的内容</span><br><span class="line">        scrollView.backgroundColor = UIColor.black</span><br><span class="line">        scrollView.delegate = self  //设置scrollView的代理对象为当前的视图控制器对象</span><br><span class="line">        </span><br><span class="line">        //设置pageControl的显示区域位于屏幕的底部</span><br><span class="line">        let pcHeight: CGFloat = 50.0</span><br><span class="line">        let pcRect = CGRect(x: 0, y: screenHeight-pcHeight, width: screenWidth, height: pcHeight)</span><br><span class="line">        </span><br><span class="line">        pageControl.frame = pcRect</span><br><span class="line">        pageControl.numberOfPages = 2  //设置pageControl拥有两个小白点，以标识两页的内容</span><br><span class="line">        pageControl.currentPage = 0  //当前处于第一页</span><br><span class="line">        pageControl.backgroundColor = UIColor.gray</span><br><span class="line">        </span><br><span class="line">        pageControl.addTarget(self, action: #selector(PageControlViewController.pageControlDidChanged(_:)), for: UIControl.Event.valueChanged)</span><br><span class="line">        </span><br><span class="line">        //FirstViewController对象将位于scrollView中的第一页</span><br><span class="line">        let firstController = FirstViewController()</span><br><span class="line">        screenFrame.origin.x = 0</span><br><span class="line">        firstController.view.frame = screenFrame</span><br><span class="line">        </span><br><span class="line">        //SecondViewController对象将位于scrollView中的第二页</span><br><span class="line">        let secondController = SecondViewController()</span><br><span class="line">        screenFrame.origin.x = screenFrame.size.width</span><br><span class="line">        secondController.view.frame = screenFrame</span><br><span class="line">        </span><br><span class="line">        scrollView.addSubview(firstController.view)</span><br><span class="line">        scrollView.addSubview(secondController.view)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(scrollView)</span><br><span class="line">        self.view.addSubview(pageControl)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func pageControlDidChanged(_ sender: AnyObject) &#123;</span><br><span class="line">        </span><br><span class="line">        let crtPage = (CGFloat)(pageControl.currentPage)  //首先获得pageControl对象当前的页码</span><br><span class="line">        var frame = scrollView.frame</span><br><span class="line">        frame.origin.x = frame.size.width * crtPage</span><br><span class="line">        frame.origin.y = 0</span><br><span class="line">        </span><br><span class="line">        scrollView.scrollRectToVisible(frame, animated: true)  //将scrollView滚动到目标区域</span><br><span class="line">        isPageControlUsed = true</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //实现UIScrollViewDelegate协议中的scrollViewDidScroll方法，当用户使用手指滑动scrollView时将调用该方法</span><br><span class="line">    func scrollViewDidScroll(_ scrollView: UIScrollView) &#123;</span><br><span class="line">        </span><br><span class="line">        if !isPageControlUsed &#123;  //首先判断是否通过用户的手指进行scrollView的滑动</span><br><span class="line">            </span><br><span class="line">            //如果是，就监控scrollView在水平方向上的偏移值，当scrollView在水平方向上被拖动超过屏幕宽度一半距离时，计算pageControl对应的页码</span><br><span class="line">            let pageWidth = scrollView.frame.size.width</span><br><span class="line">            let page = floor((scrollView.contentOffset.x - pageWidth/2)/pageWidth) + 1</span><br><span class="line">            pageControl.currentPage = Int(page)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //实现UIScrollViewDelegate协议中的scrollViewDidEndDecelerating方法</span><br><span class="line">    //该方法将在scrollView减速至停止滚动时被调用</span><br><span class="line">    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) &#123;</span><br><span class="line">        isPageControlUsed = false</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class AppDelegate: UIResponder, UIApplicationDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    var window: UIWindow?</span><br><span class="line"></span><br><span class="line">    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool &#123;</span><br><span class="line">        // Override point for customization after application launch.</span><br><span class="line">        </span><br><span class="line">        self.window?.rootViewController = PageControlViewController()  //修改当前窗口的根视图控制器</span><br><span class="line">        </span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>最后别忘了设置默认启动界面！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UITabBarController" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/19/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UITabBarController/" class="article-date">
+      <time datetime="2021-04-18T16:00:00.000Z" itemprop="datePublished">2021-04-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/19/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UITabBarController/">UITabBarController</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class FirstViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        self.view.backgroundColor = UIColor.brown</span><br><span class="line">        self.title = &quot;Item #1&quot;  //该标题将显示在Tab上</span><br><span class="line">        self.tabBarItem.image = UIImage(named: &quot;Tab1&quot;)</span><br><span class="line">        </span><br><span class="line">        let label = UILabel(frame: CGRect(x: 40, y: 150, width: 240, height: 44))</span><br><span class="line">        label.text = &quot;第一页&quot;</span><br><span class="line">        label.textAlignment = NSTextAlignment.center</span><br><span class="line">        label.font = UIFont(name: &quot;Arial&quot;, size: 36)</span><br><span class="line">        </span><br><span class="line">        //当用户点击该按钮时，跳转到UITabBarController实例中的第二个界面</span><br><span class="line">        let button = UIButton(frame: CGRect(x: 40, y: 220, width: 240, height: 44))</span><br><span class="line">        button.setTitle(&quot;进入第二页&quot;, for: UIControl.State())</span><br><span class="line">        button.backgroundColor = UIColor.black</span><br><span class="line">        button.addTarget(self, action: #selector(FirstViewController.enterPage2), for: .touchUpInside)</span><br><span class="line">        self.view.addSubview(button)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当用户点击按钮时，首先通过tabBarController属性获得当前视图控制器所属的tabBarController，然后设置tabBarController对象的selectedIndex属性的值为1，即可进入tabBarController中的第二个界面</span><br><span class="line">    @objc func enterPage2() &#123;</span><br><span class="line">        self.tabBarController?.selectedIndex = 1</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class SecondViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        self.view.backgroundColor = UIColor.green</span><br><span class="line">        self.title = &quot;Item #2&quot;  //该标题将显示在Tab上</span><br><span class="line">        self.tabBarItem.image = UIImage(named: &quot;Tab2&quot;)</span><br><span class="line">        </span><br><span class="line">        let label = UILabel(frame: CGRect(x: 40, y: 150, width: 240, height: 44))</span><br><span class="line">        label.text = &quot;第二页&quot;</span><br><span class="line">        label.textAlignment = NSTextAlignment.center</span><br><span class="line">        label.font = UIFont(name: &quot;Arial&quot;, size: 36)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line">        </span><br><span class="line">        //在Tab图标上显示角标</span><br><span class="line">        self.tabBarItem.badgeValue = &quot;8&quot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ThirdViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        self.view.backgroundColor = UIColor.red</span><br><span class="line">        self.title = &quot;Item #3&quot;  //该标题将显示在Tab上</span><br><span class="line">        self.tabBarItem.image = UIImage(named: &quot;Tab3&quot;)</span><br><span class="line">        </span><br><span class="line">        let label = UILabel(frame: CGRect(x: 40, y: 150, width: 240, height: 44))</span><br><span class="line">        label.text = &quot;第三页&quot;</span><br><span class="line">        label.textAlignment = NSTextAlignment.center</span><br><span class="line">        label.font = UIFont(name: &quot;Arial&quot;, size: 36)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class AppDelegate: UIResponder, UIApplicationDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    var window: UIWindow?</span><br><span class="line"></span><br><span class="line">    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool &#123;</span><br><span class="line">        // Override point for customization after application launch.</span><br><span class="line">        </span><br><span class="line">        //这三个视图控制器将作为UITabBarController的子视图控制器</span><br><span class="line">        let firstViewController = FirstViewController()</span><br><span class="line">        let secondViewController = SecondViewController()</span><br><span class="line">        let thirdViewController = ThirdViewController()</span><br><span class="line">        </span><br><span class="line">        let tabViewController = UITabBarController()</span><br><span class="line">        </span><br><span class="line">        tabViewController.viewControllers = [firstViewController, secondViewController, thirdViewController]</span><br><span class="line">        </span><br><span class="line">        self.window?.rootViewController = tabViewController</span><br><span class="line">        </span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>因为有三个界面，所以要有三个viewController + 一个Tab Bar Controller属性【连线选择view controllers】</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UINavigationController" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/18/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UINavigationController/" class="article-date">
+      <time datetime="2021-04-17T16:00:00.000Z" itemprop="datePublished">2021-04-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/18/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UINavigationController/">UINavigationController</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class FirstViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //UINavigationController与UITabBarController的主要区别：UINavigationController是作为栈来实现的，它更适合用于处理和显示分层的数据</span><br><span class="line">        </span><br><span class="line">        self.title = &quot;第1页&quot;  //该属性的内容将显示在顶部的导航栏中</span><br><span class="line">        self.view.backgroundColor = UIColor.brown</span><br><span class="line">        </span><br><span class="line">        //重新创建了一个导航按钮UIBarButtonItem，并替换默认的导航栏右侧的按钮</span><br><span class="line">        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: &quot;下一页&quot;, style: UIBarButtonItem.Style.plain, target: self, action: #selector(FirstViewController.nextPage))</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //导航控制器拥有顶部的导航栏和底部的工具(标签)栏，在默认状态下，底部的工具栏处于隐藏状态</span><br><span class="line">    override func viewWillAppear(_ animated: Bool) &#123;</span><br><span class="line">        </span><br><span class="line">        super.viewWillAppear(animated)</span><br><span class="line">        </span><br><span class="line">        self.navigationController?.setToolbarHidden(false, animated: false)  //第一个参数表示工具条的可见性状态，第二个参数表示是否以动态的方式切换工具条的可见性状态</span><br><span class="line">        self.navigationController?.setNavigationBarHidden(false, animated: true)  //将顶部的导航栏显示</span><br><span class="line">        </span><br><span class="line">        self.navigationItem.prompt = &quot;正在载入...&quot;</span><br><span class="line">        </span><br><span class="line">        //UIBarButtonSystemItem是枚举类型，共包含24种按钮样式</span><br><span class="line">        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(FirstViewController.refresh))</span><br><span class="line">        </span><br><span class="line">        self.navigationController?.navigationBar.isTranslucent = true  //设置导航栏的背景为透明</span><br><span class="line">        </span><br><span class="line">        self.navigationController?.navigationBar.barStyle = UIBarStyle.black  //设置导航栏的样式为黑色主题</span><br><span class="line">        self.navigationController?.navigationBar.tintColor = UIColor.orange  //导航栏两侧的按钮为橙色</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func nextPage() &#123;</span><br><span class="line">        </span><br><span class="line">        //将实例化SecondViewController对象，然后获得当前视图控制器的导航控制器navigationController属性，并调用该属性的pushViewController方法加载新的视图控制器</span><br><span class="line">        let viewController = SecondViewController()</span><br><span class="line">        self.navigationController?.pushViewController(viewController, animated: true)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func refresh() &#123;</span><br><span class="line">        print(&quot;刷新数据.&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">var pageNum = 1  //作为当前视图控制器的序号</span><br><span class="line"></span><br><span class="line">class SecondViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line"></span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        pageNum = pageNum + 1  //每当SecondViewController视图控制器被创建新的实例时，将pageNum变量+1</span><br><span class="line">        </span><br><span class="line">        self.title = &quot;第\(pageNum)页&quot;</span><br><span class="line">        self.view.backgroundColor = UIColor.purple</span><br><span class="line">        </span><br><span class="line">        //将新的视图控制器Push到导航控制器的栈中</span><br><span class="line">        let push = UIButton(frame: CGRect(x: 40, y: 120, width: 240, height: 40))</span><br><span class="line">        push.setTitle(&quot;Push Page&quot;, for: UIControl.State())</span><br><span class="line">        push.backgroundColor = UIColor.orange</span><br><span class="line">        push.addTarget(self, action: #selector(SecondViewController.pushPage), for: UIControl.Event.touchUpInside)</span><br><span class="line">        self.view.addSubview(push)</span><br><span class="line">        </span><br><span class="line">        //将位于栈顶的视图控制器从导航控制器中Pop移除</span><br><span class="line">        let pop = UIButton(frame: CGRect(x: 40, y: 180, width: 240, height: 40))</span><br><span class="line">        pop.setTitle(&quot;Pop Page&quot;, for: UIControl.State())</span><br><span class="line">        pop.backgroundColor = UIColor.orange</span><br><span class="line">        pop.addTarget(self, action: #selector(SecondViewController.popPage), for: UIControl.Event.touchUpInside)</span><br><span class="line">        self.view.addSubview(pop)</span><br><span class="line">        </span><br><span class="line">        //将依次Pop位于栈顶的视图控制器，直至index所指定的位置</span><br><span class="line">        let index = UIButton(frame: CGRect(x: 40, y: 280, width: 240, height: 40))</span><br><span class="line">        index.setTitle(&quot;Goto Index Page&quot;, for: UIControl.State())</span><br><span class="line">        index.backgroundColor = UIColor.orange</span><br><span class="line">        index.addTarget(self, action: #selector(SecondViewController.gotoIndexPage), for: UIControl.Event.touchUpInside)</span><br><span class="line">        self.view.addSubview(index)</span><br><span class="line">        </span><br><span class="line">        //将Pop导航控制器堆栈中所有的视图控制器，仅保留根视图控制器</span><br><span class="line">        let root = UIButton(frame: CGRect(x: 40, y: 340, width: 240, height: 40))</span><br><span class="line">        root.setTitle(&quot;Goto Root Page&quot;, for: UIControl.State())</span><br><span class="line">        root.backgroundColor = UIColor.orange</span><br><span class="line">        root.addTarget(self, action: #selector(SecondViewController.gotoRootPage), for: UIControl.Event.touchUpInside)</span><br><span class="line">        self.view.addSubview(root)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func pushPage() &#123;</span><br><span class="line">        </span><br><span class="line">        let viewController = SecondViewController()</span><br><span class="line">        self.navigationController?.pushViewController(viewController, animated: true)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func popPage() &#123;</span><br><span class="line">        self.navigationController?.popViewController(animated: true)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func gotoIndexPage() &#123;</span><br><span class="line">        let viewController = self.navigationController?.viewControllers[1]</span><br><span class="line">        self.navigationController?.popToViewController(viewController!, animated: true)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func gotoRootPage() &#123;</span><br><span class="line">        self.navigationController?.popViewController(animated: true)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class AppDelegate: UIResponder, UIApplicationDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    var window: UIWindow?</span><br><span class="line"></span><br><span class="line">    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool &#123;</span><br><span class="line">        // Override point for customization after application launch.</span><br><span class="line">        </span><br><span class="line">        //将FirstViewController视图控制器作为导航视图控制器的根视图控制器</span><br><span class="line">        let viewController = FirstViewController()</span><br><span class="line">        let navigationController = UINavigationController(rootViewController: viewController)</span><br><span class="line">        </span><br><span class="line">        //将导航控制器作为当前应用程序窗口的根视图控制器</span><br><span class="line">        self.window?.rootViewController = navigationController</span><br><span class="line">        </span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>只有一个viewController + Navigation Controller属性</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIButton" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/16/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIButton/" class="article-date">
+      <time datetime="2021-04-15T16:00:00.000Z" itemprop="datePublished">2021-04-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/16/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIButton/">UIButton</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">/*</span><br><span class="line">        //依次创建了6种不同样式的UIButton按钮</span><br><span class="line">        let buttonTypes: [UIButton.ButtonType] = [.system, .contactAdd, .detailDisclosure, .infoDark, .infoLight, .roundedRect]</span><br><span class="line">        </span><br><span class="line">        for i in 0..&lt;buttonTypes.count &#123;</span><br><span class="line">            </span><br><span class="line">            let button = UIButton(type: buttonTypes[i])</span><br><span class="line">            button.frame = CGRect(x: 100, y: 50 + i*50, width: 120, height: 30)</span><br><span class="line">            </span><br><span class="line">            if i == 0 || i == 5 &#123;</span><br><span class="line">                button.setTitle(&quot;Button \(i+1)&quot;, for: .normal)</span><br><span class="line">            &#125;</span><br><span class="line">            self.view.addSubview(button)</span><br><span class="line">        &#125;</span><br><span class="line">*/</span><br><span class="line">  </span><br><span class="line">/*</span><br><span class="line">        //UIButton按钮的状态</span><br><span class="line">        let titleStates: [String] = [&quot;正常状态&quot;, &quot;高亮状态&quot;, &quot;选中状态&quot;, &quot;失效状态&quot;]</span><br><span class="line">        let buttonStates: [UIControl.State] = [.normal, .highlighted, .selected, .disabled]</span><br><span class="line">        </span><br><span class="line">        let button1 = UIButton(type: .system)</span><br><span class="line">        button1.frame = CGRect(x: 80, y: 50, width: 140, height: 30)</span><br><span class="line">        button1.setTitle(titleStates[0], for: buttonStates[0])</span><br><span class="line">        self.view.addSubview(button1)</span><br><span class="line">        </span><br><span class="line">        //设置按钮的背景图片</span><br><span class="line">        //button1.setBackgroundImage(UIImage(named: &quot;&quot;), for: UIControl.State.normal)</span><br><span class="line">        </span><br><span class="line">        let button2 = UIButton(type: .system)</span><br><span class="line">        button2.frame = CGRect(x: 80, y: 100, width: 140, height: 30)</span><br><span class="line">        button2.setTitle(titleStates[1], for: buttonStates[1])</span><br><span class="line">        button2.isHighlighted = true  //将按钮设置为高亮状态</span><br><span class="line">        self.view.addSubview(button2)</span><br><span class="line">        </span><br><span class="line">        let button3 = UIButton(type: .system)</span><br><span class="line">        button3.frame = CGRect(x: 80, y: 150, width: 140, height: 30)</span><br><span class="line">        button3.setTitle(titleStates[2], for: buttonStates[2])</span><br><span class="line">        button3.isSelected = true  //将按钮设置为选中状态</span><br><span class="line">        self.view.addSubview(button3)</span><br><span class="line">        </span><br><span class="line">        let button4 = UIButton(type: .system)</span><br><span class="line">        button4.frame = CGRect(x: 80, y: 200, width: 140, height: 30)</span><br><span class="line">        button4.setTitle(titleStates[3], for: buttonStates[3])</span><br><span class="line">        button4.isEnabled = false  //将按钮设置为失效状态</span><br><span class="line">        self.view.addSubview(button4)</span><br><span class="line">        </span><br><span class="line">*/</span><br><span class="line">        </span><br><span class="line">        //UIButton按钮使用Target-Action(目标-动作)设计模式来响应用户的触摸事件，该设计模式可以让代码解耦，使代码之间关联性降低，以便于后期的维护</span><br><span class="line">        let button = UIButton(type: UIButton.ButtonType.roundedRect)</span><br><span class="line">        button.frame = CGRect(x: 20, y: 100, width: 280, height: 44)</span><br><span class="line">        button.backgroundColor = UIColor.purple</span><br><span class="line">        button.tintColor = UIColor.yellow  //按钮的前景颜色</span><br><span class="line">        button.setTitle(&quot;Tap Me&quot;, for: .normal)</span><br><span class="line">        </span><br><span class="line">        //当用户按下按钮并抬起手指时，触发该事件执行buttonTapped方法</span><br><span class="line">        button.addTarget(self, action: #selector(ViewController.buttonTapped(_ :)), for: UIControl.Event.touchUpInside)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(button)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func buttonTapped(_ button:UIButton) &#123;</span><br><span class="line">        </span><br><span class="line">        button.setTitle(&quot;The button is tapped.&quot;, for: .normal)</span><br><span class="line">        button.isEnabled = false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UILabel" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/15/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UILabel/" class="article-date">
+      <time datetime="2021-04-14T16:00:00.000Z" itemprop="datePublished">2021-04-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/15/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UILabel/">UILabel</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">/*</span><br><span class="line">        let label = UILabel(frame: CGRect(x: 20, y: 100, width: 280, height: 80))</span><br><span class="line">        label.text = &quot;Hello,Xcode and Swift!&quot;</span><br><span class="line">        label.font = UIFont(name: &quot;Arial&quot;, size: 24)  //设置文字的字体和尺寸</span><br><span class="line">        </span><br><span class="line">        label.textAlignment = NSTextAlignment.right  //设置文字的对齐方式为右对齐</span><br><span class="line">        label.textColor = UIColor.purple</span><br><span class="line">        label.backgroundColor = UIColor.yellow</span><br><span class="line">        </span><br><span class="line">        label.shadowColor = UIColor.lightGray  //给标签中的文字添加了一个投影效果，阴影的颜色为浅灰色</span><br><span class="line">        label.shadowOffset = CGSize(width: 2, height: 2)  //阴影的偏移距离为2</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line"> */</span><br><span class="line">        </span><br><span class="line">/*</span><br><span class="line">        //UILabel在默认状态下只显示一行文字内容</span><br><span class="line">        let label = UILabel(frame: CGRect(x: 10, y: 100, width: 300, height: 150))</span><br><span class="line">        label.text = &quot;Love you、think of you.love you secretly,love you eagerly,wait,feel disappointed,try hard,lose,and feel sad,go apart,and recall.these are for sake of you.And I will regret for it.&quot;</span><br><span class="line">        </span><br><span class="line">        label.backgroundColor = UIColor.yellow</span><br><span class="line">        label.textColor = UIColor.purple</span><br><span class="line">        label.textAlignment = NSTextAlignment.left</span><br><span class="line">        </span><br><span class="line">        label.numberOfLines = 0  //将它设置为一个大于1的值，文本的行数将会被限制为这个指定的值，若设置为0，则UILabel不管文本占多少行都可以显示所有的文字内容</span><br><span class="line">        label.lineBreakMode = NSLineBreakMode.byTruncatingTail  //结尾部分的内容以...方式省略</span><br><span class="line">        //换行模式：</span><br><span class="line">        //byWordWrapping：默认状态，当单词本身不适合一行显示时，换行将发生在单词的边界上</span><br><span class="line">        //byCharWrapping：换行发生在到达标签边界的第一个字符之前</span><br><span class="line">        //byClipping：超过文本容器边界的文本行的内容将不会被绘制</span><br><span class="line">        //byTruncatingHead：在行首进行剪切，并以...表示被剪切的文字</span><br><span class="line">        //byTruncatingTail：在行尾进行剪切，并以...表示被剪切的文字</span><br><span class="line">        //byTruncatingMiddle：在行中进行剪切，并以...表示被剪切的文字</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line"> </span><br><span class="line">*/</span><br><span class="line">        </span><br><span class="line">        //在一个UILabel中使用不同的颜色、不同的字体样式来设置字符串中的不同区域的文字</span><br><span class="line">        let attributedText = NSMutableAttributedString(string: &quot;coolketang.com&quot;)</span><br><span class="line">        </span><br><span class="line">        //设置字符串的前4个字符的样式为加粗的48号字体</span><br><span class="line">        attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 48), range: NSMakeRange(0, 4))</span><br><span class="line">        </span><br><span class="line">        //设置字符串第5～11个字符的字体颜色为紫色</span><br><span class="line">        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.purple, range: NSMakeRange(4, 7))</span><br><span class="line">        </span><br><span class="line">        //设置字符串最后三个字符的背景颜色为橙色</span><br><span class="line">        attributedText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.orange, range: NSMakeRange(11, 3))</span><br><span class="line">        </span><br><span class="line">        let rect = CGRect(x: 20, y: 100, width: 280, height: 60)</span><br><span class="line">        let label = UILabel(frame: rect)</span><br><span class="line">        label.attributedText = attributedText</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UISwitch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/14/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UISwitch/" class="article-date">
+      <time datetime="2021-04-13T16:00:00.000Z" itemprop="datePublished">2021-04-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/14/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UISwitch/">UISwitch</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //设置其宽度和高度的值是无意义的</span><br><span class="line">        let uiSwitch = UISwitch(frame: CGRect(x: 130, y: 100, width: 0, height: 0))</span><br><span class="line">        </span><br><span class="line">        //三种颜色属性</span><br><span class="line">        uiSwitch.tintColor = UIColor.brown</span><br><span class="line">        uiSwitch.thumbTintColor = UIColor.purple</span><br><span class="line">        uiSwitch.onTintColor = UIColor.orange</span><br><span class="line">        </span><br><span class="line">        uiSwitch.setOn(true, animated: true)  //设置了开关控件的默认状态为激活状态</span><br><span class="line">        </span><br><span class="line">        uiSwitch.addTarget(self, action: #selector(ViewController.switchChanged(_ :)), for: UIControl.Event.valueChanged)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(uiSwitch)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //通过属性isOn来获取UISwitch开关对象的布尔值</span><br><span class="line">    @objc func switchChanged(_ uiSwitch: UISwitch) &#123;</span><br><span class="line">        </span><br><span class="line">        var message = &quot;Turn on the switch.&quot;</span><br><span class="line">        </span><br><span class="line">        if !uiSwitch.isOn &#123;</span><br><span class="line">            message = &quot;Turn off the switch.&quot;</span><br><span class="line">        &#125;</span><br><span class="line">        print(message)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UITextField" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/13/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UITextField/" class="article-date">
+      <time datetime="2021-04-12T16:00:00.000Z" itemprop="datePublished">2021-04-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/13/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UITextField/">UITextField</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">//遵循UITextFieldDelegate协议，这样我们就可以使用协议中的方法对UITextField对象进行状态的检测</span><br><span class="line">class ViewController: UIViewController, UITextFieldDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    var textField: UITextField!  //方便在键盘弹出和收起时修改UITextField对象的位置</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        /*</span><br><span class="line">        </span><br><span class="line">         当创建一个UITextField对象时，在配置UITextField界面属性的同时，往往还需要设置UITextField对象的代理，通过代理可以完成很多重要的任务</span><br><span class="line">         1.检测用户是否被允许编辑UITextField中的内容</span><br><span class="line">         2.检测用户输入文本的合法性</span><br><span class="line">         3.检测键盘的return按钮是否被点击</span><br><span class="line">         4.将用户输入的文本转发到应用程序的其他部分</span><br><span class="line">         </span><br><span class="line">        */</span><br><span class="line">        </span><br><span class="line">        /*</span><br><span class="line">        </span><br><span class="line">        let textField = UITextField(frame: CGRect(x: 30, y: 80, width: 260, height: 40))</span><br><span class="line">        </span><br><span class="line">        textField.borderStyle = UITextField.BorderStyle.roundedRect  //边框样式：.line、.none</span><br><span class="line">        textField.placeholder = &quot;Your Password&quot;  //placeholder常用于提示用户在textField对象中输入什么样的内容</span><br><span class="line">        textField.autocorrectionType = UITextAutocorrectionType.no  //若该值为yes，则将自动检测textField区域中的文字是不是有拼写错误或无法识别的文字内容，然后自动将错误的文字内容替换为系统建议的文字</span><br><span class="line">        textField.returnKeyType = UIReturnKeyType.done  //UIReturnKeyType共包含done、continue、search等12个枚举值，它的主要作用是在键盘中的return key上显示指定的文字内容，仅是更改显示内容从而起到提醒用户的作用，并不会对return key的实际功能产生任何影响</span><br><span class="line">        textField.clearButtonMode = UITextField.ViewMode.whileEditing  //在用户输入、编辑文本时，在textField输入框的右侧显示一个删除图标</span><br><span class="line">        textField.keyboardType = UIKeyboardType.default  //UIKeyboardType共包含13个枚举值，用来适配用户名输入、手机号码输入等不同的使用场景：.emailAddress、.phonePad、.numberPad</span><br><span class="line">        textField.keyboardAppearance = UIKeyboardAppearance.dark  //设置键盘的外观为暗色模式，.light亮色模式</span><br><span class="line">        textField.isSecureTextEntry = true  //这样输入的字符将显示为小圆点，从而起到保护内容的作用，常用于密码输入的工作环境</span><br><span class="line">        </span><br><span class="line">        //在textField显示区域的左侧显示一个小图标</span><br><span class="line">        let lock = UIImage(named: &quot;lock&quot;)</span><br><span class="line">        let lockView = UIImageView(image: lock)</span><br><span class="line">        lockView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)</span><br><span class="line">        textField.leftView = lockView</span><br><span class="line">        textField.leftViewMode = .always</span><br><span class="line">        </span><br><span class="line">        textField.delegate = self  //设置textField对象的代理为当前的视图控制器</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(textField)</span><br><span class="line"> </span><br><span class="line">        */</span><br><span class="line">        </span><br><span class="line">        textField = UITextField(frame: CGRect(x: 30, y: 680, width: 260, height: 30))</span><br><span class="line">        textField.borderStyle = UITextField.BorderStyle.roundedRect</span><br><span class="line">        textField.placeholder = &quot;Your Number&quot;</span><br><span class="line">        </span><br><span class="line">        textField.delegate = self</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(textField)</span><br><span class="line">        </span><br><span class="line">        //观察者模式: 一个对象的变化,能够被另一个对象知道</span><br><span class="line">        //使用通知的方式监测键盘的显示和隐藏，通过NotificationCenter创建两个观察者，分别监测键盘的显示和隐藏事件，当键盘显示或隐藏时，通过动态调整文字输入框的位置来避免键盘的遮挡</span><br><span class="line">        //对keyboardWillShowNotification事件进行观察和监听，当事件发生时，调用keyboardWillShow方法</span><br><span class="line">        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)</span><br><span class="line">        </span><br><span class="line">        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /*</span><br><span class="line">    </span><br><span class="line">    //添加一个代理方法，用来响应键盘的return key被点击的事件，当键盘上的return key被点击时，通过resignFirstResponder()方法取消textField的焦点状态，从而隐藏键盘的显示</span><br><span class="line">    func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool &#123;</span><br><span class="line">        </span><br><span class="line">        textField.resignFirstResponder()</span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    */</span><br><span class="line">    </span><br><span class="line">    func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool &#123;</span><br><span class="line">        </span><br><span class="line">        textField.resignFirstResponder()</span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func keyboardWillShow(_ notification: Notification?) &#123;</span><br><span class="line">        textField.frame = CGRect(x: 30, y: 480, width: 260, height: 30)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func keyboardWillHide(_ notification: Notification?) &#123;</span><br><span class="line">        textField.frame = CGRect(x: 30, y: 680, width: 260, height: 30)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIAlertController" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/12/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIAlertController/" class="article-date">
+      <time datetime="2021-04-11T16:00:00.000Z" itemprop="datePublished">2021-04-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/12/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIAlertController/">UIAlertController</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //创建一个警告窗口</span><br><span class="line">        let button = UIButton(type: UIButton.ButtonType.system)</span><br><span class="line">        button.frame = CGRect(x: 20, y: 120, width: 280, height: 44)</span><br><span class="line">        button.setTitle(&quot;Question&quot;, for: .normal)</span><br><span class="line">        </span><br><span class="line">        //当点击该按钮时，执行一个方法以弹出警告窗口</span><br><span class="line">        //button.addTarget(self, action: #selector(ViewController.showAlert), for: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        //当点击该按钮时，执行一个方法以弹出动作表单</span><br><span class="line">        button.addTarget(self, action: #selector(ViewController.showActionSheet), for: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        button.backgroundColor = UIColor.orange</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(button)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func showAlert() &#123;</span><br><span class="line">        </span><br><span class="line">        //preferredStyle属性的值是一个UIAlertController.Style类型的枚举，该枚举包含UIAlertController.Style.alert和UIAlertController.Style.actionSheet，分别用来创建警告窗口和动作表单</span><br><span class="line">        let alert = UIAlertController(title: &quot;Information&quot;, message: &quot;Are you a student?&quot;, preferredStyle: UIAlertController.Style.alert)</span><br><span class="line">        </span><br><span class="line">        //UIAlertAction是指警告窗口中的供用户选择点击的选项按钮</span><br><span class="line">        //style是枚举类型：包含default、destructive、cancel三个不同的值</span><br><span class="line">        //handler是用户点击该选项按钮时所执行的动作，具体的任务在后面的闭包语句里执行</span><br><span class="line">        let yes = UIAlertAction(title: &quot;Yes&quot;, style: UIAlertAction.Style.default, handler: &#123; (alerts: UIAlertAction) -&gt; Void in</span><br><span class="line">            print(&quot;Yes,I&#x27;m a student.&quot;)</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        let no = UIAlertAction(title: &quot;No&quot;, style: UIAlertAction.Style.destructive, handler: &#123; (alerts: UIAlertAction) -&gt; Void in</span><br><span class="line">            print(&quot;No,I&#x27;m not a student.&quot;)</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        let cancel = UIAlertAction(title: &quot;Cancel&quot;, style: UIAlertAction.Style.cancel, handler: nil)</span><br><span class="line">        </span><br><span class="line">        //将三个选项按钮添加到警告窗口中，然后以模态的方式在当前的视图控制器中打开警告窗口</span><br><span class="line">        alert.addAction(yes)</span><br><span class="line">        alert.addAction(no)</span><br><span class="line">        alert.addAction(cancel)</span><br><span class="line">        self.present(alert, animated: true, completion: nil)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //和警告窗口不同的是，动作表单的展示形式和设备大小有关，在iPhone上，动作表单从屏幕底部升起，在iPad上，动作表单则是以弹出框的形式展现的</span><br><span class="line">    @objc func showActionSheet() &#123;</span><br><span class="line">        </span><br><span class="line">        //创建了一个动作表单</span><br><span class="line">        let actionSheet = UIAlertController(title: &quot;Information&quot;, message: &quot;What&#x27;s your favorite?&quot;, preferredStyle: UIAlertController.Style.actionSheet)</span><br><span class="line">        </span><br><span class="line">        let fishing = UIAlertAction(title: &quot;Fishing&quot;, style: UIAlertAction.Style.default, handler: &#123; (alerts: UIAlertAction) -&gt; Void in</span><br><span class="line">            print(&quot;I like fishing.&quot;)</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        let hunting = UIAlertAction(title: &quot;Hunting&quot;, style: UIAlertAction.Style.destructive, handler: &#123; (alerts: UIAlertAction) -&gt; Void in</span><br><span class="line">            print(&quot;I like hunting.&quot;)</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        //注意：如果动作表单中有style为cancel的按钮，那么它永远都会出现在表单列表的底部，无论添加的次序是怎样的，而其他按钮则会按照添加的次序从上往下依次显示</span><br><span class="line">        let nothing = UIAlertAction(title: &quot;Nothing&quot;, style: UIAlertAction.Style.cancel, handler: &#123; (alerts: UIAlertAction) -&gt; Void in</span><br><span class="line">            print(&quot;A Life of Nonsense.&quot;)</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        actionSheet.addAction(fishing)</span><br><span class="line">        actionSheet.addAction(hunting)</span><br><span class="line">        actionSheet.addAction(nothing)</span><br><span class="line">        self.present(actionSheet, animated: true) &#123;</span><br><span class="line">            </span><br><span class="line">            print(&quot;What&#x27;s your favorite?&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/"></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/3/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

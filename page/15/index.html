@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/15/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-计算机网络原理/计算机网络原理/IP数据报分片" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%88%86%E7%89%87/" class="article-date">
+      <time datetime="2020-07-28T16:00:00.000Z" itemprop="datePublished">2020-07-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%88%86%E7%89%87/">IP数据报分片</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjmx9f9hj30ge09hjse.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/IPv4地址" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IPv4%E5%9C%B0%E5%9D%80/" class="article-date">
+      <time datetime="2020-07-27T16:00:00.000Z" itemprop="datePublished">2020-07-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IPv4%E5%9C%B0%E5%9D%80/">IPv4地址</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>IPv4地址：</p>
+<p>IP编址的历史阶段：<br>1）分类的IP地址<br>2）子网的划分<br>3）构成超网（无分类编址方法）</p>
+<p>——————————————————</p>
+<p>分类的IP地址：</p>
+<p>IP地址：全世界唯一的32位/4字节标识符，标识路由器主机的接口【&lt;网络号&gt;&lt;主机号&gt;】</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjorjhnyj30ge02vmxf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjp1yyanj30v80ejwj8.jpg"></p>
+<p>特殊IP地址：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjpb7m25j31000htth6.jpg"></p>
+<p>私有IP地址：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjpjgbiaj30r109s767.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjpr56nqj312r058goh.jpg"></p>
+<p>——————————————</p>
+<p>路由器对目的地址是私有IP地址的数据报一律不进行转发</p>
+<p>网络地址转换NAT：在专用网连接到因特网的路由器上安装NAT软件，安装了NAT软件的路由器叫NAT路由器，它至少有一个有效的外部全球IP地址<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjq1osg4j311k0ff482.jpg"></p>
+<p>—————————————</p>
+<p>子网划分和子网掩码：</p>
+<p>分类的IP地址的弱点：<br>1）IP地址空间的利用率有时很低<br>2）两级IP地址不够灵活</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjqxnqvhj30ge08qgmv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjr64e9zj311w0i3n62.jpg"></p>
+<p>子网掩码（相与：相同为1，不同为0）：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjrfbgijj30wn0giahe.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjrmkrr0j30ii0dbtaj.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjsj4jiuj30ge0jvmzz.jpg"></p>
+<p>使用子网时分组的转发：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjsxfyj7j313y0hugvy.jpg"></p>
+<p>———————————————</p>
+<p>无分类编址CIDR：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjtng9xsj30ge0idtby.jpg"></p>
+<p>构成超网：将多个子网聚合成一个较大的子网，叫做构成超网，或路由聚合</p>
+<p>方法：将网络前缀缩短<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjtzkt3ej30sc0b70xd.jpg"></p>
+<p>最长前缀匹配：使用CIDR时，查找路由表可能得到几个匹配结果，应选择具有最长网络前缀的路由，前缀越长，地址块越小，路由越具体<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjurtsp9j30ge0dhabz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjveu82qj30ge08mwgf.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/ARP协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/ARP%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-07-26T16:00:00.000Z" itemprop="datePublished">2020-07-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/ARP%E5%8D%8F%E8%AE%AE/">ARP协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>ARP协议：</p>
+<p>发送数据的过程：<br>1）从主机1—&gt;主机3<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjxkzb84j312n0frgtr.jpg"><br>2）从主机1—&gt;主机5<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjxsi66wj312w0gidos.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjxzyw0dj312k0g7wn2.jpg"></p>
+<p>由于在实际网络的链路上传送数据帧时，最终必须使用MAC地址</p>
+<p>ARP协议：完成主机或路由器IP地址到MAC地址的映射（解决下一跳走哪的问题）</p>
+<p>ARP协议使用过程：检查ARP高速缓存，有对应表项则写入MAC帧，没有则用目的MAC地址为FF-FF-FF-FF-FF-FF的帧封装并广播ARP请求分组，同一局域网中所有主机都能收到该请求。目的主机收到请求后就会向源主机单播一个ARP响应分组，源主机收到后将此映射写入ARP缓存（10～20min更新一次）</p>
+<p>ARP协议的4种典型情况（ARP协议自动进行）：<br>1）主机A发给本网络上的主机B：用ARP找到主机B的硬件地址<br>2）主机A发给另一网络上的主机B：用ARP找到本网络上一个路由器（网关）的硬件地址<br>3）路由器发给本网络的主机A：用ARP找到主机A的硬件地址<br>4）路由器发给另一网络的主机B：用ARP找到本网络上的一个路由器的硬件地址</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/DHCP协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/DHCP%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-07-25T16:00:00.000Z" itemprop="datePublished">2020-07-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/DHCP%E5%8D%8F%E8%AE%AE/">DHCP协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>DHCP协议：</p>
+<p>主机如何获得IP地址：<br>1）静态配置：IP地址、子网掩码、默认网关<br>2）动态配置：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjz6ggh1j30bx07j0tw.jpg"></p>
+<p>DHCP协议：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjzfcv7gj313r0hlgwe.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/ICMP协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/ICMP%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-07-24T16:00:00.000Z" itemprop="datePublished">2020-07-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/ICMP%E5%8D%8F%E8%AE%AE/">ICMP协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>ICMP协议：</p>
+<p>TCP/IP协议栈：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk0m22eoj30jt0dwacj.jpg"><br>ICMP协议：为了更有效的转发IP数据报和提高交付成功的机会</p>
+<p>网际控制报文协议ICMP：ICMP协议支持主机或路由器：差错（或异常）报告、网络探询，发送特定ICMP报文【ICMP差错报文、ICMP询问报文】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk0v92k8j30rc0cvag4.jpg"></p>
+<p>ICMP差错报告报文：<br>1）终点不可达：当路由器或主机不能交付数据报时就向源点发送终点不可达报文【无法交付】<br>2）源点抑制：当路由器或主机由于拥塞而丢弃数据报时，就向源点发送源点抑制报文，使源点知道应当把数据报的发送速率放慢【拥塞丢数据】<br>3）时间超过：当路由器收到生存时间TTL=0的数据报时，除丢弃该数据报外，还要向源点发送时间超过报文。当终点在预先规定的时间内不能收到一个数据报的全部数据报片时，就把已收到的数据报片都丢弃，并向源点发送时间超过报文【TTL=0】<br>4）参数问题：当路由器或目的主机收到的数据报的首部中有的字段的值不正确时，就丢弃该数据报，并向源点发送参数问题报文【首部字段有问题】<br>5）改变路由（重定向）：路由器把改变路由报文发送给主机，让主机知道下次应将数据报发送给另外的路由器（可通过更好的路由）【值得更好的路由】</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk15speuj30uf0cn7b8.jpg"></p>
+<p>不应发送ICMP差错报文的情况：<br>1）对ICMP差错报告报文不再发送ICMP差错报告报文<br>2）对第一个分片的数据报片的所有后续数据报片都不发送ICMP差错报告报文<br>3）对具有组播地址的数据报都不发送ICMP差错报告报文【广播是一对全部；组播是一对多，有选择性的】<br>4）对具有特殊地址（如127.0.0.0或0.0.0.0）的数据报不发送ICMP差错报告报文</p>
+<p>ICMP询问报文：<br>1）回送请求和回答报文：主机或路由器向特定目的主机发出的询问，收到此报文的主机必须给源主机或路由器发送ICMP回送回答报文【测试目的站是否可达以及了解其相关状态】<br>2）时间戳请求和回答报文：请某个主机或路由器回答当前的日期和时间【用来进行时钟同步和测量时间】<br>3）掩码地址请求和回答报文<br>4）路由器询问和通告报文</p>
+<p>ICMP的应用：<br>1）PING：测试两个主机之间的连通性，使用了ICMP回送请求和回答报文<br>2）Traceroute：跟踪一个分组从源点到终点的路径，使用了ICMP时间超过差错报告报文</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/IPv6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IPv6/" class="article-date">
+      <time datetime="2020-07-23T16:00:00.000Z" itemprop="datePublished">2020-07-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IPv6/">IPv6</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>IPv6：</p>
+<p>为什么有IPv6：<br>1）32位IPv4地址空间已分配殆尽，CIDR、NAT治标不治本；IPv6从根本上解决了地址耗尽问题<br>2）改进首部格式<br>3）快速处理/转发数据报<br>4）支持QoS<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk2n3kkqj30dl04vtah.jpg"></p>
+<p>IPv6数据报格式：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk335ivej30w108mgpv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk3tyn6fj30ge0g477h.jpg"></p>
+<p>IPv6和IPv4：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk46kdd4j311h0din68.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk4tj6pmj30ge0btwg6.jpg"></p>
+<p>IPv6基本地址类型：<br>1）单播：一对一通信，可做源地址+目的地址<br>2）多播：一对多通信，可做目的地址<br>3）任播：一对多中的一个通信，可做目的地址</p>
+<p>IPv6向IPv4过渡的策略：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosk7socfpj311c0gi49p.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/路由算法与路由协议概述" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95%E4%B8%8E%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0/" class="article-date">
+      <time datetime="2020-07-22T16:00:00.000Z" itemprop="datePublished">2020-07-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95%E4%B8%8E%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E6%A6%82%E8%BF%B0/">路由算法与路由协议概述</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>路由算法与路由协议概述：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskagiafzj30xz0eqwk0.jpg"></p>
+<p>路由算法的分类：<br>1）静态路由算法（非自适应路由算法）：管理员手工配置路由信息【简便、可靠，在负荷稳定、拓扑变化不大的网络中运行效果很好，广泛用于高度安全性的军事网络和较小的商业网络】【路由更新慢，不适用大型网络】<br>2）动态路由算法（自适应路由算法）：路由期间彼此交换信息，按照路由算法优化出路由表项【路由更新快，适用大型网络，及时响应链路费用或网络拓扑变化】【算法复杂，增加网络负担】</p>
+<p>动态路由算法：<br>1）全局性：链路状态路由算法：OSPF协议，所有路由器掌握完整的网络拓扑和链路费用信息<br>2）分散性：距离向量路由算法：RIP协议，路由器只掌握物理相连的邻居及链路费用</p>
+<p>分层次的路由选择协议：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskaw333ij31180ft75k.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskbc2n1wj30ru071q68.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/RIP协议与距离向量算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/RIP%E5%8D%8F%E8%AE%AE%E4%B8%8E%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E7%AE%97%E6%B3%95/" class="article-date">
+      <time datetime="2020-07-21T16:00:00.000Z" itemprop="datePublished">2020-07-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/RIP%E5%8D%8F%E8%AE%AE%E4%B8%8E%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E7%AE%97%E6%B3%95/">RIP协议与距离向量算法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>RIP协议与距离向量算法：</p>
+<p>RIP是一种分布式的基于距离向量的路由选择协议，是因特网的协议标准，最大优点是简单</p>
+<p>RIP协议要求网络中每一个路由器都维护从它自己到其他每一个目的网络的唯一最佳距离记录（即一组距离）</p>
+<p>距离：通常为“跳数”，即从源端口到目的端口所经过的路由器个数，经过一个路由器跳数+1。特别的，从一路由器到直接连接的网络距离为1，RIP允许一条路由最多只能包含15个路由器，因此距离为16表示网络不可达</p>
+<p>RIP协议只适用于小互联网<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskeju1aij30zx0aljw4.jpg"></p>
+<p>RIP协议：<br>1）仅和相邻路由器交换信息<br>2）路由器交换的信息是自己的路由表<br>3）每30s交换一次路由信息，然后路由器根据新信息更新路由表，若超过180s没收到邻居路由器的通告，则判定邻居没了，并更新自己路由表；路由器刚开始工作时，只知道直接连接的网络的距离（距离为1），接着每一个路由器也只和数目非常有限的相邻路由器交换并更新路由信息；经过若干次更新后，所有路由器最终都会知道到达本自治系统任何一个网络的最短距离和下一跳路由器的地址，即“收敛”</p>
+<p>距离向量算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosket395yj312i0hl48f.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskfejgkdj30fx0giad3.jpg"></p>
+<p>RIP协议的报文格式：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskftp5wwj313d0hlal5.jpg"></p>
+<p>RIP的特点：当网络出现故障时，要经过比较长的时间（例如数分钟）才能将此信息传送到所有的路由，“慢收敛”<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskge7cmpj30gj0cttb9.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/OSPF协议与链路状态算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/OSPF%E5%8D%8F%E8%AE%AE%E4%B8%8E%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E7%AE%97%E6%B3%95/" class="article-date">
+      <time datetime="2020-07-20T16:00:00.000Z" itemprop="datePublished">2020-07-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/OSPF%E5%8D%8F%E8%AE%AE%E4%B8%8E%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E7%AE%97%E6%B3%95/">OSPF协议与链路状态算法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>OSPF协议与链路状态算法：</p>
+<p>开放最短路径优先OSPF协议：“开放”标明OSPF协议不是受某一家厂商控制，而是公开发表的；“最短路径优先”是因为使用了Dijkstra提出的最短路径算法SPF</p>
+<p>OSPF最主要的特征就是使用分布式的链路状态协议<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskl422gaj313t0av45t.jpg"></p>
+<p>链路状态路由算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskldmgksj312w0eo125.jpg"></p>
+<p>OSPF的区域：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosklm1mbwj30zb0guk4j.jpg"></p>
+<p>OSPF分组：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskm3y2fhj30zu0a80te.jpg"></p>
+<p>OSPF其他特点：<br>1）每隔30min，要刷新一次数据库中的链路状态<br>2）由于一个路由器的链路状态只涉及到与相连路由器的连通状态，因而与整个互联网的规模并无直接关系，因此当互联网规模很大时，OSPF协议要比距离向量协议RIP好很多<br>3）OSPF不存在坏消息传的慢的问题，它的收敛速度很快</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/BGP协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/BGP%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-07-19T16:00:00.000Z" itemprop="datePublished">2020-07-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/BGP%E5%8D%8F%E8%AE%AE/">BGP协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>BGP协议：</p>
+<p>1）和谁交换：与其他AS的邻站BGP发言人交换信息<br>2）交换什么：交换的网络可达性的信息，即要到达某个网络所要经过的一系列AS<br>3）多久交换：发生变化时更新有变化的部分<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosknk14ohj30rp0b745d.jpg"></p>
+<p>BGP协议交换信息的过程：BGP所交换的网络可达性的信息就是要到达某个网络所要经过的一系列AS，当BGP发言人互相交换了网络可达性的信息后，各BGP发言人就根据所采用的策略从收到的路由信息中找出到达各AS的较好路由<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosknt7c0qj310q0frjzo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosko15hwsj30y10h3wn0.jpg"></p>
+<p>BGP协议报文格式：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskob3jaaj312m0gadoj.jpg"></p>
+<p>BGP协议特点：<br>1）BGP支持CIDR，因此BGP的路由表也就应当包括目的网络前缀、下一跳路由器，以及到达该目的网络所要经过的各个自治系统序列<br>2）在BGP刚刚运行时，BGP的邻站是交换整个的BGP路由表，但以后只需要在发生变化时更新有变化的部分，这样做对节省网络带宽和减少路由器的处理开销都有好处</p>
+<p>BGP-4的四种报文：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskomnp20j30wn06kn1h.jpg"></p>
+<p>三种路由协议比较：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskoxtkrxj311w06wgq4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskp5u6ctj311p0blgrw.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/14/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/16/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

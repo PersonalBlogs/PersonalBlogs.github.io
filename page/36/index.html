@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/36/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-编程语言/C++语言/封装：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%B0%81%E8%A3%85%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-20T16:00:00.000Z" itemprop="datePublished">2019-06-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%B0%81%E8%A3%85%EF%BC%9A/">封装：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>C++面向对象的三大特征：封装、继承、多态</p>
+<p>C++认为万事万物皆为对象，对象上有其属性和行为</p>
+<p>封装的意义：<br>1）将属性和行为作为一个整体，表现生活中的事物<br>2）将属性和行为加以权限控制【public：公共权限(类内可以访问，类外可以访问)、protected：保护权限(类内可以访问，类外不可以访问)、private：私有权限(类内可以访问，类外不可以访问)】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf4k6q82j30k70j0wh5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf4rl4gbj30hj00xaa2.jpg"></p>
+<p>Struct和class的区别（都可以表示一个类）：<br>1）struct默认权限为公共<br>2）class默认权限为私有</p>
+<p>将成员属性设置为私有的优点：<br>1）可以自己控制读写权限【提供一个public接口让外界访问】<br>2）对于写权限，我们可以检测数据的有效性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf50rd05j30fr0pwgot.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf57kazjj30hj01x3ym.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/对象的初始化和清理：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%B8%85%E7%90%86%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-19T16:00:00.000Z" itemprop="datePublished">2019-06-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%B8%85%E7%90%86%EF%BC%9A/">对象的初始化和清理：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>—————1、构造函数和析构函数：</p>
+<p>C++中的面向对象来源于生活，每个对象也都会有初始设置以及对象销毁前的清理数据的设置</p>
+<p>构造函数和析构函数：对象的初始化和清理是两个非常重要的安全问题，一个对象或者变量没有初始状态，对其使用后果是未知的，同样的使用完一个对象或变量没有及时清理，也会造成一定的安全问题；C++利用了构造函数和析构函数解决上述问题，这两个函数将会被编译器自动调用，完成对象初始化和清理工作；</p>
+<p>对象的初始化和清理工作是编译器强制要我们做的事情，因此如果我们不提供构造和析构，编译器会提供；但是编译器提供的构造函数和析构函数是空实现</p>
+<p>构造函数：主要作用于创建对象时为对象的成员属性赋值，构造函数由编译器自动调用，无须手动调用<br>析构函数：主要作用在对象销毁前系统自动调用，执行一些清理工作</p>
+<p>构造函数语法：类名(){}<br>1）构造函数没有返回值也不写void<br>2）函数名称与类名相同<br>3）构造函数可以有参数，因此可以发生重载<br>4）程序在调用对象时会自动调用构造，无须手动调用，而且只会调用一次</p>
+<p>析构函数语法：～类名(){}<br>1）析构函数没有返回值也不写void<br>2）函数名称与类名相同，在名称前加上符号～<br>3）析构函数不可以有参数，因此不可以发生重载<br>4）程序在对象销毁前会自动调用析构，无须手动调用，而且只会调用一次<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf5w62rwj30ng0ja77a.jpg"></p>
+<p>——————————2、构造函数的分类及调用：</p>
+<p>两种分类方式：<br>1）按参数分类：有参构造和无参构造<br>2）按类型分类：普通构造和拷贝构造</p>
+<p>三种调用方式：括号法、显示法、隐式转换法<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf69o0y8j30si10tahi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6eitw1j30ng0bg76h.jpg"></p>
+<p>——————3、拷贝构造函数调用时机：</p>
+<p>C++中拷贝构造函数调用时机通常有三种情况：<br>1）使用一个已经创建完毕的对象来初始化一个新对象<br>2）值传递的方式给函数参数传值<br>3）以值方式返回局部对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6ly3kzj30ma0yqaeu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6sxmzfj30cm038t8y.jpg"><br>—————————4、构造函数调用规则：</p>
+<p>默认情况下，C++编译器至少给一个类添加三个函数：<br>1）默认构造函数（无参，函数体为空）<br>2）默认析构函数（无参，函数体为空）<br>3）默认拷贝构造函数，对属性进行值拷贝</p>
+<p>构造函数调用规则：<br>1）如果用户定义有参构造函数，C++不再提供默认无参构造函数，但是会提供默认拷贝构造<br>2）如果用户定义拷贝构造函数，C++不会再提供其他构造函数</p>
+<p>—————————5、深拷贝与浅拷贝</p>
+<p>浅拷贝：简单的赋值拷贝操作<br>深拷贝：在堆区重新申请空间，进行拷贝操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6zji4uj30na0xgagk.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf77h74qj30fp03q0tc.jpg"><br>—————————6、初始化列表：</p>
+<p>C++提供了初始化列表语法，用来初始化属性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7dnq68j30fp0jzac3.jpg"></p>
+<p>———————————7、类对象作为类成员</p>
+<p>C++类中的成员可以是另一个类的对象，我们称该成员为对象成员<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7kcayoj309p03et8w.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7qliq9j30ma0nyadf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7xfr3fj309p03eaag.jpg"></p>
+<p>————8、静态成员</p>
+<p>静态成员就是在成员变量和成员函数前加上关键字static，称为静态成员</p>
+<p>静态成员分为：<br>1）静态成员变量：所有对象共享同一份数据，在编译阶段分配内存，类内声明，类外初始化<br>2）静态成员函数：所有对象共享同一个函数，静态成员函数只能访问静态成员变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf8483bqj30hj0kb40y.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf8cyj27j30hj0jsgo8.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/C++对象模型和this指针：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E5%92%8Cthis%E6%8C%87%E9%92%88%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-18T16:00:00.000Z" itemprop="datePublished">2019-06-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E5%92%8Cthis%E6%8C%87%E9%92%88%EF%BC%9A/">C++对象模型和this指针：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>——————成员变量和成员函数分开存储：</p>
+<p>在C++中，类内的成员变量和成员函数分开存储</p>
+<p>只有非静态成员变量才属于类的对象上<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf92weytj30mg0jbq5x.jpg"></p>
+<p>—————————this指针：</p>
+<p>每一个非静态成员函数只会诞生一份函数实例，也就是说多个同类型的对象会共用一块代码，那么这一块代码是如何区分哪个对象调用自己的呢？</p>
+<p>C++通过提供特殊的对象指针，this指针，解决上述问题，this指针指向被调用的成员函数所属的对象</p>
+<p>This指针是隐含每一个非静态成员函数内的一种指针，不需要定义，直接使用即可</p>
+<p>This指针的用途：<br>1）当形参和成员变量同名时，可用this指针来区分<br>2）在类的非静态成员函数中返回对象本身，可使用return *this；<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9a7upvj30mg0jb41f.jpg"></p>
+<p>———————————空指针访问成员函数：</p>
+<p>C++中空指针也是可以调用成员函数的，但是也要注意有没有用到this指针</p>
+<p>如果用到this指针，需要加以判断保证代码的健壮性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9i6gh7j30mu0jb76s.jpg"></p>
+<p>——————————const修饰成员函数：</p>
+<p>常函数：成员函数后加const后我们称这个函数为常函数；常函数内不可以修改成员属性；成员属性声明时加关键字mutable后，在常函数中依然可以修改</p>
+<p>常对象：声明对象前加const称该对象为常对象，常对象只能调用常函数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9oy6mhj30mu0ot420.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9vpitfj307v01v3ym.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/友元：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%8F%8B%E5%85%83%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-17T16:00:00.000Z" itemprop="datePublished">2019-06-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%8F%8B%E5%85%83%EF%BC%9A/">友元：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>在程序里，有些私有属性也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术</p>
+<p>友元的目的就是让一个函数或者类访问另一个类中的私有成员，友元的关键字为friend</p>
+<p>友元的三种实现：<br>1）全局函数做友元<br>2）类做友元<br>3）成员函数做友元</p>
+<p>全局函数做友元：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfao4s65j30kw0k1mzz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfav93vaj307v01vdfy.jpg"></p>
+<p>友元类（类做友元）：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfb1nwqjj30je0qeadj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfb7w54qj307v01vwem.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbe60cvj30j00j4n01.jpg"></p>
+<p>成员函数做友元【为啥顺序不能变？？】：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbl7rcej30ko0von1h.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbse9jgj30fe02k74l.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">**using** **namespace** std;</span><br><span class="line"></span><br><span class="line">**class** Building;</span><br><span class="line"></span><br><span class="line">**class** goodGay&#123;</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    </span><br><span class="line">    Building *building;</span><br><span class="line">    </span><br><span class="line">    //可访问Building中的私有成员</span><br><span class="line">    **void** visit();</span><br><span class="line">    </span><br><span class="line">    //不可访问Building中的私有成员</span><br><span class="line">    **void** visit1();</span><br><span class="line">    </span><br><span class="line">    goodGay();</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">**class** Building</span><br><span class="line">&#123;</span><br><span class="line">    **friend** **void** goodGay::visit();//表示goodGay类中的成员函数visit()作为本类的好朋友</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    </span><br><span class="line">    Building()&#123;</span><br><span class="line">        SittingRoom = “客厅”;</span><br><span class="line">        BedRoom = “卧室”;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    string SittingRoom;</span><br><span class="line">    </span><br><span class="line">**private**:</span><br><span class="line">    string BedRoom;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">goodGay::goodGay()</span><br><span class="line">&#123;</span><br><span class="line">    building = **new** Building;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** goodGay::visit()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;SittingRoom&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** goodGay::visit1()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;“visit2函数正在访问：”&lt;&lt;building-&gt;SittingRoom&lt;&lt;endl;</span><br><span class="line">    //cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**int** main()</span><br><span class="line">&#123;</span><br><span class="line">    goodGay gg;</span><br><span class="line">    gg.visit();</span><br><span class="line">    gg.visit1();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/C++运算符重载：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-16T16:00:00.000Z" itemprop="datePublished">2019-06-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%EF%BC%9A/">C++运算符重载：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>运算符重载：对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型</p>
+<p>加号运算符重载：实现两个自定义数据类型相加的计算【对于内置的数据类型的表达式的运算符是不可能改变的；不要滥用运算符重载】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfcl18rxj30mt101n2t.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfcslrrij30fe02kmxc.jpg"></p>
+<p>左移运算符重载：可以输出自定义数据类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfd0w3paj30fy0jwq5k.jpg"></p>
+<p>递增运算符重载：通过重载递增运算符，实现自己的整型数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfd825xnj30is0wndki.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdf91ztj30e702pdfw.jpg"></p>
+<p>赋值运算符重载：</p>
+<p>C++编译器至少给一个类添加4个函数：<br>1）默认构造函数（无参，函数体为空）<br>2）默认析构函数（无参，函数体为空）<br>3）默认拷贝构造函数，对属性进行值拷贝<br>4）赋值运算符operator=，对属性进行值拷贝</p>
+<p>如果类中有属性指向堆区，做赋值操作时也会出现深浅拷贝问题<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdm6b31j30l10sdwie.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdsxtw4j30e702p74i.jpg"></p>
+<p>关系运算符重载：重载关系运算符，可以让两个自定义类型对象进行对比操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfe2izalj30kx0tf0wg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfe8hjcqj30e702p0sx.jpg"></p>
+<p>函数调用运算符()重载：由于重载后使用的方式非常像函数的调用，因此称为仿函数；仿函数没有固定的写法，非常灵活<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfej56i2j30ke0pxdjd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfeok31vj30e702pt8u.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/继承：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%A7%E6%89%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-15T16:00:00.000Z" itemprop="datePublished">2019-06-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%A7%E6%89%BF%EF%BC%9A/">继承：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>继承是面向对象三大特性之一</p>
+<p>定义某些类时，下级别的成员除了拥有上一级的共性，还有自己的特性，这个时候我们就可以考虑利用继承的技术，减少重复代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfg9czzxj30hx125wjm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgfbr0rj30e707pdgu.jpg"></p>
+<p>继承方式：公共继承、保护继承、私有继承<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfglvd97j30hn0cwjud.jpg"></p>
+<p>继承中的对象模型：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgse4qoj30dz0isdhm.jpg"></p>
+<p>继承中的构造和析构顺序：子类继承父类后，当创建子类对象，也会调用父类的构造函数；先构造父类，再构造子类，析构的顺序与构造的顺序相反<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgzbqddj30ii0k9ac5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfh6ivubj30dz02nq38.jpg"></p>
+<p>继承同名成员处理方式：</p>
+<p>当子类与父类出现同名的成员，如何通过子类对象访问到子类或者父类中同名的数据呢？<br>1）访问子类同名成员，直接访问即可<br>2）访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhdadvij30n80yxgq3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhk4mgpj30dz033q3a.jpg"></p>
+<p>继承同名静态成员处理方式：静态成员和非静态成员出现同名，处理方式一致；访问子类同名成员，直接访问即可；访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhr4rmzj30nb11hgrf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhzmn2lj30dz072759.jpg"></p>
+<p>多继承：C++允许一个类继承多个类，多继承可能会引发父类中有同名成员出现，需要加作用域区分；C++实际开发中不建议用多继承<br>class Son:public Base1,public Base2</p>
+<p>菱形继承：两个派生类继承同一个基类，又有某个类同时继承着两个派生类，这种继承被称为菱形继承，或者钻石继承</p>
+<p>出现的问题：<br>1）羊继承了动物的数据，驼同样继承了动物的数据，当羊驼使用数据时，就会产生二义性<br>2）羊驼继承自动物的数据继承了两份，但是这份数据我们只需要一份就可以<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfi72uyrj30iw0mctc0.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfidoddzj30df01z74f.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/多态：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%A4%9A%E6%80%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-14T16:00:00.000Z" itemprop="datePublished">2019-06-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%A4%9A%E6%80%81%EF%BC%9A/">多态：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>多态是C++面向对象三大特性之一</p>
+<p>多态分为两类：<br>1）静态多态：函数重载和运算符重载属于静态多态，复用函数名<br>2）动态多态：派生类和虚函数实现运行时多态</p>
+<p>静态多态和动态多态的区别：<br>1）静态多态的函数地址早绑定，编译阶段确定函数地址<br>2）动态多态的函数地址晚绑定，运行阶段确定函数地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjeqhc7j30l50o2wi6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjmkiwbj30df01z0st.jpg"></p>
+<p>多态的底层原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjthhbpj30n90q042l.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfk02il6j30df01zq32.jpg"></p>
+<p>分别利用普通写法和多态技术，设计实现两个操作数进行运算的计算器类：</p>
+<p>多态的优点：代码组织结构清晰、可读性强、利于前期和后期的扩展以及维护<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfk8x4hfj30ku1kztgz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfkg0659j30df02uq32.jpg"></p>
+<p>纯虚函数和抽象类：在多态中，通常父类中虚函数的实现是毫无意义的，主要都是调用子类重写的内容，因此可以将虚函数改为纯虚函数，当类中有了纯虚函数，这个类也称为抽象类</p>
+<p>抽象类特点：<br>1）无法实例化对象<br>2）子类必须重写抽象类中的纯虚函数，否则也属于抽象类<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfkmuqnij30je0m9go6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfku0kk3j30df02u0sw.jpg"></p>
+<p>虚析构和纯虚析构：</p>
+<p>多态使用时，如果子类中有属性开辟到堆区，那么父类指针在释放时无法调用到子类的析构代码</p>
+<p>解决方式：将父类中的析构函数改为虚析构或者纯虚析构</p>
+<p>虚析构和纯虚析构共性：<br>1）可以解决父类指针释放子类对象<br>2）都需要有具体的函数实现</p>
+<p>虚析构和纯虚析构的区别：如果是纯虚析构，该类属于抽象类，无法实例化对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl0lls5j30kx10cjwj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl89z45j30df03dq3d.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/C++文件操作：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-13T16:00:00.000Z" itemprop="datePublished">2019-06-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/">C++文件操作：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>程序运行时产生的数据都属于临时数据，程序一旦运行结束都会被释放，通过文件可以将数据持久化</p>
+<p>C++中对文件操作需要包含头文件<fstream></p>
+<p>文件类型分为两种：<br>1）文本文件：文件以文本的ASCII码形式存储在计算机中<br>2）二进制文件：文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们</p>
+<p>操作文件的三大类：<br>1）ofstream：写操作<br>2）ifstream：读操作<br>3）fstream：读写操作</p>
+<p>文本文件：</p>
+<p>写文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ofstream ofs;<br>3）打开文件：ofs.open(“文件路径”,打开方式);<br>4）写数据：ofs&lt;&lt;“写入的数据”;<br>5）关闭文件：ofs.close();</p>
+<p>文件打开方式【文件打开方式可以配合使用，利用|操作符】：<br>1）ios::in        为读文件而打开文件<br>2）ios::out     为写文件而打开文件<br>3）ios::ate     初始位置：文件尾<br>4）ios::app    追加方式写文件<br>5）ios::trunc  如果文件存在先删除，再创建<br>6）iOS::binary  二进制方式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm0am8yj30ia0c6dhe.jpg"></p>
+<p>读文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ifstream ifs;<br>3）打开文件并判断文件是否打开成功：ifs.open(“文件路径”,打开方式);<br>4）读数据：四种方式读取<br>5）关闭文件：ifs.close();<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm96dkdj30ke0q577p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmfzd6xj30h202cglr.jpg"></p>
+<p>二进制文件：以二进制的方式对文件进行读写操作，打开方式要指定为ios::binary</p>
+<p>二进制方式写文件主要利用流对象调用成员函数write<br>函数原型：ostream&amp; write(const char * buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmn0pr8j30j10et0uf.jpg"></p>
+<p>二进制方式读文件主要利用流对象调用成员函数read<br>函数原型：istream&amp; read(char *buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmtmxxsj30j10jemzg.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/职工管理系统：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-12T16:00:00.000Z" itemprop="datePublished">2019-06-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/">职工管理系统：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/函数模板：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-11T16:00:00.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/">函数模板：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>模板就是建立通用的模具，大大提高复用性</p>
+<p>模板的特点：模板不可以直接使用，它只是一个框架；模板的通用并不是万能的</p>
+<p>———————————————函数模板：</p>
+<p>C++另一种编程思想称为泛型编程，主要利用的技术就是模板</p>
+<p>C++提供两种模板机制：函数模板和类模板</p>
+<p>函数模板的作用：建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp03dz6j30cz0jewgr.jpg"></p>
+<p>函数模板注意事项：<br>1）自动类型推导，必须推导出一致的数据类型T才可以使用<br>2）模板必须要确定出T的数据类型，才可以使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp6w888j30ce0brgmr.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpd3x09j30gb0t50x2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpkhy0ej30ce01ljrh.jpg"></p>
+<p>普通函数与函数模板的区别：<br>1）普通函数调用时可以发生自动类型转换（隐式类型转换）<br>2）函数模板调用时，如果利用自动类型推导，不会发生隐式类型转换；如果利用显式指定类型的方式，可以发生隐式类型转换</p>
+<p>建议使用显示指定类型的方式，调用函数模板，因为可以自己确定通用类型T</p>
+<p>普通函数与函数模板的调用规则：<br>1）如果函数模板和普通函数都可以实现，优先调用普通函数<br>2）可以通过空模板参数列表来强制调用函数模板<br>3）函数模板也可以发生重载<br>4）如果函数模板可以产生更好的匹配，优先调用函数模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpql1y3j30nc0gmtb5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpwvalpj30ce01lglo.jpg"></p>
+<p>模板的局限性：模板的通用性并不是万能的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq2vig6j30q209bwgj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq8w0vbj30v9096wh4.jpg"></p>
+<p>因此C++为了解决这种问题，提供模板的重载，可以为这些特定的类型提供具体化的模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfqenxnvj30ij0soadu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfql68fyj30ce01lwej.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/35/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/37/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

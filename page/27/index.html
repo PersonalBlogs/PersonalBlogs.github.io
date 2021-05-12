@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/27/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-编程语言/Objective-C/匿名对象：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-15T16:00:00.000Z" itemprop="datePublished">2019-09-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A/">匿名对象：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>如果我们创建一个对象，没有用一个指针存储这个对象的地址，也就是没有任何指针指向这个对象，那么这个对象就叫做匿名对象</p>
+<p>因为new实际上是一个类方法，这个方法做的事情就是创建对象，返回值是创建的对象的地址，[Person new]这句代码的结果实际上就是创建的那个对象的指针，那我们可以直接使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3n9yn0aj308o060gn2.jpg"></p>
+<p>注意点：<br>1）匿名对象只能使用一次<br>2）每次创建匿名对象都是不同的对象</p>
+<p>什么时候使用匿名对象：<br>1）如果某个对象的成员只会被我们使用一次，用完之后这个对象再也不需要了，那么就可以使用匿名对象<br>2）如果方法的参数是一个对象，而调用者为这个参数赋值的对象就是专门来给这个方法传递的并且这个对象调用者不会再使用，那么这个时候就可以直接为方法传递一个匿名对象（上帝杀人）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3nhsewpj308o03q0tg.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/面向对象的三大特征：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-14T16:00:00.000Z" itemprop="datePublished">2019-09-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81%EF%BC%9A/">面向对象的三大特征：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>封装：类就是更高级别的封装，类将数据和行为封装为了一个整体</p>
+<p>优点：</p>
+<ol>
+<li>屏蔽内部的实现，外界不需要知道内部是如何实现的，只需要知道这个对象有什么用</li>
+<li>方便操作</li>
+<li>后期的维护十分的便利</li>
+</ol>
+<p>属性的封装：</p>
+<p>存在的问题：为对象的属性赋值的时候，语法上其实只要数据的类型是属性的类型就是可以的，但是情理上这么做是不合的（人的年龄）</p>
+<p>解决问题：<br>1）将属性的@public去掉<br>2）为类提供一个方法，这个方法专门为这个属性赋值，这个方法我们叫做setter</p>
+<p>setter方法：<br>1）这个方法是一个对象方法，因为这个方法要为属性赋值；<br>2）这个方法没有返回值；<br>3）这个方法的名称必须以set开头，跟上去掉下划线首字母大写的属性名；<br>4）这个方法一定是有参数的，参数的类型和属性的类型一致，参数的名称和属性的名称一致（去掉下划线）<br>5）在方法的实现中，判断传入的数据是否符合逻辑，如果符合逻辑则赋值，否则做默认处理<br>6）外界想要为对象的属性赋值，那么就调用这个对象的setter方法，将要赋值的数据传入这个方法</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3o30cn3j308o06v0u1.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3oaai7pj309w08xabx.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ogduznj308k06s75l.jpg"></p>
+<p>以上又有一个问题：在外界无法取出属性的值了</p>
+<p>getter方法：<br>1）是一个对象方法，因为这个方法做的事情是拿到属性的值返回<br>2）有返回值，返回值的类型和属性的类型一致<br>3）这个方法的名称直接就是属性的名称（去掉下划线）<br>4）这个方法没有参数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3on7kdlj303u00saa3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3oudea4j303u01yq33.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3p1a4z4j309k01omxi.jpg"></p>
+<p>只要属性需要被外界访问，就要为这个属性封装setter和getter，哪怕在赋值或者取值的时候没有任何逻辑验证</p>
+<p>只读封装：为属性封装的时候，只提供getter，不提供setter<br>只写封装：为属性封装的时候，只提供setter，不提供getter</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/对象与对象之间的关系：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished">2019-09-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A/">对象与对象之间的关系：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>组合关系：一个类是由其他的几个类联合起来组合而成【计算机由主板、显卡等组成】</p>
+<p>依赖关系：一个对象的方法的参数是另外一个对象【人依赖于手机】</p>
+<p>耦合度：当修改一个对象的时候对另外一个对象的影响程度【低耦合，高耦合】</p>
+<p>高内聚：一个对象仅仅做与自己相关的事情【单一职责原则】</p>
+<p>关联关系：一个类作为另外一个类的属性，但是它们不是组合关系，而是一个拥有的关系【人拥有狗】</p>
+<p>继承关系</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/static关键字：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/static%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-12T16:00:00.000Z" itemprop="datePublished">2019-09-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/static%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A/">static关键字：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>static不能修饰属性，也不能修饰方法，可以修饰方法中的局部变量</p>
+<p>如果方法中的局部变量被static修饰，那么这个变量就会被变成静态变量，存储在常量区，当方法执行完毕之后，不会回收，下次再执行这个方法的时候，直接使用而不用再声明了</p>
+<p>如果方法的返回值是当前类的对象，那么方法的返回值就写instancetype</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/self关键字" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/self%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-date">
+      <time datetime="2019-09-11T16:00:00.000Z" itemprop="datePublished">2019-09-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/self%E5%85%B3%E9%94%AE%E5%AD%97/">self关键字：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>在方法的内部可以定义一个和属性名相同的局部变量，这个时候，如果在方法中访问这个同名的变量，访问的是局部变量，如果需要访问属性就需要使用关键字self</p>
+<p>self可以在对象方法和类方法中使用，self是一个指针，在对象方法中self指向当前对象，在类方法中self指向当前类</p>
+<h3 id="self在对象方法中使用："><a href="#self在对象方法中使用：" class="headerlink" title="self在对象方法中使用："></a>self在对象方法中使用：</h3><p>作用：<br>1）可以使用self显示的访问当前对象的属性：self-&gt;属性，代表访问的是当前对象的这个属性<br>2）可以使用self来调用当前对象的其他的对象方法</p>
+<p>必须使用self的场景：<br>1）如果在方法中存在和属性同名的局部变量，你如果想要访问同名的局部变量，直接写就可以了，你如果想要访问当前对象的同名属性，必须使用self<br>2）在对象方法中，如果要调用当前对象的其他的对象方法，必须使用self</p>
+<p>属性要求以下划线开头，局部变量不要求以下划线开头，按照这个规范来，实际上是不会重名的</p>
+<h3 id="self在类方法中使用："><a href="#self在类方法中使用：" class="headerlink" title="self在类方法中使用："></a>self在类方法中使用：</h3><p>self是一个指针，指向当前这个类在代码段中的地址【就相当于这个类】</p>
+<p>作用：可以在类方法中使用self来显示的调用本类的其他的类方法</p>
+<p>总结取到类在代码段中的地址的方式：<br>1）调试查看对象的isa指针的值<br>2）在类方法中查看self的值<br>3）调用对象的对象方法class，就会返回这个对象所属的类在代码段中的地址<br>4）调用类的类方法class，就会返回这个类在代码段中的地址</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@&quot;%p&quot;</span>,[p1 <span class="keyword">class</span>]);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@&quot;%p&quot;</span>,[Person <span class="keyword">class</span>]);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>对象方法可以声明多次，但是只会认为有一次，只能实现一次，否则会报错【对象方法之间是不能重名的；类方法之间也不能重名；但是对象方法和类方法是可以重名的，通过类名来调用，调用的就是类方法，通过对象名来调，调用的就是对象方法】</p>
+<p>注意：<br>1）在对象方法中，self代表当前对象，所以可以通过self访问当前对象的成员，在对象方法中，不能使用self调用本类的类方法<br>2）在类方法中，self代表当前这个类，所以，可以通过self调用当前类的其他的类方法，在类方法中，不能通过self访问对象的成员，不能直接去访问属性和调用对象的方法</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/继承、NSObject：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%A7%E6%89%BF%E3%80%81NSObject%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-10T16:00:00.000Z" itemprop="datePublished">2019-09-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%A7%E6%89%BF%E3%80%81NSObject%EF%BC%9A/">继承、NSObject：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>继承的目的：儿子类想拥有父亲类中的所有的成员，但是不想自己去定义，而是想凭空拥有</p>
+<p>继承的语法：<br><code>@interface 子类名：父类名 </code></p>
+<p>@end</p>
+<p>术语：<br><code>@interface Student:Person</code><br>1）Student类从Person类继承，Student类是Person类的子类，Person类是Student类的父类<br>2）Student类从Person类派生，Student类是Person类的派生类，Person类是Student类的基类</p>
+<p>在新创建类模版的时候指定父类，Xcode就会自动的帮助你完成一系列事情</p>
+<p>继承是类在继承，而不是对象在继承，我们创建对象，对象与对象之间是毫无关系的，只是子类对象中拥有父类对象中的同样的成员</p>
+<p>千万不要为了继承而去继承，不要为了仅仅是得到某个类的成员你就不顾伦理去乱继承（人继承狗类？）</p>
+<p>子类从父类继承，就意味着子类拥有了父类的所有成员，包括属性和方法 </p>
+<p>如果有一个成员不是所有的子类都拥有的，那么这个成员就不应该定义在父类之中，因为一旦定义在父类之中，那么所有的子类全都有了，父类中只定义所有的子类都拥有的</p>
+<p>继承的特点：<br>1）单根性：一个类只能有一个父类，不能有多个父类<br>2）传递性：A类从B类继承，B类从C类继承，那么A类就同时拥有B、C类的成员</p>
+<hr>
+<p>NSObject类是OC中所有类的祖宗类，因为OC中的类全部都是直接的或者间接的从它继承</p>
+<p>NSObject类：这是Foundation框架中的类，在这个类中有一个类方法new，这个方法是用来创建对象的，方法的返回值是创建的这个对象的指针；也就是说，如果要创建类的对象，就必须要调用这个new方法，如果我们想要让我们的类具备创建对象的能力，就必须要让我们的类直接或者间接的从NSObject类继承</p>
+<p>在NSObject类之中，还定义了一个属性，这个属性叫做isa指针，所以每一个子类对象中都有一个叫做isa指针</p>
+<p>子类中不能存在和父类同名的属性</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/super关键字（特指这个方法是从父类继承过来的）：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/super%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%88%E7%89%B9%E6%8C%87%E8%BF%99%E4%B8%AA%E6%96%B9%E6%B3%95%E6%98%AF%E4%BB%8E%E7%88%B6%E7%B1%BB%E7%BB%A7%E6%89%BF%E8%BF%87%E6%9D%A5%E7%9A%84%EF%BC%89%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-09T16:00:00.000Z" itemprop="datePublished">2019-09-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/super%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%88%E7%89%B9%E6%8C%87%E8%BF%99%E4%B8%AA%E6%96%B9%E6%B3%95%E6%98%AF%E4%BB%8E%E7%88%B6%E7%B1%BB%E7%BB%A7%E6%89%BF%E8%BF%87%E6%9D%A5%E7%9A%84%EF%BC%89%EF%BC%9A/">super关键字（特指这个方法是从父类继承过来的）：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）可以用在类方法和对象方法之中</p>
+<p>2）在对象方法中可以使用super关键字调用当前对象从父类继承过来的对象方法</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span> sayHi];</span><br><span class="line">[<span class="keyword">super</span> sayHi];</span><br></pre></td></tr></table></figure>
+
+<p>3）在类方法中，super关键字可以调用当前类从父类继承过来的类方法【类方法也能被子类继承，父类中的类方法可以使用父类名来调用，也可以使用子类名调用】</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Person hehe];</span><br><span class="line">[Student hehe];</span><br><span class="line">[<span class="keyword">self</span> hehe];</span><br><span class="line">[<span class="keyword">super</span> hehe];</span><br></pre></td></tr></table></figure>
+
+<p>4）super只能用来调用父类的对象方法或者类方法，不能用来访问属性</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/访问修饰符：用来修饰属性" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/09/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%9A%E7%94%A8%E6%9D%A5%E4%BF%AE%E9%A5%B0%E5%B1%9E%E6%80%A7/" class="article-date">
+      <time datetime="2019-09-08T16:00:00.000Z" itemprop="datePublished">2019-09-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/09/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%9A%E7%94%A8%E6%9D%A5%E4%BF%AE%E9%A5%B0%E5%B1%9E%E6%80%A7/">访问修饰符：用来修饰属性</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>可以限定对象的属性在哪一段范围之中访问</p>
+<ol>
+<li><p>@private私有的，被@private修饰的属性只能在本类的内部访问，只能在本类的方法实现中访问</p>
+</li>
+<li><p>@protected受保护的，被@protected修饰的属性只能在本类和本类的子类中访问，只能在本类和子类的方法实现中访问</p>
+</li>
+<li><p>@package：被@package修饰的属性，可以在当前框架中访问</p>
+</li>
+<li><p>@public：公共的，被@public修饰的属性可以在任意的地方访问</p>
+</li>
+</ol>
+<p>如果不为属性指定访问修饰符，那么默认的就是@protected</p>
+<p>子类仍然可以继承父类的私有属性，只不过在子类中无法去直接访问从父类继承过来的私有属性，但是如果父类中有一个方法在为属性赋值或者取值，那么子类可以调用这个方法间接的访问父类的私有属性</p>
+<p>访问修饰符的作用域：从写访问修饰符的地方开始往下，直到遇到另外一个访问修饰符或者结束大括弧为止，中间的所有的属性都应用于这个访问修饰符</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span>:<span class="title">NSObject</span></span>&#123;</span><br><span class="line">   <span class="keyword">@private</span></span><br><span class="line">   <span class="built_in">NSString</span> *_name;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">@public</span></span><br><span class="line">   <span class="keyword">int</span> _age;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> _x;</span><br><span class="line">   <span class="keyword">@protected</span></span><br><span class="line">   <span class="keyword">int</span> _y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用建议：<br>1）@public无论什么情况下都不要使用，属性不要直接暴露给外界<br>2）@private如果属性只想在本类中使用，不想在子类中使用，那么就使用它<br>3）@protected：如果你希望属性只在本类和本类的子类中使用<br>推荐使用默认的@protected</p>
+<p>访问修饰符只能用来修饰属性，不能用来修饰方法</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/私有属性和私有方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/" class="article-date">
+      <time datetime="2019-09-07T16:00:00.000Z" itemprop="datePublished">2019-09-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/08/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/">私有属性和私有方法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>我们刚才讲的@private修饰的属性叫做私有属性，只能在类的内部访问，但是在外界的时候，Xcode仍然会提示这个对象中有这个属性，只不过没权访问，我们想要实现的效果是真私有，让外界不知道对象里面有这么一个属性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3q1ab8zj30cq059myg.jpg"></p>
+<p>其实在@implementation之中也可以写一个大括弧，把属性定义在@implementation的大括弧之中，这里面的属性，是一个私有属性，各种访问修饰符无效，外界根本就不会提示</p>
+<p>将属性定义在@implementation之中和将属性定义在@interface之中并标记为@private唯一的区别：提示和不提示，都不能在外界访问</p>
+<hr>
+<p>私有方法：方法不写声明只写实现，那么这个方法就是一个私有方法，只能在本类的其他方法中调用，不能在外界调用</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/里氏替换原则—LSP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/07/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99%E2%80%94LSP/" class="article-date">
+      <time datetime="2019-09-06T16:00:00.000Z" itemprop="datePublished">2019-09-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/07/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99%E2%80%94LSP/">里氏替换原则—LSP</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>子类可以替换父类的位置，并且程序的功能不受影响</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line">Student *s1=[Student new];</span><br><span class="line"></span><br><span class="line">Person *p2=[Student new];</span><br></pre></td></tr></table></figure>
+
+<p>为什么？<br>1）父类指针迫切的需求要一个父类对象，而我们给了一个子类对象，这是完全没有问题的【你想要一个人，我给你一个学生】<br>2）因为父类中拥有的成员子类都有，所以不会影响程序的功能</p>
+<p>里氏替换原则的表现形式：<br>当一个父类指针指向一个子类对象的时候，这里就有里氏替换原则</p>
+<p>里氏替换原则的作用：<br>1）一个指针中不仅可以存储本类对象的地址还可以存储子类对象的地址<br>2）如果一个指针的类型是NSObject类型的，那么这个指针中可以存储任意的OC对象的地址<br>3）如果一个数组的元素的类型是一个OC指针类型的，那么这个数组中不仅可以存储本类对象还可以存储子类对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *ps[3];</span><br><span class="line"></span><br><span class="line">ps[0]=[Person new];</span><br><span class="line">ps[1]=[Student new];</span><br><span class="line">ps[2]=[ItCastStu new];</span><br></pre></td></tr></table></figure>
+
+<p>4）如果一个数组的元素是NSObject指针类型，那么意味着任意的OC对象都可以存储到这个数组之中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSObject *objs[4];</span><br><span class="line"></span><br><span class="line">objs[0]=[Person new];</span><br><span class="line">objs[1]=[Student new];</span><br><span class="line">objs[2]=[ItCastStu new];</span><br><span class="line">objs[3]=@&quot;jack&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>5）如果一个方法的参数是一个对象，那么我们在为这个参数传值的时候可以传递一个本类对象，也可以传递一个子类对象，对方法中的代码不会有丝毫的影响</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">God *ys=[God new];</span><br><span class="line"></span><br><span class="line">Person *p1=[Person new];</span><br><span class="line">[p1 setName:@&quot;大狗&quot;];</span><br><span class="line"></span><br><span class="line">Student *s1=[Student new];</span><br><span class="line">[s1 setName:@&quot;小明&quot;];</span><br><span class="line"></span><br><span class="line">ItCastStu *stu=[ItCastStu new];</span><br><span class="line">[stu setName:@&quot;小东&quot;];</span><br><span class="line"></span><br><span class="line">[ys killWithPerson:stu];</span><br></pre></td></tr></table></figure>
+
+<p>当一个父类指针指向一个子类对象的时候，通过这个父类指针就只能去调用子类对象中的父类成员，子类独有的成员无法访问</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/26/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/28/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-代码仓库/iOS-功能demo/UIDatePicker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/11/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIDatePicker/" class="article-date">
+      <time datetime="2021-04-10T16:00:00.000Z" itemprop="datePublished">2021-04-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/11/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIDatePicker/">UIDatePicker</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //UIDatePicker是一个控制器类，封装了UIPickerView，继承自UIControl，专门用于接受日期和时间的输入</span><br><span class="line">        //UIDatePicker使用多个可转动的轮子来让用户选择日期和时间，当用户转动完轮子改变日期或时间的时候，UIDatePicker会发送UIControlEvents.valueChanged消息，通过桢听这个消息可以做出相应的处理</span><br><span class="line">        //UIDatePicker具有4种显示模式：日期和时间、日期、时间、计时</span><br><span class="line">        </span><br><span class="line">        let datePicker = UIDatePicker()</span><br><span class="line">        datePicker.center = CGPoint(x: 160, y: 200)  //设置它的中心点位置</span><br><span class="line">        datePicker.tag = 1  //后面将通过该tag值获得这个UIDatePicker对象</span><br><span class="line">        </span><br><span class="line">        datePicker.datePickerMode = UIDatePicker.Mode.dateAndTime  //设置其显示模式为日期时间</span><br><span class="line">        </span><br><span class="line">        //设置UIDatePicker对象的最小值和最大值，从而只允许用户设置在两个数值之间的日期和时间</span><br><span class="line">        datePicker.minimumDate = Date()</span><br><span class="line">        datePicker.maximumDate = Date(timeInterval: 3*24*60*60, since: Date())</span><br><span class="line">        self.view.addSubview(datePicker)</span><br><span class="line">        </span><br><span class="line">        let button = UIButton(type: UIButton.ButtonType.roundedRect)</span><br><span class="line">        button.frame = CGRect(x: 20, y: 360, width: 280, height: 44)</span><br><span class="line">        button.backgroundColor = UIColor.orange</span><br><span class="line">        button.setTitle(&quot;Get Date&quot;, for: .normal)</span><br><span class="line">        </span><br><span class="line">        //当点击该按钮时，获取UIDatePicker日期时间拾取器的当前值</span><br><span class="line">        button.addTarget(self, action: #selector(getDateTime(_ :)), for: .touchUpInside)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(button)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func getDateTime(_ button: UIButton) &#123;</span><br><span class="line">        </span><br><span class="line">        let datePicker = self.view.viewWithTag(1) as! UIDatePicker  //通过tag值获得日期时间拾取器</span><br><span class="line">        let date = datePicker.date  //获得拾取的值</span><br><span class="line">        </span><br><span class="line">        //将日期转换为字符串</span><br><span class="line">        let dateFormatter = DateFormatter()</span><br><span class="line">        dateFormatter.dateFormat = &quot;yyyy-MM-dd HH:mm&quot;</span><br><span class="line">        let dateAndTime = dateFormatter.string(from: date)</span><br><span class="line">        </span><br><span class="line">        print(dateAndTime)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIStackView" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/10/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIStackView/" class="article-date">
+      <time datetime="2021-04-09T16:00:00.000Z" itemprop="datePublished">2021-04-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/10/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIStackView/">UIStackView</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    var stackView: UIStackView!  //作为视图的布局容器</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //UIStackView的主要功能不是用来展示内容的，而是用来组织、布局显示内容的视图</span><br><span class="line">        </span><br><span class="line">        //UIStackView类的主要属性：</span><br><span class="line">        //axis属性：用于定义子视图的排列方向，横向或纵向</span><br><span class="line">        //spacing属性：用来控制子视图的间距</span><br><span class="line">        //alignment属性：用来定义子视图之间沿着axis方向的对齐方式，如顶部对齐、底部对齐、左对齐</span><br><span class="line">        //distribution属性：用来定义子视图沿着axis排列的布局规则</span><br><span class="line">        </span><br><span class="line">        let view1 = UIView()</span><br><span class="line">        let view2 = UIView()</span><br><span class="line">        let view3 = UIView()</span><br><span class="line">        view1.backgroundColor = .red</span><br><span class="line">        view2.backgroundColor = .orange</span><br><span class="line">        view3.backgroundColor = .blue</span><br><span class="line">        </span><br><span class="line">        stackView = UIStackView(arrangedSubviews: [view1, view2, view3])  //这三个视图对象将被添加到UIStackView容器内</span><br><span class="line">        stackView.frame = CGRect(x: 0, y: 0, width: 320, height: 400)</span><br><span class="line">        stackView.axis = NSLayoutConstraint.Axis.horizontal  //在水平方向上排列子视图</span><br><span class="line">        stackView.alignment = UIStackView.Alignment.fill  //通过调整子视图的尺寸在axis设定的方向上填充stackView容器的可用空间</span><br><span class="line">        stackView.distribution = UIStackView.Distribution.fillEqually  //约束子视图具有相同的尺寸，从而使子视图沿着axis方向上填充stackView容器的可用空间</span><br><span class="line">        </span><br><span class="line">        stackView.spacing = 10</span><br><span class="line">        stackView.backgroundColor = .orange</span><br><span class="line">        self.view.addSubview(stackView)</span><br><span class="line">        </span><br><span class="line">        let spaccing = UIButton(type: UIButton.ButtonType.roundedRect)</span><br><span class="line">        spaccing.frame = CGRect(x: 20, y: 420, width: 280, height: 30)</span><br><span class="line">        spaccing.setTitle(&quot;增加间距&quot;, for: .normal)</span><br><span class="line">        spaccing.addTarget(self, action: #selector(setCustomSpacing(_ :)), for: .touchUpInside)</span><br><span class="line">        self.view.addSubview(spaccing)</span><br><span class="line">        </span><br><span class="line">        let insert = UIButton(type: UIButton.ButtonType.roundedRect)</span><br><span class="line">        insert.frame = CGRect(x: 20, y: 460, width: 280, height: 30)</span><br><span class="line">        insert.setTitle(&quot;插入视图&quot;, for: .normal)</span><br><span class="line">        insert.addTarget(self, action: #selector(insertArrangedSubview(_ :)), for: .touchUpInside)</span><br><span class="line">        self.view.addSubview(insert)</span><br><span class="line">        </span><br><span class="line">        let remove = UIButton(type: UIButton.ButtonType.roundedRect)</span><br><span class="line">        remove.frame = CGRect(x: 20, y: 500, width: 280, height: 30)</span><br><span class="line">        remove.setTitle(&quot;删除视图&quot;, for: .normal)</span><br><span class="line">        remove.addTarget(self, action: #selector(removeArrangedSubview(_ :)), for: .touchUpInside)</span><br><span class="line">        self.view.addSubview(remove)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当点击第一个按钮时，调整第二个子视图和第三个子视图的间距</span><br><span class="line">    @objc func setCustomSpacing(_ button: UIButton) &#123;</span><br><span class="line">        </span><br><span class="line">        let view = stackView.arrangedSubviews[1]</span><br><span class="line">        stackView.setCustomSpacing(30, after: view)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当点击第二个按钮时，在第二个子视图的右侧添加一个新的视图对象</span><br><span class="line">    @objc func insertArrangedSubview(_ button: UIButton) &#123;</span><br><span class="line">        </span><br><span class="line">        let view = UIView()</span><br><span class="line">        view.backgroundColor = .green</span><br><span class="line">        stackView.insertArrangedSubview(view, at: 2)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当点击第三个按钮时，删除第二个子视图</span><br><span class="line">    @objc func removeArrangedSubview(_ button: UIButton) &#123;</span><br><span class="line">        </span><br><span class="line">        let view = stackView.arrangedSubviews[1]</span><br><span class="line">        stackView.removeArrangedSubview(view)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UITableView" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/09/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UITableView/" class="article-date">
+      <time datetime="2021-04-08T16:00:00.000Z" itemprop="datePublished">2021-04-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/09/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UITableView/">UITableView</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="创建一个简单的表格"><a href="#创建一个简单的表格" class="headerlink" title="创建一个简单的表格"></a>创建一个简单的表格</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">//添加协议，主要用来给UITableView表格提供数据来源，并用来处理数据源的变化</span><br><span class="line">class ViewController: UIViewController, UITableViewDataSource &#123;</span><br><span class="line">    </span><br><span class="line">    //由于表格默认拥有一个章节，因此在此设置了默认章节具有20行数据</span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int &#123;</span><br><span class="line">        return 20</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //初始化和复用单元格，每当表格对象需要绘制一个单元格时，都会调用该方法</span><br><span class="line">    //UITableView的复用机制</span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell &#123;</span><br><span class="line">        </span><br><span class="line">        let identifier = &quot;reusedCell&quot;  //作为单元格的类型</span><br><span class="line">        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)  //从单元格对象池中获取指定类型并且可以重复使用的单元格</span><br><span class="line">        </span><br><span class="line">        //UITableViewCell.CellStyle.default：包含一个位于单元格左侧的可选图像视图和一个左对齐的标签对象</span><br><span class="line">        //UITableViewCell.CellStyle.value1：包含一个位于单元格左侧的可选图像视图和一个左对齐的标签对象，在单元格的右侧还有一个灰色、右对齐的标签对象</span><br><span class="line">        //UITableViewCell.CellStyle.value2：包含一个位于单元格左侧的、右对齐的、蓝色文字的标签对象和一个位于右侧的左对齐标签对象</span><br><span class="line">        //UITableViewCell.CellStyle.subtitle：包含一个位于单元格左侧的可选图像视图和一个左对齐的标签对象，在该标签对象下方还有一个字体较小的标签对象</span><br><span class="line">        if cell == nil &#123;</span><br><span class="line">            //从内存中创建一个新的单元格UITableViewCell对象</span><br><span class="line">            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: identifier)  //使用预定义的单元格只需为标签和图标提供对应的文字内容和图像内容即可，可以使用textLabel和detailTextLabel属性来设置单元格的文字内容，使用imageView属性来设置单元格的图标</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        cell?.textLabel?.text = &quot;命运负责洗牌，玩牌的是我们自己！&quot;</span><br><span class="line">        </span><br><span class="line">        return cell!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //UITableView用于在一栏内显示一系列对象，它是UIScorllView的子类，UIScorllView可以在任意方向上滑动内容，而UITableView仅支持在垂直方向上的滑动</span><br><span class="line">        //UITableView由单元格UITableViewCell组成，UITableView中的内容都是由UITableViewCell负责显示的，UITableView的行数(即UITableViewCell对象的数量)不受限制，仅由设备的内存决定</span><br><span class="line">        </span><br><span class="line">        let screenRect = UIScreen.main.bounds  //获得当前设备的屏幕尺寸</span><br><span class="line">        </span><br><span class="line">        let tableRect = CGRect(x: 0, y: 20, width: screenRect.size.width, height: screenRect.size.height-20)</span><br><span class="line">        let tableView = UITableView(frame: tableRect)</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self  //设置UITableView对象的数据源为当前的视图控制器对象，即由当前的视图控制对象实现数据源协议中定义的各种代理方法</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(tableView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义单元格UITableViewCell"><a href="#自定义单元格UITableViewCell" class="headerlink" title="自定义单元格UITableViewCell"></a>自定义单元格UITableViewCell</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class CustomizeUITableViewCell: UITableViewCell &#123;</span><br><span class="line">    </span><br><span class="line">    var thumbnail: UIImageView!</span><br><span class="line">    var title: UILabel!</span><br><span class="line">    var detail: UIButton!</span><br><span class="line">    </span><br><span class="line">    //重写UITableViewCell类的初始化方式</span><br><span class="line">    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) &#123;</span><br><span class="line">        </span><br><span class="line">        super.init(style: style, reuseIdentifier: reuseIdentifier)</span><br><span class="line">        </span><br><span class="line">        self.thumbnail = UIImageView(image: UIImage(named: &quot;user&quot;))</span><br><span class="line">        self.thumbnail.center = CGPoint(x: 30, y: 22)</span><br><span class="line">        self.title = UILabel(frame: CGRect(x: 80, y: 0, width: 120, height: 40))</span><br><span class="line">        self.title.text = &quot;自定义单元格&quot;</span><br><span class="line">        </span><br><span class="line">        self.detail = UIButton(frame: CGRect(x: 240, y: 8, width: 60, height: 24))</span><br><span class="line">        self.detail.setTitle(&quot;详情&quot;, for: .normal)</span><br><span class="line">        self.detail.backgroundColor = UIColor.gray</span><br><span class="line">        </span><br><span class="line">        //事件点击不了？</span><br><span class="line">        self.detail.addTarget(self, action: &quot;showDetail:&quot;, for: UIControl.Event.touchUpInside)</span><br><span class="line">        </span><br><span class="line">        self.addSubview(self.thumbnail)</span><br><span class="line">        self.addSubview(self.title)</span><br><span class="line">        self.addSubview(self.detail)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func showDetail(_ sender: UIButton) &#123;</span><br><span class="line">        print(&quot;显示详细信息&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //实现了继承UITableViewCell类所必需的构造方法</span><br><span class="line">    required init?(coder: NSCoder) &#123;</span><br><span class="line">        fatalError(&quot;init(coder:) has not been implemented&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    override func awakeFromNib() &#123;</span><br><span class="line">        super.awakeFromNib()</span><br><span class="line">        // Initialization code</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    override func setSelected(_ selected: Bool, animated: Bool) &#123;</span><br><span class="line">        super.setSelected(selected, animated: animated)</span><br><span class="line"></span><br><span class="line">        // Configure the view for the selected state</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">//添加协议，主要用来给UITableView表格提供数据来源，并用来处理数据源的变化</span><br><span class="line">class ViewController: UIViewController, UITableViewDataSource &#123;</span><br><span class="line">    </span><br><span class="line">    //由于表格默认拥有一个章节，因此在此设置了默认章节具有20行数据</span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int &#123;</span><br><span class="line">        return 20</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //初始化和复用单元格，每当表格对象需要绘制一个单元格时，都会调用该方法</span><br><span class="line">    //UITableView的复用机制</span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell &#123;</span><br><span class="line">        </span><br><span class="line">        let identifier = &quot;reusedCell&quot;  //作为单元格的类型</span><br><span class="line">        var cell: CustomizeUITableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier) as? CustomizeUITableViewCell  //从单元格对象池中获取了指定类型的并且可以重复使用的自定义单元格</span><br><span class="line">        </span><br><span class="line">        if cell == nil &#123;</span><br><span class="line">            //从内存中创建一个新的单元格UITableViewCell对象</span><br><span class="line">            cell = CustomizeUITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: identifier) //使用预定义的单元格只需为标签和图标提供对应的文字内容和图像内容即可，可以使用textLabel和detailTextLabel属性来设置单元格的文字内容，使用imageView属性来设置单元格的图标</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        cell?.title?.text = &quot;客户姓名&quot;</span><br><span class="line">        </span><br><span class="line">        return cell!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        let screenRect = UIScreen.main.bounds  //获得当前设备的屏幕尺寸</span><br><span class="line">        </span><br><span class="line">        let tableRect = CGRect(x: 0, y: 20, width: screenRect.size.width, height: screenRect.size.height-20)</span><br><span class="line">        let tableView = UITableView(frame: tableRect)</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self  //设置UITableView对象的数据源为当前的视图控制器对象，即由当前的视图控制对象实现数据源协议中定义的各种代理方法</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(tableView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义单元格的高度"><a href="#自定义单元格的高度" class="headerlink" title="自定义单元格的高度"></a>自定义单元格的高度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">//添加协议，主要用来给UITableView表格提供数据来源，并用来处理数据源的变化</span><br><span class="line">//UITableViewDelegate协议的主要用途是提供一些可选的方法，用来控制表格的选择、指定章节的头和尾的显示、单元格内容的复制和粘贴，以及协助完成单元格的排序等功能</span><br><span class="line">class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    //设置表格视图中指定索引位置的单元格的高度</span><br><span class="line">    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat &#123;</span><br><span class="line">        </span><br><span class="line">        //首先通过indexPath.row语句获得需要设置高度的单元格的所在行数，然后设置偶数行的高度为104，奇数行的高度为40</span><br><span class="line">        if (indexPath as NSIndexPath).row % 2 == 0 &#123;</span><br><span class="line">            return 104</span><br><span class="line">        &#125;</span><br><span class="line">        return 40</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //设置表格的行数为20</span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int &#123;</span><br><span class="line">        return 20</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell &#123;</span><br><span class="line">        </span><br><span class="line">        let identifier = &quot;reusedCell&quot;</span><br><span class="line">        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)</span><br><span class="line">        </span><br><span class="line">        if cell == nil &#123;</span><br><span class="line">            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: identifier)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if (indexPath as NSIndexPath).row % 2 == 0 &#123;</span><br><span class="line">            cell?.imageView?.image = UIImage(named: &quot;picture.png&quot;)</span><br><span class="line">            cell?.textLabel?.text = &quot;&quot;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            cell?.imageView?.image = nil</span><br><span class="line">            cell?.textLabel?.text = &quot;每有会意，便欣然忘食！&quot;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return cell!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        let screenRect = UIScreen.main.bounds  //获得当前设备的屏幕尺寸</span><br><span class="line">        </span><br><span class="line">        let tableRect = CGRect(x: 0, y: 20, width: screenRect.size.width, height: screenRect.size.height-20)</span><br><span class="line">        let tableView = UITableView(frame: tableRect)</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self  //设置UITableView对象的数据源为当前的视图控制器对象，即由当前的视图控制对象实现数据源协议中定义的各种代理方法</span><br><span class="line">        tableView.delegate = self</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(tableView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="给表格添加章节和索引"><a href="#给表格添加章节和索引" class="headerlink" title="给表格添加章节和索引"></a>给表格添加章节和索引</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController, UITableViewDataSource &#123;</span><br><span class="line">    </span><br><span class="line">    //前面制作的表格的数据源都是数组常量，现在演示将一个字典对象作为表格的数据源</span><br><span class="line">    //字典对象的键作为UITableView的Section，字典对象的值(数组)作为Section中单元格的内容</span><br><span class="line">    //字典对象的键A~Z将作为章节的标题，键对应的值将作为所在章节的单元格的内容</span><br><span class="line">    var countries: Dictionary&lt;String, [String]&gt; = [</span><br><span class="line">        &quot;A&quot;: [&quot;Afghanistan&quot;, &quot;Albania&quot;, &quot;Algeria&quot;, &quot;Angola&quot;, &quot;Australia&quot;, &quot;Austria&quot;, &quot;Azerbaijan&quot;],</span><br><span class="line">        &quot;B&quot;: [&quot;Bangladesh&quot;, &quot;Belgium&quot;, &quot;Bhutan&quot;, &quot;Bolivia&quot;, &quot;Brazil&quot;, &quot;Bahrain&quot;, &quot;Bulgaria&quot;],</span><br><span class="line">        &quot;C&quot;: [&quot;Canada&quot;, &quot;Congo&quot;, &quot;Chile&quot;, &quot;China&quot;, &quot;Colombia&quot;, &quot;Cuba&quot;],</span><br><span class="line">        &quot;D&quot;: [&quot;Denmark&quot;, &quot;Djibouti&quot;, &quot;Dominica&quot;],</span><br><span class="line">        &quot;E&quot;: [&quot;Egypt&quot;, &quot;Estonia&quot;, &quot;Ethiopia&quot;],</span><br><span class="line">        &quot;F&quot;: [&quot;Fiji&quot;, &quot;Finland&quot;, &quot;France&quot;],</span><br><span class="line">        &quot;G&quot;: [&quot;Gambia&quot;, &quot;Germany&quot;, &quot;Greece&quot;],</span><br><span class="line">        &quot;H&quot;: [&quot;Haiti&quot;, &quot;Honduras&quot;, &quot;Hungary&quot;],</span><br><span class="line">        &quot;I&quot;: [&quot;India&quot;, &quot;Indonesia&quot;, &quot;Iran&quot;, &quot;Ireland&quot;, &quot;Iraq&quot;, &quot;Italy&quot;],</span><br><span class="line">        &quot;J&quot;: [&quot;Jordan&quot;, &quot;Japan&quot;],</span><br><span class="line">        &quot;K&quot;: [&quot;Kazakhstan&quot;, &quot;Korea&quot;, &quot;Kuwait&quot;],</span><br><span class="line">        &quot;L&quot;: [&quot;Laos&quot;, &quot;Libya&quot;, &quot;Lebanon&quot;],</span><br><span class="line">        &quot;M&quot;: [&quot;Madagascar&quot;, &quot;Morocco&quot;, &quot;Malaysia&quot;, &quot;Mexico&quot;, &quot;Mali&quot;, &quot;Mozambique&quot;],</span><br><span class="line">        &quot;N&quot;: [&quot;Nepal&quot;, &quot;Netherlands&quot;, &quot;Nigeria&quot;, &quot;New Zealand&quot;],</span><br><span class="line">        &quot;O&quot;: [&quot;Oman&quot;],</span><br><span class="line">        &quot;P&quot;: [&quot;Pakistan&quot;, &quot;Panama&quot;, &quot;Philippines&quot;, &quot;Portugal&quot;],</span><br><span class="line">        &quot;Q&quot;: [&quot;Qatar&quot;],</span><br><span class="line">        &quot;R&quot;: [&quot;Romania&quot;, &quot;South Africa&quot;, &quot;Russia&quot;],</span><br><span class="line">        &quot;S&quot;: [&quot;Serbia &amp; Montenegro&quot;, &quot;Senegal&quot;, &quot;Singapore&quot;, &quot;Somalia&quot;, &quot;Switzerland&quot;],</span><br><span class="line">        &quot;T&quot;: [&quot;Thailand&quot;, &quot;Turkmenistan&quot;, &quot;Tunisia&quot;, &quot;Turkey&quot;],</span><br><span class="line">        &quot;U&quot;: [&quot;United Arab Emirates&quot;, &quot;United States of America&quot;, &quot;Uzbekistan&quot;],</span><br><span class="line">        &quot;V&quot;: [&quot;Vanuatu&quot;, &quot;Venezuela&quot;, &quot;Vietnam&quot;],</span><br><span class="line">        &quot;Y&quot;: [&quot;Yemen&quot;],</span><br><span class="line">        &quot;Z&quot;: [&quot;Zambia&quot;, &quot;Zimbabwe&quot;]</span><br><span class="line">    ]</span><br><span class="line">    </span><br><span class="line">    var keys: [String] = []  //它将用来存储按升序排列后的键名序列，这个数组的长度将作为表格中章节的数目</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //带有索引的表格和普通的表格的外观基本相同，唯一的区别是在表格的右侧显示了一个索引序列，通过点击索引序列可以在表格中快速定位到指定的位置，尤其是当表格拥有大量数据的时候</span><br><span class="line">        </span><br><span class="line">        keys = Array(countries.keys).sorted()  //获得countries字典对象所有的键名，并转化为一个数组对象，由于字典对象的键名是无序排列的，因此接着又调用了数组对象的sorted()方法对数组进行升序排列</span><br><span class="line"></span><br><span class="line">        let screenRect = UIScreen.main.bounds</span><br><span class="line">        let tableRect = CGRect(x: 0, y: 20, width: screenRect.size.width, height: screenRect.size.height - 20)</span><br><span class="line">        let tableView = UITableView(frame: tableRect)</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(tableView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //返回键名数组的长度作为表格中章节的数目</span><br><span class="line">    func numberOfSections(in tableView: UITableView) -&gt; Int &#123;</span><br><span class="line">        return keys.count</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //在该代理方法中，首先根据section参数获得keys数组中的键名，然后根据键名获得字典对象中键名对应的键值，即国家名称的数组，最后返回数组的长度作为指定章节的单元格数量</span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int&#123;</span><br><span class="line">        let subCountries = countries[keys[section]]</span><br><span class="line">        return (subCountries?.count)!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //该代理方法用来设置指定章节的标题文字</span><br><span class="line">    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -&gt; String? &#123;</span><br><span class="line">        return keys[section]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //该代理方法用来设置表格右侧索引序列的内容</span><br><span class="line">    func sectionIndexTitles(for tableView: UITableView) -&gt; [String]? &#123;</span><br><span class="line">        return keys</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell &#123;</span><br><span class="line">        </span><br><span class="line">        let identifier = &quot;reusedCell&quot;</span><br><span class="line">        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)</span><br><span class="line">        </span><br><span class="line">        if cell == nil &#123;</span><br><span class="line">            cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: identifier)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        //首先根据IndexPath参数的section值获得当前单元格所在的章节序号，然后根据章节序号获得键名数组keys中指定位置的键名，</span><br><span class="line">        //再根据键名获得键名在字典对象countries中的键值，也就是一个由国家名称组成的数组</span><br><span class="line">        let subCountries = countries[keys[(indexPath as NSIndexPath).section]]</span><br><span class="line">        //接着根据IndexPath参数的row值获得当前单元格所在章节中的行号，再根据行号获得对应的国家名称，最后设置单元格UILabel属性的值为对应的国家名称</span><br><span class="line">        cell?.textLabel?.text = subCountries![(indexPath as NSIndexPath).row]</span><br><span class="line">        </span><br><span class="line">        return cell!</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="单元格的选择与取消选择"><a href="#单元格的选择与取消选择" class="headerlink" title="单元格的选择与取消选择"></a>单元格的选择与取消选择</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">//前者用于设置表格的行数和初始化及复用UITableViewCell对象，后者用于具体处理单元格的选择事件</span><br><span class="line">class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    let diablo3Level = [&quot;普通模式&quot;, &quot;困难模式&quot;, &quot;高手模式&quot;, &quot;大师模式&quot;, &quot;痛苦模式&quot;]</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        let screenRect = UIScreen.main.bounds</span><br><span class="line">        let tableRect = CGRect(x: 0, y: 20, width: screenRect.size.width, height: screenRect.size.height - 20)</span><br><span class="line">        let tableView = UITableView(frame: tableRect)</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self</span><br><span class="line">        tableView.delegate = self</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(tableView)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //设置表格的行数为游戏难度数组的长度</span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int&#123;</span><br><span class="line">        return diablo3Level.count</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)</span><br><span class="line">        -&gt; UITableViewCell &#123;</span><br><span class="line">            </span><br><span class="line">            let identifier = &quot;reusedCell&quot;</span><br><span class="line">            var cell = tableView.dequeueReusableCell(withIdentifier: identifier)</span><br><span class="line">            </span><br><span class="line">            if(cell == nil)</span><br><span class="line">            &#123;</span><br><span class="line">                cell = UITableViewCell(style: UITableViewCell.CellStyle.default,</span><br><span class="line">                    reuseIdentifier: identifier)</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            cell?.textLabel?.text = diablo3Level[(indexPath as NSIndexPath).row]</span><br><span class="line">            </span><br><span class="line">            return cell!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) &#123;</span><br><span class="line">        </span><br><span class="line">        let cell = tableView.cellForRow(at: indexPath)</span><br><span class="line">        </span><br><span class="line">        //首先通过表格对象的cellForRowAt indexPath()方法获得在表格对象中被选中的单元格，接着判断被选中的单元格当前的附件类型，若为空，则设置单元格的附件类型为checkmark</span><br><span class="line">        if cell?.accessoryType == UITableViewCell.AccessoryType.none &#123;</span><br><span class="line">            </span><br><span class="line">            //UITableViewCell.AccessoryType共有4种类型：.none，.detailButton，.detailDisclosureButton，.disclosureIndicator，.checkmark</span><br><span class="line">            cell?.accessoryType = UITableViewCell.AccessoryType.checkmark</span><br><span class="line">            print(&quot;您选择了：\(String(describing: cell?.textLabel?.text))&quot;)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            </span><br><span class="line">            cell?.accessoryType = UITableViewCell.AccessoryType.none</span><br><span class="line">            print(&quot;您取消选择了：\(String(describing: cell?.textLabel?.text))&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="单元格的插入和删除"><a href="#单元格的插入和删除" class="headerlink" title="单元格的插入和删除"></a>单元格的插入和删除</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">//前者用于设置表格的行数和初始化及复用UITableViewCell对象，后者用于具体处理单元格的选择事件</span><br><span class="line">class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    var diablo3Level = [&quot;普通模式&quot;, &quot;困难模式&quot;, &quot;高手模式&quot;, &quot;大师模式&quot;, &quot;地狱模式&quot;]</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //以插入单元格的功能为例，首先通过实现tableView(_ :editingStyleForRowAt:)方法设置单元格的编辑模式为插入模式，然后当用户点击编辑按钮或者执行setEditing(_ :animated:)命令后，就会在单元格的左侧显示‘+’图标；当用户点击&#x27;+&#x27;图标后，代理对象就会调用tableView(_ :editingStyle:, ForRowAt:)方法，最后在该方法中，调用表格对象的insertRowsAtIndexPath: withRowAnimation:方法实现单元格的插入功能</span><br><span class="line">        </span><br><span class="line">        let screenRect = UIScreen.main.bounds</span><br><span class="line">        let tableRect = CGRect(x: 0, y: 20, width: screenRect.size.width, height: screenRect.size.height - 20)</span><br><span class="line">        let tableView = UITableView(frame: tableRect)</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self</span><br><span class="line">        tableView.delegate = self</span><br><span class="line">        </span><br><span class="line">        tableView.setEditing(true, animated: true)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(tableView)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //设置表格的行数为游戏难度数组的长度</span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int&#123;</span><br><span class="line">        return diablo3Level.count</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)</span><br><span class="line">        -&gt; UITableViewCell &#123;</span><br><span class="line">            </span><br><span class="line">            let identifier = &quot;reusedCell&quot;</span><br><span class="line">            var cell = tableView.dequeueReusableCell(withIdentifier: identifier)</span><br><span class="line">            </span><br><span class="line">            if cell == nil &#123;</span><br><span class="line">                </span><br><span class="line">                cell = UITableViewCell(style: UITableViewCell.CellStyle.default,</span><br><span class="line">                    reuseIdentifier: identifier)</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            cell?.textLabel?.text = diablo3Level[(indexPath as NSIndexPath).row]</span><br><span class="line">            </span><br><span class="line">            return cell!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -&gt; UITableViewCell.EditingStyle &#123;</span><br><span class="line">        </span><br><span class="line">        //return UITableViewCell.EditingStyle.insert  //.none，.delete</span><br><span class="line">        return UITableViewCell.EditingStyle.delete</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) &#123;</span><br><span class="line">        </span><br><span class="line">        //if editingStyle == UITableViewCell.EditingStyle.insert &#123;</span><br><span class="line">            </span><br><span class="line">        //    diablo3Level.insert(&quot;痛苦模式&quot;, at: indexPath.row)  //在表格对象的数据源数组中插入一条新的数据，以保持表格视图与数据源的数据一致性</span><br><span class="line">        //    tableView.insertRows(at: [indexPath], with: UITableView.RowAnimation.right)  //在指定索引位置的单元格处插入新的单元格</span><br><span class="line">        //&#125;</span><br><span class="line">        </span><br><span class="line">        if editingStyle == UITableViewCell.EditingStyle.delete &#123;</span><br><span class="line">            diablo3Level.remove(at: indexPath.row)</span><br><span class="line">            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.right)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="移动单元格的位置"><a href="#移动单元格的位置" class="headerlink" title="移动单元格的位置"></a>移动单元格的位置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    var customers = [</span><br><span class="line">        </span><br><span class="line">        &quot;[普通客户] 冮炳林&quot;,</span><br><span class="line">        &quot;[普通客户] 扶伽霖&quot;,</span><br><span class="line">        &quot;[普通客户] 冈皑冰&quot;,</span><br><span class="line">        &quot;[金牌客户] 符博富&quot;,</span><br><span class="line">        &quot;[普通客户] 范姜臣华&quot;</span><br><span class="line">    ]</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        let screenRect = UIScreen.main.bounds</span><br><span class="line">        let tableRect = CGRect(x: 0, y: 20, width: screenRect.size.width, height: screenRect.size.height - 20)</span><br><span class="line">        let tableView = UITableView(frame: tableRect)</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self</span><br><span class="line">        tableView.delegate = self</span><br><span class="line">        </span><br><span class="line">        tableView.setEditing(true, animated: true)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(tableView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int&#123;</span><br><span class="line">        return customers.count</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)</span><br><span class="line">        -&gt; UITableViewCell &#123;</span><br><span class="line">            </span><br><span class="line">            let identifier = &quot;reusedCell&quot;</span><br><span class="line">            var cell = tableView.dequeueReusableCell(withIdentifier: identifier)</span><br><span class="line">            </span><br><span class="line">            if(cell == nil)&#123;</span><br><span class="line">                cell = UITableViewCell(style: UITableViewCell.CellStyle.default,</span><br><span class="line">                    reuseIdentifier: identifier)</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            cell?.textLabel?.text = customers[(indexPath as NSIndexPath).row]</span><br><span class="line">            return cell!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //隐藏单元格左侧的编辑按钮</span><br><span class="line">    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -&gt; UITableViewCell.EditingStyle &#123;</span><br><span class="line">        return UITableViewCell.EditingStyle.none</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //用来设置UITableView视图中的所有单元格都是可以被拖动的</span><br><span class="line">    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -&gt; Bool &#123;</span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当用户松开手指，释放被拖动的单元格时，调用此方法</span><br><span class="line">    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) &#123;</span><br><span class="line">        </span><br><span class="line">        //首先获得单元格的原始索引位置和目标索引位置，然后获得在客户数组中被拖动的客户姓名</span><br><span class="line">        //接着调用数组的removeAtIndex:方法删除数组原始位置上的元素</span><br><span class="line">        //最后调用数组的insert(: atIndex)方法将被拖动的客户姓名插入数组中的目标位置，以保持视图层与数据源层的数据同步</span><br><span class="line">        let fromRow = (sourceIndexPath as NSIndexPath).row</span><br><span class="line">        let toRow = (destinationIndexPath as NSIndexPath).row</span><br><span class="line">        let customer = customers[fromRow]</span><br><span class="line">        </span><br><span class="line">        customers.remove(at: fromRow)</span><br><span class="line">        customers.insert(customer, at: toRow)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="表格之间的嵌套"><a href="#表格之间的嵌套" class="headerlink" title="表格之间的嵌套"></a>表格之间的嵌套</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//该表格的偶数行(行数从0开始)为普通的UITableViewCell单元格，用来显示新闻的标题文字</span><br><span class="line">//表格的奇数行为自定义的单元格，该单元格拥有另一个UITableView对象，用来显示网友对新闻的评论信息</span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class CustomizeUITableViewCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    var tableView: UITableView!</span><br><span class="line">    var comments: [String] = []  //添加了一个字符串数组，作为tableView元素的数据源，该数组的初始值为空</span><br><span class="line">    </span><br><span class="line">    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) &#123;</span><br><span class="line">        </span><br><span class="line">        super.init(style: style, reuseIdentifier: reuseIdentifier)</span><br><span class="line">        </span><br><span class="line">        tableView = UITableView(frame: CGRect(x: 20, y: 0, width: 280, height: 90))</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self</span><br><span class="line">        tableView.delegate = self</span><br><span class="line">        </span><br><span class="line">        tableView.isScrollEnabled = false  //禁止tableView的滚动</span><br><span class="line">        </span><br><span class="line">        self.addSubview(tableView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int&#123;</span><br><span class="line">        return comments.count</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)</span><br><span class="line">        -&gt; UITableViewCell &#123;</span><br><span class="line">        </span><br><span class="line">            let identifier = &quot;reusedCell&quot;</span><br><span class="line">            var cell = tableView.dequeueReusableCell(withIdentifier: identifier)</span><br><span class="line">            </span><br><span class="line">            if cell == nil &#123;</span><br><span class="line">                </span><br><span class="line">                cell = UITableViewCell(style: UITableViewCell.CellStyle.default,</span><br><span class="line">                    reuseIdentifier: identifier)</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">            cell?.textLabel?.text = comments[(indexPath as NSIndexPath).row]</span><br><span class="line">            cell?.textLabel?.font = UIFont.systemFont(ofSize: 12)</span><br><span class="line">            cell?.textLabel?.textColor = UIColor.gray</span><br><span class="line">            cell?.textLabel?.numberOfLines = 0  //表示不限制标签对象中文字的行数</span><br><span class="line">        </span><br><span class="line">            return cell!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //用来设置指定索引位置的单元格的高度，这里根据该单元格将要显示的文字的多少来设置相应的高度</span><br><span class="line">    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)</span><br><span class="line">        -&gt; CGFloat &#123;</span><br><span class="line">        </span><br><span class="line">        let subComments = comments[(indexPath as NSIndexPath).row]  //根据索引位置获得数据源中指定位置的评论信息</span><br><span class="line">        </span><br><span class="line">        let size = subComments.boundingRect(with: CGSize(),</span><br><span class="line">            options: NSStringDrawingOptions.usesFontLeading, attributes: nil, context: nil);  //获得绘制该字符串所需的矩形区域的大小</span><br><span class="line">        </span><br><span class="line">        let cellHeight =  size.height*size.width/170  //计算出显示所有评论信息所需要的单元格的高度数值</span><br><span class="line">        </span><br><span class="line">        if cellHeight &lt; 30 &#123;</span><br><span class="line">            return 30</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return cellHeight</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当设置表格对象的数据源之后，需要根据数据源中评论信息的文字数量重新设置表格对象的高度数值</span><br><span class="line">    func setCommentsForTable(_ comments:[String]) &#123;</span><br><span class="line">        self.comments = comments</span><br><span class="line">        </span><br><span class="line">        var tableHeight: CGFloat = 0</span><br><span class="line">        </span><br><span class="line">        //通过一个for循环语句把表格中所有的单元格的高度都分别计算一次，然后把结果累加起来作为表格的高度，最后把累加后的高度数值赋予当前的tableView对象</span><br><span class="line">        for i in 0 ..&lt; comments.count</span><br><span class="line">        &#123;</span><br><span class="line">            let size = comments[i].boundingRect(with: CGSize(),</span><br><span class="line">                options: NSStringDrawingOptions.usesFontLeading, attributes: nil, context: nil);</span><br><span class="line">            tableHeight += size.height*size.width/170</span><br><span class="line">        &#125;</span><br><span class="line">        tableView.frame = CGRect(x: 20, y: 0, width: 280, height: tableHeight + 50)</span><br><span class="line">        </span><br><span class="line">        tableView.reloadData()  //调用该方法可以重新加载表格的数据源，并重新生成表格对象中的所有章节头部标题、章节尾部内容、章节序列以及单元格的内容</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func getMyHeight()-&gt;CGFloat&#123;</span><br><span class="line">        return tableView.frame.size.height</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    required init(coder aDecoder: NSCoder) &#123;</span><br><span class="line">        fatalError(&quot;init(code:)has not brrn implomented&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    var articles = [</span><br><span class="line">        &quot;微软有哪些「黑历史」？&quot;,</span><br><span class="line">        &quot;苹果有哪些黑科技？&quot;,</span><br><span class="line">        &quot;巴宝莉和 Apple TV 强强联手推出天台秀直播&quot;</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    var comments = [</span><br><span class="line"></span><br><span class="line">      [&quot;1.Nebraska这个梗是这样的，当年美国很多公司的呼叫中心设在nebraska（原因有两说，一说是战略空军司令部在这，所以电话线路多，一说是中西部的人说话口音比较标准. 我没考证过哪个对，或者是两个都有），那时候AT&amp;T 店大欺客，800只能打长途不能打市话. 所以八十年代各种广告后面附的电话都是除Nebraska以外，然后后面应该还有一个Nebraska专用的号码.&quot;,</span><br><span class="line">       &quot;2.鲍尔默一直都是这种画风……&quot;,</span><br><span class="line">       &quot;3.见多了我们的cheer leader的表演就不见怪了。内部company meeting上的那些你们没见过，还有billg出演的。还有个嘲讽非windows系统的广告，好像是和Brian Valentine一起演的，那货也是个怪咖，以前Windows的SVP。&quot;],</span><br><span class="line"></span><br><span class="line">      [&quot;1.它真的黑，黑出亮。&quot;,</span><br><span class="line">       &quot;2.在天朝，购买它所缴纳的消费税可以买一台超级本&quot;,</span><br><span class="line">       &quot;3.这家能够操作供应链的公司，想要什么样的显卡、什么样的内存、什么样的SSD都能信手拈来；这够黑吧&quot;],</span><br><span class="line"></span><br><span class="line">      [&quot;1.据巴宝莉新闻稿了解，Apple TV在直播过程中将推出购物功能，观众能直接预定秀场上出现的服装。这么看来，这个功能用在国内简直是一大引入点，可以在春晚直播的过程中购买明星同款。&quot;,</span><br><span class="line">       &quot;2.这次怎么不用iPhone®拍摄b？&quot;]</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        let screenRect = UIScreen.main.bounds</span><br><span class="line">        let tableRect = CGRect(x: 0, y: 20, width: screenRect.size.width, height: screenRect.size.height - 20)</span><br><span class="line">        let tableView = UITableView(frame: tableRect)</span><br><span class="line">        </span><br><span class="line">        tableView.dataSource = self</span><br><span class="line">        tableView.delegate = self</span><br><span class="line">        </span><br><span class="line">        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none  //不显示单元格之间的分隔线，以避免和内层tableView中的单元格分隔线混淆</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(tableView)</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //设置单元格的行数为articles数组长度的2倍，这是因为我们创建的表格的偶数行用来显示新闻标题，奇数行用来显示新闻评论</span><br><span class="line">    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int&#123;</span><br><span class="line">        return articles.count * 2</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)</span><br><span class="line">        -&gt; UITableViewCell &#123;</span><br><span class="line">        </span><br><span class="line">            //定义两个字符串变量，表示两种类型的单元格</span><br><span class="line">            //第一种类型的单元格为普通的UITableViewCell单元格，用于显示新闻的标题</span><br><span class="line">            //第二种类型的单元格为自定义的CustomizeUITableViewCell单元格，该单元格包含一个UITableView子元素，用于显示某条新闻所属的所有评论信息</span><br><span class="line">            let cellForArticle = &quot;cellForArticle&quot;</span><br><span class="line">            let cellForComments = &quot;cellForComments&quot;</span><br><span class="line"></span><br><span class="line">            var cell1: UITableViewCell?</span><br><span class="line">            var cell2: CustomizeUITableViewCell?</span><br><span class="line">        </span><br><span class="line">            //如果当前单元格是偶数行，就创建普通的UITableViewCell单元格对象，否则就创建CustomizeUITableViewCell类型的单元格</span><br><span class="line">            if (indexPath as NSIndexPath).row % 2 == 0 &#123;</span><br><span class="line">                cell1 = tableView.dequeueReusableCell(withIdentifier: cellForArticle)</span><br><span class="line">                if cell1 == nil&#123;</span><br><span class="line">                    cell1 = UITableViewCell(style: UITableViewCell.CellStyle.default,</span><br><span class="line">                        reuseIdentifier: cellForArticle)</span><br><span class="line">                &#125;</span><br><span class="line">                cell1?.textLabel?.text = articles[(indexPath as NSIndexPath).row/2]</span><br><span class="line">                cell1?.textLabel?.font = UIFont.systemFont(ofSize: 16)</span><br><span class="line">                cell1?.textLabel?.textColor = UIColor.lightGray</span><br><span class="line">                cell1?.backgroundColor = UIColor.black</span><br><span class="line">                return cell1!</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                cell2 = tableView.dequeueReusableCell(withIdentifier: cellForComments) as? CustomizeUITableViewCell</span><br><span class="line">                if cell2 == nil&#123;</span><br><span class="line">                    cell2 = CustomizeUITableViewCell(style: UITableViewCell.CellStyle.default,</span><br><span class="line">                        reuseIdentifier: cellForComments)</span><br><span class="line">                &#125;</span><br><span class="line">                let subComments = comments[(indexPath as NSIndexPath).row/2]</span><br><span class="line">                </span><br><span class="line">                cell2?.setCommentsForTable(subComments)  //设置自定义单元格中UITableView对象的数据源为刚刚获得的评论数组对象</span><br><span class="line">                return cell2!</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //设置外层表格的单元格的高度</span><br><span class="line">    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat &#123;</span><br><span class="line">        </span><br><span class="line">        //对于用来显示新闻标题的单元格来说，可以将其高度设置为固定值；但是对于用来显示评论信息的单元格来说，其高度应根据评论文字内容的多少而动态变化</span><br><span class="line">        if (indexPath as NSIndexPath).row % 2 == 0 &#123;</span><br><span class="line">            return 40</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            let subComments = comments[(indexPath as NSIndexPath).row/2]</span><br><span class="line">            var cellHeight:CGFloat = 0</span><br><span class="line">            for i in 0 ..&lt; subComments.count</span><br><span class="line">            &#123;</span><br><span class="line">                let size = subComments[i].boundingRect(with: CGSize(), options: NSStringDrawingOptions.usesFontLeading, attributes: nil, context: nil);</span><br><span class="line">                cellHeight += size.height*(size.width/170)</span><br><span class="line">            &#125;</span><br><span class="line">            return cellHeight + 50</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UICollectionView" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/08/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UICollectionView/" class="article-date">
+      <time datetime="2021-04-07T16:00:00.000Z" itemprop="datePublished">2021-04-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/08/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UICollectionView/">UICollectionView</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UITableView最大的特点：将所有的内容都以上下相连的方式排列在一栏滚动列表中，这就使得UITableView的布局有了很大的局限性</span><br><span class="line">//UICollectionView用于展示集合视图，其布局更加灵活，可实现多列布局</span><br><span class="line"></span><br><span class="line">//此实例中将使用UICollectionView的UICollectionViewFlowLayout默认布局模式，除了该布局模式之外，UICollectionView还具有堆叠布局、圆形布局、Cover Flow布局模式</span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    //该数组将作为UICollectionView对象的数据源</span><br><span class="line">    var images = [&quot;Pic1&quot;, &quot;Pic2&quot;, &quot;Pic3&quot;, &quot;Pic4&quot;, &quot;Pic5&quot;, &quot;Pic6&quot;, &quot;Pic7&quot;, &quot;Pic8&quot;, &quot;Pic9&quot;, &quot;Pic9&quot;, &quot;Pic9&quot;, &quot;Pic9&quot;]</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        let screenRect = UIScreen.main.bounds</span><br><span class="line">        let rect = CGRect(x: 0, y: 10, width: screenRect.size.width, height: screenRect.size.height - 20)</span><br><span class="line">        </span><br><span class="line">        let flowLayout = UICollectionViewFlowLayout()</span><br><span class="line">        flowLayout.itemSize = CGSize(width: 155, height: 135)  //该属性用来设置cell的默认尺寸信息</span><br><span class="line">        flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical  //垂直方向，即集合视图可以在垂直方向上进行滑动，网格只能在一个方向轴上进行滑动，要么是垂直方向，要么是水平方向</span><br><span class="line">        </span><br><span class="line">        let collectionView = UICollectionView(frame: rect, collectionViewLayout: flowLayout)</span><br><span class="line">        </span><br><span class="line">        collectionView.dataSource = self</span><br><span class="line">        collectionView.delegate = self</span><br><span class="line">        </span><br><span class="line">        //由于集合对象是通过代码生成的，而不是通过故事版或NIB文件生成，因此需要注册一个UICollectionViewCell类，不然在初始化新的UICollectionViewCell时会发生错误，同时要注意forCellWithReuseIdentifier:参数的值，该值应与创建UICollectionViewCell对象时的重用标志字符串相同</span><br><span class="line">        collectionView.register(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: &quot;reusedCell&quot;)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(collectionView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int &#123;</span><br><span class="line">        return images.count</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //初始化并复用UICollectionViewCell对象</span><br><span class="line">    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell &#123;</span><br><span class="line">        </span><br><span class="line">        let identifier = &quot;reusedCell&quot;</span><br><span class="line">        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)</span><br><span class="line">        </span><br><span class="line">        //检查cell中是否存在tag值为1的UIImageView对象，如果不存在就给cell添加一个新的UIImageView对象</span><br><span class="line">        let imageView: UIImageView? = cell.viewWithTag(1) as? UIImageView</span><br><span class="line">        </span><br><span class="line">        if imageView == nil&#123;</span><br><span class="line">            let image = UIImage(named: images[(indexPath as NSIndexPath).row])</span><br><span class="line">            let imageView = UIImageView(image: image)</span><br><span class="line">            </span><br><span class="line">            imageView.frame = CGRect(x: 0, y: 0, width: 150, height: 135)</span><br><span class="line">            imageView.layer.opacity = 0.5  //层的透明度</span><br><span class="line">            imageView.tag = 1</span><br><span class="line">            </span><br><span class="line">            cell.addSubview(imageView)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            imageView?.image = UIImage(named: images[(indexPath as NSIndexPath).row])</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return cell</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //实现UICollectionViewDelegate协议中的手指触摸检测方法</span><br><span class="line">    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) &#123;</span><br><span class="line">        </span><br><span class="line">        let cell = collectionView.cellForItem(at: indexPath)</span><br><span class="line">        let imageView = cell?.viewWithTag(1)</span><br><span class="line">        </span><br><span class="line">        imageView?.layer.opacity = 1.0</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/对触摸事件阶段的监测" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/07/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E5%AF%B9%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E9%98%B6%E6%AE%B5%E7%9A%84%E7%9B%91%E6%B5%8B/" class="article-date">
+      <time datetime="2021-04-06T16:00:00.000Z" itemprop="datePublished">2021-04-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/07/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E5%AF%B9%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E9%98%B6%E6%AE%B5%E7%9A%84%E7%9B%91%E6%B5%8B/">对触摸事件阶段的监测</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//在iOS中并不是所有的类都能接收并处理事件，只有继承自UIResponder类的对象才能处理触摸事件</span><br><span class="line">//UIResponder是UIView的父类，常用的UIView控件、UIViewController视图控制器、UIApplication都继承自UIResponder，它们都能接收并处理触摸事件</span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //UIResponder处理触屏事件的4个方法</span><br><span class="line">    </span><br><span class="line">    //当一个或多个手指在相关联的视图上按下时调用此方法</span><br><span class="line">    override func touchesBegan(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) &#123;</span><br><span class="line">        print(&quot;touchesBegan&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当一个或多个手指在相关联的视图上滑动时调用此方法</span><br><span class="line">    override func touchesMoved(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) &#123;</span><br><span class="line">        print(&quot;touchesMoved&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当一个或多个手指滑出相关联的视图时调用此方法</span><br><span class="line">    override func touchesEnded(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) &#123;</span><br><span class="line">        print(&quot;touchesEnded&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //当由于系统事件的发生(比如来电、低电量通知等)而造成触摸事件被取消时调用此方法</span><br><span class="line">    override func touchesCancelled(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) &#123;</span><br><span class="line">        print(&quot;touchesCancelled&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/监测是否触摸到某个视图并实现图像视图的拖动" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/06/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E7%9B%91%E6%B5%8B%E6%98%AF%E5%90%A6%E8%A7%A6%E6%91%B8%E5%88%B0%E6%9F%90%E4%B8%AA%E8%A7%86%E5%9B%BE%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BE%E7%9A%84%E6%8B%96%E5%8A%A8/" class="article-date">
+      <time datetime="2021-04-05T16:00:00.000Z" itemprop="datePublished">2021-04-06</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/06/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E7%9B%91%E6%B5%8B%E6%98%AF%E5%90%A6%E8%A7%A6%E6%91%B8%E5%88%B0%E6%9F%90%E4%B8%AA%E8%A7%86%E5%9B%BE%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BE%E7%9A%84%E6%8B%96%E5%8A%A8/">监测是否触摸到某个视图并实现图像视图的拖动</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    var imageView: UIImageView!</span><br><span class="line">    var isTouchInImageView: Bool = false</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //当用户点击某个视图时，可以通过UITouch类获得点击事件在视图中的位置，然后通过判断该位置是否在视图的frame区域中，从而判断用户是否点击了某个视图</span><br><span class="line">        let image = UIImage(named: &quot;Star&quot;)</span><br><span class="line">        self.imageView = UIImageView(image: image)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(self.imageView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //用来监测用户是否按下手指</span><br><span class="line">    override func touchesBegan(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) &#123;</span><br><span class="line">        </span><br><span class="line">        let touch = touches.first  //获得一个UITouch对象</span><br><span class="line">        let touchPoint = touch?.location(in: self.view)  //获得在当前视图控制器根视图中的位置</span><br><span class="line">        </span><br><span class="line">        let imageViewFrame = self.imageView.frame</span><br><span class="line">        let minX = imageViewFrame.origin.x</span><br><span class="line">        let minY = imageViewFrame.origin.y</span><br><span class="line">        let maxX = minX + imageViewFrame.size.width</span><br><span class="line">        let maxY = minY + imageViewFrame.size.height</span><br><span class="line">        </span><br><span class="line">        //判断用户是否点击了图像视图</span><br><span class="line">        if (touchPoint?.x)! &gt;= minX &amp;&amp; (touchPoint?.x)! &lt;= maxX &amp;&amp; (touchPoint?.y)! &gt;= minY &amp;&amp; (touchPoint?.y)! &lt;= maxY &#123;</span><br><span class="line">            </span><br><span class="line">            isTouchInImageView = true</span><br><span class="line">            print(&quot;您捡到一枚星星&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //</span><br><span class="line">    override func touchesMoved(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) &#123;</span><br><span class="line">        </span><br><span class="line">        //判断用户是否在图像视图中按下手指</span><br><span class="line">        if !isTouchInImageView &#123;</span><br><span class="line">            return</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        let touch = touches.first</span><br><span class="line">        let touchPoint = touch?.location(in: self.view)  //获得用户当前的触摸位置</span><br><span class="line">        let touchPrePoint = touch?.previousLocation(in: self.view)  //获得上一个移动位置</span><br><span class="line">        </span><br><span class="line">        //偏移距离</span><br><span class="line">        let disX = (touchPoint?.x)! - (touchPrePoint?.x)!</span><br><span class="line">        let disY = (touchPoint?.y)! - (touchPrePoint?.y)!</span><br><span class="line">        </span><br><span class="line">        var centerPoint = self.imageView.center</span><br><span class="line">        centerPoint.x += disX</span><br><span class="line">        centerPoint.y += disY</span><br><span class="line">        </span><br><span class="line">        self.imageView.center = centerPoint</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    override func touchesEnded(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) &#123;</span><br><span class="line">        isTouchInImageView = false</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/触摸手势" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/05/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E8%A7%A6%E6%91%B8%E6%89%8B%E5%8A%BF/" class="article-date">
+      <time datetime="2021-04-04T16:00:00.000Z" itemprop="datePublished">2021-04-05</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/05/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E8%A7%A6%E6%91%B8%E6%89%8B%E5%8A%BF/">触摸手势</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="实现单点触摸手势"><a href="#实现单点触摸手势" class="headerlink" title="实现单点触摸手势"></a>实现单点触摸手势</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    var imageView: UIImageView!</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //UIGestureRecognizer类对用户常用的手势操作进行了识别：UIPanGestureRecognizer拖动手势、UIPinchGestureRecognizer捏合手势、UIRotationGestureRecognizer旋转手势、UITapGestureRecognizer点击手势、UILongPressGestureRecognizer长按手势、UISwipeGestureRecognizer轻扫手势</span><br><span class="line">        //UIGestureRecognizer手势分为discrete gestures非连续手势和continuous gestures连续手势两种，UITapGestureRecognizer属于非连续类型的手势，其他5种手势则属于连续类型的手势</span><br><span class="line">        </span><br><span class="line">        //实现单点触摸手势</span><br><span class="line">        let rect = CGRect(x: 0, y: 80, width: 320, height: 320)</span><br><span class="line">        self.imageView = UIImageView(frame: rect)</span><br><span class="line">        </span><br><span class="line">        let image = UIImage(named: &quot;lock&quot;)</span><br><span class="line">        imageView.image = image</span><br><span class="line">        </span><br><span class="line">        imageView.isUserInteractionEnabled = true  //使图像视图可以接收用户的交互动作</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(self.imageView)</span><br><span class="line">        </span><br><span class="line">        let guesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.singleTap))</span><br><span class="line">        imageView.addGestureRecognizer(guesture)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func singleTap()</span><br><span class="line">    &#123;</span><br><span class="line">        let image = UIImage(named: &quot;unlock&quot;)</span><br><span class="line">        imageView.image = image</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="实现双击触摸手势"><a href="#实现双击触摸手势" class="headerlink" title="实现双击触摸手势"></a>实现双击触摸手势</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    var imageView: UIImageView!</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //实现双击触摸手势</span><br><span class="line">        let rect = CGRect(x: 0, y: 80, width: 320, height: 320)</span><br><span class="line">        self.imageView = UIImageView(frame: rect)</span><br><span class="line">        </span><br><span class="line">        let image = UIImage(named: &quot;lock&quot;)</span><br><span class="line">        imageView.image = image</span><br><span class="line">        </span><br><span class="line">        imageView.isUserInteractionEnabled = true  //使图像视图可以接收用户的交互动作</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(self.imageView)</span><br><span class="line">        </span><br><span class="line">        let guesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.doubleTap))</span><br><span class="line">        guesture.numberOfTapsRequired = 2  //识别进行两次点击的手势，该属性的默认值为1</span><br><span class="line">        guesture.numberOfTouchesRequired = 1  //识别一根手指进行两次点击的手势，该属性的默认值也是1</span><br><span class="line">        imageView.addGestureRecognizer(guesture)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func doubleTap()</span><br><span class="line">    &#123;</span><br><span class="line">        let image = UIImage(named: &quot;unlock&quot;)</span><br><span class="line">        imageView.image = image</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="实现长按手势的监测"><a href="#实现长按手势的监测" class="headerlink" title="实现长按手势的监测"></a>实现长按手势的监测</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    var imageView: UIImageView!</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //实现长按手势的监测</span><br><span class="line">        let rect = CGRect(x: 0, y: 80, width: 320, height: 320)</span><br><span class="line">        self.imageView = UIImageView(frame: rect)</span><br><span class="line">        </span><br><span class="line">        let image = UIImage(named: &quot;lock&quot;)</span><br><span class="line">        imageView.image = image</span><br><span class="line">        </span><br><span class="line">        imageView.isUserInteractionEnabled = true  //使图像视图可以接收用户的交互动作</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(self.imageView)</span><br><span class="line">        </span><br><span class="line">        let guesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_ :)))</span><br><span class="line">        guesture.minimumPressDuration = 1.0  //只有当手指按下并持续1秒钟之后，才会被识别为长按手势</span><br><span class="line">        guesture.allowableMovement = 20.0  //在手指处于按下状态时，若手势移动的距离超过20点，则视为非长按手势，此属性的默认值为10</span><br><span class="line">        imageView.addGestureRecognizer(guesture)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func longPress(_ gusture: UILongPressGestureRecognizer)</span><br><span class="line">    &#123;</span><br><span class="line">        if gusture.state == UIGestureRecognizer.State.began&#123;</span><br><span class="line">            </span><br><span class="line">            let image = UIImage(named: &quot;unlock&quot;)</span><br><span class="line">            imageView.image = image</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="捏合手势的监测"><a href="#捏合手势的监测" class="headerlink" title="捏合手势的监测"></a>捏合手势的监测</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    var imageView: UIImageView!</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //捏合手势的监测</span><br><span class="line">        let rect = CGRect(x: 0, y: 80, width: 320, height: 320)</span><br><span class="line">        self.imageView = UIImageView(frame: rect)</span><br><span class="line">        </span><br><span class="line">        let image = UIImage(named: &quot;Hand&quot;)</span><br><span class="line">        imageView.image = image</span><br><span class="line">        </span><br><span class="line">        imageView.isUserInteractionEnabled = true  //使图像视图可以接收用户的交互动作</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(self.imageView)</span><br><span class="line">        </span><br><span class="line">        //当两个手指按下并移到一定距离时，会被识别为一个Pinch捏合手势，此时捏合手势处于begins状态。接着只要其中一个手指继续移动，捏合手势将进入changes状态，当两个手指都松开时，捏合手势将处于ends状态</span><br><span class="line">        let guesture = UIPinchGestureRecognizer(target: self, action: #selector(ViewController.pinchImage(_ :)))</span><br><span class="line">        imageView.addGestureRecognizer(guesture)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func pinchImage(_ recognizer: UIPinchGestureRecognizer) &#123;</span><br><span class="line">        </span><br><span class="line">        //通过recognizer对象的view属性可以获得包含捏合手势的视图对象，然后通过recognizer对象的scale属性的值更改view对象的transform属性，从而实现图像视图的缩放功能</span><br><span class="line">        recognizer.view?.transform = (recognizer.view?.transform.scaledBy(x: recognizer.scale, y: recognizer.scale))!</span><br><span class="line">        </span><br><span class="line">        recognizer.scale = 1  //使捏合手势的缩放比例始终在1倍的基础上进行递增或递减</span><br><span class="line">        </span><br><span class="line">        //recognizer.velocity  表示在进行缩放动作时的速度</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/3D_Touch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/04/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/3D_Touch/" class="article-date">
+      <time datetime="2021-04-03T16:00:00.000Z" itemprop="datePublished">2021-04-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/04/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/3D_Touch/">3D_Touch</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">@main</span><br><span class="line">class AppDelegate: UIResponder, UIApplicationDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool &#123;</span><br><span class="line">        // Override point for customization after application launch.</span><br><span class="line">        </span><br><span class="line">        let addEventIcon = UIApplicationShortcutIcon(type: .add)  //创建了一个系统自带的类型为UIApplicationShortcutIcon.IconType.add的快捷图标，系统提供了29种快捷图标供开发者使用</span><br><span class="line">        let unlockEventIcon = UIApplicationShortcutIcon(templateImageName: &quot;unlockEvent&quot;)  //使用项目资源文件夹中的图片创建了两个自定义的快捷图标</span><br><span class="line">        let listEventIcon = UIApplicationShortcutIcon(templateImageName: &quot;listEvent&quot;)</span><br><span class="line">        </span><br><span class="line">        //设置快捷项目的标题、图标等信息</span><br><span class="line">        //type：必要参数，表示快捷项目的唯一标识</span><br><span class="line">        //localizedTitle：必要参数，表示快捷项目的标题</span><br><span class="line">        //localizedSubtitle：可选参数，表示快捷项目的副标题</span><br><span class="line">        //icon：可选参数，表示快捷项目的图标</span><br><span class="line">        //userInfo：可选参数，表示app传递给动作的自定义数据信息</span><br><span class="line">        let addEvent = UIApplicationShortcutItem(type: &quot;com.coolketang.addMember&quot;, localizedTitle: &quot;添加会员&quot;, localizedSubtitle: &quot;Add Member&quot;, icon: addEventIcon, userInfo: nil)</span><br><span class="line">        let unlockEvent = UIApplicationShortcutItem(type: &quot;com.coolketang.unlockMember&quot;, localizedTitle: &quot;解锁会员&quot;, localizedSubtitle: &quot;Unlock Member&quot;, icon: unlockEventIcon, userInfo: nil)</span><br><span class="line">        let listEvent = UIApplicationShortcutItem(type: &quot;com.coolketang.memberList&quot;, localizedTitle: &quot;会员列表&quot;, localizedSubtitle: &quot;Members List&quot;, icon: listEventIcon, userInfo: nil)</span><br><span class="line">        </span><br><span class="line">        let shortCutItems = [addEvent, unlockEvent, listEvent]</span><br><span class="line">        application.shortcutItems = shortCutItems</span><br><span class="line">        </span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //响应用户在快捷菜单中的点击事件</span><br><span class="line">    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -&gt; Void) &#123;</span><br><span class="line">        </span><br><span class="line">        if shortcutItem.type == &quot;com.coolketang.addMember&quot; &#123;</span><br><span class="line">            print(&quot;跳转至添加会员页面。&quot;)</span><br><span class="line">            </span><br><span class="line">        &#125; else if shortcutItem.type == &quot;com.coolketang.unlockMember&quot;&#123;</span><br><span class="line">            print(&quot;跳转至解锁会员页面。&quot;)</span><br><span class="line">            </span><br><span class="line">        &#125; else if shortcutItem.type == &quot;com.coolketang.memberList&quot;&#123;</span><br><span class="line">            print(&quot;跳转至会员列表页面。&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // MARK: UISceneSession Lifecycle</span><br><span class="line">    </span><br><span class="line">    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -&gt; UISceneConfiguration &#123;</span><br><span class="line">        // Called when a new scene session is being created.</span><br><span class="line">        // Use this method to select a configuration to create the new scene with.</span><br><span class="line">        return UISceneConfiguration(name: &quot;Default Configuration&quot;, sessionRole: connectingSceneSession.role)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set&lt;UISceneSession&gt;) &#123;</span><br><span class="line">        // Called when the user discards a scene session.</span><br><span class="line">        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.</span><br><span class="line">        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIView动画块和和Block动画" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/03/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E5%8A%A8%E7%94%BB%E5%9D%97%E5%92%8C%E5%92%8CBlock%E5%8A%A8%E7%94%BB/" class="article-date">
+      <time datetime="2021-04-02T16:00:00.000Z" itemprop="datePublished">2021-04-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/03/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E5%8A%A8%E7%94%BB%E5%9D%97%E5%92%8C%E5%92%8CBlock%E5%8A%A8%E7%94%BB/">UIView动画块和和Block动画</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //iOS中的动画实现技术主要是Core Animation和UIKit，两者都可以负责所有的滚动、旋转、缩小和放大以及所有的iOS动画效果</span><br><span class="line">        //其中，UIKit可以看作是对CoreAnimation的封装</span><br><span class="line">        </span><br><span class="line">        //UIView拥有多种动画的实现方式：UIView动画块、UIView的Block动画，甚至包含关键帧动画，使用UIView动画时，可以通过修改以下UIView视图的属性产生平滑的动画效果：frame、bounds、center、transform、alpha、backgroundColor、contentStretch</span><br><span class="line">        </span><br><span class="line">        //UIView动画块、UIView的Block动画</span><br><span class="line">        let rect = CGRect(x: 40, y: 80, width: 240, height: 240)</span><br><span class="line">        let view = UIView(frame: rect)</span><br><span class="line">        view.backgroundColor = UIColor.red</span><br><span class="line">        view.tag = 1  //UIView对象的tag表示该视图对象在父视图中的唯一标识，该视图被添加到父视图时，父视图可以通过viewWithTag(tag: Int)方法快速找到拥有该标识的子视图</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line">        </span><br><span class="line">        let button = UIButton(type: UIButton.ButtonType.system)</span><br><span class="line">        button.frame = CGRect(x: 50, y: 400, width: 220, height: 44)</span><br><span class="line">        button.backgroundColor = UIColor.black</span><br><span class="line">        button.setTitle(&quot;Play&quot;, for: .normal)</span><br><span class="line">        button.titleLabel?.font = UIFont(name: &quot;Arial&quot;, size: 24)</span><br><span class="line">        </span><br><span class="line">        button.addTarget(self, action: #selector(ViewController.playAnimation), for: UIControl.Event.touchUpInside)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(button)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /*</span><br><span class="line">    //实现UIView动画的播放</span><br><span class="line">    @objc func playAnimation() &#123;</span><br><span class="line">        </span><br><span class="line">        UIView.beginAnimations(nil, context: nil)  //启动一个动画，动画并不会立即被执行，直到调用UIView类的commitAnimations类方法，对于一个视图对象执行的介于beginAnimations方法跟commitAnimations方法之间的操作，在commitAnimations方法被执行后，才会生成并播放动画</span><br><span class="line">        </span><br><span class="line">        //easeInOut：动画播放速度在开始时较慢，然后逐渐加速，在完成之前再次变慢</span><br><span class="line">        //easeIn：动画播放速度在开始时较慢，然后在动画播放过程中逐渐加速</span><br><span class="line">        //easeOut：动画播放速度在开始时较快，然后在动画播放过程中逐渐减速</span><br><span class="line">        //linear：动画插入速度在动画播放过程中始终保持不变</span><br><span class="line">        UIView.setAnimationCurve(.easeOut)  //设置动画的播放速度变化曲线，该属性默认值为easeInOut</span><br><span class="line">        </span><br><span class="line">        UIView.setAnimationDuration(5)  //设置动画块的的动画持续时间，单位为秒，默认值为0.2</span><br><span class="line">        UIView.setAnimationBeginsFromCurrentState(true)  //设置动画是否从当前状态开始播放，默认值为false</span><br><span class="line">        </span><br><span class="line">        let view = self.view.viewWithTag(1)</span><br><span class="line">        //view?.frame = CGRect(x: 40, y: 40, width: 0, height: 0)</span><br><span class="line">        //view?.backgroundColor = UIColor.blue</span><br><span class="line">        //view?.alpha = 0</span><br><span class="line">        </span><br><span class="line">        //设置自定义的过渡动画效果</span><br><span class="line">        //第一个参数表示过渡效果，第二个参数表示需要应用过渡效果的视图，第三个参数表示是否为视图在过渡前后的画面进行缓存，以提高过渡效果的桢速</span><br><span class="line">        //flipFromLeft：视图从左向右滑入屏幕；flipFromRight：视图从右向左滑入屏幕；curlUp：视图从底部向顶部卷曲的翻页动画；curlDown：视图从顶部向底部卷曲的翻页动画；none：无过渡效果</span><br><span class="line">        UIView.setAnimationTransition(.curlUp, for: view!, cache: true)</span><br><span class="line">        </span><br><span class="line">        UIView.setAnimationDelegate(self)  //设置动画的代理为当前的视图控制器，用来检测动画的播放状态</span><br><span class="line">        UIView.setAnimationDidStop(#selector(ViewController.animationStop))  //设置动画结束时的回调方法</span><br><span class="line">        </span><br><span class="line">        UIView.commitAnimations()  //结束动画块的设置，并开始播放动画</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func animationStop()</span><br><span class="line">    &#123;</span><br><span class="line">        print(&quot;Animaton stop.&quot;)</span><br><span class="line">        self.view.viewWithTag(1)?.removeFromSuperview()</span><br><span class="line">    &#125;</span><br><span class="line">    */</span><br><span class="line">    </span><br><span class="line">    @objc func playAnimation() &#123;</span><br><span class="line">        </span><br><span class="line">        //第一个参数为动画的时长</span><br><span class="line">        //第二个参数为动画延迟时间</span><br><span class="line">        //第三个参数是动画的属性设置</span><br><span class="line">        //第四个参数为动画的主体设置区域</span><br><span class="line">        //第五个参数为动画完成后的回调事件</span><br><span class="line">        UIView.animate(withDuration: 5, delay: 0, options: [.curveEaseOut], animations: &#123;</span><br><span class="line">            </span><br><span class="line">            let view = self.view.viewWithTag(1)</span><br><span class="line">            view?.frame = CGRect(x: 40, y: 40, width: 0, height: 0)</span><br><span class="line">            view?.backgroundColor = UIColor.blue</span><br><span class="line">            view?.alpha = 0</span><br><span class="line">            </span><br><span class="line">        &#125;, completion: &#123; (value: Bool) in</span><br><span class="line">            </span><br><span class="line">            print(&quot;Animation stop.&quot;)</span><br><span class="line">            self.view.viewWithTag(1)?.removeFromSuperview()</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/使用UIImageView播放桢动画" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/02/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E4%BD%BF%E7%94%A8UIImageView%E6%92%AD%E6%94%BE%E6%A1%A2%E5%8A%A8%E7%94%BB/" class="article-date">
+      <time datetime="2021-04-01T16:00:00.000Z" itemprop="datePublished">2021-04-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/02/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E4%BD%BF%E7%94%A8UIImageView%E6%92%AD%E6%94%BE%E6%A1%A2%E5%8A%A8%E7%94%BB/">使用UIImageView播放桢动画</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        //使用UIImageView播放桢动画</span><br><span class="line">        //一个UIImageView图像视图可以存储一个动画图片序列，UIImageView图像视图对象的animationImages属性可以存储一个UIImage数据类型的图像数组</span><br><span class="line">        var images = [UIImage]()</span><br><span class="line">        </span><br><span class="line">        for i in 1 ... 24 &#123;</span><br><span class="line">            images.append(UIImage(named: &quot;animation\(i)&quot;)!)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        let imageView = UIImageView(frame: CGRect(x: 0, y: 60, width: 335, height: 253))</span><br><span class="line">        imageView.animationImages = images</span><br><span class="line">        </span><br><span class="line">        imageView.animationDuration = 5</span><br><span class="line">        imageView.animationRepeatCount = 0  //动画将进行不限次数的循环播放</span><br><span class="line">        imageView.startAnimating()  //开始播放帧动画</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(imageView)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/"></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/4/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

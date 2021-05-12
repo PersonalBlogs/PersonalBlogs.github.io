@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-Apple、Linux/macOS/本地项目上传至GitHub_GitLab" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/05/11/Apple%E3%80%81Linux/macOS/%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E8%87%B3GitHub_GitLab/" class="article-date">
+      <time datetime="2021-05-10T16:00:00.000Z" itemprop="datePublished">2021-05-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/05/11/Apple%E3%80%81Linux/macOS/%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E8%87%B3GitHub_GitLab/">本地项目上传至GitHub_GitLab</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="首次使用"><a href="#首次使用" class="headerlink" title="首次使用"></a>首次使用</h3><ol>
+<li><p>配置SSH</p>
+<p>⭐️cd 项目文件夹</p>
+<p>⭐️git init</p>
+<p>⭐️ssh-keygen -t rsa -C “<a href="mailto:&#x32;&#54;&#x36;&#56;&#56;&#x30;&#50;&#x35;&#x37;&#x30;&#x40;&#x71;&#113;&#46;&#99;&#111;&#109;">&#x32;&#54;&#x36;&#56;&#56;&#x30;&#50;&#x35;&#x37;&#x30;&#x40;&#x71;&#113;&#46;&#99;&#111;&#109;</a>“</p>
+<p>⭐️pbcopy &lt; ~/.ssh/id_rsa.pub  #将ssh代码复制到剪贴板</p>
+<p>⭐️回到GitHub/GitLab界面，将刚才生成的ssh配置到GitHub/GitLab里</p>
+<p>⭐️ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>  #验证是否添加ssh成功了</p>
+</li>
+<li><p>开始上传代码</p>
+<p>⭐️git clone 仓库地址</p>
+<p>⭐️cd 仓库</p>
+<p>⭐️git add –all</p>
+<p>⭐️git commit -m “第1次上传”</p>
+<p>⭐️git push</p>
+</li>
+</ol>
+<h3 id="以后使用"><a href="#以后使用" class="headerlink" title="以后使用"></a>以后使用</h3><p>   ⭐️cd 项目文件夹</p>
+<p>   ⭐️执行步骤2</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIView的外观属性" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/30/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%A4%96%E8%A7%82%E5%B1%9E%E6%80%A7/" class="article-date">
+      <time datetime="2021-04-29T16:00:00.000Z" itemprop="datePublished">2021-04-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/30/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%A4%96%E8%A7%82%E5%B1%9E%E6%80%A7/">UIView的外观属性</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UIView的外观属性：背景颜色、切边、透明度、显示与隐藏</span><br><span class="line">        </span><br><span class="line">        let view = UIView(frame: CGRect(x: 40, y: 80, width: 240, height: 240))</span><br><span class="line">        </span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        /* 将一张图片作为视图的背景颜色</span><br><span class="line">         let view = UIView(frame: CGRect(x: 40, y: 80, width: 240, height: 240))</span><br><span class="line">         let image = UIImage(named: &quot;logo&quot;)</span><br><span class="line">         view.backgroundColor = UIColor.init(patternImage: image!)</span><br><span class="line">         self.view.addSubview(view)  //使用UIColor类的init方法将加载的图片作为图案平铺在视图的背景中</span><br><span class="line">        */</span><br><span class="line">        </span><br><span class="line">        view.alpha = 0.3  //透明度</span><br><span class="line">        //当把alpha的值设置成0以后：当前的UIView及其子视图都会被隐藏，而不管子视图的alpha值为多少；当前的UIView会从响应者链中移除，而响应者链中的下一个会成为第一响应者</span><br><span class="line">        </span><br><span class="line">        view.isHidden = false  //表示UIView视图是否处于隐藏的状态</span><br><span class="line">        //当把值设为true时，当前的UIView及其子视图都会被隐藏，而不管子视图的hidden值为多少；当前的UIView会从响应者链中移除，而响应者链中的下一个会成为第一响应者</span><br><span class="line">        </span><br><span class="line">        let subView = UIView(frame: CGRect(x: 40, y: 40, width: 240, height: 240))</span><br><span class="line">        subView.backgroundColor = UIColor.green</span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        </span><br><span class="line">        view.clipsToBounds = true  //在默认情况下，当向一个视图中添加一个子视图时，如果子视图的区域超出了父视图的范围，子视图超出的部分仍然会在屏幕上正常显示；如果需要限制子视图的显示范围不超过父视图的显示区域，就需要设置父视图的clipsToBounds属性</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)  //通过addSubView()方法将设置背景色之后的视图添加到当前视图控制器的根视图中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIView的几何属性" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/29/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%87%A0%E4%BD%95%E5%B1%9E%E6%80%A7/" class="article-date">
+      <time datetime="2021-04-28T16:00:00.000Z" itemprop="datePublished">2021-04-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/29/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%87%A0%E4%BD%95%E5%B1%9E%E6%80%A7/">UIView的几何属性</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UIView的几何属性</span><br><span class="line">        //frame(origin,size)属性：定义了一个矩形区域，描述一个UIView的大小和在父坐标系的位置</span><br><span class="line">        //bounds(origin,size)属性：同样定义了一个矩形区域，描述一个UIView的大小和自身坐标系原点的位置，bounds.origin属性默认值是(0,0)，而bounds.size和frame.size是一致的</span><br><span class="line">        //center属性：用于确定一个视图的中心点位置，参照系也是其父视图的坐标系统，在对视图进行放大、缩小或旋转时，该属性的值不会改变</span><br><span class="line">        </span><br><span class="line">        let frame = CGRect(x: 0, y: 0, width: 250, height: 250)</span><br><span class="line">        let view = UIView(frame: frame)</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        view.bounds = CGRect(x: -50, y: -50, width: 250, height: 250)</span><br><span class="line">        view.bounds = CGRect(x: -50, y: -50, width: 200, height: 200)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        let subView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))</span><br><span class="line">        subView.backgroundColor = UIColor.green</span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/导航控制器和标签控制器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/28/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E5%AF%BC%E8%88%AA%E6%8E%A7%E5%88%B6%E5%99%A8%E5%92%8C%E6%A0%87%E7%AD%BE%E6%8E%A7%E5%88%B6%E5%99%A8/" class="article-date">
+      <time datetime="2021-04-28T03:35:35.000Z" itemprop="datePublished">2021-04-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIView的嵌套和层次关系" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/28/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%B5%8C%E5%A5%97%E5%92%8C%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB/" class="article-date">
+      <time datetime="2021-04-27T16:00:00.000Z" itemprop="datePublished">2021-04-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/28/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%B5%8C%E5%A5%97%E5%92%8C%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB/">UIView的嵌套和层次关系</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UIView的嵌套和层次关系</span><br><span class="line">        </span><br><span class="line">        let firstView = UIView(frame: CGRect(x: 20, y: 40, width: 200, height: 200))</span><br><span class="line">        firstView.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        let secondView = UIView(frame: CGRect(x: 50, y: 70, width: 200, height: 200))</span><br><span class="line">        secondView.backgroundColor = UIColor.red</span><br><span class="line">        </span><br><span class="line">        let thirdView = UIView(frame: CGRect(x: 80, y: 100, width: 200, height: 200))</span><br><span class="line">        thirdView.backgroundColor = UIColor.green</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(firstView)</span><br><span class="line">        self.view.addSubview(secondView)</span><br><span class="line">        self.view.addSubview(thirdView)</span><br><span class="line">        </span><br><span class="line">        //self.view.insertSubview(secondView, at: 2)  //在指定的位置上插入视图</span><br><span class="line">        </span><br><span class="line">        //self.view.insertSubview(thirdView, aboveSubview: secondView)  //将第三个视图插入第二个视图的上方</span><br><span class="line">        //self.view.insertSubview(thirdView, belowSubview: secondView)  //将第三个视图插入第二个视图的下方</span><br><span class="line">        </span><br><span class="line">        //self.view.bringSubviewToFront(firstView)  //将第一个视图放置在所有子视图的上方</span><br><span class="line">        </span><br><span class="line">        //self.view.exchangeSubview(at: 2, withSubviewAt: 3)  //交换两个指定位置的子视图在父视图中的位置</span><br><span class="line">        </span><br><span class="line">        //firstView.removeFromSuperview()  //将第一个视图从其父视图中删除</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIView的交互属性" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/27/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E4%BA%A4%E4%BA%92%E5%B1%9E%E6%80%A7/" class="article-date">
+      <time datetime="2021-04-26T16:00:00.000Z" itemprop="datePublished">2021-04-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/27/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E4%BA%A4%E4%BA%92%E5%B1%9E%E6%80%A7/">UIView的交互属性</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //UIView的交互属性</span><br><span class="line">        </span><br><span class="line">        let touchView = UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        touchView.backgroundColor = UIColor.black</span><br><span class="line">        self.view.addSubview(touchView)</span><br><span class="line">        </span><br><span class="line">        let guesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.SingleTap))  //创建了一个UITapGestureRecognizer手势对象</span><br><span class="line">        touchView.addGestureRecognizer(guesture)  //通过addGestureRecognizer方法将手势对象指定给视图对象</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func SingleTap() &#123;</span><br><span class="line">        </span><br><span class="line">        print(&quot;You touched me.&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/UIView的变形操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/26/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%8F%98%E5%BD%A2%E6%93%8D%E4%BD%9C/" class="article-date">
+      <time datetime="2021-04-25T16:00:00.000Z" itemprop="datePublished">2021-04-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/26/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%8F%98%E5%BD%A2%E6%93%8D%E4%BD%9C/">UIView的变形操作</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UIView的变形操作</span><br><span class="line">        </span><br><span class="line">        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 50))</span><br><span class="line">        view.center = self.view.center</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line">        </span><br><span class="line">        let transform = view.transform</span><br><span class="line">        view.transform = transform.translatedBy(x: 0, y: 100)  //垂直方向上将视图的矩阵向下平移了100</span><br><span class="line">        </span><br><span class="line">        view.transform = transform.scaledBy(x: 1.5, y: 1.5)  //缩放仿射变换</span><br><span class="line">        </span><br><span class="line">        view.transform = transform.rotated(by: 3.14/4)  //参数angle表示在顺时针方向上旋转的角度，顺时针旋转45度</span><br><span class="line">        </span><br><span class="line">        //a、d：缩放；tx、ty：平移</span><br><span class="line">        //在水平和垂直方向上进行斜切操作</span><br><span class="line">        view.transform.b = 0.5</span><br><span class="line">        view.transform.c = 0.5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/CALayer边框" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/25/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E8%BE%B9%E6%A1%86/" class="article-date">
+      <time datetime="2021-04-24T16:00:00.000Z" itemprop="datePublished">2021-04-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/25/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E8%BE%B9%E6%A1%86/">CALayer边框</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//CALayer边框</span><br><span class="line">        </span><br><span class="line">        let view = UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.borderWidth = 20  //设置层的边缘宽度borderWidth为20</span><br><span class="line">        view.layer.borderColor = UIColor.lightGray.cgColor  //设置层的边缘颜色的值为浅灰色</span><br><span class="line">        //因为UIColor是定义在UIKit框架中的，只能在iOS中使用，而CALayer是定义在QuartzCore框架中的，所以需要使用具有跨平台特性的CGColorRef数据类型</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/CALayer投影" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/24/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E6%8A%95%E5%BD%B1/" class="article-date">
+      <time datetime="2021-04-23T16:00:00.000Z" itemprop="datePublished">2021-04-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/24/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E6%8A%95%E5%BD%B1/">CALayer投影</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//CALayer投影</span><br><span class="line">        let view = UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.shadowColor = UIColor.black.cgColor  //设置阴影颜色为黑色</span><br><span class="line">        view.layer.shadowOffset = CGSize(width: 10.0, height: 10.0)  //设置阴影的偏移值，即在水平方向上向右侧偏移10，在垂直方向上向下偏移10，默认值为(0.0,-3.0)</span><br><span class="line">        view.layer.shadowOpacity = 0.45  //设置阴影的不透明度值，默认值为0.0</span><br><span class="line">        view.layer.shadowRadius = 5.0  //设置阴影的模糊半径，用来实现阴影的模糊效果，使阴影更加柔和、自然，默认值为3.0</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-代码仓库/iOS-功能demo/CALayer圆角" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/04/23/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E5%9C%86%E8%A7%92/" class="article-date">
+      <time datetime="2021-04-22T16:00:00.000Z" itemprop="datePublished">2021-04-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/04/23/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E5%9C%86%E8%A7%92/">CALayer圆角</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//CALayer圆角</span><br><span class="line">        </span><br><span class="line">        let view = UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.cornerRadius = 40  //设置层的圆角半径为40</span><br><span class="line">        //从模拟器中的效果可以看出，虽然给黑色视图添加了圆角效果，但是由于子视图的存在，无法看到上方两个顶点的圆角效果，这是因为圆角效果只对视图的背景颜色和层的边框起作用，而不会对层中的内容起作用</span><br><span class="line">        //view.layer.cornerRadius = 100  //设置圆角半径时，如果设置为正方形宽度的一半，那么将会创建一个正圆形</span><br><span class="line">        //view.layer.cornerRadius = 200</span><br><span class="line">        </span><br><span class="line">        view.layer.masksToBounds = true  //这行代码会沿着圆角边缘对视图中的内容进行裁切</span><br><span class="line">        </span><br><span class="line">        let subView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))</span><br><span class="line">        subView.backgroundColor = UIColor.gray</span><br><span class="line">        </span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">代码仓库</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" rel="tag">iOS-功能demo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/2/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

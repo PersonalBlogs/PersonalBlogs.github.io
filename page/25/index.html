@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/25/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/基数排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/" class="article-date">
+      <time datetime="2019-11-22T16:00:00.000Z" itemprop="datePublished">2019-11-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/11/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">基数排序</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>基数排序：不基于比较，借助“分配”和“收集”两种操作对单逻辑关键字进行排序，分为最高位优先(MSD)和最低位优先(LSD)</p>
+<p>以r为基数的最低位优先基数排序的过程(稳定的算法)：【时间复杂度为O(d(n+r))】【空间复杂度为O(r)】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gozs7xp2vyj31kw0r4tbu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gozs86t7nmj31kw0nrju9.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/内部排序算法的比较及应用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83%E5%8F%8A%E5%BA%94%E7%94%A8/" class="article-date">
+      <time datetime="2019-11-21T16:00:00.000Z" itemprop="datePublished">2019-11-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/11/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83%E5%8F%8A%E5%BA%94%E7%94%A8/">内部排序算法的比较及应用</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>冒泡排序、直接选择排序、快速排序、堆排序：一趟排序可以确定一个元素的位置<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gozsn4w62ej30se0codhh.jpg"></p>
+<p>应用：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gozsnd3xprj30pf0c20u0.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/外部排序的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/11/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+      <time datetime="2019-11-20T16:00:00.000Z" itemprop="datePublished">2019-11-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/11/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F%E7%9A%84%E6%96%B9%E6%B3%95/">外部排序的方法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>外部排序通常采用归并排序的方法</p>
+<p>首先根据缓冲区的大小将外存上含有n个记录的文件分成若干长度为h的子文件，依次读入内存并利用有限的内部排序算法对它们进行排序，并将排序后得到的有序子文件重新写回外存，通常称这些有序子文件为归并段或顺串</p>
+<p>然后对这些归并段进行逐趟归并，使归并段逐渐由小到大直至得到整个有序文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goztcn2d3pj30yw0hwq3r.jpg"></p>
+<p>外部排序的总时间：内部排序所需时间+外存信息读写时间+内部归并所需时间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goztd01haaj30h60613ym.jpg"><br>如果变成4路归并：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goztqi5q48j308s048745.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/败者树" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/11/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%B4%A5%E8%80%85%E6%A0%91/" class="article-date">
+      <time datetime="2019-11-19T16:00:00.000Z" itemprop="datePublished">2019-11-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/11/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%B4%A5%E8%80%85%E6%A0%91/">败者树</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gozucz5vqtj30jg0580sw.jpg"></p>
+<p>失败树：树形选择排序的一种变体，可视为一棵完全二叉树</p>
+<p>每个叶结点存放各归并段在归并过程中当前参加比较的记录，内部结点用来记忆左右子树中的‘失败者’，胜利者向上继续进行比较，直到根结点<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gozud6h4ztj31690i9abm.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/置换-选择排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/11/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%BD%AE%E6%8D%A2-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="article-date">
+      <time datetime="2019-11-18T16:00:00.000Z" itemprop="datePublished">2019-11-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/11/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%BD%AE%E6%8D%A2-%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/">置换-选择排序</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>置换-选择排序：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gp033jfxrfj30t70fntaq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gp033renu7j30u80idgn5.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/最佳归并树" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/11/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9C%80%E4%BD%B3%E5%BD%92%E5%B9%B6%E6%A0%91/" class="article-date">
+      <time datetime="2019-11-17T16:00:00.000Z" itemprop="datePublished">2019-11-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/11/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9C%80%E4%BD%B3%E5%BD%92%E5%B9%B6%E6%A0%91/">最佳归并树</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>m路归并排序可用一棵m叉树描述</p>
+<p>归并树：用来描述m归并，并只有度为0和度为m的结点的严格m叉树</p>
+<p>带权路径长度之和为归并过程中的总读记录数：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gp03flvxxnj30oi0ent9f.jpg"></p>
+<p>用哈夫曼树构造的叫最佳归并树：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gp03fuqiqaj30oy0ghgmb.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gp03o8407ij30qi0gngmh.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/Objective-C概述：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/Objective-C%E6%A6%82%E8%BF%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-29T16:00:00.000Z" itemprop="datePublished">2019-09-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/Objective-C%E6%A6%82%E8%BF%B0%EF%BC%9A/">Objective-C概述：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>Objective-C简称Obj-C或者OC</p>
+<p>Objective-C：面向对象的C语言，所以，OC的本质还是C语言</p>
+<ol>
+<li>OC是在C的基础之上增加了一小部分的面向对象的语法，将C语言复杂的、繁琐的语法封装的更为简单</li>
+<li>完全兼容C语言，也就是说在OC语言中可以写任意的C语言的代码</li>
+</ol>
+<h3 id="OC简要发展历史："><a href="#OC简要发展历史：" class="headerlink" title="OC简要发展历史："></a>OC简要发展历史：</h3><ul>
+<li>20世纪80年代初期，Brad Cox结合C语言和Smalltalk的优势设计出了Objective-C语言</li>
+<li>1985年，乔布斯创建NeXT公司，致力于设计经济实惠且功能强大的工作站，并选择Unix作为其工作站的操作系统</li>
+<li>后来，NeXT公司设计出了NextStep(使用OC语言编写的一套功能强大的界面工具包)</li>
+<li>1995年，NeXT公司获得OC的全部商业版权</li>
+<li>1996年，苹果公司收购NeXT，NextStep得到了Mac开发人员的广泛认可，NextStep更名为Cocoa，从此OC成为开发Mac平台的主力语言</li>
+<li>随着iPhone、iPad的火爆，OC又成为了iOS平台上的中流砥柱</li>
+</ul>
+<h3 id="OC的未来："><a href="#OC的未来：" class="headerlink" title="OC的未来："></a>OC的未来：</h3><ul>
+<li>苹果在2014年的WWDC大会上正式推出Swift，在2015年的WWDC上宣布年底发布的Swift 2.0将开源</li>
+<li>Swift语言的优点：快速、现代、安全、互动且全面优于Objective-C语言</li>
+<li>按照苹果的行事风格，Swift一定会取代OC成为iOS开发的主力语言，但是目前来看，要实现这一目标，还有一段路需要走【很多的企业在此之前他们已经使用Objective-C语言开发好了自己的程序，使用Swift重写是不可能的、Swift刚刚发布，还有很多Bug没有完善，企业不愿意当小白鼠、Swift本身还没有成型，在后期发布的版本中有大量的变化甚至包括语法的变化】</li>
+<li>OC的光芒注定要被Swift的闪耀遮盖</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/Objective-C基础语法：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/Objective-C%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-28T16:00:00.000Z" itemprop="datePublished">2019-09-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/Objective-C%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%9A/">Objective-C基础语法：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>OC程序源文件的后缀名是.m【m是message，代表OC中最重要的消息机制】<br>C程序源文件的后缀名为.c</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3afh9okj30ae04eq3e.jpg"></p>
+<ol>
+<li><code>#import</code>指令：</li>
+</ol>
+<p>1）以#开头，是一个预处理指令<br>2）是<code>#include</code>指令的增强版，将文件的内容在预编译的时候拷贝到写指令的地方，同一个文件无论被<code>#import</code>多少次，只会包含一次；如果<code>#include</code>指令要实现这个效果，就必须要配合条件编译指令来实现<br>3）简要原理：<code>#import</code>指令在包含文件的时候，底层会先判断这个文件是否被包含，如果被包含就会略过，否则才会包含</p>
+<ol start="2">
+<li>框架：</li>
+</ol>
+<p>是一个功能集，苹果或者第三方事先将一些程序在开发程序的时候经常要用到的功能事先写好，把这些功能封装在一个一个的类或者函数中，这些函数和类的集合就叫做框架【有点像C语言的函数库】</p>
+<p>Foundation:这个框架提供了一些最基础的功能【输入输出，数据类型】<br>Foundation.h这个文件包含了Foundation框架中的其他的所有的头文件，所以，我们只要包含Foundation.h就相当于包含了Foundation框架中所有的头文件，那么Foundation框架中的所有的函数和类就可以直接使用</p>
+<ol start="3">
+<li><p>@autoreleasepool是自动释放池</p>
+</li>
+<li><p>NSLog函数：</p>
+</li>
+</ol>
+<p>是printf函数的增强版，向控制台输出信息</p>
+<p>NSLog(@“格式控制字符串”，变量列表);</p>
+<p>增强点：<br>1）输出一些调试相关信息【执行这段代码的时间，程序的名称，进程编号，线程编号，输出的信息】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ap8ay0j30dq022mxd.jpg"><br>2）在输出完信息之后会自动换行<br>3）OC中其实新增了一些数据类型，NSLog函数不仅仅可以输出C数据类型变量的值还可以输出OC新增的数据类型的变量的值</p>
+<p>如果在字符串的末尾加了一个‘\n’代表换行，那么函数的自动换行功能就会失效</p>
+<ol start="5">
+<li>字符串的存储方式：</li>
+</ol>
+<p>C语言的字符串的存储方式：<br>1）使用字符数组存储<br>2）使用字符指针</p>
+<p>OC中设计了一个更为好用的用来存储字符串的一个类型：NSString<br>NSString类型的指针变量专门用来存储OC字符串的地址</p>
+<p>OC的字符串常量必须要使用一个前缀@符号，NSString类型的指针变量只能存储OC字符串的地址<br>NSString *str=@“jack”;</p>
+<p>NSLog函数的第一个参数是一个OC字符串，所以NSLog函数的第一个实参应该以@符号开头<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3b111ivj30in07c0ty.jpg"></p>
+<p>NS前缀：NextStep—&gt;Cocoa—&gt;Foundation框架之中</p>
+<p>@符号：<br>1）将C字符串转换为OC字符串<br>2）OC中的绝大部分的关键字都是以@符号开头</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/终端写第一个OC程序：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%88%E7%AB%AF%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAOC%E7%A8%8B%E5%BA%8F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-27T16:00:00.000Z" itemprop="datePublished">2019-09-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%88%E7%AB%AF%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAOC%E7%A8%8B%E5%BA%8F%EF%BC%9A/">终端写第一个OC程序：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="OC程序的编译，链接，执行："><a href="#OC程序的编译，链接，执行：" class="headerlink" title="OC程序的编译，链接，执行："></a>OC程序的编译，链接，执行：</h3><ol>
+<li><p>在.m文件中写上符合OC语法规范的源代码：<br>clear清屏<br>cd /Users/ljlmacbookair/Desktop/OC2<br>touch main.m</p>
+</li>
+<li><p>使用编译器将源代码编译为目标文件【预处理，检查语法，编译】<br>cc -c main.m</p>
+</li>
+<li><p>链接<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3bloyncj30ft0550tb.jpg"><br>如果程序中使用到了框架中的函数或者类，那么在链接的时候，就必须要告诉编译器去哪一个框架中找这个函数或者类<br>cc main.o -framework Foundation</p>
+</li>
+<li><p>链接成功以后就会生成一个a.out可执行文件，执行就可以了<br>./a.out</p>
+</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3bty2jqj30i70apq3m.jpg"></p>
+<hr>
+<h3 id="OC程序和C程序各个阶段的后缀名："><a href="#OC程序和C程序各个阶段的后缀名：" class="headerlink" title="OC程序和C程序各个阶段的后缀名："></a>OC程序和C程序各个阶段的后缀名：</h3><pre><code>源文件   目标文件  可执行文件
+</code></pre>
+<p>C    .c       .o       .out<br>OC   .m       .o       .out</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/OC与C的对比：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/OC%E4%B8%8EC%E7%9A%84%E5%AF%B9%E6%AF%94%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-26T16:00:00.000Z" itemprop="datePublished">2019-09-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/OC%E4%B8%8EC%E7%9A%84%E5%AF%B9%E6%AF%94%EF%BC%9A/">OC与C的对比：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h3><ol>
+<li>OC中支持C语言的所有的数据类型</li>
+<li>BOOL类型：可以存储YES或者NO中的任意一个数据；一般情况下BOOL类型的变量用来存储条件表达式的结果</li>
+</ol>
+<p>typedef signed char BOOL;<br>BOOL类型变量的本质实际上是一个有符号的char变量</p>
+<ol start="3">
+<li>Boolean类型的变量可以存储true或者false</li>
+</ol>
+<p>typedef unsigned char BOOL;<br>Boolean类型变量的本质实际上是一个无符号的char变量</p>
+<ol start="4">
+<li>class 类型：类</li>
+<li>id类型：万能指针</li>
+<li>nil与NULL差不多</li>
+<li>SEL：方法选择器</li>
+<li>block：代码段</li>
+</ol>
+<hr>
+<h3 id="运算符："><a href="#运算符：" class="headerlink" title="运算符："></a>运算符：</h3><p>OC支持C语言中所有的运算符：</p>
+<ul>
+<li>赋值运算符：=</li>
+<li>算术运算符：+、-、*、/、%</li>
+<li>复合赋值运算符：+=、-=、*=、/=、%=</li>
+<li>自增与自减：++、—-</li>
+<li>关系运算符：&gt;、&gt;=、&lt;、&lt;=、==、!=</li>
+<li>逻辑运算符：&amp;&amp;、||、!</li>
+<li>取地址运算符：&amp;</li>
+<li>指针访问运算符：*</li>
+<li>位运算符：&amp;、|、^、~</li>
+</ul>
+<hr>
+<h3 id="控制语句："><a href="#控制语句：" class="headerlink" title="控制语句："></a>控制语句：</h3><p>OC支持C所有的控制语句：</p>
+<ul>
+<li>if结构</li>
+<li>switch-case结构</li>
+<li>while循环</li>
+<li>do-while循环</li>
+<li>for循环</li>
+<li>数组</li>
+<li>函数</li>
+<li>指针</li>
+</ul>
+<hr>
+<h3 id="关键字："><a href="#关键字：" class="headerlink" title="关键字："></a>关键字：</h3><ol>
+<li>OC支持C语言中全部的关键字，并且效果一致</li>
+<li>OC也新增了一些关键字，OC新增的关键字绝大多数都是以@开头</li>
+</ol>
+<ul>
+<li>@interface</li>
+<li>@implmentation</li>
+<li>@public</li>
+</ul>
+<hr>
+<h3 id="函数的定义和调用："><a href="#函数的定义和调用：" class="headerlink" title="函数的定义和调用："></a>函数的定义和调用：</h3><p>函数的定义和调用与C语言的完全一致</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/24/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/26/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

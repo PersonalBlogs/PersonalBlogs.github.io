@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/10/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-操作系统原理/操作系统原理/Spooling系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/Spooling%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <time datetime="2020-10-13T16:00:00.000Z" itemprop="datePublished">2020-10-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/Spooling%E7%B3%BB%E7%BB%9F/">Spooling系统</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Spooling系统：</p>
+<p>设备分配方法：</p>
+<p>1）独占型设备的分配：独占型设备包括所有的字符型设备，任意时间段内最多只能被一个进程占用；使用时，进程首先向系统申请，可能进入阻塞状态【当设备可用时，唤醒一个等待进程；使用完毕以后，进程必须释放设备】</p>
+<p>进程使用独占设备的过程：申请、使用、释放【从进程申请成功，直到释放用完之前，独占设备】<br>1）进程申请设备<br>2）系统分配设备<br>3）进程发送使用命令<br>4）系统将转到设备驱动模块完成一次I/O传输<br>5）进程释放设备<br>6）系统回收设备</p>
+<p>2）共享型设备的分配：共享型设备包括所有块型设备【I/O传输单位：块；宏观上一个共享型设备可以被多个进程同时占用；微观上多个设备交替使用同一设备；进程使用这类设备时，无需申请或释放设备，也不存在某个进程占用设备的问题】</p>
+<p>进程使用共享型设备不需要申请，当然也就不存在占用或释放设备的问题</p>
+<p>但是I/O期间只能有一个进程使用设备，因此进程使用共享型设备之前，有一个隐含的申请命令；使用完毕以后，有一个隐含的释放命令，以实现一次基本I/O传输期间的排他性，保证操作的正常进行</p>
+<p>使用共享型设备的过程中，进程完全有可能进入阻塞等待状态</p>
+<p>3）虚拟分配：当进程需要与独占设备交换信息时，就采用虚拟技术将与该独占设备所对应的虚拟设备（部分辅存）分配给它</p>
+<p>虚拟技术：在一类物理设备上模拟另一类物理设备的技术，借助辅存部分区域模拟独占设备，将独占设备转化为共享设备</p>
+<p>虚拟设备：用来模拟独占设备的部分辅存称为虚拟设备，虚拟独占设备</p>
+<p>输入井：模拟输入设备的辅存区域（磁盘上）<br>输出井：模拟输出设备的辅存区域（磁盘上）</p>
+<p>内存中开辟的存储区域：输入缓冲区【暂存输入数据，以后再传送到输入井】、输出缓冲区【暂存输出数据，以后再传送到输出设备】</p>
+<p>SPOOLing系统是虚拟技术和虚拟分配的实现（Simultaneaus Periphernal Operations OnLine，外部设备同时联机操作，假脱机输入/输出操作）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorct7mfmrj311v0jntkm.jpg"></p>
+<p>当用户进程需要数据时，直接从输入井读入所需数据（提前读）<br>用户进程将输出数据先传送到输出井，当输出设备空闲时，再将输出井的数据送到输出设备上（延后写）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorctgsj4vj313o0oqn7b.jpg"></p>
+<p>输入监控进程模拟脱机输入的卫星机，将用户要求的数据从输入设备通过输入缓冲区再传送输入井，当用户进程需要数据时，直接从输入井读入所需数据</p>
+<p>输出监控进程模拟脱机输出的卫星机，用户进程将输出数据从内存先传送到输出井，当输出设备空闲时，再将输出井的数据送到输出设备上</p>
+<p>SPOOLing系统原理：<br>1）任务执行前：预先将程序和数据输入到输入井中<br>2）任务运行时：使用数据时，从输入井中取出<br>3）任务运行时：输出数据时，把数据写入输出井<br>4）任务运行完：外设空闲时输出全部数据和信息</p>
+<p>“提高”了I/O速度，将独占设备改造为“共享”设备，实现了虚拟设备功能</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/更新和删除数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">更新和删除数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>更新和删除数据</p>
+<p>1）为了更新（修改）表中的数据，可使用UPDATE语句，可采用两种方式使用UPDATE：<br>更新表中特定行；<br>更新表中所有行；</p>
+<p>UPDATE语句的组成：<br>1）要更新的表<br>2）列名和它们的新值<br>3）确定要更新行的过滤条件</p>
+<p>UPDATE customers<br>SET cust_email=‘ <a href="mailto:&#x65;&#x6c;&#x6d;&#x65;&#114;&#x40;&#x66;&#x75;&#x64;&#100;&#46;&#x63;&#111;&#x6d;">&#x65;&#x6c;&#x6d;&#x65;&#114;&#x40;&#x66;&#x75;&#x64;&#100;&#46;&#x63;&#111;&#x6d;</a> ’<br>WHERE cust_id=10005;</p>
+<p>UPDATE customers<br>SET cust_name=’The Fudds’,<br>        cust_email=‘ <a href="mailto:&#x65;&#x6c;&#x6d;&#101;&#x72;&#x40;&#102;&#x75;&#100;&#x64;&#46;&#x63;&#x6f;&#109;">&#x65;&#x6c;&#x6d;&#101;&#x72;&#x40;&#102;&#x75;&#100;&#x64;&#46;&#x63;&#x6f;&#109;</a> ’<br>WHERE cust_id=10005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmjgrtzj30b705mjv7.jpg"></p>
+<p>为了删除某个列的值，可设置它为NULL（假定表定义允许NULL值）<br>UPDATE customers<br>SET cust_email=NULL<br>WHERE cust_id=10005;</p>
+<p>2）为了从一个表中删除（去掉）数据，可使用DELETE语句<br>从表中删除特定的行<br>从表中删除所有行</p>
+<p>DELETE FROM customers<br>WHERE cust_id =10006;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmsze4qj30b604rtbq.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwn2z6fvj30bs0c9jx3.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/文件系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">文件系统</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>文件系统：</p>
+<p>————————————————</p>
+<p>8-1.文件系统概念<br>8-2.文件物理结构<br>8-3.FAT文件系统<br>8-4.文件存储和目录</p>
+<p>————————————————</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/创建和操纵表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/" class="article-date">
+      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/">创建和操纵表</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>创建和操纵表</p>
+<p>一般有两种创建表的方法：<br>1）使用具有交互式创建和管理表的工具<br>2）表也可以直接用MySQL语句操纵</p>
+<p>值得注意的是，在使用交互式工具时，实际上使用的是MySQL语句，但是这些语句不是用户编写的，界面工具会自动生成并执行相应的MySQL语句（更改现有表时也是这样）</p>
+<p>为利用CREATE TABLE创建表，必须给出下列信息：<br>1）新表的名字，在关键字CREATE TABLE之后给出<br>2）表列的名字和定义，用逗号分隔</p>
+<p>1）表的主键可以在创建表时用PRIMARY KEY关键字指定，为创建由多个列组成的主键，应该以逗号分隔的列表给出各列名；主键为其值唯一标识表中每个行的列，主键中只能使用不允许NULL值的列，允许NULL值的列不能作为唯一标识<br>CREATE TABLE customers<br>(<br>     custid              int                NOT NULL AUTOINCREMENT,<br>     cust_name        char(50)     NOT NULL,<br>     cust_address    char(50)     NULL,<br>     cust_city           char(50)     NULL,<br>     cust_state         char(5)       NULL,<br>     cust_zip             char(10)     NULL,<br>     cust_country     char(50)     NULL,<br>     cust_contact     char(50)     NULL,<br>     cust_email         char(255)   NULL,<br>     PRIMARY KEY (cust_id)<br>)ENGINE-InnoDB;</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwon1sojj30b4044jub.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwoulrokj30b402lwgb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp2xsdhj30b402l40a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp9p6ubj30b402l761.jpg"></p>
+<p>AUTOINCREMENT告诉MySQL，本列每当增加一行时自动增量。每次执行一个INSERT操作时，MySQL自动对该列增量（从而才有这个关键字AUTOINCREMENT），给该列赋予下一个可用的值。这样给每个行分配一个唯一的custid，从而可以用作主键值；每个表只允许一个AUTOINCREMENT列，而且它必须被索引（如通过使它成为主键）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwpk2xfbj30b40bjjz3.jpg"></p>
+<p>2）如果在插入行时没有给出值，MySQL允许指定此时使用的默认值。默认值用CREATE TABLE语句的列定义中的DEFAULT关键字指定<br>CREATE TABLE orderitems<br>(<br>     order_num        int                     NOT NULL,<br>     order_item        int                     NOT NULL,<br>     prod_id             char(10)           NOT NULL,<br>     quantity            int                     NOT NULL DEFAULT 1,<br>     item_price        decimal(8,2)    NOT NULL,<br>     PRIMARY KEY(ordernum,orderitem)<br>)ENGINE-InnoDB;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwptvtivj30b404d40w.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq1d6f2j30bw07ndis.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq88t37j30bw0f0wlh.jpg"></p>
+<p>3)更新表<br>为了使用ALTER TABLE更改表结构，必须给出下面的信息：<br>1）在ALTER TABLE之后给出要更改的表名（该表必须存在，否则将出错）<br>2）所做更改的列表</p>
+<p>ALTER TABLE vendors<br>ADD vend_phone CHAR(20);</p>
+<p>删除刚刚添加的列：<br>ALTER TABLE Vendors<br>DROP COLUMN vend_phone;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqhn92kj30bw08l76r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqphxx2j30bw01ldg7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqwbdwtj30bw07e0wg.jpg"></p>
+<p>4)删除表：删除整个表而不是其内容，删除表没有确认，也不能撤销，执行这条语句将永久删除该表</p>
+<p>DROP TABLE customers2;</p>
+<p>5)重命名表</p>
+<p>RENAME TABLE customers2 TO customers,<br>                            backup_vendors TO vendors;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/文件系统概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" class="article-date">
+      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/">文件系统概念</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>文件系统概念：</p>
+<p>文件是计算机信息存取的一种重要组织形式</p>
+<p>文件由若干信息项有序构成，信息项可以是字节，可以是结构化数据<br>用户通过读写指针来存取文件的信息项<br>文件具有文件名，用户通过文件名存取文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcvk8f03j313u09r78l.jpg"></p>
+<p>文件的分类：</p>
+<p>按照文件的用途分：<br>1）系统文件：包括操作系统的可执行程序和数据文件，这种文件不对用户开放，仅供系统使用<br>2）库文件：系统为用户提供的各种标准函数库和实用程序等，用户只能使用这些文件，而无权对其进行修改<br>3）用户文件：用户创建的文件，如用户可执行程序，源程序，数据文件等，这种文件的使用和修改权均属于用户</p>
+<p>按照文件的操作权限分：<br>1）只读文件：只允许进行读操作<br>2）读写文件：允许进行读写操作<br>3）不保护文件：不作任何操作限制</p>
+<p>按照文件的性质分：<br>1）普通文件：指一般的用户文件/系统文件<br>2）目录文件：记录目录里面的文件列表信息（文件名，文件存放地址，文件属性）<br>3）设备文件：把设备作为文件管理和使用</p>
+<p>文件属性：指定文件的类型、操作特性和存取保护等一组信息，文件属性存放在文件所在目录的目录文件中</p>
+<p>MS-DOS系统中，文件属性占目录项的一个字节【00000001：只读属性；00000010：隐藏属性】</p>
+<p>文件系统定义：负责管理文件的机构称为文件系统</p>
+<p>功能：负责文件的创立、撤销、读写、修改、复制和存取控制等，并管理存放文件的存储设备</p>
+<p>文件系统的目标是让用户以文件名来存取文件</p>
+<p>文件的结构：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcvt25mhj30lt0gedlt.jpg"></p>
+<p>文件的逻辑结构：【现代操作系统中文件都是流式文件，由应用程序解释和处理文件】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcw0ucj0j30zh0qh7jz.jpg"></p>
+<p>文件的存取方法：<br>1）顺序存取<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcw8bo1qj30qw08d0wo.jpg"><br>2）随机存取<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcwf07v5j30ql0hfn4b.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用视图" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/11/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/" class="article-date">
+      <time datetime="2020-10-10T16:00:00.000Z" itemprop="datePublished">2020-10-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/11/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/">使用视图</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用视图</p>
+<p>视图是虚拟的表，与包含数据的表不一样，视图只包含使用时动态检索数据的查询</p>
+<p>SELECT custname,custcontact<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>     AND orderitems.ordernum=orders.ordernum<br>     AND prod_id=’TNT2’;</p>
+<p>现在，假如可以把整个查询包装成一个名为productcustomers的虚拟表，则可以如下轻松地检索出相同的数据：<br>SELECT custname,custcontact<br>FROM productcustomers<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwsap1tbj30bt01pt9d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwslo79tj30bt0dy44n.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwssjvutj30bt08gwha.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwszim7yj30bt05iwgf.jpg"></p>
+<p>1）<br>CREATE VIEW productcustomers AS<br>SELECT custname,custcontact,prod_id<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>   AND orderitems.ordernum=orders.ordernum;</p>
+<p>为检索订购了产品TNT2的客户：<br>SELECT custname,custcontact<br>FROM productcustomers<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwt8av55j304u01tdg1.jpg"></p>
+<p>可以看出，视图极大的简化了复杂SQL语句的使用，利用视图，可一次性编写基础的SQL，然后根据需要多次使用<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtgi1k8j30b7033wgk.jpg"></p>
+<p>2）<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtp24azj303z03at93.jpg"></p>
+<p>CREATE VIEW vendorlocations AS<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;</p>
+<p>SELECT *<br>FROM vendorlocations;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtxskgrj303z03aq3b.jpg"></p>
+<p>3)<br>CREATE VIEW customeremaillist AS<br>SELECT custid,custname,cust_email<br>FROM customers<br>WHERE cust_email IS NOT NULL;</p>
+<p>SELECT *<br>FROM customeremaillist;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwu5zx20j307e0280t8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwufd723j30b401xgmw.jpg"></p>
+<p>4)<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwumtgq4j307r02i3yz.jpg"></p>
+<p>CREATE VIEW orderitemsexpanded AS<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems;</p>
+<p>SELECT *<br>FROM orderitemsexpanded<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwuxuy21j309i02kjs1.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwv6q1svj30bu08twhc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwvecw9wj30bu070juj.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/文件物理结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" class="article-date">
+      <time datetime="2020-10-10T16:00:00.000Z" itemprop="datePublished">2020-10-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/">文件物理结构</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>文件物理结构：</p>
+<p>类型：</p>
+<p>1）连续文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord0iwx21j30pe0hfdlu.jpg"></p>
+<p>连续文件的特点：文件建立时给出文件最大长度并登记文件起始位置</p>
+<p>优点：<br>1）简单<br>2）支持顺序存取和随机存取<br>3）顺序存取速度快：所需磁盘寻道次数和寻道时间最少</p>
+<p>缺点：<br>1）文件不易动态增长：预留空间过大造成浪费，过小又不合适，需要重新分配和移动<br>2）不利于文件插入和删除<br>3）外部碎片问题</p>
+<p>2）索引结构：文件存放在不连续的存储块中，建立索引表记录文件逻辑块和物理存储块的对应关系</p>
+<p>索引表单独放在存储块中<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord0wj18tj30ko0g042z.jpg"></p>
+<p>索引文件的特点：<br>1）文件=索引区+数据区<br>2）先访问索引，再访问数据<br>3）支持顺序存取和随机存取<br>4）支持文件动态增长、插入、删除</p>
+<p>3）串联文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord16p9fnj30vq0g6tgn.jpg"></p>
+<p>特点：<br>1）适用于顺序存取，随机存取较为困难<br>2）提高了磁盘空间利用率，不存在外部碎片问题<br>3）有利于文件动态扩充、插入和删除</p>
+<p>缺点：<br>1）存取速度慢，不适用于随机存取<br>2）可靠性问题：若next指针出错，则文件访问失败<br>3）next指针占用一定的空间</p>
+<p>串联文件的应用：FAT文件系统</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用存储过程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" class="article-date">
+      <time datetime="2020-10-09T16:00:00.000Z" itemprop="datePublished">2020-10-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">使用存储过程</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用存储过程</p>
+<p>存储过程简单来说，就是为以后的使用而保存的一条或多条MySQL语句的集合。可将其视为批文件，虽然它们的作用不仅限于批处理<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwwtjskzj30c20eiteh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwx1tyugj30c20670vn.jpg"></p>
+<p>1）执行存储过程：<br>MySQL称存储过程的执行为调用，因此MySQL执行存储过程的语句为CALL，CALL接受存储过程的名字以及需要传递给它的任意参数<br>CALL productpricing(@pricelow,<br>                                    @pricehigh,<br>                                    @priceaverage);</p>
+<p>2）创建存储过程<br>CREATE PROCEDURE productpricing()<br>BEGIN<br>     SELECT Avg(prod_price) AS priceaverage<br>     FROM products;<br>END;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwxb4n6qj30bb0ar10l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwxpz7mqj30bb02t40i.jpg"><br>3)使用存储过程：<br>CALL productpricing();<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwxyajenj302c01k3yk.jpg"></p>
+<p>4）删除存储过程：<br>DROP PROCEDURE productpricing;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwy82yv0j30ba023400.jpg"></p>
+<p>变量：内存中一个特定的位置，用来临时存储数据<br>变量名：所有MySQL变量都必须以@开始</p>
+<p>5)每个参数必须具有指定的类型，这里使用十进制值，关键字OUT指出相应的参数用来从存储过程传出一个值（返回给调用者）；MySQL支持IN（传递给存储过程）、OUT（从存储过程传出）和INOUT（对存储过程传入和传出）类型的参数<br>CREATE PROCEDURE productpricing(<br>     OUT pl DECIMAL(8,2),<br>     OUT ph DECIMAL(8,2),<br>     OUT pa DECIMAL(8,2)<br>)<br>BEGIN<br>     SELECT Min(prod_price)<br>     INTO pl<br>     FROM products;<br>     SELECT Max(prod_price)<br>     INTO ph<br>     FROM products;<br>     SELECT Avg(prod_price)<br>     INTO pa<br>     FROM products;<br>END;</p>
+<p>CALL productpricing(@pricelow,<br>                                    @pricehigh,<br>                                    @priceaverage);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwyj99pgj30b403540r.jpg"><br>为了获得3个值，可使用：<br>SELECT @pricehigh,@pricelow, @priceaverage;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwyqi83qj306b01hdg2.jpg"></p>
+<p>6)<br>CREATE PROCEDURE ordertotal(<br>     IN onumber INT,<br>     OUT ototal DECIMAL(8,2)<br>)<br>BEGIN<br>   SELECT Sum(item_price*quantity)<br>   FROM orderitems;<br>   WHERE order_num=onumber<br>   INTO ototal;<br>END;</p>
+<p>CALL ordertotal(20005,@total);</p>
+<p>SELECT @total;</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwz1ickmj301d01ht8p.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwz8cyl4j30bl0ezjut.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwzf6ygvj30bl01w74f.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwzlzcnyj30bl0foteu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwzurosaj30bl0ajwji.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/FAT文件系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/FAT%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <time datetime="2020-10-09T16:00:00.000Z" itemprop="datePublished">2020-10-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/FAT%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">FAT文件系统</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>FAT文件系统：</p>
+<p>FAT：File Allocation Table</p>
+<p>FAT文件系统：FAT12、FAT16、FAT32</p>
+<p>文件分配表（FAT）：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord4e9f6kj30xa0j5gvp.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord4m2ql5j31ex0rlqmk.jpg"></p>
+<p>文件分配表的缺点：<br>1）读文件时，先读FAT，影响使用效率<br>2）FAT要占用存储空间，存储容量越大，存储块越多，FAT元素越多，且元素位宽越长，占用更多额外存储空间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord4veanuj314g059dje.jpg"></p>
+<p>扇区：磁盘上最小可寻址存储单元（512字节）</p>
+<p>簇（cluster）=存储块，设备的最小存取单元，固定数量的扇区</p>
+<p>360KB磁盘：簇=2个扇区（1024字节）<br>10MB硬盘：簇=8个扇区（4096字节）<br>2GB硬盘：簇=64个扇区（32KB）</p>
+<p>FAT16文件系统指的是N=16：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord5d488sj316n0oywzi.jpg"></p>
+<p>FAT16文件系统：以簇为单位管理磁盘，簇是扇区的倍数，是2的次幂，最大64扇区【扇区512B，簇32KB（64个扇区）】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord5npe61j30uo08vn13.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord73vz8ej30q80gwn3t.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用游标" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87/" class="article-date">
+      <time datetime="2020-10-08T16:00:00.000Z" itemprop="datePublished">2020-10-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87/">使用游标</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用游标</p>
+<p>有时，需要在检索出来的行中前进或后退一行或多行。这就是使用游标的原因。游标是一个存储在MySQL服务器上的数据库查询，它不是一条SELECT语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据；游标主要用于交互式应用，其中用户需要滚动屏幕上的数据，并对数据进行浏览或做出更改</p>
+<p>不像多数DBMS，MySQL游标只能用于存储过程（和函数）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx3hzpwkj30bw04wabw.jpg"></p>
+<p>1）创建游标【存储过程处理完成后，游标就消失（因为它局限于存储过程）】<br>游标用DECLARE语句创建，DECLARE命名游标，并定义相应的SELECT语句，根据需要带WHERE和其他子句<br>CREATE PROCEDURE processorders()<br>BEGIN<br>     DECLARE ordernumbers CURSOR<br>     FOR<br>     SELECT order_num FROM orders;<br>END;</p>
+<p>2）打开和关闭游标<br>OPEN ordernumbers;</p>
+<p>CLOSE ordernumbers;</p>
+<p>在一个游标关闭后，如果没有重新打开，则不能使用它。但是，使用声明过的游标不需要再次声明，用OPEN语句打开它就可以了，如果你不明确关闭游标，MySQL将会在到达END语句时自动关闭它</p>
+<p>这个存储过程声明、打开和关闭一个游标，但对检索出来的数据什么也没做<br>CREATE PROCEDURE processorders()<br>BEGIN<br>     DECLARE ordernumbers CURSOR<br>     FOR<br>     SELECT order_num FROM orders;</p>
+<pre><code> OPEN ordernumbers;
+
+ CLOSE ordernumbers;
+</code></pre>
+<p>END;</p>
+<p>3）使用游标数据：在一个游标被打开后，可以使用FETCH语句分别访问它的每一行。FETCH指定检索什么数据（所需的列），检索出来的数据存储在什么地方。它还向前移动游标中的内部行指针，使下一条FETCH语句检索下一行（不重复读取同一行）</p>
+<p>从游标中检索单个行（第一行）：<br>CREATE PROCEDURE processorders()<br>BEGIN</p>
+<pre><code> DECLARE o INT;
+
+ DECLARE ordernumbers CURSOR
+ FOR
+ SELECT order_num FROM orders;
+
+ OPEN ordernumbers;
+
+ FETCH ordernumbers INTO o;
+
+ CLOSE ordernumbers;
+</code></pre>
+<p>END;</p>
+<p>循环检索数据，从第一行到最后一行：【如果一切正常，你可以在循环内放入任意需要的处理（在FETCH语句之后，循环结束之前）】<br>CREATE PROCEDURE processorders()<br>BEGIN</p>
+<pre><code> DECLARE done BOOLEAN DEFAULT 0;
+ DECLARE o INT;
+
+ DECLARE ordernumbers CURSOR
+ FOR
+ SELECT order_num FROM orders;
+
+ DECLARE CONTINUE HANDLER FOR SQLSTATE ’02000’ SET done=1;
+
+ OPEN ordernumbers;
+
+ REPEAT
+
+ FETCH ordernumbers INTO o;
+
+ UNTIL done END REPEAT;
+
+ CLOSE ordernumbers;
+</code></pre>
+<p>END;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx3yvddsj30bw067tbi.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx45veh1j30bg02idhn.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx4ckm50j30bg02p764.jpg"></p>
+<p>CREATE PROCEDURE processorders()<br>BEGIN</p>
+<pre><code> DECLARE done BOOLEAN DEFAULT 0;
+ DECLARE o INT;
+ DECLARE t DECIMAL(8,2);
+
+ DECLARE ordernumbers CURSOR
+ FOR
+ SELECT order_num FROM orders;
+
+ DECLARE CONTINUE HANDLER FOR SQLSTATE ’02000’ SET done=1;
+
+ CREATE TABLE IF NOT EXISTS ordertotals
+         (order_num INT,total DECIMAL(8,2));
+
+ OPEN ordernumbers;
+
+ REPEAT
+
+      FETCH ordernumbers INTO o;
+
+      CALL ordertotal(o,l,t);
+      
+      INSERT INTO ordertotals(order_num,total)
+      VALUES(o,t);
+
+ UNTIL done END REPEAT;
+
+ CLOSE ordernumbers;
+</code></pre>
+<p>END;</p>
+<p>SELECT *<br>FROM ordertotals;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx4pbq42j303g0310t1.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx4wiosoj30bx03n0ug.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/9/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/11/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

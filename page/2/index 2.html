@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C/" style="font-size: 15.56px;">C</a> <a href="/tags/C/" style="font-size: 17.78px;">C++</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 12.22px;">Swift</a> <a href="/tags/UI/" style="font-size: 14.44px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 16.67px;">Ubuntu Server</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPadOS/" style="font-size: 10px;">iPadOS</a> <a href="/tags/macOS/" style="font-size: 11.11px;">macOS</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" style="font-size: 18.89px;">数据结构-算法实例</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 13.33px;">数据结构-算法笔记</a> <a href="/tags/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">新浪微博项目</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" style="font-size: 10px;">网络通信</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-iOS项目/UI/超级猜图：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/20/iOS%E9%A1%B9%E7%9B%AE/UI/%E8%B6%85%E7%BA%A7%E7%8C%9C%E5%9B%BE%EF%BC%9A/" class="article-date">
+      <time datetime="2020-11-19T16:00:00.000Z" itemprop="datePublished">2020-11-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/20/iOS%E9%A1%B9%E7%9B%AE/UI/%E8%B6%85%E7%BA%A7%E7%8C%9C%E5%9B%BE%EF%BC%9A/">超级猜图：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxf1owfnj3061078ac1.jpg"></p>
+<p>1）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;改变状态栏的文字颜色为白色(默认是黑色)</span><br><span class="line">- (UIStatusBarStyle)preferredStatusBarStyle&#123;</span><br><span class="line">    **return** UIStatusBarStyleLightContent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;隐藏状态栏</span><br><span class="line">- (**BOOL**)prefersStatusBarHidden&#123;</span><br><span class="line">    **return** **YES**;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxf9g7baj30cd098wfq.jpg"></p>
+<p>2）User Interaction Enabled设置是否允许按钮和用户交互，把勾去掉后用户点击按钮无效果（金币按钮）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfhll10j307803r0sz.jpg"></p>
+<p>3）实现图片的相框效果<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfogfiqj302s02rjrt.jpg"><br>先添加按钮的白色背景图片，再把图片添加进按钮，设置内边距都为5</p>
+<p>4）把按钮的Highlighted Adjusts Image的勾去掉：可以和用户交互，但是点击按钮无反应（图片按钮）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfzi5sgj307601nmxa.jpg"></p>
+<p>5）实现大图/小图功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;记录头像按钮原始的frame</span><br><span class="line">**@property**(**nonatomic**,**assign**) CGRect iconFrame;</span><br><span class="line">&#x2F;&#x2F;用来引用那个阴影按钮的属性</span><br><span class="line">**@property**(**weak**,**nonatomic**) UIButton *cover;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;显示大图</span><br><span class="line">- (**IBAction**)bigImage:(**id**)sender&#123;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;记录一下头像按钮的原始frame</span><br><span class="line">    **self**.iconFrame&#x3D;**self**.btnIcon.frame;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;1.创建大小与self.view一样的按钮，把这个按钮作为一个阴影</span><br><span class="line">    UIButton *btnCover&#x3D;[[UIButton alloc] init];</span><br><span class="line">    &#x2F;&#x2F;设置按钮大小</span><br><span class="line">    btnCover.frame&#x3D;**self**.view.bounds;</span><br><span class="line">    &#x2F;&#x2F;设置按钮背景色</span><br><span class="line">    btnCover.backgroundColor&#x3D;[UIColor blackColor];</span><br><span class="line">    &#x2F;&#x2F;设置按钮透明度</span><br><span class="line">    btnCover.alpha&#x3D;0.0;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;把按钮加到self.view中</span><br><span class="line">    [**self**.view addSubview:btnCover];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;为阴影按钮注册一个单击事件</span><br><span class="line">    [btnCover addTarget:**self** action:**@selector**(smallImage) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;2.把图片设置到阴影的上面</span><br><span class="line">    &#x2F;&#x2F;把self.view中的所有子控件中，只把self.btnIcon显示到最上层</span><br><span class="line">    [**self**.view bringSubviewToFront:**self**.btnIcon];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;通过self.cover来引用btnCover</span><br><span class="line">    **self**.cover&#x3D;btnCover;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;3.通过动画的方式把图片变大</span><br><span class="line">    CGFloat iconW&#x3D;**self**.view.frame.size.width;</span><br><span class="line">    CGFloat iconH&#x3D;iconW;</span><br><span class="line">    CGFloat iconX&#x3D;0;</span><br><span class="line">    CGFloat iconY&#x3D;(**self**.view.frame.size.height-iconH)*0.5;</span><br><span class="line">    </span><br><span class="line">    [UIView animateWithDuration:0.7 animations:^&#123;</span><br><span class="line">        &#x2F;&#x2F;设置按钮透明度</span><br><span class="line">        btnCover.alpha&#x3D;0.6;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;设置图片的新frame</span><br><span class="line">        **self**.btnIcon.frame&#x3D;CGRectMake(iconX,iconY,iconW,iconH);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;阴影的单击事件</span><br><span class="line">- (**void**)smallImage&#123;</span><br><span class="line">    [UIView animateWithDuration:0.7 animations:^&#123;</span><br><span class="line">       &#x2F;&#x2F;1.设置btnIcon(头像)按钮的frame还原</span><br><span class="line">       **self**.btnIcon.frame&#x3D;**self**.iconFrame;</span><br><span class="line">       &#x2F;&#x2F;2.让阴影按钮的透明度变成0</span><br><span class="line">        **self**.cover.alpha&#x3D;0.0;</span><br><span class="line">    &#125;completion:^(**BOOL** finished)&#123;</span><br><span class="line">        **if**(finished)&#123;</span><br><span class="line">            &#x2F;&#x2F;移除阴影按钮</span><br><span class="line">            [**self**.cover removeFromSuperview];</span><br><span class="line">            &#x2F;&#x2F;当头像图片变成小图以后，再把self.cover设置成nil</span><br><span class="line">            **self**.cover&#x3D;**nil**;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;头像按钮的单击事件</span><br><span class="line">- (**IBAction**)btnIconClick:(**id**)sender&#123;</span><br><span class="line">    **if**(**self**.cover&#x3D;&#x3D;**nil**)&#123;</span><br><span class="line">        &#x2F;&#x2F;显示大图</span><br><span class="line">        [**self** bigImage:**nil**];</span><br><span class="line">    &#125;**else**&#123;</span><br><span class="line">        [**self** smallImage];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>6）动态创建“答案按钮”</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E9%A1%B9%E7%9B%AE/">iOS项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS项目/多线程实战/多线程实战" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/01/iOS%E9%A1%B9%E7%9B%AE/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" class="article-date">
+      <time datetime="2020-09-30T16:00:00.000Z" itemprop="datePublished">2020-10-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/01/iOS%E9%A1%B9%E7%9B%AE/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/">多线程实战</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E9%A1%B9%E7%9B%AE/">iOS项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" rel="tag">多线程实战</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS项目/网络通信/网络通信" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/09/01/iOS%E9%A1%B9%E7%9B%AE/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" class="article-date">
+      <time datetime="2020-08-31T16:00:00.000Z" itemprop="datePublished">2020-09-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/09/01/iOS%E9%A1%B9%E7%9B%AE/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/">网络通信</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E9%A1%B9%E7%9B%AE/">iOS项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" rel="tag">网络通信</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS项目/新浪微博项目/新浪微博项目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/08/01/iOS%E9%A1%B9%E7%9B%AE/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/" class="article-date">
+      <time datetime="2020-07-31T16:00:00.000Z" itemprop="datePublished">2020-08-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/08/01/iOS%E9%A1%B9%E7%9B%AE/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/">新浪微博项目</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E9%A1%B9%E7%9B%AE/">iOS项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/" rel="tag">新浪微博项目</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法笔记/应用实例：最大子列和问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98/" class="article-date">
+      <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">2020-01-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98/">应用实例：最大子列和问题</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1jyzf2mj30hs030wgv.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1k4zv57j30hs0a5ae9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1kbejyij30hs0a5aeu.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1kii1jbj30ir0de786.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1kpew06j30hu0c4wjq.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1kwkq29j30u013zq7o.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构-算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法笔记/数据结构+算法定义" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84+%E7%AE%97%E6%B3%95%E5%AE%9A%E4%B9%89/" class="article-date">
+      <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">2020-01-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84+%E7%AE%97%E6%B3%95%E5%AE%9A%E4%B9%89/">数据结构+算法定义</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>解决问题方法的效率，跟数据的组织方式有关，跟空间的利用效率有关，跟算法的巧妙程度有关</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1iiajspj30h702j76c.jpg"></p>
+<p>什么是数据结构：<br>1）数据对象在计算机中的组织方式：逻辑结构，物理存储结构<br>2）数据对象必定与一系列加在其上的操作相关联<br>3）完成这些操作所用的方法就是算法</p>
+<p>抽象数据类型：<br>1）数据类型：数据对象集，数据集合相关联的操作集<br>2）抽象：描述数据类型的方法不依赖于具体实现，与存放数据的机器无关，与数据存储的物理结构无关，与实现操作的算法和编程语言均无关<br>3）只描述数据对象集和相关操作集是什么，并不涉及如何做到的问题</p>
+<p>算法：<br>1）一个有限指令集<br>2）接受一些输入（有些情况下不需要输入）<br>3）产生输出<br>4）一定在有限步骤之后终止<br>5）每一条指令必须有充分明确的目标，不可以有歧义；计算机能处理的范围之内；描述应不依赖于任何一种计算机语言以及具体的实现手段</p>
+<p>什么是好的算法？<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1is1exrj30ip09kn2e.jpg"><br>在分析一般算法的效率时，我们经常关注下面两种复杂度：最坏情况复杂度Tworst(n)，平均复杂度Tavg(n)<br>Tavg(n)&lt;Tworst(n)<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1j1336bj30ip091djw.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1j8inq7j30ip0ed42c.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1jfcm0cj30ip0c30xu.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构-算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法笔记/数据结构-算法绪论：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%BB%AA%E8%AE%BA%EF%BC%9A/" class="article-date">
+      <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">2020-01-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%BB%AA%E8%AE%BA%EF%BC%9A/">数据结构-算法绪论：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>程序设计=数据结构+算法</p>
+<p>传统上，我们把数据结构分为逻辑结构和物理结构；逻辑结构是指数据对象中数据元素之间的相互关系，物理结构是指数据的逻辑结构在计算机中的存储形式</p>
+<p>四大逻辑结构：<br>1）集合结构：集合结构中的数据元素除了同属于一个集合外，它们之间没有其他关系<br>2）线性结构：线性结构中的数据元素之间是一对一的关系<br>3）树形结构：数据元素之间存在一种一对多的层次关系<br>4）图形结构：数据元素是多对多的关系</p>
+<p>物理结构：<br>数据元素的存储形式有两种：顺序存储和链式存储</p>
+<p>顺序存储结构：是把数据元素存放在地址连续的存储单元里，其数据间的逻辑关系和物理关系是一致的（数组）</p>
+<p>链式存储结构：是把数据元素存放在任意的存储单元里，这组存储单元可以是连续的，也可以是不连续的，很显然，这样说的话链式存储结构的数据元素存储关系并不能反应其逻辑关系，因此需要用一个指针存放数据元素的地址，这样子通过地址就可以找到相关联数据元素的位置（医院排号）</p>
+<p>算法是解决特定问题求解步骤的描述，在计算机中表现为指令的有限序列，并且每条指令表示一个或多个操作</p>
+<p>算法具有五个基本特征：<br>1）输入：算法具有零个或多个输入<br>2）输出：算法至少有一个或多个输出<br>3）有穷性：指算法在执行有限的步骤之后，自动结束而不会出现无限循环，并且每一个步骤在可接受的时间内完成<br>4）确定性：算法的每一个步骤都具有确定的含义，不会出现二义性；算法在一定条件下，只有一条执行路径，相同的输入只能有唯一的输出结果；算法的每个步骤都应该被精确定义而无歧义<br>5）可行性：算法的每一步都必须是可行的，也就是说每一步都能够通过执行有限次数完成</p>
+<p>算法设计的要求：<br>1）正确性：算法程序没有语法错误；算法程序对于合法输入能够产生满足要求的输出；算法程序对于非合法输入能够产生满足规格的说明；算法程序对于故意刁难的测试输入都有满足要求的输出结果<br>2）可读性<br>3）健壮性：当输入数据不合法时，算法也能做出相关处理，而不是产生异常、崩溃或莫名其妙的结果<br>4）时间效率高和存储量低</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构-算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法笔记/时间复杂度和空间复杂度：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%EF%BC%9A/" class="article-date">
+      <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">2020-01-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%92%8C%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%EF%BC%9A/">时间复杂度和空间复杂度：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>算法效率的度量方法：<br>1）事后统计方法：这种方法主要是通过设计好的测试程序和数据，利用计算机计时器对不同算法编制的程序的运行时间进行比较，从而确定算法效率的高低<br>2）事前分析估算方法：在计算机程序编写前，依据统计方法对算法进行估算</p>
+<p>函数的渐近增长：给定两个函数f(n)和g(n)，如果存在一个整数N，使得对于所有的n&gt;N,f(n)总是比g(n)大，那么，我们说f(n)的增长渐进快于g(n)</p>
+<p>判断一个算法的效率时，函数中的常数和其他次要项常常可以忽略，而更应该关注主项的阶数</p>
+<p>常用的时间复杂度所耗费的时间从小到大依次是：O(1)&lt;O(logn)&lt;O(n)&lt;O(nlogn)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n)</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构-算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法笔记/测试算法效率(时钟打点)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%B5%8B%E8%AF%95%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87(%E6%97%B6%E9%92%9F%E6%89%93%E7%82%B9)/" class="article-date">
+      <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">2020-01-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%B5%8B%E8%AF%95%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87(%E6%97%B6%E9%92%9F%E6%89%93%E7%82%B9)/">测试算法效率(时钟打点)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1qehby1j30h702j76c.jpg"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;clock():捕捉从程序开始运行到clock()被调用时所耗费的时间。这个时间单位是clock tick，即“时钟打点”</span><br><span class="line">&#x2F;&#x2F;常数CLK_TCK:机器时钟每秒所走的时钟打点数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;让被测函数重复运行充分多次，使得测出的总的时钟打点间隔充分长，最后计算被测函数平均每次运行的时间即可</span><br><span class="line"></span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">clock_t start,stop;&#x2F;&#x2F;clock_t是clock()函数返回的变量类型</span><br><span class="line">Double duration;&#x2F;&#x2F;记录被测函数运行时间，以秒为单位</span><br><span class="line">#define MAXN 10</span><br><span class="line">#define MAXK 1e7&#x2F;&#x2F;被测函数最大重复调用次数</span><br><span class="line"></span><br><span class="line">double f1(int n,double a[],double x)&#123;</span><br><span class="line">    int I;</span><br><span class="line">    double p&#x3D;a[0];</span><br><span class="line">    for(I&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">        p +&#x3D; (a[i]*pow(x,i));</span><br><span class="line">    &#125;</span><br><span class="line">    return p;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">double f2(int n,double a[],double x)&#123;</span><br><span class="line">    int I;</span><br><span class="line">    double p&#x3D;a[0];</span><br><span class="line">    for(I&#x3D;1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">        p+&#x3D;(a[i]*pow(x,i));</span><br><span class="line">    &#125;</span><br><span class="line">    return p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    int i,CLK_TCK;</span><br><span class="line">    double a[MAXN];&#x2F;&#x2F;存储多项式的系数</span><br><span class="line">    for(I&#x3D;0;i&lt;MAXN;i++)&#123;</span><br><span class="line">        a[I]&#x3D;(double)I;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;不在测试范围内的准备工作写在clock()调用之前</span><br><span class="line">    </span><br><span class="line">    start&#x3D;clock();&#x2F;&#x2F;开始计时</span><br><span class="line">    for(I&#x3D;0;i&lt;MAXK;i++)&#123;</span><br><span class="line">        f1(MAXN-1,a,1.1);&#x2F;&#x2F;把被测函数加在这里</span><br><span class="line">    &#125;</span><br><span class="line">    stop&#x3D;clock();&#x2F;&#x2F;停止计时</span><br><span class="line">    duration&#x3D;((double)(stop-start))&#x2F;CLK_TCK&#x2F;MAXK;&#x2F;&#x2F;计算函数单次运行时间</span><br><span class="line">    printf(“ticks1&#x3D;%f\n”,(double)(stop-start));</span><br><span class="line">    printf(“duration1&#x3D;%6.2e\n”,duration);</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;其他不在测试范围的处理写在后面，例如输出duration的值</span><br><span class="line">    </span><br><span class="line">    start&#x3D;clock();&#x2F;&#x2F;开始计时</span><br><span class="line">    for(I&#x3D;0;i&lt;MAXK;i++)&#123;</span><br><span class="line">        f2(MAXN-1,a,1.1);&#x2F;&#x2F;把被测函数加在这里</span><br><span class="line">    &#125;</span><br><span class="line">    stop&#x3D;clock();&#x2F;&#x2F;停止计时</span><br><span class="line">    duration&#x3D;((double)(stop-start))&#x2F;CLK_TCK&#x2F;MAXK;&#x2F;&#x2F;计算函数单次运行时间</span><br><span class="line">    printf(“ticks2&#x3D;%f\n”,(double)(stop-start));</span><br><span class="line">    printf(“duration2&#x3D;%6.2e\n”,duration);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构-算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法笔记/线性表及其实现" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%8F%8A%E5%85%B6%E5%AE%9E%E7%8E%B0/" class="article-date">
+      <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">2020-01-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%8F%8A%E5%85%B6%E5%AE%9E%E7%8E%B0/">线性表及其实现</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>线性表：由同类型数据元素构成有序序列的线性结构；表中元素个数称为线性表的长度；线性表没有元素时，称为空表；表起始位置称表头，表结束位置称表尾<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1ledj79j30ih0c4dlw.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1llvtpej30gw0d942k.jpg"></p>
+<p>查找成功的平均比较次数为(n+1)/2，平均时间性能为O(n)<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1lstkfwj30id0d2wi4.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1m104hlj30hz0c9ju4.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1m8arezj30ik0c4n1q.jpg"></p>
+<p>平均移动次数为(n-1)/2，平均时间性能为O(n)<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1mfa5w0j30gi0bc417.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1mmut3sj30hz08uadc.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1mtirqyj30hz0c1tdy.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1n055t2j30is0c1wh2.jpg"><br>平均时间性能为O(n)<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1n6owj3j30jq0ahadc.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1nda24yj30iz0b1n12.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1nkwefrj30id0d5jvy.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1ns2kabj30id0cqjvl.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1nzrkm1j30il0deq7x.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1o83g02j30il0da41y.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1oerygxj30j90c9n13.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1om3mmhj30hs08r77s.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1otm8w3j30hs0b7gqo.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1p0w92lj30jx0dajtk.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly1p86dsyj30ip0aftc3.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构-算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/"></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/3/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/10/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C/" style="font-size: 15.56px;">C</a> <a href="/tags/C/" style="font-size: 17.78px;">C++</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 12.22px;">Swift</a> <a href="/tags/UI/" style="font-size: 14.44px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 16.67px;">Ubuntu Server</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPadOS/" style="font-size: 10px;">iPadOS</a> <a href="/tags/macOS/" style="font-size: 11.11px;">macOS</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" style="font-size: 18.89px;">数据结构-算法实例</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 13.33px;">数据结构-算法笔记</a> <a href="/tags/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">新浪微博项目</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" style="font-size: 10px;">网络通信</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-编程语言/Objective-C/block的基本使用：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-01T16:00:00.000Z" itemprop="datePublished">2019-08-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%9A/">block的基本使用：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）block是一个数据类型，我们可以声明一个block类型的变量<br>2）不同类型的变量中可以存储不同类型的数据，block类型的变量中专门存储一段代码，这段代码可以有参数，可以有返回值</p>
+<p>Block变量的声明：<br>1）虽然block变量中是用来存储一段代码的，但是一个block变量中并不是任意的一段代码都可以存进去的，而是有限定的；也就是说，声明block变量的时候，必须要指定这个block变量存储的代码是否有参数，是否有返回值，一旦指定以后，这个block变量中就只能存储这样的代码段了<br>2）语法：返回值类型 (^block变量的名称)(参数列表);<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4hpakdcj30fg02j3zi.jpg"></p>
+<p>初始化block变量：<br>1）原理：写一个符合block要求的代码段，存储到block变量中就可以了<br>2）代码段的书写格式：</p>
+<pre><code>          ^返回值类型(参数类型)&#123;
+                    代码段;
+          &#125;;</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4i0b989j303y02i0t6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4i7bl9oj305j01vglz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4idsc7nj305j01v74m.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ikffggj30b901vdgd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4iq8m2dj30e209wt9y.jpg"></p>
+<p>  如何执行存储在block变量中的代码段：<br>语法格式：block变量名();<br>【有参数就传参数，有返回值就接】</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/block的简写：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/01/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E7%AE%80%E5%86%99%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-31T16:00:00.000Z" itemprop="datePublished">2019-08-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/01/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E7%AE%80%E5%86%99%EF%BC%9A/">block的简写：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）如果我们写的代码段没有返回值，那么代码段的void可以省略【既没有参数也没有返回值，代码段的void和小括弧都省略，只写一个^】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4jb918tj305501vwes.jpg"><br>注意：这里说的是代码段的返回值如果是void可以省略，声明block变量的返回值无论是什么都不可以省略<br>2）如果我们写的代码段没有参数，那么代码段的小括弧可以省略<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4jj02nbj305501vaad.jpg"><br>3）声明block变量的时候，如果有指定参数，可以只写参数的类型而不写参数的名称<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4jpbdmzj309k01vaal.jpg"><br>注意：这个地方我们说的是声明block变量的时候，代码段的类型和名称都要写<br>4）无论代码段是否有返回值，在写代码的时候，可以不写返回值类型，省略；如果在写代码段的时候，省略了返回值，这个时候系统会自动的确定返回值的类型，如果代码段中没有返回任何数据，那么它会认为这个代码段是没有返回值的，如果代码段中有返回数据，返回的数据是什么类型它就会认为这个代码段是什么类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4jviexhj309k01v0t6.jpg"></p>
+<p>建议：仍然按照我们最标准的写法来写block变量和block代码段，因为这样可以提高代码的阅读性</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/简化block变量的复杂定义：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%AE%80%E5%8C%96block%E5%8F%98%E9%87%8F%E7%9A%84%E5%A4%8D%E6%9D%82%E5%AE%9A%E4%B9%89%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-30T16:00:00.000Z" itemprop="datePublished">2019-07-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%AE%80%E5%8C%96block%E5%8F%98%E9%87%8F%E7%9A%84%E5%A4%8D%E6%9D%82%E5%AE%9A%E4%B9%89%EF%BC%9A/">简化block变量的复杂定义：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>定义block变量的时候，类型很长：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4kfk6v3j306v029gm2.jpg"></p>
+<p>Typedef的使用场景：将一个长类型定义为一个短类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4kl9atoj306v029t96.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4kqxm5wj307v02h0te.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/关于block块访问外部变量的值的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%85%B3%E4%BA%8Eblock%E5%9D%97%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
+      <time datetime="2019-07-29T16:00:00.000Z" itemprop="datePublished">2019-07-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%85%B3%E4%BA%8Eblock%E5%9D%97%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/">关于block块访问外部变量的值的问题</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）在block代码块的内部可以取定义在外部的变量的值，包括定义在外部的局部变量和全局变量<br>2）在block代码块的内部可以修改全局变量的值，但是不能修改定义在外部的局部变量的值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4l9a64rj307v091mz1.jpg"><br>3）如果你希望我们定义的局部变量可以允许在block代码的内部去修改，那么就为这个局部变量加一个__block(两个下划线)的修饰符<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4lhnhysj307v01c0sv.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/block作为函数的参数：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-28T16:00:00.000Z" itemprop="datePublished">2019-07-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A/">block作为函数的参数：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>定义：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4m5ef33j307v05xta6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4maxin7j307v05x402.jpg"></p>
+<p>调用：<br>1）如果要调用的函数的参数是block类型的，那么要求在调用的时候传入一个和形参block要求的代码段<br>2）调用的时候，可以先将代码段存储到一个block变量中，然后再传递这个block变量；也可以直接将符合要求的代码段写在小括弧中传递<br>3）小技巧：通过Xcode提示可以快速的生成block代码段的框架<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4mhp6yxj30860cj0v8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4mq35tjj30et0brtbg.jpg"></p>
+<p>将block作为函数的参数可以实现什么效果：可以将调用者自己写的一段代码传递到函数的内部去执行</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/应用实例：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-27T16:00:00.000Z" itemprop="datePublished">2019-07-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A/">应用实例：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>写一个数组类，给这个数组类提供一个方法，将一个国家字符串数组进行排序：</p>
+<p>比较j和j+1这两个字符串，我们直接比较的是字母顺序，但是这么写的话就写死了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4n7iz3dj30qm0mo7e9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4newe30j30qm0mo7dh.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nl63s9j30qm0moak6.jpg"></p>
+<p>比较这两个字符串的大小，不要方法的内部自己写代码去比，因为不管写什么代码都会写死的，让调用者自己写一段代码来比较这两个字符串的大小</p>
+<p>当方法的内部需要执行一个功能，但是这个功能具体的实现函数的内部不确定，那么这个时候，就使用block让调用者将这个功能的具体实现传递进来<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nrq4dij30qm0mogwa.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nynd5hj30qm0motic.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4o6dc03j30qm0mo7ek.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/block作为函数的返回值" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/" class="article-date">
+      <time datetime="2019-07-26T16:00:00.000Z" itemprop="datePublished">2019-07-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/">block作为函数的返回值</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>当将block作为函数的返回值的时候，返回值的类型就必须要使用typedef定义的短类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4oobs8cj307506sgmp.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/block与函数的异同：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E5%90%8C%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-25T16:00:00.000Z" itemprop="datePublished">2019-07-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E5%90%8C%EF%BC%9A/">block与函数的异同：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>相同点：都是封装一段代码</p>
+<p>不同的：<br>1）block是一个数据类型，可以声明block类型的变量；而函数就只是函数<br>2）block可以作为函数的参数，而函数不能直接作为函数的参数</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/协议的基本使用(protocol)：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(protocol)%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-24T16:00:00.000Z" itemprop="datePublished">2019-07-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(protocol)%EF%BC%9A/">协议的基本使用(protocol)：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>作用：专门用来声明一大堆方法（不能声明属性，也不能实现方法，只能用来写方法的声明），只要某个类遵守了这个协议，就相当于拥有这个协议中的所有的方法声明，而不用自己去定义</p>
+<p>协议的声明：</p>
+<p>@protocol 协议名称 <NSObject></p>
+<p>方法的声明;</p>
+<p>@end<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4pbw8nij30ku06smzn.jpg"></p>
+<p>在协议中，只能用来声明方法，就是专门用来写方法声明的，就是用来被类遵守的</p>
+<p>如果想要让一个类拥有协议中定义的所有的方法声明，那么就让这个类遵守这个协议，类只要遵守一个协议，那么这个类就拥有了这个协议中定义的所有的方法的声明</p>
+<p>@interface 类名 ： 父类名 &lt;协议名称&gt;</p>
+<p>@end</p>
+<p>：表示继承<br>&lt;&gt;表示遵守的协议</p>
+<p>这个类只是拥有了这个协议中的方法的声明而已，没有实现，所以这个类还应该实现协议中的方法</p>
+<p>如果类不实现协议中的方法，其实也不会报错，编译器只是会报警告；但是当创建对象，来调用这个没有实现的协议中的方法的时候，就会报错</p>
+<p>类是单继承，但是协议可以多遵守<br>@interface 类名：父类名 &lt;协议名称1，协议名称2……&gt;</p>
+<p>@end</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/@required与@optional" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@required%E4%B8%8E@optional/" class="article-date">
+      <time datetime="2019-07-23T16:00:00.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@required%E4%B8%8E@optional/">required与optional</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>当一个类遵守了一份协议，这个类只是拥有了这个协议中的方法的声明而已，没有实现，所以这个类还应该实现协议中的方法；如果类不实现协议中的方法，其实也不会报错，编译器只是会报警告；但是当创建对象，来调用这个没有实现的协议中的方法的时候，就会报错</p>
+<p>这两个修饰符是专门用来修饰协议中的方法的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4pvf6jmj306l04udgl.jpg"></p>
+<p>在协议中，如果方法的声明被@required修饰，那么遵守这个协议的类必须要实现这个方法，否则编译器会发出警告；<br>如果方法的声明被@optional修饰，那么遵守这个协议的类如果不实现这个方法，编译器也不会发出警告</p>
+<p>这两个关键字的主要作用：在于程序员沟通，告诉遵守协议的类，哪些方法是必须要实现的（@required必须实现，@optional可实现可不实现），因为这些方法我会调用</p>
+<p>默认的是：@required</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/9/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/11/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

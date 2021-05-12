@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/8/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C-%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C++语言</a> <a href="/tags/C%E5%AE%9E%E4%BE%8B/" style="font-size: 17.27px;">C实例</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 13.64px;">C语言</a> <a href="/tags/LeetCode/" style="font-size: 10.91px;">LeetCode</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/UI/" style="font-size: 11.82px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 12.73px;">Ubuntu Server</a> <a href="/tags/iOS-%E5%8A%9F%E8%83%BDdemo/" style="font-size: 16.36px;">iOS-功能demo</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" style="font-size: 15.45px;">《MySQL必知必会》</a> <a href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" style="font-size: 10.91px;">《汇编语言(第4版)》</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" style="font-size: 14.55px;">操作系统原理</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">数据结构、算法笔记</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" style="font-size: 18.18px;">计算机网络原理</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-操作系统原理/操作系统原理/同步和P-V操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%90%8C%E6%AD%A5%E5%92%8CP-V%E6%93%8D%E4%BD%9C/" class="article-date">
+      <time datetime="2020-10-23T16:00:00.000Z" itemprop="datePublished">2020-10-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%90%8C%E6%AD%A5%E5%92%8CP-V%E6%93%8D%E4%BD%9C/">同步和P-V操作</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>同步和P-V操作：</p>
+<p>进程的互斥关系：多个进程由于共享了独占性资源，必须协调各进程对资源的存取顺序，确保没有任何两个或以上的进程同时进行存取操作<br>互斥和资源共享相关<br>资源：临界资源<br>存取操作区域：临界区</p>
+<p>进程的同步关系：若干合作进程为了完成一个共同的任务，需要相互协调运行步伐，一个进程开始某个操作之前必须要求另一个进程已经完成某个操作，否则前面的进程只能等待【另一解释：合作进程中某些操作之间需要满足某种先后关系或某个操作能否进行需要满足某个前提条件，否则只能等待】</p>
+<p>互斥关系属于特殊的同步关系</p>
+<p>信号灯是一种卓有成效的进程同步机制</p>
+<p>信号灯用于进程同步的基本思想：进程在运行过程受信号灯状态控制，并能改变信号灯状态【信号灯的状态可以阻塞或唤醒进程；信号灯的状态可以被进程改变】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbavxqnuj30j90bxdjo.jpg"></p>
+<p>信号灯的两个操作：<br>1）P操作（函数或过程，P(S,q)）<br>2）V操作（函数或过程，V(S,q)）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbb3kn03j30lt0bxdl0.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbbbkd52j30e907zjty.jpg"><br>—————————————</p>
+<p>P-V操作解决互斥问题：实质是实现对临界区的互斥访问，允许最多一个进程处于临界区</p>
+<p>应用过程（S的初值设置要合理）：<br>1）进入临界区之前先执行P操作（可能阻塞当前进程）<br>2）离开临界区之后再执行V操作（可能唤醒某个进程）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbbj37srj30fe08jjtc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbbr0j4aj30fg08imzf.jpg"><br>—————————————</p>
+<p>P-V操作解决同步问题：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbbzeai1j30fg0c6dlh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbc7wm4aj30ah07fdi6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbcf9iicj30em07j0vk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbcm2d4mj30d707igow.jpg"></p>
+<p>———————————</p>
+<p>经典同步问题：</p>
+<p>生产者和消费者问题<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbctmmn5j30m00bpgpu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbd204ajj30dq09cjur.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/创建计算字段" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/" class="article-date">
+      <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/">创建计算字段</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>创建计算字段</p>
+<p>计算字段并不实际存在于数据库表中，计算字段是运行时在SELECT语句内创建的</p>
+<p>字段：基本上与列的意思相同，经常互换使用，不过数据库列一般称为列，而术语字段通常用在计算字段的连接上</p>
+<p>只有数据库知道SELECT语句中哪些列是实际的表列，哪些列是计算字段。从客户机（如应用程序）的角度来看，计算字段的数据是以与其他列的数据相同的方式返回的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortz4hy7dj30b703576m.jpg"></p>
+<p>拼接：将值联结到一起构成单个值</p>
+<p>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3500nmj30b6024myn.jpg"><br>SELECT Concat(vendname，‘ （’，vendcountry，‘）’）<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3e6rfnj306s03cjrx.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3kvotqj30bi05mjt3.jpg"></p>
+<p>RTrim()函数去掉值右边的所有空格，通过使用RTrim()，各个列都进行了整理<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3sjk96j30b7023q4d.jpg"></p>
+<p>2）别名是一个字段或值的替换名，别名用AS关键字赋予<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru41cau8j304203bt93.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru47rf4jj30b7022gn3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4djupzj30b701iab5.jpg"></p>
+<p>3)检索订单号20005中的所有物品<br>SELECT prodid,quantity,itemprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4l975mj305802maae.jpg"></p>
+<p>item_price列包含订单中每项物品的单价，如下汇总物品的价格（单价乘以订购数量）<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4tqhgsj307r02i3yz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru50n0mwj307r038glv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru56chxej30b903lju1.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/进程通信" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/" class="article-date">
+      <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/">进程通信</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>进程通信：</p>
+<p>Windows匿名管道通信：</p>
+<p>管道（pipe）：进程间的一种通信机制，一个进程（A）可以通过管道把数据传输给另外一个进程（B），前者向管道输入数据，后者从管道读取数据<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbeb4lqfj309h02fmxu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbej4jdsj30h20axgq6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbeqrgiaj30b7072wgp.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbexu8wfj30cs05egng.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbf505h1j30dj05ewga.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfbvtmrj30dj07iju4.jpg"></p>
+<p>Linux信号通信：</p>
+<p>信号：<br>1）信号是Linux进程间一种重要的通信机制<br>2）信号是向进程发送的一个通知，通知某个事件已发生<br>3）收到信号的进程可以立即执行指定的操作<br>4）信号的发出可以是进程，也可以是系统（含硬件）</p>
+<p>信号的产生：<br>1）键盘输入特殊组合键产生信号（Ctrl+C）<br>2）执行终端命令产生信号（kill系列命令）<br>3）程序中调用函数产生信号：kill(),abort()<br>4）硬件异常或内核产生相应信号：内存访问错<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfotol2j30bc07l0vm.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfx1fuej30l10brwjo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbg3y4dgj30ac06rq4o.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用数据处理函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" class="article-date">
+      <time datetime="2020-10-21T16:00:00.000Z" itemprop="datePublished">2020-10-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">使用数据处理函数</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用数据处理函数</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6ay4lpj30b506j794.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6idywcj30b501nt94.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6p4zahj30b5042q49.jpg"></p>
+<p>1）文本处理函数Upper()<br>SELECT vendname,Upper(vendname) AS vendnameupcase<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6x1hgbj305h039aal.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru753j8fj308403u3za.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7cb4a0j308402kmxn.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7jgpk6j30bh02qgmv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7uz31wj30bh0bddjf.jpg"></p>
+<p>2)日期和时间处理函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru82yiqgj30bh09lacf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8ah6a8j30b302iabx.jpg"></p>
+<p>SELECT custid,ordernum<br>FROM orders<br>WHERE order_date=‘2005-09-01’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8jfzvtj303d01ijrh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8ur7cfj30br06xjuf.jpg"><br>SELECT custid,ordernum<br>FROM orders<br>WHERE Date(order_date)=‘2005-09-01’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru93pk7ij30b603vwh9.jpg"></p>
+<p>检索出2005年9月下的所有订单<br>法1:<br>SELECT custid,ordernum<br>FROM orders<br>WHERE Date(order_date) BETWEEN ‘2005-09-01’ AND ‘2005-09-30’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9bxlpnj303e027mxc.jpg"></p>
+<p>法2:<br>SELECT custid,ordernum<br>FROM orders<br>WHERE Year(orderdate)=2005 AND Month(orderdate)=9;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9jol11j30b5022myj.jpg"></p>
+<p>3)数值处理函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9qw82uj308005ndgt.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/死锁" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%AD%BB%E9%94%81/" class="article-date">
+      <time datetime="2020-10-21T16:00:00.000Z" itemprop="datePublished">2020-10-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%AD%BB%E9%94%81/">死锁</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>死锁：</p>
+<p>—————————————</p>
+<p>4-1：死锁概念</p>
+<p>4-2：死锁起因</p>
+<p>4-3：死锁预防策略</p>
+<p>—————————————</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbho9ot0j30l20cxgsk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbhw62l6j30fu09fgpc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvbshc9j30fu09f79r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvhxr58j30n907y0we.jpg"></p>
+<p>死锁：两个或多个进程无限期的等待永远不会发生的条件的一种系统状态（结果每个进程都永远阻塞）</p>
+<p>另一个定义：在两个或多个进程中，每个进程都持有某种资源，但又继续申请其他进程已持有的某种资源。此时每个进程都拥有其运行所需的一部分资源，但是又都不够，从而每个进程都不能向前推进，陷于阻塞状态，这种状态称死锁<br>——————————————</p>
+<p>死锁的起因：<br>1）系统资源有限：资源数目不足，进程对资源的竞争而产生死锁<br>2）并发进程的推进顺序不当：进程请求资源和释放资源的顺序不当，导致死锁<br>3）不正确的P-V操作导致死锁</p>
+<p>A，B尽管并发争用i，j，且发生了阻塞，但是没有死锁<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvqyv9oj30q80cagry.jpg"><br>不正确的推进顺序发生死锁：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvz7itlj30gq09b42m.jpg"><br>不正确的P-V操作也可能会带来死锁：<br>生产者和消费者问题<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbw81fkyj30jb0cn79r.jpg"></p>
+<p>死锁的一些结论：<br>1）参与死锁的进程至少是两个，两个或以上进程才会出现死锁<br>2）参与死锁的进程至少有两个已经占有资源<br>3）参与死锁的所有进程都在等待资源<br>4）参与死锁的进程是当前系统中所有进程的子集<br>5）死锁会浪费大量系统资源，甚至导致系统崩溃<br>——————————————</p>
+<p>死锁的必要条件：<br>1）互斥条件：进程互斥使用资源，，资源具有独占性<br>2）不剥夺条件：进程在访问完资源前不能被其他进程强行剥夺<br>3）部分分配条件：进程边运行边申请资源，临时需要临时分配（区别于全部分配）<br>4）环路条件：多个进程构成环路，环中每个进程已占用的资源被前一进程申请，而自己所申请资源又被环中后一进程占用着<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbwgjuj3j30b404vaau.jpg"></p>
+<p>解决死锁的策略：</p>
+<p>1）预防死锁：通过设置某些限制条件，破坏死锁四个必要条件中的一个或多个，来防止死锁<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbwudkmej308j02yaax.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbx1iu66j30an07kdhh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbx89pi8j309707aq4n.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbxjju9aj30h409sdk7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbxq325zj30be06tmyz.jpg"></p>
+<p>较易实现，早期广泛使用，<br>缺点：由于限制太严格，导致资源利用率和吞吐量降低</p>
+<p>2）避免死锁：不事先采取限制去破坏产生死锁的条件，而是在资源分配过程中，用某种方法去评估若分配资源是否会让系统进入死锁状态，若是，则拒绝此次分配资源，从而避免死锁的发生（银行家算法）</p>
+<p>只需要较弱的限制条件，可获得较高的资源利用率和系统吞吐量，缺点：实现较难</p>
+<p>3）检测和恢复死锁：允许死锁发生，但可通过检测机制及时检测出死锁状态，并精确确定与死锁有关的进程和资源，然后采取适当措施，将系统中已发生的死锁清除，将进程从死锁状态解脱出来</p>
+<p>缺点：<br>1）检测方法复杂，实现难度大<br>2）恢复方法靠人工，撤销一些进程，回收资源再分配</p>
+<p>Windows，Linux采用的死锁解决方案：鸵鸟策略</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/汇总数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%B1%87%E6%80%BB%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-20T16:00:00.000Z" itemprop="datePublished">2020-10-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%B1%87%E6%80%BB%E6%95%B0%E6%8D%AE/">汇总数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>汇总数据</p>
+<p>聚集函数：运行在行组上，计算和返回单个值的函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorub8jfypj3080045wf3.jpg"></p>
+<p>1）AVG()函数：AVG()通过对表中行数计算并计算特定列值之和，求得该列的平均值。AVG()可用来返回所有列的平均值，也可以用来返回特定列或行的平均值</p>
+<p>返回products表中所有产品的平均价格<br>SELECT AVG(prodprice) AS avgprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubgpm52j301v01kaa3.jpg"></p>
+<p>返回特定供应商所提供产品的平均价格<br>SELECT AVG(prodprice) AS avgprice<br>FROM products<br>WHERE vend_id =1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubopzzmj301v01kaa3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubwhuxfj30b603kgnu.jpg"></p>
+<p>2)COUNT()函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruc4a991j30bm04b3zr.jpg"></p>
+<p>返回customers表中客户的总数：<br>SELECT COUNT(*) AS num_cust<br>FROM customers;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorucbxi9yj301r01l3yi.jpg"></p>
+<p>只对具有电子邮件地址的客户计数<br>SELECT COUNT(custemail) AS numcust<br>FROM customers;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruclrzijj301r01ldfu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goructfdt3j30b601p3zn.jpg"></p>
+<p>3)MAX()函数：要求指定列名<br>SELECT MAX(prodprice) AS maxprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorud22nwpj301x01gjre.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorud9vrdwj30b803zwgv.jpg"></p>
+<p>4)MIN()函数：要求指定列名<br>SELECT MIN(prodprice) AS minprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudhl35tj301u01haa2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudpylkmj30b8044jtz.jpg"></p>
+<p>5)SUM()函数：用来返回指定列值的和（总计）</p>
+<p>检索所订购物品的总数（所有quantity值之和）<br>SELECT SUM(quantity) AS items_ordered<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudypxc9j302g01lq2z.jpg"></p>
+<p>合计每项物品的items_price<em>quantity，得到总的订单金额<br>SELECT SUM(itemprice</em>quantity) AS totalprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorue994hlj302701idfv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorueib4iij30b802vgnf.jpg"></p>
+<p>6)聚集不同值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorueq3r3qj30ba042jt8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruexsptij30ba06r40f.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruf5cszrj30ba056adj.jpg"></p>
+<p>7）组合聚集函数<br>SELECT COUNT(*) AS num_items,<br>               MIN(prodprice) AS pricemin,<br>               MAX(prodprice) AS pricemax,<br>               AVG(prodprice) AS priceavg<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorufd6iwpj307b01gmxf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorufl6iwxj30b501z75o.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/进程调度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/" class="article-date">
+      <time datetime="2020-10-20T16:00:00.000Z" itemprop="datePublished">2020-10-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/">进程调度</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>进程调度：</p>
+<p>————————————</p>
+<p>5-1：进程调度概念</p>
+<p>5-2：典型调度算法</p>
+<p>————————————</p>
+<p>在合适的时候以一定的策略选择一个就绪进程运行</p>
+<p>进程调度的目标：<br>1）响应速度尽可能快<br>2）进程处理的时间尽可能短<br>3）系统吞吐量尽可能大<br>4）资源利用率尽可能高<br>5）对所有进程要公平<br>6）避免饥饿<br>7）避免死锁</p>
+<p>进程调度两个量化的衡量指标：<br>1）周转时间/平均周转时间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbzow8elj30ff09tgoi.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbzyw9bnj30gi091whq.jpg"></p>
+<p>2）带权周转时间/平均带权周转时间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc07hc9gj30do091tbr.jpg"></p>
+<p>———————————————</p>
+<p>典型调度算法：<br>1）先来先服务调度<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc0fyw0jj30do074din.jpg"><br>2）短作业优先调度算法<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc0nluwyj30i307itbx.jpg"><br>3）响应比高者优先调度算法<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc0ulvbdj30d70770uk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc11qo9yj30ln0940z5.jpg"><br>4）优先数调度算法<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc1fb55xj30al061tas.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc1m64ehj30g409nwij.jpg"><br>5）循环轮转调度法<br>      可变时间片轮转调度法<br>      多重时间片循环调度法<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc1tpkxij30me0aygq2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc216ajsj30cm086acr.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc2796f8j307w04hjs8.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/分组数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%86%E7%BB%84%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-19T16:00:00.000Z" itemprop="datePublished">2020-10-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%86%E7%BB%84%E6%95%B0%E6%8D%AE/">分组数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>分组数据</p>
+<p>分组允许把数据分为多个逻辑组，以便能对每个组进行聚集计算</p>
+<p>1）<br>SELECT  vendid,COUNT(*) AS numprods<br>FROM products<br>GROUP BY vend_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorugtm69rj303d02k0sw.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruh1m7d3j30b702vjth.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruh9lb27j30b008077o.jpg"></p>
+<p>2)WHERE过滤行，HAVING过滤分组<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruhi2u4dj30b702mq4r.jpg"><br>SELECT  cust_id,COUNT(<em>) AS orders<br>FROM orders<br>GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruhqovxej302z01ijrg.jpg"></p>
+<p>这里WHERE子句不起作用，因为过滤是基于分组聚集值而不是特定行值的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruhzwdz2j30b7026myt.jpg"></p>
+<p>3）列出具有2个（含）以上、价格为10（含）以上的产品的供应商<br>SELECT  vendid,COUNT(<em>) AS numprods<br>FROM products<br>WHERE prod_price &gt;=10<br>GROUP BY vend_id<br>HAVING COUNT(</em>) &gt;=2;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorui89ypjj303c01tglp.jpg"></p>
+<p>SELECT  vendid,COUNT(<em>) AS numprods<br>FROM products<br>GROUP BY vend_id<br>HAVING COUNT(</em>) &gt;=2;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruifzm3pj303c02kt8v.jpg"></p>
+<p>4）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruiou8d2j30az0310tq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruiwahh3j30b7022dha.jpg"><br>检索总计订单价格大于等于50的订单号和总计订单价格<br>SELECT ordernum,SUM(quantity<em>itemprice) AS ordertotal<br>FROM orderitems<br>GROUP BY order_num<br>HAVING SUM(quantity</em>item_price) &gt;= 50;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruj4enuij303w02l0t0.jpg"></p>
+<p>按总计订单价格排序输出：<br>SELECT ordernum,SUM(quantity<em>itemprice) AS ordertotal<br>FROM orderitems<br>GROUP BY order_num<br>HAVING SUM(quantity</em>item_price) &gt;= 50<br>ORDER BY ordertotal;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujdwe2tj303w02lwer.jpg"></p>
+<p>5）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujldl9kj30a602iq3m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujrvqxej30a602awf1.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/存储管理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" class="article-date">
+      <time datetime="2020-10-19T16:00:00.000Z" itemprop="datePublished">2020-10-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/">存储管理</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>存储管理：</p>
+<p>———————————————</p>
+<p>6-1：内存管理功能</p>
+<p>6-2：物理内存管理<br>    6-2-1.分区内存管理<br>    6-2-2.分区放置策略<br>    6-2-3.内存覆盖技术<br>    6-2-4.内存交换技术<br>    6-2-5.内存碎片</p>
+<p>6-3：虚拟内存管理<br>    6-3-1.页式虚拟内存管理概念<br>    6-3-2.页表和页式地址映射<br>    6-3-3.快表技术和页面共享技术<br>    6-3-4.缺页中断<br>    6-3-5.页面淘汰策略<br>    6-3-6.缺页因素与页式系统缺点<br>    6-3-7.段式和段页式虚拟存储</p>
+<p>———————————————</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用子查询" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%90%E6%9F%A5%E8%AF%A2/" class="article-date">
+      <time datetime="2020-10-18T16:00:00.000Z" itemprop="datePublished">2020-10-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%90%E6%9F%A5%E8%AF%A2/">使用子查询</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用子查询</p>
+<p>查询：任何SQL语句都是查询，但此术语一般指SELECT语句</p>
+<p>1）列出订购物品TNT2的所有客户：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorukyg8fej309301xt9b.jpg"></p>
+<p>法1:<br>SELECT order_num<br>FROM orderitems<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorul67nzpj301w01ujrf.jpg"></p>
+<p>SELECT cust_id<br>FROM orders<br>WHERE order_num IN(20005,20007);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruleb7r9j301l01u3yj.jpg"></p>
+<p>SELECT custname,custcontact<br>FROM customers<br>WHERE cust_id IN(10001,10004);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorulm5ilnj304v01v0sy.jpg"></p>
+<p>法2:(在SELECT语句中，子查询总是从内向外处理)<br>SELECT custname,custcontact<br>FROM customers<br>WHERE custid IN(SELECT custid<br>                                FROM orders<br>                                WHERE ordernum IN(SELECT ordernum<br>                                                                      FROM orderitems<br>                                                                      WHERE prod_id=’TNT2’));<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorulw15rfj304v01v0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorum75192j30b801v75m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorumdxayuj30b906rjvl.jpg"></p>
+<p>法3:<br>SELECT custname,custcontact<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>   AND orderitems..ordernum=orders.ordernum<br>   AND prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruml1my3j304v01v0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorumuiofmj30b80340uy.jpg"></p>
+<p>2)显示customers表中每个客户的订单总数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorun2nb6vj30b9015dg7.jpg"><br>SELECT custname,custstate,<br>               (SELECT COUNT(*)<br>                FROM orders<br>                WHERE orders.custid=customers.custid) AS orders<br>FROM customers<br>ORDER BY cust_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorunb3wduj305y02wgm0.jpg"></p>
+<p>相关子查询：涉及外部查询的子查询<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorunjmhcjj30bs0ba422.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/7/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/9/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/18/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C/" style="font-size: 15.56px;">C</a> <a href="/tags/C/" style="font-size: 17.78px;">C++</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 12.22px;">Swift</a> <a href="/tags/UI/" style="font-size: 14.44px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 16.67px;">Ubuntu Server</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPadOS/" style="font-size: 10px;">iPadOS</a> <a href="/tags/macOS/" style="font-size: 11.11px;">macOS</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" style="font-size: 18.89px;">数据结构-算法实例</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 13.33px;">数据结构-算法笔记</a> <a href="/tags/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">新浪微博项目</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" style="font-size: 10px;">网络通信</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/六种经典排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%85%AD%E7%A7%8D%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%85%AD%E7%A7%8D%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F/">六种经典排序</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>求数组中的最大值/最小值/累加和、平均值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5ser0ydj30ev08jac0.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5snip52j30f90aw0vy.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5suvapoj30hg0badij.jpg"></p>
+<p>求用户输入的多个数的最大、最小值。。while循环</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5t4t77yj30dt0drq4c.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5tdbe0xj30bq0ft760.jpg"><br>3个数由小到大排序<br>*//<em>任意输入</em>3<em>个整数，编程实现对这</em>3<em>个整数由小到大进行排序。<br>*//*本实例使用</em>scanf(“%d%d%d”,&amp;a,&amp;b,&amp;c)<em>从键盘中获得任意</em>3<em>个数。在输入数据时，在两个数据之间以一个或多个空格间隔，也可以用</em>Enter<em>键、</em>Tab<em>键，不能用逗号作为两个数据间的分隔符。若用格式输入函数</em>scanf(“%d,%d,%d”,&amp;a,&amp;b,&amp;c)*输入数据，两个数据之间要用“，”做间隔。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**int** main()&#123;</span><br><span class="line">    **int** a,b,c,t;</span><br><span class="line">    printf(“Please input a,b,c:\n”);</span><br><span class="line">    scanf(“%d%d%d”,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    **if**(a&gt;b)&#123;</span><br><span class="line">        t&#x3D;a;</span><br><span class="line">        a&#x3D;b;</span><br><span class="line">        b&#x3D;t;</span><br><span class="line">    &#125;</span><br><span class="line">    **if**(a&gt;c)&#123;</span><br><span class="line">        t&#x3D;a;</span><br><span class="line">        a&#x3D;c;</span><br><span class="line">        c&#x3D;t;</span><br><span class="line">    &#125;</span><br><span class="line">    **if**(b&gt;c)&#123;</span><br><span class="line">        t&#x3D;b;</span><br><span class="line">        b&#x3D;c;</span><br><span class="line">        c&#x3D;t;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(“The order of the number is:\n”);</span><br><span class="line">    printf(“%d,%d,%d”,a,b,c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>数组元素逆置：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5trid4kj30hj094act.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5tyyewrj30rx0ergqo.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5u69rz6j30j8078tbb.jpg"></p>
+<p>直接插入排序<br>*//*插入排序是把一个记录插入到已排序的有序序列中，使整个序列在插入该纪录后仍然有序。插入排序中较简单的一种方法是直接插入排序，其插入位置的确定方法是将待插入的记录与有序区中的各记录自右向左依次比较其关键字值的大小。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** insort(**int** s[],**int** n)&#123;</span><br><span class="line">    **int** i,j;</span><br><span class="line">    **for**(i&#x3D;2;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">        s[0]&#x3D;s[i];</span><br><span class="line">        j&#x3D;i-1;</span><br><span class="line">        **while**(s[0]&lt;s[j])&#123;</span><br><span class="line">            s[j+1]&#x3D;s[j];</span><br><span class="line">            j—;</span><br><span class="line">        &#125;</span><br><span class="line">        s[j+1]&#x3D;s[0];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** a[11],I;</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    printf(“原始顺序:\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;11;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">               insort(a,10);</span><br><span class="line">               printf(“\n 插入数据排序后顺序：\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;11;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5ul8x8ej30iv0azdm5.jpg"></p>
+<p>希尔排序<br>*//<em>用希尔排序法对一组数据从小到大进行排序，数据分别为</em>69<em>，</em>56<em>，</em>12<em>，</em>136<em>，</em>3<em>，</em>55<em>，</em>46<em>，</em>99<em>，</em>88<em>，</em>25.*<br><em>//<em>希尔排序是在直接插入排序的基础上做的改进，也就是将要排序的序列按固定增量分成若干组，等距离者在同一组中，然后再在组内进行直接插入排序。这里面的固定增量从</em>nn/2</em>开始，以后每次缩小到原来的一半。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** shsort(**int** s[],**int** n)&#123;</span><br><span class="line">    **int** i,j,d;</span><br><span class="line">    d&#x3D;n&#x2F;2;</span><br><span class="line">    **while**(d&gt;&#x3D;1)&#123;</span><br><span class="line">        **for**(I&#x3D;d+1;i&lt;&#x3D;n;i++)&#123;</span><br><span class="line">            s[0]&#x3D;s[i];</span><br><span class="line">            j&#x3D;i-d;</span><br><span class="line">            **while**((j&gt;0)&amp;&amp;(s[0]&lt;s[j]))&#123;</span><br><span class="line">                s[j+d]&#x3D;s[j];</span><br><span class="line">                j&#x3D;j-d;</span><br><span class="line">            &#125;</span><br><span class="line">            s[j+d]&#x3D;s[0];</span><br><span class="line">        &#125;</span><br><span class="line">        d&#x3D;d&#x2F;2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** a[11],I;</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    shsort(a,10);</span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>冒泡排序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5us65moj30h40b3q55.jpg"><br>*//<em>用冒泡法对任意输入的</em>10<em>个数由小到大进行排序<br>*//*冒泡法的基本思路是，如果要对</em>n<em>个数进行冒泡排序，那么要进行</em>n-1<em>趟比较，在第</em>1<em>趟比较中要进行</em>n-1<em>次两两比较，在第</em>j<em>趟中要进行</em>n-j<em>次两两比较。从这个基本思路中发现，趟数决定了两两比较的次数，这样就很容易将两个</em>for*循环联系起来了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line"></span><br><span class="line">    **int** i,j,t,a[11];</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;11;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line"></span><br><span class="line">    **for**(I&#x3D;1;i&lt;10;i++)</span><br><span class="line">        **for**(j&#x3D;1;j&lt;11;j++)</span><br><span class="line">            **if**(a[j]&gt;a[j+1])&#123;</span><br><span class="line">                t&#x3D;a[j];</span><br><span class="line">                a[j]&#x3D;a[j+1];</span><br><span class="line">                a[j+1]&#x3D;t;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5vi2dqgj30h40cyn0w.jpg"></p>
+<p>快速排序<br>*//<em>用快速排序法对一组数据由小到大进行排序，数据分别为</em>99<em>，</em>45<em>，</em>12<em>，</em>36<em>，</em>69<em>，</em>22<em>，</em>62<em>，</em>796<em>，</em>4<em>，</em>696*<br><em>//<em>快速排序是对冒泡排序的一种改进，主要的算法思想是在待排序的</em>n</em>个数据中取第一个数据作为基准值，将所有记录分为<em>3</em>组，使第一组中各数据值均小于或等于基准值，第二组做基准值的数据，第三组中各数据值均大于或等于基准值。这便实现了第一趟分割，然后再对第一组和第三组分别重复上述方法，以此类推，直到每组中只有一个记录为止。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** qusort(**int** s[],**int** start,**int** end)&#123;</span><br><span class="line">    **int** i,j;</span><br><span class="line">    I&#x3D;start;</span><br><span class="line">    j&#x3D;end;</span><br><span class="line">    s[0]&#x3D;s[start];</span><br><span class="line">    **while**(I&lt;j)&#123;</span><br><span class="line">        **while**(I&lt;j&amp;&amp;s[0]&lt;s[j])</span><br><span class="line">            j—;</span><br><span class="line">        **if**(I&lt;j)&#123;</span><br><span class="line">            s[I]&#x3D;s[j];</span><br><span class="line">            I++;</span><br><span class="line">        &#125;</span><br><span class="line">        **while**(I&lt;j&amp;&amp;s[I]&lt;&#x3D;s[0])</span><br><span class="line">            I++;</span><br><span class="line">        **if**(I&lt;j)&#123;</span><br><span class="line">            s[j]&#x3D;s[I];</span><br><span class="line">            j—;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    s[I]&#x3D;s[0];</span><br><span class="line">    **if**(start&lt;i)</span><br><span class="line">        qusort(s,start,j-1);</span><br><span class="line">    **if**(I&lt;end)</span><br><span class="line">        qusort(s,j+1,end);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** a[11],I;</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    qusort(a,1,10);</span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>选择排序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5vum7l0j30ax08haay.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5w3cmjjj30cr0cu40n.jpg"><br>*//<em>用选择排序法对一组数据由小到大进行排序，数据分别为</em>526<em>，</em>36<em>，</em>2<em>，</em>369<em>，</em>56<em>，</em>45<em>，</em>78<em>，</em>92<em>，</em>125<em>，</em>52.*<br><em>//<em>选择排序的基本算法是从待排序的区间中经过选择和交换后选出最小的数值存放到</em>a</em>[<em>0</em>]中，再从剩余的未排序区间中经过选择和交换后选出最小的数值存放到<em>a</em>[<em>1</em>]中，<em>a</em>[<em>1</em>]中的数字仅大于<em>a</em>[<em>0</em>]，以此类推，即可实现排序。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line"></span><br><span class="line">    **int** i,j,t,a[11];</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line"></span><br><span class="line">    **for**(I&#x3D;1;i&lt;11;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line"></span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;9;i++)</span><br><span class="line">        **for**(j&#x3D;I+1;j&lt;&#x3D;10;j++)</span><br><span class="line">            **if**(a[I]&gt;a[j])&#123;</span><br><span class="line">                t&#x3D;a[I];</span><br><span class="line">                a[I]&#x3D;a[j];</span><br><span class="line">                a[j]&#x3D;t;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line"></span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[image:C7736FB2-872D-41A1-9CA3-D087519F454F-23019-0000F9CC713A9ECD/Pasted Graphic 22.png]</p>
+<p>归并排序<br>*//<em>用归并排序法对一组数据由小到大进行排序，数据分别为</em>695<em>，</em>458<em>，</em>362<em>，</em>789<em>，</em>12<em>，</em>15<em>，</em>163<em>，</em>23<em>，</em>2<em>，</em>986.*<br><em>//<em>归并是将两个或多个有序记录序列合并成一个有序序列。归并方法有多种，一次对两个有序记录序列进行归并，称为二路归并排序，也有三路归并排序及多路归并排序。本实例是二路归并排序，基本方法如下：<br>*//*（</em>1</em>）将<em>n</em>个记录看成是<em>n</em>个长度为<em>1</em>的有序子表。<br>*//<em>（</em>2<em>）将两两相邻的有序子表进行归并。<br>*//*（</em>3<em>）重复执行步骤（</em>2<em>），直到归并成一个长度为</em>n*的有序表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** merge(**int** r[],**int** s[],**int** x1,**int** x2,**int** x3)&#123;</span><br><span class="line">    **int** i,j,k;</span><br><span class="line">    I&#x3D;x1;</span><br><span class="line">    j&#x3D;x2+1;</span><br><span class="line">    k&#x3D;x1;</span><br><span class="line">    **while**((I&lt;&#x3D;x2)&amp;&amp;(j&lt;&#x3D;x3))</span><br><span class="line">        **if**(r[I]&lt;&#x3D;r[j])&#123;</span><br><span class="line">            s[k]&#x3D;r[I];</span><br><span class="line">            I++;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">        **else**&#123;</span><br><span class="line">            s[k]&#x3D;r[j];</span><br><span class="line">            j++;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">    **while**(I&lt;&#x3D;x2)</span><br><span class="line">        s[k++]&#x3D;r[I++];</span><br><span class="line">    **while**(j&lt;&#x3D;x3)</span><br><span class="line">        s[k++]&#x3D;r[j++];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** merge_sort(**int** r[],**int** s[],**int** m,**int** n)&#123;</span><br><span class="line">    **int** p;</span><br><span class="line">    **int** t[20];</span><br><span class="line">    **if**(m&#x3D;&#x3D;n)</span><br><span class="line">        s[m]&#x3D;r[m];</span><br><span class="line">    **else**&#123;</span><br><span class="line">        p&#x3D;(m+n)&#x2F;2;</span><br><span class="line">        merge_sort(r,t,m,p);</span><br><span class="line">        merge_sort(r,t,p+1,n);</span><br><span class="line">        merge(t,s,m,p,n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** a[11];</span><br><span class="line">    **int** I;</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    merge_sort(a,a,1,10);</span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line">    **for**(I&#x3D;1;i&lt;&#x3D;10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/判断正整数的位数：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%88%A4%E6%96%AD%E6%AD%A3%E6%95%B4%E6%95%B0%E7%9A%84%E4%BD%8D%E6%95%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%88%A4%E6%96%AD%E6%AD%A3%E6%95%B4%E6%95%B0%E7%9A%84%E4%BD%8D%E6%95%B0%EF%BC%9A/">判断正整数的位数：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kjb3w18j30880d40tj.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> x,n=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//先要去做数位数去位数的事情</span></span><br><span class="line">    n++;</span><br><span class="line">    x/=<span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        n++;</span><br><span class="line">        x/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kju5ia6j30880apq3k.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> x,n=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        x/=<span class="number">10</span>;</span><br><span class="line">        n++;</span><br><span class="line">    &#125;<span class="keyword">while</span>(x&gt;<span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/哥德巴赫猜想：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%93%A5%E5%BE%B7%E5%B7%B4%E8%B5%AB%E7%8C%9C%E6%83%B3%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%93%A5%E5%BE%B7%E5%B7%B4%E8%B5%AB%E7%8C%9C%E6%83%B3%EF%BC%9A/">哥德巴赫猜想：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kdonrxej30l90tzq5x.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kdugac4j30kk0acacr.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//验证100以内的正偶数都能分解为两个素数之和，即验证哥德巴赫猜想对100以内（大于二）的正偶数成立。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ss</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(i!=j+<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,j,k,flag1,flag2,n=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">4</span>;i&lt;<span class="number">100</span>;i+=<span class="number">2</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">2</span>;k&lt;=i/<span class="number">2</span>;k++)&#123;</span><br><span class="line">            </span><br><span class="line">            j=i-k;</span><br><span class="line">            flag1=ss(k);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(flag1)&#123;</span><br><span class="line">                </span><br><span class="line">                flag2=ss(j);</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span>(flag2)&#123;</span><br><span class="line">                    </span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%3d=%3d+%3d,&quot;</span>,i,k,j);</span><br><span class="line">                    n++;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(n%<span class="number">8</span>==<span class="number">0</span>)&#123;</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/大小写转换：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2%EF%BC%9A/">大小写转换：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kb1ghkfj30ms0amt9z.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字母在ASCII表中是顺序排列的</span></span><br><span class="line"><span class="comment">//大写字母和小写字母是分开排列的，并不在一起</span></span><br><span class="line"><span class="comment">//&#x27;a&#x27;-&#x27;A&#x27;可以得到两段之间的距离，于是a+&#x27;a&#x27;-&#x27;A&#x27;可以把一个大写字母变成小写字母，而a+&#x27;A&#x27;-&#x27;a&#x27;可以把一个小写字母变成大写字母</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">char</span> m=<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">    <span class="keyword">char</span> n=<span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,m-n);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>,n+<span class="number">32</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>,m<span class="number">-32</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/字符串数组的排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F/">字符串数组的排序</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>以字母的顺序排序：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6mvxfhwj308x01fdg3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6og8qlej308x0etjug.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6ova2zbj30d60dqgox.jpg"></p>
+<p>以长度排序：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6p3fy5ij30bx0aemzy.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/字符输入输出：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A/">字符输入输出：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8krwald9j30nl0ks0wg.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标准库提供的输入/输出模型非常简单，无论文本从何处输入，输出到何处，其输入/输出都是按照字符流的方式处理。文本流是由多行字符构成的字符序列，而每行字符则由0个或多个字符组成，行末是一个换行符。标准库负责使每个输入/输出流都能够遵守这一模型。使用标准库的C语言程序员不必关心在程序之外这些行是如何表示的</span></span><br><span class="line"><span class="comment">//每次调用时，getchar函数从文本流中读入下一个输入字符，并将其作为结果值返回【c=getter()】</span></span><br><span class="line"><span class="comment">//每次调用putchar函数时将打印一个字符【putchar(c)】，putchar与printf这两个函数可以交替使用，输出的次序与调用的次序一致</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">    putchar:</span></span><br><span class="line"><span class="comment">	int putchar(int c);</span></span><br><span class="line"><span class="comment">	向标准输出写一个字符</span></span><br><span class="line"><span class="comment">	返回写了几个字符，EOF(-1)表示写失败</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    getchar:</span></span><br><span class="line"><span class="comment">	int getchar(void);</span></span><br><span class="line"><span class="comment">	从标准输入读入一个字符</span></span><br><span class="line"><span class="comment">	返回类型是int是为了返回EOF(-1)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//control-C  强制退出，程序并没有停止</span></span><br><span class="line"><span class="comment">//control-D  正常退出</span></span><br><span class="line"><span class="comment">//shell</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ch;</span><br><span class="line">	<span class="keyword">while</span>((ch=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="built_in">putchar</span>(ch);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;EOF\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>文件复制：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8ks5fsqej30nk0fvacb.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//文件复制：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将输入复制到输出</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//字符在键盘、屏幕或其他的任何地方无论以什么形式表现，它在机器内部都是以位模式存储的，char类型专门用于存储这种字符型数据</span></span><br><span class="line">	<span class="comment">//这里之所以不把c声明成char类型，是因为它必须足够大，除了能存储任何可能的字符外还要能存储文件结束符EOF</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> c;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//EOF：end of file</span></span><br><span class="line">	<span class="comment">//EOF定义在头文件&lt;stdio.h&gt;中，是一个整型数，它与任何char类型的值都不相同</span></span><br><span class="line">	<span class="comment">// !=的优先级比=的优先级要高</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="built_in">putchar</span>(c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>字符计数：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8ksiragyj30ni0admxw.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符计数：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> nc;</span><br><span class="line">	</span><br><span class="line">	nc=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(getchar() != EOF)&#123;</span><br><span class="line">		++nc;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %ld\n&quot;</span>,nc);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kssn9wuj30ni08k750.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> nc;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(nc=<span class="number">0</span>;getchar() != EOF;++nc)&#123;</span><br><span class="line">		;                  <span class="comment">//单独的分号称为空语句</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %.0f\n&quot;</span>,nc);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>行计数：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kudggtej30nj0c7my5.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//行计数（统计行数等价于统计换行符的个数）</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> c,n1;</span><br><span class="line">	n1=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="keyword">if</span>(c == <span class="string">&#x27;\n&#x27;</span>)&#123;</span><br><span class="line">			++n1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>单词计数：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kuloclzj30nl0jn77c.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单词计数：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//统计行数、字符数与单词数(任何其中不包含空格、制表符或换行符的字符序列)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IN 1<span class="comment">//在单词内</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OUT 0<span class="comment">//在单词外</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> c,nl,nw,nc,state;</span><br><span class="line">	state=OUT;</span><br><span class="line">	nl=nw=nc=<span class="number">0</span>;<span class="comment">//在兼有值与赋值两种功能的表达式中，赋值结合次序是由右至左：nl=(nw=(nc=0));</span></span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		++nc;</span><br><span class="line">		<span class="keyword">if</span>(c == <span class="string">&#x27;\n&#x27;</span>)&#123;</span><br><span class="line">			++nl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//  ||代表OR（逻辑或）</span></span><br><span class="line">		<span class="comment">//  &amp;&amp;代表AND（逻辑与），它仅比||高一个优先级</span></span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">&#x27; &#x27;</span> || c==<span class="string">&#x27;\n&#x27;</span> || c== <span class="string">&#x27;\t&#x27;</span>)&#123;</span><br><span class="line">			state=OUT;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//程序执行时，每当遇到单词的第一个字符，它就作为一个新单词加以统计</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(state==OUT)&#123;</span><br><span class="line">			state=IN;</span><br><span class="line">			++nw;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//nl:行数；nw:单词数；nc：字符数</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,nl,nw,nc<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>统计各个数字、空白符（包括空格符、制表符及换行符）以及所有其他字符出现的次数：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kuwd0fwj30ng0j1773.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//统计各个数字、空白符（包括空格符、制表符及换行符）以及所有其他字符出现的次数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> c,i,nwhite,nother;</span><br><span class="line">	<span class="comment">//数组下标可以是任何整型表达式、包括整型变量（如i）以及整型常量</span></span><br><span class="line">	<span class="keyword">int</span> ndigit[<span class="number">10</span>];<span class="comment">//C语言中，数组下标总是从0开始</span></span><br><span class="line">	</span><br><span class="line">	nwhite=nother=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)&#123;</span><br><span class="line">		ndigit[i]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="keyword">if</span>(c &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; c&lt;= <span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">			++ndigit[c-<span class="string">&#x27;0&#x27;</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27; &#x27;</span> || c==<span class="string">&#x27;\n&#x27;</span> ||c==<span class="string">&#x27;\t&#x27;</span>)&#123;</span><br><span class="line">			++nwhite;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			++nother;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;digit=&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>,ndigit[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;,white space=%d,other=%d\n&quot;</span>,nwhite,nother);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/学生管理系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">学生管理系统</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><strong>//</strong><br><strong>//  main.c</strong><br><strong>//**学生系统</strong>//**<br><strong>//  Created by</strong>廖家龙<strong>on 2020/6/15.</strong><br>**//  Copyright © 2020 liuyuecao. All rights reserved.**<br><strong>//</strong></p>
+<p><strong>#include &lt;stdio.h&gt;</strong><br><strong>#include &lt;string.h&gt;</strong><br><strong>#include &lt;stdlib.h&gt;</strong></p>
+<p><strong>#define NUM 20</strong></p>
+<p><strong>//**性别枚举，表示学员的性别</strong>typedef enum{**<br>**    GenderMale,**<br>**    GenderFemale**<br><strong>} Gender;</strong></p>
+<p><strong>//**学生结构体，表示一个学生数据</strong>typedef struct{**<br>**    int id;//<strong>学生编号</strong>    char *name;//<strong>学生姓名</strong>    int age;//<strong>学生年龄</strong>    Gender gender;//<strong>学生性别</strong>    int score;//<strong>学生成绩</strong>} Student;**</p>
+<p><strong>//**结构体数组，这个数组中存储的是</strong>10<strong>个学生的信息</strong>Student students[NUM]={**<br>**    {1,”jack”,18,GenderMale,100},**<br>**    {2,”rose”,21,GenderFemale,45},**<br>**    {3,”lily”,26,GenderFemale,23},**<br>**    {4,”jim1”,12,GenderMale,89},**<br>**    {5,”poly”,3,GenderMale,67},**<br>**    {6,”meimei”,19,GenderFemale,89},**<br>**    {7,”likai”,31,GenderMale,88},**<br>**    {8,”Qiang”,45,GenderMale,12},**<br>**    {9,”aDong”,29,GenderMale,76},**<br>**    {10,”asan”,35,GenderMale,91},**<br><strong>};</strong></p>
+<p><strong>//**代表数组中真正的存储了多少个学生的信息</strong>int realLength=10;**</p>
+<p><strong>//**显示一级菜单，并接收用户的选择</strong>int showMenu();**</p>
+<p><strong>//**查询学生</strong>void query();**</p>
+<p><strong>//**新增学生</strong>void addStudent();**</p>
+<p><strong>//**删除学生</strong>void deleteStudent();**</p>
+<p><strong>//**修改学生</strong>void modifyStudent();**</p>
+<p><strong>//**显示查询的二级菜单</strong>int showQueryMenu();**</p>
+<p><strong>//**查询所有的学生信息</strong>void queryAll();**</p>
+<p><strong>//**根据编号查询</strong>void queryById();**</p>
+<p><strong>//**根据姓名查询</strong>void queryByName();**</p>
+<p><strong>//**根据年龄查询</strong>void queryByAge();**</p>
+<p><strong>//**根据性别查询</strong>void queryByGender();**</p>
+<p><strong>//**根据成绩查询</strong>void queryByScore();**</p>
+<p>*<em>int main(int argc, const char * argv[]) {*</em></p>
+<p>**    while(1){**</p>
+<p>**    //1.<strong>显示操作菜单，并接收用户的选择</strong>    int userSelect=showMenu();**</p>
+<p>**    //2.<strong>判断用户的选择，根据用户的选择来做不同的事情</strong>    switch (userSelect) {**<br>**        case 1:**<br>**            //<strong>查询学生</strong>            query();**<br>**            break;**<br>**         case 2:**<br>**            //<strong>新增学生</strong>            addStudent();**<br>**            break;**<br>**         case 3:**<br>**            //<strong>删除学生</strong>            deleteStudent();**<br>**            break;**<br>**         case 4:**<br>**            //<strong>修改学生</strong>            modifyStudent();**<br>**            break;**<br>**        default:**<br>**            //<strong>结束程序</strong>            break;**<br>**    }**<br><strong>}</strong><br><strong>}</strong></p>
+<p><strong>//**显示一级菜单，并接收用户的选择</strong>int showMenu(){**<br>**    //1.<strong>显示菜单</strong>    printf(“*<strong>*<strong><strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);**<br>**    printf(“*</strong>欢迎使用学生管理系统*<strong>\n”);</strong><br>**    printf(“*              1.<strong>查询学生*<strong>\n”);</strong><br>**    printf(“*              2.<strong>新增学生*<strong>\n”);</strong><br>**    printf(“*              3.<strong>删除学生*<strong>\n”);</strong><br>**    printf(“*              4.<strong>修改学生*<strong>\n”);</strong><br>**    printf(“*              5.<strong>退出系统*<strong>\n”);</strong><br>**    printf(“*<strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);**<br>**    //<strong>接收用户的选择</strong>    printf(“<strong>请输入你的选择：</strong>”);**<br>**    int userSelect=0;**<br>**    scanf(“%d”,&amp;userSelect);**<br>**    //3.<strong>将用户的选择返回</strong>    return userSelect;**<br><strong>}</strong></p>
+<p><strong>//**查询学生</strong>void query(){**</p>
+<p>**    //1.<strong>显示查询的二级菜单，并接收用户的选择</strong>    int userSelect=showQueryMenu();**<br>**    //2.<strong>判断用户的选择，根据用户的选择作出不同的查询</strong>    switch (userSelect) {**<br>**        case 1:**<br>**            //<strong>查询所有学生信息</strong>            queryAll();**<br>**            break;**<br>**         case 2:**<br>**            //<strong>根据编号查询</strong>            queryById();**<br>**            break;**<br>**         case 3:**<br>**            //<strong>根据姓名查询</strong>            queryByName();**<br>**            break;**<br>**         case 4:**<br>**            //<strong>根据年龄查询</strong>            queryByAge();**<br>**            break;**<br>**         case 5:**<br>**            //<strong>根据性别查询</strong>            queryByGender();**<br>**            break;**<br>**        default:**<br>**            //<strong>根据成绩查询</strong>            queryByScore();**<br>**            break;**<br>**    }**<br><strong>}</strong></p>
+<p><strong>//**显示查询的二级菜单</strong>int showQueryMenu(){**</p>
+<p>**    //1.<strong>显示查询的二级菜单</strong>    printf(“*<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);**<br>**    printf(“*<strong>欢迎使用学生管理系统*<strong>\n”);</strong><br>**    printf(“*              1.<strong>查询所有学生信息*<strong>\n”);</strong><br>**    printf(“*              2.<strong>根据编号查询*<strong>\n”);</strong><br>**    printf(“*              3.<strong>根据姓名查询*<strong>\n”);</strong><br>**    printf(“*              4.<strong>根据年龄查询*<strong>\n”);</strong><br>**    printf(“*              5.<strong>根据性别查询*<strong>\n”);</strong><br>**    printf(“*              6.<strong>根据成绩查询*<strong>\n”);</strong><br>**    printf(“*<strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);**</p>
+<p>**    //2.<strong>接收用户的选择</strong>    printf(“<strong>请输入你要进行的查询编号：</strong>”);**<br>**    int userSelect=0;**<br>**    scanf(“%d”,&amp;userSelect);**<br>**    //3.<strong>返回用户的选择</strong>    return userSelect;**<br><strong>}</strong></p>
+<p><strong>//**新增学生</strong>void addStudent(){**<br>**    //1.<strong>输入要新增的学生的信息</strong>    //<strong>编号不输入，让系统自动生成<br>**    //1.1.**先输入姓名</strong>    printf(“<strong>请输入新增的学生的姓名：</strong>”);**</p>
+<p>**    char name1[10];**</p>
+<p>**    rewind(stdin);**</p>
+<p>**    fgets(name1,10,stdin);**<br>**    size_t len=strlen(name1);**</p>
+<p>**    if(name1[len-1] == ‘\n’){**<br>**        name1[len-1]=‘\0’;**<br>**    }**</p>
+<p>**    char *name=calloc(len+1,sizeof(char));**<br>**    strcpy(name, name1);**</p>
+<p>**    //1.2.<strong>输入年龄</strong>    printf(“<strong>请输入新增的学生的年龄：</strong>”);**<br>**    int age =0;**<br>**    scanf(“%d”,&amp;age);**</p>
+<p>**    //1.3.<strong>输入性别</strong>    printf(“<strong>请输入新增的学生的性别：</strong>0—&gt;<strong>男</strong>0—&gt;<strong>女</strong>”);**<br>**    int gender =0;**<br>**    scanf(“%d”,&amp;gender);**</p>
+<p>**    //1.4.<strong>输入成绩</strong>    printf(“<strong>请输入新增的学生的成绩：</strong>”);**<br>**    int score =0;**<br>**    scanf(“%d”,&amp;score);**</p>
+<p>**    //2.<strong>创建结构体变量</strong>    Student stu={students[realLength-1].id+1,name,age,gender,score};**</p>
+<p>**    //3.<strong>将输入的学生的信息保存在数组中</strong>    students[realLength]=stu;**<br>**    realLength++;**<br><strong>}</strong></p>
+<p><strong>//**删除学生</strong>void deleteStudent(){**</p>
+<p>**    printf(“<strong>请输入要删除的学生的编号：</strong>”);**<br>**    int id=0;**<br>**    scanf(“%d”,&amp;id);**</p>
+<p>**    int deleteIndex=-1;**<br>**    for(int I=0;i&lt;realLength;i++){**<br>**        if(students[I].id==id){**<br>**            deleteIndex=I;**<br>**            break;**<br>**        }**<br>**    }**</p>
+<p>**    if(deleteIndex==-1){**<br>**        printf(“<strong>你输入的编号有误</strong>”);**<br>**        return;**<br>**    }**</p>
+<p>**    for(int I=deleteIndex+1;i&lt;realLength;i++){**<br>**        students[i-1]=students[I];**<br>**    }**</p>
+<p>**    realLength—;**</p>
+<p><strong>}</strong></p>
+<p><strong>//**修改学生</strong>void modifyStudent(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**查询所有的学生信息</strong>void queryAll(){**</p>
+<p>**    printf(“<strong>编号</strong>\t\t<strong>姓名</strong>\t\t<strong>年龄</strong>\t\t<strong>性别</strong>\t\t<strong>成绩</strong>\t\t\n”);**</p>
+<p>**    for(int I=0;i&lt;realLength;i++){**</p>
+<p>**        printf(“%d\t\t%s\t\t%d\t\t%s\t\t%d\n”,**<br>**               students[I].id,**<br>**               students[I].name,**<br>**               students[I].age,**<br>**               students[I].gender==GenderMale ? “<strong>男</strong>”:”<strong>女</strong>”,**<br>**               students[I].score**<br>**               );**<br>**    }**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据编号查询</strong>void queryById(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据姓名查询</strong>void queryByName(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据年龄查询</strong>void queryByAge(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据性别查询</strong>void queryByGender(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据成绩查询</strong>void queryByScore(){**</p>
+<p>**    //1.<strong>让用户输入一个最小成绩，再让用户输入一个最大成绩</strong>    int min=0,max=0;**<br>**    printf(“<strong>请输入最小成绩和最大成绩，使用空格分隔：</strong>”);**<br>**    scanf(“%d%d”,&amp;min,&amp;max);**</p>
+<p>**    //3.<strong>打印</strong>    printf(“<strong>编号</strong>\t\t<strong>姓名</strong>\t\t<strong>年龄</strong>\t\t<strong>性别</strong>\t\t<strong>成绩</strong>\t\t\n”);**</p>
+<p>**    for(int I=0;i&lt;realLength;i++){**<br>**        if(students[I].score &gt;= min &amp;&amp; students[I].score &lt;= max){**<br>**            printf(“%d\t\t%s\t\t%d\t\t%s\t\t%d\n”,**<br>**               students[I].id,**<br>**               students[I].name,**<br>**               students[I].age,**<br>**               students[I].gender==GenderMale ? “<strong>男</strong>”:”<strong>女</strong>”,**<br>**               students[I].score**<br>**            );**<br>**        }**<br>**    }**</p>
+<p><strong>}</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/对小数进行四舍五入：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%AF%B9%E5%B0%8F%E6%95%B0%E8%BF%9B%E8%A1%8C%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%AF%B9%E5%B0%8F%E6%95%B0%E8%BF%9B%E8%A1%8C%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5%EF%BC%9A/">对小数进行四舍五入：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kbm9100j30ez0eu405.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请用户输入一个实数（浮点型），编写算法对这个实数进行四舍五入到个位的运算</span></span><br><span class="line"><span class="comment">//   12.56----13      12.45----12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//让用户输入一个小数</span></span><br><span class="line">    <span class="keyword">double</span> num=<span class="number">0.0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入一个小数：&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;num);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//对这个数进行四舍五入计算</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i=num;<span class="comment">//拿到整数部分</span></span><br><span class="line">    <span class="keyword">double</span> xiaoShu=num-i;<span class="comment">//小数部分</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(xiaoShu &gt;= <span class="number">0.5</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;i=%d\n&quot;</span>,i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/将数组元素左边部分全是奇数，右边全是偶数，时间复杂度为O(n)：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%B0%86%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%B7%A6%E8%BE%B9%E9%83%A8%E5%88%86%E5%85%A8%E6%98%AF%E5%A5%87%E6%95%B0%EF%BC%8C%E5%8F%B3%E8%BE%B9%E5%85%A8%E6%98%AF%E5%81%B6%E6%95%B0%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO(n)%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%B0%86%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%B7%A6%E8%BE%B9%E9%83%A8%E5%88%86%E5%85%A8%E6%98%AF%E5%A5%87%E6%95%B0%EF%BC%8C%E5%8F%B3%E8%BE%B9%E5%85%A8%E6%98%AF%E5%81%B6%E6%95%B0%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO(n)%EF%BC%9A/">将数组元素左边部分全是奇数，右边全是偶数，时间复杂度为O(n)：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kh9atsrj30cg0hymyk.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> ary[<span class="number">11</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(ary[i]%<span class="number">2</span>!=<span class="number">0</span>)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(ary[j]%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i&lt;j)&#123;</span><br><span class="line">            </span><br><span class="line">            temp=ary[i];</span><br><span class="line">            ary[i]=ary[j];</span><br><span class="line">            ary[j]=temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">11</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,ary[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-算法/数据结构-算法实例/尼科彻斯定理：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%B0%BC%E7%A7%91%E5%BD%BB%E6%96%AF%E5%AE%9A%E7%90%86%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/%E5%B0%BC%E7%A7%91%E5%BD%BB%E6%96%AF%E5%AE%9A%E7%90%86%EF%BC%9A/">尼科彻斯定理：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8khwxtn2j30jx0q8q5f.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8ki59vbpj30cg02ot8v.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//尼科彻斯定理的内容是：任何一个整数的立方都可以写成一串连续奇数的和。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,k=<span class="number">0</span>,l,n,m,sum,flag=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input a number:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    </span><br><span class="line">    m=n*n*n;</span><br><span class="line">    i=m/<span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">        i=i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(flag==<span class="number">1</span>&amp;&amp;i&gt;=<span class="number">1</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        sum=<span class="number">0</span>;</span><br><span class="line">        k=<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">            </span><br><span class="line">            sum+=(i<span class="number">-2</span>*k);</span><br><span class="line">            k++;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum==m)&#123;</span><br><span class="line">                </span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d*%d*%d=%d=&quot;</span>,n,n,n,m);</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;k<span class="number">-1</span>;l++)&#123;</span><br><span class="line">                    </span><br><span class="line">                &#125;;</span><br><span class="line">                </span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d+&quot;</span>,i<span class="number">-1</span>*<span class="number">2</span>);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i-(k<span class="number">-1</span>)*<span class="number">2</span>);</span><br><span class="line">                </span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum&gt;m)&#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        i-=<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95/">数据结构-算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" rel="tag">数据结构-算法实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/17/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/19/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

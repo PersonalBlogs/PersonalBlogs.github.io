@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>Hexo-Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo-Blog">
+<meta property="og:url" content="http://example.com/page/15/index.html">
+<meta property="og:site_name" content="Hexo-Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="廖家龙-13176171912">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo-Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/avatar.png">
+  
+  
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 5.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+
+                        
+                        <li><念念不忘 必有回响></li>
+
+
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                        
+                            <li><a  href="/archives/">👉首页👈</a></li>
+                        
+                            <li><a  href="/tags">&lt;分类、标签&gt;</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/C/" style="font-size: 15.56px;">C</a> <a href="/tags/C/" style="font-size: 17.78px;">C++</a> <a href="/tags/Objective-C/" style="font-size: 20px;">Objective-C</a> <a href="/tags/Swift/" style="font-size: 12.22px;">Swift</a> <a href="/tags/UI/" style="font-size: 14.44px;">UI</a> <a href="/tags/Ubuntu-Server/" style="font-size: 16.67px;">Ubuntu Server</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iPadOS/" style="font-size: 10px;">iPadOS</a> <a href="/tags/macOS/" style="font-size: 11.11px;">macOS</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" style="font-size: 10px;">多线程实战</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B/" style="font-size: 18.89px;">数据结构-算法实例</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" style="font-size: 13.33px;">数据结构-算法笔记</a> <a href="/tags/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E9%A1%B9%E7%9B%AE/" style="font-size: 10px;">新浪微博项目</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" style="font-size: 10px;">网络通信</a>
+                    </div>
+                </section>
+                
+                
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99/">&lt;关于本站&gt;</a></li>
+                
+                    <li><a href="/archives/">👉首页👈</a></li>
+                
+                    <li><a href="/tags">&lt;分类、标签&gt;</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-编程语言/C++/继承：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E7%BB%A7%E6%89%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-15T16:00:00.000Z" itemprop="datePublished">2019-06-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E7%BB%A7%E6%89%BF%EF%BC%9A/">继承：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>继承是面向对象三大特性之一</p>
+<p>定义某些类时，下级别的成员除了拥有上一级的共性，还有自己的特性，这个时候我们就可以考虑利用继承的技术，减少重复代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfg9czzxj30hx125wjm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgfbr0rj30e707pdgu.jpg"></p>
+<p>继承方式：公共继承、保护继承、私有继承<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfglvd97j30hn0cwjud.jpg"></p>
+<p>继承中的对象模型：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgse4qoj30dz0isdhm.jpg"></p>
+<p>继承中的构造和析构顺序：子类继承父类后，当创建子类对象，也会调用父类的构造函数；先构造父类，再构造子类，析构的顺序与构造的顺序相反<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgzbqddj30ii0k9ac5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfh6ivubj30dz02nq38.jpg"></p>
+<p>继承同名成员处理方式：</p>
+<p>当子类与父类出现同名的成员，如何通过子类对象访问到子类或者父类中同名的数据呢？<br>1）访问子类同名成员，直接访问即可<br>2）访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhdadvij30n80yxgq3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhk4mgpj30dz033q3a.jpg"></p>
+<p>继承同名静态成员处理方式：静态成员和非静态成员出现同名，处理方式一致；访问子类同名成员，直接访问即可；访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhr4rmzj30nb11hgrf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhzmn2lj30dz072759.jpg"></p>
+<p>多继承：C++允许一个类继承多个类，多继承可能会引发父类中有同名成员出现，需要加作用域区分；C++实际开发中不建议用多继承<br>class Son:public Base1,public Base2</p>
+<p>菱形继承：两个派生类继承同一个基类，又有某个类同时继承着两个派生类，这种继承被称为菱形继承，或者钻石继承</p>
+<p>出现的问题：<br>1）羊继承了动物的数据，驼同样继承了动物的数据，当羊驼使用数据时，就会产生二义性<br>2）羊驼继承自动物的数据继承了两份，但是这份数据我们只需要一份就可以<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfi72uyrj30iw0mctc0.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfidoddzj30df01z74f.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++/多态：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E5%A4%9A%E6%80%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-14T16:00:00.000Z" itemprop="datePublished">2019-06-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E5%A4%9A%E6%80%81%EF%BC%9A/">多态：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>多态是C++面向对象三大特性之一</p>
+<p>多态分为两类：<br>1）静态多态：函数重载和运算符重载属于静态多态，复用函数名<br>2）动态多态：派生类和虚函数实现运行时多态</p>
+<p>静态多态和动态多态的区别：<br>1）静态多态的函数地址早绑定，编译阶段确定函数地址<br>2）动态多态的函数地址晚绑定，运行阶段确定函数地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjeqhc7j30l50o2wi6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjmkiwbj30df01z0st.jpg"></p>
+<p>多态的底层原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjthhbpj30n90q042l.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfk02il6j30df01zq32.jpg"></p>
+<p>分别利用普通写法和多态技术，设计实现两个操作数进行运算的计算器类：</p>
+<p>多态的优点：代码组织结构清晰、可读性强、利于前期和后期的扩展以及维护<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfk8x4hfj30ku1kztgz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfkg0659j30df02uq32.jpg"></p>
+<p>纯虚函数和抽象类：在多态中，通常父类中虚函数的实现是毫无意义的，主要都是调用子类重写的内容，因此可以将虚函数改为纯虚函数，当类中有了纯虚函数，这个类也称为抽象类</p>
+<p>抽象类特点：<br>1）无法实例化对象<br>2）子类必须重写抽象类中的纯虚函数，否则也属于抽象类<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfkmuqnij30je0m9go6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfku0kk3j30df02u0sw.jpg"></p>
+<p>虚析构和纯虚析构：</p>
+<p>多态使用时，如果子类中有属性开辟到堆区，那么父类指针在释放时无法调用到子类的析构代码</p>
+<p>解决方式：将父类中的析构函数改为虚析构或者纯虚析构</p>
+<p>虚析构和纯虚析构共性：<br>1）可以解决父类指针释放子类对象<br>2）都需要有具体的函数实现</p>
+<p>虚析构和纯虚析构的区别：如果是纯虚析构，该类属于抽象类，无法实例化对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl0lls5j30kx10cjwj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl89z45j30df03dq3d.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++/C++文件操作：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-13T16:00:00.000Z" itemprop="datePublished">2019-06-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/">C++文件操作：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>程序运行时产生的数据都属于临时数据，程序一旦运行结束都会被释放，通过文件可以将数据持久化</p>
+<p>C++中对文件操作需要包含头文件<fstream></p>
+<p>文件类型分为两种：<br>1）文本文件：文件以文本的ASCII码形式存储在计算机中<br>2）二进制文件：文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们</p>
+<p>操作文件的三大类：<br>1）ofstream：写操作<br>2）ifstream：读操作<br>3）fstream：读写操作</p>
+<p>文本文件：</p>
+<p>写文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ofstream ofs;<br>3）打开文件：ofs.open(“文件路径”,打开方式);<br>4）写数据：ofs&lt;&lt;“写入的数据”;<br>5）关闭文件：ofs.close();</p>
+<p>文件打开方式【文件打开方式可以配合使用，利用|操作符】：<br>1）ios::in        为读文件而打开文件<br>2）ios::out     为写文件而打开文件<br>3）ios::ate     初始位置：文件尾<br>4）ios::app    追加方式写文件<br>5）ios::trunc  如果文件存在先删除，再创建<br>6）iOS::binary  二进制方式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm0am8yj30ia0c6dhe.jpg"></p>
+<p>读文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ifstream ifs;<br>3）打开文件并判断文件是否打开成功：ifs.open(“文件路径”,打开方式);<br>4）读数据：四种方式读取<br>5）关闭文件：ifs.close();<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm96dkdj30ke0q577p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmfzd6xj30h202cglr.jpg"></p>
+<p>二进制文件：以二进制的方式对文件进行读写操作，打开方式要指定为ios::binary</p>
+<p>二进制方式写文件主要利用流对象调用成员函数write<br>函数原型：ostream&amp; write(const char * buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmn0pr8j30j10et0uf.jpg"></p>
+<p>二进制方式读文件主要利用流对象调用成员函数read<br>函数原型：istream&amp; read(char *buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmtmxxsj30j10jemzg.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++/职工管理系统：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-12T16:00:00.000Z" itemprop="datePublished">2019-06-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/">职工管理系统：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++/函数模板：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-11T16:00:00.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/">函数模板：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>模板就是建立通用的模具，大大提高复用性</p>
+<p>模板的特点：模板不可以直接使用，它只是一个框架；模板的通用并不是万能的</p>
+<p>———————————————函数模板：</p>
+<p>C++另一种编程思想称为泛型编程，主要利用的技术就是模板</p>
+<p>C++提供两种模板机制：函数模板和类模板</p>
+<p>函数模板的作用：建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp03dz6j30cz0jewgr.jpg"></p>
+<p>函数模板注意事项：<br>1）自动类型推导，必须推导出一致的数据类型T才可以使用<br>2）模板必须要确定出T的数据类型，才可以使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp6w888j30ce0brgmr.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpd3x09j30gb0t50x2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpkhy0ej30ce01ljrh.jpg"></p>
+<p>普通函数与函数模板的区别：<br>1）普通函数调用时可以发生自动类型转换（隐式类型转换）<br>2）函数模板调用时，如果利用自动类型推导，不会发生隐式类型转换；如果利用显式指定类型的方式，可以发生隐式类型转换</p>
+<p>建议使用显示指定类型的方式，调用函数模板，因为可以自己确定通用类型T</p>
+<p>普通函数与函数模板的调用规则：<br>1）如果函数模板和普通函数都可以实现，优先调用普通函数<br>2）可以通过空模板参数列表来强制调用函数模板<br>3）函数模板也可以发生重载<br>4）如果函数模板可以产生更好的匹配，优先调用函数模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpql1y3j30nc0gmtb5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpwvalpj30ce01lglo.jpg"></p>
+<p>模板的局限性：模板的通用性并不是万能的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq2vig6j30q209bwgj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq8w0vbj30v9096wh4.jpg"></p>
+<p>因此C++为了解决这种问题，提供模板的重载，可以为这些特定的类型提供具体化的模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfqenxnvj30ij0soadu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfql68fyj30ce01lwej.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++/类模板：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E7%B1%BB%E6%A8%A1%E6%9D%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-10T16:00:00.000Z" itemprop="datePublished">2019-06-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++/%E7%B1%BB%E6%A8%A1%E6%9D%BF%EF%BC%9A/">类模板：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C/基本概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/03/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
+      <time datetime="2019-03-30T16:00:00.000Z" itemprop="datePublished">2019-03-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/03/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">基本概念</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="C基本概念："><a href="#C基本概念：" class="headerlink" title="C基本概念："></a>C基本概念：</h3><p>C语言的发展：<br>1）C语言是从B语言发展而来的，B语言是从BCPL发展而来的，BCPL是从FORTRAN发展而来的<br>2）BCPL和B都支持指针间接方式，所以C也支持了<br>3）C语言还受到了PL/I的影响，还和PDP-II的机器语言有很大关系<br>4）1973年3月，第三版的Unix上出现了C语言的编译器<br>5）1973年11月，第四版的Unix(System Four)发布了，这个版本是完全用C语言重新写的</p>
+<p>C语言标准：<br>1）1989年ANSI发布了一个标准：ANSI C<br>2）1990年ISO接受了ANSI的标准：C89<br>3）C的标准在1995年和1999年两次更新：C95和C99<br>4）所有的当代编译器都支持C99了</p>
+<p>环境、开发环境和IDE：<br>1）环境：就是一个软件<br>2）开发环境：用于开发程序的一个软件，就是说这个软件是用来开发程序的<br>3）IDE：集成开发环境，集成的意思是多个功能集合在一起，所以就是集多种功能于一身的用来开发程序的软件</p>
+<p>程序的执行：<br>1）解释：借助一个程序，那个程序能试图理解你的程序，然后按照你的要求执行<br>2）编译：借助一个程序，就像一个翻译，把你的程序翻译成计算机真正能懂的语言（机器语言写的程序），然后这个机器语言写的程序就能直接执行了<br>3）解释型语言VS编译型语言：语言本无解释和编译之分，解释型语言有特殊的计算能力，编译型语言有确定的运算性能<br>4）C需要被编译才能运行，所以你需要编辑器和编译器或者IDE（集成开发环境）</p>
+<p>现代的编程语言在语法上的差异很小，几乎都是C-like语言，语言的能力和适用领域主要是由库和传统所决定的</p>
+<p>程序是用特殊的编程语言写出来表达如何解决问题的，不是用编程语言来和计算机交谈，而是描述要求它如何做事情的过程和方法，我们要让计算机做计算，就需要找出计算的步骤，然后用编程语言写出来；计算机做的所有的事情都叫做计算，计算的步骤就是算法</p>
+<hr>
+<h3 id="macOS终端下执行第一个C程序："><a href="#macOS终端下执行第一个C程序：" class="headerlink" title="macOS终端下执行第一个C程序："></a>macOS终端下执行第一个C程序：</h3><p>在其他操作系统中，编译，加载，运行等规则会有所不同！</p>
+<p>1）新建一个文件夹“C语言程序演示”</p>
+<p>2）在终端中cd进入这个新建的文件夹</p>
+<p>3）在新文件夹中touch hello.c建立一个后缀名为.c的源程序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glfft27gloj30lz07ldhb.jpg"></p>
+<p>4）在hello.c源文件中写第一个C语言的代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glfft9zgknj30m704ogm2.jpg"></p>
+<p>5）通过cc hello.c命令进行编译，如果源程序没有什么错误，编译过程将顺利进行，并生成一个可执行文件a.out【cc -c 源文件名称：编译，生成.o文件，叫做目标文件，存储的是.c文件中的代码对应的二进制指令；cc 目标文件名称：连接，为.o的目标文件添加启动代码，告诉编译器，要调用的函数在什么地方】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffthb0i2j30mp07b0ue.jpg"></p>
+<p>6）然后我们输入./a.out，即可运行a.out，打印出程序结果</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C/目录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/03/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/%E7%9B%AE%E5%BD%95/" class="article-date">
+      <time datetime="2019-03-30T16:00:00.000Z" itemprop="datePublished">2019-03-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/03/31/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/%E7%9B%AE%E5%BD%95/">目录</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<ol>
+<li><p>基本概念</p>
+</li>
+<li><p>数据类型</p>
+</li>
+<li><p>运算符和表达式</p>
+</li>
+<li><p>控制流</p>
+</li>
+<li><p>函数</p>
+</li>
+<li><p>数组</p>
+</li>
+<li><p>指针</p>
+</li>
+<li><p>结构体(struct)、枚举(enum)、typedef、联合(union)</p>
+</li>
+<li><p>进制</p>
+</li>
+<li><p>字符串</p>
+</li>
+<li><p>预处理指令</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C/数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/02/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <time datetime="2019-02-26T16:00:00.000Z" itemprop="datePublished">2019-02-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/02/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="C数据类型和格式控制符整理："><a href="#C数据类型和格式控制符整理：" class="headerlink" title="C数据类型和格式控制符整理："></a>C数据类型和格式控制符整理：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">C数据类型：</span><br><span class="line"></span><br><span class="line">1⃣️基本数据类型：</span><br><span class="line">整型：char、short、int、long、long long(C99)</span><br><span class="line">浮点型：float、double、long double(C99)</span><br><span class="line">布尔型：bool(C99)</span><br><span class="line"></span><br><span class="line">2⃣️构造类型：数组，结构体，枚举</span><br><span class="line"></span><br><span class="line">3⃣️指针类型</span><br><span class="line"></span><br><span class="line">4⃣️空类型：void</span><br><span class="line"></span><br><span class="line">5⃣️typedef自定义类型</span><br><span class="line"></span><br><span class="line">1）char：字符类型，一个字节（一个字节&#x3D;八个比特），-128～+127</span><br><span class="line">2）short：短整型，通常为16位，两个字节，-32768～32767</span><br><span class="line">3）int：取值范围取决于具体的机器，通常代表特定机器中整数的自然长度，通常为16位，其取值范围在-2147483648 ～ +2147483647之间，也有用32位表示的int类型</span><br><span class="line">4）long：长整型，四个字节，至少占32位存储单元，在某些机器上int与long类型的长度相同</span><br><span class="line">5）long long：八个字节</span><br><span class="line">6）float类型：取值范围取决于具体的机器，通常是32位，可以存储有效位数不超过7位的小数，取值范围一般在10^(-38)~10^(+38)之间</span><br><span class="line">7）double：双精度浮点型，64位，可以存储有效位数不超过16位的小数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">C格式控制符：</span><br><span class="line"></span><br><span class="line">作用：不同类型的数据在变量中存储的形式是不一样的，所以在读取变量中的数据的时候，类型不同读取的方式也不同</span><br><span class="line"></span><br><span class="line">8进制和16进制只是如何把数字表达为字符串，与内部如何表达数字无关：</span><br><span class="line"></span><br><span class="line">%d：读取int整型，以十进制输出</span><br><span class="line">%o：读取int整型，以八进制输出（一个以0开始的数字字面量是8进制）</span><br><span class="line">%x：读取int整型，以十六进制输出（一个以0x开始的数字字面量是16进制）</span><br><span class="line"></span><br><span class="line">%hd：short</span><br><span class="line">%ld：long</span><br><span class="line">%lld：long long</span><br><span class="line"></span><br><span class="line">%u：unsigned int</span><br><span class="line">%hu：unsigned short</span><br><span class="line">%lu：unsigned long</span><br><span class="line">%llu：unsigned long long</span><br><span class="line"></span><br><span class="line">float和double类型的printf都使用%f或%e，float的scanf使用%f，double的scanf使用%lf</span><br><span class="line"></span><br><span class="line">%c：char类型，表示字符</span><br><span class="line">%s表示字符串</span><br><span class="line"></span><br><span class="line">%p：地址</span><br><span class="line"></span><br><span class="line">%%表示百分号（%）本身</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="scanf输入多个数据出现的问题："><a href="#scanf输入多个数据出现的问题：" class="headerlink" title="scanf输入多个数据出现的问题："></a>scanf输入多个数据出现的问题：</h3><p>如果使用scanf函数一次输入多个数据，只能是整型和浮点型，如果有char字符型混合输入，就会出现问题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffiv25wlj30e709fjsj.jpg"></p>
+<p>图中可以看到：num3的值并没有打印出来，出现这种情况的原因是什么呢？？？</p>
+<ol>
+<li><p>在执行scanf函数的时候，会让用户输入一个数据，数据输入完毕之后，并不是将这个数据直接赋值给变量，而是先将数据存储在缓冲区，输入的任何数据都会存储在缓冲区中</p>
+</li>
+<li><p>在执行scanf函数的时候，会先检查缓冲区中是否有数据，如果缓冲区中没有数据，那么就会让用户从键盘输入，如果缓冲区中有数据，直接从缓冲区中将数据拿出来，不会让用户输入数据</p>
+</li>
+<li><p>当从缓冲区中拿数据的时候，如果要拿的数据的类型是整型或者实型，如果拿到的数据的类型是空格、回车、Tab键，就会被自动忽略，继续往下拿；如果要拿的数据是字符型，不会忽略任何数据</p>
+</li>
+</ol>
+<p>我们来分析下面的一段程序：程序中要求用户输入一个整型数据num1，但是这个时候我们偏偏输入两个整型数据10、20，这个时候缓冲区其实有四个数据：10、空格、20、换行，执行第一个printf后结果为10，这是我们事先预料好的；当第二个scanf执行的时候，程序根本就不会让用户输入数据，因为缓冲区中已经有整型数据20了【当从缓冲区中拿数据的时候，如果要拿的数据的类型是整型或者实型，如果拿到的数据的类型是空格、回车、Tab键，就会被自动忽略，继续往下拿】，所以最终程序会直接打印出num2=20<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffj3ejggj30al0aj3zn.jpg"></p>
+<p>让我们再回头看第一个程序：为什么num3的值打印出来的结果为空？？？<br>执行完第11行程序以后，缓冲区中的数据为10、空格、2.5、空格、a、换行；打印num1、num2的值的时候，因为是整型或者浮点型，程序会自动忽略空格和换行，所以输出结果为num1=10，num2=2.500000；但是num3是一个字符型的数据，程序并不会忽略任何的数据，最后打印出来的结果为num3= ；【这里打印出来了一个空格，并不是空】</p>
+<p>那这个时候就有问题了，如果scanf输入多个数据中包含字符型数据时，我就是想要输出来字符型数据，该怎么做呢？？？</p>
+<p>解决方案：通过rewind(stdin);这行代码把缓冲区中的数据全部清空，这个时候缓冲区中没有任何数据了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffjeysa5j30cs0grdhv.jpg"></p>
+<p>写C代码时，如果遇到整型、浮点型、字符型同时出现在scanf函数中的时候，要十分注意缓冲区中数据的情况！！</p>
+<hr>
+<h3 id="数据类型的一些注意点："><a href="#数据类型的一些注意点：" class="headerlink" title="数据类型的一些注意点："></a>数据类型的一些注意点：</h3><p>1）一个C语言程序，无论其大小如何，都是由函数和变量组成的，函数中包含一些语句，以指定所要执行的计算操作；变量则用于存储计算过程中使用的值。main是一个特殊的函数名，每个程序都从main函数的起点开始执行，每个程序都必须在某个位置包含一个main函数；函数之间进行数据交换的一种方法是调用函数向被调用函数提供一个值（称为参数）列表。</p>
+<p>2）变量的命名规则：<br>变量名是由字母和数字组成的序列，但其第一个字符必须为字母，下划线“_”被看作是字母，通常用于命名较长的变量名，以提高其可读性。由于库例程的名字通常以下划线开头，因此变量名不要以下划线开头</p>
+<p>3）变量就是内存中开辟的用来存储数据的那块空间，所以变量是用来存储数据的，我们声明一个变量，如果没有为这个变量赋值，这个变量是有值的，这个值是一个随机数、垃圾值</p>
+<p>4）在同一个大括弧中不允许定义多个变量名相同的变量，不同大括弧可以</p>
+<p>5）自动类型转换：<br>当我们为变量赋值的时候，如果赋值的数据的类型和变量的类型不一致，这时候C系统会将赋值的数据的类型转换为变量的类型再赋值</p>
+<p>6）在printf函数的参数中，只能用\n表示换行符，如果用程序的换行代替\n，C编译器将会产生一条错误信息。printf函数永远不会自动换行，这样我们可以多次调用该函数以分阶段得到一个长的输出行。<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh214vrcj30lp041aam.jpg"></p>
+<p>7）printf函数并不是C语言本身的一部分，C语言本身并没有定义输入/输出功能。printf仅仅是标准库函数中一个有用的函数而已，这些标准库函数在C语言程序中通常都可以使用。</p>
+<p>8）printf输出inf表示超过范围的浮点数，printf输出nan表示不存在的浮点数</p>
+<p>9）scanf函数是一个阻塞式的函数，当CPU执行到这个函数的时候，CPU的执行就会暂停，不会继续往下执行了，并等待用户输入数据</p>
+<p>10）scanf函数后面不要加\n</p>
+<p>11）如果没有特殊需要，只使用double，现代CPU能直接对double做硬件运算，性能不会比float差，在64位的机器上，数据存储的速度也不比float慢</p>
+<p>12）<code>#include&lt;stdbool.h&gt;</code>之后就可以使用bool和true、false了</p>
+<p>13）在C语言中如果我们直接写一个小数，那么这个小数的类型是double类型的，如果我们就是希望这个小数是一个float类型的，那么就在这个小数的后面加一个f/F</p>
+<p>14）char类型的变量中只能存储单个字符，并且这单个字符还要用单引号引起来；如果char类型的变量中存储的字符超过一个，那么它只会保存最后一个字符（char变量中可以存储一个空格，无法存储中文，因为在C语言中，一个中文占3个字节）</p>
+<p>15）字符型变量是用来存储字符常量的变量。将一个字符常量存储到一个字符变量中，实际上是将该字符的ASCII码值（无符号整数）存储到内存单元中。【‘A’——65、‘a’——97、‘0’——48，为char变量赋值的时候可以直接赋值ASCII码】</p>
+<p>16）所有整型都包括signed(带符号)和unsigned(无符号)两种形式，且可以表示无符号常量与十六进制字符常量；</p>
+<p>unsigned类型的数总是正值或0，如果char对象占用8位，那么unsigned char类型变量的取值范围为0～255，而signed char类型变量的取值范围则为-128～127（在采用对二的补码的机器上）</p>
+<p>如果一个字面量常数想要表达自己是unsigned，可以在后面加U【255U】，用l或L表示long(long)</p>
+<p>unsigned的初衷并非扩展数能表达的范围，而是为了做纯二进制运算，主要是为了移位</p>
+<p>17）如果某个算术运算符的所有操作数均为整型，则执行整型运算。但是，如果某个算术运算符有一个浮点型操作数和一个整型操作数，则在开始运算之前整型操作数将会被转换为浮点型。</p>
+<p>强制类型转换：要把一个量强制转换成另一个类型（通常是较小的类型）<br>(int)10.2<br>注意这时候的安全性，小的变量不总能表达大的量：(short)32768</p>
+<p>强制类型转换只是从那个变量计算出了一个新的类型的值，它并不改变那个变量，无论是值还是类型都不改变</p>
+<p>强制类型转换的优先级高于四则运算：<br>double a=1.0;<br>double b=2.0;<br>int I=(int)a/b;</p>
+<p>18）对于printf，任何小于int的类型会被转换成int，float会被转换成double<br>但是scanf不会，要输入short，需要%hd</p>
+<p>19）无论是float还是double，默认都只显示小数点后6位(不足的用0补齐，多余六位的只保留六位)<br>%.nf【表示显示小数点后n位】<br>%m.nf【如果变量整体的位数(小数点默认显示n位，无n的默认显示6位，小数点不足6位的在后面补0，大于6位的按6位计算)小于m，不足的地方就会以空格补齐（正数在前面补齐，负数在后面补齐）；如果变量整体的位数大于字符宽，那么实际有多少位就显示多少位(%0mf，不足的地方以0补齐)】</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C/运算符和表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/02/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
+      <time datetime="2019-02-25T16:00:00.000Z" itemprop="datePublished">2019-02-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/02/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/">运算符和表达式</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="C运算符和优先级整理："><a href="#C运算符和优先级整理：" class="headerlink" title="C运算符和优先级整理："></a>C运算符和优先级整理：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">运算符：</span><br><span class="line"></span><br><span class="line">赋值运算符【&#x3D;、+&#x3D;、-&#x3D;、*&#x3D;、&#x2F;&#x3D;、%&#x3D;】</span><br><span class="line">算术运算符【+、-、*、&#x2F;、%】</span><br><span class="line">关系运算符【&#x3D;&#x3D;、!&#x3D;、&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;】</span><br><span class="line">自增自减运算符【++、—-】</span><br><span class="line">逗号运算符【，】</span><br><span class="line">逻辑运算符【&amp;&amp;、||、！】</span><br><span class="line">取地址运算符【&amp;】</span><br><span class="line"></span><br><span class="line">优先级：</span><br><span class="line">1）（）：从左到右</span><br><span class="line">2）!  +  -  ++  —：从右到左（单目的+和-）</span><br><span class="line">3）*  &#x2F;  %：从左到右</span><br><span class="line">4）+  -：从左到右</span><br><span class="line">5）&lt;  &lt;&#x3D;  &gt;  &gt;&#x3D;：从左到右</span><br><span class="line">6）&#x3D;&#x3D;  !&#x3D;：从左到右</span><br><span class="line">7）&amp;&amp;：从左到右</span><br><span class="line">8）||：从左到右</span><br><span class="line">9）&#x3D;  +&#x3D;  -&#x3D;  *&#x3D;  &#x2F;&#x3D;  %&#x3D;：从右到左</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="运算符和表达式的一些注意点："><a href="#运算符和表达式的一些注意点：" class="headerlink" title="运算符和表达式的一些注意点："></a>运算符和表达式的一些注意点：</h3><p>1）逃逸字符：用来表达无法印出来的控制字符或特殊字符，它由一个反斜杠”\”开头，后面跟上另一个字符，这两个字符合起来，组成了一个字符【printf(“请分别输入身高的英尺和英寸，”“如输入\“5 7 \”表示5英尺7英寸：“);】</p>
+<p>\b：回退一格<br>\t：到下一个表格位<br>\n：换行<br>\r：回车<br>\”：双引号<br>\’：单引号<br>\：反斜杠本身</p>
+<p>转义符只能是小写字母，每个转义符只能看作一个字符。</p>
+<p>垂直制表符“\v”和换页符“\f”对屏幕没有任何影响，但会影响打印机执行相应的操作。</p>
+<p>在C语言程序中，通常会用转义符表示不可打印的字符。</p>
+<p>2）如果参与算术表达式的操作数的类型不一致，那么这个算术表达式的结果的类型就是范围最大的那个类型</p>
+<p>3）m % n的结果一定是在0～（n-1）之间</p>
+<p>4）char类型的数据可以参与算术运算，当算术表达式中的操作数是一个char数据的时候，会先将这个char数据的ASCII码取出来代替，然后再参与算术运算，实际上它是一个int类型的数据在参与运算</p>
+<p>char数据也可以参与比较运算</p>
+<p>5）const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了，如果你试图对常量做修改，把它放在赋值运算符的左边，就会被编译器发现，指出为一个错误</p>
+<p>6）无论是前自增表达式还是后自增表达式，都是将自身的值增加1<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh33jsm1j308l09qt9g.jpg"></p>
+<p>7）sizeof是一个运算符，给出某个类型或变量在内存中所占据的字节数【sizeof(int)、sizeof(i)】</p>
+<p>sizeof是静态运算符，它的结果在编译时刻就决定了，不要在sizeof的括号里做运算，这些运算不会做的</p>
+<p>8）逻辑运算是对逻辑量进行的运算，结果只有0或1，逻辑量是关系运算或逻辑运算的结果</p>
+<p>逻辑非！【!a，如果a是true，结果就是false，如果a是false，结果是true】<br>逻辑与&amp;&amp;【a &amp;&amp; b，如果a和b都是true，结果就是true，否则就是false】<br>逻辑或||【a || b，如果a和b有一个是true，结果为true，两个都是false，结果为false】</p>
+<p>【x&gt;4 &amp;&amp; x&lt;6】像4&lt;x&lt;6这样的式子，不是C能正确计算的式子，因为4&lt;x的结果是一个逻辑值(0或1)</p>
+<p>短路：逻辑运算是自左向右进行的，如果左边的结果已经能够决定结果了，就不会做右边的计算；对于&amp;&amp;，左边是false时就不做右边了；对于||，左边是true时就不做右边了【不要把赋值，包括复合赋值组合进表达式！】<br>【a==6 &amp;&amp; b==1；a==6 &amp;&amp; b+=1】</p>
+<p>9）三元表达式、条件运算符（可以部分代替if else）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">count = (count&gt;<span class="number">20</span>) ? count<span class="number">-10</span> : count+<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(count &gt; <span class="number">20</span>)</span><br><span class="line">     count = count<span class="number">-10</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">     count = count+<span class="number">10</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>10）逗号运算符：逗号用来连接两个表达式，并以其右边的表达式的值作为它的结果。逗号的优先级是所有的运算符中最低的，所以它两边的表达式会先计算；逗号的组合关系是自左向右，所以左边的表达式会先计算，而右边的表达式的值就留下来作为逗号运算的结果<br><code>for（i=0，j=10；i&lt;j；i++，j—）</code></p>
+<p>逗号表达式的目的并不是想要前面表达式的结果，而只是想要前面的表达式执行，要最后一个表达式的结果<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh3kuorlj30as081dgg.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/14/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/16/"></a>
+    </nav>
+  
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+
+            <div class="footer-mid">
+
+                &copy; 2021 廖家龙-13176171912
+
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="" target="_blank">            &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+            </div>
+
+            <div class="footer-mid">
+
+                <a href="https://hexo.io/zh-cn/index.html" target="_blank"> 👉 Hexo[官方文档] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://liao-hexo.github.io/archives/" target="_blank"> 个人网站[博客] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://leetcode-cn.com/problemset/algorithms/" target="_blank"> LeetCode[算法] &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+                <a href="https://github.com/Liao-Hexo" target="_blank"> GitHub[项目] 👈 &nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+
+            </div>
+
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.3' zIndex="-2" count="0" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+
+</html>

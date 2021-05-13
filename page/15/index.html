@@ -228,6 +228,167 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机网络原理/计算机网络原理/电路交换、报文交换、分组交换" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2%E3%80%81%E6%8A%A5%E6%96%87%E4%BA%A4%E6%8D%A2%E3%80%81%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2/" class="article-date">
+      <time datetime="2020-07-30T16:00:00.000Z" itemprop="datePublished">2020-07-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2%E3%80%81%E6%8A%A5%E6%96%87%E4%BA%A4%E6%8D%A2%E3%80%81%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2/">电路交换、报文交换、分组交换</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>电路交换、报文交换、分组交换：</p>
+<p>如何使数据通过网络核心(路由器)从源主机到目的主机？——数据交换</p>
+<p>为什么要数据交换：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjekpeo8j312a0fcn56.jpg"></p>
+<p>数据交换方式：<br>1）电路交换<br>2）报文交换<br>3）分组交换：数据报方式、虚电路方式</p>
+<p>—————————————</p>
+<p>电路交换：电话网络(多路复用)</p>
+<p>电路交换的阶段：<br>1）建立连接（呼叫/电路建立）<br>2）通信<br>3）释放连接（拆除电路）</p>
+<p>特点：独占资源</p>
+<p>优点：通信时延小、有序传输、没有冲突、实时性强</p>
+<p>缺点：建立连接时间长、线路独占，使用效率低、灵活性差、无差错控制能力</p>
+<p>—————————————</p>
+<p>报文交换：</p>
+<p>报文：源应用发送的信息整体<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjeyl2ofj30xy063773.jpg"></p>
+<p>优点：<br>1）无需建立连接<br>2）存储转发，动态分配线路<br>3）线路可靠性较高<br>4）线路利用率较高<br>5）多目标服务</p>
+<p>缺点：<br>1）有存储转发时延<br>2）报文大小不定，需要网络节点有较大缓存空间</p>
+<p>—————————————</p>
+<p>分组交换：</p>
+<p>分组：把大的数据块分割成小的数据块<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjfnqa67j30wt064q56.jpg"></p>
+<p>优点：<br>1）无需建立连接<br>2）存储转发，动态分配线路<br>3）线路可靠性较高<br>4）线路利用率较高<br>5）相对于报文交换，存储管理更容易</p>
+<p>缺点：<br>1）有存储转发时延<br>2）需要传输额外的信息量<br>3）乱序到目的主机时，要对分组排序重组</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjfztu79j31330ge46c.jpg"></p>
+<p>————————————————</p>
+<p>数据报方式为网络层提供无连接服务【无连接服务：不事先为分组的传输确定传输路径，每个分组独立确定传输路径，不同分组传输路径可能不同】【每个分组携带源和目的地址】【路由器根据分组的目的地址转发分组：基于路由协议/算法构建转发表；检索转发表；每个分组独立选路】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjgapxlfj30qe0c678k.jpg"></p>
+<p>虚电路方式为网络层提供连接服务【连接服务：首先为分组的传输确定传输路径(建立连接)，然后沿该路径(连接)传输系列分组，系列分组传输路径相同，传输结束后拆除连接】</p>
+<p>虚电路将数据报方式和电路交换方式结合，以发挥两者优点</p>
+<p>虚电路：一条源主机到目的主机类似于电路的路径（逻辑连接），路径上所有的结点都要维持这条虚电路的建立，都维持一张虚电路表，每一项纪录了一个打开的虚电路信息</p>
+<p>通信过程：<br>1）建立连接（虚电路建立）：每个分组携带虚电路号，而非目的地址，源主机发送“呼叫请求”分组并收到“呼叫应答”分组后才算建立连接<br>2）数据传输（全双工通信）<br>3）释放连接（虚电路释放）：源主机发送“释放请求”分组以拆除虚电路</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjh0y8ioj310c0e8wm8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjhnh4wuj30g806y3z8.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/IP数据报格式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F/" class="article-date">
+      <time datetime="2020-07-29T16:00:00.000Z" itemprop="datePublished">2020-07-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F/">IP数据报格式</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>IP数据报格式：</p>
+<p>TCP/IP协议栈：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjjtwyb4j30jt0dwacj.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjkm3qhmj30ge0d3mz3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjl4k421j30ge0bfad4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjljkpd2j30ge09mdht.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机网络原理/计算机网络原理/IP数据报分片" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -772,150 +933,6 @@
 <p>距离向量算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosket395yj312i0hl48f.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskfejgkdj30fx0giad3.jpg"></p>
 <p>RIP协议的报文格式：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskftp5wwj313d0hlal5.jpg"></p>
 <p>RIP的特点：当网络出现故障时，要经过比较长的时间（例如数分钟）才能将此信息传送到所有的路由，“慢收敛”<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskge7cmpj30gj0cttb9.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机网络原理/计算机网络原理/OSPF协议与链路状态算法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/OSPF%E5%8D%8F%E8%AE%AE%E4%B8%8E%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E7%AE%97%E6%B3%95/" class="article-date">
-      <time datetime="2020-07-20T16:00:00.000Z" itemprop="datePublished">2020-07-21</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/OSPF%E5%8D%8F%E8%AE%AE%E4%B8%8E%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E7%AE%97%E6%B3%95/">OSPF协议与链路状态算法</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>OSPF协议与链路状态算法：</p>
-<p>开放最短路径优先OSPF协议：“开放”标明OSPF协议不是受某一家厂商控制，而是公开发表的；“最短路径优先”是因为使用了Dijkstra提出的最短路径算法SPF</p>
-<p>OSPF最主要的特征就是使用分布式的链路状态协议<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskl422gaj313t0av45t.jpg"></p>
-<p>链路状态路由算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskldmgksj312w0eo125.jpg"></p>
-<p>OSPF的区域：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosklm1mbwj30zb0guk4j.jpg"></p>
-<p>OSPF分组：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskm3y2fhj30zu0a80te.jpg"></p>
-<p>OSPF其他特点：<br>1）每隔30min，要刷新一次数据库中的链路状态<br>2）由于一个路由器的链路状态只涉及到与相连路由器的连通状态，因而与整个互联网的规模并无直接关系，因此当互联网规模很大时，OSPF协议要比距离向量协议RIP好很多<br>3）OSPF不存在坏消息传的慢的问题，它的收敛速度很快</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机网络原理/计算机网络原理/BGP协议" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/BGP%E5%8D%8F%E8%AE%AE/" class="article-date">
-      <time datetime="2020-07-19T16:00:00.000Z" itemprop="datePublished">2020-07-20</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/BGP%E5%8D%8F%E8%AE%AE/">BGP协议</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>BGP协议：</p>
-<p>1）和谁交换：与其他AS的邻站BGP发言人交换信息<br>2）交换什么：交换的网络可达性的信息，即要到达某个网络所要经过的一系列AS<br>3）多久交换：发生变化时更新有变化的部分<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosknk14ohj30rp0b745d.jpg"></p>
-<p>BGP协议交换信息的过程：BGP所交换的网络可达性的信息就是要到达某个网络所要经过的一系列AS，当BGP发言人互相交换了网络可达性的信息后，各BGP发言人就根据所采用的策略从收到的路由信息中找出到达各AS的较好路由<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosknt7c0qj310q0frjzo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosko15hwsj30y10h3wn0.jpg"></p>
-<p>BGP协议报文格式：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskob3jaaj312m0gadoj.jpg"></p>
-<p>BGP协议特点：<br>1）BGP支持CIDR，因此BGP的路由表也就应当包括目的网络前缀、下一跳路由器，以及到达该目的网络所要经过的各个自治系统序列<br>2）在BGP刚刚运行时，BGP的邻站是交换整个的BGP路由表，但以后只需要在发生变化时更新有变化的部分，这样做对节省网络带宽和减少路由器的处理开销都有好处</p>
-<p>BGP-4的四种报文：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskomnp20j30wn06kn1h.jpg"></p>
-<p>三种路由协议比较：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskoxtkrxj311w06wgq4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskp5u6ctj311p0blgrw.jpg"></p>
 
       
     </div>

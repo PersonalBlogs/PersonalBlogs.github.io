@@ -228,6 +228,152 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-操作系统原理/操作系统原理/存储管理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" class="article-date">
+      <time datetime="2020-10-19T16:00:00.000Z" itemprop="datePublished">2020-10-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/">存储管理</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>存储管理：</p>
+<p>———————————————</p>
+<p>6-1：内存管理功能</p>
+<p>6-2：物理内存管理<br>    6-2-1.分区内存管理<br>    6-2-2.分区放置策略<br>    6-2-3.内存覆盖技术<br>    6-2-4.内存交换技术<br>    6-2-5.内存碎片</p>
+<p>6-3：虚拟内存管理<br>    6-3-1.页式虚拟内存管理概念<br>    6-3-2.页表和页式地址映射<br>    6-3-3.快表技术和页面共享技术<br>    6-3-4.缺页中断<br>    6-3-5.页面淘汰策略<br>    6-3-6.缺页因素与页式系统缺点<br>    6-3-7.段式和段页式虚拟存储</p>
+<p>———————————————</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用子查询" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%90%E6%9F%A5%E8%AF%A2/" class="article-date">
+      <time datetime="2020-10-18T16:00:00.000Z" itemprop="datePublished">2020-10-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%90%E6%9F%A5%E8%AF%A2/">使用子查询</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用子查询</p>
+<p>查询：任何SQL语句都是查询，但此术语一般指SELECT语句</p>
+<p>1）列出订购物品TNT2的所有客户：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorukyg8fej309301xt9b.jpg"></p>
+<p>法1:<br>SELECT order_num<br>FROM orderitems<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorul67nzpj301w01ujrf.jpg"></p>
+<p>SELECT cust_id<br>FROM orders<br>WHERE order_num IN(20005,20007);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruleb7r9j301l01u3yj.jpg"></p>
+<p>SELECT custname,custcontact<br>FROM customers<br>WHERE cust_id IN(10001,10004);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorulm5ilnj304v01v0sy.jpg"></p>
+<p>法2:(在SELECT语句中，子查询总是从内向外处理)<br>SELECT custname,custcontact<br>FROM customers<br>WHERE custid IN(SELECT custid<br>                                FROM orders<br>                                WHERE ordernum IN(SELECT ordernum<br>                                                                      FROM orderitems<br>                                                                      WHERE prod_id=’TNT2’));<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorulw15rfj304v01v0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorum75192j30b801v75m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorumdxayuj30b906rjvl.jpg"></p>
+<p>法3:<br>SELECT custname,custcontact<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>   AND orderitems..ordernum=orders.ordernum<br>   AND prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruml1my3j304v01v0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorumuiofmj30b80340uy.jpg"></p>
+<p>2)显示customers表中每个客户的订单总数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorun2nb6vj30b9015dg7.jpg"><br>SELECT custname,custstate,<br>               (SELECT COUNT(*)<br>                FROM orders<br>                WHERE orders.custid=customers.custid) AS orders<br>FROM customers<br>ORDER BY cust_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorunb3wduj305y02wgm0.jpg"></p>
+<p>相关子查询：涉及外部查询的子查询<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorunjmhcjj30bs0ba422.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/内存管理功能" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -852,158 +998,6 @@
 <p>表中的行越多（这些行中的文本就越多，使用查询扩展返回的结果越好）<br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘anvils’ WITH QUERY EXPANSION);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3igwblj30a90700v3.jpg"></p>
 <p>6）布尔文本搜索，以布尔方式，可以提供关于如下内容的细节：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3u8pq3j30at03ht9l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv42eipxj30b802l763.jpg"><br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘heavy’ IN BOOLEAN MODE);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4awfkuj30bo07in0s.jpg"></p>
 <p>匹配包含heavy但不包含任意以rope开始的词的行：<br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘heavy -rope*’ IN BOOLEAN MODE);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4jqhqyj30aa026dge.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4rq4y2j30af0510tz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv5184c6j30bv0cg0wg.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv58urzqj30bv02wt9r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv5hkdsxj30bv0a7aez.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/设备管理概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/15/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2020-10-14T16:00:00.000Z" itemprop="datePublished">2020-10-15</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/15/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E6%A6%82%E5%BF%B5/">设备管理概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>设备管理概念：</p>
-<p>1）按交互对象分类：<br>人机交互设备：显示设备、键盘、鼠标、打印机<br>与CPU等交互的设备：磁盘、磁带、传感器、控制器<br>计算机间的通信设备：网卡、调制解调器</p>
-<p>2）按交互方向分类：<br>输入设备：键盘、扫描仪<br>输出设备：显示设备、打印机<br>双向设备输入/输出：硬盘、软盘、网卡</p>
-<p>3）按外设特征分类：<br>使用特征：存储、输入/输出<br>数据传输率：低速（如键盘）、中速（如打印机）、高速（如网卡、磁盘）<br>信息组织特征：字符设备（如打印机）、块设备（如磁盘）、网络设备</p>
-<p>鼠标：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcr0a8ehj30mp0hnn54.jpg"></p>
-<p>键盘：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcr9fab8j31gf0rgtpx.jpg"></p>
-<p>喷墨打印机：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcrhhau9j30qs0b7whz.jpg"></p>
-<p>硬盘：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcrpjzs0j30uj0awagy.jpg"></p>
-<p>设备管理的主要功能：</p>
-<p>1）设备分配：设备分配功能是设备管理的基本任务，设备分配程序按照一定的策略，为申请设备的进程分配设备，记录设备的使用情况</p>
-<p>2）设备映射：设备管理模块将逻辑设备映射到物理设备的功能，从应用软件的角度看，逻辑设备是一类物理设备的抽象；从设备管理程序的角度看，物理设备是逻辑设备的实例<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcrwvejxj30mc0d1dka.jpg"></p>
-<p>设备独立性：物理设备对用户透明，用户使用统一规范的方式使用设备；用户编程时使用设备逻辑名，由系统实现逻辑设备到物理设备的转换</p>
-<p>3）设备驱动：<br>对物理设备进行控制，实现I/O操作：IN/OUT<br>接收应用的服务请求（例如读/写命令），转换为具体的I/O指令，控制设备完成相关操作<br>向用户提供统一接口：read/write/open，把外设作为特别文件处理</p>
-<p>设备驱动程序的特点：<br>1）设备驱动程序与硬件密切相关<br>2）每类设备都要配置特定的驱动程序<br>3）驱动程序一般由设备厂商根据操作系统要求编写<br>4）操作系统仅对与设备驱动的接口提出要求</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/插入数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2020-10-13T16:00:00.000Z" itemprop="datePublished">2020-10-14</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/">插入数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>插入数据</p>
-<p>INSERT是用来插入（或添加）行到数据库表的【INSERT语句一般不会产生输出】<br>插入可以用几种方式使用：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwj7dds6j304x02hglv.jpg"></p>
-<p>1）插入完整的行<br>INSERT INTO Customers<br>VALUES(NULL,<br>               ‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’,<br>               NULL,<br>               NULL);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwjftpo2j30bp07jn0v.jpg"></p>
-<p>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country,<br>         cust_contact,<br>         cust_email)<br>VALUES(‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’,<br>               NULL,<br>               NULL);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwjud82hj30bq04gacb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwk29g09j30b502hjt5.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwka1hpsj30b70d4wms.jpg"></p>
-<p>2)插入多个行<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’);<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(‘M.Martian’,<br>               ’42 Galaxy Way’,<br>               ’New York’,<br>               ‘NY’,<br>               ’11213’,<br>               ‘USA’);</p>
-<p>只要每条INSERT语句中的列名（和次序）相同，可以如下组合各语句：<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(<br>               ‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’<br>              )，<br>              (<br>               ‘M.Martian’,<br>               ’42 Galaxy Way’,<br>               ’New York’,<br>               ‘NY’,<br>               ’11213’,<br>               ‘USA’<br>               );<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwkm47q6j30b7022ta4.jpg"></p>
-<p>3）插入检索出的数据<br>INSERT INTO Customers(cust_id,<br>         cust_contact,<br>         cust_email,<br>         cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>SELECT cust_id,<br>         cust_contact,<br>         cust_email,<br>         cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country<br>FROM custnew;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwkxfdpej30bj05q0v4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwl5nalvj30b704a77c.jpg"></p>
-<p>INSERT SELECT中SELECT语句可包含WHERE子句以过滤插入的数据</p>
 
       
     </div>

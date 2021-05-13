@@ -228,6 +228,149 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/NSMutableString：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSMutableString%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-09T16:00:00.000Z" itemprop="datePublished">2019-07-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSMutableString%EF%BC%9A/">NSMutableString：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>会耗费很长的时间，每次循环的时候都会创建一个新的字符串对象，因为字符串的恒定性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly53lb14dj309j02uab2.jpg"></p>
+<p>NSMutableString是Foundation框架中的一个类，从NSString继承，所以NSMutableString对象是用来存储字符串数据的，NSMutableString在父类NSString的基础之上做了扩展，存储在NSMutableString对象中的字符串数据可以更改，具备可变性</p>
+<p>往可变字符串对象中追加字符串【第二个是以拼接的方式追加】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly53s1pjpj30do070acc.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly53z5gynj30ac02rgmw.jpg"></p>
+<p>NSMutableString从NSString继承，在使用NSString的地方完全可以使用NSMutableString</p>
+<p>使用NSMutableString来做大批量的字符串拼接：【NSMutableString只有一个，每次修改的时候直接修改的是这个对象中的数据】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly546qf6vj309a037jsf.jpg"></p>
+<p>平时使用NSString，做大量拼接的时候使用NSMutableString</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/NSArray：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/09/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSArray%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-08T16:00:00.000Z" itemprop="datePublished">2019-07-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/09/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSArray%EF%BC%9A/">NSArray：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>是Foundation框架中的一个类，这个类的对象是来存储多个数据的，具备数组的功能，所以NSArray是OC中的数组<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly54r5m1kj30bk029q3z.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly54y4dt3j30am02sjsl.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly554f48oj309n04n75b.jpg"><br>最常用的创建数组的方式：【只能存储OC对象】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly55biuvaj30f906jdha.jpg"><br>简写方式：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly55i1ayhj308n05gab6.jpg"></p>
+<p>取出对应的元素的值：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly55ou6yzj3085073gna.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly55v4cuuj308505u0u3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly561562gj30ax02b0tp.jpg"></p>
+<p>NSArray数组的其他常用方法：<br>1）得到数组中元素的个数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly568u6knj309r05utae.jpg"><br>2）判断数组中是否包含指定的元素<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly56fpr1qj309r08qtav.jpg"><br>3）查找指定的元素在NSArray数组中第一次出现的下标<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly56mqmepj30bc01pdgl.jpg"></p>
+<p>NSArray数组的遍历：<br>1）使用for循环<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly56ua7zxj30bc06vdii.jpg"><br>2）声明在for()中的变量叫做迭代变量【执行原理：将数组中的第一个元素的值赋值给迭代变量，执行循环体，再将数组中的第二个元素的值赋值给迭代变量，再执行循环体】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly571nnsbj30bc06vgo9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly577p421j30bc092q5y.jpg"><br> 3）使用block遍历<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly57ef4cnj30ef08042f.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/NSArray与字符串的两个方法：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -784,164 +927,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/NSDate：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSDate%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-29T16:00:00.000Z" itemprop="datePublished">2019-06-30</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSDate%EF%BC%9A/">NSDate：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>可以得到当前的时间，得到的是当前系统的格林威治时间（0时区），北京是东八区<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5o1171hj305t018wer.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5o7clp5j305t018t8v.jpg"></p>
-<p>转换成自己想要输出的格式：【日期转换为字符串】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5od3jaij30cz09vdkg.jpg"><br>将字符串转换为日期：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ok8nbnj30ab03m76b.jpg"></p>
-<p>在当前格林威治的时间基础上增加多少秒：【负数表示减少】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5oqeafij30by01iaak.jpg"></p>
-<p>计算时间之差：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ow587ij30aq04gq4k.jpg"></p>
-<p>拿到日期的各个部分：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5p2ugrcj30a602vgmz.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5p8wu1nj30jw04hdip.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/C++基础：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E7%A1%80%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-29T16:00:00.000Z" itemprop="datePublished">2019-06-30</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E7%A1%80%EF%BC%9A/">C++基础：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>常量：用于记录程序中不可更改的数据</p>
-<p>C++定义常量的两种方式：<br>1）#define 常量名 常量值<br>2）const修饰的变量</p>
-<p>利用sizeof关键字可以统计数据类型所占内存的大小【sizeof（数据类型/变量）】</p>
-<p>字符型变量并不是把字符本身放到内存中存储，而是将对应的ASCII编码放入到存储单元【a-97，A-65】</p>
-<p>水平制表符\t：可以整齐的输出数据，水平制表符与前面的字符永远占据八个空格</p>
-<p>反斜杠：\</p>
-<p>两种风格字符串：<br>1）C风格字符串：char 变量名[] = “字符串值”<br>2）C++风格字符串：string 变量名 = “字符串值”【使用这种风格字符串时要包含一个头文件#include <string>】</p>
-<p>Cin数据的输入<br>Cout数据的输出</p>
-<p>Bool类型非零即真</p>
-<p>算术运算符【+(正号)、-(负号)、+、-、<em>、/、%、++、- -】<br>赋值运算符【=、+=、-=、</em>=、/=、%=】<br>比较运算符【==、！=、&lt;、&gt;、&lt;=、&gt;=】<br>逻辑运算符【！非、&amp;&amp;与、||或】</p>
-<p>前置递增先对变量进行++，再计算表达式<br>后置递增先计算表达式，后对变量进行++</p>
-<p>程序流程结构：顺序结构、选择结构【if语句、三目运算符、switch语句】、循环结构【while、do  while、for】</p>
-<p>跳转语句：break、continue、goto</p>
-<p>Break出现在switch条件语句中，作用是终止case并跳出switch，出现在循环语句中，作用是跳出当前的循环语句，出现在嵌套循环中，跳出最近的内层循环语句</p>
-<p>Continue在循环语句中跳过本次循环中余下尚未执行的语句，继续执行下一次循环【可以筛选条件，奇数输出，偶数不输出】</p>
-<p>Goto语句：无条件的跳转语句</p>
-<p>三目运算符：表达式1？表达式2:表达式3</p>
-<p>在C++中三目运算符返回的是变量，可以继续赋值</p>
-<p>Switch语句中的表达式类型只能是整型或者字符型</p>
-<p>系统生成随机数：rand()%100，会生成0～99的随机数【伪随机数】</p>
-<p>添加随机数种子，利用当前系统时间生成随机数，防止每次随机数都一样：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;ctime&gt;</span><br><span class="line">srand((unsigned int)time(NULL));</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
     </div>
 
       

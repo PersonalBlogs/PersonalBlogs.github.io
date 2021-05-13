@@ -228,6 +228,164 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/NSDate：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSDate%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-29T16:00:00.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSDate%EF%BC%9A/">NSDate：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>可以得到当前的时间，得到的是当前系统的格林威治时间（0时区），北京是东八区<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5o1171hj305t018wer.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5o7clp5j305t018t8v.jpg"></p>
+<p>转换成自己想要输出的格式：【日期转换为字符串】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5od3jaij30cz09vdkg.jpg"><br>将字符串转换为日期：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ok8nbnj30ab03m76b.jpg"></p>
+<p>在当前格林威治的时间基础上增加多少秒：【负数表示减少】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5oqeafij30by01iaak.jpg"></p>
+<p>计算时间之差：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ow587ij30aq04gq4k.jpg"></p>
+<p>拿到日期的各个部分：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5p2ugrcj30a602vgmz.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5p8wu1nj30jw04hdip.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/C++基础：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E7%A1%80%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-29T16:00:00.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E7%A1%80%EF%BC%9A/">C++基础：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>常量：用于记录程序中不可更改的数据</p>
+<p>C++定义常量的两种方式：<br>1）#define 常量名 常量值<br>2）const修饰的变量</p>
+<p>利用sizeof关键字可以统计数据类型所占内存的大小【sizeof（数据类型/变量）】</p>
+<p>字符型变量并不是把字符本身放到内存中存储，而是将对应的ASCII编码放入到存储单元【a-97，A-65】</p>
+<p>水平制表符\t：可以整齐的输出数据，水平制表符与前面的字符永远占据八个空格</p>
+<p>反斜杠：\</p>
+<p>两种风格字符串：<br>1）C风格字符串：char 变量名[] = “字符串值”<br>2）C++风格字符串：string 变量名 = “字符串值”【使用这种风格字符串时要包含一个头文件#include <string>】</p>
+<p>Cin数据的输入<br>Cout数据的输出</p>
+<p>Bool类型非零即真</p>
+<p>算术运算符【+(正号)、-(负号)、+、-、<em>、/、%、++、- -】<br>赋值运算符【=、+=、-=、</em>=、/=、%=】<br>比较运算符【==、！=、&lt;、&gt;、&lt;=、&gt;=】<br>逻辑运算符【！非、&amp;&amp;与、||或】</p>
+<p>前置递增先对变量进行++，再计算表达式<br>后置递增先计算表达式，后对变量进行++</p>
+<p>程序流程结构：顺序结构、选择结构【if语句、三目运算符、switch语句】、循环结构【while、do  while、for】</p>
+<p>跳转语句：break、continue、goto</p>
+<p>Break出现在switch条件语句中，作用是终止case并跳出switch，出现在循环语句中，作用是跳出当前的循环语句，出现在嵌套循环中，跳出最近的内层循环语句</p>
+<p>Continue在循环语句中跳过本次循环中余下尚未执行的语句，继续执行下一次循环【可以筛选条件，奇数输出，偶数不输出】</p>
+<p>Goto语句：无条件的跳转语句</p>
+<p>三目运算符：表达式1？表达式2:表达式3</p>
+<p>在C++中三目运算符返回的是变量，可以继续赋值</p>
+<p>Switch语句中的表达式类型只能是整型或者字符型</p>
+<p>系统生成随机数：rand()%100，会生成0～99的随机数【伪随机数】</p>
+<p>添加随机数种子，利用当前系统时间生成随机数，防止每次随机数都一样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;ctime&gt;</span><br><span class="line">srand((unsigned int)time(NULL));</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/copy和mutableCopy：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -764,150 +922,6 @@
 <p>程序运行后：<br>1）栈区：由编译器自动分配释放，存放函数的参数值，局部变量等；不要返回局部变量的地址，栈区开辟的数据由编译器自动释放</p>
 <p>第一次可以打印正确的数字，是因为编译器做了保留；第二次这个数据就不再保留了：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwezd5rooj30s70ee0ua.jpg"><br>2）堆区：在C++中主要利用new在堆区开辟内存，释放利用操作符delete【利用new创建的数据，会返回该数据对应的类型的指针】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glweznbhmpj30ed0bwq3u.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwezuqgqjj30p80fyabi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf02rx3qj30gm0gj402.jpg"></p>
 <p>在堆区创建数组：int * arr = new int[10];<br>释放堆区数组：delete[] arr;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/C++中的引用：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-22T16:00:00.000Z" itemprop="datePublished">2019-06-23</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%EF%BC%9A/">C++中的引用：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>作用：给变量起别名<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf0uwff2j30e10deq40.jpg"></p>
-<p>引用注意事项：<br>1）引用必须初始化<br>2）引用在初始化后，不可以改变<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf12tkd6j30e30dsmyh.jpg"></p>
-<p>引用做函数参数：函数传参时，可以利用引用的技术让形参修饰实参，可以简化指针修改实参<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf1ay5anj30fu0ul78l.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf1hxdjgj30cu06tq3j.jpg"></p>
-<p>引用做函数返回值：不要返回局部变量引用；函数的调用可以作为左值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf1p4dcjj30lf0j0jug.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf1waev4j30qz063js2.jpg"></p>
-<p>引用的本质：在C++内部实现是一个指针常量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf235twfj30qz0fttb0.jpg"></p>
-<p>常量引用：常量引用主要用来修饰形参，防止误操作，在函数形参列表中，可以加const修饰形参，防止形参改变实参<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf2aaw26j30qz0ft40g.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/函数高级：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-21T16:00:00.000Z" itemprop="datePublished">2019-06-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7%EF%BC%9A/">函数高级：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>函数默认参数：在C++中，函数的形参列表中的形参是可以有默认值的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf2zheqwj30ke0dpabv.jpg"></p>
-<p>函数占位参数：C++中函数的形参列表里可以有占位参数，用来做占位，调用函数时必须填补该位置<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf37i58cj30hi09rq3x.jpg"></p>
-<p>函数重载：函数名可以相同，提高复用性</p>
-<p>函数重载满足条件：<br>1）同一个作用域下<br>2）函数名称相同<br>3）函数参数类型不同或者个数不同或者顺序不同</p>
-<p>注意：函数的返回值不可以作为重载的条件<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3etpelj30hj0bct9o.jpg"></p>
-<p>函数重载的注意事项：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3mo4i9j30gq0kfgoi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3tos4lj30hj025glt.jpg"></p>
 
       
     </div>

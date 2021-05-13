@@ -228,6 +228,148 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-iOS开发-项目/多线程实战/pthread和__bridge" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/29/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/pthread%E5%92%8C__bridge/" class="article-date">
+      <time datetime="2020-11-28T16:00:00.000Z" itemprop="datePublished">2020-11-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/29/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/pthread%E5%92%8C__bridge/">pthread和__bridge</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>无参数：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1got44gp3gvj30nl0j50we.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line">#import&lt;pthread/pthread.h&gt;</span><br><span class="line"></span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">    </span><br><span class="line">    //第一个参数：线程编号的地址</span><br><span class="line">    //第二个参数：线程的属性</span><br><span class="line">    //第三个参数：线程要执行的函数</span><br><span class="line">    //第四个参数：要执行的函数的参数</span><br><span class="line">    </span><br><span class="line">    //这个函数的返回值是int，0是成功，非0是失败</span><br><span class="line">    pthread_t pthread;  //线程编号</span><br><span class="line">    int result=pthread_create(&amp;pthread, NULL, demo, NULL);</span><br><span class="line">    NSLog(@&quot;%@&quot;,[NSThread currentThread]);</span><br><span class="line">    if(result == 0)&#123;</span><br><span class="line">        NSLog(@&quot;成功&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        NSLog(@&quot;失败&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void * demo(void *param)&#123;</span><br><span class="line">    NSLog(@&quot;hello  %@&quot;,[NSThread currentThread]);</span><br><span class="line">    </span><br><span class="line">    return NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>有参数：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1got4def1p5j30nl0j5wi4.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line">#import&lt;pthread/pthread.h&gt;</span><br><span class="line"></span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">    </span><br><span class="line">    //这个函数的返回值是int，0是成功，非0是失败</span><br><span class="line">    pthread_t pthread;  //线程编号</span><br><span class="line">    NSString *name=@&quot;ls&quot;;</span><br><span class="line">    </span><br><span class="line">    int result=pthread_create(&amp;pthread, NULL, demo, (__bridge void *)(name));//__bridge桥接，把OC中的对象传递给C语言需要桥接，反过来也一样</span><br><span class="line">    NSLog(@&quot;%@&quot;,[NSThread currentThread]);</span><br><span class="line">    if(result == 0)&#123;</span><br><span class="line">        NSLog(@&quot;成功&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        NSLog(@&quot;失败&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void * demo(void *param)&#123;</span><br><span class="line">    NSLog(@&quot;hello %@&quot;,[NSThread currentThread]);</span><br><span class="line">    </span><br><span class="line">    return NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%9E%E6%88%98/" rel="tag">多线程实战</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发-项目/UI/项目3.通过代码创建控件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/11/28/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E9%A1%B9%E7%9B%AE3.%E9%80%9A%E8%BF%87%E4%BB%A3%E7%A0%81%E5%88%9B%E5%BB%BA%E6%8E%A7%E4%BB%B6/" class="article-date">
+      <time datetime="2020-11-27T16:00:00.000Z" itemprop="datePublished">2020-11-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/11/28/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E9%A1%B9%E7%9B%AE3.%E9%80%9A%E8%BF%87%E4%BB%A3%E7%A0%81%E5%88%9B%E5%BB%BA%E6%8E%A7%E4%BB%B6/">项目3.通过代码创建控件</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>Xcode模拟器路径：/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs</p>
+<p>如果发现通过代码无法修改控件的位置或者尺寸时，应该去掉storyboard里面的autolayout功能，顾名思义，autolayout是用来自动布局的，用来束缚控件的位置和尺寸，去掉这个功能，控件的位置和尺寸就不再有一些固定的束缚</p>
+<p>结果演示：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goc7zs29lmj31400mzdol.jpg"></p>
+<p>项目代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//</span><br><span class="line">//  ViewController.m</span><br><span class="line">//  手写代码创建控件</span><br><span class="line">//</span><br><span class="line">//  Created by 廖家龙 on 2020/4/19.</span><br><span class="line">//  Copyright © 2020 liuyuecao. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line"></span><br><span class="line">@interface ViewController ()</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation ViewController</span><br><span class="line"></span><br><span class="line">//当要显示一个界面的时候，首先创建这个界面对应的控制器，控制器创建好以后，接着创建控制器所管理的那个view，当这个view加载完毕以后就开始执行下面的方法了</span><br><span class="line">//所以只要viewDidLoad方法被执行了，就表示控制器所管理的view创建好了</span><br><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // Do any additional setup after loading the view.</span><br><span class="line">    </span><br><span class="line">    //动态创建自己的按钮</span><br><span class="line">    </span><br><span class="line">    //1.创建按钮（UIButton）</span><br><span class="line">    </span><br><span class="line">      //1) UIButton *button=[[UIButton alloc]init];</span><br><span class="line">      //2) 创建系统默认的按钮，也可以创建Custom的按钮</span><br><span class="line">    UIButton *button=[UIButton buttonWithType:UIButtonTypeSystem];</span><br><span class="line">    </span><br><span class="line">    //2.设置按钮上显示的文字</span><br><span class="line">    </span><br><span class="line">      //默认状态下显示的文字</span><br><span class="line">    [button setTitle:@&quot;第一张图片&quot; forState:UIControlStateNormal];</span><br><span class="line">      //高亮状态下显示的文字</span><br><span class="line">    [button setTitle:@&quot;第二张图片&quot; forState:UIControlStateHighlighted];</span><br><span class="line">    </span><br><span class="line">    //3.设置不同状态下的文字颜色</span><br><span class="line">    </span><br><span class="line">      //默认状态下设置为红色</span><br><span class="line">    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];</span><br><span class="line">      //高亮状态下设置为蓝色</span><br><span class="line">    [button setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];</span><br><span class="line">    </span><br><span class="line">    //4.设置按钮的背景图片</span><br><span class="line">    </span><br><span class="line">      //加载图片：一个UIImage对象代表一张图片，一般通过imageNamed:方法就可以通过文件名加载项目中的图片</span><br><span class="line">    UIImage *imgNormal=[UIImage imageNamed:@&quot;图片1.png&quot;];</span><br><span class="line">    UIImage *imgHighlighted=[UIImage imageNamed:@&quot;图片2.png&quot;];</span><br><span class="line">    </span><br><span class="line">      //设置默认状态下的背景图片</span><br><span class="line">    [button setBackgroundImage:imgNormal forState:UIControlStateNormal];</span><br><span class="line">      //设置高亮状态下的背景图片</span><br><span class="line">    [button setBackgroundImage:imgHighlighted forState:UIControlStateHighlighted];</span><br><span class="line">    </span><br><span class="line">    //5.设置按钮的frame（x=50，y=100，这个按钮的宽度为110，高度为120）</span><br><span class="line">    button.frame=CGRectMake(50, 100, 110, 120);</span><br><span class="line">    </span><br><span class="line">    //通过代码为按钮注册一个单击事件</span><br><span class="line">    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">    </span><br><span class="line">    //6.把动态创建的按钮加到控制器所管理的那个view中</span><br><span class="line">    [self.view addSubview:button];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)buttonClick&#123;</span><br><span class="line">    NSLog(@&quot;按钮被点击了。&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goc80vl8ynj30sf10fq7s.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/">iOS开发-项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-iOS开发-项目/多线程实战/NSThread" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -849,179 +991,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/" rel="tag">UI</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-硬件基础/《汇编语言(第4版)》/基础知识" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/31/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="article-date">
-      <time datetime="2020-10-30T16:00:00.000Z" itemprop="datePublished">2020-10-31</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/31/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>——————————————————<br>1.1.机器语言<br>1.2.汇编语言的产生<br>1.3.汇编语言的组成<br>1.4.存储器<br>1.5.指令和数据<br>1.6.存储单元<br>1.7.CPU对存储器的读写<br>1.8.地址总线<br>1.9.数据总线<br>1.10.控制总线<br>1.11.内存地址空间(概述)<br>1.12.主板<br>1.13.接口卡<br>1.14.各类存储器芯片<br>1.15.内存地址空间<br>——————————————————</p>
-<p>汇编语言是直接在硬件之上工作的编程语言，首先要了解硬件系统的结构，才能有效的应用汇编语言对其编程</p>
-<p>机器语言是机器指令的集合，机器指令展开来讲就是一台机器可以正确执行的命令，电子计算机的机器指令是一列二进制数字，计算机将之转变为一列高低电平，以使计算机的电子器件受到驱动，进行运算</p>
-<p>CPU是一种微处理器，每一种微处理器，由于硬件设计和内部结构的不同，就需要不同的电平脉冲来控制，使他工作，所以每一种微处理器都有自己的机器指令集，也就是机器语言<br>————————</p>
-<p>汇编语言的主体是汇编指令</p>
-<p>汇编指令和机器指令的差别在于指令的表示方法上，汇编指令是机器指令便于记忆的书写格式，汇编指令是机器指令的助记符</p>
-<p>寄存器，简单的讲是CPU中可以存储数据的器件，一个CPU中有多个寄存器，AX是其中一个寄存器的代号，BX是另一个寄存器的代号<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8lthws7j30bl02xaai.jpg"><br>————————</p>
-<p>汇编语言由以下三类组成：<br>1）汇编指令（机器码的助记符，有对应的机器码）<br>2）伪指令（没有对应的机器码，由编译器执行，计算机并不执行）<br>3）其他符号如+-*/（由编译器识别，没有对应的机器码）</p>
-<p>汇编语言的核心是汇编指令，它决定了汇编语言的特性<br>————————</p>
-<p>CPU是计算机的核心部件，它控制着整个计算机的运作并进行运算，要想让一个CPU工作，就必须向它提供指令和数据，指令和数据在存储器中存放，也就是平时所说的内存</p>
-<p>在一台PC机中内存的作用仅次于CPU，离开了内存，性能再好的CPU也无法工作，磁盘不同于内存，磁盘上的数据或程序如果不读到内存中，就无法被CPU使用<br>————————</p>
-<p>指令和数据是应用上的概念，在内存或磁盘上，指令和数据没有任何区别，都是二进制信息<br>————————</p>
-<p>存储器被划分为若干个存储单元，每个存储单元从0开始顺序编号【电子计算机的最小信息单位是bit（比特），也就是一个二进制位，8个bit组成一个Byte（字节），微型机存储器的存储单位可以存储一个Byte】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8mb0lbkj30ga09s79g.jpg"><br>—————————</p>
-<p>CPU要想进行数据的读写，必须和外部器件（芯片）进行三类信息的交互：<br>1）地址信息：存储单元的地址<br>2）控制信息：器件的选择，读或写命令<br>3）数据信息：读或写的数据</p>
-<p>每一个CPU芯片都有许多管脚，这些管脚和总线相连，也可以说，这些管脚引出总线，一个CPU可以引出三种总线的宽度标志着这个CPU的不同方面的性能：<br>地址总线的宽度决定了CPU的寻址能力<br>数据总线的宽度决定了CPU与其他器件进行数据传送时的一次数据传送量<br>控制总线的宽度决定了CPU对系统中其他器件的控制能力</p>
-<p>电子计算机能处理、传输的信息都是电信号，电信号当然要用导线传送，在计算机中专门有连接CPU和其他芯片的导线，通常称为总线<br>物理上：一根根导线的集合<br>逻辑上划分为：<br>1）地址总线：CPU是通过地址总线来指定存储单元的，地址总线上能传送多少个不同的信息，CPU就可以对多少个存储单元进行寻址</p>
-<p>一个CPU有N根地址总线，则可以说这个CPU的地址总线的宽度为N，这样的CPU最多可以寻找2的N次方个内存单元</p>
-<p>2）数据总线：CPU与内存或其他器件之间的数据传送是通过数据总线来进行的，数据总线的宽度决定了CPU和外界的数据传送速度</p>
-<p>8088CPU的数据总线宽度为8，8086CPU的数据总线宽度为16</p>
-<p>3）控制总线：CPU对外部器件的控制是通过控制总线来进行的，在这里控制总线是个总称，控制总线是一些不同控制线的集合，有多少根控制总线，就意味着CPU提供了对外部器件的多少种控制，所以，控制总线的宽度决定了CPU对外部器件的控制能力</p>
-<p>要让一个计算机或微处理器工作，应向它输入能够驱动它进行工作的电平信号（机器码）<br>——————————</p>
-<p>一个CPU的地址线宽度为10，那么可以寻址1024个内存单元，这1024个可寻到的内存单元就构成了这个CPU的内存地址空间<br>——————————</p>
-<p>在每一台PC机中，都有一个主板，主板上有核心器件和一些主要器件，这些器件通过总线（地址总线、数据总线、控制总线）相连，这些器件有CPU、存储器、外围芯片组、扩展插槽等，扩展插槽上一般插有RAM内存条和各类接口卡<br>——————————</p>
-<p>计算机系统中，所有可用程序控制其互作的设备，必须受到CPU的控制，CPU对外部设备不能直接控制，如显示器、音箱、打印机等，直接控制这些设备进行工作的是插在扩展插槽上的接口卡，扩展插槽通过总线和CPU相连，所以接口卡也通过总线同CPU相连<br>——————————</p>
-<p>各类存储器芯片：<br>1）从读写属性上看分为两类：随机存储器（RAM）和只读存储器（ROM），随机存储器可读可写，但必须带电存储，关机后存储的内容丢失；只读存储器只能读取不能写入，关机后其中的内容不丢失<br>2）从功能和连接上分类：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8mt9rgpj30bl05mjta.jpg"></p>
-<p>这些存储器在物理上是独立的器件：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8n32ur5j30fm0cqwgj.jpg"></p>
-<p>但是它们在以下两点上相同：<br>1）都和CPU的总线相连<br>2）CPU对它们进行读或写的时候都通过控制线发出内存读写命令<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8nmj07vj30fm0cigpr.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8nvqh13j30fm06on1b.jpg"></p>
-<p>不同的计算机系统的内存地址空间分配情况是不同的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8o3v5oqj30cx0coq4l.jpg"></p>
-<p>内存地址空间的大小受CPU地址总线宽度的限制</p>
-<p>对CPU来讲，系统中的所有存储器中的存储单元都处于一个统一的逻辑存储器中，它的容量受CPU寻址能力的限制，这个逻辑存储器即是我们所说的内存地址空间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8oeidamj30c402gaax.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/">硬件基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/数据库基本术语" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/" class="article-date">
-      <time datetime="2020-10-30T16:00:00.000Z" itemprop="datePublished">2020-10-31</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">数据库基本术语</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort1gucs5j30m705e43y.jpg"></p>
-<p>数据库：保存有组织的数据的容器（通常是一个文件或一组文件）</p>
-<p>表：某种特定类型数据的结构化清单，数据库中的每个表都有一个名字，用来标识自己，此名字是唯一的，这表示数据库中没有其他表具有相同的名字【虽然在相同数据库中不能两次使用相同的表名，但在不同数据库中却可以使用相同的表名】</p>
-<p>模式：关于数据库和表的布局及特性的信息</p>
-<p>列：表中的一个字段，所有表都是由一个或多个列组成的</p>
-<p>数据类型：所容许的数据的类型，每个表列都有相应的数据类型，它限制（或容许）该列中存储的数据</p>
-<p>行：表中的一个记录</p>
-<p>主键：一列（或一组列），其值能够唯一区分表中每个行</p>
-<p>表中的任何列都可以作为主键，只要他满足以下条件：<br>1）任意两行都不具有相同的主键值<br>2）每个行都必须具有一个主键值（主键列不允许NULL值）</p>
-<p>ps aux | grep mysql</p>
-<p>/usr/local/mysql/bin/mysql -u root -p<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort1r34ntj30dm03tabl.jpg"></p>
-<p>关键字：作为MySQL语言组成部分的一个保留字，绝不要用关键字命名一个表或列</p>
-<p>SQL语句不区分大小写！！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
     </div>
 
       

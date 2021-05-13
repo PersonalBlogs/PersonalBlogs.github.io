@@ -228,6 +228,155 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据库系统原理/《MySQL必知必会》/排序检索数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8E%92%E5%BA%8F%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-27T16:00:00.000Z" itemprop="datePublished">2020-10-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8E%92%E5%BA%8F%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/">排序检索数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>排序检索数据</p>
+<p>子句：SQL语句由子句构成，有些子句是必须的，而有的是可选的。一个子句通常由一个关键字和所提供的数据组成。</p>
+<p>1）指示MySQL对列以字母顺序排序<br>SELECT 列名<br>FROM 表名<br>ORDER BY 列名;</p>
+<p>2）先按价格，再按名称排序：<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prodprice,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort918kmfj305z0670tw.jpg"></p>
+<p>3）按价格以降序排序<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prod_price DESC;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9a9f5aj305z0673zo.jpg"></p>
+<p>4）先按价格以降序排序，再对产品名排序<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prodprice DESC,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9jou7zj3064021aae.jpg"><br>DESC关键字只应用到直接位于其前面的列名，在上例中，只对prodprice列指定DESC，对prodname列不指定。因此，prodprice列以降序排序，而prodname列（在每个价格内）仍然按标准的升序排序</p>
+<p>5）prod_price DESC保证行是按照由最昂贵到最便宜检索的，而LIMIT 1告诉MySQL仅返回一行<br>SELECT prod_price<br>FROM products<br>ORDER BY prod_price DESC<br>LIMIT 1;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9vbhnrj302001hwei.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/进程概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/28/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%A6%82%E5%BF%B5/" class="article-date">
+      <time datetime="2020-10-27T16:00:00.000Z" itemprop="datePublished">2020-10-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/28/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%A6%82%E5%BF%B5/">进程概念</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>进程概念：</p>
+<p>描述和管理程序的“运行过程”—进程</p>
+<p>进程定义：进程是程序在某个数据集合上的一次运行活动</p>
+<p>数据集合：软/硬件环境，多个进程共存/共享的环境</p>
+<p>进程的特征：<br>1）动态性：进程是程序的一次执行过程，动态产生/消亡<br>2）并发性：进程同其他进程一起向前推进<br>3）异步性：进程按各自速度向前推进<br>4）独立性：进程是系统分配资源和调度CPU的单位</p>
+<p>进程与程序的区别：<br>1）动态与静态：进程是动态的，程序的一次执行过程；程序是静态的，一组指令的有序集合<br>2）暂存与长存：进程是暂存的，在内存驻留；程序是长存的，在介质上长期保存<br>3）程序和进程的对应：一个程序可能有多个进程</p>
+<p>进程的类型：<br>1）按使用资源的权限<br>系统进程：指系统内核相关的进程<br>用户进程：运行于用户态的进程<br>2）按对CPU的依赖性<br>偏CPU进程：计算型进程<br>偏I/O进程：侧重于I/O的进程</p>
+<p>进程的状态：<br>1）运行状态（Running）：进程已经占有CPU，在CPU上运行<br>2）就绪状态（Ready）：具备运行条件但由于无CPU，暂时不能运行<br>3）阻塞状态（Block）【等待（Wait）状态】：因为等待某项服务完成或信号不能运行的状态，如等待系统调用、I/O操作、合作进程信号</p>
+<p>进程状态的变迁：进程的状态可以依据一定的条件相互转化<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorazfj5pqj30jv076q64.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorazmuy9qj30gc08qn08.jpg"></p>
+<p>Linux进程的状态：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorazusaluj30ec0d1wj6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb02xapej30ny0diq9o.jpg"></p>
+<p>进程控制块（Process Control Block，PCB）<br>1）描述进程状态、资源、和与相关进程关系的数据结构<br>2）PCB是进程的标志<br>3）创建进程时创建PCB；进程撤销后PCB同时撤销<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb0h3txuj30b008q75w.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb0pup5mj30c808kq51.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb0yo9gkj30ha0cjaej.jpg"></p>
+<p>进程的切换：<br>进程的上下文：Context，进程运行环境，CPU环境<br>进程切换过程：<br>1）换入进程的上下文进入CPU（从栈上来）<br>2）换出进程的上下文离开CPU（到栈上去）</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-硬件基础/《汇编语言(第4版)》/实验2、用机器指令和汇编指令编程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -811,156 +960,6 @@ int 21h
 <p>2）搜索模式’%anvil%’表示匹配任何位置包含文本anvil的值，而不论它之前或之后出现什么字符<br>SELECT prodid,prodname<br>FROM products<br>WHERE prod_name LIKE ‘%anvil%’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorth9wyc0j303r0270sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorthi0f4ej30b606in1g.jpg"></p>
 <p>3）下划线只匹配单个字符而不是多个字符<br>SELECT prodid,prodname<br>FROM products<br>WHERE prodname LIKE ‘ ton anvil’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorthpptr1j303o01vaa8.jpg"></p>
 <p>SELECT prodid,prodname<br>FROM products<br>WHERE prod_name LIKE ‘% ton anvil’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorthxwb0kj303s025mxd.jpg"><br>与%能匹配0个字符不一样，_总是匹配一个字符，不能多也不能少<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorti5qgb0j30bv06440v.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortic92ltj30bl024t91.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/临界区和锁" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E4%B8%B4%E7%95%8C%E5%8C%BA%E5%92%8C%E9%94%81/" class="article-date">
-      <time datetime="2020-10-24T16:00:00.000Z" itemprop="datePublished">2020-10-25</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E4%B8%B4%E7%95%8C%E5%8C%BA%E5%92%8C%E9%94%81/">临界区和锁</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>临界区和锁：</p>
-<p>临界资源：一次只允许一个进程独占访问（使用）的资源（共享变量i）<br>临界区：进程中访问临界资源的程序段<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb77kk8cj30ew06wabj.jpg"></p>
-<p>临界区和临界资源的访问特点：<br>1）具有排他性<br>2）并发进程不能同时进入临界区</p>
-<p>设计临界区访问机制的四个原则：<br>1）忙则等待：当临界区忙时，其他进程必须在临界区外等待<br>2）空闲让进：当无进程处于临界区时，任何有权进程可进入临界区<br>3）有限等待：进程进入临界区的请求应在有限时间内得到满足<br>4）让权等待：等待进程放弃CPU（让其他进程有机会得到CPU）</p>
-<p>锁机制：<br>1）基本原理：设置一个“标志”S，表明临界资源可用还是不可用<br>2）上锁操作：进入临界区之前检查标志是否可用，若为不可用状态，进程在临界区外等待；若为可用状态，访问临界资源，且将标志修改为不可用<br>3）开锁操作：退开临界区时将标志修改为可用状态<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb7hfzw2j30a9087dhq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb7s9wx6j30bz0bsjtf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb7zkqlfj30b108tmzm.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/用正则表达式进行搜索" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%9B%E8%A1%8C%E6%90%9C%E7%B4%A2/" class="article-date">
-      <time datetime="2020-10-23T16:00:00.000Z" itemprop="datePublished">2020-10-24</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%9B%E8%A1%8C%E6%90%9C%E7%B4%A2/">用正则表达式进行搜索</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>用正则表达式进行搜索</p>
-<p>正则表达式是用来匹配文本的特殊的串（字符集合），正则表达式的作用是匹配文本，将一个模式（正则表达式）与一个文本串进行比较<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortjue6zgj30b90230u8.jpg"></p>
-<p>1）检索列prod_name包含文本1000的所有行<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘1000’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortk1veqij302b01hgln.jpg"></p>
-<p>2）<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘.000’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortkdlt9pj302b01t3yl.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortkm1ewmj30b609kn40.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortkuaajej30b601gab0.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortl0jw5kj30b602ndhp.jpg"></p>
-<p>3）|为正则表达式的OR操作符，它表示匹配其中之一，使用|从功能上类似于在SELECT语句中使用OR语句，多个OR条件可并入单个正则表达式<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘1000|2000’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortl89espj302b01s3yl.jpg"></p>
-<p>4）[123]定义一组字符，它的意思是匹配1或者2或者3，因此，1 ton 和2 ton都匹配且返回（没有 3 ton）,[123] Ton为[1|2|3] Ton的缩写<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortlh9hn8j302601y0st.jpg"></p>
-<p>MySQL假定你的意思是‘1’或‘2’或‘3 ton’，除非你把字符｜括在一个集合中，否则它将应用于整个串<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘1|2|3 Ton’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortlp996wj302d02yweo.jpg"></p>
-<p>[^123]匹配除这些字符外的任何东西</p>
-<p>5）<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘[1-5] Ton’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortm4jsr9j302d02bmxa.jpg"></p>
-<p>6）.匹配任意字符，因此每个行都被检索出来<br>SELECT vend_name<br>FROM vendors<br>WHERE vend_name REGEXP ‘.’<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortmeuft6j302n03c74i.jpg"></p>
-<p>为了匹配特殊字符，必须用\为前导。\-表示查找-，\.表示查找.<br>SELECT vend_name<br>FROM vendors<br>WHERE vend_name REGEXP ‘\.’<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortmy5lwij302e01ijrf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortoggjl3j309y04hdgj.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortpdzf5sj30b903tdi7.jpg"></p>
-<p>7)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortrj2c90j30bp08y774.jpg"></p>
-<p>8)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortugmffnj30bw089416.jpg"><br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortuypklpj302n01wwel.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortv8r75kj30bk02it9s.jpg"></p>
-<p>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘:digit:{4}’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortvhksbej302c01xq31.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortvpgndlj30bl04sjt0.jpg"></p>
-<p>9)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortvyaf7uj307z03m3yx.jpg"><br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortw7jexzj302c029aa6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortwgb8m3j30bj01sq3k.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortwr6d1hj30bc04i0vr.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortx446h0j30bb03wmzu.jpg"></p>
 
       
     </div>

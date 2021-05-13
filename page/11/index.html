@@ -228,6 +228,226 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-操作系统原理/操作系统原理/FAT文件系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/FAT%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <time datetime="2020-10-09T16:00:00.000Z" itemprop="datePublished">2020-10-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/FAT%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">FAT文件系统</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>FAT文件系统：</p>
+<p>FAT：File Allocation Table</p>
+<p>FAT文件系统：FAT12、FAT16、FAT32</p>
+<p>文件分配表（FAT）：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord4e9f6kj30xa0j5gvp.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord4m2ql5j31ex0rlqmk.jpg"></p>
+<p>文件分配表的缺点：<br>1）读文件时，先读FAT，影响使用效率<br>2）FAT要占用存储空间，存储容量越大，存储块越多，FAT元素越多，且元素位宽越长，占用更多额外存储空间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord4veanuj314g059dje.jpg"></p>
+<p>扇区：磁盘上最小可寻址存储单元（512字节）</p>
+<p>簇（cluster）=存储块，设备的最小存取单元，固定数量的扇区</p>
+<p>360KB磁盘：簇=2个扇区（1024字节）<br>10MB硬盘：簇=8个扇区（4096字节）<br>2GB硬盘：簇=64个扇区（32KB）</p>
+<p>FAT16文件系统指的是N=16：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord5d488sj316n0oywzi.jpg"></p>
+<p>FAT16文件系统：以簇为单位管理磁盘，簇是扇区的倍数，是2的次幂，最大64扇区【扇区512B，簇32KB（64个扇区）】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord5npe61j30uo08vn13.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord73vz8ej30q80gwn3t.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用游标" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87/" class="article-date">
+      <time datetime="2020-10-08T16:00:00.000Z" itemprop="datePublished">2020-10-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87/">使用游标</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用游标</p>
+<p>有时，需要在检索出来的行中前进或后退一行或多行。这就是使用游标的原因。游标是一个存储在MySQL服务器上的数据库查询，它不是一条SELECT语句，而是被该语句检索出来的结果集。在存储了游标之后，应用程序可以根据需要滚动或浏览其中的数据；游标主要用于交互式应用，其中用户需要滚动屏幕上的数据，并对数据进行浏览或做出更改</p>
+<p>不像多数DBMS，MySQL游标只能用于存储过程（和函数）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx3hzpwkj30bw04wabw.jpg"></p>
+<p>1）创建游标【存储过程处理完成后，游标就消失（因为它局限于存储过程）】<br>游标用DECLARE语句创建，DECLARE命名游标，并定义相应的SELECT语句，根据需要带WHERE和其他子句<br>CREATE PROCEDURE processorders()<br>BEGIN<br>     DECLARE ordernumbers CURSOR<br>     FOR<br>     SELECT order_num FROM orders;<br>END;</p>
+<p>2）打开和关闭游标<br>OPEN ordernumbers;</p>
+<p>CLOSE ordernumbers;</p>
+<p>在一个游标关闭后，如果没有重新打开，则不能使用它。但是，使用声明过的游标不需要再次声明，用OPEN语句打开它就可以了，如果你不明确关闭游标，MySQL将会在到达END语句时自动关闭它</p>
+<p>这个存储过程声明、打开和关闭一个游标，但对检索出来的数据什么也没做<br>CREATE PROCEDURE processorders()<br>BEGIN<br>     DECLARE ordernumbers CURSOR<br>     FOR<br>     SELECT order_num FROM orders;</p>
+<pre><code> OPEN ordernumbers;
+
+ CLOSE ordernumbers;
+</code></pre>
+<p>END;</p>
+<p>3）使用游标数据：在一个游标被打开后，可以使用FETCH语句分别访问它的每一行。FETCH指定检索什么数据（所需的列），检索出来的数据存储在什么地方。它还向前移动游标中的内部行指针，使下一条FETCH语句检索下一行（不重复读取同一行）</p>
+<p>从游标中检索单个行（第一行）：<br>CREATE PROCEDURE processorders()<br>BEGIN</p>
+<pre><code> DECLARE o INT;
+
+ DECLARE ordernumbers CURSOR
+ FOR
+ SELECT order_num FROM orders;
+
+ OPEN ordernumbers;
+
+ FETCH ordernumbers INTO o;
+
+ CLOSE ordernumbers;
+</code></pre>
+<p>END;</p>
+<p>循环检索数据，从第一行到最后一行：【如果一切正常，你可以在循环内放入任意需要的处理（在FETCH语句之后，循环结束之前）】<br>CREATE PROCEDURE processorders()<br>BEGIN</p>
+<pre><code> DECLARE done BOOLEAN DEFAULT 0;
+ DECLARE o INT;
+
+ DECLARE ordernumbers CURSOR
+ FOR
+ SELECT order_num FROM orders;
+
+ DECLARE CONTINUE HANDLER FOR SQLSTATE ’02000’ SET done=1;
+
+ OPEN ordernumbers;
+
+ REPEAT
+
+ FETCH ordernumbers INTO o;
+
+ UNTIL done END REPEAT;
+
+ CLOSE ordernumbers;
+</code></pre>
+<p>END;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx3yvddsj30bw067tbi.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx45veh1j30bg02idhn.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx4ckm50j30bg02p764.jpg"></p>
+<p>CREATE PROCEDURE processorders()<br>BEGIN</p>
+<pre><code> DECLARE done BOOLEAN DEFAULT 0;
+ DECLARE o INT;
+ DECLARE t DECIMAL(8,2);
+
+ DECLARE ordernumbers CURSOR
+ FOR
+ SELECT order_num FROM orders;
+
+ DECLARE CONTINUE HANDLER FOR SQLSTATE ’02000’ SET done=1;
+
+ CREATE TABLE IF NOT EXISTS ordertotals
+         (order_num INT,total DECIMAL(8,2));
+
+ OPEN ordernumbers;
+
+ REPEAT
+
+      FETCH ordernumbers INTO o;
+
+      CALL ordertotal(o,l,t);
+      
+      INSERT INTO ordertotals(order_num,total)
+      VALUES(o,t);
+
+ UNTIL done END REPEAT;
+
+ CLOSE ordernumbers;
+</code></pre>
+<p>END;</p>
+<p>SELECT *<br>FROM ordertotals;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx4pbq42j303g0310t1.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx4wiosoj30bx03n0ug.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/文件存储和目录" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -761,146 +981,6 @@
 <p>计算机网络的功能：<br>1）数据通信（连通性）<br>2）资源共享（硬件、软件、数据）<br>3）分布式处理：多台计算机各自承担同一工作任务的不同部分（Hadoop平台）<br>4）提高可靠性<br>5）负载均衡（各计算机之间更亲密）</p>
 <p>计算机网络的组成：<br>1）按组成部分分类：硬件、软件、协议<br>2）按工作方式分类：边缘部分（用户直接使用：C/S方式、P2P方式）、核心部分（为边缘部分服务）<br>3）按功能组成分类：通信子网（实现数据通信）、资源子网（实现资源共享/数据处理）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosd9rga3qj30xg0gath7.jpg"></p>
 <p>计算机网络的分类：<br>1）按分布范围分：广域网（WAN、使用交换技术）、城域网（MAN）、局域网（LAN、使用广播技术）、个人区域网（PAN）<br>2）按使用者分：公用网、专用网<br>3）按交换技术分：电路交换、报文交换、分组交换<br>4）按拓扑结构分：总线型、星型、环型、网状型（常用于广域网）<br>5）按传输技术分：广播式网络（共享公共通信信道）、点对点网络（使用分组存储转发和路由选择机制）</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机网络原理/计算机网络原理/标准化" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A0%87%E5%87%86%E5%8C%96/" class="article-date">
-      <time datetime="2020-08-29T16:00:00.000Z" itemprop="datePublished">2020-08-30</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A0%87%E5%87%86%E5%8C%96/">标准化</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>标准化：</p>
-<p>要实现不同厂商的硬、软件之间相互连通，必须遵守统一的标准</p>
-<p>标准的分类：<br>1）法定标准（由权威机构制定的正式的、合法的标准：OSI）<br>2）事实标准（某些公司的产品在竞争中占据了主流，时间长了，这些产品中的协议和技术就成了标准：TCP/IP）</p>
-<p>RFC（Request For Comments）：因特网标准的形式</p>
-<p>RFC要上升为因特网正式标准的四个阶段：<br>1）因特网草案：这个阶段还不是RFC文档<br>2）建议标准：从这个阶段开始成为RFC文档<br>3）因特网标准</p>
-<p>标准化工作的相关组织：<br>1）国际标准化组织ISO：OSI参考模型、HDLC协议<br>2）国际电信联盟ITU：制定通信规则<br>3）国际电气电子工程师协会IEEE：学术机构、IEEE802系列标准、5G<br>4）Internet工程任务组IETF：负责因特网相关标准的制定</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机网络原理/计算机网络原理/速率、带宽、吞吐量" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E9%80%9F%E7%8E%87%E3%80%81%E5%B8%A6%E5%AE%BD%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F/" class="article-date">
-      <time datetime="2020-08-28T16:00:00.000Z" itemprop="datePublished">2020-08-29</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E9%80%9F%E7%8E%87%E3%80%81%E5%B8%A6%E5%AE%BD%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F/">速率、带宽、吞吐量</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>速率、带宽、吞吐量：</p>
-<p>速率：即数据率、数据传输率、比特率，连接在计算机网络上的主机在数字信道上传送数据位数的速率（b/s、kb/s、Mb/s、Gb/s、Tb/s）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosdbsjhmbj31cu09x0zr.jpg"></p>
-<p>带宽：原本指某个信号具有的频带宽度，即最高频率与最低频率之差，单位是赫兹（Hz）；计算机网络中，带宽用来表示网络的通信线路传送数据的能力，通常是指单位时间内从网络中的某一点到另一点所能通过的最高数据率（b/s、kb/s、Mb/s、Gb/s、Tb/s），网络设备所支持的最高速度</p>
-<p>吞吐量：表示在单位时间内通过某个网络（或信道、接口）的数据量（b/s、kb/s、Mb/s、Gb/s、Tb/s），吞吐量受网络的带宽或网络的额定速率的限制</p>
 
       
     </div>

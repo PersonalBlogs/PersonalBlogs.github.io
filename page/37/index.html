@@ -228,6 +228,150 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/C++语言/职工管理系统：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-12T16:00:00.000Z" itemprop="datePublished">2019-06-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/">职工管理系统：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/函数模板：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-11T16:00:00.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/">函数模板：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>模板就是建立通用的模具，大大提高复用性</p>
+<p>模板的特点：模板不可以直接使用，它只是一个框架；模板的通用并不是万能的</p>
+<p>———————————————函数模板：</p>
+<p>C++另一种编程思想称为泛型编程，主要利用的技术就是模板</p>
+<p>C++提供两种模板机制：函数模板和类模板</p>
+<p>函数模板的作用：建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp03dz6j30cz0jewgr.jpg"></p>
+<p>函数模板注意事项：<br>1）自动类型推导，必须推导出一致的数据类型T才可以使用<br>2）模板必须要确定出T的数据类型，才可以使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp6w888j30ce0brgmr.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpd3x09j30gb0t50x2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpkhy0ej30ce01ljrh.jpg"></p>
+<p>普通函数与函数模板的区别：<br>1）普通函数调用时可以发生自动类型转换（隐式类型转换）<br>2）函数模板调用时，如果利用自动类型推导，不会发生隐式类型转换；如果利用显式指定类型的方式，可以发生隐式类型转换</p>
+<p>建议使用显示指定类型的方式，调用函数模板，因为可以自己确定通用类型T</p>
+<p>普通函数与函数模板的调用规则：<br>1）如果函数模板和普通函数都可以实现，优先调用普通函数<br>2）可以通过空模板参数列表来强制调用函数模板<br>3）函数模板也可以发生重载<br>4）如果函数模板可以产生更好的匹配，优先调用函数模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpql1y3j30nc0gmtb5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpwvalpj30ce01lglo.jpg"></p>
+<p>模板的局限性：模板的通用性并不是万能的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq2vig6j30q209bwgj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq8w0vbj30v9096wh4.jpg"></p>
+<p>因此C++为了解决这种问题，提供模板的重载，可以为这些特定的类型提供具体化的模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfqenxnvj30ij0soadu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfql68fyj30ce01lwej.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/C++语言/类模板：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -739,153 +883,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8knfh2nvj30mr0ettb1.jpg"></p>
 <p>源代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编程求一个整数任意次方后的最后三位数，即求x^y的最后三位数，x和y的值由键盘输入。</span></span><br><span class="line"><span class="comment">//本实例的算法思想如下：题中要求一个数的任意次方，首先要考虑计算结果是否越界，如何避免产生越界问题同时又不使结果产生误差，这里在求次方时每乘一次都取其后三位，这样就不会出现越界问题，又可完成题目要求。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,x,y,z=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input two numbers:x,y(x^y):\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=y;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        z=z*x % <span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(z&gt;=<span class="number">100</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d^%d的最后三位是：%d\n&quot;</span>,x,y,z);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d^%d的最后三位:00%d\n&quot;</span>,x,y,z);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/任意正数的逆序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BB%BB%E6%84%8F%E6%AD%A3%E6%95%B0%E7%9A%84%E9%80%86%E5%BA%8F/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BB%BB%E6%84%8F%E6%AD%A3%E6%95%B0%E7%9A%84%E9%80%86%E5%BA%8F/">任意正数的逆序</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln644fyezj30my0atmyp.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln64be0nuj309i0ba758.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln64j7vtgj30bb0g075t.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/使用公式打印下列华氏温度与摄氏温度对照表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BD%BF%E7%94%A8%E5%85%AC%E5%BC%8F%E6%89%93%E5%8D%B0%E4%B8%8B%E5%88%97%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E4%B8%8E%E6%91%84%E6%B0%8F%E6%B8%A9%E5%BA%A6%E5%AF%B9%E7%85%A7%E8%A1%A8/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BD%BF%E7%94%A8%E5%85%AC%E5%BC%8F%E6%89%93%E5%8D%B0%E4%B8%8B%E5%88%97%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E4%B8%8E%E6%91%84%E6%B0%8F%E6%B8%A9%E5%BA%A6%E5%AF%B9%E7%85%A7%E8%A1%A8/">使用公式打印下列华氏温度与摄氏温度对照表</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><strong>1</strong>）**#include&lt;stdio.h&gt;**<br><strong>//<strong>程序中允许出现空格、制表符或换行符之处，都可以使用注释</strong>//<strong>当</strong>fahr=0,20,…,300</strong>时，分别打印华氏温度和摄氏温度对照表<strong>main(){</strong><br>**    int fahr,celsius;**<br>**    int lower,upper,step;**</p>
-<p>**    lower=0;//<strong>温度表的下限</strong>    upper=300;//<strong>温度表的上限</strong>    step=20;//<strong>步长<br>**    fahr=lower;</strong><br>**    while(fahr&lt;=upper){**<br>**        celsius=5 * (fahr-32) / 9;   //    5 / 9=0**<br>**        printf(“%3d\t%6d\n”,fahr,celsius);**<br>**        fahr=fahr+step;**<br>**    }**<br><strong>}</strong></p>
-<p><strong>2</strong>）**#include&lt;stdio.h&gt;**<br><strong>main(){</strong><br>**    float fahr,celsius;**<br>**    int lower,upper,step;**</p>
-<p>**    lower=0;//<strong>温度表的下限</strong>    upper=300;//<strong>温度表的上限</strong>    step=20;//<strong>步长<br><strong>//%3.0f</strong>表明待打印的浮点数（即</strong>fahr<strong>）至少占</strong>3<strong>个字符宽，且不带小数点和小数部分；</strong>%6.1f<strong>表明另一个待打印的数（</strong>celsius<strong>）至少占</strong>6<strong>个字符宽，且小数点后面有</strong>1<strong>位数字。</strong>    //<strong>格式说明可以省略宽度和精度，例如，</strong>%6f<strong>表示待打印的浮点数至少有</strong>6<strong>个字符宽；</strong>%.2f<strong>指定待打印的浮点数的小数点后有两位小数，但宽度没有限制；</strong>%f<strong>则仅仅要求按照浮点数打印该数</strong>    fahr=lower;**<br>**    while(fahr&lt;=upper){**<br>**        celsius=(5.0/9.0)<em>(fahr-32.0);*</em><br>**        printf(“%3.0f %6.1f\n”,fahr,celsius);**<br>**        fahr=fahr+step;**<br>**    }**<br><strong>}</strong></p>
-<p><strong>3</strong>）修改温度转换程序，使之能在转换表的顶部打印一个标题**#include&lt;stdio.h&gt;**<br><strong>main(){</strong><br>**    float fahr,celsius;**<br>**    int lower,upper,step;**</p>
-<p>**    lower=0;//<strong>温度表的下限</strong>    upper=300;//<strong>温度表的上限</strong>    step=20;//<strong>步长<br>**    printf(“Fahr Celsius\n”);</strong><br>**    fahr=lower;**<br>**    while(fahr&lt;=upper){**<br>**        celsius=(5.0/9.0)<em>(fahr-32.0);*</em><br>**        printf(“%3.0f %6.1f\n”,fahr,celsius);**<br>**        fahr=fahr+step;**<br>**    }**<br><strong>}</strong></p>
-<p><strong>4</strong>）编写一个程序打印摄氏温度转换为相应华氏温度的转换表**#include&lt;stdio.h&gt;**<br><strong>main(){</strong><br>**    float fahr,celsius;**<br>**    int lower,upper,step;**</p>
-<p>**    lower=0;//<strong>温度表的下限</strong>    upper=300;//<strong>温度表的上限</strong>    step=20;//<strong>步长<br>**    printf(“Celsius Fahr\n”);</strong><br>**    celsius=lower;**<br>**    while(celsius&lt;=upper){**<br>**        fahr=(9.0<em>celsius)/5.0</em>32.0;**<br>**        printf(“%3.0f %6.1f\n”,celsius,fahr);**<br>**        celsius=celsius+step;**<br>**    }**<br><strong>}</strong></p>
-<p><strong>5</strong>）使用<strong>for</strong>循环打印华氏温度**-<strong>摄氏温度对照表</strong>#include&lt;stdio.h&gt;**<br><strong>main(){</strong><br>**    int fahr;**</p>
-<p>**    for(fahr=0;fahr&lt;=300;fahr=fahr+20)**<br>**        printf(“%3d %6.1f\n”,fahr,(5.0/9.0)<em>(fahr-32));*</em><br><strong>}</strong><br><strong>//<strong>在允许使用某种类型变量值的任何场合，都可以使用该类型的更复杂的表达式。因为</strong>printf</strong>函数的第三个参数必须是与**%6.1f**匹配的浮点值，所以可以在此处使用任何浮点表达式<br>6）修改温度转换程序，要求以逆序（即按照从300度递减到0度的顺序）打印温度转换表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">main()&#123;</span><br><span class="line">    int fahr;</span><br><span class="line">    </span><br><span class="line">    for(fahr=300;fahr&gt;=0;fahr=fahr-20)</span><br><span class="line">        printf(“%3d %6.1f\n”,fahr,(5.0/9.0)*(fahr-32));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>7）符号常量【<code># define</code>指令可以把符号名（或称为符号常量）定义为一个特定的字符串（#define 名字 替换文本），名字与普通变量名的形式相同，它们都是以字母打头的字母和数字序列；替换文本可以是任何字符序列，而不仅限于数字】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">#define LOWER 0//表的下限</span><br><span class="line">#define UPPER 300//表的上限</span><br><span class="line">#define STEP 29//步长</span><br><span class="line">main()&#123;</span><br><span class="line">    int fahr;</span><br><span class="line">    </span><br><span class="line">    for(fahr=LOWER;fahr&lt;=UPPER;fahr=fahr+STEP)</span><br><span class="line">        printf(“%3d %6.1f\n”,fahr,(5.0/9.0)*(fahr-32));</span><br><span class="line">&#125;</span><br><span class="line">//符号常量名通常用大写字母拼写，这样可以很容易与用小写字母拼写的变量名相区别</span><br><span class="line">//其中，LOWER，UPPER与STEP都是符号常量，而非变量，因此不需要出现在声明中。【注意，#define指令行的末尾没有分号】</span><br></pre></td></tr></table></figure>
       
     </div>
     

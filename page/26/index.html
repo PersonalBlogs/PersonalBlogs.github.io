@@ -228,6 +228,206 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/终端写第一个OC程序：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%88%E7%AB%AF%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAOC%E7%A8%8B%E5%BA%8F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-27T16:00:00.000Z" itemprop="datePublished">2019-09-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%88%E7%AB%AF%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAOC%E7%A8%8B%E5%BA%8F%EF%BC%9A/">终端写第一个OC程序：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="OC程序的编译，链接，执行："><a href="#OC程序的编译，链接，执行：" class="headerlink" title="OC程序的编译，链接，执行："></a>OC程序的编译，链接，执行：</h3><ol>
+<li><p>在.m文件中写上符合OC语法规范的源代码：<br>clear清屏<br>cd /Users/ljlmacbookair/Desktop/OC2<br>touch main.m</p>
+</li>
+<li><p>使用编译器将源代码编译为目标文件【预处理，检查语法，编译】<br>cc -c main.m</p>
+</li>
+<li><p>链接<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3bloyncj30ft0550tb.jpg"><br>如果程序中使用到了框架中的函数或者类，那么在链接的时候，就必须要告诉编译器去哪一个框架中找这个函数或者类<br>cc main.o -framework Foundation</p>
+</li>
+<li><p>链接成功以后就会生成一个a.out可执行文件，执行就可以了<br>./a.out</p>
+</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3bty2jqj30i70apq3m.jpg"></p>
+<hr>
+<h3 id="OC程序和C程序各个阶段的后缀名："><a href="#OC程序和C程序各个阶段的后缀名：" class="headerlink" title="OC程序和C程序各个阶段的后缀名："></a>OC程序和C程序各个阶段的后缀名：</h3><pre><code>源文件   目标文件  可执行文件
+</code></pre>
+<p>C    .c       .o       .out<br>OC   .m       .o       .out</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/OC与C的对比：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/OC%E4%B8%8EC%E7%9A%84%E5%AF%B9%E6%AF%94%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-26T16:00:00.000Z" itemprop="datePublished">2019-09-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/OC%E4%B8%8EC%E7%9A%84%E5%AF%B9%E6%AF%94%EF%BC%9A/">OC与C的对比：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h3><ol>
+<li>OC中支持C语言的所有的数据类型</li>
+<li>BOOL类型：可以存储YES或者NO中的任意一个数据；一般情况下BOOL类型的变量用来存储条件表达式的结果</li>
+</ol>
+<p>typedef signed char BOOL;<br>BOOL类型变量的本质实际上是一个有符号的char变量</p>
+<ol start="3">
+<li>Boolean类型的变量可以存储true或者false</li>
+</ol>
+<p>typedef unsigned char BOOL;<br>Boolean类型变量的本质实际上是一个无符号的char变量</p>
+<ol start="4">
+<li>class 类型：类</li>
+<li>id类型：万能指针</li>
+<li>nil与NULL差不多</li>
+<li>SEL：方法选择器</li>
+<li>block：代码段</li>
+</ol>
+<hr>
+<h3 id="运算符："><a href="#运算符：" class="headerlink" title="运算符："></a>运算符：</h3><p>OC支持C语言中所有的运算符：</p>
+<ul>
+<li>赋值运算符：=</li>
+<li>算术运算符：+、-、*、/、%</li>
+<li>复合赋值运算符：+=、-=、*=、/=、%=</li>
+<li>自增与自减：++、—-</li>
+<li>关系运算符：&gt;、&gt;=、&lt;、&lt;=、==、!=</li>
+<li>逻辑运算符：&amp;&amp;、||、!</li>
+<li>取地址运算符：&amp;</li>
+<li>指针访问运算符：*</li>
+<li>位运算符：&amp;、|、^、~</li>
+</ul>
+<hr>
+<h3 id="控制语句："><a href="#控制语句：" class="headerlink" title="控制语句："></a>控制语句：</h3><p>OC支持C所有的控制语句：</p>
+<ul>
+<li>if结构</li>
+<li>switch-case结构</li>
+<li>while循环</li>
+<li>do-while循环</li>
+<li>for循环</li>
+<li>数组</li>
+<li>函数</li>
+<li>指针</li>
+</ul>
+<hr>
+<h3 id="关键字："><a href="#关键字：" class="headerlink" title="关键字："></a>关键字：</h3><ol>
+<li>OC支持C语言中全部的关键字，并且效果一致</li>
+<li>OC也新增了一些关键字，OC新增的关键字绝大多数都是以@开头</li>
+</ol>
+<ul>
+<li>@interface</li>
+<li>@implmentation</li>
+<li>@public</li>
+</ul>
+<hr>
+<h3 id="函数的定义和调用："><a href="#函数的定义和调用：" class="headerlink" title="函数的定义和调用："></a>函数的定义和调用：</h3><p>函数的定义和调用与C语言的完全一致</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/面向过程和面向对象：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -902,181 +1102,6 @@
 <li>@try…@catch后面还可以跟一个@finally{}，@finally中的代码，无论@try中是否发生了异常都会被执行</li>
 <li>@try…@catch并不是万能的，不是所有的运行时错误都可以处理的【C语言的异常是无法处理的】，在实际的开发过程中，使用@try用的相对比较少的，避免异常我们最常用的方式还是逻辑判断</li>
 </ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/类方法：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E6%96%B9%E6%B3%95%EF%BC%9A/" class="article-date">
-      <time datetime="2019-09-17T16:00:00.000Z" itemprop="datePublished">2019-09-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E6%96%B9%E6%B3%95%EF%BC%9A/">类方法：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>OC中的方法分为两种：</p>
-<ol>
-<li>对象方法/实例方法：如果想要调用对象方法就必须要先创建对象，通过对象名来调用</li>
-<li>类方法：类方法的调用不依赖于对象，如果要调用类方法，不需要去创建对象，而是直接通过类名来调用</li>
-</ol>
-<p>类方法的声明：【只有“+”“-”号的区别】<br><code>+ (返回值类型)方法名;</code></p>
-<p>调用：[类名 类方法名];（不需要创建对象）</p>
-<p>类方法和对象方法的调用过程：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3l08rmvj30hi0ba75o.jpg"></p>
-<p>类方法的特点：<br>1）节约空间：因为调用类方法不需要创建对象<br>2）提高效率：因为调用类方法不需要拐弯，直接找到类，直接执行类中的类方法</p>
-<p>在类方法中不能直接访问属性（类方法在执行的时候有可能还没有对象，虽然不能直接访问属性，但是我们可以在类方法中创建一个对象，访问这个对象的属性）<br>1）属性是在对象创建的时候，跟随着对象一起创建在对象之中<br>2）类第一次被访问的时候会做类加载，是把类的代码存储在代码段</p>
-<p>在类方法中也不能通过self直接调用当前类的其他的对象方法，因为对象方法只能通过对象来调用，而这个时候没有对象</p>
-<p>在对象方法中可以直接调用类方法</p>
-<p>如果方法不需要直接访问属性也不需要直接调用其他的对象方法，那么我们就可以将这个方法定义为类方法，这样就节约空间提高效率</p>
-<p>关于类方法的规范：<br>1）如果我们写一个类，那么就要求为这个类提供一个和类名同名的类方法，这个方法创建一个最纯洁的对象返回<br>2）如果你希望创建的对象的属性的值由调用者指定，那么就为这个类方法带参数</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/NSString：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSString%EF%BC%9A/" class="article-date">
-      <time datetime="2019-09-16T16:00:00.000Z" itemprop="datePublished">2019-09-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSString%EF%BC%9A/">NSString：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）NSString是一个数据类型，用来保存OC字符串<br>2）NSString是Foundation框架中的一个类，作用是存储OC字符串的，所以OC中的字符串本质上是用NSString对象来存储的</p>
-<p>其实完整的标准的创建NSString对象的方式：<br>NSString *str0=[NSString new];<br>NSString *str1=[NSString string];<br>这种方式创建的字符串是空字符串 @“”</p>
-<p>但是，NSString是我们最常用的一个对象，所以OC使用了一种更为简单的方式来创建字符串对象：直接使用@来表示一个OC字符串<br>@“jack”;(这个其实本质上是一个NSString对象)</p>
-<p>NSString *str=@“jack”;【str的值是这个对象的地址，%p打印的是指针变量的值；%@打印的是指针变量指向的对象】<br>NSString *str1=[NSString stringWithFormat:@“jack”];</p>
-<hr>
-<p>NSString最常用的类方法：</p>
-<ol>
-<li><p><code>+ (instancetype)stringWithUTF8String:(const char *)nullTerminatedCString;</code><br>Instancetype作为返回值，代表返回的是当前这个类的对象<br>作用：将C语言的字符串转换为OC字符串对象</p>
-</li>
-<li><p><code>+ (instancetype)stringWithFormat:(NSString *)format,….</code><br>作用：拼接一个字符串对象，使用变量或者其他数据拼接成OC字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3llywhfj30hj05ctav.jpg"></p>
-</li>
-</ol>
-<hr>
-<p>NSString最常用的对象方法：</p>
-<ol>
-<li><p>length方法，返回值为NSUInteger，其实就是unsigned long<br>得到字符串的字符的个数，可以处理中文<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3lx9vl5j308x044myd.jpg"></p>
-</li>
-<li><p>得到字符串中指定下标的字符<br><code>* (unichar)characterAtIndex:(NSUInteger)index;</code><br>返回值是unichar，其实就是unsinged short，占据两个字节</p>
-</li>
-</ol>
-<p>如果要输出unichar变量的值使用%C(中文输出)<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3m5g3snj309h04ldh3.jpg"></p>
-<ol start="3">
-<li>判断两个字符串的内容是否相同，不要用==去判断，因为这样有可能会出问题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3me1e4aj30co06ywgl.jpg"></li>
-</ol>
-<p>判断相等的方式：<br><code>* (BOOL)isEqualToString:(NSString *)aString;</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3mkylqvj30cr0900v4.jpg"></p>
-<ol start="4">
-<li>比较字符串的大小</li>
-</ol>
-<p><code>* (NSComparisonResult)compare:(NSString *)string;</code><br>完全可以使用int来接收结果，因为返回值是一个枚举<br>返回值如果是-1（小于），0（等于），1（大于）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ms9hzuj308o054gn3.jpg"></p>
 
       
     </div>

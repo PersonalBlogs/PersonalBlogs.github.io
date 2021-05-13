@@ -228,6 +228,160 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/C语言/函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0/" class="article-date">
+      <time datetime="2018-09-22T16:00:00.000Z" itemprop="datePublished">2018-09-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/09/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0/">函数</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>函数：函数是一块代码，接收零个或多个参数，做一件事情，并返回零个或一个值</p>
+<p>循环：同一段代码反复不停的执行<br>重用/复用：有一段代码，多个地方都要执行一次，但是不是反复不停的执行</p>
+<p>定义在函数内部的变量，我们就叫做局部变量<br>定义在函数外部的变量，我们就叫做全局变量，直接定义在源文件下面</p>
+<p>局部变量只能在当前函数的内部访问<br>全局变量从定义的地方开始，后面的所有函数中都可以访问这个全局变量</p>
+<p>声明一个局部变量，如果没有为这个局部变量赋初始值，那么这个局部变量中的值是一个垃圾值；声明一个全局变量，如果没有为这个全局变量赋初始值，那么这个全局变量的初始值为0</p>
+<p>如果全局变量的类型是char类型，并且我们也没有初始化，那么系统就会自动的为这个char变量赋值一个‘\0’，代表一个不可见的字符，这个字符的ASCII码就是0</p>
+<p>CPU执行声明局部变量的那句话的时候，才会在内存中声明局部变量，当作用域结束以后，就会自动回收；程序一启动，就在内存中创建全局变量，程序结束的时候全局变量才会被回收</p>
+<p>可以定义一个和全局变量名称相同的局部变量【不建议】</p>
+<p>声明在函数名称后面的小括弧中的变量就叫做这个函数的参数，参数实际上就是定义在函数内部的局部变量，所以在函数的内部不能再定义一个局部变量的名称和参数的名称一样</p>
+<p>形参：声明在函数名的小括弧中的参数<br>实参：在调用函数的时候，实际上为形参赋的值</p>
+<p>return关键字用在函数体中，在函数体中如果遇到了return关键字，就会立即结束这个函数的执行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotmep4m79j30an091wf6.jpg"></p>
+<p>函数的声明(.h)和实现(.c)</p>
+<p>当我们的程序的函数过多的时候，就要考虑分模块开发，一个模块至少包含两个文件，.h文件专门写函数的声明，.c文件专门写函数的实现 ，其他人想要调用函数，只需要导入头文件就可以了</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C语言/值传递、地址传递" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/09/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%80%BC%E4%BC%A0%E9%80%92%E3%80%81%E5%9C%B0%E5%9D%80%E4%BC%A0%E9%80%92/" class="article-date">
+      <time datetime="2018-09-21T16:00:00.000Z" itemprop="datePublished">2018-09-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/09/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%80%BC%E4%BC%A0%E9%80%92%E3%80%81%E5%9C%B0%E5%9D%80%E4%BC%A0%E9%80%92/">值传递、地址传递</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>值传递：当函数参数的类型是int、float、double、char类型的时候，调用者传入一个实参变量，函数执行完毕之后，对实参变量的值没有影响</p>
+<p>我们来分析下面一段代码：为啥test函数和main函数中num的值不一样呢？？<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffk6urjqj30be0drwfn.jpg"></p>
+<p>程序执行原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffkohma6j314x0r7h0l.jpg"></p>
+<p>地址传递：数组作为函数的参数时是地址传递，在传值的时候，是把实参数组名传递进来，数组名代表数组地址，所以这个时候传值传的是数组的地址，把数组的地址传递给了函数的参数，所以函数的参数也指向了实参数组【当数组作为函数的参数的时候，在函数的内部去修改这个参数数组的元素，其实修改的就是实参数组的元素】</p>
+<p>当数组作为函数的参数的时候，那么在传递的时候，会丢失数组的长度，在函数的内部使用sizeof计算参数数组的字节数，得到的永远都是8<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffl328kkj30mv0eygnk.jpg"></p>
+<p>内部原理：如果函数的参数是一个数组，在声明这个参数的时候，并不会去真正的创建数组，而是去声明一个用来存储数组地址的指针变量，这个指针变量在内存中占据8个字节<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffliqdhdj30j40cqabp.jpg"></p>
+<p>那我们函数内部想要得到原来的数组长度该怎么办呢？？</p>
+<p>如果我们的函数的参数是一个数组，这个时候还必须得加一个参数，让调用者将这个数组的长度传递进来<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffltm3edj30b70c6wfn.jpg"></p>
+<p>如果我们为函数写了一个数组作为参数，其实编译器在编译的时候，已经把这个数组换成了指针【所以，以后为函数写一个数组参数的时候，不要写数组了，直接按照下图写一个指针】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotlugi84bj30an0acwfh.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/C语言/指针作为函数的参数、返回值" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -808,259 +962,6 @@
           
         <hr>
 <p>所有的成员共享一个空间<br>同一时间只有一个成员是有效的<br>union的大小是其最大的成员<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi57et9dj309h0a1my5.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C语言/进制" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%BF%9B%E5%88%B6/" class="article-date">
-      <time datetime="2018-09-12T16:00:00.000Z" itemprop="datePublished">2018-09-13</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%BF%9B%E5%88%B6/">进制</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>C语言可以识别的进制：<br>1）二进制【C语言中如果要写二进制，就加一个0b的前缀】<br>2）八进制【加一个0前缀】<br>3）十进制<br>4）十六进制【加一个0x前缀】</p>
-<p>%d：将整型变量中的数据以十进制的形式输出来<br>%o：将整型变量中的数据以八进制的形式输出来<br>%x：将整型变量中的数据以十六进制的形式输出来</p>
-<p>数码：指的是这个数据的每一位数字<br>数位：数码在这个数中的位置，从右到左依次递增，从0开始<br>基数：就是进制<br>位权：数码*（基数的数位次方）</p>
-<p>进制转换：</p>
-<p>1）十进制转换为二进制(除2取余法)：将这个数除以2，直到商为0，然后将余数倒序 【十进制转换为八进制/十六进制类似】</p>
-<p>2）二进制转换为十进制(加权法)：将这个二进制的每个数码的位权相加【八进制/十六进制转换为十进制类似】</p>
-<p>3）二进制转换为八进制(三合一)：将这个二进制从低位到高位每三个分成一组，高位不够补0，将每一组转换为十进制，将每一组的十进制连起来（二进制转换为十六进制类似）</p>
-<p>4）八进制转换为二进制(一拆三)（十六进制转换为二进制类似）</p>
-<p>5）八进制—&gt;十六进制；八—&gt;二—&gt;十六</p>
-<p>6）十六进制—&gt;八进制：十六—&gt;二—&gt;八</p>
-<p>内存中的数据存储单元是由一个一个的二进制位组成的，每一个二进制位只能存储0或者1；把内存中的八个二进制位分为一组，叫做一个字节，作为存储数据的最小基本单元</p>
-<p>如果要往内存中存储数据的话，就至少要使用一个字节，这时候一个字节最多可以表示256种数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">单位换算：</span><br><span class="line">1字节(byte)=8bit</span><br><span class="line">1KB=1024byte</span><br><span class="line">1MB=1024KB</span><br><span class="line">1GB=1024MB</span><br><span class="line">1TB=1024GB</span><br></pre></td></tr></table></figure>
-
-<p>我们在声明变量的时候，并不是去开辟一块空间，而是向系统在内存中申请一块指定字节数的连续的字节空间</p>
-<p>char——1个字节<br>int——4个字节<br>float—4个字节<br>double—8个字节</p>
-<p>sizeof：计算常量、变量在当前系统上内存中占用的字节数【sizeof(数据类型)、sizeof(变量名)、sizeof(常量) 】</p>
-<p>char类型的变量在内存中占据一个字节，char类型的常量在内存中占据四个字节</p>
-<p>变量在内存中占据的字节数，会因为系统版本、编译器的不同而发生变化</p>
-<p>原码、反码、补码都是二进制，只不过是二进制的不同表现形式，数据是以补码的二进制存储的</p>
-<p>int类型的变量，在内存中占据4个字节，32位，为了可以表示正负性，使用最高位来表示正负，最高位为0，表示正，最高位为1，表示负，所以用来表示数据的只有31位，2^31，最小值为-2147483648，最大值为2147483647</p>
-<p>原码：最高位表示符号位，剩下的位数是这个数的绝对值的二进制<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi69iy5bj307a02ot9e.jpg"></p>
-<p>反码：正数的反码就是其原码，负数的反码就是在其原码的基础之上，符号位不变，其他位取反</p>
-<p>补码：正数的补码就是其原码，负数的补码就是在其反码的基础上+1</p>
-<p>为什么数据要以补码的形式存储呢？因为计算机中只有加法没有减法，为了更加低成本的计算出结果，所以使用补码来存储数据</p>
-<p>位运算指的是一个二进制数据的每一位来参与运算，前提是这个数必须是一个二进制</p>
-<p>注意：<br>1）参与位运算的二进制数据必须是补码形式<br>2）位运算的结果也是二进制的补码形式</p>
-<p>1）按位与(&amp;)：参与按位与的两个二进制数，如果都为1，那么结果就为1，只要有一位为0，那么结果就为0【3 &amp; 2 = 2】</p>
-<p>任何数按位与1的结果是这个数的最低位，偶数的最低位一定是0，奇数的最低位一定是1，所以如果要判断这个数是奇数还是偶数，只要用这个数按位与1就可以了，如果结果为1，那么就是奇数，如果结果为0，那么就是偶数</p>
-<p>2）按位或(|)：参与按位或的二进制数据，只要有一位是1，那么结果就为1，只有当两位都是0的时候结果才为0</p>
-<p>3）按位取反(~)：单目运算符，将这个二进制数的每一位取反</p>
-<p>4）按位异或(^)：参与按位异或的二进制的位，相同为0，不同为1</p>
-<p>交换两个变量的值可以用异或运算</p>
-<p>5）按位左移(&lt;&lt;)：参与按位左移运算的二进制数据，向左移动指定的位数，低位不够补0，高位溢出丢弃【左移运算有可能会改变其正负性；将一个数左移n位，相当于将这个数乘以2的n次方】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi6k91e2j307w02zmxr.jpg"></p>
-<p>6）按位右移(&gt;&gt;)：参与按位右移运算的二进制数据，向右移动指定的位数，低位溢出丢弃，高位补符号位【右移运算不会改变其正负性；将一个数右移n位，相当于将这个数除以2的n次方】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi6ste1mj307c03g3zi.jpg"></p>
-<p>变量的存储：</p>
-<p>变量占用的字节空间一定是连续的，内存中存储数据的最小基本单位是字节，每个字节都有一个独一无二的内存地址，是一个十六进制的数</p>
-<p>在为变量分配字节空间的时候，是从高地址向低地址分配的</p>
-<p>存储在变量中的数据是以数据的二进制补码形式存储进去的【低位存储在低字节，高位存储在高字节】</p>
-<p>变量的地址：</p>
-<p>是组成这个变量的低字节的地址，使用&amp;取地址可以取出变量的地址</p>
-<p>%p：取地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi71lgauj30hv0b2dhy.jpg"></p>
-<p>声明变量就会占用内存空间，实际上程序在运行的时候，并不是说只有我们的代码才会声明变量，系统自己也会在内存中申请空间存储数据</p>
-<p>short int：在内存中占据两个字节【最高位表示符号位，2^15，所以最小值：-32768，最大值：32767】【%hd来输出，%d可能会有问题】</p>
-<p>long short：在32位系统下占4个字节，在64位占8个字节【%ld来输出】</p>
-<p>long long int：在32位和64位下都占据8个字节【%lld来输出】</p>
-<p>unsigned int，2^32，最高位不用来表示符号位了，所以最小值为0【%u来输出】</p>
-<p>unsigned short int【%hu来输出】</p>
-<p>字符数据在内存中存储的是这个字符所对应的ASCII码的二进制补码【实际上就是一个整数，可以用%d输出】</p>
-<p>char变量是一个有符号的，最高位表示符号位</p>
-<p>%c读取的时候，先从变量中读取出存储在变量中的整数，然后再去ASCII码表中去查找这个整数对应的字符，再显示这个字符</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C语言/字符串" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
-      <time datetime="2018-09-11T16:00:00.000Z" itemprop="datePublished">2018-09-12</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<h3 id="字符串数据在C中的存储方式："><a href="#字符串数据在C中的存储方式：" class="headerlink" title="字符串数据在C中的存储方式："></a>字符串数据在C中的存储方式：</h3><p>内存中的五大区域：</p>
-<ol>
-<li>栈：是专门用来存储局部变量的，所有的局部变量都是声明在栈区域中</li>
-<li>堆：允许程序员手动的从堆申请指定字节数的空间来使用</li>
-<li>BSS段：是用来存储未初始化的全局变量和静态变量，声明一个全局变量，如果我们没有初始化，在程序运行最开始的时候，这个全局变量是没有初始化的，存储在BSS段【程序运行后系统就自动的初始化为0，并把初始化后的全局变量存储在数据段中】</li>
-<li>数据段/常量区：用来存储已经初始化的全局变量、静态变量和常量数据</li>
-<li>代码段：用来存储程序的代码/指令</li>
-</ol>
-<p>字符串数据在C语言中有两种存储方式：</p>
-<ol>
-<li><p>使用字符数组来存储：将字符串数据的每一个字符存储到字符数组中，并追加一个’\0’代表存储结束<br><code>char name[]=“jack”;</code></p>
-</li>
-<li><p>使用字符指针来存储字符串数据：直接将一个字符串数据初始化给一个字符指针<br><code>char* name =“jack”;</code></p>
-</li>
-</ol>
-<p>1）当它们都是局部变量的时候：</p>
-<p>字符数组是申请在栈区，字符串的每一个字符存储在这个字符数组的每一个元素中；<br>指针变量是声明在栈区的，字符串数据是以字符数组的形式存储在常量区的，指针变量中存储的是字符串在常量区的地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffrlt05vj30k30ebdgq.jpg"></p>
-<p>2）当它们作为全局变量的时候：</p>
-<p>字符数组是存储在常量区的，字符串的每一个字符存储在这个字符数组的每一个元素中；<br>指针变量也是存储在常量区的，字符串数据是以字符数组的形式存储在常量区的，指针变量中存储的是字符串在常量区的地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffruf6mdj30bb0d20tf.jpg"></p>
-<p>3）<br>以字符数组的形式存储字符串数据，不管是全局的还是局部的，都可以使用下标去修改字符数组中的每一个元素；<br>以字符指针的形式存储字符串数据，不管是全局的还是局部的，都不能通过指针去修改指向的字符串数据</p>
-<p>当我们以字符指针的形式要将字符串数据存储到常量区的时候，并不是直接将字符串存储到常量区，而是先检查常量区中是否有相同内容的字符串，如果有直接将这个字符串的地址拿过来返回，如果没有，才会将这个字符串数据存储在常量区中</p>
-<p>当我们重新为字符指针初始化一个字符串的时候，并不是修改原来的字符串，而是重新的创建了一个字符串，把这个新的字符串的地址赋值给它<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffs2gcrdj30hj0dwmyx.jpg"></p>
-<p>几个比较容易混的点：</p>
-<ol>
-<li><p>这样是可以的，但是不是把“jack”改成了“rose”，而是重新创建了一个“rose”，把“rose”的地址赋值给name<br><code>char *name = &quot;jack&quot;;</code><br><code>name = &quot;rose&quot;;</code></p>
-</li>
-<li><p>这样是不行的，name是数组名，代表数组的地址，不能为数组名赋值<br><code>char name[]=&quot;jack&quot;;</code><br><code>name = &quot;rose&quot;;</code></p>
-</li>
-<li><p>这样做是可以的，直接修改数组的元素<br><code>name[0]=&#39;r&#39;;</code><br><code>name[1]=&#39;o&#39;;</code><br><code>name[2]=&#39;s&#39;;</code><br><code>name[3]=&#39;e&#39;;</code><br><code>name[4]=&#39;\0&#39;;</code></p>
-</li>
-</ol>
-<hr>
-<h3 id="统计字符串中某一个字符出现的次数："><a href="#统计字符串中某一个字符出现的次数：" class="headerlink" title="统计字符串中某一个字符出现的次数："></a>统计字符串中某一个字符出现的次数：</h3><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffsbyo8oj30lt0da75z.jpg"></p>
-<hr>
-<h3 id="使用字符指针数组来存储多个字符串数据："><a href="#使用字符指针数组来存储多个字符串数据：" class="headerlink" title="使用字符指针数组来存储多个字符串数据："></a>使用字符指针数组来存储多个字符串数据：</h3><p>这是一个一维数组，每一个元素的类型是char指针：<br><code>char* names[4] = &#123;&quot;jack&quot;,&quot;rose&quot;,&quot;lily&quot;,&quot;lilei&quot;&#125;;</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffskcpb7j30iw0b00u6.jpg"></p>
-<hr>
-<p>在声明字符数组的同时，如果初始化了部分元素，那么其他的字符会被初始化为’\0’，‘\0’是一个字符，是一个不可见的字符，打印出来啥都没有，这个字符的ASCII码是0</p>
-<p>在C语言中字符串数据必须要用双引号引起来</p>
-<p>C语言中存储字符串数据：将字符串数据的每一个字符存储到字符数组中，并在后面追加一个’\0’代表字符串存储完毕<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi8i55dkj30db05zaap.jpg"></p>
-<p>最根本的方式存储字符串：<br><code>char name[5]=&#123;‘j’,’a’,’c’,’k’,’\0’&#125;;</code></p>
-<p><code>char name[]=&#123;“jack”&#125;;</code><br>系统会自动的将这个字符串中的每一个字符存储到字符数组中，并自动的追加一个’\0’</p>
-<p>最常用的方式：<br><code>char name[]=“jack”;</code></p>
-<p>如果我们使用字符数组存储字符串数据的时候，没有指定这个字符数组的长度，那么这个时候这个字符数组的长度为字符串长度+1</p>
-<p>我们在使用字符数组存储字符串数据的时候，最好不要指定长度了</p>
-<p>如果在声明一个字符数组的同时我们就初始化一个字符数据给这个数组，那么这个时候是可以用中文的【这个字符数组的长度为7，因为一个中文占3个字节】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi8rla1wj3050014jrg.jpg"></p>
-<p>使用格式控制符%s就可以输出存储在字符数组中的字符串数据【%s从给定的数组的地址开始，一个字节一个字节的输出，直到遇到’\0’为止】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi91mct2j3092056gm5.jpg"></p>
-<p>无需&amp;<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi9bfcgxj304n04ijrv.jpg"></p>
-<p>使用scanf函数：<br>1）如果用户输入的字符串数据在给定的字符数组中存储不下的时候，就会运行报错<br>2）用户在输入字符串的时候，如果输入了空格，就会认为输入结束</p>
-<p>不能使用sizeof去计算字符数组的长度来得到字符串的长度，因为有可能字符串数据存储在字符数组中只占了一部分空间<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi9jg8u9j308707xt9x.jpg"><br>解决方法：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi9se9s7j30930bnq4h.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxia1pfybj30h10c741i.jpg"></p>
-<p>字符串常量：<br>“Hello”会被编译器变成一个字符数组放在某处，这个数组的长度是6，结尾还有表示结束的0<br>两个相邻的字符串常量会被自动连接起来</p>
-<p>C语言的字符串是以字符数组的形态存在的，不能用运算符对字符串做运算，通过数组的方式可以遍历字符串，唯一特殊的地方是字符串字面量可以用来初始化字符数组</p>
-<p><code>char *s=“Hello,world!”;</code><br>s是一个指针，初始化为指向一个字符串常量，由于这个常量所在的地方，所以实际上s是const char *s，但是由于历史的原因，编译器接受不带const的写法，但是试图对s所指的字符串做写入会导致严重的后果<br>如果需要修改字符串，应该用数组：char s[]=“Hello,world!”;<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxia9htm4j309h0bbt9t.jpg"><br>数组：这个字符串在这里，作为本地变量空间自动被回收<br>指针：这个字符串不知道在哪里，处理参数，动态分配空间</p>
-<p>如果要构造一个字符串，用数组<br>如果要处理一个字符串，用指针<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiakld2vj30fp0a8tb0.jpg"></p>
-<p>在%和s之间的数字表示最多允许读入的字符的数量，这个数字应该比数组的大小小一<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiasvnmmj30b708cab2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxib200p8j30gr0b2gnl.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxib903fkj30dc0adt9x.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxibg4a5qj30pk06kabt.jpg"></p>
-<h3 id="stdio-h文件："><a href="#stdio-h文件：" class="headerlink" title="stdio.h文件："></a>stdio.h文件：</h3><p>puts()函数：用来输出字符串的【优点是输出完毕之后自动换行，缺点是只能输出字符串，也不能使用占位符】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxibov60sj308c04i0tg.jpg"></p>
-<p>fputs()函数：将字符串数据输出到指定的流中【标准输出流：控制台；文件流：磁盘上的文件】<br>输出到标准输出流中：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxibzbnetj308v04aaaw.jpg"><br>将字符串存储到文件中：<br>1）要先声明一个文件指针，指向磁盘上的文件【fopen函数可以创建一个指向文件的指针】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxicgau45j30cf04ajto.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxicneawlj30cc036jsu.jpg"><br>2）使用fputs()函数将字符串写入到指定的文件流中<br>3）写完之后一定要记得使用fclose()函数将这个文件关闭<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxicvtjlej30dr07o0ue.jpg"></p>
-<p>gets()函数：从控制台接收用户输入一个字符串数据【优点是当用户输入的数据包含空格的时候，会连空格一起接收；缺点是和scanf函数一样不安全，当用来存储字符串的数据的字符数组的长度不够的时候，程序就会崩溃】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxid4nt7oj30cd05rjt7.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxidd0fioj305d068my6.jpg"></p>
-<p>fgets()函数：从指定的流中读取字符串，这个流可以是标准输入流：控制台，也可以是文件流<br>1）从标准输入流中读取数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxidlb0bhj30e701j0tw.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxidswxpij3094049wfb.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxidzv4r0j30hr04ptba.jpg"><br>解决方案：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxie6ulcrj30aa01e3z8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiednglnj308m0aumzb.jpg"><br>2）从文件流中读取数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiekzz5jj30dq09xtby.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxieru4tnj30an03ydgj.jpg"></p>
-<h3 id="string-h头文件：strlen-strcmp-strcpy-strcat-strchr-strstr"><a href="#string-h头文件：strlen-strcmp-strcpy-strcat-strchr-strstr" class="headerlink" title="string.h头文件：strlen,strcmp,strcpy,strcat,strchr,strstr"></a>string.h头文件：strlen,strcmp,strcpy,strcat,strchr,strstr</h3><p>strlen:<br><code>size_t strlen(const char *s);</code><br>返回s的字符串长度（不包括结尾的0）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiezump7j30a00a73zm.jpg"></p>
-<p>strcmp:<br><code>int strcmp(const char *s1,const char *s2);</code><br>比较两个字符串，返回：<br>0:  s1==s2<br>1:   s1&gt;s2<br>-1:  s1&lt;s2<br><code>int strncmp(const char *s1,const char *s2,size_t n);</code>只比较前几个字符<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxifahbiyj30fd0grgo7.jpg"></p>
-<p>strcpy:【存储字符串1的字符数组长度不够，无法存储字符串2，这个时候运行就会崩溃】<br><code>char *strcpy(char *restrict dst,const char *restrict src);</code><br>把src的字符串拷贝到dst，restrict表明src和dst不重叠<br>返回dst,为了能链起代码来</p>
-<p>复制一个字符串：<br><code>char *dst=(char *)malloc(strlen(src)+1);</code><br><code>strcpy(dst,src);</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxigx7as1j30at0f4dh5.jpg"><br>把name2拷贝到name1:<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxih2cxooj30h107idhj.jpg"></p>
-<p>strcat:【接的时候会把第一个字符串后的’\0’干掉】<br><code>char *strcat(char *restrict s1,const char *restrict s2);</code><br>把s2拷贝到s1的后面，接成一个长的字符串<br>返回s1<br>s1必须具有足够的空间</p>
-<p>strcpy,strcat不安全！！</p>
-<p>安全版本：<br><code>char *strncpy(char *restrict dst,const char *restrict src,size_t n);</code><br><code>char *strncat(char *restrict s1,const char *restrict s2,size_t n);</code></p>
-<p>字符串中找字符：<br><code>char *strchr(const char *s,int c);</code><br><code>char *strrchr(const char *s,int c);</code><br>返回NULL表示没有找到<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxihcb8s7j30b90hmjt5.jpg"></p>
-<p>字符串中找字符串：<br><code>char *strstr(const char *s1,const char *s2);</code><br><code>char *strcasestr(const char *s1,const char *s2);</code></p>
 
       
     </div>

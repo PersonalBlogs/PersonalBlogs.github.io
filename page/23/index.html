@@ -228,6 +228,150 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/数据结构、算法笔记/深度优先搜索" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/12/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="article-date">
+      <time datetime="2019-12-14T16:00:00.000Z" itemprop="datePublished">2019-12-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/12/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>深度优先搜索DFS：【与树的先序遍历类似】<br>1）首先访问起始顶点v<br>2）接着由v出发访问v的任意一个邻接且未被访问的邻接顶点wi<br>3）然后再访问与wi邻接且未被访问的任意顶点yi<br>4）若wi没有邻接且未被访问的顶点时，退回到它的上一层顶点v<br>5）重复上述过程，直到所有顶点被访问为止</p>
+<p>借助递归(栈)+辅助标记数组来实现：【邻接矩阵法的DFS(BFS)序列唯一，邻接表法的不唯一】<br>DFS序列：ACDEB<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow9uakq4bj30vz0bwjs1.jpg"></p>
+<p>DFS算法的性能分析：<br>1）空间复杂度：O(|V|)<br>2）时间复杂度：邻接矩阵法O(|V|^2)，邻接表法O(|V|+|E|)</p>
+<p>深度优先生成树：在深度遍历过程中，我们可以得到一棵遍历树，称为深度优先生成树（生成森林）【邻接矩阵法的深度优先生成树唯一，邻接表法的不唯一】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowa1kzpwtj30l208t3yj.jpg"></p>
+<p>遍历与连通性问题：<br>1）在无向图中，在任意结点出发进行一次遍历(调用一次BFS或DFS)，若能访问全部结点，说明该无向图是连通的<br>2）在无向图中，调用遍历函数(BFS或DFS)的次数为连通分量的个数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowa9mwx28j30ek0akt8p.jpg"><br>有向图中上面两个结论都不成立：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowa9z735zj30mb0fsq39.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/最小生成树" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="article-date">
+      <time datetime="2019-12-13T16:00:00.000Z" itemprop="datePublished">2019-12-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>生成树：连通图包含全部顶点的一个极小连通子图</p>
+<p>最小生成树：对于带权无向连通图G=(V,E)，G的所有生成树当中边的权值之和最小的生成树为G的最小生成树（MST）</p>
+<p>性质：<br>1）最小生成树不一定唯一，即最小生成树的树形不一定唯一，当带权无向连通图G的各边权值不等时或G只有结点数-1条边时，MST唯一<br>2）最小生成树的权值是唯一的，且是最小<br>3）最小生成树的边数为顶点数-1</p>
+<p>Prim算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowhea9abpj30w40u0god.jpg"></p>
+<p>时间复杂度：O(|V|^2)，适用于稠密图<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowhfo3re7j30md0gq3za.jpg"></p>
+<p>Kruskal算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowi1mjjyoj30we0u0gos.jpg"></p>
+<p>时间复杂度：O(|E|log|E|)，适用于稀疏图<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowi59pmhwj30l50bamxo.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/数据结构、算法笔记/最短路径" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -769,143 +913,6 @@
 <p>在B树上的查找过程是一个顺指针查找结点和在结点中查找关键码交叉进行的过程。由于B树通常存储在磁盘上，则前一个查找操作是在磁盘上进行，而后一个查找操作是在内存中进行，即在磁盘上找到某结点后，先将结点的信息读入内存,然后再查找等于k的关键码。显然,在磁盘上进行一次查找比在内存中进行一次查找耗费的时间多得多，因此，在磁盘上进行查找的次数，即待查关键码所在结点在B树的层数，是决定B树查找效率的首要因素。</p>
 <p>插入：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxhby9inij30u00vxjx5.jpg"></p>
 <p>删除：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxne0vn82j30xf0u042c.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/B+树" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/B+%E6%A0%91/" class="article-date">
-      <time datetime="2019-12-04T16:00:00.000Z" itemprop="datePublished">2019-12-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/B+%E6%A0%91/">B+树</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>B+树的定义：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxost4zmwj30zs0u0te3.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/散列表的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2019-12-03T16:00:00.000Z" itemprop="datePublished">2019-12-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%95%A3%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">散列表的基本概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>散列函数：一个把查找表中的关键字映射成该关键字对应的地址的函数</p>
-<p>散列表：根据关键字而直接进行访问的数据结构，它建立了关键字与存储地址之间的一种直接映射关系</p>
-<p>在散列技术中，由于记录的定位主要基于散列函数的计算,不需要进行关键码的多次比较，所以，一般情况下,散列技术的查找速度要比基于比较的查找技术的查找速度快。但是，散列技术-般不适用于多个记录有相同关键码的情况，也不适用于范围查找。散列技术最适合回答的问题是:如果有的话，哪个记录的关键码等于待查值。</p>
-<p>冲突(碰撞)：散列函数可能会把多个不同的关键字映射到同一地址下的情况，同一地址下的多个关键字称为同义词</p>
 
       
     </div>

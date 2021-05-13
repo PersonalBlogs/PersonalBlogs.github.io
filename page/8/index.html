@@ -228,6 +228,156 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-操作系统原理/操作系统原理/临界区和锁" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E4%B8%B4%E7%95%8C%E5%8C%BA%E5%92%8C%E9%94%81/" class="article-date">
+      <time datetime="2020-10-24T16:00:00.000Z" itemprop="datePublished">2020-10-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/25/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E4%B8%B4%E7%95%8C%E5%8C%BA%E5%92%8C%E9%94%81/">临界区和锁</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>临界区和锁：</p>
+<p>临界资源：一次只允许一个进程独占访问（使用）的资源（共享变量i）<br>临界区：进程中访问临界资源的程序段<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb77kk8cj30ew06wabj.jpg"></p>
+<p>临界区和临界资源的访问特点：<br>1）具有排他性<br>2）并发进程不能同时进入临界区</p>
+<p>设计临界区访问机制的四个原则：<br>1）忙则等待：当临界区忙时，其他进程必须在临界区外等待<br>2）空闲让进：当无进程处于临界区时，任何有权进程可进入临界区<br>3）有限等待：进程进入临界区的请求应在有限时间内得到满足<br>4）让权等待：等待进程放弃CPU（让其他进程有机会得到CPU）</p>
+<p>锁机制：<br>1）基本原理：设置一个“标志”S，表明临界资源可用还是不可用<br>2）上锁操作：进入临界区之前检查标志是否可用，若为不可用状态，进程在临界区外等待；若为可用状态，访问临界资源，且将标志修改为不可用<br>3）开锁操作：退开临界区时将标志修改为可用状态<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb7hfzw2j30a9087dhq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb7s9wx6j30bz0bsjtf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb7zkqlfj30b108tmzm.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/用正则表达式进行搜索" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%9B%E8%A1%8C%E6%90%9C%E7%B4%A2/" class="article-date">
+      <time datetime="2020-10-23T16:00:00.000Z" itemprop="datePublished">2020-10-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%9B%E8%A1%8C%E6%90%9C%E7%B4%A2/">用正则表达式进行搜索</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>用正则表达式进行搜索</p>
+<p>正则表达式是用来匹配文本的特殊的串（字符集合），正则表达式的作用是匹配文本，将一个模式（正则表达式）与一个文本串进行比较<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortjue6zgj30b90230u8.jpg"></p>
+<p>1）检索列prod_name包含文本1000的所有行<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘1000’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortk1veqij302b01hgln.jpg"></p>
+<p>2）<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘.000’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortkdlt9pj302b01t3yl.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortkm1ewmj30b609kn40.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortkuaajej30b601gab0.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortl0jw5kj30b602ndhp.jpg"></p>
+<p>3）|为正则表达式的OR操作符，它表示匹配其中之一，使用|从功能上类似于在SELECT语句中使用OR语句，多个OR条件可并入单个正则表达式<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘1000|2000’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortl89espj302b01s3yl.jpg"></p>
+<p>4）[123]定义一组字符，它的意思是匹配1或者2或者3，因此，1 ton 和2 ton都匹配且返回（没有 3 ton）,[123] Ton为[1|2|3] Ton的缩写<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘[123] Ton’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortlh9hn8j302601y0st.jpg"></p>
+<p>MySQL假定你的意思是‘1’或‘2’或‘3 ton’，除非你把字符｜括在一个集合中，否则它将应用于整个串<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘1|2|3 Ton’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortlp996wj302d02yweo.jpg"></p>
+<p>[^123]匹配除这些字符外的任何东西</p>
+<p>5）<br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘[1-5] Ton’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortm4jsr9j302d02bmxa.jpg"></p>
+<p>6）.匹配任意字符，因此每个行都被检索出来<br>SELECT vend_name<br>FROM vendors<br>WHERE vend_name REGEXP ‘.’<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortmeuft6j302n03c74i.jpg"></p>
+<p>为了匹配特殊字符，必须用\为前导。\-表示查找-，\.表示查找.<br>SELECT vend_name<br>FROM vendors<br>WHERE vend_name REGEXP ‘\.’<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortmy5lwij302e01ijrf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortoggjl3j309y04hdgj.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortpdzf5sj30b903tdi7.jpg"></p>
+<p>7)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortrj2c90j30bp08y774.jpg"></p>
+<p>8)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortugmffnj30bw089416.jpg"><br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘\([0-9] sticks?\)’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortuypklpj302n01wwel.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortv8r75kj30bk02it9s.jpg"></p>
+<p>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘:digit:{4}’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortvhksbej302c01xq31.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortvpgndlj30bl04sjt0.jpg"></p>
+<p>9)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortvyaf7uj307z03m3yx.jpg"><br>SELECT prod_name<br>FROM products<br>WHERE prod_name REGEXP ‘^[0-9\.]’<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortw7jexzj302c029aa6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortwgb8m3j30bj01sq3k.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortwr6d1hj30bc04i0vr.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortx446h0j30bb03wmzu.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/同步和P-V操作" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -806,152 +956,6 @@
 <p>4）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruiou8d2j30az0310tq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruiwahh3j30b7022dha.jpg"><br>检索总计订单价格大于等于50的订单号和总计订单价格<br>SELECT ordernum,SUM(quantity<em>itemprice) AS ordertotal<br>FROM orderitems<br>GROUP BY order_num<br>HAVING SUM(quantity</em>item_price) &gt;= 50;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruj4enuij303w02l0t0.jpg"></p>
 <p>按总计订单价格排序输出：<br>SELECT ordernum,SUM(quantity<em>itemprice) AS ordertotal<br>FROM orderitems<br>GROUP BY order_num<br>HAVING SUM(quantity</em>item_price) &gt;= 50<br>ORDER BY ordertotal;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujdwe2tj303w02lwer.jpg"></p>
 <p>5）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujldl9kj30a602iq3m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujrvqxej30a602awf1.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/存储管理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" class="article-date">
-      <time datetime="2020-10-19T16:00:00.000Z" itemprop="datePublished">2020-10-20</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/">存储管理</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>存储管理：</p>
-<p>———————————————</p>
-<p>6-1：内存管理功能</p>
-<p>6-2：物理内存管理<br>    6-2-1.分区内存管理<br>    6-2-2.分区放置策略<br>    6-2-3.内存覆盖技术<br>    6-2-4.内存交换技术<br>    6-2-5.内存碎片</p>
-<p>6-3：虚拟内存管理<br>    6-3-1.页式虚拟内存管理概念<br>    6-3-2.页表和页式地址映射<br>    6-3-3.快表技术和页面共享技术<br>    6-3-4.缺页中断<br>    6-3-5.页面淘汰策略<br>    6-3-6.缺页因素与页式系统缺点<br>    6-3-7.段式和段页式虚拟存储</p>
-<p>———————————————</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/使用子查询" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%90%E6%9F%A5%E8%AF%A2/" class="article-date">
-      <time datetime="2020-10-18T16:00:00.000Z" itemprop="datePublished">2020-10-19</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%90%E6%9F%A5%E8%AF%A2/">使用子查询</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>使用子查询</p>
-<p>查询：任何SQL语句都是查询，但此术语一般指SELECT语句</p>
-<p>1）列出订购物品TNT2的所有客户：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorukyg8fej309301xt9b.jpg"></p>
-<p>法1:<br>SELECT order_num<br>FROM orderitems<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorul67nzpj301w01ujrf.jpg"></p>
-<p>SELECT cust_id<br>FROM orders<br>WHERE order_num IN(20005,20007);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruleb7r9j301l01u3yj.jpg"></p>
-<p>SELECT custname,custcontact<br>FROM customers<br>WHERE cust_id IN(10001,10004);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorulm5ilnj304v01v0sy.jpg"></p>
-<p>法2:(在SELECT语句中，子查询总是从内向外处理)<br>SELECT custname,custcontact<br>FROM customers<br>WHERE custid IN(SELECT custid<br>                                FROM orders<br>                                WHERE ordernum IN(SELECT ordernum<br>                                                                      FROM orderitems<br>                                                                      WHERE prod_id=’TNT2’));<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorulw15rfj304v01v0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorum75192j30b801v75m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorumdxayuj30b906rjvl.jpg"></p>
-<p>法3:<br>SELECT custname,custcontact<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>   AND orderitems..ordernum=orders.ordernum<br>   AND prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruml1my3j304v01v0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorumuiofmj30b80340uy.jpg"></p>
-<p>2)显示customers表中每个客户的订单总数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorun2nb6vj30b9015dg7.jpg"><br>SELECT custname,custstate,<br>               (SELECT COUNT(*)<br>                FROM orders<br>                WHERE orders.custid=customers.custid) AS orders<br>FROM customers<br>ORDER BY cust_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorunb3wduj305y02wgm0.jpg"></p>
-<p>相关子查询：涉及外部查询的子查询<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorunjmhcjj30bs0ba422.jpg"></p>
 
       
     </div>

@@ -228,6 +228,142 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/关于block块访问外部变量的值的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%85%B3%E4%BA%8Eblock%E5%9D%97%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
+      <time datetime="2019-07-29T16:00:00.000Z" itemprop="datePublished">2019-07-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%85%B3%E4%BA%8Eblock%E5%9D%97%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/">关于block块访问外部变量的值的问题</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）在block代码块的内部可以取定义在外部的变量的值，包括定义在外部的局部变量和全局变量<br>2）在block代码块的内部可以修改全局变量的值，但是不能修改定义在外部的局部变量的值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4l9a64rj307v091mz1.jpg"><br>3）如果你希望我们定义的局部变量可以允许在block代码的内部去修改，那么就为这个局部变量加一个__block(两个下划线)的修饰符<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4lhnhysj307v01c0sv.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/block作为函数的参数：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-28T16:00:00.000Z" itemprop="datePublished">2019-07-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A/">block作为函数的参数：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>定义：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4m5ef33j307v05xta6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4maxin7j307v05x402.jpg"></p>
+<p>调用：<br>1）如果要调用的函数的参数是block类型的，那么要求在调用的时候传入一个和形参block要求的代码段<br>2）调用的时候，可以先将代码段存储到一个block变量中，然后再传递这个block变量；也可以直接将符合要求的代码段写在小括弧中传递<br>3）小技巧：通过Xcode提示可以快速的生成block代码段的框架<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4mhp6yxj30860cj0v8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4mq35tjj30et0brtbg.jpg"></p>
+<p>将block作为函数的参数可以实现什么效果：可以将调用者自己写的一段代码传递到函数的内部去执行</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/应用实例：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -759,155 +895,6 @@
         <hr>
 <p>框架：苹果或者第三方事先写好了一些功能很厉害的类，把这些类交给我们使用，这些类的集合我们叫做框架</p>
 <p>Foundation框架：是一个包，这里面有很多类、函数、定义了一些数据类型，这个框架中的类都是一些最基础的类(NSString、NSObject)，其他的框架都是基于Foundation框架的</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/NSString类：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSString%E7%B1%BB%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-19T16:00:00.000Z" itemprop="datePublished">2019-07-20</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSString%E7%B1%BB%EF%BC%9A/">NSString类：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>NSString是一个数据类型，保存OC字符串的，实际上NSString的本质是一个类<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4rhv2ywj3081022756.jpg"><br>使用这种方式创建的字符串是一个空的字符@“”</p>
-<p>当我们调用NSString的类方法来创建对象的时候，创建的字符串对象是存储在堆区</p>
-<p>OC提供了一种更为快速的创建字符串对象的方式，使用前缀@</p>
-<p>@“jack”;<br>本质上这是一个NSString对象，这个NSString对象中存储的是”jack”这个字符串，这个字符串对象是存储在常量区（数据段）的</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4rpku0sj30gi096mye.jpg"></p>
-<p>NSString的恒定性：当在内存中创建一个字符串对象以后，这个字符串对象的内容就无法更改，当我们重新为字符串指针初始化值的时候，并不是修改原来的字符串对象，而是重新的创建一个字符串对象，将这个字符串对象的地址重新赋值给字符串指针变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4rxdc8kj30eg0ae756.jpg"></p>
-<p>当系统准备要在内存中创建字符串对象的时候，会先检查内存中是否有相同内容的字符串对象，如果有直接指向，如果没有才会重新创建</p>
-<p>存储在常量区的数据不会被回收，所以存储在常量区的字符串对象也不会被回收【堆区也一样】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4s4r2d6j30ck08tdjc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4scarf2j30dj09i77o.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/字符串对象常用方法：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-18T16:00:00.000Z" itemprop="datePublished">2019-07-19</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A/">字符串对象常用方法：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）使用拼接的方式创建一个NSString对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4syggh6j30g8033jsk.jpg"><br>2）得到字符串的长度<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4t5fjwdj307001i3ys.jpg"><br>3）得到字符串中指定下标的字符<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4tdcp6rj307x01iaam.jpg"><br>4）判断两个字符串的内容是否相等【不能使用==去比较，因为==比较的是字符串指针变量的值，而我们要比的是两个字符串指针指向的字符串对象的内容是否相同】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4tl3zi6j30bc05n40g.jpg"><br>5）将C语言的字符串转换为OC字符串对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4trsvb6j30b8047wfp.jpg"><br>6）将OC字符串对象转换为C语言的字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ty3h0jj309h02pwf4.jpg"></p>
-<p>7）将字符串内容写入到磁盘上的某一个文件之中</p>
-<p>参数1:将字符串内容写入到哪一个文件之中，写上文件的路径</p>
-<p>参数2:YES，先将内容写入到一个临时文件，如果成功再将这个文件搬到指定的目录【安全，效率低】；NO，直接将内容写入到指定的文件【不安全，效率高】；推荐使用NO</p>
-<p>参数3:指定写入的时候使用的编码</p>
-<p>参数4:二级指针，要传递一个NSError指针的地址，<br>如果写入成功，这个指针的值就是nil，如果写入失败，这个指针就会指向一个错误的对象，这个对象描述了发生错误的信息【这个对象的localizedDescription方法可以得到发生错误的简要信息】，所以我们要判断是否写入成功，也可以判断这个指针的值是否为nil</p>
-<p>如果不想知道发生错误的原因，那么第四个参数给nil就可以了</p>
-<p>返回值是BOOL类型的，代表是否写入成功<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4u5a1g9j30it093jtr.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ucm95tj30ls0b7q8f.jpg"></p>
-<p>8）从磁盘上的文件中读取文件中的内容<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4uk68hpj30kp09tjuv.jpg"></p>
 
       
     </div>

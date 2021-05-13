@@ -228,6 +228,153 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/C实例/任意正数的逆序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BB%BB%E6%84%8F%E6%AD%A3%E6%95%B0%E7%9A%84%E9%80%86%E5%BA%8F/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BB%BB%E6%84%8F%E6%AD%A3%E6%95%B0%E7%9A%84%E9%80%86%E5%BA%8F/">任意正数的逆序</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln644fyezj30my0atmyp.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln64be0nuj309i0ba758.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln64j7vtgj30bb0g075t.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/C实例/使用公式打印下列华氏温度与摄氏温度对照表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BD%BF%E7%94%A8%E5%85%AC%E5%BC%8F%E6%89%93%E5%8D%B0%E4%B8%8B%E5%88%97%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E4%B8%8E%E6%91%84%E6%B0%8F%E6%B8%A9%E5%BA%A6%E5%AF%B9%E7%85%A7%E8%A1%A8/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BD%BF%E7%94%A8%E5%85%AC%E5%BC%8F%E6%89%93%E5%8D%B0%E4%B8%8B%E5%88%97%E5%8D%8E%E6%B0%8F%E6%B8%A9%E5%BA%A6%E4%B8%8E%E6%91%84%E6%B0%8F%E6%B8%A9%E5%BA%A6%E5%AF%B9%E7%85%A7%E8%A1%A8/">使用公式打印下列华氏温度与摄氏温度对照表</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><strong>1</strong>）**#include&lt;stdio.h&gt;**<br><strong>//<strong>程序中允许出现空格、制表符或换行符之处，都可以使用注释</strong>//<strong>当</strong>fahr=0,20,…,300</strong>时，分别打印华氏温度和摄氏温度对照表<strong>main(){</strong><br>**    int fahr,celsius;**<br>**    int lower,upper,step;**</p>
+<p>**    lower=0;//<strong>温度表的下限</strong>    upper=300;//<strong>温度表的上限</strong>    step=20;//<strong>步长<br>**    fahr=lower;</strong><br>**    while(fahr&lt;=upper){**<br>**        celsius=5 * (fahr-32) / 9;   //    5 / 9=0**<br>**        printf(“%3d\t%6d\n”,fahr,celsius);**<br>**        fahr=fahr+step;**<br>**    }**<br><strong>}</strong></p>
+<p><strong>2</strong>）**#include&lt;stdio.h&gt;**<br><strong>main(){</strong><br>**    float fahr,celsius;**<br>**    int lower,upper,step;**</p>
+<p>**    lower=0;//<strong>温度表的下限</strong>    upper=300;//<strong>温度表的上限</strong>    step=20;//<strong>步长<br><strong>//%3.0f</strong>表明待打印的浮点数（即</strong>fahr<strong>）至少占</strong>3<strong>个字符宽，且不带小数点和小数部分；</strong>%6.1f<strong>表明另一个待打印的数（</strong>celsius<strong>）至少占</strong>6<strong>个字符宽，且小数点后面有</strong>1<strong>位数字。</strong>    //<strong>格式说明可以省略宽度和精度，例如，</strong>%6f<strong>表示待打印的浮点数至少有</strong>6<strong>个字符宽；</strong>%.2f<strong>指定待打印的浮点数的小数点后有两位小数，但宽度没有限制；</strong>%f<strong>则仅仅要求按照浮点数打印该数</strong>    fahr=lower;**<br>**    while(fahr&lt;=upper){**<br>**        celsius=(5.0/9.0)<em>(fahr-32.0);*</em><br>**        printf(“%3.0f %6.1f\n”,fahr,celsius);**<br>**        fahr=fahr+step;**<br>**    }**<br><strong>}</strong></p>
+<p><strong>3</strong>）修改温度转换程序，使之能在转换表的顶部打印一个标题**#include&lt;stdio.h&gt;**<br><strong>main(){</strong><br>**    float fahr,celsius;**<br>**    int lower,upper,step;**</p>
+<p>**    lower=0;//<strong>温度表的下限</strong>    upper=300;//<strong>温度表的上限</strong>    step=20;//<strong>步长<br>**    printf(“Fahr Celsius\n”);</strong><br>**    fahr=lower;**<br>**    while(fahr&lt;=upper){**<br>**        celsius=(5.0/9.0)<em>(fahr-32.0);*</em><br>**        printf(“%3.0f %6.1f\n”,fahr,celsius);**<br>**        fahr=fahr+step;**<br>**    }**<br><strong>}</strong></p>
+<p><strong>4</strong>）编写一个程序打印摄氏温度转换为相应华氏温度的转换表**#include&lt;stdio.h&gt;**<br><strong>main(){</strong><br>**    float fahr,celsius;**<br>**    int lower,upper,step;**</p>
+<p>**    lower=0;//<strong>温度表的下限</strong>    upper=300;//<strong>温度表的上限</strong>    step=20;//<strong>步长<br>**    printf(“Celsius Fahr\n”);</strong><br>**    celsius=lower;**<br>**    while(celsius&lt;=upper){**<br>**        fahr=(9.0<em>celsius)/5.0</em>32.0;**<br>**        printf(“%3.0f %6.1f\n”,celsius,fahr);**<br>**        celsius=celsius+step;**<br>**    }**<br><strong>}</strong></p>
+<p><strong>5</strong>）使用<strong>for</strong>循环打印华氏温度**-<strong>摄氏温度对照表</strong>#include&lt;stdio.h&gt;**<br><strong>main(){</strong><br>**    int fahr;**</p>
+<p>**    for(fahr=0;fahr&lt;=300;fahr=fahr+20)**<br>**        printf(“%3d %6.1f\n”,fahr,(5.0/9.0)<em>(fahr-32));*</em><br><strong>}</strong><br><strong>//<strong>在允许使用某种类型变量值的任何场合，都可以使用该类型的更复杂的表达式。因为</strong>printf</strong>函数的第三个参数必须是与**%6.1f**匹配的浮点值，所以可以在此处使用任何浮点表达式<br>6）修改温度转换程序，要求以逆序（即按照从300度递减到0度的顺序）打印温度转换表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">main()&#123;</span><br><span class="line">    int fahr;</span><br><span class="line">    </span><br><span class="line">    for(fahr=300;fahr&gt;=0;fahr=fahr-20)</span><br><span class="line">        printf(“%3d %6.1f\n”,fahr,(5.0/9.0)*(fahr-32));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>7）符号常量【<code># define</code>指令可以把符号名（或称为符号常量）定义为一个特定的字符串（#define 名字 替换文本），名字与普通变量名的形式相同，它们都是以字母打头的字母和数字序列；替换文本可以是任何字符序列，而不仅限于数字】</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">#define LOWER 0//表的下限</span><br><span class="line">#define UPPER 300//表的上限</span><br><span class="line">#define STEP 29//步长</span><br><span class="line">main()&#123;</span><br><span class="line">    int fahr;</span><br><span class="line">    </span><br><span class="line">    for(fahr=LOWER;fahr&lt;=UPPER;fahr=fahr+STEP)</span><br><span class="line">        printf(“%3d %6.1f\n”,fahr,(5.0/9.0)*(fahr-32));</span><br><span class="line">&#125;</span><br><span class="line">//符号常量名通常用大写字母拼写，这样可以很容易与用小写字母拼写的变量名相区别</span><br><span class="line">//其中，LOWER，UPPER与STEP都是符号常量，而非变量，因此不需要出现在声明中。【注意，#define指令行的末尾没有分号】</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/C实例/产生不重复的随机数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -771,214 +918,6 @@
 <p>统计各个数字、空白符（包括空格符、制表符及换行符）以及所有其他字符出现的次数：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kuwd0fwj30ng0j1773.jpg"></p>
 <p>源代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//统计各个数字、空白符（包括空格符、制表符及换行符）以及所有其他字符出现的次数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> c,i,nwhite,nother;</span><br><span class="line">	<span class="comment">//数组下标可以是任何整型表达式、包括整型变量（如i）以及整型常量</span></span><br><span class="line">	<span class="keyword">int</span> ndigit[<span class="number">10</span>];<span class="comment">//C语言中，数组下标总是从0开始</span></span><br><span class="line">	</span><br><span class="line">	nwhite=nother=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)&#123;</span><br><span class="line">		ndigit[i]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="keyword">if</span>(c &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; c&lt;= <span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">			++ndigit[c-<span class="string">&#x27;0&#x27;</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27; &#x27;</span> || c==<span class="string">&#x27;\n&#x27;</span> ||c==<span class="string">&#x27;\t&#x27;</span>)&#123;</span><br><span class="line">			++nwhite;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			++nother;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;digit=&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>,ndigit[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;,white space=%d,other=%d\n&quot;</span>,nwhite,nother);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/序列前n项和：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%BA%8F%E5%88%97%E5%89%8Dn%E9%A1%B9%E5%92%8C%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%BA%8F%E5%88%97%E5%89%8Dn%E9%A1%B9%E5%92%8C%EF%BC%9A/">序列前n项和：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kq2v2mfj30au0azmxy.jpg"><br>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// f(n)=1+1/2+1/3+1/4+...+1/n</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n,i;</span><br><span class="line">    <span class="keyword">double</span> sum=<span class="number">0.0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        sum+=<span class="number">1.0</span>/i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;f(%d)=%f\n&quot;</span>,n,sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kqedk30j30au0bqmy2.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// f(n)=1-1/2+1/3-1/4+...+1/n</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n,i;</span><br><span class="line">    <span class="keyword">double</span> sum=<span class="number">0.0</span>;</span><br><span class="line">    <span class="keyword">int</span> sign=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        sum+=sign*<span class="number">1.0</span>/i;</span><br><span class="line">        sign=-sign;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;f(%d)=%f\n&quot;</span>,n,sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>3）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kqquddhj30ms0e2myp.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算序列2/1+3/2+5/3+8/5+...的前N项之和，注意该序列从第2项起，每一项的分子是前一项分子与分母的和，分母是前一项的分子</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">double</span> dividend=<span class="number">2</span>,divisor=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">double</span> sum=<span class="number">0.0</span>;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">double</span> t;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        sum+=dividend/divisor;</span><br><span class="line">        t=dividend;</span><br><span class="line">        dividend=dividend+divisor;</span><br><span class="line">        divisor=t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2f\n&quot;</span>,sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/学生管理系统" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">学生管理系统</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><strong>//</strong><br><strong>//  main.c</strong><br><strong>//<strong>学生系统</strong>//</strong><br><strong>//  Created by</strong>廖家龙<strong>on 2020/6/15.</strong><br><strong>//  Copyright © 2020 liuyuecao. All rights reserved.</strong><br><strong>//</strong></p>
-<p><strong>#include &lt;stdio.h&gt;</strong><br><strong>#include &lt;string.h&gt;</strong><br><strong>#include &lt;stdlib.h&gt;</strong></p>
-<p><strong>#define NUM 20</strong></p>
-<p><strong>//<strong>性别枚举，表示学员的性别</strong>typedef enum{</strong><br>**    GenderMale,**<br>**    GenderFemale**<br><strong>} Gender;</strong></p>
-<p><strong>//<strong>学生结构体，表示一个学生数据</strong>typedef struct{</strong><br>**    int id;//<strong>学生编号</strong>    char <em>name;//<strong>学生姓名</strong>    int age;//<strong>学生年龄</strong>    Gender gender;//<strong>学生性别</strong>    int score;//<strong>学生成绩</strong>} Student;</em>*</p>
-<p><strong>//<strong>结构体数组，这个数组中存储的是</strong>10</strong>个学生的信息<strong>Student students[NUM]={</strong><br>**    {1,”jack”,18,GenderMale,100},**<br>**    {2,”rose”,21,GenderFemale,45},**<br>**    {3,”lily”,26,GenderFemale,23},**<br>**    {4,”jim1”,12,GenderMale,89},**<br>**    {5,”poly”,3,GenderMale,67},**<br>**    {6,”meimei”,19,GenderFemale,89},**<br>**    {7,”likai”,31,GenderMale,88},**<br>**    {8,”Qiang”,45,GenderMale,12},**<br>**    {9,”aDong”,29,GenderMale,76},**<br>**    {10,”asan”,35,GenderMale,91},**<br><strong>};</strong></p>
-<p><strong>//<strong>代表数组中真正的存储了多少个学生的信息</strong>int realLength=10;</strong></p>
-<p><strong>//<strong>显示一级菜单，并接收用户的选择</strong>int showMenu();</strong></p>
-<p><strong>//<strong>查询学生</strong>void query();</strong></p>
-<p><strong>//<strong>新增学生</strong>void addStudent();</strong></p>
-<p><strong>//<strong>删除学生</strong>void deleteStudent();</strong></p>
-<p><strong>//<strong>修改学生</strong>void modifyStudent();</strong></p>
-<p><strong>//<strong>显示查询的二级菜单</strong>int showQueryMenu();</strong></p>
-<p><strong>//<strong>查询所有的学生信息</strong>void queryAll();</strong></p>
-<p><strong>//<strong>根据编号查询</strong>void queryById();</strong></p>
-<p><strong>//<strong>根据姓名查询</strong>void queryByName();</strong></p>
-<p><strong>//<strong>根据年龄查询</strong>void queryByAge();</strong></p>
-<p><strong>//<strong>根据性别查询</strong>void queryByGender();</strong></p>
-<p><strong>//<strong>根据成绩查询</strong>void queryByScore();</strong></p>
-<p><strong>int main(int argc, const char * argv[]) {</strong></p>
-<p>**    while(1){**</p>
-<p>**    //1.<strong>显示操作菜单，并接收用户的选择</strong>    int userSelect=showMenu();**</p>
-<p>**    //2.<strong>判断用户的选择，根据用户的选择来做不同的事情</strong>    switch (userSelect) {**<br>**        case 1:**<br>**            //<strong>查询学生</strong>            query();**<br>**            break;**<br>**         case 2:**<br>**            //<strong>新增学生</strong>            addStudent();**<br>**            break;**<br>**         case 3:**<br>**            //<strong>删除学生</strong>            deleteStudent();**<br>**            break;**<br>**         case 4:**<br>**            //<strong>修改学生</strong>            modifyStudent();**<br>**            break;**<br>**        default:**<br>**            //<strong>结束程序</strong>            break;**<br>**    }**<br><strong>}</strong><br><strong>}</strong></p>
-<p><strong>//<strong>显示一级菜单，并接收用户的选择</strong>int showMenu(){</strong><br>**    //1.<strong>显示菜单</strong>    printf(“<strong><strong><strong><strong><strong><strong><strong><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><strong><em><strong><strong>\n”);</strong><br>**    printf(“</strong></em>欢迎使用学生管理系统</strong></em>\n”);</strong><br>**    printf(“</em>              1.<strong>查询学生</strong></em>\n”);</strong><br>**    printf(“</em>              2.<strong>新增学生</strong></em>\n”);</strong><br>**    printf(“</em>              3.<strong>删除学生</strong></em>\n”);</strong><br>**    printf(“</em>              4.<strong>修改学生</strong></em>\n”);</strong><br>**    printf(“</em>              5.<strong>退出系统</strong></em>\n”);</strong><br>**    printf(“</strong></strong></strong></strong></strong></strong>*******************************</strong>\n”);**<br>**    //<strong>接收用户的选择</strong>    printf(“<strong>请输入你的选择：</strong>”);**<br>**    int userSelect=0;**<br>**    scanf(“%d”,&amp;userSelect);**<br>**    //3.<strong>将用户的选择返回</strong>    return userSelect;**<br><strong>}</strong></p>
-<p><strong>//<strong>查询学生</strong>void query(){</strong></p>
-<p>**    //1.<strong>显示查询的二级菜单，并接收用户的选择</strong>    int userSelect=showQueryMenu();**<br>**    //2.<strong>判断用户的选择，根据用户的选择作出不同的查询</strong>    switch (userSelect) {**<br>**        case 1:**<br>**            //<strong>查询所有学生信息</strong>            queryAll();**<br>**            break;**<br>**         case 2:**<br>**            //<strong>根据编号查询</strong>            queryById();**<br>**            break;**<br>**         case 3:**<br>**            //<strong>根据姓名查询</strong>            queryByName();**<br>**            break;**<br>**         case 4:**<br>**            //<strong>根据年龄查询</strong>            queryByAge();**<br>**            break;**<br>**         case 5:**<br>**            //<strong>根据性别查询</strong>            queryByGender();**<br>**            break;**<br>**        default:**<br>**            //<strong>根据成绩查询</strong>            queryByScore();**<br>**            break;**<br>**    }**<br><strong>}</strong></p>
-<p><strong>//<strong>显示查询的二级菜单</strong>int showQueryMenu(){</strong></p>
-<p>**    //1.<strong>显示查询的二级菜单</strong>    printf(“<em><strong><strong><strong><strong><strong><strong><strong><strong><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><strong><em><strong><strong>\n”);</strong><br>**    printf(“</strong></em>欢迎使用学生管理系统</strong></em>\n”);</strong><br>**    printf(“</em>              1.<strong>查询所有学生信息</strong></em>\n”);</strong><br>**    printf(“</em>              2.<strong>根据编号查询</strong></em>\n”);</strong><br>**    printf(“</em>              3.<strong>根据姓名查询</strong></em>\n”);</strong><br>**    printf(“</em>              4.<strong>根据年龄查询</strong></em>\n”);</strong><br>**    printf(“</em>              5.<strong>根据性别查询</strong></em>\n”);</strong><br>**    printf(“</em>              6.<strong>根据成绩查询</strong></em>\n”);</strong><br>**    printf(“</strong></strong></strong></strong></strong></strong></strong></strong>**********************************</em>\n”);**</p>
-<p>**    //2.<strong>接收用户的选择</strong>    printf(“<strong>请输入你要进行的查询编号：</strong>”);**<br>**    int userSelect=0;**<br>**    scanf(“%d”,&amp;userSelect);**<br>**    //3.<strong>返回用户的选择</strong>    return userSelect;**<br><strong>}</strong></p>
-<p><strong>//<strong>新增学生</strong>void addStudent(){</strong><br>**    //1.<strong>输入要新增的学生的信息</strong>    //<strong>编号不输入，让系统自动生成<br>**    //1.1.<strong>先输入姓名</strong>    printf(“</strong>请输入新增的学生的姓名：<strong>”);</strong></p>
-<p>**    char name1[10];**</p>
-<p>**    rewind(stdin);**</p>
-<p>**    fgets(name1,10,stdin);**<br>**    size_t len=strlen(name1);**</p>
-<p>**    if(name1[len-1] == ‘\n’){**<br>**        name1[len-1]=‘\0’;**<br>**    }**</p>
-<p>**    char <em>name=calloc(len+1,sizeof(char));*</em><br>**    strcpy(name, name1);**</p>
-<p>**    //1.2.<strong>输入年龄</strong>    printf(“<strong>请输入新增的学生的年龄：</strong>”);**<br>**    int age =0;**<br>**    scanf(“%d”,&amp;age);**</p>
-<p>**    //1.3.<strong>输入性别</strong>    printf(“<strong>请输入新增的学生的性别：</strong>0—&gt;<strong>男</strong>0—&gt;<strong>女</strong>”);**<br>**    int gender =0;**<br>**    scanf(“%d”,&amp;gender);**</p>
-<p>**    //1.4.<strong>输入成绩</strong>    printf(“<strong>请输入新增的学生的成绩：</strong>”);**<br>**    int score =0;**<br>**    scanf(“%d”,&amp;score);**</p>
-<p>**    //2.<strong>创建结构体变量</strong>    Student stu={students[realLength-1].id+1,name,age,gender,score};**</p>
-<p>**    //3.<strong>将输入的学生的信息保存在数组中</strong>    students[realLength]=stu;**<br>**    realLength++;**<br><strong>}</strong></p>
-<p><strong>//<strong>删除学生</strong>void deleteStudent(){</strong></p>
-<p>**    printf(“<strong>请输入要删除的学生的编号：</strong>”);**<br>**    int id=0;**<br>**    scanf(“%d”,&amp;id);**</p>
-<p>**    int deleteIndex=-1;**<br>**    for(int I=0;i&lt;realLength;i++){**<br>**        if(students[I].id==id){**<br>**            deleteIndex=I;**<br>**            break;**<br>**        }**<br>**    }**</p>
-<p>**    if(deleteIndex==-1){**<br>**        printf(“<strong>你输入的编号有误</strong>”);**<br>**        return;**<br>**    }**</p>
-<p>**    for(int I=deleteIndex+1;i&lt;realLength;i++){**<br>**        students[i-1]=students[I];**<br>**    }**</p>
-<p>**    realLength—;**</p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>修改学生</strong>void modifyStudent(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>查询所有的学生信息</strong>void queryAll(){</strong></p>
-<p>**    printf(“<strong>编号</strong>\t\t<strong>姓名</strong>\t\t<strong>年龄</strong>\t\t<strong>性别</strong>\t\t<strong>成绩</strong>\t\t\n”);**</p>
-<p>**    for(int I=0;i&lt;realLength;i++){**</p>
-<p>**        printf(“%d\t\t%s\t\t%d\t\t%s\t\t%d\n”,**<br>**               students[I].id,**<br>**               students[I].name,**<br>**               students[I].age,**<br>**               students[I].gender==GenderMale ? “<strong>男</strong>”:”<strong>女</strong>”,**<br>**               students[I].score**<br>**               );**<br>**    }**</p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据编号查询</strong>void queryById(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据姓名查询</strong>void queryByName(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据年龄查询</strong>void queryByAge(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据性别查询</strong>void queryByGender(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据成绩查询</strong>void queryByScore(){</strong></p>
-<p>**    //1.<strong>让用户输入一个最小成绩，再让用户输入一个最大成绩</strong>    int min=0,max=0;**<br>**    printf(“<strong>请输入最小成绩和最大成绩，使用空格分隔：</strong>”);**<br>**    scanf(“%d%d”,&amp;min,&amp;max);**</p>
-<p>**    //3.<strong>打印</strong>    printf(“<strong>编号</strong>\t\t<strong>姓名</strong>\t\t<strong>年龄</strong>\t\t<strong>性别</strong>\t\t<strong>成绩</strong>\t\t\n”);**</p>
-<p>**    for(int I=0;i&lt;realLength;i++){**<br>**        if(students[I].score &gt;= min &amp;&amp; students[I].score &lt;= max){**<br>**            printf(“%d\t\t%s\t\t%d\t\t%s\t\t%d\n”,**<br>**               students[I].id,**<br>**               students[I].name,**<br>**               students[I].age,**<br>**               students[I].gender==GenderMale ? “<strong>男</strong>”:”<strong>女</strong>”,**<br>**               students[I].score**<br>**            );**<br>**        }**<br>**    }**</p>
-<p><strong>}</strong></p>
-
       
     </div>
     

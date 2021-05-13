@@ -228,6 +228,154 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/数据结构、算法笔记/串的存储结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="article-date">
+      <time datetime="2020-01-03T16:00:00.000Z" itemprop="datePublished">2020-01-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">串的存储结构</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>串的顺序存储：【默认使用方案四】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gonwq62wcbj31ac0r1juc.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gonwryrdbvj30f20fgwgm.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAXIEN 255  //预定义最大串长为255</span><br><span class="line"></span><br><span class="line">//静态数组实现(定长顺序存储)</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char ch[MAXIEN];  //每个分量存储一个字符</span><br><span class="line">    int length;  //串的实际长度</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line">//动态数组实现(堆分配存储)</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char *ch;  //按串长分配存储区，ch指向串的基地址</span><br><span class="line">    int length;  //串的长度</span><br><span class="line">&#125;HString;</span><br><span class="line"></span><br><span class="line">//初始化动态数组</span><br><span class="line">void Init(HString *S)&#123;</span><br><span class="line">    </span><br><span class="line">    S-&gt;ch=(char *)malloc(MAXIEN * sizeof(char));  //用完需要手动free</span><br><span class="line">    S-&gt;length=0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    </span><br><span class="line">    HString S;</span><br><span class="line">    Init(&amp;S);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>串的基本操作实现：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goob7yygk1j30ik0xoadi.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAXIEN 255  //预定义最大串长为255</span><br><span class="line"></span><br><span class="line">//静态数组实现(定长顺序存储)</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char ch[MAXIEN];  //每个分量存储一个字符</span><br><span class="line">    int length;  //串的实际长度</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line">//基本操作的实现</span><br><span class="line">//1.求子串：用Sub返回串S的第pos个字符起长度为len的子串</span><br><span class="line">bool SubString(SString *Sub,SString *S,int pos,int len)&#123;</span><br><span class="line">    //子串范围越界</span><br><span class="line">    if(pos+len-1 &gt; S-&gt;length)&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=pos-1;i&lt;pos+len-1;i++)&#123;</span><br><span class="line">        Sub-&gt;ch[i-pos+1]=S-&gt;ch[i];</span><br><span class="line">    &#125;</span><br><span class="line">    Sub-&gt;length=len;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//2.比较操作：若S&gt;T，则返回值&gt;0；若S=T，则返回值=0；若S&lt;T，则返回值&lt;0</span><br><span class="line">int StrCompare(SString *S,SString *T)&#123;</span><br><span class="line">    for(int i=1;i&lt;=S-&gt;length &amp;&amp; i&lt;=T-&gt;length;i++)&#123;</span><br><span class="line">        if(S-&gt;ch[i] != T-&gt;ch[i])&#123;</span><br><span class="line">            return S-&gt;ch[i]-T-&gt;ch[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //扫描过的所有字符都相同，则长度长的串更大</span><br><span class="line">    return S-&gt;length-T-&gt;length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//求串长，返回串S的元素个数[未完成代码]</span><br><span class="line">int StrLength(SString *S)&#123;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//3.定位操作，若主串S中存在与串T值相同的子串，则返回它在主串S中第一次出现的位置，否则函数值为0</span><br><span class="line">int Index(SString *S,SString *T)&#123;</span><br><span class="line">    int i=1,n=StrLength(S),m=StrLength(T);</span><br><span class="line">    SString sub;  //用于暂存字符串</span><br><span class="line">    while(i&lt;=n-m+1)&#123;</span><br><span class="line">        SubString(&amp;sub, S, i, m);</span><br><span class="line">        if(StrCompare(&amp;sub, T) != 0)&#123;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return i;  //返回子串在主串中的位置</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;  //S中不存在与T相等的子串</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    SString S=&#123;&quot;hello world!&quot;,12&#125;;</span><br><span class="line">    </span><br><span class="line">    SString Sub=&#123;&quot;&quot;,0&#125;;  //初始化时清空数组</span><br><span class="line">    if(SubString(&amp;Sub, &amp;S, 3, 5))&#123;</span><br><span class="line">        printf(&quot;%s\n&quot;,Sub.ch);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>串的链式存储：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gonwzq5qfqj30dp076jsb.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/串的朴素模式匹配算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E6%9C%B4%E7%B4%A0%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/" class="article-date">
+      <time datetime="2020-01-02T16:00:00.000Z" itemprop="datePublished">2020-01-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E6%9C%B4%E7%B4%A0%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/">串的朴素模式匹配算法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>一定是主串中存在的才叫“子串”</p>
+<p>模式串：想尝试在主串中找到的串，未必存在</p>
+<p>串的模式匹配：在主串中找到与模式串相同的子串，并返回其所在位置【就是定位操作】</p>
+<p>朴素模式匹配算法：</p>
+<p>【比较好的情况：每个子串的第一个字符就与模式串不匹配，若模式串长度为m，主串长度为n，则匹配成功的最好时间复杂度：O(m)，匹配失败的最好时间复杂度：O(n-m+1)=O(n-m)=O(n)】</p>
+<p>【若模式串长度为m，主串长度为n，则直接匹配成功/匹配失败最多需要(n-m+1)*m次比较，最坏时间复杂度：O(nm)，这种情况就是每个子串的前m-1个字符都和模式串匹配，只有第m个字符不匹配，所以指针需要回溯重新来匹配】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goodb75sqfj310t0dm3zc.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goocyb6bt9j30g70i2go0.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAXIEN 255  //预定义最大串长为255</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char ch[MAXIEN];  //每个分量存储一个字符</span><br><span class="line">    int length;  //串的实际长度</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line">//只要有一个字符不同，就可以停止检查当前子串，所有对应位置的字符都相同，则匹配成功，返回k</span><br><span class="line">int Index(SString *S,SString *T)&#123;</span><br><span class="line">    int k=1;  //k记录当前检查的子串起始位置</span><br><span class="line">    int i=k,j=1;</span><br><span class="line">    while(i&lt;=S-&gt;length &amp;&amp; j&lt;=S-&gt;length)&#123;</span><br><span class="line">        if(S-&gt;ch[i] == T-&gt;ch[i])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;  //继续比较后继字符</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            k++;  //检查下一个子串</span><br><span class="line">            i=k;</span><br><span class="line">            j=1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(j&lt;T-&gt;length)&#123;</span><br><span class="line">        return k;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    SString S;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/数据结构、算法笔记/KMP算法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -774,188 +922,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/树的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">树的基本概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>树是n(n&gt;=0)个结点的有限集合，n=0时，称为空树</p>
-<p>而任意非空树应满足：</p>
-<ol>
-<li>有且仅有一个特定的称为根的结点</li>
-<li>当n&gt;1时，其余结点可分为m(m&gt;0)个互不相交的有限集合，其中每一个集合本身又是一棵树，称为根结点的子树</li>
-</ol>
-<p>基本术语：</p>
-<p>祖先结点和子孙结点、双亲结点和孩子结点、兄弟结点</p>
-<p>树中一个结点的子结点的个数称为该结点的度；<br>树中各结点度的最大值称为树的度</p>
-<p>度大于0的结点称为分支结点<br>度为0的结点称为叶子结点</p>
-<p>结点的层数【自顶向下】<br>结点的高度【自底向上】<br>结点的深度【自顶向下】<br>树的高度(深度)是树中结点的最大层数<br>树中每一层结点个数的最大值称为树的宽度</p>
-<p>路径：树中两个结点之间的路径是由这两个结点之间所经过的结点序列构成的【树中的分支是有向的，即从双亲结点指向孩子结点，所以路径一定是自上而下的】</p>
-<p>路径长度：路径上所经历边的个数</p>
-<p>有序树：树中任意结点的子结点之间有顺序关系<br>无序树：树中任意结点的子结点之间没有顺序关系，也叫自由树</p>
-<p>树的性质：</p>
-<ol>
-<li>n个结点的树中只有n-1条边</li>
-<li>树中的结点数等于所有结点的度数+1</li>
-<li>度为m的树中第i层上至多有m^(i-1)个结点(i&gt;=1)</li>
-<li>高度为h的m叉树至多有(m^h-1)/(m-1)个结点</li>
-<li>具有n个结点的m叉树的最小高度为<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goox9wo751j30bs03ca9w.jpg"></li>
-</ol>
-<p>森林：m(m&gt;=0)棵互不相交的树的集合</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/二叉树的概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2019-12-30T16:00:00.000Z" itemprop="datePublished">2019-12-31</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5/">二叉树的概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>二叉树是n(n&gt;=0)个结点的有限集合<br>1）n=0时，二叉树为空<br>2）n&gt;0时，由根结点和两个互不相交的被称为根的左子树和右子树组成，左子树和右子树也分别是一棵二叉树</p>
-<p>特点：</p>
-<ol>
-<li>每个结点最多有两颗子树，所以二叉树中不存在度大于2的结点</li>
-<li>二叉树的左右子树不能任意颠倒，如果某结点只有一棵子树，一定要指明它是左子树还是右子树</li>
-</ol>
-<p>二叉树 VS 度为2的有序树：<br>1）二叉树可以为空，而度为2的有序树至少有三个结点<br>2）二叉树的孩子结点始终有左右之分，而度为2的有序树的孩子结点次序是相对的</p>
-<p>斜树：所有结点都只有左子树的二叉树称为左斜树，所有结点都只有右子树的二叉树称为右斜树</p>
-<ol>
-<li>每一层只有一个结点</li>
-<li>斜树的结点个数与其深度相同</li>
-</ol>
-<p>满二叉树：一棵高度为h，且含有2^h-1个结点的二叉树为满二叉树【在一棵二叉树中，所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上】</p>
-<ol>
-<li>叶子只能出现在最下一层</li>
-<li>只有度为0和度为2的结点</li>
-</ol>
-<p>完全二叉树：设一个高度为h、有n个结点的二叉树，当且仅当其每个结点都与高度为h的满二叉树中编号1～n的结点一一对应时，称为完全二叉树</p>
-<ol>
-<li>深度为k的完全二叉树在k-1层是满二叉树</li>
-<li>叶子结点只能出现在最下两层，且最下层的叶子结点都集中在左侧连续的位置</li>
-<li>如果有度为1的结点，只可能有一个，且该结点只有左孩子<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooy3q1zfpj31ex0gawfe.jpg"></li>
-</ol>
-<p>完全二叉树的性质：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooy8enjvwj30sh0ct3zp.jpg"></p>
-<p>二叉排序树：一棵二叉树，若树非空则具有如下性质：对任意结点若存在左子树或右子树，则其左子树上所有结点的关键字均小于该结点，右子树上所有结点的关键字均大于该结点<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooyenczv9j30k20gbdfz.jpg"></p>
-<p>平衡二叉树：树上任意结点的左子树和右子树的高度差不超过1</p>
-<p>二叉树的性质：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gop2wubrjzj31100u0jvq.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
     </div>
 
       

@@ -228,6 +228,162 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/C++语言/多态：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%A4%9A%E6%80%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-14T16:00:00.000Z" itemprop="datePublished">2019-06-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%A4%9A%E6%80%81%EF%BC%9A/">多态：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>多态是C++面向对象三大特性之一</p>
+<p>多态分为两类：<br>1）静态多态：函数重载和运算符重载属于静态多态，复用函数名<br>2）动态多态：派生类和虚函数实现运行时多态</p>
+<p>静态多态和动态多态的区别：<br>1）静态多态的函数地址早绑定，编译阶段确定函数地址<br>2）动态多态的函数地址晚绑定，运行阶段确定函数地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjeqhc7j30l50o2wi6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjmkiwbj30df01z0st.jpg"></p>
+<p>多态的底层原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjthhbpj30n90q042l.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfk02il6j30df01zq32.jpg"></p>
+<p>分别利用普通写法和多态技术，设计实现两个操作数进行运算的计算器类：</p>
+<p>多态的优点：代码组织结构清晰、可读性强、利于前期和后期的扩展以及维护<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfk8x4hfj30ku1kztgz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfkg0659j30df02uq32.jpg"></p>
+<p>纯虚函数和抽象类：在多态中，通常父类中虚函数的实现是毫无意义的，主要都是调用子类重写的内容，因此可以将虚函数改为纯虚函数，当类中有了纯虚函数，这个类也称为抽象类</p>
+<p>抽象类特点：<br>1）无法实例化对象<br>2）子类必须重写抽象类中的纯虚函数，否则也属于抽象类<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfkmuqnij30je0m9go6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfku0kk3j30df02u0sw.jpg"></p>
+<p>虚析构和纯虚析构：</p>
+<p>多态使用时，如果子类中有属性开辟到堆区，那么父类指针在释放时无法调用到子类的析构代码</p>
+<p>解决方式：将父类中的析构函数改为虚析构或者纯虚析构</p>
+<p>虚析构和纯虚析构共性：<br>1）可以解决父类指针释放子类对象<br>2）都需要有具体的函数实现</p>
+<p>虚析构和纯虚析构的区别：如果是纯虚析构，该类属于抽象类，无法实例化对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl0lls5j30kx10cjwj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl89z45j30df03dq3d.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/C++文件操作：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-13T16:00:00.000Z" itemprop="datePublished">2019-06-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/">C++文件操作：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>程序运行时产生的数据都属于临时数据，程序一旦运行结束都会被释放，通过文件可以将数据持久化</p>
+<p>C++中对文件操作需要包含头文件<fstream></p>
+<p>文件类型分为两种：<br>1）文本文件：文件以文本的ASCII码形式存储在计算机中<br>2）二进制文件：文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们</p>
+<p>操作文件的三大类：<br>1）ofstream：写操作<br>2）ifstream：读操作<br>3）fstream：读写操作</p>
+<p>文本文件：</p>
+<p>写文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ofstream ofs;<br>3）打开文件：ofs.open(“文件路径”,打开方式);<br>4）写数据：ofs&lt;&lt;“写入的数据”;<br>5）关闭文件：ofs.close();</p>
+<p>文件打开方式【文件打开方式可以配合使用，利用|操作符】：<br>1）ios::in        为读文件而打开文件<br>2）ios::out     为写文件而打开文件<br>3）ios::ate     初始位置：文件尾<br>4）ios::app    追加方式写文件<br>5）ios::trunc  如果文件存在先删除，再创建<br>6）iOS::binary  二进制方式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm0am8yj30ia0c6dhe.jpg"></p>
+<p>读文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ifstream ifs;<br>3）打开文件并判断文件是否打开成功：ifs.open(“文件路径”,打开方式);<br>4）读数据：四种方式读取<br>5）关闭文件：ifs.close();<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm96dkdj30ke0q577p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmfzd6xj30h202cglr.jpg"></p>
+<p>二进制文件：以二进制的方式对文件进行读写操作，打开方式要指定为ios::binary</p>
+<p>二进制方式写文件主要利用流对象调用成员函数write<br>函数原型：ostream&amp; write(const char * buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmn0pr8j30j10et0uf.jpg"></p>
+<p>二进制方式读文件主要利用流对象调用成员函数read<br>函数原型：istream&amp; read(char *buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmtmxxsj30j10jemzg.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/C++语言/职工管理系统：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -747,142 +903,6 @@
 
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void swap(int *pa,int *pb)&#123;</span><br><span class="line">	int t=*pa;</span><br><span class="line">	*pa=*pb;</span><br><span class="line">	*pb=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int a=5,b=6;</span><br><span class="line">	swap(&amp;a, &amp;b);</span><br><span class="line">	printf(“a=%d,b=%d\n”,a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/亲密数：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BA%B2%E5%AF%86%E6%95%B0%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BA%B2%E5%AF%86%E6%95%B0%EF%BC%9A/">亲密数：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kke0x4nj30n90j10v7.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kkmyg40j308802raa8.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果整数A的全部因子（不包括A）之和等于B，且整数B的全部因子（不包括B）之和等于A，则将A和B称为亲密数，如220的全部因子（不包括220）之和：1+2+4+5+10+11+20+22+44+55+110等于284，284的全部因子（不包括284）之和：1+2+4+71+142等于220，故220和284为亲密数。求10000以内的所有亲密数。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,j,k,sum1,sum2;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10000</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        sum1=<span class="number">0</span>;</span><br><span class="line">        sum2=<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;i;j++)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                </span><br><span class="line">                sum1+=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;sum1;k++)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum1%k==<span class="number">0</span>)&#123;</span><br><span class="line">                </span><br><span class="line">                sum2+=k;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(sum2==i&amp;&amp;i!=sum1&amp;&amp;i&lt;sum1)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%5d=&gt;%5d\n&quot;</span>,i,sum1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/任意次方后的最后三位：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BB%BB%E6%84%8F%E6%AC%A1%E6%96%B9%E5%90%8E%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%89%E4%BD%8D%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BB%BB%E6%84%8F%E6%AC%A1%E6%96%B9%E5%90%8E%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%89%E4%BD%8D%EF%BC%9A/">任意次方后的最后三位：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8knfh2nvj30mr0ettb1.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编程求一个整数任意次方后的最后三位数，即求x^y的最后三位数，x和y的值由键盘输入。</span></span><br><span class="line"><span class="comment">//本实例的算法思想如下：题中要求一个数的任意次方，首先要考虑计算结果是否越界，如何避免产生越界问题同时又不使结果产生误差，这里在求次方时每乘一次都取其后三位，这样就不会出现越界问题，又可完成题目要求。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,x,y,z=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input two numbers:x,y(x^y):\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=y;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        z=z*x % <span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(z&gt;=<span class="number">100</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d^%d的最后三位是：%d\n&quot;</span>,x,y,z);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d^%d的最后三位:00%d\n&quot;</span>,x,y,z);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     

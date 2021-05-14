@@ -228,6 +228,174 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/内存管理概述：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-20T16:00:00.000Z" itemprop="datePublished">2019-08-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0%EF%BC%9A/">内存管理概述：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>内存的作用：存储数据</p>
+<p>1）如何将数据存储到内存之中：声明一个变量<br>2）当数据不再被使用的时候，占用的内存空间如何被释放？</p>
+<p>内存中的五大区域：<br>1）栈：局部变量，当局部变量的作用域被执行完毕之后，这个局部变量就会被系统立即回收<br>2）堆：OC对象，使用C函数申请的空间<br>3）BSS段：未初始化的全局变量、静态变量，一旦初始化就回收，并转存到数据段之中<br>4）数据段：已经初始化的全局变量、静态变量，直到程序结束的时候才会被回收<br>5）代码段：代码，程序结束的时候，系统会自动回收存储在代码段中的数据</p>
+<p>栈、BSS段、数据段、代码段，存储在它们中的数据的回收是由系统自动完成的，不需要我们干预</p>
+<p>分配在堆区中的OC对象是肯定需要被回收的，但系统不会自动回收，直到程序结束的时候才会被回收【轰炸机的小游戏，肯定不能等到程序结束才回收，因为有些人玩的时间很长】</p>
+<p>内存管理的范围：只需要管理存储在堆中的OC对象的回收，其他区域中的数据的回收是系统自动管理的</p>
+<p>对象应该什么时候被回收：当有人使用这个对象的时候，这个对象就千万不能回收；只有在没有任何人使用这个对象的时候才可以回收</p>
+<h3 id="引用计数器："><a href="#引用计数器：" class="headerlink" title="引用计数器："></a>引用计数器：</h3><ol>
+<li>每一个对象都有一个属性，叫做retainCount，叫做引用计数器，类型是unsigned long，占据8个字节</li>
+</ol>
+<p>引用计数器的作用：用来记录当前这个对象有多少个人在使用它，默认情况下，创建一个对象出来，这个对象的引用计数器的默认值是1</p>
+<ol start="2">
+<li><p>当多一个人使用这个对象的时候，应该先让这个对象的引用计数器的值+1，代表这个对象多一个人使用</p>
+</li>
+<li><p>当这个对象少一个人使用的时候，应该先让这个对象的引用计数器的值-1，代表这个对象少一个人使用</p>
+</li>
+<li><p>当这个对象的引用计数器变为0的时候，代表这个对象无人使用，这个时候系统就会自动回收这个对象，在对象被回收的时候，会自动调用对象的dealloc方法</p>
+</li>
+</ol>
+<p>如何操作引用计数器：</p>
+<ol>
+<li>为对象发送一条retain消息，对象的引用计数器就会+1，当多一个人使用对象的时候才发</li>
+<li>为对象发送一条release消息，对象的引用计数器就会-1，当少一个人使用对象的时候才发</li>
+<li>为对象发送一条retainCount消息，就可以取到对象的引用计数器的值</li>
+</ol>
+<h3 id="内存管理的分类："><a href="#内存管理的分类：" class="headerlink" title="内存管理的分类："></a>内存管理的分类：</h3><ol>
+<li><p>MRC：Manual Reference Counting手动引用计数，手动内存管理（2011年以前，iOS5之前）：当多一个人使用对象的时候，要求程序员手动的发送retain消息，少一个人使用的时候程序员手动的发送release消息</p>
+</li>
+<li><p>ARC：Automatic Reference Counting自动引用计数，自动内存管理：系统自动的在合适的地方发送retain，release消息</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/第一个MRC程序：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%AC%AC%E4%B8%80%E4%B8%AAMRC%E7%A8%8B%E5%BA%8F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-19T16:00:00.000Z" itemprop="datePublished">2019-08-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%AC%AC%E4%B8%80%E4%B8%AAMRC%E7%A8%8B%E5%BA%8F%EF%BC%9A/">第一个MRC程序：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>要写MRC的程序，必须先把Xcode默认的ARC模式关闭，开启MRC</p>
+<p>在ARC机制下，retain，release，dealloc这些方法无法调用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly41osfo1j30m40lkgo4.jpg"></p>
+<p>重写dealloc方法的规范：<br>必须要调用父类的dealloc方法，并且要放在最后一句代码</p>
+<p>测试引用数据：<br>1）新创建一个对象，这个对象的引用计数器的值默认是1<br>2）当对象的引用计数器变为0的时候，对象就会被系统立即回收，并自动调用dealloc方法<br>3）为对象发送retain消息，对象的引用计数器就会+1<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly41xz6fwj30dc0bw42n.jpg"></p>
+<p>为对象发送release消息，并不是回收对象，而是让对象的引用计数器-1，当对象的引用计数器的值变为0的时候，对象才会被系统立即回收</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/内存管理的原则：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -778,148 +946,6 @@
           
         <hr>
 <p>一般情况下，要求提供与自定义构造方法相同功能的类方法，这样可以快速的创建一个对象；使用类方法创建的对象，要求这个对象在方法中就已经被autorelease过了，这样，我们只要在自动释放池中调用类方法来创建对象，那么创建的对象就会被自动的加入到自动释放池中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly482dqqwj30f106m76p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly488qmluj30fa0a6n03.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly48f8eabj30d603o0tu.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/ARC机制概述" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/ARC%E6%9C%BA%E5%88%B6%E6%A6%82%E8%BF%B0/" class="article-date">
-      <time datetime="2019-08-10T16:00:00.000Z" itemprop="datePublished">2019-08-11</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/ARC%E6%9C%BA%E5%88%B6%E6%A6%82%E8%BF%B0/">ARC机制概述</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>Automatic Reference Counting，自动引用计数，即ARC，系统自动的帮助我们去计算对象的引用计数器的值</p>
-<p>在程序中使用ARC非常简单，只需要向往常那样编写代码，只不过永远不要写retain，release，autorelease这三个关键字就好，永远不要手动的调用dealloc【在dealloc方法中不要调用父类dealloc】，这是ARC最基本的原则，当ARC开启时，编译器就会自动的在合适的地方插入retain，release，autorelease代码，编译器自动为对象做引用计数</p>
-<p>ARC机制下，对象何时被释放：<br>本质：对象的引用计数器为0的时候，自动释放<br>表象：只要没有强指针指向这个对象，这个对象就会立即回收</p>
-<p>强指针与弱指针：</p>
-<p>强指针：默认情况下，我们声明一个指针，这个指针就是一个强指针，我们也可以用__strong(两个下划线)来显示的声明这是一个强指针</p>
-<p>弱指针：使用__weak标识的指针就叫做弱指针</p>
-<p>无论是强指针还是弱指针都是指针，都可以用来存储地址，这一点没有任何区别，都可以通过这个指针访问对象的成员；唯一的区别就是在ARC模式下，它们用来作为回收对象的基准：如果一个对象没有任何强类型的指针指向这个对象的时候，对象就会被立即释放</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/ARC下的单个对象的内存管理：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/ARC%E4%B8%8B%E7%9A%84%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-09T16:00:00.000Z" itemprop="datePublished">2019-08-10</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/10/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/ARC%E4%B8%8B%E7%9A%84%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/">ARC下的单个对象的内存管理：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）当指向对象的所有的强指针被回收的时候，对象就会被立即回收<br>2）当所有指向对象的强指针赋值为nil的时候，对象就会被立即回收</p>
-<p>注意：不能创建对象用一个弱指针存储这个对象的指针，这样的话，刚创建出来的对象，就没有任何强指针指向，创建出来就被回收<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly48zujqsj309504rdh8.jpg"></p>
-<p>在ARC机制下，当对象被回收的时候，原来指向这个对象的弱指针会被自动设置为nil<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4988ujuj309w09a401.jpg"></p>
 
       
     </div>

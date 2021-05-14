@@ -228,6 +228,142 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/C实例/亲密数：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BA%B2%E5%AF%86%E6%95%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BA%B2%E5%AF%86%E6%95%B0%EF%BC%9A/">亲密数：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kke0x4nj30n90j10v7.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kkmyg40j308802raa8.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果整数A的全部因子（不包括A）之和等于B，且整数B的全部因子（不包括B）之和等于A，则将A和B称为亲密数，如220的全部因子（不包括220）之和：1+2+4+5+10+11+20+22+44+55+110等于284，284的全部因子（不包括284）之和：1+2+4+71+142等于220，故220和284为亲密数。求10000以内的所有亲密数。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,j,k,sum1,sum2;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10000</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        sum1=<span class="number">0</span>;</span><br><span class="line">        sum2=<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;i;j++)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">                </span><br><span class="line">                sum1+=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;sum1;k++)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum1%k==<span class="number">0</span>)&#123;</span><br><span class="line">                </span><br><span class="line">                sum2+=k;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(sum2==i&amp;&amp;i!=sum1&amp;&amp;i&lt;sum1)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%5d=&gt;%5d\n&quot;</span>,i,sum1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/C实例/任意次方后的最后三位：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BB%BB%E6%84%8F%E6%AC%A1%E6%96%B9%E5%90%8E%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%89%E4%BD%8D%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BB%BB%E6%84%8F%E6%AC%A1%E6%96%B9%E5%90%8E%E7%9A%84%E6%9C%80%E5%90%8E%E4%B8%89%E4%BD%8D%EF%BC%9A/">任意次方后的最后三位：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8knfh2nvj30mr0ettb1.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编程求一个整数任意次方后的最后三位数，即求x^y的最后三位数，x和y的值由键盘输入。</span></span><br><span class="line"><span class="comment">//本实例的算法思想如下：题中要求一个数的任意次方，首先要考虑计算结果是否越界，如何避免产生越界问题同时又不使结果产生误差，这里在求次方时每乘一次都取其后三位，这样就不会出现越界问题，又可完成题目要求。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,x,y,z=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input two numbers:x,y(x^y):\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=y;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        z=z*x % <span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(z&gt;=<span class="number">100</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d^%d的最后三位是：%d\n&quot;</span>,x,y,z);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d^%d的最后三位:00%d\n&quot;</span>,x,y,z);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/C实例/任意正数的逆序" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -753,171 +889,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kis4ti3j30mu0jfacx.jpg"></p>
 <p>源代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据输入的三角形的三条边判断三角形的类型，并输出它的面积和类型</span></span><br><span class="line"><span class="comment">//实例中要注意“&amp;&amp;”和“｜｜”的恰当使用。当需要同时满足多种情况时，使用“&amp;&amp;”逻辑运算符，而当只需要满足几种情况中的一种时，则使用“｜｜”逻辑运算符。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">float</span> a,b,c;</span><br><span class="line">    <span class="keyword">float</span> s ,area;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%f,%f,%f&quot;</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(a+b&gt;c &amp;&amp; b+c&gt;a &amp;&amp; a+c&gt;b)&#123;</span><br><span class="line">        </span><br><span class="line">        s=(a+b+c)/<span class="number">2</span>;</span><br><span class="line">        area=(<span class="keyword">float</span>)<span class="built_in">sqrt</span>(s*(s-a)*(s-b)*(s-c));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;面积是：%f\n&quot;</span>,area);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(a==b &amp;&amp; a==c)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;等边三角形\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a==b || a==c || b==c)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;等腰三角形\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>((a*a + b*b ==c*c)||(a*a + c*c == b*b)||(b*b+c*c==a*a))&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;直角三角形\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;普通三角形&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;不能构成三角形&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/对小数进行四舍五入：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AF%B9%E5%B0%8F%E6%95%B0%E8%BF%9B%E8%A1%8C%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AF%B9%E5%B0%8F%E6%95%B0%E8%BF%9B%E8%A1%8C%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5%EF%BC%9A/">对小数进行四舍五入：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kbm9100j30ez0eu405.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请用户输入一个实数（浮点型），编写算法对这个实数进行四舍五入到个位的运算</span></span><br><span class="line"><span class="comment">//   12.56----13      12.45----12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//让用户输入一个小数</span></span><br><span class="line">    <span class="keyword">double</span> num=<span class="number">0.0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入一个小数：&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;num);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//对这个数进行四舍五入计算</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i=num;<span class="comment">//拿到整数部分</span></span><br><span class="line">    <span class="keyword">double</span> xiaoShu=num-i;<span class="comment">//小数部分</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(xiaoShu &gt;= <span class="number">0.5</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;i=%d\n&quot;</span>,i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/字符输入输出：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A/">字符输入输出：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8krwald9j30nl0ks0wg.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//标准库提供的输入/输出模型非常简单，无论文本从何处输入，输出到何处，其输入/输出都是按照字符流的方式处理。文本流是由多行字符构成的字符序列，而每行字符则由0个或多个字符组成，行末是一个换行符。标准库负责使每个输入/输出流都能够遵守这一模型。使用标准库的C语言程序员不必关心在程序之外这些行是如何表示的</span></span><br><span class="line"><span class="comment">//每次调用时，getchar函数从文本流中读入下一个输入字符，并将其作为结果值返回【c=getter()】</span></span><br><span class="line"><span class="comment">//每次调用putchar函数时将打印一个字符【putchar(c)】，putchar与printf这两个函数可以交替使用，输出的次序与调用的次序一致</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">    putchar:</span></span><br><span class="line"><span class="comment">	int putchar(int c);</span></span><br><span class="line"><span class="comment">	向标准输出写一个字符</span></span><br><span class="line"><span class="comment">	返回写了几个字符，EOF(-1)表示写失败</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    getchar:</span></span><br><span class="line"><span class="comment">	int getchar(void);</span></span><br><span class="line"><span class="comment">	从标准输入读入一个字符</span></span><br><span class="line"><span class="comment">	返回类型是int是为了返回EOF(-1)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//control-C  强制退出，程序并没有停止</span></span><br><span class="line"><span class="comment">//control-D  正常退出</span></span><br><span class="line"><span class="comment">//shell</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ch;</span><br><span class="line">	<span class="keyword">while</span>((ch=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="built_in">putchar</span>(ch);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;EOF\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>文件复制：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8ks5fsqej30nk0fvacb.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//文件复制：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将输入复制到输出</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//字符在键盘、屏幕或其他的任何地方无论以什么形式表现，它在机器内部都是以位模式存储的，char类型专门用于存储这种字符型数据</span></span><br><span class="line">	<span class="comment">//这里之所以不把c声明成char类型，是因为它必须足够大，除了能存储任何可能的字符外还要能存储文件结束符EOF</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> c;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//EOF：end of file</span></span><br><span class="line">	<span class="comment">//EOF定义在头文件&lt;stdio.h&gt;中，是一个整型数，它与任何char类型的值都不相同</span></span><br><span class="line">	<span class="comment">// !=的优先级比=的优先级要高</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="built_in">putchar</span>(c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>字符计数：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8ksiragyj30ni0admxw.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符计数：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> nc;</span><br><span class="line">	</span><br><span class="line">	nc=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(getchar() != EOF)&#123;</span><br><span class="line">		++nc;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %ld\n&quot;</span>,nc);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kssn9wuj30ni08k750.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> nc;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(nc=<span class="number">0</span>;getchar() != EOF;++nc)&#123;</span><br><span class="line">		;                  <span class="comment">//单独的分号称为空语句</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; %.0f\n&quot;</span>,nc);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>行计数：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kudggtej30nj0c7my5.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//行计数（统计行数等价于统计换行符的个数）</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> c,n1;</span><br><span class="line">	n1=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="keyword">if</span>(c == <span class="string">&#x27;\n&#x27;</span>)&#123;</span><br><span class="line">			++n1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,n1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>单词计数：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kuloclzj30nl0jn77c.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单词计数：</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//统计行数、字符数与单词数(任何其中不包含空格、制表符或换行符的字符序列)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IN 1<span class="comment">//在单词内</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OUT 0<span class="comment">//在单词外</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> c,nl,nw,nc,state;</span><br><span class="line">	state=OUT;</span><br><span class="line">	nl=nw=nc=<span class="number">0</span>;<span class="comment">//在兼有值与赋值两种功能的表达式中，赋值结合次序是由右至左：nl=(nw=(nc=0));</span></span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		++nc;</span><br><span class="line">		<span class="keyword">if</span>(c == <span class="string">&#x27;\n&#x27;</span>)&#123;</span><br><span class="line">			++nl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//  ||代表OR（逻辑或）</span></span><br><span class="line">		<span class="comment">//  &amp;&amp;代表AND（逻辑与），它仅比||高一个优先级</span></span><br><span class="line">		<span class="keyword">if</span>(c==<span class="string">&#x27; &#x27;</span> || c==<span class="string">&#x27;\n&#x27;</span> || c== <span class="string">&#x27;\t&#x27;</span>)&#123;</span><br><span class="line">			state=OUT;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//程序执行时，每当遇到单词的第一个字符，它就作为一个新单词加以统计</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(state==OUT)&#123;</span><br><span class="line">			state=IN;</span><br><span class="line">			++nw;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//nl:行数；nw:单词数；nc：字符数</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,nl,nw,nc<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>统计各个数字、空白符（包括空格符、制表符及换行符）以及所有其他字符出现的次数：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kuwd0fwj30ng0j1773.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//统计各个数字、空白符（包括空格符、制表符及换行符）以及所有其他字符出现的次数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> c,i,nwhite,nother;</span><br><span class="line">	<span class="comment">//数组下标可以是任何整型表达式、包括整型变量（如i）以及整型常量</span></span><br><span class="line">	<span class="keyword">int</span> ndigit[<span class="number">10</span>];<span class="comment">//C语言中，数组下标总是从0开始</span></span><br><span class="line">	</span><br><span class="line">	nwhite=nother=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)&#123;</span><br><span class="line">		ndigit[i]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>((c=getchar()) != EOF)&#123;</span><br><span class="line">		<span class="keyword">if</span>(c &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; c&lt;= <span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">			++ndigit[c-<span class="string">&#x27;0&#x27;</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">&#x27; &#x27;</span> || c==<span class="string">&#x27;\n&#x27;</span> ||c==<span class="string">&#x27;\t&#x27;</span>)&#123;</span><br><span class="line">			++nwhite;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			++nother;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;digit=&quot;</span>);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>,ndigit[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;,white space=%d,other=%d\n&quot;</span>,nwhite,nother);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     

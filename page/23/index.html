@@ -228,6 +228,162 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/数据结构、算法笔记/图的基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="article-date">
+      <time datetime="2019-12-16T16:00:00.000Z" itemprop="datePublished">2019-12-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">图的基本操作</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<ol>
+<li><p><code>Adjacent(G,x,y)</code>：判断图G是否存在边&lt;x,y&gt;或(x,y)【邻接矩阵效率高】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govz59y8zpj30yi0ax3zc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govz5g8iq4j30vo0axgmc.jpg"></p>
+</li>
+<li><p><code>Neighbors(G,x)</code>：列出图G中与结点x邻接的边【无向图邻接表效率高，有向图邻接矩阵效率高】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govze732hgj30ys0alta5.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzefer7jj30vq0axt9k.jpg"></p>
+</li>
+<li><p><code>InsertVertex(G,x)</code>：在图G中插入顶点x<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzgx0q7gj30zb0cejsd.jpg"></p>
+</li>
+<li><p><code>DeleteVertex(G,x)</code>：从图G中删除顶点x<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzogix1xj30yy0bdmxt.jpg"></p>
+</li>
+<li><p><code>AddEdge(G,x,y)</code>：若无向边(x,y)或者有向边&lt;x,y&gt;不存在，则向图G中添加该边<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzpu4c2tj30yq0b0js8.jpg"></p>
+</li>
+<li><p><code>RemoveEdge(G,x,y)</code>：若无向边(x,y)或者有向边&lt;x,y&gt;存在，则在图G中删除该边【邻接矩阵效率高】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzqe3r4gj30va0azt9f.jpg"></p>
+</li>
+<li><p><code>FirstNeighbor(G,x)</code>：求图G中顶点x的第一个邻接点，若有则返回顶点号，若没有邻接点或图不存在x，则返回-1<br><code>NextNeighbor(G,x)</code>：假设图G中顶点y是顶点x的一个邻接点，返回除y之外顶点x的下一个邻接点的顶点号，若y是x的最后一个邻接点，则返回-1<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzxm5sd7j30yo0at753.jpg"></p>
+</li>
+<li><p><code>Get_edge_value(G,x,y)</code>：获取图G中边(x,y)或&lt;x,y&gt;对应的权值v<br><code>Set_edge_value(G,x,y)</code>：设置图G中边(x,y)或&lt;x,y&gt;对应的权值为v<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow0301r31j31030ajjs9.jpg"></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/广度优先搜索" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/12/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="article-date">
+      <time datetime="2019-12-15T16:00:00.000Z" itemprop="datePublished">2019-12-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/12/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>图的遍历：从图中某一顶点出发，按照某种搜索方法沿着图中的边对图中的所有顶点访问一次且仅访问一次</p>
+<p>广度优先搜索(BFS)：<br>1）首先访问起始顶点v<br>2）接着由v出发依次访问v的各个未被访问过的邻接顶点w1，w2…wi<br>3）然后依次访问w1，w2…wi的所有未被访问过的邻接顶点<br>4）从这些访问过的顶点出发，访问它们所有未被访问过的邻接顶点，以此类推<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow8s8unjej318x0u0dim.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow8sjduhyj30nc0gtjs4.jpg"></p>
+<p>BFS算法的性能分析：<br>1）空间复杂度：O(|V|)<br>2）时间复杂度：邻接矩阵法O(|V|^2)，邻接表法O(|V|+|E|)</p>
+<p>无权图单源最短路径问题：定义从顶点u到顶点v的最短路径d(u,v)为从u到v的任何路径中最少的边数，若从u到v没有通路，则d(u,v)=正无穷<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow9abckurj30nm0bnt96.jpg"></p>
+<p>广度优先生成树：在广度遍历过程中，我们可以得到一棵遍历树，称为广度优先生成树(生成森林)【邻接矩阵法的广度优先生成树唯一，邻接表法的不唯一】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow9ajudnoj30tk0a2mxb.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/数据结构、算法笔记/深度优先搜索" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -772,147 +928,6 @@
 <p>折半查找的判定树：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxcflpscmj31190eet9l.jpg"></p>
 <p>查找成功的平均比较次数：[log2(n+1)]-1，折半查找的时间复杂度为O(log2n)</p>
 <p>顺序查找适用于顺序存储和链式存储，序列有序无序皆可；折半查找只适用于顺序存储，且要求序列一定有序</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/分块查找" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/" class="article-date">
-      <time datetime="2019-12-06T16:00:00.000Z" itemprop="datePublished">2019-12-07</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/">分块查找</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>分块查找：又称索引顺序查找，其查找性能介于折半查找和顺序查找之间</p>
-<p>分块查找的使用前提是将线性表进行分块，并使其分块有序，所谓分块有序是指将线性表划分为若干块，每一块内不要求有序(即块内无序)，但要求第二块中所有记录的关键码均大于第一块中所有记录的关键码，第三块中所有记录的关键码均大于第二块中所有记录的关键码，以此类推(即块间有序)</p>
-<p>分块查找还需要建立一个索引表，每块对应一个索引项，各索引项按关键码有序排序</p>
-<p>分块查找需要分两步进行：第一步在索引表中确定待查关键码所在的块；第二步在相应块中查找待查关键码。由于索引表是按关键码有序排列，可使用顺序查找，也可使用折半查找；在块内进行查找时，由于块内是无序的，只能使用顺序查找<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxetlfqoaj314c0pnwfx.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/B树" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/B%E6%A0%91/" class="article-date">
-      <time datetime="2019-12-05T16:00:00.000Z" itemprop="datePublished">2019-12-06</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/B%E6%A0%91/">B树</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>B树的定义：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxg6fuohhj30ua0u07a0.jpg"></p>
-<p>查找：B树的查找类似于二叉排序树的查找，不同的是B树的每个结点是多关键码的有序表，在到达某个结点时，先在有序表中查找，若找到则查找成功；否则按照指针到相应的子树中查找，到达空指针(即外部结点)时，查找失败</p>
-<p>在B树上的查找过程是一个顺指针查找结点和在结点中查找关键码交叉进行的过程。由于B树通常存储在磁盘上，则前一个查找操作是在磁盘上进行，而后一个查找操作是在内存中进行，即在磁盘上找到某结点后，先将结点的信息读入内存,然后再查找等于k的关键码。显然,在磁盘上进行一次查找比在内存中进行一次查找耗费的时间多得多，因此，在磁盘上进行查找的次数，即待查关键码所在结点在B树的层数，是决定B树查找效率的首要因素。</p>
-<p>插入：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxhby9inij30u00vxjx5.jpg"></p>
-<p>删除：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxne0vn82j30xf0u042c.jpg"></p>
 
       
     </div>

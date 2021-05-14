@@ -228,6 +228,164 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-硬件基础/《汇编语言(第4版)》/[BX]和loop指令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/25/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%5BBX%5D%E5%92%8Cloop%E6%8C%87%E4%BB%A4/" class="article-date">
+      <time datetime="2020-10-24T16:00:00.000Z" itemprop="datePublished">2020-10-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/25/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%5BBX%5D%E5%92%8Cloop%E6%8C%87%E4%BB%A4/">BX和loop指令</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>——————————————————————————<br>5.1.[BX]<br>5.2.Loop指令<br>5.3.在Debug中跟踪用loop指令实现的循环程序<br>5.4.Debug和汇编编译器masm对指令的不同处理<br>5.5.loop和[bx]的联合应用<br>5.6.段前缀<br>5.7.一段安全的空间<br>5.8.段前缀的使用<br>——————————————————————————</p>
+<p>要完整的描述一个内存单元，需要两种信息：内存单元的地址、内存单元的长度（类型）</p>
+<p>用[0]表示一个内存单元时，0表示单元的偏移地址，段地址默认在ds中，单元的长度（类型）可以由具体指令中的其他操作对象（比如说寄存器）指出</p>
+<p>[bx]同样也表示一个内存单元，它的偏移地址在bx中</p>
+<p>loop：循环</p>
+<p>用一个描述性的符号“（）”来表示一个寄存器或一个内存单元中的内容，（）中的内存单元的地址为物理地址</p>
+<p>（）中的元素可以有3种类型：寄存器名、段寄存器名、内存单元的物理地址（一个20位数据）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9pszkg6j309a015aa8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9q2v7itj30c9090mz9.jpg"></p>
+<p>约定符号idata表示常量<br>——————————————————</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9qhyixyj30cl0az3zx.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9qqfny7j30ch0hiq5j.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9qydnulj30ch087ta6.jpg"></p>
+<p>———————————————</p>
+<p>loop指令的格式是：loop 标号<br>CPU执行loop指令的时候，要进行两步操作：(cx)=(cx)-1、判断cx中的值，不为零则转至标号处执行程序，如果为零则向下执行【通常，我们用loop指令来实现循环功能，cx中存放循环次数】</p>
+<p>assume cs:code<br>code segment<br>    mov ax,2<br>    mov cx,11<br>s:<br>    add ax,ax<br>    loop s</p>
+<pre><code>mov ax,4c00h
+int 21h
+</code></pre>
+<p>code ends<br>end<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9rb1gsqj30ch07zmyk.jpg"></p>
+<p>1）在cx中存放循环次数<br>2）loop指令中的标号所标识地址要在前面<br>3）要循环执行的程序段，要写在标号和loop指令的中间<br>——————————————</p>
+<p>在Debug中跟踪用loop指令实现的循环程序：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9rkgjpaj30cm0aa75q.jpg"></p>
+<p>1）标号s前的指令我们已经确定在逻辑上完全正确，不想再一步一步跟踪了（g IP，直接跳转到IP值处）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9rucjibj30ht09ldgb.jpg"></p>
+<p>2）循环也不想再一步一步跟踪了（遇到loop，直接p）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9s38jfwj30ht0bqmy5.jpg"></p>
+<p>———————————————————</p>
+<p>Debug和汇编编译器masm对指令的不同处理：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9sdhx36j30b109tq4i.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/">硬件基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/用通配符进行过滤" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%94%A8%E9%80%9A%E9%85%8D%E7%AC%A6%E8%BF%9B%E8%A1%8C%E8%BF%87%E6%BB%A4/" class="article-date">
+      <time datetime="2020-10-24T16:00:00.000Z" itemprop="datePublished">2020-10-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/25/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%94%A8%E9%80%9A%E9%85%8D%E7%AC%A6%E8%BF%9B%E8%A1%8C%E8%BF%87%E6%BB%A4/">用通配符进行过滤</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>用通配符进行过滤</p>
+<p>通配符：用来匹配值的一部分的特殊字符<br>搜索模式：由字面值、通配符或两者组合构成的搜索条件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortgmkz1rj30b602kjta.jpg"></p>
+<p>1）%表示任何字符出现的任意次数，下列找出所有以词jet起头的产品，%告诉MySQL接受jet之后的任意字符，不管它有多少字符<br>SELECT prodid,prodname<br>FROM products<br>WHERE prod_name LIKE ‘jet%’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortgvd90lj303u01tt8w.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorth29b7gj30b701kjsf.jpg"></p>
+<p>2）搜索模式’%anvil%’表示匹配任何位置包含文本anvil的值，而不论它之前或之后出现什么字符<br>SELECT prodid,prodname<br>FROM products<br>WHERE prod_name LIKE ‘%anvil%’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorth9wyc0j303r0270sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorthi0f4ej30b606in1g.jpg"></p>
+<p>3）下划线只匹配单个字符而不是多个字符<br>SELECT prodid,prodname<br>FROM products<br>WHERE prodname LIKE ‘ ton anvil’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorthpptr1j303o01vaa8.jpg"></p>
+<p>SELECT prodid,prodname<br>FROM products<br>WHERE prod_name LIKE ‘% ton anvil’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorthxwb0kj303s025mxd.jpg"><br>与%能匹配0个字符不一样，_总是匹配一个字符，不能多也不能少<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorti5qgb0j30bv06440v.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortic92ltj30bl024t91.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/临界区和锁" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -805,157 +963,6 @@
 <p>合计每项物品的items_price<em>quantity，得到总的订单金额<br>SELECT SUM(itemprice</em>quantity) AS totalprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorue994hlj302701idfv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorueib4iij30b802vgnf.jpg"></p>
 <p>6)聚集不同值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorueq3r3qj30ba042jt8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruexsptij30ba06r40f.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruf5cszrj30ba056adj.jpg"></p>
 <p>7）组合聚集函数<br>SELECT COUNT(*) AS num_items,<br>               MIN(prodprice) AS pricemin,<br>               MAX(prodprice) AS pricemax,<br>               AVG(prodprice) AS priceavg<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorufd6iwpj307b01gmxf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorufl6iwxj30b501z75o.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/进程调度" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/" class="article-date">
-      <time datetime="2020-10-20T16:00:00.000Z" itemprop="datePublished">2020-10-21</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6/">进程调度</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>进程调度：</p>
-<p>————————————</p>
-<p>5-1：进程调度概念</p>
-<p>5-2：典型调度算法</p>
-<p>————————————</p>
-<p>在合适的时候以一定的策略选择一个就绪进程运行</p>
-<p>进程调度的目标：<br>1）响应速度尽可能快<br>2）进程处理的时间尽可能短<br>3）系统吞吐量尽可能大<br>4）资源利用率尽可能高<br>5）对所有进程要公平<br>6）避免饥饿<br>7）避免死锁</p>
-<p>进程调度两个量化的衡量指标：<br>1）周转时间/平均周转时间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbzow8elj30ff09tgoi.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbzyw9bnj30gi091whq.jpg"></p>
-<p>2）带权周转时间/平均带权周转时间<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc07hc9gj30do091tbr.jpg"></p>
-<p>———————————————</p>
-<p>典型调度算法：<br>1）先来先服务调度<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc0fyw0jj30do074din.jpg"><br>2）短作业优先调度算法<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc0nluwyj30i307itbx.jpg"><br>3）响应比高者优先调度算法<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc0ulvbdj30d70770uk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc11qo9yj30ln0940z5.jpg"><br>4）优先数调度算法<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc1fb55xj30al061tas.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc1m64ehj30g409nwij.jpg"><br>5）循环轮转调度法<br>      可变时间片轮转调度法<br>      多重时间片循环调度法<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc1tpkxij30me0aygq2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc216ajsj30cm086acr.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc2796f8j307w04hjs8.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/分组数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%86%E7%BB%84%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2020-10-19T16:00:00.000Z" itemprop="datePublished">2020-10-20</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/20/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%86%E7%BB%84%E6%95%B0%E6%8D%AE/">分组数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>分组数据</p>
-<p>分组允许把数据分为多个逻辑组，以便能对每个组进行聚集计算</p>
-<p>1）<br>SELECT  vendid,COUNT(*) AS numprods<br>FROM products<br>GROUP BY vend_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorugtm69rj303d02k0sw.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruh1m7d3j30b702vjth.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruh9lb27j30b008077o.jpg"></p>
-<p>2)WHERE过滤行，HAVING过滤分组<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruhi2u4dj30b702mq4r.jpg"><br>SELECT  cust_id,COUNT(<em>) AS orders<br>FROM orders<br>GROUP BY cust_id<br>HAVING COUNT(</em>) &gt;=2;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruhqovxej302z01ijrg.jpg"></p>
-<p>这里WHERE子句不起作用，因为过滤是基于分组聚集值而不是特定行值的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruhzwdz2j30b7026myt.jpg"></p>
-<p>3）列出具有2个（含）以上、价格为10（含）以上的产品的供应商<br>SELECT  vendid,COUNT(<em>) AS numprods<br>FROM products<br>WHERE prod_price &gt;=10<br>GROUP BY vend_id<br>HAVING COUNT(</em>) &gt;=2;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorui89ypjj303c01tglp.jpg"></p>
-<p>SELECT  vendid,COUNT(<em>) AS numprods<br>FROM products<br>GROUP BY vend_id<br>HAVING COUNT(</em>) &gt;=2;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruifzm3pj303c02kt8v.jpg"></p>
-<p>4）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruiou8d2j30az0310tq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruiwahh3j30b7022dha.jpg"><br>检索总计订单价格大于等于50的订单号和总计订单价格<br>SELECT ordernum,SUM(quantity<em>itemprice) AS ordertotal<br>FROM orderitems<br>GROUP BY order_num<br>HAVING SUM(quantity</em>item_price) &gt;= 50;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruj4enuij303w02l0t0.jpg"></p>
-<p>按总计订单价格排序输出：<br>SELECT ordernum,SUM(quantity<em>itemprice) AS ordertotal<br>FROM orderitems<br>GROUP BY order_num<br>HAVING SUM(quantity</em>item_price) &gt;= 50<br>ORDER BY ordertotal;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujdwe2tj303w02lwer.jpg"></p>
-<p>5）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujldl9kj30a602iq3m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorujrvqxej30a602awf1.jpg"></p>
 
       
     </div>

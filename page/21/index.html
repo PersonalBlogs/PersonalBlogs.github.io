@@ -228,6 +228,149 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/LeetCode/37-反转一个3位整数(C、Java)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/37-%E5%8F%8D%E8%BD%AC%E4%B8%80%E4%B8%AA3%E4%BD%8D%E6%95%B4%E6%95%B0(C%E3%80%81Java)/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/37-%E5%8F%8D%E8%BD%AC%E4%B8%80%E4%B8%AA3%E4%BD%8D%E6%95%B4%E6%95%B0(C%E3%80%81Java)/">37-反转一个3位整数(C、Java)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>———————————————</p>
+<p>问题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln53usj0uj30n00q5wf1.jpg"></p>
+<p>——————————————————</p>
+<p>C解答：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**int** main()&#123;</span><br><span class="line">    //m是指输入的3位整数；a指百位；b指十位；c指个位；n指输出的反转的数</span><br><span class="line">    **int** m,n,a,b,c;</span><br><span class="line">    printf(“请输入一个三位整数：”);</span><br><span class="line">    scanf(“%d”,&amp;m);</span><br><span class="line">    </span><br><span class="line">    a=m/100;</span><br><span class="line">    c=m%10;</span><br><span class="line">    b=m/10%10;</span><br><span class="line">    </span><br><span class="line">    n=c*100+b*10+a;</span><br><span class="line">    printf(“反转后的三位整数是：%d\n”,n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln548q86cj30lw08sjsg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln54g1qiqj30lw01uaaa.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln54n3kk0j30lw01u3yq.jpg"></p>
+<p>————————</p>
+<p>Java解答：</p>
+<p>public class Solution{<br>    public int reverseInteger(int number){<br>        //获取个位数<br>        int num1=number % 10;<br>        //获取十位数<br>        int num2=(number / 10) % 10;<br>        //获取百位数<br>        int num3 =((number / 10) /10) % 10;<br>        //相加<br>        return num3+num2<em>10+num1</em>100;<br>    }<br>}</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln55eywzpj30an05ejs3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln55m1yplj30an05eq31.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/LeetCode/7、整数反转" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/7%E3%80%81%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/" class="article-date">
+      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/LeetCode/7%E3%80%81%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">整数反转</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln598wxoej30ll2ffk84.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/数据结构、算法笔记/树的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -790,163 +933,6 @@
           
         <hr>
 <p>线索化：若无左子树，则将左指针指向其前驱结点；若无右子树，则将右指针指向其后继结点<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopgr2lc96j30yz0u0n1a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopgs3t0jxj31780u0418.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/树的存储结构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="article-date">
-      <time datetime="2019-12-26T16:00:00.000Z" itemprop="datePublished">2019-12-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">树的存储结构</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>双亲表示法：采用一组连续的存储空间来存储每个结点，同时在每个结点中增设一个伪指针，指示双亲结点在数组中的位置，根结点的下标为0，其伪指针域为-1</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#define MAX_TREE_SIZE 100</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int data;</span><br><span class="line">    int parent;</span><br><span class="line">&#125;PINode;</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    PINode nodes[MAX_TREE_SIZE];</span><br><span class="line">    int n;</span><br><span class="line">&#125;PTree;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goq3k7mun6j30vm0kot9p.jpg"></p>
-<p>孩子表示法：将每个结点的孩子结点都用单链表连接起来形成一个线性结构，n个结点具有n个孩子链表</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#define MAX_TREE_SIZE 100</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int child;</span><br><span class="line">    struct CNode *next;</span><br><span class="line">&#125;CNode;</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct CNode *child;</span><br><span class="line">&#125;PNode;</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    PNode nodes[MAX_TREE_SIZE];</span><br><span class="line">    int n;</span><br><span class="line">&#125;CTree;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goq40hujrgj31ac0ol3zu.jpg"></p>
-<p>孩子兄弟表示法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goq4czekfgj311z0u0gnq.jpg"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct CSNode&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct CSNode *firstchild,*nextsibling;</span><br><span class="line">&#125;CSNode,CSTRee;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>双亲表示法：寻找结点的双亲结点效率高，寻找结点的孩子结点效率低<br>孩子表示法：寻找结点的孩子结点效率高，寻找结点的双亲结点效率低<br>孩子兄弟表示法：寻找结点的孩子结点效率高，方便实现树转换为二叉树，寻找双亲结点的效率低</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/树和森林" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/" class="article-date">
-      <time datetime="2019-12-25T16:00:00.000Z" itemprop="datePublished">2019-12-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/">树和森林</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>树与二叉树的转换：左孩子右兄弟<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou2mauf1hj312c0u0mzz.jpg"></p>
-<p>森林与二叉树的转换：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou3jdpte1j31390u0n0c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou3jmsedkj30y60u0ad3.jpg"></p>
-<p>树的遍历：按照某种方式访问树中的每个结点，且仅访问一次</p>
-<ol>
-<li>先根遍历：若树非空，则先访问根结点，再按从左到右的顺序遍历根结点的每棵子树</li>
-<li>后根遍历：若树非空，则先按从左到右的顺序遍历根结点的每棵子树，再访问根结点</li>
-<li>层次遍历<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou401u3tyj30sc0lq752.jpg"></li>
-</ol>
-<p>森林的遍历：</p>
-<ol>
-<li>先序遍历：若森林非空，则访问森林中第一棵树的根结点，先序遍历第一棵树的子树森林，先序遍历除去第一棵树之后剩余的树构成的子树森林</li>
-<li>后序遍历：若森林非空，则后序遍历第一棵树的根结点的子树森林，访问第一棵树的根结点，后序遍历除去第一棵树之后剩余的树构成的子树森林<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou4d68vgij30s50gxq3l.jpg"></li>
-</ol>
 
       
     </div>

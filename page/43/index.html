@@ -228,6 +228,215 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Apple、Linux/Ubuntu Server/环境：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/23/Apple%E3%80%81Linux/Ubuntu%20Server/%E7%8E%AF%E5%A2%83%EF%BC%9A/" class="article-date">
+      <time datetime="2018-10-22T16:00:00.000Z" itemprop="datePublished">2018-10-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/23/Apple%E3%80%81Linux/Ubuntu%20Server/%E7%8E%AF%E5%A2%83%EF%BC%9A/">环境：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>在shell会话调用环境期间，shell会存储大量的信息，程序使用存储在环境中的数据来确定我们的配置，尽管大多数系统程序使用配置文件来存储程序设置，但是也有一些程序会查找环境中存储的变量来调整自己的行为，用户可以使用环境来自定义shell</p>
+<p>尽管shell在环境中存储了两种基本类型的数据，但是在bash中，这两种类型基本上没有区别。这两种数据类型分别是环境变量和shell变量。shell变量是由bash存放的少量数据，环境变量就是除此之外的所有其他变量。除变量之外，shell还存储了一些编程数据，也就是别名和shell函数</p>
+<p>set命令会同时显示shell变量和环境变量，而printenv只会显示环境变量<br>printenv | less:<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm5z95xygfj30m80glmyg.jpg"></p>
+<p>命令printenv也能够列出特定变量的值：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj04pr6c7j307500zwea.jpg"></p>
+<p>在使用set命令时，如果不带选项或参数，那么只会显示shell变量、环境变量以及任何已定义的shell函数，与printenv命令不同的是，set命令的输出结果是按照字母顺序排列的<br>set | less:<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm5zdx147cj30m80gl754.jpg"></p>
+<p>如需要查看单个变量的值，也可以使用echo命令<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj056qwzjj308e010dfn.jpg"></p>
+<p>set命令和printenv命令都不能显示的一个环境元素是别名，要查看别名，需使用不带任何参数的alias命令<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj05eaok3j30jn04cjro.jpg"></p>
+<p>一些有趣的变量：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj05lqkhoj30bw0a7751.jpg"></p>
+<p>环境是如何建立的：用户登录系统后，bash程序就会启动并读取一系列称为启动文件的配置脚本，这些脚本定义了所有用户共享的默认环境。接下来，bash会读取更多存储在主目录下的用于定义个人环境的启动文件。这些步骤的确切顺序是由启动的shell会话类型决定的</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj05tdca7j30bw0bpjsh.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj060i1jmj30bw033glq.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj067tdq8j30bw0dymyg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj06f9b80j30cu0act9p.jpg"></p>
+<p>修改环境：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj06mhoxsj30c1042aag.jpg"></p>
+<p>文本编辑器：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj06u80omj30c10b1mys.jpg"></p>
+<p>使用文本编辑器配置文件：所有的文本编辑器都可以通过在命令行输入编辑器名称和需编辑的文件名称的方式启动，如果输入的文件不存在，编辑器会认为用户想要创建一个新的文件</p>
+<p>扩展名.bak、.sav、.old和.orig是常用的标示备份文件的方法</p>
+<p>激活修改：因为只有在启动shell会话时才会读取.bashrc，所以对.bashrc做出的修改只有在关闭shell终端会话并重启的时候才会生效。也可以使用命令强制命令bash重新读取.bashrc文件<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj07agqqpj30c100gmwy.jpg"></p>
+<p>在shell脚本和bash启动文件中，注释是以“#”开头的</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-Server/" rel="tag">Ubuntu Server</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Apple、Linux/Ubuntu Server/vi的基本使用：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/22/Apple%E3%80%81Linux/Ubuntu%20Server/vi%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%9A/" class="article-date">
+      <time datetime="2018-10-21T16:00:00.000Z" itemprop="datePublished">2018-10-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/22/Apple%E3%80%81Linux/Ubuntu%20Server/vi%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%9A/">vi的基本使用：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h2 id="本文目录"><a href="#本文目录" class="headerlink" title="本文目录"></a>本文目录</h2><ol>
+<li>使用vi的原因</li>
+<li>启动、退出、保存vi</li>
+<li>vi的三种工作模式</li>
+<li>移动光标</li>
+<li>基本编辑 a.撤销命令 b.删除文本 c.剪切、复制和粘贴文本 d.合并行</li>
+<li>查找和替换 a.行内搜索 b.搜索整个文件 c.全局搜索和替换</li>
+<li>编辑多个文件 a.切换文件 b.载入更多的文件 c.文件之间的内容复制 d.插入整个文件</li>
+</ol>
+<hr>
+<h3 id="使用vi的原因："><a href="#使用vi的原因：" class="headerlink" title="使用vi的原因："></a>使用vi的原因：</h3><ol>
+<li>vi总是可用的，如果用户面前的系统没有图形界面，例如是远程服务器或者是本地系统的X配置不可用，那么vi就会成为救命的稻草。POSIX（一种UNIX系统的程序兼容标准）要求系统必须配备有vi</li>
+<li>vi是轻量级的软件，运行速度快。对很多任务来说，启动vi比在菜单中找到一个图形界面编辑器并等待几兆大小的编辑器载入要容易的多。另外，vi的设计还非常利于打字</li>
+<li>用户不想被其他Linux和UNIX用户蔑视</li>
+</ol>
+<hr>
+<h3 id="启动、退出、保存vi："><a href="#启动、退出、保存vi：" class="headerlink" title="启动、退出、保存vi："></a>启动、退出、保存vi：</h3><p>启动vi：vi 新文件名</p>
+<p>退出、保存vi：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">esc</span><br><span class="line">   :w 保存文件但不退出vi</span><br><span class="line">   :w file 将修改另外保存到file中，不退出vi（另存为）【此命令在以新名称保存文件的同时，并不更改编辑中的原文件的名称，当用户继续编辑时，编辑的还是原文件而不是新文件】</span><br><span class="line">   :w! 强制保存，不退出vi</span><br><span class="line">   :wq 保存文件并退出vi</span><br><span class="line">   :wq! 强制保存文件，并退出vi</span><br><span class="line">   :q 不保存文件，退出vi</span><br><span class="line">   :q! 不保存文件，强制退出vi</span><br><span class="line">   :e! 放弃所有修改，从上次保存文件开始再编辑</span><br><span class="line">   命令模式下输入ZZ 保存当前文档并退出vi</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="vi的三种工作模式："><a href="#vi的三种工作模式：" class="headerlink" title="vi的三种工作模式："></a>vi的三种工作模式：</h3><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj084wz3ej30h807y0sz.jpg"></p>
+<p>如果用户阅读vi的说明文档，会困惑的发现命令模式被称为普通模式，而使用ex命令则被称为命令模式</p>
+<hr>
+<h3 id="移动光标（命令模式下）："><a href="#移动光标（命令模式下）：" class="headerlink" title="移动光标（命令模式下）："></a>移动光标（命令模式下）：</h3><ol>
+<li>l或右方向键：右移一位</li>
+<li>h或左方向键：左移一位</li>
+<li>j或下方向键：下移一行</li>
+<li>k或上方向键：上移一行</li>
+<li>数字0：至本文开头</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj08m6xkwj30c2090jry.jpg"></p>
+<hr>
+<h3 id="基本编辑："><a href="#基本编辑：" class="headerlink" title="基本编辑："></a>基本编辑：</h3><p>在命令模式下按u键可以撤销用户多步操作</p>
+<p>删除文本（命令模式下）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x：当前字符</span><br><span class="line">3x：当前字符和之后2个字符</span><br></pre></td></tr></table></figure>
+
+<p>剪切(d)、复制(y)和粘贴(p)文本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">命令d不只是删除文本，而是在剪切文本，用户每次使用d命令之后，都会复制删除的内容进缓存（类似剪贴板），然后用户就可以使用p命令将缓存中的内容粘贴到光标之后或使用P命令将内容粘贴到光标之前</span><br><span class="line"></span><br><span class="line">dd：当前行</span><br><span class="line">5dd：当前行和之后4行</span><br><span class="line">dW：当前字符到下一单词的起始</span><br><span class="line">d$：当前字符到当前行的末尾</span><br><span class="line">d0：当前字符到当前行的起始</span><br><span class="line">d^：当前字符到当前行下一个非空字符</span><br><span class="line">dG：当前行到文件末尾</span><br><span class="line">d20G：当前行到文件第20行</span><br><span class="line"></span><br><span class="line">yy：当前行</span><br><span class="line">5yy：当前行和之后4行</span><br><span class="line">yW：当前字符到下一单词的起始</span><br><span class="line">y$：当前字符到当前行的末尾</span><br><span class="line">Y0：当前字符到当前行的起始</span><br><span class="line">y^：当前字符到当前行下一个非空字符</span><br><span class="line">yG：当前行到文件末尾</span><br><span class="line">y20G：当前行到文件第20行</span><br></pre></td></tr></table></figure>
+
+<p>合并行(J)：vi在行的概念上非常严格，通常来说，将光标移动到行的末端并删除行的末尾字符并不能将此行与下一行合并</p>
+<hr>
+<h3 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换:"></a>查找和替换:</h3><p>行内搜索：命令f在行内进行搜索，并将光标移至搜索到的下一个指定字符。比如命令fa就会将光标移动到本行下一处出现字符a的地方，在执行过一次行内搜索之后，输入分号可以使vi重复上一次搜索</p>
+<p>搜索整个文件：命令“/”可以完成对单词或短语的搜索，当用户使用“/”命令后，一个“/”符号会出现在屏幕的底部。接下来，输入需要搜索的单词或短语，以Enter结束，光标就会移动到下一处包含被搜索字符串的地方，使用n命令可以重复此搜索</p>
+<p>全局搜素和替换：vi使用ex命令来执行几行之内或者整个文件中的搜索和替换操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">:%s/Line/line/g</span><br><span class="line">    :冒号用于启动一条ex命令</span><br><span class="line">    %确定了操作作用的范围，%简洁的代表了从文件的第一行到最后一行（还可以用1,2表示从第一行到第二行），如果不明确指出命令的作用范围，那么命令只会在当前行生效</span><br><span class="line">    s指定了具体的操作：替换</span><br><span class="line">    /Line/line搜索和替换的文本</span><br><span class="line">    g代指global（全局），也就是说对搜索到的每一行的每一个实例进行替换，如果g缺失，那么只替换每一行第一个符合条件的实例</span><br><span class="line">          </span><br><span class="line">在命令末尾添加c，则命令在每次替换之前都会请求用户确认:</span><br><span class="line"></span><br><span class="line">:%s/Line/line/gc</span><br><span class="line">    y：执行替换</span><br><span class="line">    n：跳过此次替换</span><br><span class="line">    a：执行此次替换和之后的所有替换</span><br><span class="line">    q或者ESC：停止替换</span><br><span class="line">    l：执行此次替换并退出替换，是last的缩写</span><br><span class="line">    Ctrl-E，Ctrl-Y：分别是向下滚动和向上滚动，能用于查看替换处的上下文</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="编辑多个文件"><a href="#编辑多个文件" class="headerlink" title="编辑多个文件:"></a>编辑多个文件:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi file1 file2 file3… 打开多个文件</span><br></pre></td></tr></table></figure>
+
+<p>切换文件： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:n下一个文件 :N上一个文件</span><br></pre></td></tr></table></figure>
+
+<p>当用户从一个文件切换到另一个的时候，vi要求用户必须先保存对当前文件做出的修改才能切换到其他文件。若要放弃对文件的修改并使vi强制切换到另一个文件，可在命令后添加感叹号！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:buffers   查看正在编辑的文件列表</span><br><span class="line">:buffer 2  切换到文件2</span><br></pre></td></tr></table></figure>
+
+<p>载入更多的文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:e 文件名【使用此命令载入的文件不会响应:n或:N命令，而需要使用:buffer加文件编号来切换文件】  </span><br></pre></td></tr></table></figure>
+
+<p>文件之间的内容复制：使用之前的复制粘贴命令即可</p>
+<p>插入整个文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:r text1  将text1文件内容插入到当前文件光标处</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-Server/" rel="tag">Ubuntu Server</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Apple、Linux/Ubuntu Server/定制提示符：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -874,208 +1083,6 @@
 
 <p>10）逗号运算符：逗号用来连接两个表达式，并以其右边的表达式的值作为它的结果。逗号的优先级是所有的运算符中最低的，所以它两边的表达式会先计算；逗号的组合关系是自左向右，所以左边的表达式会先计算，而右边的表达式的值就留下来作为逗号运算的结果<br><code>for（i=0，j=10；i&lt;j；i++，j—）</code></p>
 <p>逗号表达式的目的并不是想要前面表达式的结果，而只是想要前面的表达式执行，要最后一个表达式的结果<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh3kuorlj30as081dgg.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C语言/控制流" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8E%A7%E5%88%B6%E6%B5%81/" class="article-date">
-      <time datetime="2018-09-24T16:00:00.000Z" itemprop="datePublished">2018-09-25</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8E%A7%E5%88%B6%E6%B5%81/">控制流</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<h3 id="C选择结构、循环结构整理"><a href="#C选择结构、循环结构整理" class="headerlink" title="C选择结构、循环结构整理"></a>C选择结构、循环结构整理</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">1）if-else if-else</span><br><span class="line"></span><br><span class="line">2）switch-case：选择结构</span><br><span class="line"></span><br><span class="line">switch(表达式)&#123;</span><br><span class="line"></span><br><span class="line">    case 值1:</span><br><span class="line">         执行代码;</span><br><span class="line">         break;</span><br><span class="line"></span><br><span class="line">    case 值2:</span><br><span class="line">         执行代码;</span><br><span class="line">         break;</span><br><span class="line"></span><br><span class="line">    case 值3:</span><br><span class="line">         执行代码;</span><br><span class="line">         break;</span><br><span class="line"></span><br><span class="line">    default:</span><br><span class="line">         执行代码;</span><br><span class="line">         break;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">3）while循环</span><br><span class="line"></span><br><span class="line">4）do while循环【当循环体无论如何至少要执行一次的时候使用】</span><br><span class="line"></span><br><span class="line">do&#123;</span><br><span class="line"></span><br><span class="line">    循环体;</span><br><span class="line">&#125;while(条件表达式);</span><br><span class="line"></span><br><span class="line">5）for循环【当循环次数确定的时候，一般使用for循环；当循环次数不确定的时候，一般使用while循环】</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="控制流的一些注意点"><a href="#控制流的一些注意点" class="headerlink" title="控制流的一些注意点"></a>控制流的一些注意点</h3><p>1）小技巧：Xcode中选中要对齐的代码：control+i，就会自动对齐</p>
-<p>2）while循环应用场景：</p>
-<p>-循环体确定，循环次数也确定<br>-循环体确定，循环的次数不确定，但是循环继续或者结束的条件确定<br>-遍历指定范围的数<br>-找出指定范围中符合特定条件的数<br>-求累加和与平均值<br>-找一堆数中的最大数和最小数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh49zsp4j30ah0fuq4f.jpg"><br>-计数<br>-穷举【一个一个试】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh4kw3e2j30ah0c0wfe.jpg"></p>
-<p>3）定义在一个大括弧中的变量，只能在这个大括弧中访问，出了大括弧，CPU立即将变量回收，无法访问到了:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> num=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;age=%d\n&quot;</span>,age);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;age=%d\n&quot;</span>,age);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>我们可以自定义一个作用域来提前释放一个变量:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;i=%d\n&quot;</span>,i);</span><br><span class="line">&#125;   <span class="comment">//这个时候，i就会在这里释放</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>4）无大括号else的匹配：else总是和最近的那个if匹配</p>
-<p>5）if-else与switch-case的区别：前者从头开始遍历，后者直接跳转到符合要求处<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh4xnkazj30a60bsdgw.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh58mcvwj30a60cw3zv.jpg"></p>
-<p>每一个case块后面的break在语法上是可以不写的，break的意思代表立即结束整个switch-case结构，如果case块中没有break，那么就会直接穿透到下一个case中执行代码，直到遇到break才会结束switch结构，或者执行完</p>
-<p>如果多个case块的处理逻辑是一样的，那么我们可以利用case穿透简写代码</p>
-<p>switch后面的表达式任何类型都是可以的，除了实型</p>
-<p>如果case块中要声明变量，那么这个case块就必须要使用大括弧</p>
-<p>switch结构只能做等值判断，不能直接做范围判断，并且case后面的数据不能有变量</p>
-<p>break的作用：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh5fvmj6j309u0cf3zj.jpg"></p>
-<p>6）break和continue的区别：</p>
-<p>如果在循环体中遇到了break，就会立即结束当前循环结构，但是还会继续外层循环</p>
-<p>continue只能使用在循环体中，如果遇到了continue，会立即结束本次循环，然后回去判断循环条件【注意一下while循环体和for循环体不一样(前者可能包括i++，后者不包括)】</p>
-<p>break和continue都只能作用于当前循环体！</p>
-<p>一道比较有意思的面试题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh5o8fj7j309y07g0te.jpg"></p>
-<p>7）while和do-while的区别：前者先判断条件后进循环体，后者先进循环体再判断条件</p>
-<p>8）for循环中，三个表达式都可以省略，但是分号不能省略；如果第二个表达式省略，那么循环条件默认就是成立的</p>
-<p>for循环三个表达式其实可以是任意的C语句：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotjwcr25nj30e40c2dgf.jpg"></p>
-<p>9）goto：可以将CPU的执行跳转到当前函数的别的地方继续执行</p>
-<p>当执行到goto语句的时候，CPU就会跳转到指定的标签的地方继续往下执行</p>
-<p>goto语句也可以实现循环操作<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotk2627j4j30bg09tjsd.jpg"></p>
-<p>goto可以往前跳，也可以往后跳，但是只能在当前函数中跳</p>
-<p>取标签名下面的那一句代码不能是声明变量：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotk3hqcfrj30cg09tdgu.jpg"></p>
-<p>10）break和goto：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh67f0xwj30hz0dstai.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh6f018yj30hz0dsjt1.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C语言/数组" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84/" class="article-date">
-      <time datetime="2018-09-23T16:00:00.000Z" itemprop="datePublished">2018-09-24</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84/">数组</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>局部变量的回收：在大括弧执行完毕之后，定义在这个大括弧中的变量就会被系统立即回收，声明变量的时候，其实是找系统为你从高地址向低地址分配指定字节数的连续空间，当变量回收的时候，其实就是告诉系统变量占用的字节不再使用了，可以分配给别的变量了，变量所占用的字节的数据是不会清空的【垃圾值的由来】</p>
-<p>当将全局变量声明出来以后，系统会自动的将全局变量中的数据清零</p>
-<p>一维数组：</p>
-<p><code>int arr[3];</code>，其中所有的元素具有相同的数据类型，一旦创建，不能改变大小</p>
-<p>数组中的元素在内存中是连续依次排列的：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotkioh0zmj30ji0cwq31.jpg"></p>
-<p>遍历数组：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh93cc4nj30a80an751.jpg"></p>
-<p>一维数组的初始化：<br>1）使用这种方式初始化，数组的长度就不能使用变量了，但是使用宏可以【也可以干脆直接省略数组中的长度，这样数组的长度就是由大括弧中的数据的个数来决定的】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int len=3;</span><br><span class="line">int arr[len]=&#123;10,20,30&#125;;  //错误</span><br></pre></td></tr></table></figure>
-
-<p>2）<code>int arr[3]=&#123;10&#125;;</code><br>这个时候数组的第0个元素的值是10，其他的元素的值被自动初始化为0，所以如果我们要将数组中的所有元素全部初始化为0，只需要在大括弧中写一个0就可以了</p>
-<p>3）指定下标的初始化，其他的元素的值就自动初始化为0：<br><code>int arr[3]=&#123;[1]=10,[2]=20&#125;;</code></p>
-<p>声明一个数组，在内存中从高字节向低字节申请连续的（数组的长度*每个元素的字节数）个字节的空间</p>
-<p>数组的元素的本质就是一个普通类型的变量，一个数组就是由多个普通类型的变量联合而成的</p>
-<p>C语言的数组名中存储的就是数组的地址！<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh9jcmngj30cs0a7t9s.jpg"></p>
-<p>数组的大小：<code>sizeof(a)/sizeof(a[0])</code><br>sizeof给出整个数组所占据的内容的大小，单位是字节；sizeof(a[0])给出数组中单个元素的大小，于是相除就得到了数组的单元个数；这样的代码，一旦修改数组中初始的数据，不需要修改遍历的代码</p>
-<p>数组的赋值：数组变量本身不能被赋值，要把一个数组的所有元素交给另一个数组，必须采用遍历</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">     b[i]=a[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>二维数组：</p>
-<p>二维数组的长度一般认为是元素的个数【行*列】</p>
-<p>二维数组的遍历：a[i][j]是一个int，表示第i行第j列上的单元<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh9v4el4j307402jdfy.jpg"></p>
-<p>二维数组的初始化：</p>
-<p>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxha9wqxbj305s01zwej.jpg"><br>1.列数是必须给出的，行数可以由编译器来数<br>2.每行一个{}，逗号分隔<br>3.最后的逗号可以存在，有古老的传统</p>
-<p>2）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>][<span class="number">4</span>]=&#123;&#123;<span class="number">10</span>&#125;,&#123;<span class="number">20</span>&#125;,&#123;<span class="number">30</span>&#125;&#125;;</span><br><span class="line">a[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">10</span></span><br><span class="line">a[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">20</span></span><br><span class="line">a[<span class="number">2</span>][<span class="number">0</span>]=<span class="number">30</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>其他元素会自动初始化为0<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhb8rvt3j30a60a5gmg.jpg"></p>
-<p>3）<br><code>int arr[3][4]=&#123;10,20,30,40,50&#125;;</code><br>按照顺序去初始化每一个元素，其他的元素的值就会被自动初始化为0<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhbelj0nj30a60a5gmh.jpg"></p>
-<p>4）<br><code>int arr[3][4]=&#123;[1]=&#123;10,20,30,40&#125;,[2]=&#123;50,60,70,80&#125;&#125;;</code><br>给指定的行初始化，其他的元素自动初始化为0<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhc1anppj30d20a5t9o.jpg"></p>
-<p>二维数组从高地址向低地址申请了连续的（行<em>列</em>每一个元素占用的字节）个字节空间</p>
-<p>二维数组在内存中仍然是一块连续的空间，并不是一个表格<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhcaulzwj307309pq4i.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhcl3fthj30h60a13zp.jpg"></p>
-<p>求二维数组的长度的方法与一维数组一样：<code>sizeof(arr)/sizeof(arr[0][0]);</code></p>
-<p>求二维数组的行数：<code>sizeof(arr)/sizeof(arr[0]);</code></p>
-<p>求二维数组的列数：<code>sizeof(arr[0])/sizeof(arr[0][0]);</code></p>
-<p>如果函数的参数是一个一维数组，那么我们在传递的时候可以传递二维数组的某一行，二维数组的行其实是一个一维数组</p>
-<p>二维数组也可以作为函数的参数【与一维数组类似】，但是其中形参的行数可以省略，列数不能省略，实参与形参的行数可以任意，实参的列数与形参的列数必须一致</p>
-<p>解决方案【与一维数组稍微不同！】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotl11m25ij30ec0ejta1.jpg"></p>
 
       
     </div>

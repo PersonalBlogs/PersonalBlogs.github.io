@@ -228,6 +228,161 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-操作系统原理/操作系统原理/文件物理结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" class="article-date">
+      <time datetime="2020-10-10T16:00:00.000Z" itemprop="datePublished">2020-10-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/">文件物理结构</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>文件物理结构：</p>
+<p>类型：</p>
+<p>1）连续文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord0iwx21j30pe0hfdlu.jpg"></p>
+<p>连续文件的特点：文件建立时给出文件最大长度并登记文件起始位置</p>
+<p>优点：<br>1）简单<br>2）支持顺序存取和随机存取<br>3）顺序存取速度快：所需磁盘寻道次数和寻道时间最少</p>
+<p>缺点：<br>1）文件不易动态增长：预留空间过大造成浪费，过小又不合适，需要重新分配和移动<br>2）不利于文件插入和删除<br>3）外部碎片问题</p>
+<p>2）索引结构：文件存放在不连续的存储块中，建立索引表记录文件逻辑块和物理存储块的对应关系</p>
+<p>索引表单独放在存储块中<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord0wj18tj30ko0g042z.jpg"></p>
+<p>索引文件的特点：<br>1）文件=索引区+数据区<br>2）先访问索引，再访问数据<br>3）支持顺序存取和随机存取<br>4）支持文件动态增长、插入、删除</p>
+<p>3）串联文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord16p9fnj30vq0g6tgn.jpg"></p>
+<p>特点：<br>1）适用于顺序存取，随机存取较为困难<br>2）提高了磁盘空间利用率，不存在外部碎片问题<br>3）有利于文件动态扩充、插入和删除</p>
+<p>缺点：<br>1）存取速度慢，不适用于随机存取<br>2）可靠性问题：若next指针出错，则文件访问失败<br>3）next指针占用一定的空间</p>
+<p>串联文件的应用：FAT文件系统</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用存储过程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" class="article-date">
+      <time datetime="2020-10-09T16:00:00.000Z" itemprop="datePublished">2020-10-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/10/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/">使用存储过程</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用存储过程</p>
+<p>存储过程简单来说，就是为以后的使用而保存的一条或多条MySQL语句的集合。可将其视为批文件，虽然它们的作用不仅限于批处理<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwwtjskzj30c20eiteh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwx1tyugj30c20670vn.jpg"></p>
+<p>1）执行存储过程：<br>MySQL称存储过程的执行为调用，因此MySQL执行存储过程的语句为CALL，CALL接受存储过程的名字以及需要传递给它的任意参数<br>CALL productpricing(@pricelow,<br>                                    @pricehigh,<br>                                    @priceaverage);</p>
+<p>2）创建存储过程<br>CREATE PROCEDURE productpricing()<br>BEGIN<br>     SELECT Avg(prod_price) AS priceaverage<br>     FROM products;<br>END;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwxb4n6qj30bb0ar10l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwxpz7mqj30bb02t40i.jpg"><br>3)使用存储过程：<br>CALL productpricing();<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwxyajenj302c01k3yk.jpg"></p>
+<p>4）删除存储过程：<br>DROP PROCEDURE productpricing;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwy82yv0j30ba023400.jpg"></p>
+<p>变量：内存中一个特定的位置，用来临时存储数据<br>变量名：所有MySQL变量都必须以@开始</p>
+<p>5)每个参数必须具有指定的类型，这里使用十进制值，关键字OUT指出相应的参数用来从存储过程传出一个值（返回给调用者）；MySQL支持IN（传递给存储过程）、OUT（从存储过程传出）和INOUT（对存储过程传入和传出）类型的参数<br>CREATE PROCEDURE productpricing(<br>     OUT pl DECIMAL(8,2),<br>     OUT ph DECIMAL(8,2),<br>     OUT pa DECIMAL(8,2)<br>)<br>BEGIN<br>     SELECT Min(prod_price)<br>     INTO pl<br>     FROM products;<br>     SELECT Max(prod_price)<br>     INTO ph<br>     FROM products;<br>     SELECT Avg(prod_price)<br>     INTO pa<br>     FROM products;<br>END;</p>
+<p>CALL productpricing(@pricelow,<br>                                    @pricehigh,<br>                                    @priceaverage);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwyj99pgj30b403540r.jpg"><br>为了获得3个值，可使用：<br>SELECT @pricehigh,@pricelow, @priceaverage;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwyqi83qj306b01hdg2.jpg"></p>
+<p>6)<br>CREATE PROCEDURE ordertotal(<br>     IN onumber INT,<br>     OUT ototal DECIMAL(8,2)<br>)<br>BEGIN<br>   SELECT Sum(item_price*quantity)<br>   FROM orderitems;<br>   WHERE order_num=onumber<br>   INTO ototal;<br>END;</p>
+<p>CALL ordertotal(20005,@total);</p>
+<p>SELECT @total;</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwz1ickmj301d01ht8p.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwz8cyl4j30bl0ezjut.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwzf6ygvj30bl01w74f.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwzlzcnyj30bl0foteu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwzurosaj30bl0ajwji.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/FAT文件系统" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -860,142 +1015,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/改善性能" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%94%B9%E5%96%84%E6%80%A7%E8%83%BD/" class="article-date">
-      <time datetime="2020-10-02T16:00:00.000Z" itemprop="datePublished">2020-10-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/03/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%94%B9%E5%96%84%E6%80%A7%E8%83%BD/">改善性能</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机网络原理/计算机网络原理/概念、功能、组成、分类" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A6%82%E5%BF%B5%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%84%E6%88%90%E3%80%81%E5%88%86%E7%B1%BB/" class="article-date">
-      <time datetime="2020-08-30T16:00:00.000Z" itemprop="datePublished">2020-08-31</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A6%82%E5%BF%B5%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%84%E6%88%90%E3%80%81%E5%88%86%E7%B1%BB/">概念、功能、组成、分类</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>概念、功能、组成、分类：</p>
-<p>计算机网络：是一个将分散的、具有独立功能的计算机系统，通过通信设备与线路连接起来，由功能完善的软件实现资源共享和信息传递的系统</p>
-<p>计算机网络是互连的【互联互通、通信链路】、自治的【无主从关系】计算机集合</p>
-<p>计算机网络的功能：<br>1）数据通信（连通性）<br>2）资源共享（硬件、软件、数据）<br>3）分布式处理：多台计算机各自承担同一工作任务的不同部分（Hadoop平台）<br>4）提高可靠性<br>5）负载均衡（各计算机之间更亲密）</p>
-<p>计算机网络的组成：<br>1）按组成部分分类：硬件、软件、协议<br>2）按工作方式分类：边缘部分（用户直接使用：C/S方式、P2P方式）、核心部分（为边缘部分服务）<br>3）按功能组成分类：通信子网（实现数据通信）、资源子网（实现资源共享/数据处理）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosd9rga3qj30xg0gath7.jpg"></p>
-<p>计算机网络的分类：<br>1）按分布范围分：广域网（WAN、使用交换技术）、城域网（MAN）、局域网（LAN、使用广播技术）、个人区域网（PAN）<br>2）按使用者分：公用网、专用网<br>3）按交换技术分：电路交换、报文交换、分组交换<br>4）按拓扑结构分：总线型、星型、环型、网状型（常用于广域网）<br>5）按传输技术分：广播式网络（共享公共通信信道）、点对点网络（使用分组存储转发和路由选择机制）</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
     </div>
 
       

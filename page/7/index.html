@@ -228,6 +228,256 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-操作系统原理/操作系统原理/操作系统逻辑结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" class="article-date">
+      <time datetime="2020-10-29T16:00:00.000Z" itemprop="datePublished">2020-10-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/">操作系统逻辑结构</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>————————————</p>
+<p>2-1：操作系统的逻辑结构</p>
+<p>2-2：CPU的态</p>
+<p>2-3：中断机制</p>
+<p>————————————</p>
+<p>操作系统的逻辑结构：</p>
+<p>逻辑结构：OS的设计和实现思路<br>逻辑结构的种类：<br>1）整体式结构<br>2）层次式结构<br>3）微内核结构（客户/服务器结构，Client/Server）</p>
+<p>整体式结构：以模块为基本单位构建<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorautvdpvj30ar0agdid.jpg"></p>
+<p>特点：<br>1）模块设计、编码和调试独立<br>2）模块调用自由<br>3）模块通信多以全局变量形式完成<br>缺点：信息传递随意，维护和更新困难</p>
+<p>层次结构：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorav3xaskj30fg0brq6d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goravbaop9j30ga0cxn0u.jpg"></p>
+<p>分层原则：<br>1）硬件相关—最底层<br>2）外部特性—最外层<br>3）中间层—调用次序或消息传递次序<br>4）共性的服务—较低层<br>5）活跃功能—较低层<br>优点：<br>1）结构清晰，避免循环调用<br>2）整体问题局部化，系统的正确性容易保证<br>3）有利于操作系统的维护、扩充、移植</p>
+<p>微内核结构：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goravklx3jj30jw0b2n3z.jpg"></p>
+<p>———————————————</p>
+<p>CPU的态：</p>
+<p>支持操作系统的最基本的硬件结构：CPU、内存、中断、时钟</p>
+<p>CPU态：CPU的工作状态，对资源和指令使用权限的描述</p>
+<p>态的分类：<br>1）核态：能够访问所有资源和执行所有指令；管理程序/OS内核<br>2）用户态（目态）：仅能访问部分资源，其他资源受限；用户程序<br>3）管态：介于核态和用户态之间</p>
+<p>用户态向核态转换：<br>1）用户请求OS提供服务<br>2）发生中断<br>3）用户进程产生错误（内部中断）<br>4）用户态企图执行特权指令</p>
+<p>核态向用户态转换的情形：一般是执行中断返回（IRET）</p>
+<p>硬件按“态”来区分CPU的状态<br>OS按“进程”来区分CPU的状态<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goravzmjumj30ig0bi79g.jpg"></p>
+<p>存储器：存储程序和数据的部件<br>分类：<br>1）按存储器（半导体存储器）读写工作方式：RAM、ROM<br>2）按存储元的材料：半导体存储器（常作主存）；磁存储器（磁带、磁盘）；光存储器（光盘）<br>3）按与CPU的联系：主存（直接和CPU交换信息），辅存（不能直接和CPU交换信息）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goraw8ctj6j30mn0atjuz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorawix7v6j30gp0ci78f.jpg"></p>
+<p>——————————————</p>
+<p>中断机制：</p>
+<p>中断定义：<br>1）指CPU对突发的外部事件的反应过程或机制<br>2）CPU收到外部信号（中断信号）后，停止当前工作，转去处理该外部事件，处理完毕后回到原来工作的中断处（断点）继续原来的工作<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goraws6nsdj30b5073gne.jpg"><br>引入中断的目的：<br>1）实现并发活动<br>2）实现实时处理<br>3）故障自动处理</p>
+<p>中断源：引起系统中断的事件</p>
+<p>中断类型：<br>1）<br>强迫性中断：程序没有预期：I/O、外部中断<br>自愿中断：程序有预期的：执行访管指令<br>2）<br>外中断（中断）：由CPU外部事件引起：I/O、外部事情<br>内中断（俘获）：由CPU内部事件引起：访管中断、程序中断</p>
+<p>外中断：<br>1）不可屏蔽中断：中断的原因很紧要，CPU必须响应<br>2）可屏蔽中断：中断原因不很紧要，CPU可以不响应</p>
+<p>断点：程序中断的地方，将要执行的下一指令的地址</p>
+<p>现场：程序正确运行所依赖的信息集合（相关寄存器）<br>现场的两个处理过程：<br>1）现场的保护：进入中断服务程序之前，要先把现场保存在栈里<br>2）现场的恢复</p>
+<p>中断响应过程：<br>1）识别中断源<br>2）保护断点和现场<br>3）装入中断服务程序的入口地址（CS：IP）<br>4）进入中断服务程序<br>5）恢复现场和断点<br>6）中断返回：IRET</p>
+<p>中断响应的实质：<br>1）交换指令执行地址<br>2）交换CPU的态</p>
+<p>中断响应的工作：<br>1）现场保护和恢复<br>2）参数传递（通信）</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-硬件基础/《汇编语言(第4版)》/实验1、查看CPU和内存，用机器指令和汇编指令编程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/29/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C1%E3%80%81%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/" class="article-date">
+      <time datetime="2020-10-28T16:00:00.000Z" itemprop="datePublished">2020-10-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/29/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C1%E3%80%81%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/">实验1、查看CPU和内存，用机器指令和汇编指令编程</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Debug是DOS、Windows都提供的实模式（8086方式）程序的调试工具，使用它可以查看CPU各种寄存器的内容、内存的情况和在机器码级跟踪程序的运行</p>
+<p>Debug功能：<br>1）R：查看、改变CPU寄存器的内容<br>2）D：查看内存中的内容<br>3）E：改写内存中的内容<br>4）U：将内存中的机器指令翻译成汇编指令<br>5）T：执行一条机器指令<br>6）A：以汇编指令的格式在内存中写入一条机器指令<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9276jodj30hs0bstb3.jpg"></p>
+<p>1）使用R命令查看、修改CPU中各个寄存器的内容：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor92hm5baj30hu05et8y.jpg"></p>
+<p>2）用Debug的D命令查看内存中的内容<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor92q99vmj30hu04i0sv.jpg"></p>
+<p>a.中间是从指定地址开始的128个内存单元的内容，用十六进制的格式输出，每行的输出从16的整数倍的地址开始，最多输出16个单元的内容<br>b.左边是每行的起始地址<br>c.右边是每个内存单元中的数据对应的可显示的ASCII码字符<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor930ucdxj30hu04ymxb.jpg"></p>
+<p>直接使用D命令，将列出Debug预设的地址处的内容<br>在使用“d 段地址：偏移地址”之后，接着使用D命令，可列出后续的内容<br>也可以指定D命令的查看范围：“d 段地址：起始偏移地址 结尾偏移地址”<br>只想查看内存单元10000H中的内容：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor93ch6c2j30hu0163yg.jpg"></p>
+<p>3）用Debug的E命令改写内存中的内容<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor93qxd7bj30hu02swej.jpg"></p>
+<p>也可以采用提问的方式一个一个的改写内存中的内容：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9420rjyj30hu03c74c.jpg"></p>
+<p>可以用E命令向内存中写入字符、字符串<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor94c34y2j30hu02qgln.jpg"></p>
+<p>4）用E命令向内存中写入机器码，用U命令查看内存中机器码的含义，用T命令执行内存中的机器码</p>
+<p>向内存中写入机器码：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor94lge2hj303z02hglo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor94yujp2j30hu00x748.jpg"></p>
+<p>查看写入的或内存中原有的机器码所对应的汇编指令：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor95a2d9vj30bv07fweq.jpg"></p>
+<p>U命令的显示输出分为3部分：每一条机器指令的地址、机器指令、机器指令所对应的汇编指令</p>
+<p>T命令可以执行一条或多条指令，简单的使用T命令，可以执行CS：IP指向的指令<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor95j1161j30ht04ft8w.jpg"></p>
+<p>若要用T命令控制CPU执行我们写到1000:0的指令，必须先让CS：IP指向1000:0<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor95rhjc9j30ht04mwel.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9610yqlj30ht0773yu.jpg"></p>
+<p>5）用Debug的A命令以汇编指令的形式在内存中写入机器指令<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor96bstguj30ht051dfy.jpg"></p>
+<p>简单的使用A命令，可以从一个预设的地址开始输入指令</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/">硬件基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/检索数据SELECT语句" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AESELECT%E8%AF%AD%E5%8F%A5/" class="article-date">
+      <time datetime="2020-10-28T16:00:00.000Z" itemprop="datePublished">2020-10-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AESELECT%E8%AF%AD%E5%8F%A5/">检索数据SELECT语句</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>检索数据【SELECT语句】：</p>
+<p>检索单个列：</p>
+<p>从db表中检索一个名为Host的列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6c7xeij306303a74d.jpg"><br>从db表中检索多个列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6kg84nj30ab03pglt.jpg"><br>从db表中检索所有列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6tsbinj30ev0d4dgj.jpg"></p>
+<p>检索不同的行？？<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort72pvf9j30ai0dljtw.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort79ppwjj30ai059myt.jpg"></p>
+<p>限制结果：<br>LIMIT 1；【指示MySQL返回不多于1行】<br>LIMIT 1，2；【第一个数为开始位置，第二个数为要检索的行数】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort7jl4ayj308b0a6aal.jpg"><br>1）所以，带一个值的LIMIT总是从第一行开始，给出的数为返回的行数。带两个值的LIMIT可以指定从行号为第一个值的位置开始<br>2）检索出来的第一行为行0而不是行1，因此，LIMIT 1，1将检索出第二行而不是第一行<br>3）LIMIT中指定要检索的行数为检索的最大行数，如果没有足够的行（例如，给出LIMIT 10，5，但只有13行），MySQL将只返回它能返回的那么多行</p>
+<p>使用完全限定的表名：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort7w68sij308b03w0sv.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/进程管理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -729,242 +979,6 @@
 <p>参数：被唤醒进程的标识</p>
 <p>进程控制原语：由若干指令构成的具有特定功能的函数，具有原子性，其操作不可分割</p>
 <p>进程控制原语：<br>1）创建原语<br>2）撤销原语<br>3）阻塞原语<br>4）唤醒原语</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-硬件基础/《汇编语言(第4版)》/第一个程序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/26/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="article-date">
-      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/26/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">第一个程序</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>———————————————————<br>4.1.一个源程序从写出到执行的过程<br>4.2.源程序<br>4.3.编辑源程序<br>4.4.编译<br>4.5.连接<br>4.6：1.exe的执行<br>4.7.谁将可执行文件中的程序装载进入内存并使它运行？<br>4.8.程序执行过程的跟踪<br>———————————————————</p>
-<p>1）编写汇编源程序：使用文本编辑器，用汇编语言编写汇编源程序，这一步工作的结果是产生了一个存储源程序的文本文件<br>2）对源程序进行编译连接：使用汇编语言编译程序对源程序文件中的源程序进行编译，产生目标文件；再用连接程序对目标文件进行连接，生成可在操作系统中直接运行的可执行文件</p>
-<p>可执行文件包含两部分内容：程序（从源程序中的汇编指令翻译过来的机器码）和数据（源程序中定义的数据）、相关的描述信息（比如程序有多大、要占用多少内存空间）</p>
-<p>这一步工作的结果，产生了一个可在操作系统中运行的可执行文件</p>
-<p>3）执行可执行文件中的程序，在操作系统中，执行可执行文件中的程序，操作系统依照可执行文件中的描述信息，将可执行文件中的机器码和数据加载入内存，并进行相关的初始化（比如设置CS：IP指向第一条要执行的指令），然后由CPU执行程序<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9iigj9yj30670aqq3q.jpg"><br>———————————————</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9irqdw3j30670640sz.jpg"><br>1）伪指令：在汇编语言源程序中，包含两种指令，一种是汇编指令，一种是伪指令。汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为CPU所执行。而伪指令没有对应的机器指令，最终不被CPU所执行，伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作</p>
-<p>segment和ends是一对成对使用的伪指令，功能是定义一个段<br>end是一个汇编程序的结束标记，标记整个程序的结束<br>assume假设某一段寄存器和程序中的某一个用segment…ends定义的段相关联<br>2）源程序中的“程序”<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9j41kahj30bh06vgmu.jpg"></p>
-<p>3）标号：一个标号指代了一个地址，比如codesg在segment的前面，作为一个段的名称，这个段的名称最终将被编译、连接程序处理为一个段的段地址<br>4）程序的结构<br>5）程序返回：一个程序结束后，将CPU的控制权交还给使它得以运行的程序，称这个过程为程序返回<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jdcrjsj30cv03674y.jpg"></p>
-<p>6）语法错误和逻辑错误<br>程序在编译时被编译器发现的错误是语法错误<br>在源程序编译后，在运行时发生的错误是逻辑错误，语法错误容易发现，也容易解决，而逻辑错误通常不容易被发现<br>——————————————</p>
-<p>编辑源程序：</p>
-<p>可以用任意的文本编辑器来编辑源程序，只要最终将其存储为纯文本文件即可<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jpk741j30hr0brdgo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jyhfazj30hr0brt9d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9k6ml35j30hu0brmy2.jpg"></p>
-<p>———————————————</p>
-<p>编译：<br>在编译过程中，我们提供了一个输入，即源程序文件，最多可以得到3个输出：目标文件（.obj）、列表文件（.lst）、交叉引用文件（.crf），这3个输出文件中，目标文件是我们最终要得到的结果，而另外两个只是中间结果<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9khvb94j30hr06s3yq.jpg"></p>
-<p>———————————————</p>
-<p>连接：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9kr11m2j30hr05l0sw.jpg"><br>连接的作用：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9kz6alvj30ce04hwg7.jpg"></p>
-<p>最终生成3个文件：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9l7tndej305p02kaa2.jpg"><br>————————————————</p>
-<p>1.exe的执行：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lgim9oj30hu011zk7.jpg"><br>————————————————</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lo749pj30by081adv.jpg"><br>在DOS中直接执行1.exe时，是正在运行的command，将1.exe中的程序加载入内存，command设置CPU的CS：IP指向程序的第一条指令（即程序的入口），从而使程序得以运行，程序运行结束后，返回到command中，CPU继续运行command<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lz4scxj30bz022q3u.jpg"></p>
-<p>————————————————</p>
-<p>程序执行过程的跟踪（Debug）：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9masapnj30c302j750.jpg"></p>
-<p>为了观察程序的运行过程，可以使用Debug，Debug可以将程序加载入内存，设置CS：IP指向程序的入口，但Debug并不放弃对CPU的控制</p>
-<p>CX中存放的是程序的长度，1.exe中程序的机器码共有15个字节<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9mmcsm7j30hu02tt8s.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9mv2tlaj30cg0gvdkj.jpg"></p>
-<p>DS的值为075A，则PSP的地址为075A：0，程序的地址为076A：0（即075A+10:0）</p>
-<p>源程序中的指令是mov ax,0123H，在Debug中记为mov ax,0123，这是因为Debug默认所有数据都用十六进制表示</p>
-<p>可以用U命令看一下其他指令：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9n62hfrj30bz07laac.jpg"></p>
-<p>T命令单步执行程序中的每一条指令：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9neti40j30ht0bpgmm.jpg"></p>
-<p>到了int 21，我们要用P命令执行：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9np1chlj30ht044mx9.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9nwyahtj30cw044q3w.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/">硬件基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/数据过滤" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/" class="article-date">
-      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/">数据过滤</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>数据过滤</p>
-<p>操作符：用来联结或改变WHERE子句中的子句的关键字，也称为逻辑操作符</p>
-<p>1）AND:用在WHERE子句中的关键字，用来指示检索满足所有给定条件的行<br>SELECT prodid,prodname,prod_price<br>FROM products<br>WHERE vendid=1003 AND prodprice&lt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortdqrq6dj306402zjrw.jpg"></p>
-<p>2)OR：用来表示检索匹配任一给定条件的行<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vendid=1002 OR vendid=1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortdy8cwwj304k04edgd.jpg"></p>
-<p>3）<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vendid=1002 OR vendid=1003 AND prod_price&gt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorte6be0aj304k03cgm0.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorted4pwej30bo03z0uo.jpg"></p>
-<p>SELECT prodname,prodprice<br>FROM products<br>WHERE (vendid=1002 OR vendid=1003) AND prod_price&gt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorteko0dsj304n02lmxh.jpg"></p>
-<p>4)IN WHERE子句中用来指定要匹配值的清单的关键字，功能与OR相当<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vend_id IN(1002,1003)<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortevao5yj304m04fq3h.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortf1wwppj30aq03a75q.jpg"></p>
-<p>5）NOT WHERE子句中用来否定后跟条件的关键字<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vend_id NOT IN(1002,1003)<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortf9n2m6j304c02w0t3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortfgap23j30ba021abh.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/线程（Thread）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89/" class="article-date">
-      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89/">线程（Thread）</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>线程（Thread）：</p>
-<p>1）线程是可由CPU直接运行的实体<br>2）一个进程可以创建多个线程<br>3）多个线程共享CPU可以实现并发运行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5f3qwvj30b40840vb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5qwcg5j30cd06aaca.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5zacw1j30af04nab4.jpg"></p>
-<p>单线程程序：整个进程只有一个线程，Windows程序缺省只有一个线程（主线程，main线程）</p>
-<p>多线程程序：整个进程至少有2个线程，主线程和至少一个用户线程</p>
-<p>线程技术典型适用场景：<br>1）程序的多个功能需要并发运行<br>2）提高窗口程序的交互性<br>3）改善程序结构<br>4）多核CPU上的应用，充分发挥多核性能</p>
-<p>使用线程的麻烦：<br>1）程序难以调试<br>2）并发过程难以控制<br>3）线程安全问题</p>
 
       
     </div>

@@ -228,6 +228,282 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据库系统原理/《MySQL必知必会》/创建高级联结、自联结、自然联结、外部联结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93%E3%80%81%E5%A4%96%E9%83%A8%E8%81%94%E7%BB%93/" class="article-date">
+      <time datetime="2020-10-16T16:00:00.000Z" itemprop="datePublished">2020-10-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93%E3%80%81%E5%A4%96%E9%83%A8%E8%81%94%E7%BB%93/">创建高级联结、自联结、自然联结、外部联结</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>创建高级联结【自联结、自然联结、外部联结】</p>
+<p>别名除了用于列名和计算字段外，SQL还允许给表名起别名，这样做有两个主要理由：<br>1）缩短SQL语句<br>2）允许在单条SELECT语句中多次使用相同的表</p>
+<p>1）表别名不仅能用于WHERE子句，它还可以用于SELECT的列表、ORDER BY子句以及语句的其他部分，表别名只在查询执行中使用，与列别名不一样，表别名不返回到客户机<br>SELECT custname,custcontact<br>FROM customers AS c,orders AS o,orderitems AS oi<br>WHERE c.custid=o.custid<br>      AND oi.ordernum=o.ordernum<br>      AND prod_id=’TNT2’;</p>
+<p>2）自联结<br>首先找到生产ID为DTNTR的物品的供应商，然后找出这个供应商生产的其他物品<br>SELECT prodid,prodname<br>FROM products<br>WHERE vendid =(SELECT vendid<br>                                FROM products<br>                                WHERE prod_id=‘DTNTR’);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorutohlegj304403mjrs.jpg"></p>
+<p>SELECT p1.prodid,p1.prodname<br>FROM products AS p1,products AS p2<br>WHERE p1.vendid=p2.vendid<br>    AND p2.prod_id=‘DTNTR’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruu2ml4bj304403mdg8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruua9u4xj30br09bjwa.jpg"></p>
+<p>3)无论何时对表进行联结，应该至少有一个列出现在不止一个表中（被联结的列），标准的联结返回所有数据，甚至相同的列多次出现。自然联结排除多次出现，使每个列只返回一次<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruuhpe5zj30br07876z.jpg"></p>
+<p>4）联结包含了那些在相关表中没有关联行的行，这种类型的联结称为外部联结</p>
+<p>检索所有客户及其订单（内部联结）<br>SELECT customers.custid,orders.ordernum<br>FROM customers INNER JOIN orders<br>   ON customers.custid=orders.custid;</p>
+<p>为了检索所有客户，包括那些没有订单的客户（外部联结）：<br>SELECT customers.custid,orders.ordernum<br>FROM customers LEFT OUTER JOIN orders<br>   ON customers.custid=orders.custid;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruupdyqtj303d03a74l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruv1k1huj30bn0a7jwq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruv9ietej30b801gmy4.jpg"></p>
+<p>5)检索所有客户及每个客户所下的订单数<br>SELECT customers.cust_name,<br>               customers.cust_id,<br>               COUNT(orders.ordernum) AS numord<br>FROM customers INNER JOIN orders<br>   ON customers.custid=orders.custid<br>GROUP BY customers.cust_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvi4uihj305j02kgly.jpg"></p>
+<p>6)<br>SELECT customers.cust_name,<br>               customers.cust_id,<br>               COUNT(orders.ordernum) AS numord<br>FROM customers LEFT OUTER JOIN orders<br>   ON customers.custid=orders.custid<br>GROUP BY customers.cust_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvq5jggj305l01uglt.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvx2i46j305l01jaa8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruw3shg3j30bm06fjtn.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/虚拟内存管理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="article-date">
+      <time datetime="2020-10-16T16:00:00.000Z" itemprop="datePublished">2020-10-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">虚拟内存管理</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>虚拟内存管理：</p>
+<p>————————————————</p>
+<p>页式虚拟内存管理概念：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorchheurkj30aw083go7.jpg"></p>
+<p>虚拟内存管理的目标：<br>1）使得大的程序能在较小的内存中运行<br>2）使得多个程序能在较小的内存中运行（能容纳下）<br>3）使得多个程序并发运行时地址不冲突<br>4）使得内存利用效率高：无碎片，共享方便</p>
+<p>虚拟内存管理的实现思路：在程序运行时，只把当前必要的很小一部分代码和数据装入内存中，其余代码和数据需要时再装入，不再运行的代码和数据及时从内存删除，实际内存很容易就能满足上述的内存需求</p>
+<p>程序运行的局部性：程序在一个有限的时间段内访问的代码和数据往往集中在有限的地址范围内，把程序一部分装入内存在较大概率上也足够让其运行一小段时间</p>
+<p>典型虚拟内存管理方式：<br>1）页式虚拟存储管理<br>2）段式虚拟存储管理<br>3）段页式虚拟存储管理</p>
+<p>页式虚拟存储管理：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorchsia0oj30dx083tbl.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorci253n2j30g10edwk8.jpg"><br>进程装入和使用内存的原则：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorciawglfj30g10cu791.jpg"><br>—————————————————</p>
+<p>页表和页式地址映射：</p>
+<p>页式系统中的地址：</p>
+<p>虚拟地址(VA)可以分解成页号P和页内偏移W<br>1）页号P=VA/页的大小<br>2）页内偏移W=VA%页的大小</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcildyssj308f05v75c.jpg"></p>
+<p>页面映射表：记录页与页框之间的对应关系，也叫页表<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorciwg53dj30e404875b.jpg"><br>页号：登记程序地址的页号<br>页框号：登记页所在的物理页号<br>页面其他特性：登记含存取权限在内的其他特性</p>
+<p>页式地址映射：虚拟地址（页式地址）—&gt;  物理地址</p>
+<p>过程：<br>1）从VA分离页号P和页内偏移W<br>2）查页表：以P为索引查页框号P‘<br>3）计算物理地址MA：MA=P’ * 页大小 + W<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcj6rn76j30yy0rjwpn.jpg"></p>
+<p>—————————————</p>
+<p>快表技术和页面共享技术；</p>
+<p>快表机制（Cache）：</p>
+<p>快表的概念：<br>1）慢表：页表放在内存中<br>2）快表：页表放在Cache中</p>
+<p>快表的特点：<br>1）容量小，访问快，成本高<br>2）快表是慢表的部分内容的复制<br>3）地址映射时优先访问快表【若在快表中找到所需数据，则称为“命中”；没有命中时，需要访问慢表，同时更新快表】<br>4）合理的页面调度策略能使快表具有较高命中率</p>
+<p>快表机制下地址映射过程：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcjrlb9cj30p80ihdm4.jpg"></p>
+<p>页面的共享原理：<br>1）在不同进程的页表中填上相同的页框号，多个进程能访问相同的内存空间，从而实现页面共享<br>2）共享页面在内存只有一份真实存储，节省内存<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorck2jw22j30ub0i5alr.jpg"></p>
+<p>————————————————</p>
+<p>缺页中断：</p>
+<p>分级存储体系：Cache+内存+辅存<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorckc5cp4j31360b8dk4.jpg"></p>
+<p>页表扩充：带中断位的页表</p>
+<p>扩充有中断位和辅存地址的页表：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorckkt46fj30gu06nmz1.jpg"><br>中断位I：标识该页是否在内存【1:不在内存；0:在内存】<br>辅存地址：该页在辅存上的位置</p>
+<p>扩充有访问位和修改位的页表：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorckvfyraj30gf05cjt0.jpg"><br>访问位：标识该页最近是否被访问【0:最近没有被访问；1:最近已被访问】<br>修改位：标识该页的数据是否已被修改【0:该页未被修改；1:该页已被修改】</p>
+<p>缺页中断定义：在地址映射过程中，当所要访问的目的页不在内存时，则系统产生异常中断</p>
+<p>缺页中断处理程序：中断处理程序把所缺的页从页表指出的辅存地址调入内存的某个页框中，并更新页表中该页对应的页框号以及修改中断位I为0</p>
+<p>访存指令的执行过程(含缺页中断处理)：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcl63ocoj30n90gyjyh.jpg"></p>
+<p>缺页（中断）率f=缺页次数/访问页面总次数<br>命中率=1-f</p>
+<p>——————————————</p>
+<p>页面淘汰策略：</p>
+<p>淘汰策略：选择淘汰哪一页的规则称淘汰策略</p>
+<p>页面抖动：页面在内存和辅存间频繁交换的现象，“抖动”会导致系统效率下降</p>
+<p>好的淘汰策略具有较低的缺页率（高命中率），页面抖动较少</p>
+<p>常用的淘汰算法：<br>1）最佳算法（OPT算法）<br>2）先进先出淘汰算法（FIFO算法）<br>3）最久未使用淘汰算法（LRU算法）<br>4）最不经常使用（LFU）算法</p>
+<p>最佳算法（OPT算法，Optimal）：淘汰以后不再需要或最远的将来才会用到的页面【理论上最佳，实践中该算法无法实现】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcljr4gtj30po0dl46k.jpg"></p>
+<p>先进先出淘汰算法（FIFO算法）：淘汰在内存中停留时间最长的页面</p>
+<p>优点：实现简单，页面按进入内存的时间排序，淘汰队头页面</p>
+<p>缺点：进程只有按顺序访问地址空间时页面命中率才最理想</p>
+<p>异常现象：对于一些特定的访问序列，随分配的页框增多，缺页率反而增加<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorclusqzyj314g0nhncu.jpg"></p>
+<p>最久未使用淘汰算法（LRU，Least Recently Used）：淘汰最长时间未被使用的页面<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcm5joajj318h0sctvg.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcmdlslij310g0s04e7.jpg"></p>
+<p>最不经常使用（LFU，Least Frequently Used）算法：选择到当前时间为止被访问次数最少的页面，每页设置访问计数器，每当页面被访问时，该页面的访问计数器加1，发生缺页中断时，淘汰计数值最小的页面，并将所有计数清零</p>
+<p>———————————————————</p>
+<p>缺页因素与页式系统缺点：</p>
+<p>缺页的因素：<br>1）淘汰算法<br>2）分配给进程的页框数：页框越少，越容易缺页<br>3）页面的大小选择：【页面太大：浪费内存，极限是分区存储；页面太小：页面增多，页表长度增加，浪费内存，换页频繁，系统效率低】【页面的常见大小：2的整数次幂，1KB，2KB，4KB】【页面越小，容易缺页】<br>4）程序的编制方法：局部性越好，越不容易缺；跳转或分支越多越容易缺页<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcmrdudxj311t0peqk8.jpg"></p>
+<p>页式系统的不足：<br>1）页面划分无逻辑含义<br>2）页的共享不灵活<br>3）页内碎片</p>
+<p>————————————————————</p>
+<p>段式和段页式虚拟存储：</p>
+<p>段式存储管理：</p>
+<p>进程分段：把进程按逻辑意义划分为多个段，每段有段名，长度不定，进程由多段组成<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcn288b8j30ve0hgdjs.jpg"></p>
+<p>段式内存管理系统的内存分配：以段为单位装入，每段分配连续的内存；但是段和段不要求相邻</p>
+<p>段式系统的虚拟地址：段式虚拟地址VA包括段号S和段内偏移W【VA：（S，W）】</p>
+<p>段式地址的映射机制：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcna45quj30t70oi124.jpg"></p>
+<p>段式地址映射过程：<br>1）由逻辑地址VA分离出（S，W）<br>2）查询段表：检索段号S，查询该段基地址B和长度L<br>3）物理地址MA=B+W<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcnltnvuj30vg0hvgr4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcntudeej31ac0lltib.jpg"></p>
+<p>段的共享：<br>1）共享段在内存中只有一份存储<br>2）共享段被多个进程映射到各自段表<br>3）需要共享的模块都可以设置为单独的段</p>
+<p>段式系统的缺点：<br>1）段需要连续的存储空间<br>2）段的最大尺寸受到内存大小的限制<br>3）在辅存中管理可变尺寸的段比较困难</p>
+<p>段式系统 VS 页式系统：<br>1）地址空间的区别：页式系统是一维地址空间，段式系统是二维地址空间<br>2）段与页的区别：<br>段长可变，页面大小固定<br>段的划分有意义，页面无意义<br>段方便共享，页面不方便共享<br>段用户可见，页面用户不可见<br>段偏移有溢出，页面偏移无溢出</p>
+<p>段页式存储管理：在段式存储管理中结合页式存储管理技术，在段中划分页面<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorco26nb8j30lh0bmq53.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorco8vceij30mh0f4dl7.jpg"></p>
+<p>段页式地址的映射机构：同时采用段表和页表实现地址映射<br>系统为每个进程建立一个段表<br>系统为每个段建立一个页表<br>段表给出每段的页表基地址及页表长度（段长）<br>页表给出每页对应的页框<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcohv8m2j30qw0khdn3.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/组合查询" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2/" class="article-date">
+      <time datetime="2020-10-15T16:00:00.000Z" itemprop="datePublished">2020-10-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2/">组合查询</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>组合查询</p>
+<p>MySQL也允许执行多个查询（多条SELECT语句），并将结果作为单个查询结果集返回，这些组合查询通常称为并或复合查询<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruxgf6b0j308c024mxq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruxo5c5ej30b803q770.jpg"></p>
+<p>1）假如需要价格小于等于5的所有物品的一个列表，而且还想包括供应商1001和1002生产的所有物品（不考虑价格）</p>
+<p>法1:<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE prod_price&lt;=5;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruxvg9ysj304z02jmxg.jpg"></p>
+<p>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE vend_id IN(1001,1002);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruy2pzt4j304z02y74o.jpg"></p>
+<p>法2:<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE prod_price&lt;=5;<br>UNION<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE vend_id IN(1001,1002);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruyafa8rj304z044aan.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruyi3nujj30bt042jss.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruypdlemj30bt02ht9l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruyw3s4nj30bt02oq3z.jpg"></p>
+<p>UNION从查询结果集中自动去除了重复的行，这是UNION的默认行为，但是如果需要，可以改变它，事实上，如果想返回所有匹配行，可使用UNION ALL而不是UNION<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE prod_price&lt;=5;<br>UNION ALL<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE vend_id IN(1001,1002);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruz3ehsaj304y04fdgg.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruzasm6aj30b602jmyy.jpg"></p>
+<p>2）SELECT语句的输出用ORDER BY子句排序。在用UNION组合查询时，只能使用一条ORDER BY子句，它必须出现在最后一条SELECT语句之后。对于结果集，不存在用一种方式排序一部分，而又用另一种方式排序另一部分的情况。因此不允许使用多条ORDER BY子句<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE prod_price&lt;=5;<br>UNION<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE vend_id IN(1001,1002)<br>ORDER BY vendid,prodprice;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruzia4m6j304z044jry.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruzo6qhej30b501zq4a.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/设备管理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -733,247 +1009,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/创建和操纵表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/" class="article-date">
-      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/">创建和操纵表</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>创建和操纵表</p>
-<p>一般有两种创建表的方法：<br>1）使用具有交互式创建和管理表的工具<br>2）表也可以直接用MySQL语句操纵</p>
-<p>值得注意的是，在使用交互式工具时，实际上使用的是MySQL语句，但是这些语句不是用户编写的，界面工具会自动生成并执行相应的MySQL语句（更改现有表时也是这样）</p>
-<p>为利用CREATE TABLE创建表，必须给出下列信息：<br>1）新表的名字，在关键字CREATE TABLE之后给出<br>2）表列的名字和定义，用逗号分隔</p>
-<p>1）表的主键可以在创建表时用PRIMARY KEY关键字指定，为创建由多个列组成的主键，应该以逗号分隔的列表给出各列名；主键为其值唯一标识表中每个行的列，主键中只能使用不允许NULL值的列，允许NULL值的列不能作为唯一标识<br>CREATE TABLE customers<br>(<br>     custid              int                NOT NULL AUTOINCREMENT,<br>     cust_name        char(50)     NOT NULL,<br>     cust_address    char(50)     NULL,<br>     cust_city           char(50)     NULL,<br>     cust_state         char(5)       NULL,<br>     cust_zip             char(10)     NULL,<br>     cust_country     char(50)     NULL,<br>     cust_contact     char(50)     NULL,<br>     cust_email         char(255)   NULL,<br>     PRIMARY KEY (cust_id)<br>)ENGINE-InnoDB;</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwon1sojj30b4044jub.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwoulrokj30b402lwgb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp2xsdhj30b402l40a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp9p6ubj30b402l761.jpg"></p>
-<p>AUTOINCREMENT告诉MySQL，本列每当增加一行时自动增量。每次执行一个INSERT操作时，MySQL自动对该列增量（从而才有这个关键字AUTOINCREMENT），给该列赋予下一个可用的值。这样给每个行分配一个唯一的custid，从而可以用作主键值；每个表只允许一个AUTOINCREMENT列，而且它必须被索引（如通过使它成为主键）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwpk2xfbj30b40bjjz3.jpg"></p>
-<p>2）如果在插入行时没有给出值，MySQL允许指定此时使用的默认值。默认值用CREATE TABLE语句的列定义中的DEFAULT关键字指定<br>CREATE TABLE orderitems<br>(<br>     order_num        int                     NOT NULL,<br>     order_item        int                     NOT NULL,<br>     prod_id             char(10)           NOT NULL,<br>     quantity            int                     NOT NULL DEFAULT 1,<br>     item_price        decimal(8,2)    NOT NULL,<br>     PRIMARY KEY(ordernum,orderitem)<br>)ENGINE-InnoDB;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwptvtivj30b404d40w.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq1d6f2j30bw07ndis.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq88t37j30bw0f0wlh.jpg"></p>
-<p>3)更新表<br>为了使用ALTER TABLE更改表结构，必须给出下面的信息：<br>1）在ALTER TABLE之后给出要更改的表名（该表必须存在，否则将出错）<br>2）所做更改的列表</p>
-<p>ALTER TABLE vendors<br>ADD vend_phone CHAR(20);</p>
-<p>删除刚刚添加的列：<br>ALTER TABLE Vendors<br>DROP COLUMN vend_phone;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqhn92kj30bw08l76r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqphxx2j30bw01ldg7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqwbdwtj30bw07e0wg.jpg"></p>
-<p>4)删除表：删除整个表而不是其内容，删除表没有确认，也不能撤销，执行这条语句将永久删除该表</p>
-<p>DROP TABLE customers2;</p>
-<p>5)重命名表</p>
-<p>RENAME TABLE customers2 TO customers,<br>                            backup_vendors TO vendors;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/文件系统概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/">文件系统概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>文件系统概念：</p>
-<p>文件是计算机信息存取的一种重要组织形式</p>
-<p>文件由若干信息项有序构成，信息项可以是字节，可以是结构化数据<br>用户通过读写指针来存取文件的信息项<br>文件具有文件名，用户通过文件名存取文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcvk8f03j313u09r78l.jpg"></p>
-<p>文件的分类：</p>
-<p>按照文件的用途分：<br>1）系统文件：包括操作系统的可执行程序和数据文件，这种文件不对用户开放，仅供系统使用<br>2）库文件：系统为用户提供的各种标准函数库和实用程序等，用户只能使用这些文件，而无权对其进行修改<br>3）用户文件：用户创建的文件，如用户可执行程序，源程序，数据文件等，这种文件的使用和修改权均属于用户</p>
-<p>按照文件的操作权限分：<br>1）只读文件：只允许进行读操作<br>2）读写文件：允许进行读写操作<br>3）不保护文件：不作任何操作限制</p>
-<p>按照文件的性质分：<br>1）普通文件：指一般的用户文件/系统文件<br>2）目录文件：记录目录里面的文件列表信息（文件名，文件存放地址，文件属性）<br>3）设备文件：把设备作为文件管理和使用</p>
-<p>文件属性：指定文件的类型、操作特性和存取保护等一组信息，文件属性存放在文件所在目录的目录文件中</p>
-<p>MS-DOS系统中，文件属性占目录项的一个字节【00000001：只读属性；00000010：隐藏属性】</p>
-<p>文件系统定义：负责管理文件的机构称为文件系统</p>
-<p>功能：负责文件的创立、撤销、读写、修改、复制和存取控制等，并管理存放文件的存储设备</p>
-<p>文件系统的目标是让用户以文件名来存取文件</p>
-<p>文件的结构：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcvt25mhj30lt0gedlt.jpg"></p>
-<p>文件的逻辑结构：【现代操作系统中文件都是流式文件，由应用程序解释和处理文件】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcw0ucj0j30zh0qh7jz.jpg"></p>
-<p>文件的存取方法：<br>1）顺序存取<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcw8bo1qj30qw08d0wo.jpg"><br>2）随机存取<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcwf07v5j30ql0hfn4b.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/使用视图" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/11/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/" class="article-date">
-      <time datetime="2020-10-10T16:00:00.000Z" itemprop="datePublished">2020-10-11</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/11/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/">使用视图</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>使用视图</p>
-<p>视图是虚拟的表，与包含数据的表不一样，视图只包含使用时动态检索数据的查询</p>
-<p>SELECT custname,custcontact<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>     AND orderitems.ordernum=orders.ordernum<br>     AND prod_id=’TNT2’;</p>
-<p>现在，假如可以把整个查询包装成一个名为productcustomers的虚拟表，则可以如下轻松地检索出相同的数据：<br>SELECT custname,custcontact<br>FROM productcustomers<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwsap1tbj30bt01pt9d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwslo79tj30bt0dy44n.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwssjvutj30bt08gwha.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwszim7yj30bt05iwgf.jpg"></p>
-<p>1）<br>CREATE VIEW productcustomers AS<br>SELECT custname,custcontact,prod_id<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>   AND orderitems.ordernum=orders.ordernum;</p>
-<p>为检索订购了产品TNT2的客户：<br>SELECT custname,custcontact<br>FROM productcustomers<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwt8av55j304u01tdg1.jpg"></p>
-<p>可以看出，视图极大的简化了复杂SQL语句的使用，利用视图，可一次性编写基础的SQL，然后根据需要多次使用<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtgi1k8j30b7033wgk.jpg"></p>
-<p>2）<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtp24azj303z03at93.jpg"></p>
-<p>CREATE VIEW vendorlocations AS<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;</p>
-<p>SELECT *<br>FROM vendorlocations;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtxskgrj303z03aq3b.jpg"></p>
-<p>3)<br>CREATE VIEW customeremaillist AS<br>SELECT custid,custname,cust_email<br>FROM customers<br>WHERE cust_email IS NOT NULL;</p>
-<p>SELECT *<br>FROM customeremaillist;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwu5zx20j307e0280t8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwufd723j30b401xgmw.jpg"></p>
-<p>4)<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwumtgq4j307r02i3yz.jpg"></p>
-<p>CREATE VIEW orderitemsexpanded AS<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems;</p>
-<p>SELECT *<br>FROM orderitemsexpanded<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwuxuy21j309i02kjs1.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwv6q1svj30bu08twhc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwvecw9wj30bu070juj.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
     </div>
 
       

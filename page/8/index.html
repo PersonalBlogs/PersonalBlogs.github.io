@@ -228,6 +228,242 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-硬件基础/《汇编语言(第4版)》/第一个程序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/26/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="article-date">
+      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/26/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">第一个程序</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>———————————————————<br>4.1.一个源程序从写出到执行的过程<br>4.2.源程序<br>4.3.编辑源程序<br>4.4.编译<br>4.5.连接<br>4.6：1.exe的执行<br>4.7.谁将可执行文件中的程序装载进入内存并使它运行？<br>4.8.程序执行过程的跟踪<br>———————————————————</p>
+<p>1）编写汇编源程序：使用文本编辑器，用汇编语言编写汇编源程序，这一步工作的结果是产生了一个存储源程序的文本文件<br>2）对源程序进行编译连接：使用汇编语言编译程序对源程序文件中的源程序进行编译，产生目标文件；再用连接程序对目标文件进行连接，生成可在操作系统中直接运行的可执行文件</p>
+<p>可执行文件包含两部分内容：程序（从源程序中的汇编指令翻译过来的机器码）和数据（源程序中定义的数据）、相关的描述信息（比如程序有多大、要占用多少内存空间）</p>
+<p>这一步工作的结果，产生了一个可在操作系统中运行的可执行文件</p>
+<p>3）执行可执行文件中的程序，在操作系统中，执行可执行文件中的程序，操作系统依照可执行文件中的描述信息，将可执行文件中的机器码和数据加载入内存，并进行相关的初始化（比如设置CS：IP指向第一条要执行的指令），然后由CPU执行程序<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9iigj9yj30670aqq3q.jpg"><br>———————————————</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9irqdw3j30670640sz.jpg"><br>1）伪指令：在汇编语言源程序中，包含两种指令，一种是汇编指令，一种是伪指令。汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为CPU所执行。而伪指令没有对应的机器指令，最终不被CPU所执行，伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作</p>
+<p>segment和ends是一对成对使用的伪指令，功能是定义一个段<br>end是一个汇编程序的结束标记，标记整个程序的结束<br>assume假设某一段寄存器和程序中的某一个用segment…ends定义的段相关联<br>2）源程序中的“程序”<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9j41kahj30bh06vgmu.jpg"></p>
+<p>3）标号：一个标号指代了一个地址，比如codesg在segment的前面，作为一个段的名称，这个段的名称最终将被编译、连接程序处理为一个段的段地址<br>4）程序的结构<br>5）程序返回：一个程序结束后，将CPU的控制权交还给使它得以运行的程序，称这个过程为程序返回<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jdcrjsj30cv03674y.jpg"></p>
+<p>6）语法错误和逻辑错误<br>程序在编译时被编译器发现的错误是语法错误<br>在源程序编译后，在运行时发生的错误是逻辑错误，语法错误容易发现，也容易解决，而逻辑错误通常不容易被发现<br>——————————————</p>
+<p>编辑源程序：</p>
+<p>可以用任意的文本编辑器来编辑源程序，只要最终将其存储为纯文本文件即可<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jpk741j30hr0brdgo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jyhfazj30hr0brt9d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9k6ml35j30hu0brmy2.jpg"></p>
+<p>———————————————</p>
+<p>编译：<br>在编译过程中，我们提供了一个输入，即源程序文件，最多可以得到3个输出：目标文件（.obj）、列表文件（.lst）、交叉引用文件（.crf），这3个输出文件中，目标文件是我们最终要得到的结果，而另外两个只是中间结果<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9khvb94j30hr06s3yq.jpg"></p>
+<p>———————————————</p>
+<p>连接：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9kr11m2j30hr05l0sw.jpg"><br>连接的作用：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9kz6alvj30ce04hwg7.jpg"></p>
+<p>最终生成3个文件：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9l7tndej305p02kaa2.jpg"><br>————————————————</p>
+<p>1.exe的执行：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lgim9oj30hu011zk7.jpg"><br>————————————————</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lo749pj30by081adv.jpg"><br>在DOS中直接执行1.exe时，是正在运行的command，将1.exe中的程序加载入内存，command设置CPU的CS：IP指向程序的第一条指令（即程序的入口），从而使程序得以运行，程序运行结束后，返回到command中，CPU继续运行command<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lz4scxj30bz022q3u.jpg"></p>
+<p>————————————————</p>
+<p>程序执行过程的跟踪（Debug）：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9masapnj30c302j750.jpg"></p>
+<p>为了观察程序的运行过程，可以使用Debug，Debug可以将程序加载入内存，设置CS：IP指向程序的入口，但Debug并不放弃对CPU的控制</p>
+<p>CX中存放的是程序的长度，1.exe中程序的机器码共有15个字节<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9mmcsm7j30hu02tt8s.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9mv2tlaj30cg0gvdkj.jpg"></p>
+<p>DS的值为075A，则PSP的地址为075A：0，程序的地址为076A：0（即075A+10:0）</p>
+<p>源程序中的指令是mov ax,0123H，在Debug中记为mov ax,0123，这是因为Debug默认所有数据都用十六进制表示</p>
+<p>可以用U命令看一下其他指令：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9n62hfrj30bz07laac.jpg"></p>
+<p>T命令单步执行程序中的每一条指令：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9neti40j30ht0bpgmm.jpg"></p>
+<p>到了int 21，我们要用P命令执行：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9np1chlj30ht044mx9.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9nwyahtj30cw044q3w.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/">硬件基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/数据过滤" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/" class="article-date">
+      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/">数据过滤</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>数据过滤</p>
+<p>操作符：用来联结或改变WHERE子句中的子句的关键字，也称为逻辑操作符</p>
+<p>1）AND:用在WHERE子句中的关键字，用来指示检索满足所有给定条件的行<br>SELECT prodid,prodname,prod_price<br>FROM products<br>WHERE vendid=1003 AND prodprice&lt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortdqrq6dj306402zjrw.jpg"></p>
+<p>2)OR：用来表示检索匹配任一给定条件的行<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vendid=1002 OR vendid=1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortdy8cwwj304k04edgd.jpg"></p>
+<p>3）<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vendid=1002 OR vendid=1003 AND prod_price&gt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorte6be0aj304k03cgm0.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorted4pwej30bo03z0uo.jpg"></p>
+<p>SELECT prodname,prodprice<br>FROM products<br>WHERE (vendid=1002 OR vendid=1003) AND prod_price&gt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorteko0dsj304n02lmxh.jpg"></p>
+<p>4)IN WHERE子句中用来指定要匹配值的清单的关键字，功能与OR相当<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vend_id IN(1002,1003)<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortevao5yj304m04fq3h.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortf1wwppj30aq03a75q.jpg"></p>
+<p>5）NOT WHERE子句中用来否定后跟条件的关键字<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vend_id NOT IN(1002,1003)<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortf9n2m6j304c02w0t3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortfgap23j30ba021abh.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/线程（Thread）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89/" class="article-date">
+      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89/">线程（Thread）</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>线程（Thread）：</p>
+<p>1）线程是可由CPU直接运行的实体<br>2）一个进程可以创建多个线程<br>3）多个线程共享CPU可以实现并发运行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5f3qwvj30b40840vb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5qwcg5j30cd06aaca.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5zacw1j30af04nab4.jpg"></p>
+<p>单线程程序：整个进程只有一个线程，Windows程序缺省只有一个线程（主线程，main线程）</p>
+<p>多线程程序：整个进程至少有2个线程，主线程和至少一个用户线程</p>
+<p>线程技术典型适用场景：<br>1）程序的多个功能需要并发运行<br>2）提高窗口程序的交互性<br>3）改善程序结构<br>4）多核CPU上的应用，充分发挥多核性能</p>
+<p>使用线程的麻烦：<br>1）程序难以调试<br>2）并发过程难以控制<br>3）线程安全问题</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-硬件基础/《汇编语言(第4版)》/[BX]和loop指令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -739,245 +975,6 @@ int 21h
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/使用数据处理函数" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" class="article-date">
-      <time datetime="2020-10-21T16:00:00.000Z" itemprop="datePublished">2020-10-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">使用数据处理函数</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>使用数据处理函数</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6ay4lpj30b506j794.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6idywcj30b501nt94.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6p4zahj30b5042q49.jpg"></p>
-<p>1）文本处理函数Upper()<br>SELECT vendname,Upper(vendname) AS vendnameupcase<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6x1hgbj305h039aal.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru753j8fj308403u3za.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7cb4a0j308402kmxn.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7jgpk6j30bh02qgmv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7uz31wj30bh0bddjf.jpg"></p>
-<p>2)日期和时间处理函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru82yiqgj30bh09lacf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8ah6a8j30b302iabx.jpg"></p>
-<p>SELECT custid,ordernum<br>FROM orders<br>WHERE order_date=‘2005-09-01’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8jfzvtj303d01ijrh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8ur7cfj30br06xjuf.jpg"><br>SELECT custid,ordernum<br>FROM orders<br>WHERE Date(order_date)=‘2005-09-01’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru93pk7ij30b603vwh9.jpg"></p>
-<p>检索出2005年9月下的所有订单<br>法1:<br>SELECT custid,ordernum<br>FROM orders<br>WHERE Date(order_date) BETWEEN ‘2005-09-01’ AND ‘2005-09-30’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9bxlpnj303e027mxc.jpg"></p>
-<p>法2:<br>SELECT custid,ordernum<br>FROM orders<br>WHERE Year(orderdate)=2005 AND Month(orderdate)=9;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9jol11j30b5022myj.jpg"></p>
-<p>3)数值处理函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9qw82uj308005ndgt.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/死锁" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%AD%BB%E9%94%81/" class="article-date">
-      <time datetime="2020-10-21T16:00:00.000Z" itemprop="datePublished">2020-10-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%AD%BB%E9%94%81/">死锁</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>死锁：</p>
-<p>—————————————</p>
-<p>4-1：死锁概念</p>
-<p>4-2：死锁起因</p>
-<p>4-3：死锁预防策略</p>
-<p>—————————————</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbho9ot0j30l20cxgsk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbhw62l6j30fu09fgpc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvbshc9j30fu09f79r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvhxr58j30n907y0we.jpg"></p>
-<p>死锁：两个或多个进程无限期的等待永远不会发生的条件的一种系统状态（结果每个进程都永远阻塞）</p>
-<p>另一个定义：在两个或多个进程中，每个进程都持有某种资源，但又继续申请其他进程已持有的某种资源。此时每个进程都拥有其运行所需的一部分资源，但是又都不够，从而每个进程都不能向前推进，陷于阻塞状态，这种状态称死锁<br>——————————————</p>
-<p>死锁的起因：<br>1）系统资源有限：资源数目不足，进程对资源的竞争而产生死锁<br>2）并发进程的推进顺序不当：进程请求资源和释放资源的顺序不当，导致死锁<br>3）不正确的P-V操作导致死锁</p>
-<p>A，B尽管并发争用i，j，且发生了阻塞，但是没有死锁<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvqyv9oj30q80cagry.jpg"><br>不正确的推进顺序发生死锁：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvz7itlj30gq09b42m.jpg"><br>不正确的P-V操作也可能会带来死锁：<br>生产者和消费者问题<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbw81fkyj30jb0cn79r.jpg"></p>
-<p>死锁的一些结论：<br>1）参与死锁的进程至少是两个，两个或以上进程才会出现死锁<br>2）参与死锁的进程至少有两个已经占有资源<br>3）参与死锁的所有进程都在等待资源<br>4）参与死锁的进程是当前系统中所有进程的子集<br>5）死锁会浪费大量系统资源，甚至导致系统崩溃<br>——————————————</p>
-<p>死锁的必要条件：<br>1）互斥条件：进程互斥使用资源，，资源具有独占性<br>2）不剥夺条件：进程在访问完资源前不能被其他进程强行剥夺<br>3）部分分配条件：进程边运行边申请资源，临时需要临时分配（区别于全部分配）<br>4）环路条件：多个进程构成环路，环中每个进程已占用的资源被前一进程申请，而自己所申请资源又被环中后一进程占用着<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbwgjuj3j30b404vaau.jpg"></p>
-<p>解决死锁的策略：</p>
-<p>1）预防死锁：通过设置某些限制条件，破坏死锁四个必要条件中的一个或多个，来防止死锁<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbwudkmej308j02yaax.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbx1iu66j30an07kdhh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbx89pi8j309707aq4n.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbxjju9aj30h409sdk7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbxq325zj30be06tmyz.jpg"></p>
-<p>较易实现，早期广泛使用，<br>缺点：由于限制太严格，导致资源利用率和吞吐量降低</p>
-<p>2）避免死锁：不事先采取限制去破坏产生死锁的条件，而是在资源分配过程中，用某种方法去评估若分配资源是否会让系统进入死锁状态，若是，则拒绝此次分配资源，从而避免死锁的发生（银行家算法）</p>
-<p>只需要较弱的限制条件，可获得较高的资源利用率和系统吞吐量，缺点：实现较难</p>
-<p>3）检测和恢复死锁：允许死锁发生，但可通过检测机制及时检测出死锁状态，并精确确定与死锁有关的进程和资源，然后采取适当措施，将系统中已发生的死锁清除，将进程从死锁状态解脱出来</p>
-<p>缺点：<br>1）检测方法复杂，实现难度大<br>2）恢复方法靠人工，撤销一些进程，回收资源再分配</p>
-<p>Windows，Linux采用的死锁解决方案：鸵鸟策略</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/汇总数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%B1%87%E6%80%BB%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2020-10-20T16:00:00.000Z" itemprop="datePublished">2020-10-21</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%B1%87%E6%80%BB%E6%95%B0%E6%8D%AE/">汇总数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>汇总数据</p>
-<p>聚集函数：运行在行组上，计算和返回单个值的函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorub8jfypj3080045wf3.jpg"></p>
-<p>1）AVG()函数：AVG()通过对表中行数计算并计算特定列值之和，求得该列的平均值。AVG()可用来返回所有列的平均值，也可以用来返回特定列或行的平均值</p>
-<p>返回products表中所有产品的平均价格<br>SELECT AVG(prodprice) AS avgprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubgpm52j301v01kaa3.jpg"></p>
-<p>返回特定供应商所提供产品的平均价格<br>SELECT AVG(prodprice) AS avgprice<br>FROM products<br>WHERE vend_id =1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubopzzmj301v01kaa3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubwhuxfj30b603kgnu.jpg"></p>
-<p>2)COUNT()函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruc4a991j30bm04b3zr.jpg"></p>
-<p>返回customers表中客户的总数：<br>SELECT COUNT(*) AS num_cust<br>FROM customers;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorucbxi9yj301r01l3yi.jpg"></p>
-<p>只对具有电子邮件地址的客户计数<br>SELECT COUNT(custemail) AS numcust<br>FROM customers;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruclrzijj301r01ldfu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goructfdt3j30b601p3zn.jpg"></p>
-<p>3)MAX()函数：要求指定列名<br>SELECT MAX(prodprice) AS maxprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorud22nwpj301x01gjre.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorud9vrdwj30b803zwgv.jpg"></p>
-<p>4)MIN()函数：要求指定列名<br>SELECT MIN(prodprice) AS minprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudhl35tj301u01haa2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudpylkmj30b8044jtz.jpg"></p>
-<p>5)SUM()函数：用来返回指定列值的和（总计）</p>
-<p>检索所订购物品的总数（所有quantity值之和）<br>SELECT SUM(quantity) AS items_ordered<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudypxc9j302g01lq2z.jpg"></p>
-<p>合计每项物品的items_price<em>quantity，得到总的订单金额<br>SELECT SUM(itemprice</em>quantity) AS totalprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorue994hlj302701idfv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorueib4iij30b802vgnf.jpg"></p>
-<p>6)聚集不同值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorueq3r3qj30ba042jt8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruexsptij30ba06r40f.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruf5cszrj30ba056adj.jpg"></p>
-<p>7）组合聚集函数<br>SELECT COUNT(*) AS num_items,<br>               MIN(prodprice) AS pricemin,<br>               MAX(prodprice) AS pricemax,<br>               AVG(prodprice) AS priceavg<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorufd6iwpj307b01gmxf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorufl6iwxj30b501z75o.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
     </div>
 
       

@@ -228,6 +228,218 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/@class和循环retain" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@class%E5%92%8C%E5%BE%AA%E7%8E%AFretain/" class="article-date">
+      <time datetime="2019-08-13T16:00:00.000Z" itemprop="datePublished">2019-08-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@class%E5%92%8C%E5%BE%AA%E7%8E%AFretain/">class和循环retain</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>当两个类相互包含的时候：Person.h中包含Book.h，而Book.h中又包含Person.h，这个时候就会出现循环引用的问题，就会造成无限递归，而导致无法编译通过</p>
+<p>解决方案：<br>.h头文件：<br>其中一边不要使用#import引入对方的头文件，而是使用@class 类名；来标注这是一个类，这样子就可以在不引入对方头文件的情况下告诉编译器这是一个类【@class Book;（有分号）】<br>.m头文件：<br>在.m文件中再<code># import</code>对方的头文件就可以使用了【#import “Book.h”】(其实不引入也可以，只是会有警告)</p>
+<p>@class与@import的区别：<br>1）#import是将指定的文件的内容拷贝到写指令的地方<br>2）@class并不会拷贝任何内容，只是告诉编译器这是一个类，这样编译器在编译的时候才可以知道这是一个类</p>
+<p>当两个对象相互引用的时候（A对象的属性是B对象，B对象的属性是A对象），这个时候，如果两边都使用retain，那么就会发生内存泄露<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly467uxfuj30db09zdid.jpg"></p>
+<p>解决方案：一端使用retain，另外一端使用assign，使用assign的那一端在dealloc中不再需要release了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly46gdexrj307s04fq40.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly46nkjtpj305606amyc.jpg"></p>
+<p>注意：这里有一个很特别的点<br>[p1 read];要放在[b1 release];之前，否则会出现僵尸对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly46ummt7j307n0883zv.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/自动释放池：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E8%87%AA%E5%8A%A8%E9%87%8A%E6%94%BE%E6%B1%A0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-12T16:00:00.000Z" itemprop="datePublished">2019-08-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E8%87%AA%E5%8A%A8%E9%87%8A%E6%94%BE%E6%B1%A0%EF%BC%9A/">自动释放池：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>原理：存入到自动释放池中的对象，在自动释放池被销毁的时候，会自动调用存储在该自动释放池中的所有对象的release方法</p>
+<p>可以解决的问题：将创建的对象，存入到自动释放池之中，就不再需要手动的release这个对象了，因为池子销毁的时候，就会自动的调用池中所有的对象的release</p>
+<p>如何创建自动释放池：<br>@autoreleasepool{</p>
+<p>}<br>这对大括弧代表这个自动释放池的范围</p>
+<p>如何将对象存储到自动释放池之中：在自动释放池之中调用对象的autorelease方法，就会将这个对象存入到当前自动释放池之中</p>
+<p>这个autorelease方法返回的是对象本身，所以我们可以这么写：<br>@autoreleasepool{<br>      Person *p1=[[[Person alloc] init] autorelease];<br>}<br>这个时候，当这个自动释放池执行完毕之后，就会立即为这个自动释放池中的对象发送一条release消息<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly47ex751j309h03ajry.jpg"></p>
+<p>八大注意：<br>1）只有在自动释放池中调用了对象的autorelease方法，这个对象才会被存储到这个自动释放池之中，如果只是将对象的创建代码写在自动释放池之中，而没有调用对象的autorelease方法，是不会将这个对象存储到这个自动释放池之中的<br>2）对象的创建可以在自动释放池的外面，在自动释放池之中调用对象的autorelease方法，就可以将这个对象存储到这个自动释放池之中<br>3）如果对象的autorelease方法的调用放在自动释放池的外面，是无法将其存储到这个自动释放池之中的，autorelease的调用只有放在自动释放池之中，才可以将其存储到自动释放池<br>4）当自动释放池结束的时候，仅仅是对存储在自动释放池中的对象发送一条release消息，而不是销毁对象<br>5）如果在自动释放池中调用同一个对象的autorelease方法多次，就会将对象存储多次到自动释放池之中，在自动释放池结束的时候，会为对象发送多条release消息，那么这个时候就会出现僵尸对象错误<br>6）如果在自动释放池中调用了存储到自动释放池中的对象的release方法，在自动释放池结束的时候，还会再调用对象的release方法，这个时候就有可能会造成野指针操作（也可以调用存储在自动释放池中的对象的retain方法）<br>7）将对象存储到自动释放池并不会使对象的引用计数器+1，所以其好处就是：创建对象将对象存储在自动释放池，就不需要再写一个release了<br>8）自动释放池可以嵌套，调用对象的autorelease方法，会将对象加入到当前自动释放池之中，只有在当前自动释放池结束的时候才会向对象发送release消息</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/类方法的规范：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E6%96%B9%E6%B3%95%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-11T16:00:00.000Z" itemprop="datePublished">2019-08-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E6%96%B9%E6%B3%95%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9A/">类方法的规范：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>一般情况下，要求提供与自定义构造方法相同功能的类方法，这样可以快速的创建一个对象；使用类方法创建的对象，要求这个对象在方法中就已经被autorelease过了，这样，我们只要在自动释放池中调用类方法来创建对象，那么创建的对象就会被自动的加入到自动释放池中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly482dqqwj30f106m76p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly488qmluj30fa0a6n03.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly48f8eabj30d603o0tu.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/ARC机制概述" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -679,225 +891,6 @@
 <p>为系统自带的类写分类，这个就叫做非正式协议</p>
 <p>分类的作用：<br>1）将一个类分为多个模块<br>2）为一个已经存在的类添加方法（扩展一个类）</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4eg0j8bj30a00900v0.jpg"><br>如果想为NSString写一个方法：<br>（此方法无参数，因为NSString本身就是字符串）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4en32rmj309303qq3s.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4et5aqkj309307f766.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4f0jo8dj30ai09saco.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/知识点补充：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%9F%A5%E8%AF%86%E7%82%B9%E8%A1%A5%E5%85%85%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-03T16:00:00.000Z" itemprop="datePublished">2019-08-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%9F%A5%E8%AF%86%E7%82%B9%E8%A1%A5%E5%85%85%EF%BC%9A/">知识点补充：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>ARC机制与垃圾回收机制(GC)的区别：</p>
-<p>GC：程序在运行期间有一个东西叫做垃圾回收器，不断的扫描堆中的对象是否无人使用，若无人使用则回收</p>
-<p>ARC：不是运行时，而是在编译的时候就在合适的地方插入retain，release……..插入的代码足以让对象无人使用的时候引用计数器为0，则回收</p>
-<p>此程序main函数中第一行宝马的引用计数器应为1，第二行执行后p1为1，宝马这时应该为2，但是此程序实际上宝马的引用计数器不是2，还是1；错误原因在于构造方法_car=car;这一句，直接将car赋值给属性_car，并没有做retain，release，这一行应该改为self.car=car;<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4fpmzgpj30940730ty.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4fwyql2j307x04owfj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4g3ky9qj307x07tta4.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4g9g30sj307x02jdg8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4gf6minj307x04jaao.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/延展(Extension)：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%BB%B6%E5%B1%95(Extension)%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-02T16:00:00.000Z" itemprop="datePublished">2019-08-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%BB%B6%E5%B1%95(Extension)%EF%BC%9A/">延展(Extension)：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）是一个特殊的分类，所以延展也是类的一部分<br>2）特殊之处：没有名字；只有声明没有实现，和本类共享一个实现</p>
-<p>语法：<br>             @interface 本类名（）</p>
-<pre><code>         @end
-</code></pre>
-<p>没有实现，和本类共享一个实现<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4gvnfu5j30xm0j4n6p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4h2dpt9j30xm0j4dnc.jpg"></p>
-<p>延展和分类的区别：<br>1）分类有名字，延展没有名字，是一个匿名的分类<br>2）每一个分类都有单独的声明和实现，而延展只有声明，没有单独的实现，和本类共享一个实现<br>3）分类中只能新增方法，而延展中任意的成员都可以写<br>4）分类中可以写@property，但是只会生成getter、setter的声明；延展中写@property，会自动生成私有属性，也会生成getter、setter的声明和实现</p>
-<p>延展的应用场景：<br>1）要为类写一个私有的@property，生成的getter、setter方法只能在类的内部访问，不能在外部访问【@property生成私有属性、生成getter、setter的实现，不要声明】<br>2）延展不会独占一个文件，都是将延展直接写在本类的实现文件中，这个时候写在延展中的成员，就相当于是这个类的私有成员，只能在本类的实现中访问，外部不能访问</p>
-<p>注意：<br>1）如果想要为类写一个真私有属性，虽然我们可以定义在@implementation之中，但是不要这么写，这样很不规范，写一个延展，将这个私有属性定义在延展中<br>2）如果要为类写一个私有方法，建议将声明写在延展中，实现写在本类的实现中，提高代码的阅读性<br>3）如果想要为类写一个私有的@property，就直接写在延展中就可以了<br>4）延展天生就是来私有化类的成员的，如果类的成员只希望在类的内部访问，那么就将其定义在延展中，如果类的成员允许被外界访问，定义在本类的@interface中</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/block的基本使用：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-01T16:00:00.000Z" itemprop="datePublished">2019-08-02</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%9A/">block的基本使用：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）block是一个数据类型，我们可以声明一个block类型的变量<br>2）不同类型的变量中可以存储不同类型的数据，block类型的变量中专门存储一段代码，这段代码可以有参数，可以有返回值</p>
-<p>Block变量的声明：<br>1）虽然block变量中是用来存储一段代码的，但是一个block变量中并不是任意的一段代码都可以存进去的，而是有限定的；也就是说，声明block变量的时候，必须要指定这个block变量存储的代码是否有参数，是否有返回值，一旦指定以后，这个block变量中就只能存储这样的代码段了<br>2）语法：返回值类型 (^block变量的名称)(参数列表);<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4hpakdcj30fg02j3zi.jpg"></p>
-<p>初始化block变量：<br>1）原理：写一个符合block要求的代码段，存储到block变量中就可以了<br>2）代码段的书写格式：</p>
-<pre><code>          ^返回值类型(参数类型)&#123;
-                    代码段;
-          &#125;;
-</code></pre>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4i0b989j303y02i0t6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4i7bl9oj305j01vglz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4idsc7nj305j01v74m.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ikffggj30b901vdgd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4iq8m2dj30e209wt9y.jpg"></p>
-<p>  如何执行存储在block变量中的代码段：<br>语法格式：block变量名();<br>【有参数就传参数，有返回值就接】</p>
 
       
     </div>

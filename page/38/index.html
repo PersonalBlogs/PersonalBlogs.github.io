@@ -228,6 +228,217 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/C实例/一数三平方：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%B8%80%E6%95%B0%E4%B8%89%E5%B9%B3%E6%96%B9%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%B8%80%E6%95%B0%E4%B8%89%E5%B9%B3%E6%96%B9%EF%BC%9A/">一数三平方：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kr8tn4hj30je0izdi6.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//有这样一个六位数，它本身是一个整数的平方，其高三位和低三位也分别是一个整数的平方，如225625=475^2,求满足上述条件的所有六位数。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">long</span> i,n,n1,n2,n3,n4,count=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;这样的数有:  \n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">100000</span>;i&lt;=<span class="number">999999</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        n=(<span class="keyword">long</span>)<span class="built_in">sqrt</span>(i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i==n*n)&#123;</span><br><span class="line">            </span><br><span class="line">            n1=i/<span class="number">1000</span>;</span><br><span class="line">            n2=i%<span class="number">1000</span>;</span><br><span class="line">            n3=(<span class="keyword">long</span>)<span class="built_in">sqrt</span>(n1);</span><br><span class="line">            n4=(<span class="keyword">long</span>)<span class="built_in">sqrt</span>(n2);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(n1==n3*n3&amp;&amp;n2==n4*n4)&#123;</span><br><span class="line">                </span><br><span class="line">                count++;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%ld &quot;</span>,i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n满足条件的有：%ld个&quot;</span>,count);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/C实例/两数相除：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4%EF%BC%9A/">两数相除：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>指针作为函数的返回值：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8k65kw26j30d60fljsu.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> *result)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;</span><br><span class="line">        ret=<span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        *result=a/b;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> ret;    <span class="comment">//return:如果除法成功，返回1；否则返回0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// insert code here...</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">5</span>,b=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(divide(a,b,&amp;c))&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d/%d=%d\n&quot;</span>,a,b,c);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/C实例/交换两个变量的值" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC/">交换两个变量的值</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">**//**交换**a**和**b**的值**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**	int a=5,b=6,t;**</span><br><span class="line">**	t=5;**</span><br><span class="line">**	a=b;**</span><br><span class="line">**	b=t;**</span><br><span class="line">**	printf(“a=%d,b=%d\n”,a,b);**</span><br><span class="line">**	return 0;**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**	int a=5,b=6;**</span><br><span class="line">	</span><br><span class="line">**	a=a+b;**</span><br><span class="line">**	b=a-b;**</span><br><span class="line">**	a=a-b;**</span><br><span class="line">	</span><br><span class="line">**	printf(“a=%d,b=%d\n”,a,b);**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int a=5,b=6;</span><br><span class="line">	</span><br><span class="line">	a=a ^ b;</span><br><span class="line">	b=a ^ b;</span><br><span class="line">	a=a ^ b;</span><br><span class="line">	</span><br><span class="line">	printf(“a=%d,b=%d\n”,a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void swap(int *pa,int *pb)&#123;</span><br><span class="line">	int t=*pa;</span><br><span class="line">	*pa=*pb;</span><br><span class="line">	*pb=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int a=5,b=6;</span><br><span class="line">	swap(&amp;a, &amp;b);</span><br><span class="line">	printf(“a=%d,b=%d\n”,a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/C实例/亲密数：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -685,210 +896,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kdonrxej30l90tzq5x.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kdugac4j30kk0acacr.jpg"></p>
 <p>源代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//验证100以内的正偶数都能分解为两个素数之和，即验证哥德巴赫猜想对100以内（大于二）的正偶数成立。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ss</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(i!=j+<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,j,k,flag1,flag2,n=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">4</span>;i&lt;<span class="number">100</span>;i+=<span class="number">2</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">2</span>;k&lt;=i/<span class="number">2</span>;k++)&#123;</span><br><span class="line">            </span><br><span class="line">            j=i-k;</span><br><span class="line">            flag1=ss(k);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(flag1)&#123;</span><br><span class="line">                </span><br><span class="line">                flag2=ss(j);</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span>(flag2)&#123;</span><br><span class="line">                    </span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%3d=%3d+%3d,&quot;</span>,i,k,j);</span><br><span class="line">                    n++;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(n%<span class="number">8</span>==<span class="number">0</span>)&#123;</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/大小写转换：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2%EF%BC%9A/">大小写转换：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kb1ghkfj30ms0amt9z.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字母在ASCII表中是顺序排列的</span></span><br><span class="line"><span class="comment">//大写字母和小写字母是分开排列的，并不在一起</span></span><br><span class="line"><span class="comment">//&#x27;a&#x27;-&#x27;A&#x27;可以得到两段之间的距离，于是a+&#x27;a&#x27;-&#x27;A&#x27;可以把一个大写字母变成小写字母，而a+&#x27;A&#x27;-&#x27;a&#x27;可以把一个小写字母变成大写字母</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">char</span> m=<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">    <span class="keyword">char</span> n=<span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,m-n);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>,n+<span class="number">32</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>,m<span class="number">-32</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/字符串数组的排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E7%9A%84%E6%8E%92%E5%BA%8F/">字符串数组的排序</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>以字母的顺序排序：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6mvxfhwj308x01fdg3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6og8qlej308x0etjug.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6ova2zbj30d60dqgox.jpg"></p>
-<p>以长度排序：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6p3fy5ij30bx0aemzy.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/判断三角形的类型：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%88%A4%E6%96%AD%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E7%B1%BB%E5%9E%8B%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%88%A4%E6%96%AD%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E7%B1%BB%E5%9E%8B%EF%BC%9A/">判断三角形的类型：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kis4ti3j30mu0jfacx.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据输入的三角形的三条边判断三角形的类型，并输出它的面积和类型</span></span><br><span class="line"><span class="comment">//实例中要注意“&amp;&amp;”和“｜｜”的恰当使用。当需要同时满足多种情况时，使用“&amp;&amp;”逻辑运算符，而当只需要满足几种情况中的一种时，则使用“｜｜”逻辑运算符。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">float</span> a,b,c;</span><br><span class="line">    <span class="keyword">float</span> s ,area;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%f,%f,%f&quot;</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(a+b&gt;c &amp;&amp; b+c&gt;a &amp;&amp; a+c&gt;b)&#123;</span><br><span class="line">        </span><br><span class="line">        s=(a+b+c)/<span class="number">2</span>;</span><br><span class="line">        area=(<span class="keyword">float</span>)<span class="built_in">sqrt</span>(s*(s-a)*(s-b)*(s-c));</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;面积是：%f\n&quot;</span>,area);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(a==b &amp;&amp; a==c)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;等边三角形\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a==b || a==c || b==c)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;等腰三角形\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>((a*a + b*b ==c*c)||(a*a + c*c == b*b)||(b*b+c*c==a*a))&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;直角三角形\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;普通三角形&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;不能构成三角形&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     

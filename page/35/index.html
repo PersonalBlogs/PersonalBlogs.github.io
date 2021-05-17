@@ -228,6 +228,228 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/NSDictionary与NSMutableDictionary：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSDictionary%E4%B8%8ENSMutableDictionary%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-04T16:00:00.000Z" itemprop="datePublished">2019-07-05</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSDictionary%E4%B8%8ENSMutableDictionary%EF%BC%9A/">NSDictionary与NSMutableDictionary：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>NSArray与NSMutableArray的缺点：数组元素的下标不固定，都有可能会发生变化，无法通过下标来唯一确定数组中的元素</p>
+<p>存储数据的时候，必须要为存储的数据取一个别名，这个别名的作用就是用来确定别名对应的数据的，这种存储数据的方式就叫做键值对的存储方式（Key-Value）</p>
+<p>它们是数组，是以键值对的形式存储数据的，往这个数组中存储数据的同时必须要指定这个数据的别名才可以，要找到存储在这个数组中的数据，通过别名来找，而不是通过下标</p>
+<p>NSDictionary：字典数组<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5c9eceqj30ar027my6.jpg"></p>
+<p>创建字典数组：<br>1）这种方式无意义<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5cgt98qj309901raas.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5cmnc6zj30gb018gma.jpg"><br>3）简要方式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ct29xbj30gb0183z1.jpg"></p>
+<p>使用：<br>1）根据别名取值：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5d0yy6ij30dd01qwep.jpg"><br>2）键值对的数量：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5d7cblej30dd01q0sv.jpg"><br>3）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ddq3fwj308002ajrl.jpg"><br>4）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5djk64yj309302amxd.jpg"><br>5）遍历字典数组【字典数组中的数据无法使用下标去取，所以普通的for循环就无用了】</p>
+<p>1.使用for in循环遍历出来的是字典数组中所有的键，再通过键取出对应的值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5dqj0frj30ax0b4gov.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5dxr6l8j30eq097dj6.jpg"><br>2.使用block遍历<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5e6jq5cj30ix0c442y.jpg"></p>
+<p>字典数组存储数据的原理：<br>1）并不是按照顺序依次存储的<br>2）存储键值对的时候，会根据键和数组的长度做一个哈希算法，算出一个下标，将这个键值对存储在该下标处<br>3）取值的时候也是做哈希算法</p>
+<p>与NSArray对比：<br>1）NSArray数组的元素是按照顺序来存储的，字典数组中存储的下标是算出来的<br>2）存储的效率NSArray要高一些<br>如果取值的时候是把所有的数据取出来，NSArray效率高<br>如果只是取数组中指定的几个元素，字典数组效率高</p>
+<p>NSMutableDictionary：存储在其中的元素可以动态的新增和删除</p>
+<p>创建可变字典数组：<br>1）有意义<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ehtossj30an01kmy0.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5eorn5vj30bb017aao.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ev5o60j309300vwep.jpg"></p>
+<p>新增键值对：【如果键重复，后添加的就会替换原有的】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5f0tn78j30ba03r0tq.jpg"></p>
+<p>删除所有键值对：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5f7h0phj30ba07atar.jpg"><br>删除某一个键值对：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5fdptw3j306j02a74k.jpg"></p>
+<p>字典数组的信息持久化：保存到plist文件里：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5flzn7fj30bp044taj.jpg"><br>从plist文件中还原：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5fsa5waj30ff08qtbu.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/集合的内存管理：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%9B%86%E5%90%88%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-03T16:00:00.000Z" itemprop="datePublished">2019-07-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%9B%86%E5%90%88%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/">集合的内存管理：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>NSArray：集合<br>NSDictionary：字典集合</p>
+<p>在MRC模式下，将对象存储到集合之中，会为这个对象的引用计数器+1，当集合销毁的时候，就会向存储在集合中的所有对象发送一条release消息<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5gmsm0zj30a809en06.jpg"></p>
+<p>使用@[]或者@{}创建的集合已经被autorelease过了<br>直接调用和类同名的类方法创建的对象也是被autorelease过了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5gurak1j30el03qq43.jpg"></p>
+<p>在ARC模式下，集合的元素是一个强类型的指针<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5h0y01xj305a01h0sy.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/NSFileManager：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSFileManager%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-02T16:00:00.000Z" itemprop="datePublished">2019-07-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSFileManager%EF%BC%9A/">NSFileManager：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>NSFileManager是Foundation框架提供的一个类，用来操作磁盘上的文件和文件夹，对它们进行创建、删除、复制、拷贝、移动</p>
+<p>NSFileManager类的对象是以单例模式创建的：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5hp8zrzj30a801h0t2.jpg"></p>
+<p>常用方法之判断：<br>1）判断指定的文件或者文件夹在磁盘上是否真实的存在<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5hwrwlrj30ao084tb6.jpg"><br>2）判断指定的路径是否真实的存储在我们的磁盘之上，并且判断这个路径是一个文件夹路径还是一个文件路径<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5i34wtlj30b30at41h.jpg"><br>3）判断指定的文件夹或者文件是否可以读取<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5iam1klj30e503nq4e.jpg"><br>4）判断指定的文件夹或者文件是否可以写入<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ih8vqpj30ce01vjs5.jpg"><br>5）判断指定的文件夹或者文件是否可以删除<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5imyiflj30al01vmxv.jpg"></p>
+<p>常用方法之获取信息：<br>1）获取指定文件或者文件夹的属性信息<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5iurvuij30ig09j0wu.jpg"><br>只是想拿到文件或文件夹的大小信息：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5j2k4vtj30hp02h75e.jpg"><br>2）获取指定目录下的所有的文件和目录【所有的都拿到】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5j9tj1qj30e5031wfo.jpg"><br>3）获取指定目录下所有的子目录和文件【不包括孙子辈】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5jghamuj30hn055770.jpg"></p>
+<p>常用方法之文件/目录的创建：<br>1）在指定的目录创建文件<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5jn99twj30hu0avwht.jpg"><br>2）在指定的目录创建文件夹【第2个参数：YES做一路创建，NO就不会】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5jvbsdpj30hs04xmyp.jpg"><br>3）拷贝文件<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5k3djl0j30if04emz8.jpg"><br>4）移动/剪切文件—文件的重命名<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5kdngvaj30i0028t9s.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5kja7xfj30i0028dh1.jpg"><br>5）删除文件【删除的文件不会倒在废纸篓，而是直接删除】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5kpuzkyj30f4028gmj.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5kx5ehjj30dx0b0wi3.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/OC中的结构体：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -725,219 +947,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/函数：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-27T16:00:00.000Z" itemprop="datePublished">2019-06-28</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%EF%BC%9A/">函数：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>值传递的时候，形参发生任何的改变，都不会影响实参</p>
-<p>地址传递：利用指针作为函数的参数，可以修改实参的值</p>
-<p>函数的声明可以写多次，但是定义只能有一次</p>
-<p>函数的分文件编写：<br>1）创建后缀名为.h的头文件，在头文件中写函数的声明<br>2）创建后缀名为.cpp的源文件，在源文件中写函数的定义</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/指针：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-26T16:00:00.000Z" itemprop="datePublished">2019-06-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88%EF%BC%9A/">指针：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>指针前加一个<em>代表解引用，找到指针指向的内存中的数据【</em>p】</p>
-<p>不管是什么数据类型，在32位操作系统上指针是占据4个字节空间大小，在64位操作系统上占据8个字节空间大小</p>
-<p>int *p =NULL；<br>空指针：指针变量指向内存中编号为0的空间，用来初始化指针变量，空指针指向的内存是不可以访问的【0～255之间的内存编号是系统占用的，因此不可以访问】</p>
-<p>野指针：指针变量指向非法的内存空间</p>
-<p>空指针和野指针都不是我们申请的空间，因此不要访问</p>
-<p>Const修饰指针的三种情况：<br>1）const修饰指针：常量指针【const int *p=&amp;a；指针的指向可以修改，但是指针指向的值不可以修改）<br>2）const修饰常量：指针常量【int * const p=&amp;a；指针的指向不可以改，指针指向的值可以改】<br>3）const既修饰指针又修饰常量【const int * const p=&amp;a；指针的指向和指针指向的值都不可以改】</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/结构体：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-25T16:00:00.000Z" itemprop="datePublished">2019-06-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%9A/">结构体：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>结构体属于用户自定义的数据类型，允许用户存储不同的数据类型</p>
-<p>在结构体中可以定义另一个结构体作为成员</p>
-<p>值传递传参的时候会耗费大量的内存空间，用地址传递可以减少内存空间，而且不会复制新的副本出来</p>
-<p>结构体中用const来防止误操作：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwewrbsehj30xr0rxq9y.jpg"></p>
-<p>—————————————<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwewyvfprj30t20p1q7b.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwex98ncxj308403i0sy.jpg"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct Hero&#123;</span><br><span class="line">	string name;</span><br><span class="line">	int age;</span><br><span class="line">	string sex;</span><br><span class="line">&#125;;</span><br><span class="line">//冒泡排序</span><br><span class="line">void bubbleSort(struct Hero heroArray[],int len)&#123;</span><br><span class="line">	for(int i=0;i&lt;len-1;i++)&#123;</span><br><span class="line">		for(int j=0;j&lt;len-1-i;j++)&#123;</span><br><span class="line">			if(heroArray[j].age&gt;heroArray[j+1].age)&#123;</span><br><span class="line">				struct Hero temp=heroArray[j];</span><br><span class="line">				heroArray[j]=heroArray[j+1];</span><br><span class="line">				heroArray[j+1]=temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void printHero(struct Hero heroArray[],int len)&#123;</span><br><span class="line">	for(int i=0;i&lt;len;i++)&#123;</span><br><span class="line">		cout&lt;&lt;“姓名： “&lt;&lt;heroArray[I].name&lt;&lt;“年龄： “&lt;&lt;heroArray[I].age&lt;&lt;“性别：”&lt;&lt;heroArray[I].sex&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[]) &#123;</span><br><span class="line">	</span><br><span class="line">	struct Hero heroArray[5]=&#123;</span><br><span class="line">		&#123;“刘备”,23,”男”&#125;,</span><br><span class="line">		&#123;“关羽”,22,”男”&#125;,</span><br><span class="line">		&#123;“张飞”,20,”男”&#125;,</span><br><span class="line">		&#123;“赵云”,21,”男”&#125;,</span><br><span class="line">		&#123;“貂蝉”,19,”女”&#125;,</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	int len=sizeof(heroArray)/sizeof(heroArray[0]);</span><br><span class="line">	</span><br><span class="line">	bubbleSort(heroArray,len);</span><br><span class="line">	</span><br><span class="line">	printHero(heroArray,len);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
     </div>
 
       

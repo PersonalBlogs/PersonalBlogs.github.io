@@ -228,6 +228,231 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/协议的基本使用(protocol)：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(protocol)%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-24T16:00:00.000Z" itemprop="datePublished">2019-07-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(protocol)%EF%BC%9A/">协议的基本使用(protocol)：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>作用：专门用来声明一大堆方法（不能声明属性，也不能实现方法，只能用来写方法的声明），只要某个类遵守了这个协议，就相当于拥有这个协议中的所有的方法声明，而不用自己去定义</p>
+<p>协议的声明：</p>
+<p>@protocol 协议名称 <NSObject></p>
+<p>方法的声明;</p>
+<p>@end<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4pbw8nij30ku06smzn.jpg"></p>
+<p>在协议中，只能用来声明方法，就是专门用来写方法声明的，就是用来被类遵守的</p>
+<p>如果想要让一个类拥有协议中定义的所有的方法声明，那么就让这个类遵守这个协议，类只要遵守一个协议，那么这个类就拥有了这个协议中定义的所有的方法的声明</p>
+<p>@interface 类名 ： 父类名 &lt;协议名称&gt;</p>
+<p>@end</p>
+<p>：表示继承<br>&lt;&gt;表示遵守的协议</p>
+<p>这个类只是拥有了这个协议中的方法的声明而已，没有实现，所以这个类还应该实现协议中的方法</p>
+<p>如果类不实现协议中的方法，其实也不会报错，编译器只是会报警告；但是当创建对象，来调用这个没有实现的协议中的方法的时候，就会报错</p>
+<p>类是单继承，但是协议可以多遵守<br>@interface 类名：父类名 &lt;协议名称1，协议名称2……&gt;</p>
+<p>@end</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/@required与@optional" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@required%E4%B8%8E@optional/" class="article-date">
+      <time datetime="2019-07-23T16:00:00.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@required%E4%B8%8E@optional/">required与optional</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>当一个类遵守了一份协议，这个类只是拥有了这个协议中的方法的声明而已，没有实现，所以这个类还应该实现协议中的方法；如果类不实现协议中的方法，其实也不会报错，编译器只是会报警告；但是当创建对象，来调用这个没有实现的协议中的方法的时候，就会报错</p>
+<p>这两个修饰符是专门用来修饰协议中的方法的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4pvf6jmj306l04udgl.jpg"></p>
+<p>在协议中，如果方法的声明被@required修饰，那么遵守这个协议的类必须要实现这个方法，否则编译器会发出警告；<br>如果方法的声明被@optional修饰，那么遵守这个协议的类如果不实现这个方法，编译器也不会发出警告</p>
+<p>这两个关键字的主要作用：在于程序员沟通，告诉遵守协议的类，哪些方法是必须要实现的（@required必须实现，@optional可实现可不实现），因为这些方法我会调用</p>
+<p>默认的是：@required</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/协议之间的继承：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-22T16:00:00.000Z" itemprop="datePublished">2019-07-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%9A/">协议之间的继承：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>协议与协议之间可以相互继承</p>
+<p>语法：</p>
+<p>@protocol 协议名称 &lt;父协议名称&gt;</p>
+<p>@end</p>
+<p>效果：子协议中不仅有自己的方法的声明，还有父协议中的所有的方法的声明；如果某个类遵守了某份协议，那么这个类就拥有了这个协议和这个协议的父协议中的所有方法的声明</p>
+<p>类的名称可以和协议的名称一致：<br>在Foundation框架中，有一个类叫做NSObject，是所有OC类的基类<br>在Foundation框架中，有一个协议叫做NSObject</p>
+<p>NSObject协议被NSObject类遵守，所以，NSObject协议中的所有的方法全部的OC类都拥有了，这么说，所有的OC类都遵守了NSObject协议，NSObject协议也叫做基协议</p>
+<p>写协议的规范：要求所有的协议都必须直接的或间接的从NSObject基协议继承</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/协议的类型限制(代理设计模式)：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -681,210 +906,6 @@
         <hr>
 <p>判断字符串是否以指定的字符串开头：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4wvn0qrj30a7033t9t.jpg"></p>
 <p>判断字符串是否以指定的字符串结尾：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4x19zmej30at02pab9.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/字符串的搜索：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%90%9C%E7%B4%A2%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%90%9C%E7%B4%A2%EF%BC%9A/">字符串的搜索：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>在主串中搜索子串：</p>
-<p>1）这个方法是从前往后搜索，第一次匹配的子串：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xgefenj308n04dq4j.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xmsu37j308o06cgn9.jpg"></p>
-<p>2）从后往前搜索<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xtjkr0j30dc069mz7.jpg"><br>NSRange结构体：是Foundation框架中定义的一个结构体，结构体变量一般用来表示一段范围</p>
-<p>声明并初始化结构体变量的方式：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4y13jrrj304701laaa.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4y87sdpj304n01lglp.jpg"><br>3）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4yf6eo7j308c01lt8x.jpg"><br>4）Foundation框架中定义了一个函数，这个函数可以快速的创建一个NSRange结构体变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ylayunj30bw01kwf1.jpg"><br>5）Foundation框架中定义了一个函数，可以将一个NSRange结构体变量转换为NSString<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ysii0yj30bw01xwf7.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/字符串的截取：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%88%AA%E5%8F%96%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-13T16:00:00.000Z" itemprop="datePublished">2019-07-14</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%88%AA%E5%8F%96%EF%BC%9A/">字符串的截取：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）从指定的下标处一直截取到最后<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4zb5xh6j30bw04a0ty.jpg"><br>2）从第0个开始截取指定的个数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4zhmnfcj30bw079q4c.jpg"><br>3）截取指定的一段范围<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4zpwv7tj30cm062dha.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/字符串的替换：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9B%BF%E6%8D%A2%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-12T16:00:00.000Z" itemprop="datePublished">2019-07-13</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9B%BF%E6%8D%A2%EF%BC%9A/">字符串的替换：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>将字符串中的第一个参数替换为第二个参数（全部替换）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly50a3ikwj30ga07amzb.jpg"><br>这个方法还可以做删除，原理是将其替换为@“”</p>
 
       
     </div>

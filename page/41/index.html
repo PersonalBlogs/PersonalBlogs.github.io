@@ -228,6 +228,215 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/C实例/特殊的完全平方数：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%89%B9%E6%AE%8A%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%89%B9%E6%AE%8A%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0%EF%BC%9A/">特殊的完全平方数：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8koj5rjuj30lj0hu40h.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在3位整数100～999中查找符合如下条件的整数并在屏幕上输出：这个数既是完全平方数，又有两个数字相同，如121，144等。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">int</span> hun,ten,data;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;结果是:\n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">100</span>;i&lt;=<span class="number">999</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        j=<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">while</span>(j*j&lt;=i)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i==j*j)&#123;</span><br><span class="line">                </span><br><span class="line">                hun=i/<span class="number">100</span>;</span><br><span class="line">                data=i-hun*<span class="number">100</span>;</span><br><span class="line">                ten=data/<span class="number">10</span>;</span><br><span class="line">                data=data-ten*<span class="number">10</span>;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span>(hun==ten||hun==data||ten==data)&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%5d&quot;</span>,i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/C实例/素数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%B4%A0%E6%95%B0/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%B4%A0%E6%95%B0/">素数</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6bj6pt8j30fh0cnmyj.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6bq0q8hj30ag0fnabf.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6by2lhgj30m60c7dha.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6c6nqyej30fg0hb40i.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6cljwqsj30a90etq49.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6ctmqmfj30950fzdh4.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6d177kzj30en0lswh2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6d93h2cj30bu0ef0u4.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/C实例/猜字谜游戏" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%8C%9C%E5%AD%97%E8%B0%9C%E6%B8%B8%E6%88%8F/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%8C%9C%E5%AD%97%E8%B0%9C%E6%B8%B8%E6%88%8F/">猜字谜游戏</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>产生一个随机数：<br>1）先引入一个系统头文件#include&lt;stdlib.h&gt;<br>2）int num=arc4random_uniform(10);<br>将产生一个0～9的随机数<br>int num=arc4random_uniform(11)+10;<br>将产生一个10～20的随机数</p>
+<p>随机数：每次召唤rand（）就得到一个随机的整数</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln66d82ytj30fh0h4juh.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln66luxgtj30qh03jwi4.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln66ue6v0j30cp0lh76o.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/C实例/给定不超过6的正整数A，考虑从A开始连续4个数字，请输出所有由它们组成的无重复数字的3位数：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -674,239 +883,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6kf98qtj30e10fk42p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6knmptej30e40e90w5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6l0ku8vj30e40e976s.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6l6yt65j30e40e941l.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6letmuij30e40e9786.jpg"></p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6llyhntj30bq074dh6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6lsvygej30e10740up.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6lztooqj30e40e90xc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6m7ztkvj30e40e944f.jpg"></p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/进制转换" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">进制转换</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">十进制转换为二进制**//%**和**/**的应用。**%**为模运算符，或称求余运算符，**%**两侧均应为整型数据；**/**为除法运算符，两个整数相除的结果为整数，运算的两个数中有一个数为实数，则结果是**double**型。**#include&lt;stdio.h&gt;**</span><br><span class="line">**#include&lt;stdlib.h&gt;**</span><br><span class="line">**void main()&#123;**</span><br><span class="line">**    int i,j,n,m;**</span><br><span class="line">**    int a[16]=&#123;**</span><br><span class="line">**        0**</span><br><span class="line">**    &#125;;**</span><br><span class="line">**    system(“cls”);**</span><br><span class="line">**    printf(“**请输入一个十进制数**(0~32767):\n”);**</span><br><span class="line">**    scanf(“%d”,&amp;n);**</span><br><span class="line">**    for(m=0;m&lt;15;m++)&#123;**</span><br><span class="line">**        I=n%2;**</span><br><span class="line">**        j=n/2;**</span><br><span class="line">**        n=j;**</span><br><span class="line">**        a[m]=I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    for(m=15;m&gt;=0;m—)&#123;**</span><br><span class="line">**        printf(“%d”,a[m]);**</span><br><span class="line">**        if(m%4==0)**</span><br><span class="line">**            printf(“ “);**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    printf(“\n”);**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">？**n**进制转换为十进制**#include&lt;stdio.h&gt;**</span><br><span class="line">**#include&lt;string.h&gt;**</span><br><span class="line">**void main()&#123;**</span><br><span class="line">**    long t1;**</span><br><span class="line">**    int i,n,t,t3;**</span><br><span class="line">**    char a[100];**</span><br><span class="line">**    printf(“please input a number:\n”);**</span><br><span class="line">**    gets(a);**</span><br><span class="line">**    strupr(a);**</span><br><span class="line">**    t1=0;**</span><br><span class="line">**    printf(“**请输入进制**n(2**或**8**或**16)**：**\n”);**</span><br><span class="line">**    scanf(“%d”,&amp;n);**</span><br><span class="line">**    for(I=0;i&lt;t3;i++)&#123;**</span><br><span class="line">**        if(a[I]-‘0’&gt;=n&amp;&amp;a[I]-‘A’||a[I]-‘A’+10&gt;=n)&#123;**</span><br><span class="line">**            printf(“**输入有误！！**”);**</span><br><span class="line">**            exit(0);**</span><br><span class="line">**        &#125;**</span><br><span class="line">**        if(a[I]&gt;=‘0’&amp;&amp;a[I]&lt;=‘9’)**</span><br><span class="line">**            t=a[I]-‘0’;**</span><br><span class="line">**        else if(n&gt;=11&amp;&amp;(a[I]&gt;=‘A’&amp;&amp;a[I]&lt;=‘A’+n-10))**</span><br><span class="line">**            t=a[I]-‘A’+10;**</span><br><span class="line">**        t1=t1*n+t;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    printf(“**十进制形式是**%1d\n”,t1);**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/六种经典排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E5%85%AD%E7%A7%8D%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E5%85%AD%E7%A7%8D%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F/">六种经典排序</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>求数组中的最大值/最小值/累加和、平均值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5ser0ydj30ev08jac0.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5snip52j30f90aw0vy.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5suvapoj30hg0badij.jpg"></p>
-<p>求用户输入的多个数的最大、最小值。。while循环</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5t4t77yj30dt0drq4c.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5tdbe0xj30bq0ft760.jpg"><br>3个数由小到大排序<br><em>//<em>任意输入</em>3</em>个整数，编程实现对这<em>3</em>个整数由小到大进行排序。<br><em>//<em>本实例使用</em>scanf(“%d%d%d”,&amp;a,&amp;b,&amp;c)<em>从键盘中获得任意</em>3</em>个数。在输入数据时，在两个数据之间以一个或多个空格间隔，也可以用<em>Enter</em>键、<em>Tab</em>键，不能用逗号作为两个数据间的分隔符。若用格式输入函数*scanf(“%d,%d,%d”,&amp;a,&amp;b,&amp;c)*输入数据，两个数据之间要用“，”做间隔。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**int** main()&#123;</span><br><span class="line">    **int** a,b,c,t;</span><br><span class="line">    printf(“Please input a,b,c:\n”);</span><br><span class="line">    scanf(“%d%d%d”,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    **if**(a&gt;b)&#123;</span><br><span class="line">        t=a;</span><br><span class="line">        a=b;</span><br><span class="line">        b=t;</span><br><span class="line">    &#125;</span><br><span class="line">    **if**(a&gt;c)&#123;</span><br><span class="line">        t=a;</span><br><span class="line">        a=c;</span><br><span class="line">        c=t;</span><br><span class="line">    &#125;</span><br><span class="line">    **if**(b&gt;c)&#123;</span><br><span class="line">        t=b;</span><br><span class="line">        b=c;</span><br><span class="line">        c=t;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(“The order of the number is:\n”);</span><br><span class="line">    printf(“%d,%d,%d”,a,b,c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>数组元素逆置：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5trid4kj30hj094act.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5tyyewrj30rx0ergqo.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5u69rz6j30j8078tbb.jpg"></p>
-<p>直接插入排序<br>*//*插入排序是把一个记录插入到已排序的有序序列中，使整个序列在插入该纪录后仍然有序。插入排序中较简单的一种方法是直接插入排序，其插入位置的确定方法是将待插入的记录与有序区中的各记录自右向左依次比较其关键字值的大小。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** insort(**int** s[],**int** n)&#123;</span><br><span class="line">    **int** i,j;</span><br><span class="line">    **for**(i=2;i&lt;=n;i++)&#123;</span><br><span class="line">        s[0]=s[i];</span><br><span class="line">        j=i-1;</span><br><span class="line">        **while**(s[0]&lt;s[j])&#123;</span><br><span class="line">            s[j+1]=s[j];</span><br><span class="line">            j—;</span><br><span class="line">        &#125;</span><br><span class="line">        s[j+1]=s[0];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** a[11],I;</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    printf(“原始顺序:\n”);</span><br><span class="line">    **for**(I=1;i&lt;11;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">               insort(a,10);</span><br><span class="line">               printf(“\n 插入数据排序后顺序：\n”);</span><br><span class="line">    **for**(I=1;i&lt;11;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5ul8x8ej30iv0azdm5.jpg"></p>
-<p>希尔排序<br><em>//<em>用希尔排序法对一组数据从小到大进行排序，数据分别为</em>69</em>，<em>56</em>，<em>12</em>，<em>136</em>，<em>3</em>，<em>55</em>，<em>46</em>，<em>99</em>，<em>88</em>，<em>25.</em><br><em>//<em>希尔排序是在直接插入排序的基础上做的改进，也就是将要排序的序列按固定增量分成若干组，等距离者在同一组中，然后再在组内进行直接插入排序。这里面的固定增量从</em>nn/2</em>开始，以后每次缩小到原来的一半。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** shsort(**int** s[],**int** n)&#123;</span><br><span class="line">    **int** i,j,d;</span><br><span class="line">    d=n/2;</span><br><span class="line">    **while**(d&gt;=1)&#123;</span><br><span class="line">        **for**(I=d+1;i&lt;=n;i++)&#123;</span><br><span class="line">            s[0]=s[i];</span><br><span class="line">            j=i-d;</span><br><span class="line">            **while**((j&gt;0)&amp;&amp;(s[0]&lt;s[j]))&#123;</span><br><span class="line">                s[j+d]=s[j];</span><br><span class="line">                j=j-d;</span><br><span class="line">            &#125;</span><br><span class="line">            s[j+d]=s[0];</span><br><span class="line">        &#125;</span><br><span class="line">        d=d/2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** a[11],I;</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    shsort(a,10);</span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>冒泡排序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5us65moj30h40b3q55.jpg"><br><em>//<em>用冒泡法对任意输入的</em>10</em>个数由小到大进行排序<br><em>//<em>冒泡法的基本思路是，如果要对</em>n</em>个数进行冒泡排序，那么要进行<em>n-1</em>趟比较，在第<em>1</em>趟比较中要进行<em>n-1</em>次两两比较，在第<em>j</em>趟中要进行<em>n-j</em>次两两比较。从这个基本思路中发现，趟数决定了两两比较的次数，这样就很容易将两个<em>for</em>循环联系起来了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line"></span><br><span class="line">    **int** i,j,t,a[11];</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I=1;i&lt;11;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line"></span><br><span class="line">    **for**(I=1;i&lt;10;i++)</span><br><span class="line">        **for**(j=1;j&lt;11;j++)</span><br><span class="line">            **if**(a[j]&gt;a[j+1])&#123;</span><br><span class="line">                t=a[j];</span><br><span class="line">                a[j]=a[j+1];</span><br><span class="line">                a[j+1]=t;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5vi2dqgj30h40cyn0w.jpg"></p>
-<p>快速排序<br><em>//<em>用快速排序法对一组数据由小到大进行排序，数据分别为</em>99</em>，<em>45</em>，<em>12</em>，<em>36</em>，<em>69</em>，<em>22</em>，<em>62</em>，<em>796</em>，<em>4</em>，<em>696</em><br><em>//<em>快速排序是对冒泡排序的一种改进，主要的算法思想是在待排序的</em>n</em>个数据中取第一个数据作为基准值，将所有记录分为<em>3</em>组，使第一组中各数据值均小于或等于基准值，第二组做基准值的数据，第三组中各数据值均大于或等于基准值。这便实现了第一趟分割，然后再对第一组和第三组分别重复上述方法，以此类推，直到每组中只有一个记录为止。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** qusort(**int** s[],**int** start,**int** end)&#123;</span><br><span class="line">    **int** i,j;</span><br><span class="line">    I=start;</span><br><span class="line">    j=end;</span><br><span class="line">    s[0]=s[start];</span><br><span class="line">    **while**(I&lt;j)&#123;</span><br><span class="line">        **while**(I&lt;j&amp;&amp;s[0]&lt;s[j])</span><br><span class="line">            j—;</span><br><span class="line">        **if**(I&lt;j)&#123;</span><br><span class="line">            s[I]=s[j];</span><br><span class="line">            I++;</span><br><span class="line">        &#125;</span><br><span class="line">        **while**(I&lt;j&amp;&amp;s[I]&lt;=s[0])</span><br><span class="line">            I++;</span><br><span class="line">        **if**(I&lt;j)&#123;</span><br><span class="line">            s[j]=s[I];</span><br><span class="line">            j—;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    s[I]=s[0];</span><br><span class="line">    **if**(start&lt;i)</span><br><span class="line">        qusort(s,start,j-1);</span><br><span class="line">    **if**(I&lt;end)</span><br><span class="line">        qusort(s,j+1,end);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** a[11],I;</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    qusort(a,1,10);</span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>选择排序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5vum7l0j30ax08haay.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln5w3cmjjj30cr0cu40n.jpg"><br><em>//<em>用选择排序法对一组数据由小到大进行排序，数据分别为</em>526</em>，<em>36</em>，<em>2</em>，<em>369</em>，<em>56</em>，<em>45</em>，<em>78</em>，<em>92</em>，<em>125</em>，<em>52.</em><br><em>//<em>选择排序的基本算法是从待排序的区间中经过选择和交换后选出最小的数值存放到</em>a</em>[<em>0</em>]中，再从剩余的未排序区间中经过选择和交换后选出最小的数值存放到<em>a</em>[<em>1</em>]中，<em>a</em>[<em>1</em>]中的数字仅大于<em>a</em>[<em>0</em>]，以此类推，即可实现排序。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line"></span><br><span class="line">    **int** i,j,t,a[11];</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line"></span><br><span class="line">    **for**(I=1;i&lt;11;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line"></span><br><span class="line">    **for**(I=1;i&lt;=9;i++)</span><br><span class="line">        **for**(j=I+1;j&lt;=10;j++)</span><br><span class="line">            **if**(a[I]&gt;a[j])&#123;</span><br><span class="line">                t=a[I];</span><br><span class="line">                a[I]=a[j];</span><br><span class="line">                a[j]=t;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line"></span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>[image:C7736FB2-872D-41A1-9CA3-D087519F454F-23019-0000F9CC713A9ECD/Pasted Graphic 22.png]</p>
-<p>归并排序<br><em>//<em>用归并排序法对一组数据由小到大进行排序，数据分别为</em>695</em>，<em>458</em>，<em>362</em>，<em>789</em>，<em>12</em>，<em>15</em>，<em>163</em>，<em>23</em>，<em>2</em>，<em>986.</em><br><em>//<em>归并是将两个或多个有序记录序列合并成一个有序序列。归并方法有多种，一次对两个有序记录序列进行归并，称为二路归并排序，也有三路归并排序及多路归并排序。本实例是二路归并排序，基本方法如下：<br><em>//<em>（</em>1</em>）将</em>n</em>个记录看成是<em>n</em>个长度为<em>1</em>的有序子表。<br><em>//<em>（</em>2</em>）将两两相邻的有序子表进行归并。<br><em>//<em>（</em>3</em>）重复执行步骤（<em>2</em>），直到归并成一个长度为<em>n</em>的有序表。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** merge(**int** r[],**int** s[],**int** x1,**int** x2,**int** x3)&#123;</span><br><span class="line">    **int** i,j,k;</span><br><span class="line">    I=x1;</span><br><span class="line">    j=x2+1;</span><br><span class="line">    k=x1;</span><br><span class="line">    **while**((I&lt;=x2)&amp;&amp;(j&lt;=x3))</span><br><span class="line">        **if**(r[I]&lt;=r[j])&#123;</span><br><span class="line">            s[k]=r[I];</span><br><span class="line">            I++;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">        **else**&#123;</span><br><span class="line">            s[k]=r[j];</span><br><span class="line">            j++;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">    **while**(I&lt;=x2)</span><br><span class="line">        s[k++]=r[I++];</span><br><span class="line">    **while**(j&lt;=x3)</span><br><span class="line">        s[k++]=r[j++];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** merge_sort(**int** r[],**int** s[],**int** m,**int** n)&#123;</span><br><span class="line">    **int** p;</span><br><span class="line">    **int** t[20];</span><br><span class="line">    **if**(m==n)</span><br><span class="line">        s[m]=r[m];</span><br><span class="line">    **else**&#123;</span><br><span class="line">        p=(m+n)/2;</span><br><span class="line">        merge_sort(r,t,m,p);</span><br><span class="line">        merge_sort(r,t,p+1,n);</span><br><span class="line">        merge(t,s,m,p,n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** a[11];</span><br><span class="line">    **int** I;</span><br><span class="line">    printf(“please input ten numbers:\n”);</span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    merge_sort(a,a,1,10);</span><br><span class="line">    printf(“排序后的顺序是：\n”);</span><br><span class="line">    **for**(I=1;i&lt;=10;i++)</span><br><span class="line">        printf(“%5d”,a[I]);</span><br><span class="line">    printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/三种查找方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E4%B8%89%E7%A7%8D%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E4%B8%89%E7%A7%8D%E6%9F%A5%E6%89%BE%E6%96%B9%E6%B3%95/">三种查找方法</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln61ssdkuj30cv0k7die.jpg"></p>
-<p>二分查找<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln626tzayj30ac04rmy5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln62gfqzaj30hd08nwfl.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln62o56yqj30hd0dkgql.jpg"><br><em>//<em>本实例采用二分查找法查找特定关键字的元素。要求用户输入数组长度，也就是有序表的数据长度，并输入数组元素和查找的关键字。程序输出查找成功与否，以及成功时关键字在数组中的位置。例如，在有序表</em>11</em>，<em>13</em>，<em>18</em>，<em>28</em>，<em>39</em>，<em>56</em>，<em>69</em>，<em>89</em>，<em>98</em>，<em>122</em>中查找关键字为<em>89</em>的元素。<br><em>//<em>二分查找就是折半查找，其基本思想是：首先选取表中间位置的记录，将其关键字与给定关键字</em>key</em>进行比较，若相等，则查找成功；若<em>key</em>值比该关键字值大，则要找的元素一定在右子表中，则继续对右子表进行折半查找；若<em>key</em>值比该关键字值小，则要找的元素一定在左子表中，继续对左子表进行折半查找。如此递推，直到查找成功或查找失败（查找范围为<em>0</em>）。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**void** binary_search(**int** key,**int** a[],**int** n)&#123;</span><br><span class="line">    **int** low,high,mid,count=0,count1=0;</span><br><span class="line">    low=0;</span><br><span class="line">    high=n-1;</span><br><span class="line">    **while**(low&lt;high)&#123;</span><br><span class="line">        count++;</span><br><span class="line">        mid=(low+high)/2;</span><br><span class="line">        **if**(key&lt;a[mid])</span><br><span class="line">            high=mid-1;</span><br><span class="line">        **else** **if**(key&gt;a[mid])</span><br><span class="line">            low=mid+1;</span><br><span class="line">        **else** **if**(key==a[mid])&#123;</span><br><span class="line">            printf(“查找成功！\n查找%d次！a[%d]=%d”,count,mid,key);</span><br><span class="line">            count1++;</span><br><span class="line">            **break**;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    **if**(count1==0)</span><br><span class="line">        printf(“查找失败！”);</span><br><span class="line">&#125;</span><br><span class="line">    **int** main(**void**)&#123;</span><br><span class="line">        **int** i,key,a[100],n;</span><br><span class="line">        printf(“请输入数组长度：\n”);</span><br><span class="line">        scanf(“%d”,&amp;n);</span><br><span class="line">        printf(“请输入数组元素：\n”);</span><br><span class="line">        **for**(I=0;i&lt;n;i++)</span><br><span class="line">            scanf(“%d”,&amp;a[i]);</span><br><span class="line">        printf(“请输入你想查找的元素：\n”);</span><br><span class="line">        scanf(“%d”,&amp;key);</span><br><span class="line">        binary_search(key,a,n);</span><br><span class="line">        printf(“\n”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln62xjaw3j30g10emn0c.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln636rtwtj306h06ldgw.jpg"></p>
-<p>分块查找<br>*//*分块查找也称为索引顺序查找，要求将待查的元素均匀的分成块，块间按大小排序，块内不排序，所以要建立一个块的最大（或最小）关键字表，成为索引表。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">**struct** index&#123;</span><br><span class="line">    **int** key;</span><br><span class="line">    **int** start;</span><br><span class="line">    **int** end;</span><br><span class="line">&#125;index_table[4];</span><br><span class="line"></span><br><span class="line">**int** block_search(**int** key,**int** a[])&#123;</span><br><span class="line">    **int** i,j;</span><br><span class="line">    I=1;</span><br><span class="line">    **while**(I&lt;=3&amp;&amp;key&gt;index_table[I].key)</span><br><span class="line">        I++;</span><br><span class="line">    **if**(I&gt;3)</span><br><span class="line">        **return** 0;</span><br><span class="line">    j=index_table[I].start;</span><br><span class="line">    **while**(j&lt;=index_table[I].end&amp;&amp;a[j]!=key)</span><br><span class="line">        j++;</span><br><span class="line">    **if**(j&gt;index_table[I].end)</span><br><span class="line">        j=0;</span><br><span class="line">    **return** j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** i,j=0,k,key,a[16];</span><br><span class="line">    printf(“请输入15个数:\n”);</span><br><span class="line">    **for**(I=1;i&lt;16;i++)</span><br><span class="line">        scanf(“%d”,&amp;a[I]);</span><br><span class="line">    **for**(I=1;i&lt;=3;i++)&#123;</span><br><span class="line">        index_table[I].start=j+1;</span><br><span class="line">        j=j+1;</span><br><span class="line">        index_table[I].end=j+4;</span><br><span class="line">        j=j+4;</span><br><span class="line">        index_table[I].key=a[j];</span><br><span class="line">    &#125;</span><br><span class="line">    printf(“请输入你想查找的元素：\n”);</span><br><span class="line">    scanf(“%d”,&amp;key);</span><br><span class="line">    k=block_search(key,a);</span><br><span class="line">    **if**(k!=0)</span><br><span class="line">        printf(“查找成功，其位置是：%d\n,k”);</span><br><span class="line">    **else**</span><br><span class="line">        printf(“查找失败！”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>哈希查找<br><em>//<em>编程实现哈希查找。要求如下：已知哈希表长度为</em>11</em>，哈希函数为<em>H(key)=key%11,<em>随机产生待散列的小于</em>50</em>的<em>8</em>个元素，同时采用线性探测仔散列的方法处理冲突。任意输入要查找的数据，无论是否找到均给出提示信息。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;time.h&gt;</span><br><span class="line">#define Max 11</span><br><span class="line">#define N 8</span><br><span class="line">**int** hashtable[Max];</span><br><span class="line"></span><br><span class="line">**int** func(**int** value)&#123;</span><br><span class="line">    **return** value % Max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**int** search(**int** key)&#123;</span><br><span class="line">    **int** pos,t;</span><br><span class="line">    pos=func(key);</span><br><span class="line">    t=pos;</span><br><span class="line">    **while**(hashtable[t]!=key&amp;&amp;hashtable[t]!=-1)&#123;</span><br><span class="line">        t=(t+1)%Max;</span><br><span class="line">        **if**(pos==t)</span><br><span class="line">            **return** -1;</span><br><span class="line">    &#125;</span><br><span class="line">    **if**(hashtable[t]==-1)</span><br><span class="line">        **return** **NULL**;</span><br><span class="line">    **else**</span><br><span class="line">        **return** t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** creathash(**int** key)&#123;</span><br><span class="line">    **int** pos,t;</span><br><span class="line">    pos=func(key);</span><br><span class="line">    t=pos;</span><br><span class="line">    **while**(hashtable[t]!=-1)&#123;</span><br><span class="line">        t=(t+1)%Max;</span><br><span class="line">        **if**(pos==t)&#123;</span><br><span class="line">            printf(“哈希表已满\n”);</span><br><span class="line">            **return**;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    hashtable[t]=key;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** main()&#123;</span><br><span class="line">    **int** flag[50];</span><br><span class="line">    **int** i,j,t;</span><br><span class="line">    **for**(I=0;i&lt;Max;i++)</span><br><span class="line">        hashtable[I]=-1;</span><br><span class="line">    **for**(I=0;i&lt;50;i++)</span><br><span class="line">        flag[I]=0;</span><br><span class="line">    srand((**unsigned** **long**)time(0));</span><br><span class="line">                                        *//*哈希函数的构造方法常用的有*5*种，分别是数字分析法、平方取中法、分段叠加、伪随机数法和余数法，其中余数法比较常用。</span><br><span class="line">    i=0;                                 *//*虽然通过构造好的哈希函数可以减少冲突，但冲突是不可能完全避免的，所以就相应的产生了避免哈希冲突的常用的*4*种方法，分别是开放定址法</span><br><span class="line">    **while**(i!=N)&#123;                         *//*（包括线性探测再散列和二次探测再散列）、链地址法、再哈希法和建立公共溢出区。</span><br><span class="line">        t=rand()%50;                     *//*开放定址法中的线性探测再散列比较常用，该方法的特点是在冲突发生时，顺序查看表中的下一单元，直到找出一个空单元或查遍全表。</span><br><span class="line">        **if**(flag[t]==0)&#123;</span><br><span class="line">            creathash(t);</span><br><span class="line">            printf(“%2d:”,t);</span><br><span class="line">            **for**(j=0;j&lt;Max;j++)</span><br><span class="line">                printf(“(%2d)”,hashtable[j]);</span><br><span class="line">            printf(“\n”);</span><br><span class="line">            flag[t]=1;</span><br><span class="line">            I++;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(“请输入你想查找的元素：”);</span><br><span class="line">    scanf(“%d”,&amp;t);</span><br><span class="line">    **if**(t&gt;0&amp;&amp;t&lt;50)&#123;</span><br><span class="line">        I=search(t);</span><br><span class="line">        **if**(I!=-1)</span><br><span class="line">            printf(“查找成功！其位置是:%d\n”,i);</span><br><span class="line">        **else**</span><br><span class="line">            printf(“查找失败！”);</span><br><span class="line">    &#125;</span><br><span class="line">    **else**</span><br><span class="line">        printf(“输入有误！”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     

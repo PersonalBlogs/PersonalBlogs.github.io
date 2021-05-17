@@ -228,6 +228,234 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/static关键字：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/static%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-12T16:00:00.000Z" itemprop="datePublished">2019-09-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/13/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/static%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A/">static关键字：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>static不能修饰属性，也不能修饰方法，可以修饰方法中的局部变量</p>
+<p>如果方法中的局部变量被static修饰，那么这个变量就会被变成静态变量，存储在常量区，当方法执行完毕之后，不会回收，下次再执行这个方法的时候，直接使用而不用再声明了</p>
+<p>如果方法的返回值是当前类的对象，那么方法的返回值就写instancetype</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/self关键字" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/self%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-date">
+      <time datetime="2019-09-11T16:00:00.000Z" itemprop="datePublished">2019-09-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/12/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/self%E5%85%B3%E9%94%AE%E5%AD%97/">self关键字：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>在方法的内部可以定义一个和属性名相同的局部变量，这个时候，如果在方法中访问这个同名的变量，访问的是局部变量，如果需要访问属性就需要使用关键字self</p>
+<p>self可以在对象方法和类方法中使用，self是一个指针，在对象方法中self指向当前对象，在类方法中self指向当前类</p>
+<h3 id="self在对象方法中使用："><a href="#self在对象方法中使用：" class="headerlink" title="self在对象方法中使用："></a>self在对象方法中使用：</h3><p>作用：<br>1）可以使用self显示的访问当前对象的属性：self-&gt;属性，代表访问的是当前对象的这个属性<br>2）可以使用self来调用当前对象的其他的对象方法</p>
+<p>必须使用self的场景：<br>1）如果在方法中存在和属性同名的局部变量，你如果想要访问同名的局部变量，直接写就可以了，你如果想要访问当前对象的同名属性，必须使用self<br>2）在对象方法中，如果要调用当前对象的其他的对象方法，必须使用self</p>
+<p>属性要求以下划线开头，局部变量不要求以下划线开头，按照这个规范来，实际上是不会重名的</p>
+<h3 id="self在类方法中使用："><a href="#self在类方法中使用：" class="headerlink" title="self在类方法中使用："></a>self在类方法中使用：</h3><p>self是一个指针，指向当前这个类在代码段中的地址【就相当于这个类】</p>
+<p>作用：可以在类方法中使用self来显示的调用本类的其他的类方法</p>
+<p>总结取到类在代码段中的地址的方式：<br>1）调试查看对象的isa指针的值<br>2）在类方法中查看self的值<br>3）调用对象的对象方法class，就会返回这个对象所属的类在代码段中的地址<br>4）调用类的类方法class，就会返回这个类在代码段中的地址</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@&quot;%p&quot;</span>,[p1 <span class="keyword">class</span>]);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@&quot;%p&quot;</span>,[Person <span class="keyword">class</span>]);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>对象方法可以声明多次，但是只会认为有一次，只能实现一次，否则会报错【对象方法之间是不能重名的；类方法之间也不能重名；但是对象方法和类方法是可以重名的，通过类名来调用，调用的就是类方法，通过对象名来调，调用的就是对象方法】</p>
+<p>注意：<br>1）在对象方法中，self代表当前对象，所以可以通过self访问当前对象的成员，在对象方法中，不能使用self调用本类的类方法<br>2）在类方法中，self代表当前这个类，所以，可以通过self调用当前类的其他的类方法，在类方法中，不能通过self访问对象的成员，不能直接去访问属性和调用对象的方法</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/继承、NSObject：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%A7%E6%89%BF%E3%80%81NSObject%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-10T16:00:00.000Z" itemprop="datePublished">2019-09-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/11/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%A7%E6%89%BF%E3%80%81NSObject%EF%BC%9A/">继承、NSObject：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>继承的目的：儿子类想拥有父亲类中的所有的成员，但是不想自己去定义，而是想凭空拥有</p>
+<p>继承的语法：<br><code>@interface 子类名：父类名 </code></p>
+<p>@end</p>
+<p>术语：<br><code>@interface Student:Person</code><br>1）Student类从Person类继承，Student类是Person类的子类，Person类是Student类的父类<br>2）Student类从Person类派生，Student类是Person类的派生类，Person类是Student类的基类</p>
+<p>在新创建类模版的时候指定父类，Xcode就会自动的帮助你完成一系列事情</p>
+<p>继承是类在继承，而不是对象在继承，我们创建对象，对象与对象之间是毫无关系的，只是子类对象中拥有父类对象中的同样的成员</p>
+<p>千万不要为了继承而去继承，不要为了仅仅是得到某个类的成员你就不顾伦理去乱继承（人继承狗类？）</p>
+<p>子类从父类继承，就意味着子类拥有了父类的所有成员，包括属性和方法 </p>
+<p>如果有一个成员不是所有的子类都拥有的，那么这个成员就不应该定义在父类之中，因为一旦定义在父类之中，那么所有的子类全都有了，父类中只定义所有的子类都拥有的</p>
+<p>继承的特点：<br>1）单根性：一个类只能有一个父类，不能有多个父类<br>2）传递性：A类从B类继承，B类从C类继承，那么A类就同时拥有B、C类的成员</p>
+<hr>
+<p>NSObject类是OC中所有类的祖宗类，因为OC中的类全部都是直接的或者间接的从它继承</p>
+<p>NSObject类：这是Foundation框架中的类，在这个类中有一个类方法new，这个方法是用来创建对象的，方法的返回值是创建的这个对象的指针；也就是说，如果要创建类的对象，就必须要调用这个new方法，如果我们想要让我们的类具备创建对象的能力，就必须要让我们的类直接或者间接的从NSObject类继承</p>
+<p>在NSObject类之中，还定义了一个属性，这个属性叫做isa指针，所以每一个子类对象中都有一个叫做isa指针</p>
+<p>子类中不能存在和父类同名的属性</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/super关键字（特指这个方法是从父类继承过来的）：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -710,232 +938,6 @@
 <p>当我们使用%@打印一个对象的时候，NSLog函数的底层实现：<br>1）调用传入的对象的Description方法<br>2）拿到这个方法的返回值，这个返回值是一个字符串<br>3）将这个字符串输出</p>
 <p>Description方法是定义在NSObject类之中的，所以每一个OC对象都有这个方法，这个方法在NSObject类中的实现是这样的：返回的字符串格式   <code>@“&lt;对象所属的类名：对象的地址&gt;”</code></p>
 <p>如果使用%@打印一个对象的时候，你希望这个对象打印的格式是我们自己自定义的，那么就可以重写Description方法</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/创建一个对象，这个对象在内存中是如何分配的?" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E7%9A%84?/" class="article-date">
-      <time datetime="2019-09-02T16:00:00.000Z" itemprop="datePublished">2019-09-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E7%9A%84?/">创建一个对象，这个对象在内存中是如何分配的?</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）子类对象中有自己的属性和所有父类的属性</p>
-<p>2）代码段中的每一个类都有一个叫做isa的指针，这个指针指向它的父类，一直指到NSObject</p>
-<p>子类方法重写以后，调用的就是子类重写的方法了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3qvna2bj30il0chdhq.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/结构体和类的区别：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A/" class="article-date">
-      <time datetime="2019-09-01T16:00:00.000Z" itemprop="datePublished">2019-09-02</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A/">结构体和类的区别：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<h3 id="相同点：都可以将多个数据封装为一个整体"><a href="#相同点：都可以将多个数据封装为一个整体" class="headerlink" title="相同点：都可以将多个数据封装为一个整体"></a>相同点：都可以将多个数据封装为一个整体</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Date</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Date</span>:<span class="title">NSObject</span></span>&#123;</span><br><span class="line">       <span class="keyword">int</span> year;</span><br><span class="line">       <span class="keyword">int</span> month;</span><br><span class="line">       <span class="keyword">int</span> day;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h3><p>1）结构体只能封装数据，而类不仅可以封装数据还可以封装行为【如果表示的这个实体，不仅是由多个数据组成，这个实体还具有行为，只能使用类】</p>
-<p>2）结构体变量分配在栈空间（如果是一个局部变量的情况下），而对象分配在堆空间<br>【栈的特点：空间相对较小，但是存储在栈中的数据访问的效率更高一些；堆的特点：空间相对较大，但是存储在堆中的数据访问的效率相对较低】</p>
-<p>3）赋值不同：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//结构体：Student</span></span><br><span class="line"><span class="comment">//类：Person</span></span><br><span class="line"></span><br><span class="line">Student s1=&#123;“jack”,<span class="number">19</span>,GenderMale&#125;;</span><br><span class="line">Student s2=s1;</span><br><span class="line"></span><br><span class="line">Person *p1=[Person new];</span><br><span class="line">Person *p2=p1;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/类的本质：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/01/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-31T16:00:00.000Z" itemprop="datePublished">2019-09-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/01/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%9A/">类的本质：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）类第一次被访问的时候，就会被加载到代码段中存储（类加载）<br>2）类一旦被加载到代码段之后是不会被回收的，除非程序结束</p>
-<p>类是以什么样的形式存储在代码段的：<br>1）任何存储在内存中的数据都有一个数据类型<br>2）任何在内存中申请的空间也有自己的类型<br><code>Person *p1=[Person new];</code><br>3)在代码段存储类的那块空间是什么类型？</p>
-<p>在代码段中存储类的步骤：<br>1）先在代码段中创建一个Class对象，Class是Foundation框架中的一个类，这个Class对象就是用来存储类信息的<br>2）将类的信息存储在这个Class对象之中，这个Class对象至少有三个属性：存储的这个类的名称，存储的这个类的属性，存储的这个类的方法</p>
-<p>所以类是以Class对象的形式存储在代码段的，存储类的这个Class对象，我们也叫做类对象，用来存储类的一个对象</p>
-<p>所以存储类的类对象也有一个叫做isa指针的属性，这个指针指向存储父类的类对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ri3eq9j307d0ch3yx.jpg"></p>
-<h3 id="如何拿到存储在代码段中的类对象："><a href="#如何拿到存储在代码段中的类对象：" class="headerlink" title="如何拿到存储在代码段中的类对象："></a>如何拿到存储在代码段中的类对象：</h3><p>1）调用类的类方法class就可以得到存储类的类对象的地址【声明Class指针的时候不需要加<em>，因为在typedef的时候已经加</em>了】</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c1=[Person class];</span><br><span class="line">NSLog(@&quot;c1 = %p&quot;,c1);</span><br></pre></td></tr></table></figure>
-
-<p>2）调用对象的对象方法class，就可以得到存储这个对象所属的类的Class对象的地址</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line">Class c2=[p1 class];</span><br></pre></td></tr></table></figure>
-
-<p>3）对象中的isa指针的值其实就是代码段中存储类的类对象的地址</p>
-<h3 id="如何使用类对象："><a href="#如何使用类对象：" class="headerlink" title="如何使用类对象："></a>如何使用类对象：</h3><p>1）拿到存储类的类对象以后，<code>Class c1=[Person class];</code><br>c1对象就是Person类，c1完全等价于Person</p>
-<p>2）使用类对象来调用类的类方法</p>
-<p>3）可以使用类对象来调用new方法，创建存储在类对象中的类的对象</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c1=[Person class];</span><br><span class="line">Person *p1=[c1 new];</span><br></pre></td></tr></table></figure>
-
-<p>4）注意：使用类对象只能调用类的类方法，因为类对象就等价于存在其中的类</p>
 
       
     </div>

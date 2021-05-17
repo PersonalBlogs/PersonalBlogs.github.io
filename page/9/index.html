@@ -228,6 +228,245 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用数据处理函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" class="article-date">
+      <time datetime="2020-10-21T16:00:00.000Z" itemprop="datePublished">2020-10-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/22/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">使用数据处理函数</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用数据处理函数</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6ay4lpj30b506j794.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6idywcj30b501nt94.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6p4zahj30b5042q49.jpg"></p>
+<p>1）文本处理函数Upper()<br>SELECT vendname,Upper(vendname) AS vendnameupcase<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6x1hgbj305h039aal.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru753j8fj308403u3za.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7cb4a0j308402kmxn.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7jgpk6j30bh02qgmv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7uz31wj30bh0bddjf.jpg"></p>
+<p>2)日期和时间处理函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru82yiqgj30bh09lacf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8ah6a8j30b302iabx.jpg"></p>
+<p>SELECT custid,ordernum<br>FROM orders<br>WHERE order_date=‘2005-09-01’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8jfzvtj303d01ijrh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8ur7cfj30br06xjuf.jpg"><br>SELECT custid,ordernum<br>FROM orders<br>WHERE Date(order_date)=‘2005-09-01’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru93pk7ij30b603vwh9.jpg"></p>
+<p>检索出2005年9月下的所有订单<br>法1:<br>SELECT custid,ordernum<br>FROM orders<br>WHERE Date(order_date) BETWEEN ‘2005-09-01’ AND ‘2005-09-30’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9bxlpnj303e027mxc.jpg"></p>
+<p>法2:<br>SELECT custid,ordernum<br>FROM orders<br>WHERE Year(orderdate)=2005 AND Month(orderdate)=9;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9jol11j30b5022myj.jpg"></p>
+<p>3)数值处理函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9qw82uj308005ndgt.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/死锁" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%AD%BB%E9%94%81/" class="article-date">
+      <time datetime="2020-10-21T16:00:00.000Z" itemprop="datePublished">2020-10-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/22/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%AD%BB%E9%94%81/">死锁</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>死锁：</p>
+<p>—————————————</p>
+<p>4-1：死锁概念</p>
+<p>4-2：死锁起因</p>
+<p>4-3：死锁预防策略</p>
+<p>—————————————</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbho9ot0j30l20cxgsk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbhw62l6j30fu09fgpc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvbshc9j30fu09f79r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvhxr58j30n907y0we.jpg"></p>
+<p>死锁：两个或多个进程无限期的等待永远不会发生的条件的一种系统状态（结果每个进程都永远阻塞）</p>
+<p>另一个定义：在两个或多个进程中，每个进程都持有某种资源，但又继续申请其他进程已持有的某种资源。此时每个进程都拥有其运行所需的一部分资源，但是又都不够，从而每个进程都不能向前推进，陷于阻塞状态，这种状态称死锁<br>——————————————</p>
+<p>死锁的起因：<br>1）系统资源有限：资源数目不足，进程对资源的竞争而产生死锁<br>2）并发进程的推进顺序不当：进程请求资源和释放资源的顺序不当，导致死锁<br>3）不正确的P-V操作导致死锁</p>
+<p>A，B尽管并发争用i，j，且发生了阻塞，但是没有死锁<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvqyv9oj30q80cagry.jpg"><br>不正确的推进顺序发生死锁：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbvz7itlj30gq09b42m.jpg"><br>不正确的P-V操作也可能会带来死锁：<br>生产者和消费者问题<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbw81fkyj30jb0cn79r.jpg"></p>
+<p>死锁的一些结论：<br>1）参与死锁的进程至少是两个，两个或以上进程才会出现死锁<br>2）参与死锁的进程至少有两个已经占有资源<br>3）参与死锁的所有进程都在等待资源<br>4）参与死锁的进程是当前系统中所有进程的子集<br>5）死锁会浪费大量系统资源，甚至导致系统崩溃<br>——————————————</p>
+<p>死锁的必要条件：<br>1）互斥条件：进程互斥使用资源，，资源具有独占性<br>2）不剥夺条件：进程在访问完资源前不能被其他进程强行剥夺<br>3）部分分配条件：进程边运行边申请资源，临时需要临时分配（区别于全部分配）<br>4）环路条件：多个进程构成环路，环中每个进程已占用的资源被前一进程申请，而自己所申请资源又被环中后一进程占用着<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbwgjuj3j30b404vaau.jpg"></p>
+<p>解决死锁的策略：</p>
+<p>1）预防死锁：通过设置某些限制条件，破坏死锁四个必要条件中的一个或多个，来防止死锁<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbwudkmej308j02yaax.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbx1iu66j30an07kdhh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbx89pi8j309707aq4n.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbxjju9aj30h409sdk7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbxq325zj30be06tmyz.jpg"></p>
+<p>较易实现，早期广泛使用，<br>缺点：由于限制太严格，导致资源利用率和吞吐量降低</p>
+<p>2）避免死锁：不事先采取限制去破坏产生死锁的条件，而是在资源分配过程中，用某种方法去评估若分配资源是否会让系统进入死锁状态，若是，则拒绝此次分配资源，从而避免死锁的发生（银行家算法）</p>
+<p>只需要较弱的限制条件，可获得较高的资源利用率和系统吞吐量，缺点：实现较难</p>
+<p>3）检测和恢复死锁：允许死锁发生，但可通过检测机制及时检测出死锁状态，并精确确定与死锁有关的进程和资源，然后采取适当措施，将系统中已发生的死锁清除，将进程从死锁状态解脱出来</p>
+<p>缺点：<br>1）检测方法复杂，实现难度大<br>2）恢复方法靠人工，撤销一些进程，回收资源再分配</p>
+<p>Windows，Linux采用的死锁解决方案：鸵鸟策略</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/汇总数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%B1%87%E6%80%BB%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-20T16:00:00.000Z" itemprop="datePublished">2020-10-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%B1%87%E6%80%BB%E6%95%B0%E6%8D%AE/">汇总数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>汇总数据</p>
+<p>聚集函数：运行在行组上，计算和返回单个值的函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorub8jfypj3080045wf3.jpg"></p>
+<p>1）AVG()函数：AVG()通过对表中行数计算并计算特定列值之和，求得该列的平均值。AVG()可用来返回所有列的平均值，也可以用来返回特定列或行的平均值</p>
+<p>返回products表中所有产品的平均价格<br>SELECT AVG(prodprice) AS avgprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubgpm52j301v01kaa3.jpg"></p>
+<p>返回特定供应商所提供产品的平均价格<br>SELECT AVG(prodprice) AS avgprice<br>FROM products<br>WHERE vend_id =1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubopzzmj301v01kaa3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorubwhuxfj30b603kgnu.jpg"></p>
+<p>2)COUNT()函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruc4a991j30bm04b3zr.jpg"></p>
+<p>返回customers表中客户的总数：<br>SELECT COUNT(*) AS num_cust<br>FROM customers;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorucbxi9yj301r01l3yi.jpg"></p>
+<p>只对具有电子邮件地址的客户计数<br>SELECT COUNT(custemail) AS numcust<br>FROM customers;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruclrzijj301r01ldfu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goructfdt3j30b601p3zn.jpg"></p>
+<p>3)MAX()函数：要求指定列名<br>SELECT MAX(prodprice) AS maxprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorud22nwpj301x01gjre.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorud9vrdwj30b803zwgv.jpg"></p>
+<p>4)MIN()函数：要求指定列名<br>SELECT MIN(prodprice) AS minprice<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudhl35tj301u01haa2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudpylkmj30b8044jtz.jpg"></p>
+<p>5)SUM()函数：用来返回指定列值的和（总计）</p>
+<p>检索所订购物品的总数（所有quantity值之和）<br>SELECT SUM(quantity) AS items_ordered<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorudypxc9j302g01lq2z.jpg"></p>
+<p>合计每项物品的items_price<em>quantity，得到总的订单金额<br>SELECT SUM(itemprice</em>quantity) AS totalprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorue994hlj302701idfv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorueib4iij30b802vgnf.jpg"></p>
+<p>6)聚集不同值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorueq3r3qj30ba042jt8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruexsptij30ba06r40f.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruf5cszrj30ba056adj.jpg"></p>
+<p>7）组合聚集函数<br>SELECT COUNT(*) AS num_items,<br>               MIN(prodprice) AS pricemin,<br>               MAX(prodprice) AS pricemax,<br>               AVG(prodprice) AS priceavg<br>FROM products;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorufd6iwpj307b01gmxf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorufl6iwxj30b501z75o.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/进程调度" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -741,282 +980,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/创建高级联结、自联结、自然联结、外部联结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93%E3%80%81%E5%A4%96%E9%83%A8%E8%81%94%E7%BB%93/" class="article-date">
-      <time datetime="2020-10-16T16:00:00.000Z" itemprop="datePublished">2020-10-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/17/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93%E3%80%81%E5%A4%96%E9%83%A8%E8%81%94%E7%BB%93/">创建高级联结、自联结、自然联结、外部联结</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>创建高级联结【自联结、自然联结、外部联结】</p>
-<p>别名除了用于列名和计算字段外，SQL还允许给表名起别名，这样做有两个主要理由：<br>1）缩短SQL语句<br>2）允许在单条SELECT语句中多次使用相同的表</p>
-<p>1）表别名不仅能用于WHERE子句，它还可以用于SELECT的列表、ORDER BY子句以及语句的其他部分，表别名只在查询执行中使用，与列别名不一样，表别名不返回到客户机<br>SELECT custname,custcontact<br>FROM customers AS c,orders AS o,orderitems AS oi<br>WHERE c.custid=o.custid<br>      AND oi.ordernum=o.ordernum<br>      AND prod_id=’TNT2’;</p>
-<p>2）自联结<br>首先找到生产ID为DTNTR的物品的供应商，然后找出这个供应商生产的其他物品<br>SELECT prodid,prodname<br>FROM products<br>WHERE vendid =(SELECT vendid<br>                                FROM products<br>                                WHERE prod_id=‘DTNTR’);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorutohlegj304403mjrs.jpg"></p>
-<p>SELECT p1.prodid,p1.prodname<br>FROM products AS p1,products AS p2<br>WHERE p1.vendid=p2.vendid<br>    AND p2.prod_id=‘DTNTR’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruu2ml4bj304403mdg8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruua9u4xj30br09bjwa.jpg"></p>
-<p>3)无论何时对表进行联结，应该至少有一个列出现在不止一个表中（被联结的列），标准的联结返回所有数据，甚至相同的列多次出现。自然联结排除多次出现，使每个列只返回一次<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruuhpe5zj30br07876z.jpg"></p>
-<p>4）联结包含了那些在相关表中没有关联行的行，这种类型的联结称为外部联结</p>
-<p>检索所有客户及其订单（内部联结）<br>SELECT customers.custid,orders.ordernum<br>FROM customers INNER JOIN orders<br>   ON customers.custid=orders.custid;</p>
-<p>为了检索所有客户，包括那些没有订单的客户（外部联结）：<br>SELECT customers.custid,orders.ordernum<br>FROM customers LEFT OUTER JOIN orders<br>   ON customers.custid=orders.custid;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruupdyqtj303d03a74l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruv1k1huj30bn0a7jwq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruv9ietej30b801gmy4.jpg"></p>
-<p>5)检索所有客户及每个客户所下的订单数<br>SELECT customers.cust_name,<br>               customers.cust_id,<br>               COUNT(orders.ordernum) AS numord<br>FROM customers INNER JOIN orders<br>   ON customers.custid=orders.custid<br>GROUP BY customers.cust_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvi4uihj305j02kgly.jpg"></p>
-<p>6)<br>SELECT customers.cust_name,<br>               customers.cust_id,<br>               COUNT(orders.ordernum) AS numord<br>FROM customers LEFT OUTER JOIN orders<br>   ON customers.custid=orders.custid<br>GROUP BY customers.cust_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvq5jggj305l01uglt.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvx2i46j305l01jaa8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruw3shg3j30bm06fjtn.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/虚拟内存管理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="article-date">
-      <time datetime="2020-10-16T16:00:00.000Z" itemprop="datePublished">2020-10-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">虚拟内存管理</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>虚拟内存管理：</p>
-<p>————————————————</p>
-<p>页式虚拟内存管理概念：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorchheurkj30aw083go7.jpg"></p>
-<p>虚拟内存管理的目标：<br>1）使得大的程序能在较小的内存中运行<br>2）使得多个程序能在较小的内存中运行（能容纳下）<br>3）使得多个程序并发运行时地址不冲突<br>4）使得内存利用效率高：无碎片，共享方便</p>
-<p>虚拟内存管理的实现思路：在程序运行时，只把当前必要的很小一部分代码和数据装入内存中，其余代码和数据需要时再装入，不再运行的代码和数据及时从内存删除，实际内存很容易就能满足上述的内存需求</p>
-<p>程序运行的局部性：程序在一个有限的时间段内访问的代码和数据往往集中在有限的地址范围内，把程序一部分装入内存在较大概率上也足够让其运行一小段时间</p>
-<p>典型虚拟内存管理方式：<br>1）页式虚拟存储管理<br>2）段式虚拟存储管理<br>3）段页式虚拟存储管理</p>
-<p>页式虚拟存储管理：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorchsia0oj30dx083tbl.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorci253n2j30g10edwk8.jpg"><br>进程装入和使用内存的原则：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorciawglfj30g10cu791.jpg"><br>—————————————————</p>
-<p>页表和页式地址映射：</p>
-<p>页式系统中的地址：</p>
-<p>虚拟地址(VA)可以分解成页号P和页内偏移W<br>1）页号P=VA/页的大小<br>2）页内偏移W=VA%页的大小</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcildyssj308f05v75c.jpg"></p>
-<p>页面映射表：记录页与页框之间的对应关系，也叫页表<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorciwg53dj30e404875b.jpg"><br>页号：登记程序地址的页号<br>页框号：登记页所在的物理页号<br>页面其他特性：登记含存取权限在内的其他特性</p>
-<p>页式地址映射：虚拟地址（页式地址）—&gt;  物理地址</p>
-<p>过程：<br>1）从VA分离页号P和页内偏移W<br>2）查页表：以P为索引查页框号P‘<br>3）计算物理地址MA：MA=P’ * 页大小 + W<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcj6rn76j30yy0rjwpn.jpg"></p>
-<p>—————————————</p>
-<p>快表技术和页面共享技术；</p>
-<p>快表机制（Cache）：</p>
-<p>快表的概念：<br>1）慢表：页表放在内存中<br>2）快表：页表放在Cache中</p>
-<p>快表的特点：<br>1）容量小，访问快，成本高<br>2）快表是慢表的部分内容的复制<br>3）地址映射时优先访问快表【若在快表中找到所需数据，则称为“命中”；没有命中时，需要访问慢表，同时更新快表】<br>4）合理的页面调度策略能使快表具有较高命中率</p>
-<p>快表机制下地址映射过程：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcjrlb9cj30p80ihdm4.jpg"></p>
-<p>页面的共享原理：<br>1）在不同进程的页表中填上相同的页框号，多个进程能访问相同的内存空间，从而实现页面共享<br>2）共享页面在内存只有一份真实存储，节省内存<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorck2jw22j30ub0i5alr.jpg"></p>
-<p>————————————————</p>
-<p>缺页中断：</p>
-<p>分级存储体系：Cache+内存+辅存<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorckc5cp4j31360b8dk4.jpg"></p>
-<p>页表扩充：带中断位的页表</p>
-<p>扩充有中断位和辅存地址的页表：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorckkt46fj30gu06nmz1.jpg"><br>中断位I：标识该页是否在内存【1:不在内存；0:在内存】<br>辅存地址：该页在辅存上的位置</p>
-<p>扩充有访问位和修改位的页表：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorckvfyraj30gf05cjt0.jpg"><br>访问位：标识该页最近是否被访问【0:最近没有被访问；1:最近已被访问】<br>修改位：标识该页的数据是否已被修改【0:该页未被修改；1:该页已被修改】</p>
-<p>缺页中断定义：在地址映射过程中，当所要访问的目的页不在内存时，则系统产生异常中断</p>
-<p>缺页中断处理程序：中断处理程序把所缺的页从页表指出的辅存地址调入内存的某个页框中，并更新页表中该页对应的页框号以及修改中断位I为0</p>
-<p>访存指令的执行过程(含缺页中断处理)：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcl63ocoj30n90gyjyh.jpg"></p>
-<p>缺页（中断）率f=缺页次数/访问页面总次数<br>命中率=1-f</p>
-<p>——————————————</p>
-<p>页面淘汰策略：</p>
-<p>淘汰策略：选择淘汰哪一页的规则称淘汰策略</p>
-<p>页面抖动：页面在内存和辅存间频繁交换的现象，“抖动”会导致系统效率下降</p>
-<p>好的淘汰策略具有较低的缺页率（高命中率），页面抖动较少</p>
-<p>常用的淘汰算法：<br>1）最佳算法（OPT算法）<br>2）先进先出淘汰算法（FIFO算法）<br>3）最久未使用淘汰算法（LRU算法）<br>4）最不经常使用（LFU）算法</p>
-<p>最佳算法（OPT算法，Optimal）：淘汰以后不再需要或最远的将来才会用到的页面【理论上最佳，实践中该算法无法实现】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcljr4gtj30po0dl46k.jpg"></p>
-<p>先进先出淘汰算法（FIFO算法）：淘汰在内存中停留时间最长的页面</p>
-<p>优点：实现简单，页面按进入内存的时间排序，淘汰队头页面</p>
-<p>缺点：进程只有按顺序访问地址空间时页面命中率才最理想</p>
-<p>异常现象：对于一些特定的访问序列，随分配的页框增多，缺页率反而增加<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorclusqzyj314g0nhncu.jpg"></p>
-<p>最久未使用淘汰算法（LRU，Least Recently Used）：淘汰最长时间未被使用的页面<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcm5joajj318h0sctvg.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcmdlslij310g0s04e7.jpg"></p>
-<p>最不经常使用（LFU，Least Frequently Used）算法：选择到当前时间为止被访问次数最少的页面，每页设置访问计数器，每当页面被访问时，该页面的访问计数器加1，发生缺页中断时，淘汰计数值最小的页面，并将所有计数清零</p>
-<p>———————————————————</p>
-<p>缺页因素与页式系统缺点：</p>
-<p>缺页的因素：<br>1）淘汰算法<br>2）分配给进程的页框数：页框越少，越容易缺页<br>3）页面的大小选择：【页面太大：浪费内存，极限是分区存储；页面太小：页面增多，页表长度增加，浪费内存，换页频繁，系统效率低】【页面的常见大小：2的整数次幂，1KB，2KB，4KB】【页面越小，容易缺页】<br>4）程序的编制方法：局部性越好，越不容易缺；跳转或分支越多越容易缺页<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcmrdudxj311t0peqk8.jpg"></p>
-<p>页式系统的不足：<br>1）页面划分无逻辑含义<br>2）页的共享不灵活<br>3）页内碎片</p>
-<p>————————————————————</p>
-<p>段式和段页式虚拟存储：</p>
-<p>段式存储管理：</p>
-<p>进程分段：把进程按逻辑意义划分为多个段，每段有段名，长度不定，进程由多段组成<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcn288b8j30ve0hgdjs.jpg"></p>
-<p>段式内存管理系统的内存分配：以段为单位装入，每段分配连续的内存；但是段和段不要求相邻</p>
-<p>段式系统的虚拟地址：段式虚拟地址VA包括段号S和段内偏移W【VA：（S，W）】</p>
-<p>段式地址的映射机制：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcna45quj30t70oi124.jpg"></p>
-<p>段式地址映射过程：<br>1）由逻辑地址VA分离出（S，W）<br>2）查询段表：检索段号S，查询该段基地址B和长度L<br>3）物理地址MA=B+W<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcnltnvuj30vg0hvgr4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcntudeej31ac0lltib.jpg"></p>
-<p>段的共享：<br>1）共享段在内存中只有一份存储<br>2）共享段被多个进程映射到各自段表<br>3）需要共享的模块都可以设置为单独的段</p>
-<p>段式系统的缺点：<br>1）段需要连续的存储空间<br>2）段的最大尺寸受到内存大小的限制<br>3）在辅存中管理可变尺寸的段比较困难</p>
-<p>段式系统 VS 页式系统：<br>1）地址空间的区别：页式系统是一维地址空间，段式系统是二维地址空间<br>2）段与页的区别：<br>段长可变，页面大小固定<br>段的划分有意义，页面无意义<br>段方便共享，页面不方便共享<br>段用户可见，页面用户不可见<br>段偏移有溢出，页面偏移无溢出</p>
-<p>段页式存储管理：在段式存储管理中结合页式存储管理技术，在段中划分页面<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorco26nb8j30lh0bmq53.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorco8vceij30mh0f4dl7.jpg"></p>
-<p>段页式地址的映射机构：同时采用段表和页表实现地址映射<br>系统为每个进程建立一个段表<br>系统为每个段建立一个页表<br>段表给出每段的页表基地址及页表长度（段长）<br>页表给出每页对应的页框<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcohv8m2j30qw0khdn3.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/组合查询" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2/" class="article-date">
-      <time datetime="2020-10-15T16:00:00.000Z" itemprop="datePublished">2020-10-16</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2/">组合查询</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>组合查询</p>
-<p>MySQL也允许执行多个查询（多条SELECT语句），并将结果作为单个查询结果集返回，这些组合查询通常称为并或复合查询<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruxgf6b0j308c024mxq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruxo5c5ej30b803q770.jpg"></p>
-<p>1）假如需要价格小于等于5的所有物品的一个列表，而且还想包括供应商1001和1002生产的所有物品（不考虑价格）</p>
-<p>法1:<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE prod_price&lt;=5;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruxvg9ysj304z02jmxg.jpg"></p>
-<p>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE vend_id IN(1001,1002);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruy2pzt4j304z02y74o.jpg"></p>
-<p>法2:<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE prod_price&lt;=5;<br>UNION<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE vend_id IN(1001,1002);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruyafa8rj304z044aan.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruyi3nujj30bt042jss.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruypdlemj30bt02ht9l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruyw3s4nj30bt02oq3z.jpg"></p>
-<p>UNION从查询结果集中自动去除了重复的行，这是UNION的默认行为，但是如果需要，可以改变它，事实上，如果想返回所有匹配行，可使用UNION ALL而不是UNION<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE prod_price&lt;=5;<br>UNION ALL<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE vend_id IN(1001,1002);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruz3ehsaj304y04fdgg.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruzasm6aj30b602jmyy.jpg"></p>
-<p>2）SELECT语句的输出用ORDER BY子句排序。在用UNION组合查询时，只能使用一条ORDER BY子句，它必须出现在最后一条SELECT语句之后。对于结果集，不存在用一种方式排序一部分，而又用另一种方式排序另一部分的情况。因此不允许使用多条ORDER BY子句<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE prod_price&lt;=5;<br>UNION<br>SELECT vendid,prodid,prod_price<br>FROM products<br>WHERE vend_id IN(1001,1002)<br>ORDER BY vendid,prodprice;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruzia4m6j304z044jry.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruzo6qhej30b501zq4a.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
     </div>
 
       

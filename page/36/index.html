@@ -228,6 +228,219 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/C++语言/函数：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-27T16:00:00.000Z" itemprop="datePublished">2019-06-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0%EF%BC%9A/">函数：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>值传递的时候，形参发生任何的改变，都不会影响实参</p>
+<p>地址传递：利用指针作为函数的参数，可以修改实参的值</p>
+<p>函数的声明可以写多次，但是定义只能有一次</p>
+<p>函数的分文件编写：<br>1）创建后缀名为.h的头文件，在头文件中写函数的声明<br>2）创建后缀名为.cpp的源文件，在源文件中写函数的定义</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/指针：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-26T16:00:00.000Z" itemprop="datePublished">2019-06-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88%EF%BC%9A/">指针：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>指针前加一个<em>代表解引用，找到指针指向的内存中的数据【</em>p】</p>
+<p>不管是什么数据类型，在32位操作系统上指针是占据4个字节空间大小，在64位操作系统上占据8个字节空间大小</p>
+<p>int *p =NULL；<br>空指针：指针变量指向内存中编号为0的空间，用来初始化指针变量，空指针指向的内存是不可以访问的【0～255之间的内存编号是系统占用的，因此不可以访问】</p>
+<p>野指针：指针变量指向非法的内存空间</p>
+<p>空指针和野指针都不是我们申请的空间，因此不要访问</p>
+<p>Const修饰指针的三种情况：<br>1）const修饰指针：常量指针【const int *p=&amp;a；指针的指向可以修改，但是指针指向的值不可以修改）<br>2）const修饰常量：指针常量【int * const p=&amp;a；指针的指向不可以改，指针指向的值可以改】<br>3）const既修饰指针又修饰常量【const int * const p=&amp;a；指针的指向和指针指向的值都不可以改】</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/结构体：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-25T16:00:00.000Z" itemprop="datePublished">2019-06-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%9A/">结构体：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>结构体属于用户自定义的数据类型，允许用户存储不同的数据类型</p>
+<p>在结构体中可以定义另一个结构体作为成员</p>
+<p>值传递传参的时候会耗费大量的内存空间，用地址传递可以减少内存空间，而且不会复制新的副本出来</p>
+<p>结构体中用const来防止误操作：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwewrbsehj30xr0rxq9y.jpg"></p>
+<p>—————————————<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwewyvfprj30t20p1q7b.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwex98ncxj308403i0sy.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct Hero&#123;</span><br><span class="line">	string name;</span><br><span class="line">	int age;</span><br><span class="line">	string sex;</span><br><span class="line">&#125;;</span><br><span class="line">//冒泡排序</span><br><span class="line">void bubbleSort(struct Hero heroArray[],int len)&#123;</span><br><span class="line">	for(int i=0;i&lt;len-1;i++)&#123;</span><br><span class="line">		for(int j=0;j&lt;len-1-i;j++)&#123;</span><br><span class="line">			if(heroArray[j].age&gt;heroArray[j+1].age)&#123;</span><br><span class="line">				struct Hero temp=heroArray[j];</span><br><span class="line">				heroArray[j]=heroArray[j+1];</span><br><span class="line">				heroArray[j+1]=temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void printHero(struct Hero heroArray[],int len)&#123;</span><br><span class="line">	for(int i=0;i&lt;len;i++)&#123;</span><br><span class="line">		cout&lt;&lt;“姓名： “&lt;&lt;heroArray[I].name&lt;&lt;“年龄： “&lt;&lt;heroArray[I].age&lt;&lt;“性别：”&lt;&lt;heroArray[I].sex&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[]) &#123;</span><br><span class="line">	</span><br><span class="line">	struct Hero heroArray[5]=&#123;</span><br><span class="line">		&#123;“刘备”,23,”男”&#125;,</span><br><span class="line">		&#123;“关羽”,22,”男”&#125;,</span><br><span class="line">		&#123;“张飞”,20,”男”&#125;,</span><br><span class="line">		&#123;“赵云”,21,”男”&#125;,</span><br><span class="line">		&#123;“貂蝉”,19,”女”&#125;,</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	int len=sizeof(heroArray)/sizeof(heroArray[0]);</span><br><span class="line">	</span><br><span class="line">	bubbleSort(heroArray,len);</span><br><span class="line">	</span><br><span class="line">	printHero(heroArray,len);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/C++语言/通讯录管理系统：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -715,230 +928,6 @@
 <p>——————————const修饰成员函数：</p>
 <p>常函数：成员函数后加const后我们称这个函数为常函数；常函数内不可以修改成员属性；成员属性声明时加关键字mutable后，在常函数中依然可以修改</p>
 <p>常对象：声明对象前加const称该对象为常对象，常对象只能调用常函数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9oy6mhj30mu0ot420.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9vpitfj307v01v3ym.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/友元：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%8F%8B%E5%85%83%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-17T16:00:00.000Z" itemprop="datePublished">2019-06-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%8F%8B%E5%85%83%EF%BC%9A/">友元：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>在程序里，有些私有属性也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术</p>
-<p>友元的目的就是让一个函数或者类访问另一个类中的私有成员，友元的关键字为friend</p>
-<p>友元的三种实现：<br>1）全局函数做友元<br>2）类做友元<br>3）成员函数做友元</p>
-<p>全局函数做友元：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfao4s65j30kw0k1mzz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfav93vaj307v01vdfy.jpg"></p>
-<p>友元类（类做友元）：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfb1nwqjj30je0qeadj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfb7w54qj307v01vwem.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbe60cvj30j00j4n01.jpg"></p>
-<p>成员函数做友元【为啥顺序不能变？？】：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbl7rcej30ko0von1h.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbse9jgj30fe02k74l.jpg"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">**using** **namespace** std;</span><br><span class="line"></span><br><span class="line">**class** Building;</span><br><span class="line"></span><br><span class="line">**class** goodGay&#123;</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    </span><br><span class="line">    Building *building;</span><br><span class="line">    </span><br><span class="line">    //可访问Building中的私有成员</span><br><span class="line">    **void** visit();</span><br><span class="line">    </span><br><span class="line">    //不可访问Building中的私有成员</span><br><span class="line">    **void** visit1();</span><br><span class="line">    </span><br><span class="line">    goodGay();</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">**class** Building</span><br><span class="line">&#123;</span><br><span class="line">    **friend** **void** goodGay::visit();//表示goodGay类中的成员函数visit()作为本类的好朋友</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    </span><br><span class="line">    Building()&#123;</span><br><span class="line">        SittingRoom = “客厅”;</span><br><span class="line">        BedRoom = “卧室”;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    string SittingRoom;</span><br><span class="line">    </span><br><span class="line">**private**:</span><br><span class="line">    string BedRoom;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">goodGay::goodGay()</span><br><span class="line">&#123;</span><br><span class="line">    building = **new** Building;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** goodGay::visit()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;SittingRoom&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** goodGay::visit1()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;“visit2函数正在访问：”&lt;&lt;building-&gt;SittingRoom&lt;&lt;endl;</span><br><span class="line">    //cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**int** main()</span><br><span class="line">&#123;</span><br><span class="line">    goodGay gg;</span><br><span class="line">    gg.visit();</span><br><span class="line">    gg.visit1();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/C++运算符重载：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-16T16:00:00.000Z" itemprop="datePublished">2019-06-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%EF%BC%9A/">C++运算符重载：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>运算符重载：对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型</p>
-<p>加号运算符重载：实现两个自定义数据类型相加的计算【对于内置的数据类型的表达式的运算符是不可能改变的；不要滥用运算符重载】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfcl18rxj30mt101n2t.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfcslrrij30fe02kmxc.jpg"></p>
-<p>左移运算符重载：可以输出自定义数据类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfd0w3paj30fy0jwq5k.jpg"></p>
-<p>递增运算符重载：通过重载递增运算符，实现自己的整型数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfd825xnj30is0wndki.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdf91ztj30e702pdfw.jpg"></p>
-<p>赋值运算符重载：</p>
-<p>C++编译器至少给一个类添加4个函数：<br>1）默认构造函数（无参，函数体为空）<br>2）默认析构函数（无参，函数体为空）<br>3）默认拷贝构造函数，对属性进行值拷贝<br>4）赋值运算符operator=，对属性进行值拷贝</p>
-<p>如果类中有属性指向堆区，做赋值操作时也会出现深浅拷贝问题<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdm6b31j30l10sdwie.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdsxtw4j30e702p74i.jpg"></p>
-<p>关系运算符重载：重载关系运算符，可以让两个自定义类型对象进行对比操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfe2izalj30kx0tf0wg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfe8hjcqj30e702p0sx.jpg"></p>
-<p>函数调用运算符()重载：由于重载后使用的方式非常像函数的调用，因此称为仿函数；仿函数没有固定的写法，非常灵活<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfej56i2j30ke0pxdjd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfeok31vj30e702pt8u.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/继承：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%A7%E6%89%BF%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-15T16:00:00.000Z" itemprop="datePublished">2019-06-16</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%A7%E6%89%BF%EF%BC%9A/">继承：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>继承是面向对象三大特性之一</p>
-<p>定义某些类时，下级别的成员除了拥有上一级的共性，还有自己的特性，这个时候我们就可以考虑利用继承的技术，减少重复代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfg9czzxj30hx125wjm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgfbr0rj30e707pdgu.jpg"></p>
-<p>继承方式：公共继承、保护继承、私有继承<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfglvd97j30hn0cwjud.jpg"></p>
-<p>继承中的对象模型：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgse4qoj30dz0isdhm.jpg"></p>
-<p>继承中的构造和析构顺序：子类继承父类后，当创建子类对象，也会调用父类的构造函数；先构造父类，再构造子类，析构的顺序与构造的顺序相反<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgzbqddj30ii0k9ac5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfh6ivubj30dz02nq38.jpg"></p>
-<p>继承同名成员处理方式：</p>
-<p>当子类与父类出现同名的成员，如何通过子类对象访问到子类或者父类中同名的数据呢？<br>1）访问子类同名成员，直接访问即可<br>2）访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhdadvij30n80yxgq3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhk4mgpj30dz033q3a.jpg"></p>
-<p>继承同名静态成员处理方式：静态成员和非静态成员出现同名，处理方式一致；访问子类同名成员，直接访问即可；访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhr4rmzj30nb11hgrf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhzmn2lj30dz072759.jpg"></p>
-<p>多继承：C++允许一个类继承多个类，多继承可能会引发父类中有同名成员出现，需要加作用域区分；C++实际开发中不建议用多继承<br>class Son:public Base1,public Base2</p>
-<p>菱形继承：两个派生类继承同一个基类，又有某个类同时继承着两个派生类，这种继承被称为菱形继承，或者钻石继承</p>
-<p>出现的问题：<br>1）羊继承了动物的数据，驼同样继承了动物的数据，当羊驼使用数据时，就会产生二义性<br>2）羊驼继承自动物的数据继承了两份，但是这份数据我们只需要一份就可以<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfi72uyrj30iw0mctc0.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfidoddzj30df01z74f.jpg"></p>
 
       
     </div>

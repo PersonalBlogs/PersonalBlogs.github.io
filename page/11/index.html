@@ -228,6 +228,247 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据库系统原理/《MySQL必知必会》/创建和操纵表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/" class="article-date">
+      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/">创建和操纵表</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>创建和操纵表</p>
+<p>一般有两种创建表的方法：<br>1）使用具有交互式创建和管理表的工具<br>2）表也可以直接用MySQL语句操纵</p>
+<p>值得注意的是，在使用交互式工具时，实际上使用的是MySQL语句，但是这些语句不是用户编写的，界面工具会自动生成并执行相应的MySQL语句（更改现有表时也是这样）</p>
+<p>为利用CREATE TABLE创建表，必须给出下列信息：<br>1）新表的名字，在关键字CREATE TABLE之后给出<br>2）表列的名字和定义，用逗号分隔</p>
+<p>1）表的主键可以在创建表时用PRIMARY KEY关键字指定，为创建由多个列组成的主键，应该以逗号分隔的列表给出各列名；主键为其值唯一标识表中每个行的列，主键中只能使用不允许NULL值的列，允许NULL值的列不能作为唯一标识<br>CREATE TABLE customers<br>(<br>     custid              int                NOT NULL AUTOINCREMENT,<br>     cust_name        char(50)     NOT NULL,<br>     cust_address    char(50)     NULL,<br>     cust_city           char(50)     NULL,<br>     cust_state         char(5)       NULL,<br>     cust_zip             char(10)     NULL,<br>     cust_country     char(50)     NULL,<br>     cust_contact     char(50)     NULL,<br>     cust_email         char(255)   NULL,<br>     PRIMARY KEY (cust_id)<br>)ENGINE-InnoDB;</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwon1sojj30b4044jub.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwoulrokj30b402lwgb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp2xsdhj30b402l40a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp9p6ubj30b402l761.jpg"></p>
+<p>AUTOINCREMENT告诉MySQL，本列每当增加一行时自动增量。每次执行一个INSERT操作时，MySQL自动对该列增量（从而才有这个关键字AUTOINCREMENT），给该列赋予下一个可用的值。这样给每个行分配一个唯一的custid，从而可以用作主键值；每个表只允许一个AUTOINCREMENT列，而且它必须被索引（如通过使它成为主键）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwpk2xfbj30b40bjjz3.jpg"></p>
+<p>2）如果在插入行时没有给出值，MySQL允许指定此时使用的默认值。默认值用CREATE TABLE语句的列定义中的DEFAULT关键字指定<br>CREATE TABLE orderitems<br>(<br>     order_num        int                     NOT NULL,<br>     order_item        int                     NOT NULL,<br>     prod_id             char(10)           NOT NULL,<br>     quantity            int                     NOT NULL DEFAULT 1,<br>     item_price        decimal(8,2)    NOT NULL,<br>     PRIMARY KEY(ordernum,orderitem)<br>)ENGINE-InnoDB;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwptvtivj30b404d40w.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq1d6f2j30bw07ndis.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq88t37j30bw0f0wlh.jpg"></p>
+<p>3)更新表<br>为了使用ALTER TABLE更改表结构，必须给出下面的信息：<br>1）在ALTER TABLE之后给出要更改的表名（该表必须存在，否则将出错）<br>2）所做更改的列表</p>
+<p>ALTER TABLE vendors<br>ADD vend_phone CHAR(20);</p>
+<p>删除刚刚添加的列：<br>ALTER TABLE Vendors<br>DROP COLUMN vend_phone;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqhn92kj30bw08l76r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqphxx2j30bw01ldg7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqwbdwtj30bw07e0wg.jpg"></p>
+<p>4)删除表：删除整个表而不是其内容，删除表没有确认，也不能撤销，执行这条语句将永久删除该表</p>
+<p>DROP TABLE customers2;</p>
+<p>5)重命名表</p>
+<p>RENAME TABLE customers2 TO customers,<br>                            backup_vendors TO vendors;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/文件系统概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" class="article-date">
+      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/">文件系统概念</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>文件系统概念：</p>
+<p>文件是计算机信息存取的一种重要组织形式</p>
+<p>文件由若干信息项有序构成，信息项可以是字节，可以是结构化数据<br>用户通过读写指针来存取文件的信息项<br>文件具有文件名，用户通过文件名存取文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcvk8f03j313u09r78l.jpg"></p>
+<p>文件的分类：</p>
+<p>按照文件的用途分：<br>1）系统文件：包括操作系统的可执行程序和数据文件，这种文件不对用户开放，仅供系统使用<br>2）库文件：系统为用户提供的各种标准函数库和实用程序等，用户只能使用这些文件，而无权对其进行修改<br>3）用户文件：用户创建的文件，如用户可执行程序，源程序，数据文件等，这种文件的使用和修改权均属于用户</p>
+<p>按照文件的操作权限分：<br>1）只读文件：只允许进行读操作<br>2）读写文件：允许进行读写操作<br>3）不保护文件：不作任何操作限制</p>
+<p>按照文件的性质分：<br>1）普通文件：指一般的用户文件/系统文件<br>2）目录文件：记录目录里面的文件列表信息（文件名，文件存放地址，文件属性）<br>3）设备文件：把设备作为文件管理和使用</p>
+<p>文件属性：指定文件的类型、操作特性和存取保护等一组信息，文件属性存放在文件所在目录的目录文件中</p>
+<p>MS-DOS系统中，文件属性占目录项的一个字节【00000001：只读属性；00000010：隐藏属性】</p>
+<p>文件系统定义：负责管理文件的机构称为文件系统</p>
+<p>功能：负责文件的创立、撤销、读写、修改、复制和存取控制等，并管理存放文件的存储设备</p>
+<p>文件系统的目标是让用户以文件名来存取文件</p>
+<p>文件的结构：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcvt25mhj30lt0gedlt.jpg"></p>
+<p>文件的逻辑结构：【现代操作系统中文件都是流式文件，由应用程序解释和处理文件】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcw0ucj0j30zh0qh7jz.jpg"></p>
+<p>文件的存取方法：<br>1）顺序存取<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcw8bo1qj30qw08d0wo.jpg"><br>2）随机存取<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcwf07v5j30ql0hfn4b.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统原理/《MySQL必知必会》/使用视图" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/11/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/" class="article-date">
+      <time datetime="2020-10-10T16:00:00.000Z" itemprop="datePublished">2020-10-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/11/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/">使用视图</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用视图</p>
+<p>视图是虚拟的表，与包含数据的表不一样，视图只包含使用时动态检索数据的查询</p>
+<p>SELECT custname,custcontact<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>     AND orderitems.ordernum=orders.ordernum<br>     AND prod_id=’TNT2’;</p>
+<p>现在，假如可以把整个查询包装成一个名为productcustomers的虚拟表，则可以如下轻松地检索出相同的数据：<br>SELECT custname,custcontact<br>FROM productcustomers<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwsap1tbj30bt01pt9d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwslo79tj30bt0dy44n.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwssjvutj30bt08gwha.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwszim7yj30bt05iwgf.jpg"></p>
+<p>1）<br>CREATE VIEW productcustomers AS<br>SELECT custname,custcontact,prod_id<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>   AND orderitems.ordernum=orders.ordernum;</p>
+<p>为检索订购了产品TNT2的客户：<br>SELECT custname,custcontact<br>FROM productcustomers<br>WHERE prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwt8av55j304u01tdg1.jpg"></p>
+<p>可以看出，视图极大的简化了复杂SQL语句的使用，利用视图，可一次性编写基础的SQL，然后根据需要多次使用<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtgi1k8j30b7033wgk.jpg"></p>
+<p>2）<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtp24azj303z03at93.jpg"></p>
+<p>CREATE VIEW vendorlocations AS<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;</p>
+<p>SELECT *<br>FROM vendorlocations;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwtxskgrj303z03aq3b.jpg"></p>
+<p>3)<br>CREATE VIEW customeremaillist AS<br>SELECT custid,custname,cust_email<br>FROM customers<br>WHERE cust_email IS NOT NULL;</p>
+<p>SELECT *<br>FROM customeremaillist;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwu5zx20j307e0280t8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwufd723j30b401xgmw.jpg"></p>
+<p>4)<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwumtgq4j307r02i3yz.jpg"></p>
+<p>CREATE VIEW orderitemsexpanded AS<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems;</p>
+<p>SELECT *<br>FROM orderitemsexpanded<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwuxuy21j309i02kjs1.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwv6q1svj30bu08twhc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwvecw9wj30bu070juj.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-操作系统原理/操作系统原理/文件物理结构" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -806,201 +1047,6 @@
 <p>创建占位符：<br>SAVEPOINT deletel;</p>
 <p>每个保留点都取标识它的唯一名字，以便在回退时，MySQL知道要回退到何处。为了回退到本例给出的保留点，可如下进行：<br>ROLLBACK TO deletel;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxcakymdj30cr05f78a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxctcr4mj30dl083788.jpg"></p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/全球化和本地化" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%85%A8%E7%90%83%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96/" class="article-date">
-      <time datetime="2020-10-05T16:00:00.000Z" itemprop="datePublished">2020-10-06</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%85%A8%E7%90%83%E5%8C%96%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%8C%96/">全球化和本地化</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/安全管理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/" class="article-date">
-      <time datetime="2020-10-04T16:00:00.000Z" itemprop="datePublished">2020-10-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/05/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/">安全管理</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/数据库维护" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%B4%E6%8A%A4/" class="article-date">
-      <time datetime="2020-10-03T16:00:00.000Z" itemprop="datePublished">2020-10-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/04/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%B4%E6%8A%A4/">数据库维护</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
       
     </div>
     

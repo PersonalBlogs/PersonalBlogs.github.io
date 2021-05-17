@@ -228,6 +228,230 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/C++语言/友元：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%8F%8B%E5%85%83%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-17T16:00:00.000Z" itemprop="datePublished">2019-06-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%8F%8B%E5%85%83%EF%BC%9A/">友元：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>在程序里，有些私有属性也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术</p>
+<p>友元的目的就是让一个函数或者类访问另一个类中的私有成员，友元的关键字为friend</p>
+<p>友元的三种实现：<br>1）全局函数做友元<br>2）类做友元<br>3）成员函数做友元</p>
+<p>全局函数做友元：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfao4s65j30kw0k1mzz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfav93vaj307v01vdfy.jpg"></p>
+<p>友元类（类做友元）：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfb1nwqjj30je0qeadj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfb7w54qj307v01vwem.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbe60cvj30j00j4n01.jpg"></p>
+<p>成员函数做友元【为啥顺序不能变？？】：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbl7rcej30ko0von1h.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbse9jgj30fe02k74l.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">**using** **namespace** std;</span><br><span class="line"></span><br><span class="line">**class** Building;</span><br><span class="line"></span><br><span class="line">**class** goodGay&#123;</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    </span><br><span class="line">    Building *building;</span><br><span class="line">    </span><br><span class="line">    //可访问Building中的私有成员</span><br><span class="line">    **void** visit();</span><br><span class="line">    </span><br><span class="line">    //不可访问Building中的私有成员</span><br><span class="line">    **void** visit1();</span><br><span class="line">    </span><br><span class="line">    goodGay();</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">**class** Building</span><br><span class="line">&#123;</span><br><span class="line">    **friend** **void** goodGay::visit();//表示goodGay类中的成员函数visit()作为本类的好朋友</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    </span><br><span class="line">    Building()&#123;</span><br><span class="line">        SittingRoom = “客厅”;</span><br><span class="line">        BedRoom = “卧室”;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    string SittingRoom;</span><br><span class="line">    </span><br><span class="line">**private**:</span><br><span class="line">    string BedRoom;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">goodGay::goodGay()</span><br><span class="line">&#123;</span><br><span class="line">    building = **new** Building;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** goodGay::visit()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;SittingRoom&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** goodGay::visit1()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;“visit2函数正在访问：”&lt;&lt;building-&gt;SittingRoom&lt;&lt;endl;</span><br><span class="line">    //cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**int** main()</span><br><span class="line">&#123;</span><br><span class="line">    goodGay gg;</span><br><span class="line">    gg.visit();</span><br><span class="line">    gg.visit1();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/C++运算符重载：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-16T16:00:00.000Z" itemprop="datePublished">2019-06-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/17/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%EF%BC%9A/">C++运算符重载：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>运算符重载：对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型</p>
+<p>加号运算符重载：实现两个自定义数据类型相加的计算【对于内置的数据类型的表达式的运算符是不可能改变的；不要滥用运算符重载】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfcl18rxj30mt101n2t.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfcslrrij30fe02kmxc.jpg"></p>
+<p>左移运算符重载：可以输出自定义数据类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfd0w3paj30fy0jwq5k.jpg"></p>
+<p>递增运算符重载：通过重载递增运算符，实现自己的整型数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfd825xnj30is0wndki.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdf91ztj30e702pdfw.jpg"></p>
+<p>赋值运算符重载：</p>
+<p>C++编译器至少给一个类添加4个函数：<br>1）默认构造函数（无参，函数体为空）<br>2）默认析构函数（无参，函数体为空）<br>3）默认拷贝构造函数，对属性进行值拷贝<br>4）赋值运算符operator=，对属性进行值拷贝</p>
+<p>如果类中有属性指向堆区，做赋值操作时也会出现深浅拷贝问题<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdm6b31j30l10sdwie.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdsxtw4j30e702p74i.jpg"></p>
+<p>关系运算符重载：重载关系运算符，可以让两个自定义类型对象进行对比操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfe2izalj30kx0tf0wg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfe8hjcqj30e702p0sx.jpg"></p>
+<p>函数调用运算符()重载：由于重载后使用的方式非常像函数的调用，因此称为仿函数；仿函数没有固定的写法，非常灵活<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfej56i2j30ke0pxdjd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfeok31vj30e702pt8u.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C++语言/继承：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%A7%E6%89%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-15T16:00:00.000Z" itemprop="datePublished">2019-06-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/16/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E7%BB%A7%E6%89%BF%EF%BC%9A/">继承：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>继承是面向对象三大特性之一</p>
+<p>定义某些类时，下级别的成员除了拥有上一级的共性，还有自己的特性，这个时候我们就可以考虑利用继承的技术，减少重复代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfg9czzxj30hx125wjm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgfbr0rj30e707pdgu.jpg"></p>
+<p>继承方式：公共继承、保护继承、私有继承<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfglvd97j30hn0cwjud.jpg"></p>
+<p>继承中的对象模型：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgse4qoj30dz0isdhm.jpg"></p>
+<p>继承中的构造和析构顺序：子类继承父类后，当创建子类对象，也会调用父类的构造函数；先构造父类，再构造子类，析构的顺序与构造的顺序相反<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgzbqddj30ii0k9ac5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfh6ivubj30dz02nq38.jpg"></p>
+<p>继承同名成员处理方式：</p>
+<p>当子类与父类出现同名的成员，如何通过子类对象访问到子类或者父类中同名的数据呢？<br>1）访问子类同名成员，直接访问即可<br>2）访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhdadvij30n80yxgq3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhk4mgpj30dz033q3a.jpg"></p>
+<p>继承同名静态成员处理方式：静态成员和非静态成员出现同名，处理方式一致；访问子类同名成员，直接访问即可；访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhr4rmzj30nb11hgrf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhzmn2lj30dz072759.jpg"></p>
+<p>多继承：C++允许一个类继承多个类，多继承可能会引发父类中有同名成员出现，需要加作用域区分；C++实际开发中不建议用多继承<br>class Son:public Base1,public Base2</p>
+<p>菱形继承：两个派生类继承同一个基类，又有某个类同时继承着两个派生类，这种继承被称为菱形继承，或者钻石继承</p>
+<p>出现的问题：<br>1）羊继承了动物的数据，驼同样继承了动物的数据，当羊驼使用数据时，就会产生二义性<br>2）羊驼继承自动物的数据继承了两份，但是这份数据我们只需要一份就可以<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfi72uyrj30iw0mctc0.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfidoddzj30df01z74f.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/C++语言/多态：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -692,217 +916,6 @@
           
         <hr>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**    const int size=3;**</span><br><span class="line">**    int board[size][size];**</span><br><span class="line">**    int i,j;**</span><br><span class="line">**    int numofX;**</span><br><span class="line">**    int numofo;**</span><br><span class="line">**    int result=-1;//-1;**没人赢，**1:X**赢，**0:o**赢    </span><br><span class="line">**    //**读入矩阵**    for(I=0;i&lt;size;i++)&#123;**</span><br><span class="line">**        for(j=0;j&lt;size;j++)&#123;**</span><br><span class="line">**            scanf(“%d”,&amp;board[I][j]);**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">    </span><br><span class="line">**    //**检查行**    for(I=0;i&lt;size &amp;&amp; result==-1;i++)&#123;**</span><br><span class="line">**        numofo=numofX=0;**</span><br><span class="line">**        for(j=0;j&lt;size;j++)&#123;**</span><br><span class="line">**            if(board[I][j]==1)&#123;**</span><br><span class="line">**                numofX++;**</span><br><span class="line">**            &#125;else&#123;**</span><br><span class="line">**                numofo++;**</span><br><span class="line">**            &#125;**</span><br><span class="line">**        &#125;**</span><br><span class="line">**        if(numofo==size)&#123;**</span><br><span class="line">**            result=0;**</span><br><span class="line">**        &#125;else if(numofX==size)&#123;**</span><br><span class="line">**            result =1;**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">    </span><br><span class="line">**    //**检查列**    if(result==-1)&#123;**</span><br><span class="line">**    for(j=0;j&lt;size &amp;&amp; result==-1;j++)&#123;**</span><br><span class="line">**        numofo=numofX=0;**</span><br><span class="line">**        for(I=0;i&lt;size;i++)&#123;**</span><br><span class="line">**            if(board[I][j]==1)&#123;**</span><br><span class="line">**                numofX++;**</span><br><span class="line">**            &#125;else&#123;**</span><br><span class="line">**                numofo++;**</span><br><span class="line">**            &#125;**</span><br><span class="line">**        &#125;**</span><br><span class="line">**        if(numofo==size)&#123;**</span><br><span class="line">**            result=0;**</span><br><span class="line">**        &#125;else if(numofX==size)&#123;**</span><br><span class="line">**            result =1;**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**&#125;**</span><br><span class="line">    </span><br><span class="line">**    //**检查对角线**    numofo=numofX=0;**</span><br><span class="line">**    for(I=0;i&lt;size;i++)&#123;**</span><br><span class="line">**        if(board[I][I]==1)&#123;**</span><br><span class="line">**            numofX++;**</span><br><span class="line">**        &#125;else&#123;**</span><br><span class="line">**            numofo++;**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(numofo==size)&#123;**</span><br><span class="line">**        result=0;**</span><br><span class="line">**    &#125;else if(numofX==size)&#123;**</span><br><span class="line">**        result =1;**</span><br><span class="line">**    &#125;**</span><br><span class="line">    </span><br><span class="line">**    numofo=numofX=0;**</span><br><span class="line">**    for(I=0;i&lt;size;i++)&#123;**</span><br><span class="line">**        if(board[I][size-i-1]==1)&#123;**</span><br><span class="line">**            numofX++;**</span><br><span class="line">**        &#125;else&#123;**</span><br><span class="line">**            numofo++;**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/一数三平方：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%B8%80%E6%95%B0%E4%B8%89%E5%B9%B3%E6%96%B9%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%B8%80%E6%95%B0%E4%B8%89%E5%B9%B3%E6%96%B9%EF%BC%9A/">一数三平方：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kr8tn4hj30je0izdi6.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//有这样一个六位数，它本身是一个整数的平方，其高三位和低三位也分别是一个整数的平方，如225625=475^2,求满足上述条件的所有六位数。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">long</span> i,n,n1,n2,n3,n4,count=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;这样的数有:  \n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">100000</span>;i&lt;=<span class="number">999999</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        n=(<span class="keyword">long</span>)<span class="built_in">sqrt</span>(i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i==n*n)&#123;</span><br><span class="line">            </span><br><span class="line">            n1=i/<span class="number">1000</span>;</span><br><span class="line">            n2=i%<span class="number">1000</span>;</span><br><span class="line">            n3=(<span class="keyword">long</span>)<span class="built_in">sqrt</span>(n1);</span><br><span class="line">            n4=(<span class="keyword">long</span>)<span class="built_in">sqrt</span>(n2);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(n1==n3*n3&amp;&amp;n2==n4*n4)&#123;</span><br><span class="line">                </span><br><span class="line">                count++;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%ld &quot;</span>,i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n满足条件的有：%ld个&quot;</span>,count);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/两数相除：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4%EF%BC%9A/">两数相除：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>指针作为函数的返回值：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8k65kw26j30d60fljsu.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> *result)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;</span><br><span class="line">        ret=<span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        *result=a/b;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> ret;    <span class="comment">//return:如果除法成功，返回1；否则返回0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// insert code here...</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">5</span>,b=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(divide(a,b,&amp;c))&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d/%d=%d\n&quot;</span>,a,b,c);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/交换两个变量的值" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC/">交换两个变量的值</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">**//**交换**a**和**b**的值**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**	int a=5,b=6,t;**</span><br><span class="line">**	t=5;**</span><br><span class="line">**	a=b;**</span><br><span class="line">**	b=t;**</span><br><span class="line">**	printf(“a=%d,b=%d\n”,a,b);**</span><br><span class="line">**	return 0;**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**	int a=5,b=6;**</span><br><span class="line">	</span><br><span class="line">**	a=a+b;**</span><br><span class="line">**	b=a-b;**</span><br><span class="line">**	a=a-b;**</span><br><span class="line">	</span><br><span class="line">**	printf(“a=%d,b=%d\n”,a,b);**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int a=5,b=6;</span><br><span class="line">	</span><br><span class="line">	a=a ^ b;</span><br><span class="line">	b=a ^ b;</span><br><span class="line">	a=a ^ b;</span><br><span class="line">	</span><br><span class="line">	printf(“a=%d,b=%d\n”,a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void swap(int *pa,int *pb)&#123;</span><br><span class="line">	int t=*pa;</span><br><span class="line">	*pa=*pb;</span><br><span class="line">	*pb=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int a=5,b=6;</span><br><span class="line">	swap(&amp;a, &amp;b);</span><br><span class="line">	printf(“a=%d,b=%d\n”,a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     

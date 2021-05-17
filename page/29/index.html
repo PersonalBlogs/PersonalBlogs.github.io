@@ -228,6 +228,232 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/创建一个对象，这个对象在内存中是如何分配的?" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E7%9A%84?/" class="article-date">
+      <time datetime="2019-09-02T16:00:00.000Z" itemprop="datePublished">2019-09-03</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E7%9A%84?/">创建一个对象，这个对象在内存中是如何分配的?</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）子类对象中有自己的属性和所有父类的属性</p>
+<p>2）代码段中的每一个类都有一个叫做isa的指针，这个指针指向它的父类，一直指到NSObject</p>
+<p>子类方法重写以后，调用的就是子类重写的方法了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3qvna2bj30il0chdhq.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/结构体和类的区别：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-01T16:00:00.000Z" itemprop="datePublished">2019-09-02</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A/">结构体和类的区别：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h3 id="相同点：都可以将多个数据封装为一个整体"><a href="#相同点：都可以将多个数据封装为一个整体" class="headerlink" title="相同点：都可以将多个数据封装为一个整体"></a>相同点：都可以将多个数据封装为一个整体</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Date</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Date</span>:<span class="title">NSObject</span></span>&#123;</span><br><span class="line">       <span class="keyword">int</span> year;</span><br><span class="line">       <span class="keyword">int</span> month;</span><br><span class="line">       <span class="keyword">int</span> day;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h3><p>1）结构体只能封装数据，而类不仅可以封装数据还可以封装行为【如果表示的这个实体，不仅是由多个数据组成，这个实体还具有行为，只能使用类】</p>
+<p>2）结构体变量分配在栈空间（如果是一个局部变量的情况下），而对象分配在堆空间<br>【栈的特点：空间相对较小，但是存储在栈中的数据访问的效率更高一些；堆的特点：空间相对较大，但是存储在堆中的数据访问的效率相对较低】</p>
+<p>3）赋值不同：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//结构体：Student</span></span><br><span class="line"><span class="comment">//类：Person</span></span><br><span class="line"></span><br><span class="line">Student s1=&#123;“jack”,<span class="number">19</span>,GenderMale&#125;;</span><br><span class="line">Student s2=s1;</span><br><span class="line"></span><br><span class="line">Person *p1=[Person new];</span><br><span class="line">Person *p2=p1;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/类的本质：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/01/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-31T16:00:00.000Z" itemprop="datePublished">2019-09-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/01/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%9A/">类的本质：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）类第一次被访问的时候，就会被加载到代码段中存储（类加载）<br>2）类一旦被加载到代码段之后是不会被回收的，除非程序结束</p>
+<p>类是以什么样的形式存储在代码段的：<br>1）任何存储在内存中的数据都有一个数据类型<br>2）任何在内存中申请的空间也有自己的类型<br><code>Person *p1=[Person new];</code><br>3)在代码段存储类的那块空间是什么类型？</p>
+<p>在代码段中存储类的步骤：<br>1）先在代码段中创建一个Class对象，Class是Foundation框架中的一个类，这个Class对象就是用来存储类信息的<br>2）将类的信息存储在这个Class对象之中，这个Class对象至少有三个属性：存储的这个类的名称，存储的这个类的属性，存储的这个类的方法</p>
+<p>所以类是以Class对象的形式存储在代码段的，存储类的这个Class对象，我们也叫做类对象，用来存储类的一个对象</p>
+<p>所以存储类的类对象也有一个叫做isa指针的属性，这个指针指向存储父类的类对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ri3eq9j307d0ch3yx.jpg"></p>
+<h3 id="如何拿到存储在代码段中的类对象："><a href="#如何拿到存储在代码段中的类对象：" class="headerlink" title="如何拿到存储在代码段中的类对象："></a>如何拿到存储在代码段中的类对象：</h3><p>1）调用类的类方法class就可以得到存储类的类对象的地址【声明Class指针的时候不需要加<em>，因为在typedef的时候已经加</em>了】</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c1=[Person class];</span><br><span class="line">NSLog(@&quot;c1 = %p&quot;,c1);</span><br></pre></td></tr></table></figure>
+
+<p>2）调用对象的对象方法class，就可以得到存储这个对象所属的类的Class对象的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line">Class c2=[p1 class];</span><br></pre></td></tr></table></figure>
+
+<p>3）对象中的isa指针的值其实就是代码段中存储类的类对象的地址</p>
+<h3 id="如何使用类对象："><a href="#如何使用类对象：" class="headerlink" title="如何使用类对象："></a>如何使用类对象：</h3><p>1）拿到存储类的类对象以后，<code>Class c1=[Person class];</code><br>c1对象就是Person类，c1完全等价于Person</p>
+<p>2）使用类对象来调用类的类方法</p>
+<p>3）可以使用类对象来调用new方法，创建存储在类对象中的类的对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c1=[Person class];</span><br><span class="line">Person *p1=[c1 new];</span><br></pre></td></tr></table></figure>
+
+<p>4）注意：使用类对象只能调用类的类方法，因为类对象就等价于存在其中的类</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/SEL" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -717,232 +943,6 @@
 <p>通过NSObject指针去调用对象的方法的时候，编译器会做编译检查<br>通过id类型的指针去调用对象的方法的时候，编译器直接通过，无论你调用什么方法【该运行错误的还是运行错误】</p>
 <p>注意：id指针只能调用对象的方法，不能使用点语法，如果使用点语法就会直接报编译错误</p>
 <p>如果我们要声明一个万能指针，不要使用NSObject，而是使用id</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/instancetype：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/instancetype%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-23T16:00:00.000Z" itemprop="datePublished">2019-08-24</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/instancetype%EF%BC%9A/">instancetype：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>父类中的类方法创建一个父类对象返回:<br>1）如果返回值写为父类类型的，那么子类来调用这个方法得到的就是父类指针，解决方式：把返回值改为id类型的<br>2）方法的内部创建对象的时候，不要写死了，因为写死创建的对象就固定了，我们希望哪一个类来调用这个方法就创建哪一个类的对象，解决方式：把类名写为self，哪一个类来调用这个方法，self就指的是哪一个类，创建的就是哪一个类的对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3xl2ab3j305401u3yr.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3xsac6yj308o04k3zo.jpg"><br>3）方法的返回值是id类型的，问题就是任意指针都可以接收这个方法的返回值，编译器连个警告都没有<br>解决方式：如果方法的返回值是instancetype，代表方法的返回值是当前这个类的对象</p>
-<p>使用建议：<br>1）如果方法内部是在创建当前类的对象，不要写死成类名[类名 new];而是用self代替类名<br>2）如果方法的返回值是当前类的对象，也不要写死了，而是写成instancetype</p>
-<p>id和instancetype的区别：<br>1）instancetype只能作为方法的返回值，不能在其他地方使用<br>id既可以声明指针变量，也可以作为参数，也可以作为返回值<br>2）instancetype是一个有类型的，代表当前类的对象<br>id是一个无类型的指针，仅仅是一个地址</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/动态类型检测：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-22T16:00:00.000Z" itemprop="datePublished">2019-08-23</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%EF%BC%9A/">动态类型检测：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>编译——运行</p>
-<p>我们就希望，可以写代码来先判断一下对象中是否有这个方法，如果有再去执行，如果没有就不去执行</p>
-<p>1）判断对象中是否有指定的对象方法【最常用】<br><code>* (BOOL)respondsToSelector:(SEL)aSelector;</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3yinfucj30ck081q4i.jpg"></p>
-<p>2）判断类中是否有指定的类方法【最常用】<br><code>+ (BOOL)instancesRespondToSelector:(SEL)aSelector;</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3yr2d5dj30c701jjru.jpg"></p>
-<p>3）判断指定的对象是否为指定类的对象或者子类对象<br><code>* (BOOL)isKindOfClass:(Class)aClass;【判断s1对象是否为NSObject对象或者NSObject的子类对象】</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3yyfn8kj30ck03eq3s.jpg"></p>
-<p>4）判断对象是否为指定类的对象，不包括子类<br><code>* (BOOL)isMemberOfClass:(Class)aClass;</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3z5pubqj30ck03e3zb.jpg"></p>
-<p>5）判断类是否为另外一个类的子类<br><code>+ (BOOL)isSubclassOfClass:(Class)aClass;</code></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3zdfgttj309l01jwet.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/构造方法：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-21T16:00:00.000Z" itemprop="datePublished">2019-08-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%9A/">构造方法：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>类名 *指针名=[类名 new];</p>
-<p>new方法的内部，其实是先调用的alloc方法，再调用的init方法</p>
-<p>alloc方法是一个类方法，作用：哪一个类调用这个方法，就创建哪个类的对象，并把对象返回<br>init方法是一个对象方法，作用：初始化对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3zv5vdcj306r023q3h.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4014u9pj308p0233z0.jpg"></p>
-<p>创建对象的完整步骤：应该先使用alloc创建一个对象，然后再使用init初始化这个对象，才可以使用这个对象；虽然没有初始化的对象有的时候也可以使用，但是千万不要这么做，使用一个未经初始化的对象是极其危险的</p>
-<hr>
-<p>init方法（构造方法）：</p>
-<p>作用：初始化对象，为对象的属性赋初始值</p>
-<p>所以我们创建一个对象如果没有为这个对象的属性赋值，这个对象的属性是有默认值的，我们每次新创建一个对象，这个对象的属性都被初始化了</p>
-<p>我们想要让创建的对象的属性的默认值不是nil、NULL、0，而是我们自定义的，那么这个时候，我们就可以重写init方法<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly407m6y2j30eq04iwh1.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly40euuvyj306105rjsj.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly40kv6zwj307e03nmy0.jpg"></p>
-<p>调用父类init方法的原因：因为父类的init方法会初始化父类的属性，所以必须要保证当前对象中的父类属性也同时被初始化</p>
-<p>赋值给self的原因是调用父类的init方法，会返回初始化成功的对象，实际上返回的就是当前对象，但是我们要判断是否初始化成功</p>
-<p>重写init方法以后，这样每次创建出来的对象的属性都是一样的<br>但是，我想创建对象的时候，对象的属性的值由创建对象的人来指定，而不是写死在init方法中</p>
-<p>自定义构造方法的规范：<br>1）自定义构造方法的返回值必须是instancetype<br>2）自定义构造方法的名称必须以initWith开头<br>3）方法的实现和init的要求一样<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly40s4tcgj30dr01ddga.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly40z8d3jj30dr03kmyc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly415rr3gj30cd01ct93.jpg"><br>这个时候就不能直接[Dog new]了</p>
 
       
     </div>

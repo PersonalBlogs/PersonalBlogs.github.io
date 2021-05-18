@@ -228,6 +228,146 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/C++语言/数组：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-28T16:00:00.000Z" itemprop="datePublished">2019-06-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84%EF%BC%9A/">数组：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>一维数组的定义方式：<br>1）数据类型  数组名[数组长度];<br>2）数据类型  数组名[数组长度]={值1，值2…};<br>3）数据类型  数组名[]={值1，值2…};</p>
+<p>如果在初始化数据的时候，没有全部填写完，会用0来填补剩余数据</p>
+<p>一维数组名称的用途：<br>1）可以统计整个数组在内存中的长度<br>2）可以获取数组在内存中的首地址：cout&lt;&lt;arr&lt;&lt;endl；<br>cout&lt;&lt;&amp;arr[0]&lt;&lt;endl;</p>
+<p>数组名是一个常量，不可以进行赋值操作</p>
+<p>二维数组定义方式：<br>1）数据类型  数组名[行数][列数]；<br>2）数据类型  数组名[行数][列数]=｛｛数据1，数据2｝，｛数据3，数据4｝｝；<br>3）数据类型  数组名[行数][列数]=｛数据1，数据2，数据3，数据4｝；<br>4）数据类型  数组名[][列数]={数据1，数据2，数据3，数据4};<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glweus9q48j30rk0sj7d5.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/单例模式：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-27T16:00:00.000Z" itemprop="datePublished">2019-06-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%EF%BC%9A/">单例模式：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>一个类的对象，无论在何时创建，无论在什么地方创建，也无论创建多少次，创建出来的都是同一个对象</p>
+<p>无论如何创建对象，最终都会调用alloc方法来创建，alloc方法的内部，其实什么都没做，只是调用了allocWithZone方法，实际上真正申请空间创建对象的事情是allocWithZone方法在做</p>
+<p>实现单例模式的方法：重写allocWithZone方法<br>【规范：如果类是一个单例模式，要求为类提供一个类方法，来返回这个单例对象，类方法必须以shared类名；default类名】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5uzu8nij306t03fjsc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5v6ikp3j30ae0a6di8.jpg"><br>单例对象可以被共享，存储在单例对象中的数据可以被共享；如果数据需要被整个程序所共享，那么将数据以属性的方式存储在单例对象中</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/C++语言/函数：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -760,174 +900,6 @@
 <p>封装的意义：<br>1）将属性和行为作为一个整体，表现生活中的事物<br>2）将属性和行为加以权限控制【public：公共权限(类内可以访问，类外可以访问)、protected：保护权限(类内可以访问，类外不可以访问)、private：私有权限(类内可以访问，类外不可以访问)】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf4k6q82j30k70j0wh5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf4rl4gbj30hj00xaa2.jpg"></p>
 <p>Struct和class的区别（都可以表示一个类）：<br>1）struct默认权限为公共<br>2）class默认权限为私有</p>
 <p>将成员属性设置为私有的优点：<br>1）可以自己控制读写权限【提供一个public接口让外界访问】<br>2）对于写权限，我们可以检测数据的有效性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf50rd05j30fr0pwgot.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf57kazjj30hj01x3ym.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/对象的初始化和清理：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%B8%85%E7%90%86%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-19T16:00:00.000Z" itemprop="datePublished">2019-06-20</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%B8%85%E7%90%86%EF%BC%9A/">对象的初始化和清理：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>—————1、构造函数和析构函数：</p>
-<p>C++中的面向对象来源于生活，每个对象也都会有初始设置以及对象销毁前的清理数据的设置</p>
-<p>构造函数和析构函数：对象的初始化和清理是两个非常重要的安全问题，一个对象或者变量没有初始状态，对其使用后果是未知的，同样的使用完一个对象或变量没有及时清理，也会造成一定的安全问题；C++利用了构造函数和析构函数解决上述问题，这两个函数将会被编译器自动调用，完成对象初始化和清理工作；</p>
-<p>对象的初始化和清理工作是编译器强制要我们做的事情，因此如果我们不提供构造和析构，编译器会提供；但是编译器提供的构造函数和析构函数是空实现</p>
-<p>构造函数：主要作用于创建对象时为对象的成员属性赋值，构造函数由编译器自动调用，无须手动调用<br>析构函数：主要作用在对象销毁前系统自动调用，执行一些清理工作</p>
-<p>构造函数语法：类名(){}<br>1）构造函数没有返回值也不写void<br>2）函数名称与类名相同<br>3）构造函数可以有参数，因此可以发生重载<br>4）程序在调用对象时会自动调用构造，无须手动调用，而且只会调用一次</p>
-<p>析构函数语法：～类名(){}<br>1）析构函数没有返回值也不写void<br>2）函数名称与类名相同，在名称前加上符号～<br>3）析构函数不可以有参数，因此不可以发生重载<br>4）程序在对象销毁前会自动调用析构，无须手动调用，而且只会调用一次<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf5w62rwj30ng0ja77a.jpg"></p>
-<p>——————————2、构造函数的分类及调用：</p>
-<p>两种分类方式：<br>1）按参数分类：有参构造和无参构造<br>2）按类型分类：普通构造和拷贝构造</p>
-<p>三种调用方式：括号法、显示法、隐式转换法<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf69o0y8j30si10tahi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6eitw1j30ng0bg76h.jpg"></p>
-<p>——————3、拷贝构造函数调用时机：</p>
-<p>C++中拷贝构造函数调用时机通常有三种情况：<br>1）使用一个已经创建完毕的对象来初始化一个新对象<br>2）值传递的方式给函数参数传值<br>3）以值方式返回局部对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6ly3kzj30ma0yqaeu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6sxmzfj30cm038t8y.jpg"><br>—————————4、构造函数调用规则：</p>
-<p>默认情况下，C++编译器至少给一个类添加三个函数：<br>1）默认构造函数（无参，函数体为空）<br>2）默认析构函数（无参，函数体为空）<br>3）默认拷贝构造函数，对属性进行值拷贝</p>
-<p>构造函数调用规则：<br>1）如果用户定义有参构造函数，C++不再提供默认无参构造函数，但是会提供默认拷贝构造<br>2）如果用户定义拷贝构造函数，C++不会再提供其他构造函数</p>
-<p>—————————5、深拷贝与浅拷贝</p>
-<p>浅拷贝：简单的赋值拷贝操作<br>深拷贝：在堆区重新申请空间，进行拷贝操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6zji4uj30na0xgagk.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf77h74qj30fp03q0tc.jpg"><br>—————————6、初始化列表：</p>
-<p>C++提供了初始化列表语法，用来初始化属性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7dnq68j30fp0jzac3.jpg"></p>
-<p>———————————7、类对象作为类成员</p>
-<p>C++类中的成员可以是另一个类的对象，我们称该成员为对象成员<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7kcayoj309p03et8w.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7qliq9j30ma0nyadf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7xfr3fj309p03eaag.jpg"></p>
-<p>————8、静态成员</p>
-<p>静态成员就是在成员变量和成员函数前加上关键字static，称为静态成员</p>
-<p>静态成员分为：<br>1）静态成员变量：所有对象共享同一份数据，在编译阶段分配内存，类内声明，类外初始化<br>2）静态成员函数：所有对象共享同一个函数，静态成员函数只能访问静态成员变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf8483bqj30hj0kb40y.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf8cyj27j30hj0jsgo8.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/C++对象模型和this指针：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E5%92%8Cthis%E6%8C%87%E9%92%88%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-18T16:00:00.000Z" itemprop="datePublished">2019-06-19</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/C++%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E5%92%8Cthis%E6%8C%87%E9%92%88%EF%BC%9A/">C++对象模型和this指针：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>——————成员变量和成员函数分开存储：</p>
-<p>在C++中，类内的成员变量和成员函数分开存储</p>
-<p>只有非静态成员变量才属于类的对象上<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf92weytj30mg0jbq5x.jpg"></p>
-<p>—————————this指针：</p>
-<p>每一个非静态成员函数只会诞生一份函数实例，也就是说多个同类型的对象会共用一块代码，那么这一块代码是如何区分哪个对象调用自己的呢？</p>
-<p>C++通过提供特殊的对象指针，this指针，解决上述问题，this指针指向被调用的成员函数所属的对象</p>
-<p>This指针是隐含每一个非静态成员函数内的一种指针，不需要定义，直接使用即可</p>
-<p>This指针的用途：<br>1）当形参和成员变量同名时，可用this指针来区分<br>2）在类的非静态成员函数中返回对象本身，可使用return *this；<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9a7upvj30mg0jb41f.jpg"></p>
-<p>———————————空指针访问成员函数：</p>
-<p>C++中空指针也是可以调用成员函数的，但是也要注意有没有用到this指针</p>
-<p>如果用到this指针，需要加以判断保证代码的健壮性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9i6gh7j30mu0jb76s.jpg"></p>
-<p>——————————const修饰成员函数：</p>
-<p>常函数：成员函数后加const后我们称这个函数为常函数；常函数内不可以修改成员属性；成员属性声明时加关键字mutable后，在常函数中依然可以修改</p>
-<p>常对象：声明对象前加const称该对象为常对象，常对象只能调用常函数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9oy6mhj30mu0ot420.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9vpitfj307v01v3ym.jpg"></p>
 
       
     </div>

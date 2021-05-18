@@ -228,6 +228,160 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/面向对象的三大特征：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-14T16:00:00.000Z" itemprop="datePublished">2019-09-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/15/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81%EF%BC%9A/">面向对象的三大特征：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>封装：类就是更高级别的封装，类将数据和行为封装为了一个整体</p>
+<p>优点：</p>
+<ol>
+<li>屏蔽内部的实现，外界不需要知道内部是如何实现的，只需要知道这个对象有什么用</li>
+<li>方便操作</li>
+<li>后期的维护十分的便利</li>
+</ol>
+<p>属性的封装：</p>
+<p>存在的问题：为对象的属性赋值的时候，语法上其实只要数据的类型是属性的类型就是可以的，但是情理上这么做是不合的（人的年龄）</p>
+<p>解决问题：<br>1）将属性的@public去掉<br>2）为类提供一个方法，这个方法专门为这个属性赋值，这个方法我们叫做setter</p>
+<p>setter方法：<br>1）这个方法是一个对象方法，因为这个方法要为属性赋值；<br>2）这个方法没有返回值；<br>3）这个方法的名称必须以set开头，跟上去掉下划线首字母大写的属性名；<br>4）这个方法一定是有参数的，参数的类型和属性的类型一致，参数的名称和属性的名称一致（去掉下划线）<br>5）在方法的实现中，判断传入的数据是否符合逻辑，如果符合逻辑则赋值，否则做默认处理<br>6）外界想要为对象的属性赋值，那么就调用这个对象的setter方法，将要赋值的数据传入这个方法</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3o30cn3j308o06v0u1.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3oaai7pj309w08xabx.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ogduznj308k06s75l.jpg"></p>
+<p>以上又有一个问题：在外界无法取出属性的值了</p>
+<p>getter方法：<br>1）是一个对象方法，因为这个方法做的事情是拿到属性的值返回<br>2）有返回值，返回值的类型和属性的类型一致<br>3）这个方法的名称直接就是属性的名称（去掉下划线）<br>4）这个方法没有参数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3on7kdlj303u00saa3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3oudea4j303u01yq33.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3p1a4z4j309k01omxi.jpg"></p>
+<p>只要属性需要被外界访问，就要为这个属性封装setter和getter，哪怕在赋值或者取值的时候没有任何逻辑验证</p>
+<p>只读封装：为属性封装的时候，只提供getter，不提供setter<br>只写封装：为属性封装的时候，只提供setter，不提供getter</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/对象与对象之间的关系：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished">2019-09-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/14/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A/">对象与对象之间的关系：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>组合关系：一个类是由其他的几个类联合起来组合而成【计算机由主板、显卡等组成】</p>
+<p>依赖关系：一个对象的方法的参数是另外一个对象【人依赖于手机】</p>
+<p>耦合度：当修改一个对象的时候对另外一个对象的影响程度【低耦合，高耦合】</p>
+<p>高内聚：一个对象仅仅做与自己相关的事情【单一职责原则】</p>
+<p>关联关系：一个类作为另外一个类的属性，但是它们不是组合关系，而是一个拥有的关系【人拥有狗】</p>
+<p>继承关系</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/static关键字：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -799,145 +953,6 @@
 <p>子类从父类继承，子类就继承了父类的方法，就意味着子类拥有了这个功能，但是有的时候，虽然子类也拥有父类的这个行为，但是这个行为的具体的实现和父类不同</p>
 <p>如何重写：直接在自己类的实现中将这个方法重新实现一遍就可以了</p>
 <p>当一个父类指针指向一个子类对象的时候，通过这个父类指针调用的方法如果在子类对象中重写了，那么调用的就是子类重写的方法</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/多态：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%A4%9A%E6%80%81%EF%BC%9A/" class="article-date">
-      <time datetime="2019-09-04T16:00:00.000Z" itemprop="datePublished">2019-09-05</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%A4%9A%E6%80%81%EF%BC%9A/">多态：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>指的是同一个行为，对于不同的事物具有完全不同的表现形式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Chinese new];</span><br><span class="line">Person *p2=[Japanese new];</span><br><span class="line">Person *p3=[Korea new];</span><br><span class="line"></span><br><span class="line">[p1 sayHi];</span><br><span class="line">[p2 sayHi];</span><br><span class="line">[p3 sayHi];</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/Description方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/09/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/Description%E6%96%B9%E6%B3%95/" class="article-date">
-      <time datetime="2019-09-03T16:00:00.000Z" itemprop="datePublished">2019-09-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/Description%E6%96%B9%E6%B3%95/">Description方法</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>%p打印的是指针变量的值<br>%@打印的是指针指向的对象</p>
-<p>如果我们使用%@打印一个对象，发现输出的格式：<code>&lt;对象所属的类名：对象的地址&gt;</code></p>
-<p>当我们使用%@打印一个对象的时候，NSLog函数的底层实现：<br>1）调用传入的对象的Description方法<br>2）拿到这个方法的返回值，这个返回值是一个字符串<br>3）将这个字符串输出</p>
-<p>Description方法是定义在NSObject类之中的，所以每一个OC对象都有这个方法，这个方法在NSObject类中的实现是这样的：返回的字符串格式   <code>@“&lt;对象所属的类名：对象的地址&gt;”</code></p>
-<p>如果使用%@打印一个对象的时候，你希望这个对象打印的格式是我们自己自定义的，那么就可以重写Description方法</p>
 
       
     </div>

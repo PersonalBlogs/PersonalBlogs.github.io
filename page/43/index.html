@@ -228,6 +228,181 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Apple、Linux/Ubuntu Server/重定向和管道：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/28/Apple%E3%80%81Linux/Ubuntu%20Server/%E9%87%8D%E5%AE%9A%E5%90%91%E5%92%8C%E7%AE%A1%E9%81%93%EF%BC%9A/" class="article-date">
+      <time datetime="2018-10-27T16:00:00.000Z" itemprop="datePublished">2018-10-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/28/Apple%E3%80%81Linux/Ubuntu%20Server/%E9%87%8D%E5%AE%9A%E5%90%91%E5%92%8C%E7%AE%A1%E9%81%93%EF%BC%9A/">重定向和管道：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>I/O是输入/输出(input/output)的缩写，I/O重定向可以把命令行的输入重定向为从文件中获取内容，也可以把命令行的输出结果重定向到文件中，如果我们将多个命令行关联起来，将形成非常强大的命令：管道</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizeqvzxuj30ch08pgmg.jpg"></p>
+<p>标准输出重定向：I/O重定向功能可以重新定义标准输出内容发送到哪里，使用重定向操作符“&gt;”，后面接文件名，就可以把标准输出重定向到另一个文件中，而不是显示在屏幕上，主要用于把命令的输出内容保存到一个文件中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizf06oqgj306x00f3ya.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizf87zzbj30bh0apwfs.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizffquh0j30bh05474q.jpg"></p>
+<p>标准错误重定向：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizfnc1haj30bh05fmxn.jpg"></p>
+<p>将标准输出和标准错误重定向到同一个文件:<br>1）传统的方法，在旧版本的shell中使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizfve3loj30bh04m0t3.jpg"><br>2）在这个例子中，只使用一个标记符“&amp;&gt;”就把标准输出和标准错误都重定向到了文件中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizg4zbwxj30bh00ddfm.jpg"></p>
+<p>处理不想要的输出：<br>有时候沉默是金，命令执行后我们并不希望得到输出，而是想把这个输出丢弃，尤其是在输出错误和状态信息的情况下更为需要。系统提供了一种方法，即通过把输出重定向到一个称为/dev/null的特殊文件中来实现它，这个文件是一个称为位桶(bit bucket)的系统设备，它接受输入但是不对输入进行任何处理<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizgdhj5sj30bh00gjr6.jpg"></p>
+<p>标准输入重定向：</p>
+<p>cat file..：合并文件，读取一个或多个文件，并把它们复制到标准输出文件中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizgmcf0lj30bs04l3yu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizgz7n3hj30bs02hmx5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizhajm28j30bs0dvgmy.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizhhyxr6j30bs04g0t2.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizhor315j305k02pdfo.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizhv5faxj304l01sa9v.jpg"></p>
+<hr>
+<p>管道:命令从标准输入到读取数据，并将数据发送到标准输出的能力是使用了名为管道的shell特性，使用管道操作符“｜”可以把一个命令的标准输出传送到另一个命令的标准输入中</p>
+<p>command | command【标准输出—&gt;标准输入】</p>
+<p>通过使用该技术，可以很方便的检查任意一条生成标准输出的命令的运行结果<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizibiakuj305l00lgld.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4h2cgg86j30ip0fr40v.jpg"></p>
+<p>过滤器：管道功能经常用来对数据执行复杂的操作，也可以把多条命令合在一起构成一个管道，这种方式中用到的命令通常被称为过滤器(filter)，过滤器接受输入，按照某种方式对输入进行改变，然后再输出它</p>
+<p>sort：假设要把/bin和/usr/bin目录下的所有可执行程序合并成一个列表，并且按照顺序排列，最后再查看这个列表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizil3clfj307600e3ya.jpg"></p>
+<p>uniq：经常和sort命令结合使用，uniq可以接受来自于标准输入或者一个单一文件名参数对应的已排好序的数据列表，默认情况下，该命令删除列表中的所有重复行<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliziu2la1j30bk02v74d.jpg"></p>
+<p>wc(字数统计，word count)：用来显示文件中包含的行数、字数和字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizj1vf79j30bk03o3yr.jpg"></p>
+<p>grep：在文件中查找匹配文本<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizjbax9lj30n00ihta3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizjj2tgmj30bk061aaa.jpg"></p>
+<p>head/tail：打印文件的开头部分/结尾部分：<br>head命令将输出文件的前10行，tail命令则输出文件的最后10行，可以通过-n选项来调整输出的行数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizjqic2mj30m006tjrx.jpg"></p>
+<p>这些命令选项也可以应用在管道中：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizk01j1xj306r02mmwz.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizk6pwcij30c208pab4.jpg"></p>
+<p>tee：读取标准输入，再把读到的内容复制到标准输出（允许数据可以继续向下传输到管道中）和一个或更多的文件中去【标准输入—&gt;标准输出】</p>
+<p>在使用grep命令过滤管道内容之前，先使用tee命令来获取整个目录列表并输出到ls.txt文件中：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4i5ibpcuj30fg0aoq3m.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-Server/" rel="tag">Ubuntu Server</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Apple、Linux/Ubuntu Server/扩展和引用：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/27/Apple%E3%80%81Linux/Ubuntu%20Server/%E6%89%A9%E5%B1%95%E5%92%8C%E5%BC%95%E7%94%A8%EF%BC%9A/" class="article-date">
+      <time datetime="2018-10-26T16:00:00.000Z" itemprop="datePublished">2018-10-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/27/Apple%E3%80%81Linux/Ubuntu%20Server/%E6%89%A9%E5%B1%95%E5%92%8C%E5%BC%95%E7%94%A8%EF%BC%9A/">扩展和引用：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>扩展：每次输入命令行按下Enter键时，bash都会在执行命令之前对文本进行多重处理，产生这个结果的处理过程称为扩展，有了扩展功能，在输入内容后，这些内容将在shell对其执行之前被扩展成其他内容</p>
+<p>echo:shell内置命令，把文本参数内容打印到标准输出<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizlv90o7j30c206kaat.jpg"></p>
+<p>路径名扩展：通过使用通配符来实现扩展的机制<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmabgl6j30c2076aae.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmhqyvqj30bj0833zm.jpg"></p>
+<p>波浪线扩展：如果把～用在一个单词的开头，那么它将被扩展为指定用户的主目录名，如果没有指定用户命名，则扩展为当前用户的主目录<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmpa600j306p02bmx1.jpg"></p>
+<p>算术扩展：shell支持通过扩展来运行算术表达式，这允许我们把shell提示符当作计算器来使用：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizn0yi1kj306700pwe9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizn83eygj30by0dbjsd.jpg"></p>
+<p>花括号扩展：可以按照花括号里面的模式创建多种文本字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliznh6ye2j30b400ywed.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliznog9xaj30ch0c5q4c.jpg"></p>
+<p>参数扩展：<br>命名为USER的变量包含你的用户名，为了触发参数扩展，并显示出USER的内容：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizo60m0lj30ch06b74o.jpg"></p>
+<p>命令替换：可以把一个命令的输出作为一个扩展模式使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizoeshhdj30ch0a5my8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizommplyj30ch02p0sq.jpg"></p>
+<hr>
+<p>引用：</p>
+<p>在第一个例子中，shell会对echo命令的参数列表进行单词分割，去除多余的空白；在第二个例子中，因为$1是一个未定义的变量，所以参数扩展将把$1的值替换为空字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4jbr4pelj30e4020q37.jpg"></p>
+<p>shell提供了一种称为引用（quoting）的机制，用来有选择性的避免不想要的扩展</p>
+<p>双引号：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizp18fyjj30ch06qdgm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizp8g70bj30ch0h9q4q.jpg"><br>在第一个例子中，没有加上引号的命令替换将导致命令行被识别为命令后面跟着38个参数；而在第二个例子中加了双引号，使得命令行被识别为命令后面只跟着一个参数，这个参数包含着嵌入空格和换行字符</p>
+<p>单引号：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizpo276cj30ch044q36.jpg"></p>
+<p>转义字符：</p>
+<p>有时候我们只是想要引用单个字符，这种情况可以通过在该字符前加上反斜杠来实现，这里的反斜杠称为转义字符，转义字符经常在双引号中用来有选择性的阻止扩展：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4jwvu1dtj30ii01a0sy.jpg"></p>
+<p>转义字符也常用来消除文件名中某个字符的特殊含义，比如文件名中可以使用在shell中通常具有特殊含义的字符，这些字符包括“$”、“!”、“&amp;”、空格等</p>
+<p>如果想要显示反斜杠字符，可以通过使用两个反斜杠“\”来实现，需要注意的是，单引号中的反斜杠将失去它的特殊含义，而只被当成一个普通字符</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizq34wvej30bh034mxg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizqb1nrij30bh08hjse.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-Server/" rel="tag">Ubuntu Server</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Apple、Linux/Ubuntu Server/高级键盘技巧：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -890,156 +1065,6 @@
 </ol>
 <p>现代的编程语言在语法上的差异很小，几乎都是C-like语言，语言的能力和适用领域主要是由库和传统所决定的</p>
 <p>程序是用特殊的编程语言写出来表达如何解决问题的，不是用编程语言来和计算机交谈，而是描述要求它如何做事情的过程和方法，我们要让计算机做计算，就需要找出计算的步骤，然后用编程语言写出来；计算机做的所有的事情都叫做计算，计算的步骤就是算法</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Apple、Linux/Ubuntu Server/编写第一个shell脚本" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/30/Apple%E3%80%81Linux/Ubuntu%20Server/%E7%BC%96%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAshell%E8%84%9A%E6%9C%AC/" class="article-date">
-      <time datetime="2018-09-29T16:00:00.000Z" itemprop="datePublished">2018-09-30</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/30/Apple%E3%80%81Linux/Ubuntu%20Server/%E7%BC%96%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAshell%E8%84%9A%E6%9C%AC/">编写第一个shell脚本：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>shell脚本是一个包含一系列命令的文件，shell读取这个文件，然后执行这些命令，就好像这些命令是直接输入到命令行中一样；shell既是一个强大的命令行接口，也是一个脚本语言解释器，大多数能够在命令行中完成的工作都可以在脚本中完成，反之亦然</p>
-<p>为了成功创建和运行一个shell脚本，我们需要做三件事：<br>1）编写脚本：shell脚本是普通的文本文件，所以我们需要一个文本编辑器来编辑它，最好文本编辑器可以提供“语法高亮”功能，从而能够看到脚本元素彩色代码视图，“语法高亮”可以定位一些常见的错误<br>2）使脚本可执行：系统相当严格，它不会将任何老式的文本文件当作程序，所以我们需要将脚本文件的权限设置为允许执行<br>3）将脚本放置在shell能够发现的位置：当没有显式指定路径名时，shell会自动的寻找某些目录，来查找可执行文件，为了最大程度的方便，我们将脚本放置在这些目录下</p>
-<p>文本行中，在“#”符号后面的所有内容会被忽略<br>“#!”字符序列是一种特殊的结构，称之为shebang，用来告知操作系统，执行后面的脚本应该使用的解释器的名字，每一个shell脚本都应该将其作为第一行<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6shhl6zdj30ft0ea0t7.jpg"></p>
-<p>可执行权限：对于脚本，有两种常见的权限设置，权限为755的脚本，每个人都可以执行；权限为700的脚本，只有脚本的所有人才能执行，注意，为了能够执行脚本，它必须是可读的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6sks35a8j30ft05ywfl.jpg"></p>
-<p>脚本文件的位置：为了使脚本运行，我们必须显式指定脚本文件的路径<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6sou3x6zj30ft016q31.jpg"></p>
-<p>如果没有显式指定路径，则系统在查找一个可执行程序时，需要搜索一系列目录，这就是当我们在命令行中输入ls时，系统知道要执行/bin/ls的原因。/bin目录是系统会自动搜索的一个目录。</p>
-<p>目录列表存放在名为PATH的环境变量中，这个PATH变量包含一个由冒号分隔开的待搜索目录的列表：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6t443lygj30ft01rmxd.jpg"></p>
-<p>如果脚本位于该列表中的任何一个目录中，问题就解决了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6tf9f2tpj30u00y0afg.jpg"></p>
-<p>这两个命令一样，为了减少输入，当在命令行中输入选项时，短选项更可取，但是在编写脚本时，长选项名可以提高可读性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6thrjqd3j30ft03f0ta.jpg"></p>
-<p>缩进和行连接：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6tmwe2p8j30qc0fwq4e.jpg"></p>
-<p>脚本和命令行的一个区别是，脚本可以使用制表符来实现缩进，但在命令行中，Tab键用来激活自动补齐功能</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-Server/" rel="tag">Ubuntu Server</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C语言/macOS终端下执行第一个C程序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/macOS%E7%BB%88%E7%AB%AF%E4%B8%8B%E6%89%A7%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F/" class="article-date">
-      <time datetime="2018-09-28T16:00:00.000Z" itemprop="datePublished">2018-09-29</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/macOS%E7%BB%88%E7%AB%AF%E4%B8%8B%E6%89%A7%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F/">macOS终端下执行第一个C程序</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>在其他操作系统中，编译，加载，运行等规则会有所不同！</p>
-<p>1）新建一个文件夹“C语言程序演示”</p>
-<p>2）在终端中cd进入这个新建的文件夹</p>
-<p>3）在新文件夹中touch hello.c建立一个后缀名为.c的源程序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glfft27gloj30lz07ldhb.jpg"></p>
-<p>4）在hello.c源文件中写第一个C语言的代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glfft9zgknj30m704ogm2.jpg"></p>
-<p>5）通过cc hello.c命令进行编译，如果源程序没有什么错误，编译过程将顺利进行，并生成一个可执行文件a.out【cc -c 源文件名称：编译，生成.o文件，叫做目标文件，存储的是.c文件中的代码对应的二进制指令；cc 目标文件名称：连接，为.o的目标文件添加启动代码，告诉编译器，要调用的函数在什么地方】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffthb0i2j30mp07b0ue.jpg"></p>
-<p>6）然后我们输入./a.out，即可运行a.out，打印出程序结果</p>
 
       
     </div>

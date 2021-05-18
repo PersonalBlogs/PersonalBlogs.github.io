@@ -228,6 +228,156 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Apple、Linux/Ubuntu Server/编写第一个shell脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/09/30/Apple%E3%80%81Linux/Ubuntu%20Server/%E7%BC%96%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAshell%E8%84%9A%E6%9C%AC/" class="article-date">
+      <time datetime="2018-09-29T16:00:00.000Z" itemprop="datePublished">2018-09-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/09/30/Apple%E3%80%81Linux/Ubuntu%20Server/%E7%BC%96%E5%86%99%E7%AC%AC%E4%B8%80%E4%B8%AAshell%E8%84%9A%E6%9C%AC/">编写第一个shell脚本：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>shell脚本是一个包含一系列命令的文件，shell读取这个文件，然后执行这些命令，就好像这些命令是直接输入到命令行中一样；shell既是一个强大的命令行接口，也是一个脚本语言解释器，大多数能够在命令行中完成的工作都可以在脚本中完成，反之亦然</p>
+<p>为了成功创建和运行一个shell脚本，我们需要做三件事：<br>1）编写脚本：shell脚本是普通的文本文件，所以我们需要一个文本编辑器来编辑它，最好文本编辑器可以提供“语法高亮”功能，从而能够看到脚本元素彩色代码视图，“语法高亮”可以定位一些常见的错误<br>2）使脚本可执行：系统相当严格，它不会将任何老式的文本文件当作程序，所以我们需要将脚本文件的权限设置为允许执行<br>3）将脚本放置在shell能够发现的位置：当没有显式指定路径名时，shell会自动的寻找某些目录，来查找可执行文件，为了最大程度的方便，我们将脚本放置在这些目录下</p>
+<p>文本行中，在“#”符号后面的所有内容会被忽略<br>“#!”字符序列是一种特殊的结构，称之为shebang，用来告知操作系统，执行后面的脚本应该使用的解释器的名字，每一个shell脚本都应该将其作为第一行<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6shhl6zdj30ft0ea0t7.jpg"></p>
+<p>可执行权限：对于脚本，有两种常见的权限设置，权限为755的脚本，每个人都可以执行；权限为700的脚本，只有脚本的所有人才能执行，注意，为了能够执行脚本，它必须是可读的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6sks35a8j30ft05ywfl.jpg"></p>
+<p>脚本文件的位置：为了使脚本运行，我们必须显式指定脚本文件的路径<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6sou3x6zj30ft016q31.jpg"></p>
+<p>如果没有显式指定路径，则系统在查找一个可执行程序时，需要搜索一系列目录，这就是当我们在命令行中输入ls时，系统知道要执行/bin/ls的原因。/bin目录是系统会自动搜索的一个目录。</p>
+<p>目录列表存放在名为PATH的环境变量中，这个PATH变量包含一个由冒号分隔开的待搜索目录的列表：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6t443lygj30ft01rmxd.jpg"></p>
+<p>如果脚本位于该列表中的任何一个目录中，问题就解决了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6tf9f2tpj30u00y0afg.jpg"></p>
+<p>这两个命令一样，为了减少输入，当在命令行中输入选项时，短选项更可取，但是在编写脚本时，长选项名可以提高可读性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6thrjqd3j30ft03f0ta.jpg"></p>
+<p>缩进和行连接：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm6tmwe2p8j30qc0fwq4e.jpg"></p>
+<p>脚本和命令行的一个区别是，脚本可以使用制表符来实现缩进，但在命令行中，Tab键用来激活自动补齐功能</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu-Server/" rel="tag">Ubuntu Server</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/C语言/macOS终端下执行第一个C程序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/09/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/macOS%E7%BB%88%E7%AB%AF%E4%B8%8B%E6%89%A7%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F/" class="article-date">
+      <time datetime="2018-09-28T16:00:00.000Z" itemprop="datePublished">2018-09-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/09/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/macOS%E7%BB%88%E7%AB%AF%E4%B8%8B%E6%89%A7%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F/">macOS终端下执行第一个C程序</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>在其他操作系统中，编译，加载，运行等规则会有所不同！</p>
+<p>1）新建一个文件夹“C语言程序演示”</p>
+<p>2）在终端中cd进入这个新建的文件夹</p>
+<p>3）在新文件夹中touch hello.c建立一个后缀名为.c的源程序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glfft27gloj30lz07ldhb.jpg"></p>
+<p>4）在hello.c源文件中写第一个C语言的代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glfft9zgknj30m704ogm2.jpg"></p>
+<p>5）通过cc hello.c命令进行编译，如果源程序没有什么错误，编译过程将顺利进行，并生成一个可执行文件a.out【cc -c 源文件名称：编译，生成.o文件，叫做目标文件，存储的是.c文件中的代码对应的二进制指令；cc 目标文件名称：连接，为.o的目标文件添加启动代码，告诉编译器，要调用的函数在什么地方】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffthb0i2j30mp07b0ue.jpg"></p>
+<p>6）然后我们输入./a.out，即可运行a.out，打印出程序结果</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/C语言/数据类型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -911,177 +1061,6 @@
 <p>可以返回局部变量的值，但是不能返回局部变量的地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffqcr895j30mt0d7dh7.jpg"></p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffqobzh0j30gv0880tt.jpg"></p>
 <p>如果你就是要返回一个指针，那么你就要保证这个指针指向的空间在函数结束以后仍然存在，那么这个时候，就可以将空间申请在堆区，然后返回堆区的地址【使用完后一定要记得free】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffqwsyqoj30b50fwgn1.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C语言/指针" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88/" class="article-date">
-      <time datetime="2018-09-19T16:00:00.000Z" itemprop="datePublished">2018-09-20</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/20/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88/">指针</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>变量的值：存储在变量中的数据叫做变量的值<br>变量的地址：一个变量是由一个或多个字节组成的，组成这个变量的低字节的地址，就是这个变量的地址</p>
-<p>变量的地址就叫做指针，指针变量就是专门用来存储地址的变量，专门用来存储另外一个变量的地址，那么我们就说这个指针变量指向了另外一个变量【它自己也有一个地址】，通过指针变量可以间接的访问指针变量指向的另外一个变量</p>
-<p><code>int* p1;</code>，代表声明了一个叫做p1的指针变量，这个指针变量的类型是int<em>，这个</em>代表这个变量不是一个普通变量，而是一个专门用来存储地址的指针变量【只能存储int变量的地址】</p>
-<p>指针变量初始化只能给他一个地址：<code>int* p1=&amp;num;</code><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn91mcrhboj30ae0bodh3.jpg"></p>
-<p>使用指针间接的操作指向的变量：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int num = 10;</span><br><span class="line">int* p1=&amp;num;</span><br><span class="line">*p1=100;  //*p1代表指向的变量，也就是num</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>运算符&amp;：获得变量的地址，它的操作数必须是变量:<code>int i;printf(“%p”,&amp;i);</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhj9ui8ij307q09odgd.jpg"></p>
-<p>*是一个单目运算符，用来访问指针的值所表示的地址上的变量,可以做右值也可以做左值<br><code>int k=*p;</code><br><code>*p=k+1;</code></p>
-<p>指针的一些注意点：</p>
-<p>1）【指针+1】并不是在指针地址的基础之上加一个字节的地址，而是在这个指针地址的基础之上加一个单位变量占用的字节数【这个时候p1指向的就是num1】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhg7ivdkj30c90bkq5b.jpg"></p>
-<p>2）<em>p++的意思是取出p所指的那个数据，之后再把p移到下一个位置去，</em>的优先级虽然高，但是没有++高，常用于数组类的连续空间操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhm5m48oj30bb0a0ab0.jpg"></p>
-<p>3）<code>int* p1;</code><br>我们声明一个指针变量，如果没有为其初始化，那么这个时候这个指针变量是有值的，这个值是一个垃圾值，，这个时候，这个指针变量就有可能指向了一块随机的空间，像这样的指针我们就叫做野指针【最好给他初始化一下：<code>int *p1=NULL;</code>NULL值代表指针变量不指向内存中的任何地址】</p>
-<p>4）多个指针指向同一变量：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn91xcb2vdj315g0ni0to.jpg"></p>
-<p>5）指针分好多类型，但无论指针什么类型，在内存中都是占据着8个字节，指向不同类型的指针是不能直接互相赋值的，这是为了避免用错指针</p>
-<p>6）p1指针变量中存储的是num变量的地址，也就是num变量的低字节的地址，这个时候p1指针能操作多少个字节是根据指针的类型来决定的【这就是为什么指针要分类型，还必须跟指向的普通变量的类型一致】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhf08v8wj30b7084taf.jpg"></p>
-<p>一级指针和多级指针：</p>
-<p>一个指针变量中存储的是一个普通变量的地址，像这样的指针，我们就叫做一级指针<br>一个指针变量中存储的是一个一级指针变量的地址，像这样的指针，我们就叫做二级指针<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn92ltsw2wj31120mcmxz.jpg"></p>
-<p>声明多级指针：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn998qjxb7j30af0icdho.jpg"></p>
-<p>一级指针只能存储普通变量的地址，二级指针只能存储一级指针变量的地址</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn98zgc3j9j318a0rlaby.jpg"></p>
-<p>指针与数组：</p>
-<p>使用指针来遍历数组：<br>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn99jgtfkfj30fr0c43zp.jpg"><br>2）本方法中不能换成*(arr++)，数组名代表数组的地址，而数组一旦创建，数组的地址就确定了，不能改变，所以我们不能为数组名赋值，不能修改数组名的值，但是可以使用数组名的值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn99mgl7u2j30aj0c4dgp.jpg"><br>3）此方法跟前两种不一样<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn99qqsj9pj30aj0hl3zt.jpg"></p>
-<p>中括弧的本质【数组arr[0]等价于*(arr+0)，操作数组我们虽然使用中括弧下标来操作，实际上内部仍然是使用指针来操作】：<br>指针变量后面可以使用中括弧，在中括弧中写上下标来访问数据：p1[n]完全等价于*(p1+n)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn99xbws2zj30ar0as3zf.jpg"></p>
-<p>函数参数表中的数组实际上是指针,但是可以用数组的运算符[]进行运算</p>
-<p>数组变量是特殊的指针：<br>1）数组变量本身表达地址，所以<code>int a[10];int *p=a;</code>无需用&amp;取地址，但是数组的单元表达的是变量，需要用&amp;取地址<br>2）[]运算符可以对数组做，也可以对指针做<br>3）*运算符可以对指针做，也可以对数组做<br>4）数组变量是const的指针，所以不能被赋值：<code>int a[];int * const a;</code></p>
-<p>如果一个数组是用来存储指针类型的数据的话，那么这个数组就叫做存储指针的数组：<code>int* arr[3];</code><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9a4ckuynj30ar0cejsi.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9agvrf6oj30l40ee0uo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9b10dl9tj312r0u0jt3.jpg"></p>
-<p>指针之间的运算：指针与指针之间只能做减法运算，不能做加乘除运算，可以做比较运算</p>
-<p>指针与指针之间可以做减法运算，结果是一个long类型的数据，代表两个指针指向的变量之间相差多少个单位变量<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9b7tzxtoj30b90a4wfi.jpg"></p>
-<p>如果参与减法运算的两个指针不指向同一个数组，先求出两个指针的差/每一个指针变量对应的普通变量占用的字节数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9c45qb5jj30820b9q3s.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9cb0hgoej30wj0o5gm5.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhlrqxiyj309l0ea400.jpg"></p>
-<p>指针的比较运算：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9cewazj5j30aw0aiq3r.jpg"></p>
-<p>指向函数的指针：<br>程序在运行的时候，会将程序加载到内存，程序中的函数肯定存在于内存的代码段中，我们可以声明一个指针，存储这个函数的地址，让这个指针指向这个函数，使用指针来间接的调用函数</p>
-<p>一个指向函数的指针，并不是任意的函数都可以指向，要求指向的函数的返回值类型和参数类型必须要与指针的描述一样<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna41zr25bj30ci0cemy8.jpg"><br>函数的名称就代表这个函数的地址：【注意不要在函数名后加小括弧，如果加了小括弧，就代表指向这个函数，拿到这个函数的返回值】</p>
-<p>如果指向的函数有参数有返回值，调用的时候有参数就传参，有返回值就接！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C语言/const修饰基本数据类型" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/const%E4%BF%AE%E9%A5%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
-      <time datetime="2018-09-18T16:00:00.000Z" itemprop="datePublished">2018-09-19</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/const%E4%BF%AE%E9%A5%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">const修饰基本数据类型</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><code>const int num = 10;</code><br>一般情况下来说，被const修饰的变量具备一定程度上的不可变性【只能取值不能修改】</p>
-<p>const修饰数组：<code>const int arr[4]=&#123;10,20,30,40&#125;;</code>，数组的元素的值不能修改,数组变量已经是const的指针了，这里的const表明数组的每个单元都是const int，所以必须通过初始化进行赋值</p>
-<p>const修饰指针：<br>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna53uqy8yj30kl0dhjti.jpg"><br>2）<code>int const * p1=&amp;num;</code>效果同上<br>3）<code>int * const p1=&amp;num;</code><br>p1的值不能修改，但是可以通过p1去修改p1指向的变量的值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna5al9nfmj30at0cggmx.jpg"><br>4）<code>int const * const p1=&amp;num;</code><br>既不能修改p1的值，也不能通过p1去修改p1指向的变量的值</p>
-<p>当函数的参数是一个指针的时候，这个时候函数的内部是有可能会修改实参变量的值,所以要加一个const:<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna5jqxhtjj30d70amta0.jpg"></p>
 
       
     </div>

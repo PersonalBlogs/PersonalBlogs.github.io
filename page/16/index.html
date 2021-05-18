@@ -228,6 +228,164 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机网络原理/计算机网络原理/IPv4地址" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IPv4%E5%9C%B0%E5%9D%80/" class="article-date">
+      <time datetime="2020-07-27T16:00:00.000Z" itemprop="datePublished">2020-07-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IPv4%E5%9C%B0%E5%9D%80/">IPv4地址</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>IPv4地址：</p>
+<p>IP编址的历史阶段：<br>1）分类的IP地址<br>2）子网的划分<br>3）构成超网（无分类编址方法）</p>
+<p>——————————————————</p>
+<p>分类的IP地址：</p>
+<p>IP地址：全世界唯一的32位/4字节标识符，标识路由器主机的接口【&lt;网络号&gt;&lt;主机号&gt;】</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjorjhnyj30ge02vmxf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjp1yyanj30v80ejwj8.jpg"></p>
+<p>特殊IP地址：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjpb7m25j31000htth6.jpg"></p>
+<p>私有IP地址：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjpjgbiaj30r109s767.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjpr56nqj312r058goh.jpg"></p>
+<p>——————————————</p>
+<p>路由器对目的地址是私有IP地址的数据报一律不进行转发</p>
+<p>网络地址转换NAT：在专用网连接到因特网的路由器上安装NAT软件，安装了NAT软件的路由器叫NAT路由器，它至少有一个有效的外部全球IP地址<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjq1osg4j311k0ff482.jpg"></p>
+<p>—————————————</p>
+<p>子网划分和子网掩码：</p>
+<p>分类的IP地址的弱点：<br>1）IP地址空间的利用率有时很低<br>2）两级IP地址不够灵活</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjqxnqvhj30ge08qgmv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjr64e9zj311w0i3n62.jpg"></p>
+<p>子网掩码（相与：相同为1，不同为0）：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjrfbgijj30wn0giahe.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjrmkrr0j30ii0dbtaj.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjsj4jiuj30ge0jvmzz.jpg"></p>
+<p>使用子网时分组的转发：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjsxfyj7j313y0hugvy.jpg"></p>
+<p>———————————————</p>
+<p>无分类编址CIDR：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjtng9xsj30ge0idtby.jpg"></p>
+<p>构成超网：将多个子网聚合成一个较大的子网，叫做构成超网，或路由聚合</p>
+<p>方法：将网络前缀缩短<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjtzkt3ej30sc0b70xd.jpg"></p>
+<p>最长前缀匹配：使用CIDR时，查找路由表可能得到几个匹配结果，应选择具有最长网络前缀的路由，前缀越长，地址块越小，路由越具体<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjurtsp9j30ge0dhabz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjveu82qj30ge08mwgf.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机网络原理/计算机网络原理/ARP协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/07/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/ARP%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-07-26T16:00:00.000Z" itemprop="datePublished">2020-07-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/07/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/ARP%E5%8D%8F%E8%AE%AE/">ARP协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>ARP协议：</p>
+<p>发送数据的过程：<br>1）从主机1—&gt;主机3<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjxkzb84j312n0frgtr.jpg"><br>2）从主机1—&gt;主机5<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjxsi66wj312w0gidos.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjxzyw0dj312k0g7wn2.jpg"></p>
+<p>由于在实际网络的链路上传送数据帧时，最终必须使用MAC地址</p>
+<p>ARP协议：完成主机或路由器IP地址到MAC地址的映射（解决下一跳走哪的问题）</p>
+<p>ARP协议使用过程：检查ARP高速缓存，有对应表项则写入MAC帧，没有则用目的MAC地址为FF-FF-FF-FF-FF-FF的帧封装并广播ARP请求分组，同一局域网中所有主机都能收到该请求。目的主机收到请求后就会向源主机单播一个ARP响应分组，源主机收到后将此映射写入ARP缓存（10～20min更新一次）</p>
+<p>ARP协议的4种典型情况（ARP协议自动进行）：<br>1）主机A发给本网络上的主机B：用ARP找到主机B的硬件地址<br>2）主机A发给另一网络上的主机B：用ARP找到本网络上一个路由器（网关）的硬件地址<br>3）路由器发给本网络的主机A：用ARP找到主机A的硬件地址<br>4）路由器发给另一网络的主机B：用ARP找到本网络上的一个路由器的硬件地址</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机网络原理/计算机网络原理/DHCP协议" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -769,150 +927,6 @@
 <p>构造树可以避免在路由器之间兜圈子</p>
 <p>对不同的多播组对应于不同的多播转发树；同一个多播组，对不同的源点也会有不同的多播转发树<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosku2ty5yj30kx0dlaa9.jpg"></p>
 <p>组播路由选择协议常使用的三种算法：<br>1）基于链路状态的路由选择<br>2）基于距离-向量的路由选择<br>3）协议无关的组播（稀疏/密集）</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机网络原理/计算机网络原理/移动IP" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%A7%BB%E5%8A%A8IP/" class="article-date">
-      <time datetime="2020-07-17T16:00:00.000Z" itemprop="datePublished">2020-07-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%A7%BB%E5%8A%A8IP/">移动IP</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>移动IP：</p>
-<p>移动IP技术是移动结点（计算机/服务器等）以固定的网络IP地址，实现跨越不同网段的漫游功能，并保证了基于网络IP的网络权限在漫游过程中不发生任何改变</p>
-<p>移动结点：具有永久IP地址的移动设备</p>
-<p>归属代理（本地代理）：一个移动结点拥有的旧“居所”称为归属网络，在归属网络中代表移动结点执行移动管理功能的实体叫做归属代理</p>
-<p>外部代理（外地代理）：在外部网络中帮助移动结点完成移动管理功能的实体称为外部代理</p>
-<p>永久地址（归属地址/主地址）：移动站点在归属网络中的原始地址</p>
-<p>转交地址（辅地址）：移动站点在外部网络使用的临时地址</p>
-<p>移动IP通信过程：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskx1ae0gj312t0i075z.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskxa6ok2j30ls09s76v.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/">计算机网络原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机网络原理/计算机网络原理/网络层设备" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%BD%91%E7%BB%9C%E5%B1%82%E8%AE%BE%E5%A4%87/" class="article-date">
-      <time datetime="2020-07-16T16:00:00.000Z" itemprop="datePublished">2020-07-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%BD%91%E7%BB%9C%E5%B1%82%E8%AE%BE%E5%A4%87/">网络层设备</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>网络层设备：</p>
-<p>路由器：是一种具有多个输入端口和多个输出端口的专用计算机，其任务是转发分组<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskywrn1hj313i0fanbp.jpg"></p>
-<p>输入端口对线路上收到的分组的处理：输入端口中的查找和转发功能在路由器的交换功能中是最重要的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskz5jngmj30q50afn2b.jpg"></p>
-<p>输出端口将交换结构传送来的分组发送到线路：若路由器处理分组的速率赶不上分组进入队列的速率，则队列的存储空间最终必定减少到零，这就使后面再进入队列的分组由于没有存储空间而只能被丢弃【路由器中的输入或输出队列产生溢出是造成分组丢失的重要原因】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskzeo53aj30rr0al79b.jpg"></p>
-<p>三层设备的区别：<br>1）集线器：不能互联两个物理层不同的网段<br>2）网桥：可以互联两个物理层和链路层不同的网段<br>3）路由器：可以互联两个不同网络层协议的网段<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskzmwe8vj30mb0ao3yr.jpg"></p>
-<p>路由表与路由转发：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goskzuvm2yj30wh0flq9x.jpg"></p>
 
       
     </div>

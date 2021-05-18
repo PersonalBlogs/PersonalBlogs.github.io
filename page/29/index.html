@@ -228,6 +228,145 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/多态：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%A4%9A%E6%80%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-04T16:00:00.000Z" itemprop="datePublished">2019-09-05</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%A4%9A%E6%80%81%EF%BC%9A/">多态：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>指的是同一个行为，对于不同的事物具有完全不同的表现形式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Chinese new];</span><br><span class="line">Person *p2=[Japanese new];</span><br><span class="line">Person *p3=[Korea new];</span><br><span class="line"></span><br><span class="line">[p1 sayHi];</span><br><span class="line">[p2 sayHi];</span><br><span class="line">[p3 sayHi];</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/Description方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/Description%E6%96%B9%E6%B3%95/" class="article-date">
+      <time datetime="2019-09-03T16:00:00.000Z" itemprop="datePublished">2019-09-04</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/04/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/Description%E6%96%B9%E6%B3%95/">Description方法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>%p打印的是指针变量的值<br>%@打印的是指针指向的对象</p>
+<p>如果我们使用%@打印一个对象，发现输出的格式：<code>&lt;对象所属的类名：对象的地址&gt;</code></p>
+<p>当我们使用%@打印一个对象的时候，NSLog函数的底层实现：<br>1）调用传入的对象的Description方法<br>2）拿到这个方法的返回值，这个返回值是一个字符串<br>3）将这个字符串输出</p>
+<p>Description方法是定义在NSObject类之中的，所以每一个OC对象都有这个方法，这个方法在NSObject类中的实现是这样的：返回的字符串格式   <code>@“&lt;对象所属的类名：对象的地址&gt;”</code></p>
+<p>如果使用%@打印一个对象的时候，你希望这个对象打印的格式是我们自己自定义的，那么就可以重写Description方法</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/创建一个对象，这个对象在内存中是如何分配的?" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -793,156 +932,6 @@
         <hr>
 <p>只需要写一个@property，编译器就会自动的<br>1）生成私有属性<br>2）生成getter、setter的声明<br>3）生成getter、setter的实现<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wfia8pj307j03vaav.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wm8ffrj30he04dwh7.jpg"></p>
 <p>使用注意：<br>1）@property的类型一定要和属性的类型一致，名称要和属性的名称一致，只是去掉下划线<br>2）也可以批量声明相同类型的@property<br>3）@property生成的方法实现没有做任何的逻辑验证<br>setter：直接赋值<br>getter：直接返回<br>所以我么可以重写setter来自定义验证逻辑，如果重写了setter还会自动生成getter，如果重写了getter还会自动生成setter；如果同时重写setter和getter，那么就不会自动生成私有属性了，那么就自己定义一个私有属性就可以了<br>4）如果你想为类写一个属性，并且为这个属性封装setter和getter，一个@property就搞定<br>5）父类的@property一样可以被子类继承，@property生成的属性是私有的，在子类的内部无法直接访问生成的私有属性，但是可以通过setter和getter来访问<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wsxxq1j305m04dt9c.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/动态类型和静态类型" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/" class="article-date">
-      <time datetime="2019-08-25T16:00:00.000Z" itemprop="datePublished">2019-08-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/">动态类型和静态类型</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>OC是一门弱语言：编译器在编译的时候，语法检查的时候没有那么严格，不管你怎么写都是可以的</p>
-<p>强类型的语言：编译器在编译的时候，做语法检查的时候，行就是行，不行就是不行</p>
-<p>静态类型：指的是一个指针指向的对象是一个本类对象<br>动态类型：指的是一个指针指向的对象不是本类对象</p>
-<p>编译检查：编译器在编译的时候，能不能通过一个指针去调用指针指向的对象的方法？判断原则：看指针所属的类型之中是否有这个方法，如果有就认为可以调用，编译通过，如果这个类中没有，那么编译报错【苹果下的编译器的名字叫LLVM】</p>
-<p>我们可以将指针的类型做转换，来达到骗过编译器的目的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Animal *a1=[Pig new];</span><br><span class="line">[(Pig *)a1 eat];</span><br></pre></td></tr></table></figure>
-
-<p>运行检查：编译检查只是骗过了编译器，但是这个方法究竟能不能执行？<br>所以在运行的时候，会去检查对象中是否真的有这个方法，如果有就执行，如果没有就报错</p>
-<p>LSP父类指针指向子类对象，实际上任意的指针可以指向任意的对象，编译器是不会报错的；当一个子类指针指向一个父类对象的时候，编译器允许通过子类指针去调用子类独有的方法，但是在运行的时候是会出问题的，因为父类对象中根本没有子类成员</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/NSObject指针和id指针" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/" class="article-date">
-      <time datetime="2019-08-24T16:00:00.000Z" itemprop="datePublished">2019-08-25</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/">NSObject指针和id指针</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>NSObject是OC中所有类的基类，根据LSP，NSObject指针就可以指向任意的OC对象，所以，NSObject指针是一个万能指针，可以指向任意的OC对象</p>
-<p>缺点：如果要调用指向的子类对象的独有的方法，就必须要做类型转换</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSObject *obj1=[Person new];</span><br><span class="line">[(Person *)obj1 sayHi];</span><br><span class="line"></span><br><span class="line">NSObject *obj2=[Student new];</span><br><span class="line">[(Student *)obj2 study];</span><br><span class="line"></span><br><span class="line">NSObject *obj3=@&quot;jack&quot;;</span><br><span class="line">[(NSString *)obj3 length];</span><br></pre></td></tr></table></figure>
-
-<p>id指针：是一个万能指针，可以指向任意的OC对象</p>
-<p>id是一个typedef自定义类型，在定义的时候已经加了<em>，所以，声明id指针的时候不需要再加</em>了</p>
-<p>通过NSObject指针去调用对象的方法的时候，编译器会做编译检查<br>通过id类型的指针去调用对象的方法的时候，编译器直接通过，无论你调用什么方法【该运行错误的还是运行错误】</p>
-<p>注意：id指针只能调用对象的方法，不能使用点语法，如果使用点语法就会直接报编译错误</p>
-<p>如果我们要声明一个万能指针，不要使用NSObject，而是使用id</p>
 
       
     </div>

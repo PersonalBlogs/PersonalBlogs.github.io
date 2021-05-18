@@ -228,6 +228,151 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据结构和算法/数据结构、算法笔记/拓扑排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="article-date">
+      <time datetime="2019-12-11T16:00:00.000Z" itemprop="datePublished">2019-12-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>有向无环图：不存在环的有向图，简称DAG图</p>
+<p>在一个表示工程的有向图中，用顶点表示活动，用弧表示活动之间的优先关系，称这样的有向图为顶点表示活动的网，简称AOV网</p>
+<p>在AOV网中，不能出现回路</p>
+<p>若从顶点vi到vj有一条路径，则在顶点序列中顶点vi必在vj之前，对一个有向图构造拓扑序列的过程称为拓扑排序</p>
+<p>基本思想：<br>1）从AOV网中选择一个没有前驱的顶点并输出<br>2）从AOV网中删去该顶点以及所有以该顶点为尾的弧<br>3）重复上述两步，直到全部顶点都被输出，或AOV网中不存在没有前驱的顶点<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowln5hklwj315v0u0gp7.jpg"></p>
+<p>算法结束时没有访问所有顶点，则存在以剩下顶点组成的环</p>
+<p>拓扑排序的结果不一定唯一</p>
+<p>时间复杂度：O(|V|+|E|)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowlq1g686j30mt0g1t9e.jpg"></p>
+<p>若邻接矩阵为三角矩阵，则存在拓扑排序，反之不一定成立</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构和算法/数据结构、算法笔记/关键路径" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/12/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" class="article-date">
+      <time datetime="2019-12-10T16:00:00.000Z" itemprop="datePublished">2019-12-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/12/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">关键路径</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>在一个表示工程的带权有向图中，用顶点表示事件，用有向边表示活动，边上的权值表示活动的持续时间，称这样的有向图为边表示活动的网，简称AOE网</p>
+<p>在AOE网中，所有活动都完成才能到达终点，因此完成整个工程所必须花费的时间(即最短工期)应该为源点到终点的最大路径长度，具有最大路径长度的路径称为关键路径，关键路径上的活动称为关键活动<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gox69o7az9j30u00wltdl.jpg"></p>
+<p>缩短关键活动时间可以加快整个工程，但缩短到一定大小时关键路径会发生改变</p>
+<p>当网中关键路径不唯一时，只有加快的关键活动或关键活动组合包括在所有的关键路径上才能缩短工期</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据结构和算法/数据结构、算法笔记/查找的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -758,146 +903,6 @@
 <p>设计散列函数一般遵循以下基本原则:<br>1）计算简单。散列函数不应该有很大的计算量，否则会降低查找效率;<br>2）函数值(即散列地址)分布均匀中，希望散列函数能够把记录以相同的概率“散列”到散列表的所有地址空间中，这样才能保证存储空间的有效利用,并减少冲突。</p>
 <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxq3jz43rj315i0u0q6z.jpg"></p>
 <p>冲突处理：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxqxk707ij30u00vkwl8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goxr85cypej316g0u00vb.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/排序的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2019-12-01T16:00:00.000Z" itemprop="datePublished">2019-12-02</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">排序的基本概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>排序：重新排列表中的元素，使表中的元素满足按关键字递增或递减</p>
-<p>算法的稳定性：若待排序表中有两个元素Ri和Rj，其对应的关键字Ki=Kj，且在排序前Ri在Rj前面，若使用某排序算法后，Ri仍然在Rj前面，则称这个排序算法是稳定的，否则称排序算法不稳定</p>
-<p>算法的稳定性是算法的性质，并不能衡量一个算法的优劣</p>
-<p>时空复杂度决定内部排序算法的性能</p>
-<p>内部排序：指在排序期间元素全部存放在内存中的排序<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goylwtq39kj315h0o5tbh.jpg"></p>
-<p>外部排序：指在排序期间元素无法全部同时存放在内存中，必须在排序的过程中根据要求不断的在内、外存之间进行移动</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="tag">数据结构、算法笔记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/数据结构、算法笔记/直接插入排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="article-date">
-      <time datetime="2019-11-30T16:00:00.000Z" itemprop="datePublished">2019-12-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">直接插入排序</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>插入排序：每次将一个待排序的序列插入到一个前面已排好序的子序列当中</p>
-<p>直接插入排序(稳定的算法)：【空间复杂度为O(1)】【最好时间复杂度为O(n)，最坏、平均复杂度为O(n^2)】<br>适用于顺序存储和链式存储<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goync8jwrlj31ac0lp40g.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goyncgeb6hj30g006vaa5.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goynas5xddj30fd0g1q3p.jpg"></p>
 
       
     </div>

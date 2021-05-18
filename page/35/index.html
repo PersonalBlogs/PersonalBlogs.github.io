@@ -228,6 +228,153 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/NSMutableArray：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/07/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSMutableArray%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-06T16:00:00.000Z" itemprop="datePublished">2019-07-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/07/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSMutableArray%EF%BC%9A/">NSMutableArray：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>NSMutableArray是NSArray的子类，NSMutableArray仍然是一个数组，具备NSArray数组的特点</p>
+<p>NSMutableArray相对于父类做的扩展：NSMutableArray数组的元素可以动态的新增和删除</p>
+<p>NSMutableArray数组的创建：<br>1）这样创建出来的数组对象数组的元素是0，仍然是有意义的，因为我们可以动态的新增和删除元素<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly58rw66dj309a01imxu.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly58z08tvj30ek00ymxk.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5952cp6j308x026t9p.jpg"></p>
+<p>往可变数组中新增元素：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly59benhdj30b2074wgy.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly59idpbnj30b208c0vc.jpg"><br>3）将另外一个数组中的每一个元素添加到可变数组中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly59pypqoj309m06vdhk.jpg"></p>
+<p>在可变数组中指定的下标中插入一个元素：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly59w2dbyj30fj06vwg6.jpg"></p>
+<p>删除可变数组中指定下标的元素：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5a269h9j30em056my8.jpg"></p>
+<p>删除可变数组中所有的指定的元素：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5a9icxxj30fb04sta9.jpg"></p>
+<p>删除指定范围中的所有指定的元素：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5ag7ttdj30fr02s3zm.jpg"></p>
+<p>删除最后一个元素：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5amtdcdj30fr042myp.jpg"></p>
+<p>删除所有元素：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5asugj5j30fr04j0u7.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/NSNumber：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/07/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSNumber%EF%BC%9A/" class="article-date">
+      <time datetime="2019-07-05T16:00:00.000Z" itemprop="datePublished">2019-07-06</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/07/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSNumber%EF%BC%9A/">NSNumber：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>无论是NSArray还是NSMutableArray里面都只能存储OC对象，基本数据类型是无法存储的</p>
+<p>NSNumber是Foundation框架中定义好的一个类，这个类的对象的作用就是用来包装基本数据类型的<br>1）先将基本数据类型包装到NSNumber对象中<br>2）再将NSNumber对象存储到NSArray数组中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5bbtua2j308v04tdhg.jpg"></p>
+<p>简写方式：<br>【@10代表是一个NSNumber对象，这个对象中包装的是整型的10】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5bj7seij306i02rmxu.jpg"></p>
+<p>如果后面的数据是一个变量，那么这个变量就必须要使用小括弧括起来：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5bph0vzj304z02074e.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/NSDictionary与NSMutableDictionary：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -792,146 +939,6 @@
 <p>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5s0mmywj30aj08k0u6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5s772gjj30gl0ceq4y.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5seqqloj30cw082gnh.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5skon20j30gy0bvtar.jpg"><br>3）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5srfi3rj308p06j0u2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5syxinyj306i05b0to.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5t4ha35j30d908swh9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5tb70nsj30fn0cb777.jpg"></p>
 <p>Copy方法的确是定义在NSObject类中的一个方法，但是copy方法的内部还调用了另外一个方法：copyWithZone，这个方法是定义在NSCoping协议之中的，因为我们的类没有遵守这个协议，所以当我们自定义的类调用copy方法的时候就会出错<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5tjhrdtj308p06jq3z.jpg"></p>
 <p>解决方案：【return self;就是浅拷贝了】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5trimc8j30cr02nmyr.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5txruhkj308p03v0tu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5u3ddrej30dv07awgb.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5uarq3oj30dv099acu.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/C++语言/数组：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-28T16:00:00.000Z" itemprop="datePublished">2019-06-29</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C++%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84%EF%BC%9A/">数组：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>一维数组的定义方式：<br>1）数据类型  数组名[数组长度];<br>2）数据类型  数组名[数组长度]={值1，值2…};<br>3）数据类型  数组名[]={值1，值2…};</p>
-<p>如果在初始化数据的时候，没有全部填写完，会用0来填补剩余数据</p>
-<p>一维数组名称的用途：<br>1）可以统计整个数组在内存中的长度<br>2）可以获取数组在内存中的首地址：cout&lt;&lt;arr&lt;&lt;endl；<br>cout&lt;&lt;&amp;arr[0]&lt;&lt;endl;</p>
-<p>数组名是一个常量，不可以进行赋值操作</p>
-<p>二维数组定义方式：<br>1）数据类型  数组名[行数][列数]；<br>2）数据类型  数组名[行数][列数]=｛｛数据1，数据2｝，｛数据3，数据4｝｝；<br>3）数据类型  数组名[行数][列数]=｛数据1，数据2，数据3，数据4｝；<br>4）数据类型  数组名[][列数]={数据1，数据2，数据3，数据4};<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glweus9q48j30rk0sj7d5.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-%E8%AF%AD%E8%A8%80/" rel="tag">C++语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/单例模式：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-27T16:00:00.000Z" itemprop="datePublished">2019-06-28</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%EF%BC%9A/">单例模式：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>一个类的对象，无论在何时创建，无论在什么地方创建，也无论创建多少次，创建出来的都是同一个对象</p>
-<p>无论如何创建对象，最终都会调用alloc方法来创建，alloc方法的内部，其实什么都没做，只是调用了allocWithZone方法，实际上真正申请空间创建对象的事情是allocWithZone方法在做</p>
-<p>实现单例模式的方法：重写allocWithZone方法<br>【规范：如果类是一个单例模式，要求为类提供一个类方法，来返回这个单例对象，类方法必须以shared类名；default类名】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5uzu8nij306t03fjsc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly5v6ikp3j30ae0a6di8.jpg"><br>单例对象可以被共享，存储在单例对象中的数据可以被共享；如果数据需要被整个程序所共享，那么将数据以属性的方式存储在单例对象中</p>
 
       
     </div>

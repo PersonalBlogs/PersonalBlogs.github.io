@@ -228,6 +228,145 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-编程语言/Objective-C/分类类别类目(category)：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%88%86%E7%B1%BB%E7%B1%BB%E5%88%AB%E7%B1%BB%E7%9B%AE(category)%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-05T16:00:00.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%88%86%E7%B1%BB%E7%B1%BB%E5%88%AB%E7%B1%BB%E7%9B%AE(category)%EF%BC%9A/">分类/类别/类目(category)：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>让一个类占多个模块，将功能相似的方法定义在同一个模块中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4dcrtitj30ts0i412s.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4djx97dj30ts0i4wnl.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4dqcc3pj30ts0i4dms.jpg"></p>
+<p>分类的使用：如果要访问分类中定义的成员，就要把分类的头文件引进来</p>
+<p>分类的作用：<br>1）将一个类分为多个模块<br>2）为一个已经存在的类添加方法（扩展一个类）</p>
+<p>使用分类的注意事项：<br>1）分类只能增加方法，不能增加属性<br>2）在分类之中可以写@property，但是不会自动生成私有属性，也不会自动生成getter、setter的实现，只会生成getter、setter的声明，所以需要自己写getter和setter的实现，也需要自己定义属性，这个属性必须在本类中<br>3）在分类的方法实现中不可以直接访问本类的真私有属性（定义在本类的@implementation之中，@interface中的可以访问），但是可以通过调用本类的getter和setter来访问属性<br>4）分类中可以存在和本类同名的方法，当分类中有和本类中同名的方法的时候，优先调用分类的方法，哪怕没有引入分类的头文件；如果多个分类中有相同的方法，优先调用最后编译的分类<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4dy1db4j30qz0avjse.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编程语言/Objective-C/非正式协议：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E5%8D%8F%E8%AE%AE%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-04T16:00:00.000Z" itemprop="datePublished">2019-08-05</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/05/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E5%8D%8F%E8%AE%AE%EF%BC%9A/">非正式协议：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>为系统自带的类写分类，这个就叫做非正式协议</p>
+<p>分类的作用：<br>1）将一个类分为多个模块<br>2）为一个已经存在的类添加方法（扩展一个类）</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4eg0j8bj30a00900v0.jpg"><br>如果想为NSString写一个方法：<br>（此方法无参数，因为NSString本身就是字符串）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4en32rmj309303qq3s.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4et5aqkj309307f766.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4f0jo8dj30ai09saco.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-编程语言/Objective-C/知识点补充：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -753,141 +892,6 @@
 <p>比较j和j+1这两个字符串，我们直接比较的是字母顺序，但是这么写的话就写死了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4n7iz3dj30qm0mo7e9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4newe30j30qm0mo7dh.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nl63s9j30qm0moak6.jpg"></p>
 <p>比较这两个字符串的大小，不要方法的内部自己写代码去比，因为不管写什么代码都会写死的，让调用者自己写一段代码来比较这两个字符串的大小</p>
 <p>当方法的内部需要执行一个功能，但是这个功能具体的实现函数的内部不确定，那么这个时候，就使用block让调用者将这个功能的具体实现传递进来<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nrq4dij30qm0mogwa.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nynd5hj30qm0motic.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4o6dc03j30qm0mo7ek.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/block作为函数的返回值" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/" class="article-date">
-      <time datetime="2019-07-26T16:00:00.000Z" itemprop="datePublished">2019-07-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/">block作为函数的返回值</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>当将block作为函数的返回值的时候，返回值的类型就必须要使用typedef定义的短类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4oobs8cj307506sgmp.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-编程语言/Objective-C/block与函数的异同：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E5%90%8C%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-25T16:00:00.000Z" itemprop="datePublished">2019-07-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/block%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E5%90%8C%EF%BC%9A/">block与函数的异同：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>相同点：都是封装一段代码</p>
-<p>不同的：<br>1）block是一个数据类型，可以声明block类型的变量；而函数就只是函数<br>2）block可以作为函数的参数，而函数不能直接作为函数的参数</p>
 
       
     </div>

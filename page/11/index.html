@@ -228,6 +228,149 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据库系统原理/《MySQL必知必会》/更新和删除数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">更新和删除数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>更新和删除数据</p>
+<p>1）为了更新（修改）表中的数据，可使用UPDATE语句，可采用两种方式使用UPDATE：<br>更新表中特定行；<br>更新表中所有行；</p>
+<p>UPDATE语句的组成：<br>1）要更新的表<br>2）列名和它们的新值<br>3）确定要更新行的过滤条件</p>
+<p>UPDATE customers<br>SET cust_email=‘ <a href="mailto:&#x65;&#x6c;&#x6d;&#x65;&#114;&#x40;&#x66;&#x75;&#x64;&#100;&#46;&#x63;&#111;&#x6d;">&#x65;&#x6c;&#x6d;&#x65;&#114;&#x40;&#x66;&#x75;&#x64;&#100;&#46;&#x63;&#111;&#x6d;</a> ’<br>WHERE cust_id=10005;</p>
+<p>UPDATE customers<br>SET cust_name=’The Fudds’,<br>        cust_email=‘ <a href="mailto:&#x65;&#x6c;&#x6d;&#101;&#x72;&#x40;&#102;&#x75;&#100;&#x64;&#46;&#x63;&#x6f;&#109;">&#x65;&#x6c;&#x6d;&#101;&#x72;&#x40;&#102;&#x75;&#100;&#x64;&#46;&#x63;&#x6f;&#109;</a> ’<br>WHERE cust_id=10005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmjgrtzj30b705mjv7.jpg"></p>
+<p>为了删除某个列的值，可设置它为NULL（假定表定义允许NULL值）<br>UPDATE customers<br>SET cust_email=NULL<br>WHERE cust_id=10005;</p>
+<p>2）为了从一个表中删除（去掉）数据，可使用DELETE语句<br>从表中删除特定的行<br>从表中删除所有行</p>
+<p>DELETE FROM customers<br>WHERE cust_id =10006;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmsze4qj30b604rtbq.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwn2z6fvj30bs0c9jx3.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/文件系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">文件系统</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>文件系统：</p>
+<p>————————————————</p>
+<p>8-1.文件系统概念<br>8-2.文件物理结构<br>8-3.FAT文件系统<br>8-4.文件存储和目录</p>
+<p>————————————————</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据库系统原理/《MySQL必知必会》/创建和操纵表" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -910,157 +1053,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/使用触发器" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/" class="article-date">
-      <time datetime="2020-10-07T16:00:00.000Z" itemprop="datePublished">2020-10-08</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/08/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/">使用触发器</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>使用触发器</p>
-<p>触发器是MySQL响应以下任意语句而自动执行的一条MySQL语句（或位于BEGIN和END语句之间的一组语句）：<br>                 DELETE;<br>                 INSERT;<br>                 UPDATE;<br>其他MySQL语句不支持触发器</p>
-<p>在创建触发器时，需要给出4条信息：<br>1）唯一的触发器名<br>2）触发器关联的表<br>3）触发器应该响应的活动（DELETE、INSERT、UPDATE）<br>4）触发器何时执行（处理之前或之后）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx7ksl98j30cq04341u.jpg"></p>
-<p>1）创建触发器<br>CREATE TRIGGER newproduct AFTER INSERT ON products<br>FOR EACH ROW SELECT ‘Product added’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx80epvrj30db04oq5e.jpg"></p>
-<p>只有表才支持触发器，视图不支持（临时表也不支持）；触发器按每个表每个事件每次的定义，每个表每个事件每次只允许一个触发器，因此每个表最多支持6个触发器（每条INSERT、UPDATE、DELETE的之前和之后）。单一触发器不能与多个事件或多个表关联，所以，如果你需要一个对INSERT和UPDATE操作执行的触发器，则应该定义两个触发器。<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8byu9ej30cs02bmz1.jpg"></p>
-<p>2）删除触发器<br>DROP TRIGGER newproduct;<br>触发器不能更新或覆盖，为了修改一个触发器，必须先删除它，然后再重新创建</p>
-<p>3）使用触发器<br>（1）INSERT触发器<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8l7mumj30d905ognh.jpg"><br>CREATE TRIGGER neworder AFTER INSERT ON orders<br>FOR EACH ROW SELECT NEW.order_num;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8xpv7oj30d904340m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx95mnoxj30d908wq6k.jpg"></p>
-<p>(2)DELETE触发器</p>
-<p>【原书缺页？？？？】</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/管理事务处理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/" class="article-date">
-      <time datetime="2020-10-06T16:00:00.000Z" itemprop="datePublished">2020-10-07</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/07/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/">管理事务处理</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>管理事务处理</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxalt67nj30cs04vq71.jpg"></p>
-<p>事务处理可以用来维护数据库的完整性，它保证成批的MySQL操作要么完全执行，要么完全不执行</p>
-<p>事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果，利用事务处理，可以保证一组操作不会中途停止，它们或者作为整体执行，或者完全不执行（除非明确指示），如果没有发生错误，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxatr9omj30dg06876c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxb1qcl4j30dg0cj41g.jpg"></p>
-<p>事务：指一组SQL语句<br>回退：指撤销指定SQL语句的过程<br>提交：指将未存储的SQL语句结果写入数据库表<br>保留点：指事务处理中设置的临时占位符，你可以对它发布回退（与回退整个事务处理不同）</p>
-<p>1）START TRANSACTION标识事务的开始</p>
-<p>2）MySQL的ROLLBACK命令用来回退（撤销）MySQL语句：<br>SELECT * FROM ordertotals;<br>START TRANSACTION;<br>DELETE FROM ordertotals;<br>SELECT * FROM ordertotals;<br>ROLLBACK;<br>SELECT * FROM ordertotals;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbcn65zj30dg08wwjg.jpg"></p>
-<p>3)一般的MySQL语句都是直接针对数据库表执行和编写的，这就是所谓的隐含提交，即提交（写或保存）操作是自动进行的；但是，在事务处理块中，提交不会隐含的进行。为进行明确的提交，使用COMMIT语句<br>START TRANSACTION;<br>DELETE FROM orderitems WHERE order_num=20010;<br>DELETE FROM orders WHERE order_num=20010;<br>COMMIT;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbll0v0j30dg03ign9.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbtebtmj30cr01ogmw.jpg"></p>
-<p>使用保留点：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxc0363yj30dc05lacf.jpg"><br>这些占位符称为保留点</p>
-<p>创建占位符：<br>SAVEPOINT deletel;</p>
-<p>每个保留点都取标识它的唯一名字，以便在回退时，MySQL知道要回退到何处。为了回退到本例给出的保留点，可如下进行：<br>ROLLBACK TO deletel;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxcakymdj30cr05f78a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxctcr4mj30dl083788.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
     </div>
 
       

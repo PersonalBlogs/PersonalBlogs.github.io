@@ -228,6 +228,152 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据库系统原理/《MySQL必知必会》/创建计算字段" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/" class="article-date">
+      <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/">创建计算字段</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>创建计算字段</p>
+<p>计算字段并不实际存在于数据库表中，计算字段是运行时在SELECT语句内创建的</p>
+<p>字段：基本上与列的意思相同，经常互换使用，不过数据库列一般称为列，而术语字段通常用在计算字段的连接上</p>
+<p>只有数据库知道SELECT语句中哪些列是实际的表列，哪些列是计算字段。从客户机（如应用程序）的角度来看，计算字段的数据是以与其他列的数据相同的方式返回的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortz4hy7dj30b703576m.jpg"></p>
+<p>拼接：将值联结到一起构成单个值</p>
+<p>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3500nmj30b6024myn.jpg"><br>SELECT Concat(vendname，‘ （’，vendcountry，‘）’）<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3e6rfnj306s03cjrx.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3kvotqj30bi05mjt3.jpg"></p>
+<p>RTrim()函数去掉值右边的所有空格，通过使用RTrim()，各个列都进行了整理<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3sjk96j30b7023q4d.jpg"></p>
+<p>2）别名是一个字段或值的替换名，别名用AS关键字赋予<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru41cau8j304203bt93.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru47rf4jj30b7022gn3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4djupzj30b701iab5.jpg"></p>
+<p>3)检索订单号20005中的所有物品<br>SELECT prodid,quantity,itemprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4l975mj305802maae.jpg"></p>
+<p>item_price列包含订单中每项物品的单价，如下汇总物品的价格（单价乘以订购数量）<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4tqhgsj307r02i3yz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru50n0mwj307r038glv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru56chxej30b903lju1.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/进程通信" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/" class="article-date">
+      <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/">进程通信</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>进程通信：</p>
+<p>Windows匿名管道通信：</p>
+<p>管道（pipe）：进程间的一种通信机制，一个进程（A）可以通过管道把数据传输给另外一个进程（B），前者向管道输入数据，后者从管道读取数据<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbeb4lqfj309h02fmxu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbej4jdsj30h20axgq6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbeqrgiaj30b7072wgp.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbexu8wfj30cs05egng.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbf505h1j30dj05ewga.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfbvtmrj30dj07iju4.jpg"></p>
+<p>Linux信号通信：</p>
+<p>信号：<br>1）信号是Linux进程间一种重要的通信机制<br>2）信号是向进程发送的一个通知，通知某个事件已发生<br>3）收到信号的进程可以立即执行指定的操作<br>4）信号的发出可以是进程，也可以是系统（含硬件）</p>
+<p>信号的产生：<br>1）键盘输入特殊组合键产生信号（Ctrl+C）<br>2）执行终端命令产生信号（kill系列命令）<br>3）程序中调用函数产生信号：kill(),abort()<br>4）硬件异常或内核产生相应信号：内存访问错<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfotol2j30bc07l0vm.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfx1fuej30l10brwjo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbg3y4dgj30ac06rq4o.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据库系统原理/《MySQL必知必会》/使用数据处理函数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -805,166 +951,6 @@
 <p>2）虚拟存储<br>解决的问题：<br>1）程序过大或过多时，内存不够，不能运行<br>2）多个程序并发时地址冲突，不能运行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc7b4ag2j30b708omz9.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc7jr2kuj30ho06pmzi.jpg"></p>
 <p>3）内存分配：为程序运行分配足够的内存空间<br>需要解决的问题：<br>1）放置策略：程序调入内存时将其放置在哪个/哪些内存区<br>2）调入策略：何时把要运行的代码和要访问的数据调入内存<br>3）淘汰策略：内存空间不够时，迁出/淘汰哪些代码或数据以腾出内存空间</p>
 <p>4）存储保护：保证在内存中的多道程序只能在给定的存储区域内活动并互不干扰【防止访问越界，防止访问越权】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorc7swsaoj30dg04gq4i.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/联结表、内部联结或等值联结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%81%94%E7%BB%93%E8%A1%A8%E3%80%81%E5%86%85%E9%83%A8%E8%81%94%E7%BB%93%E6%88%96%E7%AD%89%E5%80%BC%E8%81%94%E7%BB%93/" class="article-date">
-      <time datetime="2020-10-17T16:00:00.000Z" itemprop="datePublished">2020-10-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%81%94%E7%BB%93%E8%A1%A8%E3%80%81%E5%86%85%E9%83%A8%E8%81%94%E7%BB%93%E6%88%96%E7%AD%89%E5%80%BC%E8%81%94%E7%BB%93/">联结表、内部联结或等值联结</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>联结表【内部联结或等值联结】</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupddvpbj30bs05i762.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupl3ey2j30bs0hk45s.jpg"></p>
-<p>联结是一种机制，用来在一条SELECT语句中关联表，使用特殊的语法，可以联结多个表返回一组输出，联结在运行时关联表中正确的行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupv39x6j30b706lq7s.jpg"></p>
-<p>1）<br>SELECT vendname,prodname,prod_price<br>FROM vendors,products<br>WHERE vendors.vendid=products.vendid<br>ORDER BY vendname,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruq4vmywj306p01taac.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqcanemj306p04pgmk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqjjij8j30b701zdh8.jpg"></p>
-<p>笛卡尔积：由没有联结条件的表关系返回的结果为笛卡尔积，检索出的行的数目将是第一个表中的行数乘以第二个表中的行数<br>SELECT vendname,prodname,prod_price<br>FROM vendors,products<br>ORDER BY vendname,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqqkynyj30760c1ju2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqye64rj30760hen1d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorur7bbicj307602xt9c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorurf2qndj30bh06qjvh.jpg"></p>
-<p>2）<br>SELECT vendname,prodname,prod_price<br>FROM vendors INNER JOIN products<br>ON vendors.vendid=products.vendid;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorurn499nj30bc02g409.jpg"></p>
-<p>3)<br>SELECT prodname,vendname,prod_price,quantity<br>FROM orderitems,products,vendors<br>WHERE products.vendid=vendors.vendid<br>   AND orderitems.prodid=products.prodid<br>   AND order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruruabf9j308g02igm6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorus28tl7j30bf023jsx.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/物理内存管理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/18/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="article-date">
-      <time datetime="2020-10-17T16:00:00.000Z" itemprop="datePublished">2020-10-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/18/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">物理内存管理</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>物理内存管理：</p>
-<p>—————————————————</p>
-<p>分区内存管理：</p>
-<p>分区存储管理方式：</p>
-<p>1）单一区存储管理(不分区存储管理)：用户区不分区，完全被一个程序占用（DOS）</p>
-<p>优点：简单，不需要复杂硬件支持，适于单用户单任务OS</p>
-<p>缺点：程序运行占用整个内存，即使小程序也是如此，内存浪费，利用率低</p>
-<p>2）分区存储管理：把用户区内存划分为若干大小不等的分区，供不同程序使用，适合单用户单任务系统</p>
-<p>a.固定分区：把内存固定的划分为若干个大小不等的分区供各个程序使用，每个分区的大小和位置都固定，系统运行期间不再重新划分</p>
-<p>分区表：记录分区的位置、大小和使用标志<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorca90kbuj30l60dewhg.jpg"><br>固定分区的使用特点：<br>1）在程序装入前，内存已被分区，不再改变<br>2）每个分区大小不同，适应不同大小的程序<br>3）系统要维护分区表<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcahjurwj308n01oq3c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcaolt4ej30lz084417.jpg"></p>
-<p>b.动态分区：在程序装入时创建分区，使分区的大小刚好与程序的大小相等</p>
-<p>特点：分区动态建立<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcawvz2wj30ds098tb6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcb4ap3rj30ds097gol.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcbb5un6j307m08hgmw.jpg"><br>—————————————————</p>
-<p>分区放置策略：</p>
-<p>分区的分配：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcbioflhj30bj07ntam.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcbq2yh7j30c107nq5a.jpg"></p>
-<p>放置策略（空闲区表排序原则）：<br>1）首次适应算法：按空闲区位置（首址）递增排序<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcc0r9tmj30b102yab2.jpg"><br>2）按空闲区位置（首址）递减排序<br>3）最佳适应算法：按空闲区大小的递增排序<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcc8zvwoj30fz03ujt1.jpg"><br>4）最坏适应算法：按空闲区大小的递减排序<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorccg53a7j30ah05rq3y.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorccox4fzj30bz03ujse.jpg"></p>
-<p>分区的回收：回收程序释放分区（释放区），登记到空闲区表中，以便再分配<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorccya556j30d1033wfp.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcd514xoj30ee08gmyz.jpg"><br>———————————————</p>
-<p>内存覆盖技术：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcdc2skbj30p80b5tbx.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcdjbr64j30f0088dhu.jpg"></p>
-<p>覆盖的缺点：<br>1）编程复杂：程序员划分程序模块并确定覆盖关系<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcdq6ppfj30gp09atac.jpg"><br>2）程序执行时间长：从外存装入内存耗时<br>————————————————</p>
-<p>内存交换技术：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcdy2j8jj30ls0dgtdb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorce5lo7nj308207jgmy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcedhpqrj30kx0diaem.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcel1lu9j30d608840r.jpg"></p>
-<p>————————————————</p>
-<p>内存碎片：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcetnkhxj309y08ljtb.jpg"></p>
-<p>碎片问题：</p>
-<p>动态分区的缺点：容易产生内存碎片（内存反复分配和分割）【其中最佳适应法最容易产生碎片，最坏适应法最不容易产生碎片】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcf16c0bj30a104s0to.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcfc4jnnj309d07tac2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcfl7k8jj303x03k74u.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorcfssdktj30j30bvady.jpg"></p>
 
       
     </div>

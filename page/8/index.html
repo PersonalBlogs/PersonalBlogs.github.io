@@ -228,6 +228,158 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据库系统原理/《MySQL必知必会》/过滤数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-26T16:00:00.000Z" itemprop="datePublished">2020-10-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/">过滤数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>过滤数据</p>
+<p>1）只返回prod_price值为2.50的行<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price=2.50;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortb74hxbj304h01y0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbdgfqkj30b701y3zv.jpg"></p>
+<p>2）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbjxonjj308i05nwf2.jpg"></p>
+<p>3）MySQL在执行匹配时默认不区分大小写，所以fuses与Fuses匹配<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_name=‘fuses’;【注意单引号】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbtr4awj303t01jglq.jpg"></p>
+<p>4）<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price&lt;10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortc1kroej304h03oaai.jpg"></p>
+<p>5)列出不是由供应商1003制造的所有产品<br>SELECT vendid,prodname<br>FROM products<br>WHERE vend_id&lt;&gt;1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortc91h1jj303v03nwex.jpg"></p>
+<p>6）检索价格在5美元和10美元之间的所有产品<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price BETWEEN 5 AND 10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortcgfxiyj304j02vdg6.jpg"></p>
+<p>7）NULL：无值，它与字段包含0、空字符串或仅仅包含空格不同<br>这条语句返回没有价格（空prod_price字段，不是价格为0）的所有产品<br>SELECT prod_name<br>FROM products<br>WHERE prod_price IS NULL;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-操作系统原理/操作系统原理/进程控制概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%A6%82%E5%BF%B5/" class="article-date">
+      <time datetime="2020-10-26T16:00:00.000Z" itemprop="datePublished">2020-10-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%A6%82%E5%BF%B5/">进程控制概念</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>概念：在进程生存全期间，对其全部行为的控制</p>
+<p>四个典型的控制行为：<br>1）创建进程<br>2）阻塞进程<br>3）撤销进程<br>4）唤醒进程</p>
+<p>进程创建：创建一个具有指定标识（ID）的进程（进程标识、优先级、进程起始地址、CPU初始状态、资源清单）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb3a0fkjj30eo0cjgo8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb3i48ydj30ii0dbgs0.jpg"></p>
+<p>进程撤销：撤销一个指定的进程；收回进程所占有的资源，撤销该进程的PCB</p>
+<p>进程撤销的时机/事件：<br>1）正常结束<br>2）异常结束<br>3）外界干预</p>
+<p>参数：被撤销的进程名（ID）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb3s7ebyj30h10ai0wg.jpg"></p>
+<p>进程阻塞：停止进程的执行，变为阻塞<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb410ts3j30h109bjuz.jpg"></p>
+<p>参数：阻塞原因，不同原因构建有不同的阻塞队列</p>
+<p>进程阻塞的实现：<br>1）停止运行<br>2）将PCB“运行态”改“阻塞态”<br>3）插入相应原因的阻塞队列<br>4）转调度程序</p>
+<p>进程唤醒：唤醒处于阻塞队列当中的某个进程</p>
+<p>引起唤醒的时机/事件：<br>1）系统服务由不满足到满足<br>2）I/O完成<br>3）新数据到达<br>4）进程提出新请求（服务）</p>
+<p>参数：被唤醒进程的标识</p>
+<p>进程控制原语：由若干指令构成的具有特定功能的函数，具有原子性，其操作不可分割</p>
+<p>进程控制原语：<br>1）创建原语<br>2）撤销原语<br>3）阻塞原语<br>4）唤醒原语</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-硬件基础/《汇编语言(第4版)》/第一个程序" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -814,152 +966,6 @@ int 21h
 <p>———————————</p>
 <p>经典同步问题：</p>
 <p>生产者和消费者问题<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbctmmn5j30m00bpgpu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbd204ajj30dq09cjur.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据库系统原理/《MySQL必知必会》/创建计算字段" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/" class="article-date">
-      <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/">创建计算字段</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>创建计算字段</p>
-<p>计算字段并不实际存在于数据库表中，计算字段是运行时在SELECT语句内创建的</p>
-<p>字段：基本上与列的意思相同，经常互换使用，不过数据库列一般称为列，而术语字段通常用在计算字段的连接上</p>
-<p>只有数据库知道SELECT语句中哪些列是实际的表列，哪些列是计算字段。从客户机（如应用程序）的角度来看，计算字段的数据是以与其他列的数据相同的方式返回的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortz4hy7dj30b703576m.jpg"></p>
-<p>拼接：将值联结到一起构成单个值</p>
-<p>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3500nmj30b6024myn.jpg"><br>SELECT Concat(vendname，‘ （’，vendcountry，‘）’）<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3e6rfnj306s03cjrx.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3kvotqj30bi05mjt3.jpg"></p>
-<p>RTrim()函数去掉值右边的所有空格，通过使用RTrim()，各个列都进行了整理<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3sjk96j30b7023q4d.jpg"></p>
-<p>2）别名是一个字段或值的替换名，别名用AS关键字赋予<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru41cau8j304203bt93.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru47rf4jj30b7022gn3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4djupzj30b701iab5.jpg"></p>
-<p>3)检索订单号20005中的所有物品<br>SELECT prodid,quantity,itemprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4l975mj305802maae.jpg"></p>
-<p>item_price列包含订单中每项物品的单价，如下汇总物品的价格（单价乘以订购数量）<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4tqhgsj307r02i3yz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru50n0mwj307r038glv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru56chxej30b903lju1.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/进程通信" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/" class="article-date">
-      <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/">进程通信</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>进程通信：</p>
-<p>Windows匿名管道通信：</p>
-<p>管道（pipe）：进程间的一种通信机制，一个进程（A）可以通过管道把数据传输给另外一个进程（B），前者向管道输入数据，后者从管道读取数据<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbeb4lqfj309h02fmxu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbej4jdsj30h20axgq6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbeqrgiaj30b7072wgp.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbexu8wfj30cs05egng.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbf505h1j30dj05ewga.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfbvtmrj30dj07iju4.jpg"></p>
-<p>Linux信号通信：</p>
-<p>信号：<br>1）信号是Linux进程间一种重要的通信机制<br>2）信号是向进程发送的一个通知，通知某个事件已发生<br>3）收到信号的进程可以立即执行指定的操作<br>4）信号的发出可以是进程，也可以是系统（含硬件）</p>
-<p>信号的产生：<br>1）键盘输入特殊组合键产生信号（Ctrl+C）<br>2）执行终端命令产生信号（kill系列命令）<br>3）程序中调用函数产生信号：kill(),abort()<br>4）硬件异常或内核产生相应信号：内存访问错<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfotol2j30bc07l0vm.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbfx1fuej30l10brwjo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorbg3y4dgj30ac06rq4o.jpg"></p>
 
       
     </div>

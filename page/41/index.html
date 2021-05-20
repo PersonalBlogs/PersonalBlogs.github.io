@@ -228,10 +228,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-数据结构和算法/C实例/求100～200之间的素数：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/求100～200之间的素数：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82100%EF%BD%9E200%E4%B9%8B%E9%97%B4%E7%9A%84%E7%B4%A0%E6%95%B0%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82100%EF%BD%9E200%E4%B9%8B%E9%97%B4%E7%9A%84%E7%B4%A0%E6%95%B0%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82100%EF%BD%9E200%E4%B9%8B%E9%97%B4%E7%9A%84%E7%B4%A0%E6%95%B0%EF%BC%9A/">求100～200之间的素数：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82100%EF%BD%9E200%E4%B9%8B%E9%97%B4%E7%9A%84%E7%B4%A0%E6%95%B0%EF%BC%9A/">求100～200之间的素数：</a>
     </h1>
   
 
@@ -296,10 +296,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/求n！：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/水仙花数：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82n%EF%BC%81%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -314,7 +314,75 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82n%EF%BC%81%EF%BC%9A/">求n！：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0%EF%BC%9A/">水仙花数：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8knydoxkj30js0f5762.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//水仙花数是指一个N位正整数（N&gt;=3），它的每个位上的数字的N次幂之和等于它本身，例如：153=1^3+5^3+3^3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> hun, ten, ind, n;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;result is:\n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( n=<span class="number">100</span>; n&lt;<span class="number">1000</span>; n++ )&#123;  <span class="comment">/*整数的取值范围*/</span></span><br><span class="line">    </span><br><span class="line">        hun = n / <span class="number">100</span>;</span><br><span class="line">        ten = (n-hun*<span class="number">100</span>) / <span class="number">10</span>;</span><br><span class="line">        ind = n % <span class="number">10</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(n == hun*hun*hun + ten*ten*ten + ind*ind*ind)&#123;  <span class="comment">/*各位上的立方和是否与原数n相等*/</span></span><br><span class="line">           </span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d  &quot;</span>, n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发实战/数据结构和算法/C实例/求n！：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82n%EF%BC%81%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82n%EF%BC%81%EF%BC%9A/">求n！：</a>
     </h1>
   
 
@@ -369,10 +437,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/求平均数" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/斐波那契数列：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E5%B9%B3%E5%9D%87%E6%95%B0/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -387,7 +455,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E5%B9%B3%E5%9D%87%E6%95%B0/">求平均数</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%EF%BC%9A/">斐波那契数列：</a>
     </h1>
   
 
@@ -399,78 +467,9 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">**//**算平均数：让用户输入一系列的正整数，最后输入**-1**表示输入结束，然后程序计算出这些数字的平均数，输入的数字的个数**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**	int number;**</span><br><span class="line">**	int sum=0;**</span><br><span class="line">**	int count=0;**</span><br><span class="line">	</span><br><span class="line">**	scanf(“%d”,&amp;number);**</span><br><span class="line">**	while(number != -1)&#123;**</span><br><span class="line">**		sum+=number;**</span><br><span class="line">**		count++;**</span><br><span class="line">**		scanf(“%d”,&amp;number);**</span><br><span class="line">**	&#125;**</span><br><span class="line">**	printf(“**输入的数字个数为**%d\n”,count);**</span><br><span class="line">**	printf(“**输入数字的平均数为**%f\n”,1.0*sum/count);**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//计算用户输入的数字的平均数，并输出所有大于平均数的数</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int x;</span><br><span class="line">	double sum=0;</span><br><span class="line">	int cnt=0;</span><br><span class="line">	printf(“请输入数字的数量：”);</span><br><span class="line">	scanf(“%d”,&amp;cnt);</span><br><span class="line">	</span><br><span class="line">	if(cnt&gt;0)&#123;</span><br><span class="line">		int number[cnt];</span><br><span class="line">		scanf(“%d”,&amp;x);</span><br><span class="line">		while(x != -1)&#123;</span><br><span class="line">			number[cnt]=x;</span><br><span class="line">			sum+=x;</span><br><span class="line">			cnt++;</span><br><span class="line">			scanf(“%d”,&amp;x);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(“%f\n”,sum/cnt);</span><br><span class="line">		int I;</span><br><span class="line">		for(I=0;i&lt;cnt;i++)&#123;</span><br><span class="line">			if(number[I]&gt;sum/cnt)&#123;</span><br><span class="line">				printf(“%d\n”,number[I]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/求幂函数power(m,n)：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E5%B9%82%E5%87%BD%E6%95%B0power(m,n)%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E5%B9%82%E5%87%BD%E6%95%B0power(m,n)%EF%BC%9A/">求幂函数power(m,n)：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kxcwoz9j30mu0hr414.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kcydziej30mu0g7wge.jpg"></p>
 <p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    求幂的函数power(m,n)，用于计算整数m的n次幂，其中n是正整数（标准库中提供了一个计算x^y的函数pow(x,y)）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//power函数的参数使用的名字只在power函数内部有效，对其他任何函数都是不可见的，其他函数可以使用与之相同的参数名字而不会引起冲突</span></span><br><span class="line"><span class="comment">//我们通常把函数定义中圆括号内列表中出现的变量称为形式参数，而把函数调用中与形式参数对应的值称为实际参数</span></span><br><span class="line"><span class="comment">//在C语言中，所有函数参数都是“通过值”传递的，也就是说，传递给被调用函数的参数值存放在临时变量中，而不是存放在原来的变量中；在C语言中，被调用函数不能直接修改主调函数中变量的值，而只能修改其私有的临时副本的值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">power</span><span class="params">(<span class="keyword">int</span> base,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> p=<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">        </span><br><span class="line">        p=p*base;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">3</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,i,power(<span class="number">2</span>,i),power(<span class="number">-3</span>,i));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//斐波那契数列的特点是：第1个和第2个数都为1，从第3个数开始，该数是前两个数之和。求这个数列的前30个元素。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">long</span> f[<span class="number">31</span>];</span><br><span class="line">    f[<span class="number">1</span>]=<span class="number">1</span>,f[<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;<span class="number">31</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        f[i]=f[i<span class="number">-1</span>]+f[i<span class="number">-2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">31</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%ld  &quot;</span>,f[i]);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i%<span class="number">5</span>==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -506,10 +505,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/求最大公约数" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/求平均数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E5%B9%B3%E5%9D%87%E6%95%B0/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -524,7 +523,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/">求最大公约数</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E5%B9%B3%E5%9D%87%E6%95%B0/">求平均数</a>
     </h1>
   
 
@@ -536,13 +535,10 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">**//**枚举求最大公约数**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**	int a,b;**</span><br><span class="line">**	int min;**</span><br><span class="line">**	scanf(“%d %d”,&amp;a,&amp;b);**</span><br><span class="line">**	if(a&lt;b)&#123;**</span><br><span class="line">**		min=a;**</span><br><span class="line">**	&#125;else&#123;**</span><br><span class="line">**		min=b;**</span><br><span class="line">**	&#125;**</span><br><span class="line">**	int ret=0;**</span><br><span class="line">**	int I;**</span><br><span class="line">**	for(I=1;i&lt;min;i++)&#123;**</span><br><span class="line">**		if(a%I==0)&#123;**</span><br><span class="line">**			if(b%I==0)&#123;**</span><br><span class="line">**				ret=i;**</span><br><span class="line">**			&#125;**</span><br><span class="line">**		&#125;**</span><br><span class="line">**	&#125;**</span><br><span class="line">**	printf(“%d**和**%d**的最大公约数是**%d.\n”,a,b,ret);**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">**&#x2F;&#x2F;**算平均数：让用户输入一系列的正整数，最后输入**-1**表示输入结束，然后程序计算出这些数字的平均数，输入的数字的个数**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**	int number;**</span><br><span class="line">**	int sum&#x3D;0;**</span><br><span class="line">**	int count&#x3D;0;**</span><br><span class="line">	</span><br><span class="line">**	scanf(“%d”,&amp;number);**</span><br><span class="line">**	while(number !&#x3D; -1)&#123;**</span><br><span class="line">**		sum+&#x3D;number;**</span><br><span class="line">**		count++;**</span><br><span class="line">**		scanf(“%d”,&amp;number);**</span><br><span class="line">**	&#125;**</span><br><span class="line">**	printf(“**输入的数字个数为**%d\n”,count);**</span><br><span class="line">**	printf(“**输入数字的平均数为**%f\n”,1.0*sum&#x2F;count);**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">**//**辗转相除法求最大公约数**#include&lt;stdio.h&gt;**</span><br><span class="line">**int main()&#123;**</span><br><span class="line">**	int a,b;**</span><br><span class="line">**	int t;**</span><br><span class="line">**	scanf(“%d %d”,&amp;a,&amp;b);**</span><br><span class="line">**	while(b!=0)&#123;**</span><br><span class="line">**		t=a%b;**</span><br><span class="line">**		a=b;**</span><br><span class="line">**		b=t;**</span><br><span class="line">**	&#125;**</span><br><span class="line">**	printf(“**最大公约数**=%d\n”,a);**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//约分</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int dividend,divisor;</span><br><span class="line">	scanf(“%d/%d”,&amp;dividend,&amp;divisor);</span><br><span class="line">	</span><br><span class="line">	int a=dividend;</span><br><span class="line">	int b=divisor;</span><br><span class="line">	int t;</span><br><span class="line">	while(b&gt;0)&#123;</span><br><span class="line">		t=a%b;</span><br><span class="line">		a=b;</span><br><span class="line">		b=t;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(“%d/%d\n”,dividend/a,divisor/a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;计算用户输入的数字的平均数，并输出所有大于平均数的数</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int x;</span><br><span class="line">	double sum&#x3D;0;</span><br><span class="line">	int cnt&#x3D;0;</span><br><span class="line">	printf(“请输入数字的数量：”);</span><br><span class="line">	scanf(“%d”,&amp;cnt);</span><br><span class="line">	</span><br><span class="line">	if(cnt&gt;0)&#123;</span><br><span class="line">		int number[cnt];</span><br><span class="line">		scanf(“%d”,&amp;x);</span><br><span class="line">		while(x !&#x3D; -1)&#123;</span><br><span class="line">			number[cnt]&#x3D;x;</span><br><span class="line">			sum+&#x3D;x;</span><br><span class="line">			cnt++;</span><br><span class="line">			scanf(“%d”,&amp;x);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(“%f\n”,sum&#x2F;cnt);</span><br><span class="line">		int I;</span><br><span class="line">		for(I&#x3D;0;i&lt;cnt;i++)&#123;</span><br><span class="line">			if(number[I]&gt;sum&#x2F;cnt)&#123;</span><br><span class="line">				printf(“%d\n”,number[I]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -578,10 +574,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/求散列之和S=a+aa+aaa+…+aaa…a(n个a)：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/求散列之和S=a+aa+aaa+…+aaa…a(n个a)：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E6%95%A3%E5%88%97%E4%B9%8B%E5%92%8CS=a+aa+aaa+%E2%80%A6+aaa%E2%80%A6a(n%E4%B8%AAa)%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E6%95%A3%E5%88%97%E4%B9%8B%E5%92%8CS=a+aa+aaa+%E2%80%A6+aaa%E2%80%A6a(n%E4%B8%AAa)%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -596,7 +592,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E6%95%A3%E5%88%97%E4%B9%8B%E5%92%8CS=a+aa+aaa+%E2%80%A6+aaa%E2%80%A6a(n%E4%B8%AAa)%EF%BC%9A/">求散列之和S=a+aa+aaa+…+aaa…a(n个a)：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E6%95%A3%E5%88%97%E4%B9%8B%E5%92%8CS=a+aa+aaa+%E2%80%A6+aaa%E2%80%A6a(n%E4%B8%AAa)%EF%BC%9A/">求散列之和S=a+aa+aaa+…+aaa…a(n个a)：</a>
     </h1>
   
 
@@ -646,10 +642,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/特殊的完全平方数：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/特殊的完全平方数：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%89%B9%E6%AE%8A%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%89%B9%E6%AE%8A%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -664,7 +660,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%89%B9%E6%AE%8A%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0%EF%BC%9A/">特殊的完全平方数：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%89%B9%E6%AE%8A%E7%9A%84%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0%EF%BC%9A/">特殊的完全平方数：</a>
     </h1>
   
 
@@ -714,10 +710,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/素数" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/求幂函数power(m,n)：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%B4%A0%E6%95%B0/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E5%B9%82%E5%87%BD%E6%95%B0power(m,n)%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -732,7 +728,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%B4%A0%E6%95%B0/">素数</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B1%82%E5%B9%82%E5%87%BD%E6%95%B0power(m,n)%EF%BC%9A/">求幂函数power(m,n)：</a>
     </h1>
   
 
@@ -744,12 +740,9 @@
       
           
         <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6bj6pt8j30fh0cnmyj.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6bq0q8hj30ag0fnabf.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6by2lhgj30m60c7dha.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6c6nqyej30fg0hb40i.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6cljwqsj30a90etq49.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6ctmqmfj30950fzdh4.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6d177kzj30en0lswh2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6d93h2cj30bu0ef0u4.jpg"></p>
-
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kxcwoz9j30mu0hr414.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    求幂的函数power(m,n)，用于计算整数m的n次幂，其中n是正整数（标准库中提供了一个计算x^y的函数pow(x,y)）</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//power函数的参数使用的名字只在power函数内部有效，对其他任何函数都是不可见的，其他函数可以使用与之相同的参数名字而不会引起冲突</span></span><br><span class="line"><span class="comment">//我们通常把函数定义中圆括号内列表中出现的变量称为形式参数，而把函数调用中与形式参数对应的值称为实际参数</span></span><br><span class="line"><span class="comment">//在C语言中，所有函数参数都是“通过值”传递的，也就是说，传递给被调用函数的参数值存放在临时变量中，而不是存放在原来的变量中；在C语言中，被调用函数不能直接修改主调函数中变量的值，而只能修改其私有的临时副本的值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">power</span><span class="params">(<span class="keyword">int</span> base,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> p=<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">        </span><br><span class="line">        p=p*base;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">3</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,i,power(<span class="number">2</span>,i),power(<span class="number">-3</span>,i));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -785,10 +778,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/猜字谜游戏" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/猜字谜游戏" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%8C%9C%E5%AD%97%E8%B0%9C%E6%B8%B8%E6%88%8F/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%8C%9C%E5%AD%97%E8%B0%9C%E6%B8%B8%E6%88%8F/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -803,7 +796,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%8C%9C%E5%AD%97%E8%B0%9C%E6%B8%B8%E6%88%8F/">猜字谜游戏</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%8C%9C%E5%AD%97%E8%B0%9C%E6%B8%B8%E6%88%8F/">猜字谜游戏</a>
     </h1>
   
 
@@ -855,10 +848,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/给定不超过6的正整数A，考虑从A开始连续4个数字，请输出所有由它们组成的无重复数字的3位数：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/素数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%BB%99%E5%AE%9A%E4%B8%8D%E8%B6%85%E8%BF%876%E7%9A%84%E6%AD%A3%E6%95%B4%E6%95%B0A%EF%BC%8C%E8%80%83%E8%99%91%E4%BB%8EA%E5%BC%80%E5%A7%8B%E8%BF%9E%E7%BB%AD4%E4%B8%AA%E6%95%B0%E5%AD%97%EF%BC%8C%E8%AF%B7%E8%BE%93%E5%87%BA%E6%89%80%E6%9C%89%E7%94%B1%E5%AE%83%E4%BB%AC%E7%BB%84%E6%88%90%E7%9A%84%E6%97%A0%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97%E7%9A%843%E4%BD%8D%E6%95%B0%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%B4%A0%E6%95%B0/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -873,7 +866,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%BB%99%E5%AE%9A%E4%B8%8D%E8%B6%85%E8%BF%876%E7%9A%84%E6%AD%A3%E6%95%B4%E6%95%B0A%EF%BC%8C%E8%80%83%E8%99%91%E4%BB%8EA%E5%BC%80%E5%A7%8B%E8%BF%9E%E7%BB%AD4%E4%B8%AA%E6%95%B0%E5%AD%97%EF%BC%8C%E8%AF%B7%E8%BE%93%E5%87%BA%E6%89%80%E6%9C%89%E7%94%B1%E5%AE%83%E4%BB%AC%E7%BB%84%E6%88%90%E7%9A%84%E6%97%A0%E9%87%8D%E5%A4%8D%E6%95%B0%E5%AD%97%E7%9A%843%E4%BD%8D%E6%95%B0%EF%BC%9A/">给定不超过6的正整数A，考虑从A开始连续4个数字，请输出所有由它们组成的无重复数字的3位数：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E7%B4%A0%E6%95%B0/">素数</a>
     </h1>
   
 
@@ -885,9 +878,12 @@
       
           
         <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8keg46h1j30dh0jbjsx.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">6</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="keyword">int</span> i,j,k;</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=a;i&lt;=a+<span class="number">3</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(j=a;j&lt;=a+<span class="number">3</span>;j++)&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(k=a;k&lt;=a+<span class="number">3</span>;k++)&#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span>(i != j &amp;&amp; i != k &amp;&amp; j != k)&#123;</span><br><span class="line">                    </span><br><span class="line">                    cnt++;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%d%d%d&quot;</span>,i,j,k);</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(cnt==<span class="number">6</span>)&#123;</span><br><span class="line">                        </span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">                        cnt=<span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;  &quot;</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6bj6pt8j30fh0cnmyj.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6bq0q8hj30ag0fnabf.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6by2lhgj30m60c7dha.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6c6nqyej30fg0hb40i.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6cljwqsj30a90etq49.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6ctmqmfj30950fzdh4.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6d177kzj30en0lswh2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gln6d93h2cj30bu0ef0u4.jpg"></p>
+
       
     </div>
     

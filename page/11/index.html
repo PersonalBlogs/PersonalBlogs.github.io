@@ -228,10 +228,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/全文本搜索" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/设备管理概念" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%85%A8%E6%96%87%E6%9C%AC%E6%90%9C%E7%B4%A2/" class="article-date">
+      <a  href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E6%A6%82%E5%BF%B5/" class="article-date">
       <time datetime="2020-10-14T16:00:00.000Z" itemprop="datePublished">2020-10-15</time>
 </a>
 
@@ -246,84 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/15/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%85%A8%E6%96%87%E6%9C%AC%E6%90%9C%E7%B4%A2/">全文本搜索</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>全文本搜索</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv0yqxudj30b5049q5z.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv16gkm7j30b501s0t8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv1daeb2j30b506t41e.jpg"></p>
-<p>1）CREATE TABLE语句接受FULLTEXT子句，它给出被索引列的一个逗号分隔的列表<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv1kbfizj30bm0d2wk5.jpg"></p>
-<p>2）在索引之后，使用两个函数Match()和Against()执行全文本搜索，其中Match()指定被搜索的列，Against()指定要使用的搜索表达式；传递给Match()的值必须与FULLTEXT()定义中的相同，如果指定多个列，则必须列出它们（而且次序正确）<br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘rabbit’);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv1sf6apj309k02imxu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv20qlwhj30b501lab3.jpg"></p>
-<p>3）这条SELECT语句同样检索出两行，但次序不同（虽然并不总是出现这种情况）<br>SELECT note_text<br>FROM productnotes<br>WHERE note_text LIKE ‘%rabbit%’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv26z6f1j309i02jjs2.jpg"></p>
-<p>上述两条SELECT语句都不包含ORDER BY子句，后者以不特别有用的顺序返回数据。前者返回以文本匹配的良好程度排序的数据。两个行都包含词rabbit，但包含词rabbit作为第3个词的行的等级比作为第20个词的行高</p>
-<p>4）演示排序如何工作<br>SELECT note_text，<br>      Match(note_text) Against(‘rabbit’) AS rank<br>FROM productnotes<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv2ga8h8j30ad0bmjv5.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv2nmx7tj30ad04smyl.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv2uzbkmj30bm0610ve.jpg"></p>
-<p>如果指定多个搜索项，则包含多数匹配词的那些行将具有比包含较少词（或仅有一个匹配）的那些行高的等级值</p>
-<p>5)<br>查询扩展用来设法放宽所返回的全文本搜索结果的范围<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3317xtj30bm061mz7.jpg"><br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘anvils’);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3atxkhj30a90243z1.jpg"></p>
-<p>表中的行越多（这些行中的文本就越多，使用查询扩展返回的结果越好）<br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘anvils’ WITH QUERY EXPANSION);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3igwblj30a90700v3.jpg"></p>
-<p>6）布尔文本搜索，以布尔方式，可以提供关于如下内容的细节：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3u8pq3j30at03ht9l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv42eipxj30b802l763.jpg"><br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘heavy’ IN BOOLEAN MODE);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4awfkuj30bo07in0s.jpg"></p>
-<p>匹配包含heavy但不包含任意以rope开始的词的行：<br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘heavy -rope*’ IN BOOLEAN MODE);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4jqhqyj30aa026dge.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4rq4y2j30af0510tz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv5184c6j30bv0cg0wg.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv58urzqj30bv02wt9r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv5hkdsxj30bv0a7aez.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/设备管理概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/15/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2020-10-14T16:00:00.000Z" itemprop="datePublished">2020-10-15</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/15/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E6%A6%82%E5%BF%B5/">设备管理概念</a>
+      <a  class="article-title" href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E6%A6%82%E5%BF%B5/">设备管理概念</a>
     </h1>
   
 
@@ -384,11 +307,11 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/插入数据" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《MySQL必知必会》/全文本搜索" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2020-10-13T16:00:00.000Z" itemprop="datePublished">2020-10-14</time>
+      <a  href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%85%A8%E6%96%87%E6%9C%AC%E6%90%9C%E7%B4%A2/" class="article-date">
+      <time datetime="2020-10-14T16:00:00.000Z" itemprop="datePublished">2020-10-15</time>
 </a>
 
     </div>
@@ -402,7 +325,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/">插入数据</a>
+      <a  class="article-title" href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%85%A8%E6%96%87%E6%9C%AC%E6%90%9C%E7%B4%A2/">全文本搜索</a>
     </h1>
   
 
@@ -413,14 +336,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>插入数据</p>
-<p>INSERT是用来插入（或添加）行到数据库表的【INSERT语句一般不会产生输出】<br>插入可以用几种方式使用：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwj7dds6j304x02hglv.jpg"></p>
-<p>1）插入完整的行<br>INSERT INTO Customers<br>VALUES(NULL,<br>               ‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’,<br>               NULL,<br>               NULL);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwjftpo2j30bp07jn0v.jpg"></p>
-<p>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country,<br>         cust_contact,<br>         cust_email)<br>VALUES(‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’,<br>               NULL,<br>               NULL);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwjud82hj30bq04gacb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwk29g09j30b502hjt5.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwka1hpsj30b70d4wms.jpg"></p>
-<p>2)插入多个行<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’);<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(‘M.Martian’,<br>               ’42 Galaxy Way’,<br>               ’New York’,<br>               ‘NY’,<br>               ’11213’,<br>               ‘USA’);</p>
-<p>只要每条INSERT语句中的列名（和次序）相同，可以如下组合各语句：<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(<br>               ‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’<br>              )，<br>              (<br>               ‘M.Martian’,<br>               ’42 Galaxy Way’,<br>               ’New York’,<br>               ‘NY’,<br>               ’11213’,<br>               ‘USA’<br>               );<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwkm47q6j30b7022ta4.jpg"></p>
-<p>3）插入检索出的数据<br>INSERT INTO Customers(cust_id,<br>         cust_contact,<br>         cust_email,<br>         cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>SELECT cust_id,<br>         cust_contact,<br>         cust_email,<br>         cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country<br>FROM custnew;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwkxfdpej30bj05q0v4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwl5nalvj30b704a77c.jpg"></p>
-<p>INSERT SELECT中SELECT语句可包含WHERE子句以过滤插入的数据</p>
+        <p>全文本搜索</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv0yqxudj30b5049q5z.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv16gkm7j30b501s0t8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv1daeb2j30b506t41e.jpg"></p>
+<p>1）CREATE TABLE语句接受FULLTEXT子句，它给出被索引列的一个逗号分隔的列表<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv1kbfizj30bm0d2wk5.jpg"></p>
+<p>2）在索引之后，使用两个函数Match()和Against()执行全文本搜索，其中Match()指定被搜索的列，Against()指定要使用的搜索表达式；传递给Match()的值必须与FULLTEXT()定义中的相同，如果指定多个列，则必须列出它们（而且次序正确）<br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘rabbit’);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv1sf6apj309k02imxu.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv20qlwhj30b501lab3.jpg"></p>
+<p>3）这条SELECT语句同样检索出两行，但次序不同（虽然并不总是出现这种情况）<br>SELECT note_text<br>FROM productnotes<br>WHERE note_text LIKE ‘%rabbit%’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv26z6f1j309i02jjs2.jpg"></p>
+<p>上述两条SELECT语句都不包含ORDER BY子句，后者以不特别有用的顺序返回数据。前者返回以文本匹配的良好程度排序的数据。两个行都包含词rabbit，但包含词rabbit作为第3个词的行的等级比作为第20个词的行高</p>
+<p>4）演示排序如何工作<br>SELECT note_text，<br>      Match(note_text) Against(‘rabbit’) AS rank<br>FROM productnotes<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv2ga8h8j30ad0bmjv5.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv2nmx7tj30ad04smyl.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv2uzbkmj30bm0610ve.jpg"></p>
+<p>如果指定多个搜索项，则包含多数匹配词的那些行将具有比包含较少词（或仅有一个匹配）的那些行高的等级值</p>
+<p>5)<br>查询扩展用来设法放宽所返回的全文本搜索结果的范围<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3317xtj30bm061mz7.jpg"><br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘anvils’);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3atxkhj30a90243z1.jpg"></p>
+<p>表中的行越多（这些行中的文本就越多，使用查询扩展返回的结果越好）<br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘anvils’ WITH QUERY EXPANSION);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3igwblj30a90700v3.jpg"></p>
+<p>6）布尔文本搜索，以布尔方式，可以提供关于如下内容的细节：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv3u8pq3j30at03ht9l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv42eipxj30b802l763.jpg"><br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘heavy’ IN BOOLEAN MODE);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4awfkuj30bo07in0s.jpg"></p>
+<p>匹配包含heavy但不包含任意以rope开始的词的行：<br>SELECT note_text<br>FROM productnotes<br>WHERE Match(note_text) Against(‘heavy -rope*’ IN BOOLEAN MODE);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4jqhqyj30aa026dge.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv4rq4y2j30af0510tz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv5184c6j30bv0cg0wg.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv58urzqj30bv02wt9r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorv5hkdsxj30bv0a7aez.jpg"></p>
 
       
     </div>
@@ -457,10 +384,10 @@
 
 
   
-    <article id="post-操作系统原理/操作系统原理/Spooling系统" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/Spooling系统" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/Spooling%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <a  href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/Spooling%E7%B3%BB%E7%BB%9F/" class="article-date">
       <time datetime="2020-10-13T16:00:00.000Z" itemprop="datePublished">2020-10-14</time>
 </a>
 
@@ -475,7 +402,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/14/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/Spooling%E7%B3%BB%E7%BB%9F/">Spooling系统</a>
+      <a  class="article-title" href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/Spooling%E7%B3%BB%E7%BB%9F/">Spooling系统</a>
     </h1>
   
 
@@ -541,11 +468,11 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/更新和删除数据" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《MySQL必知必会》/插入数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
+      <a  href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-13T16:00:00.000Z" itemprop="datePublished">2020-10-14</time>
 </a>
 
     </div>
@@ -559,7 +486,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">更新和删除数据</a>
+      <a  class="article-title" href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/">插入数据</a>
     </h1>
   
 
@@ -570,15 +497,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>更新和删除数据</p>
-<p>1）为了更新（修改）表中的数据，可使用UPDATE语句，可采用两种方式使用UPDATE：<br>更新表中特定行；<br>更新表中所有行；</p>
-<p>UPDATE语句的组成：<br>1）要更新的表<br>2）列名和它们的新值<br>3）确定要更新行的过滤条件</p>
-<p>UPDATE customers<br>SET cust_email=‘ <a href="mailto:&#x65;&#x6c;&#x6d;&#x65;&#114;&#x40;&#x66;&#x75;&#x64;&#100;&#46;&#x63;&#111;&#x6d;">&#x65;&#x6c;&#x6d;&#x65;&#114;&#x40;&#x66;&#x75;&#x64;&#100;&#46;&#x63;&#111;&#x6d;</a> ’<br>WHERE cust_id=10005;</p>
-<p>UPDATE customers<br>SET cust_name=’The Fudds’,<br>        cust_email=‘ <a href="mailto:&#x65;&#x6c;&#x6d;&#101;&#x72;&#x40;&#102;&#x75;&#100;&#x64;&#46;&#x63;&#x6f;&#109;">&#x65;&#x6c;&#x6d;&#101;&#x72;&#x40;&#102;&#x75;&#100;&#x64;&#46;&#x63;&#x6f;&#109;</a> ’<br>WHERE cust_id=10005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmjgrtzj30b705mjv7.jpg"></p>
-<p>为了删除某个列的值，可设置它为NULL（假定表定义允许NULL值）<br>UPDATE customers<br>SET cust_email=NULL<br>WHERE cust_id=10005;</p>
-<p>2）为了从一个表中删除（去掉）数据，可使用DELETE语句<br>从表中删除特定的行<br>从表中删除所有行</p>
-<p>DELETE FROM customers<br>WHERE cust_id =10006;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmsze4qj30b604rtbq.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwn2z6fvj30bs0c9jx3.jpg"></p>
+        <p>插入数据</p>
+<p>INSERT是用来插入（或添加）行到数据库表的【INSERT语句一般不会产生输出】<br>插入可以用几种方式使用：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwj7dds6j304x02hglv.jpg"></p>
+<p>1）插入完整的行<br>INSERT INTO Customers<br>VALUES(NULL,<br>               ‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’,<br>               NULL,<br>               NULL);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwjftpo2j30bp07jn0v.jpg"></p>
+<p>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country,<br>         cust_contact,<br>         cust_email)<br>VALUES(‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’,<br>               NULL,<br>               NULL);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwjud82hj30bq04gacb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwk29g09j30b502hjt5.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwka1hpsj30b70d4wms.jpg"></p>
+<p>2)插入多个行<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’);<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(‘M.Martian’,<br>               ’42 Galaxy Way’,<br>               ’New York’,<br>               ‘NY’,<br>               ’11213’,<br>               ‘USA’);</p>
+<p>只要每条INSERT语句中的列名（和次序）相同，可以如下组合各语句：<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(<br>               ‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’<br>              )，<br>              (<br>               ‘M.Martian’,<br>               ’42 Galaxy Way’,<br>               ’New York’,<br>               ‘NY’,<br>               ’11213’,<br>               ‘USA’<br>               );<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwkm47q6j30b7022ta4.jpg"></p>
+<p>3）插入检索出的数据<br>INSERT INTO Customers(cust_id,<br>         cust_contact,<br>         cust_email,<br>         cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>SELECT cust_id,<br>         cust_contact,<br>         cust_email,<br>         cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country<br>FROM custnew;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwkxfdpej30bj05q0v4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwl5nalvj30b704a77c.jpg"></p>
+<p>INSERT SELECT中SELECT语句可包含WHERE子句以过滤插入的数据</p>
 
       
     </div>
@@ -615,10 +541,10 @@
 
 
   
-    <article id="post-操作系统原理/操作系统原理/文件系统" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/文件系统" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <a  href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" class="article-date">
       <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
 </a>
 
@@ -633,7 +559,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">文件系统</a>
+      <a  class="article-title" href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/">文件系统</a>
     </h1>
   
 
@@ -684,11 +610,11 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/创建和操纵表" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《MySQL必知必会》/更新和删除数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/" class="article-date">
-      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
+      <a  href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
 </a>
 
     </div>
@@ -702,7 +628,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/">创建和操纵表</a>
+      <a  class="article-title" href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">更新和删除数据</a>
     </h1>
   
 
@@ -713,21 +639,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>创建和操纵表</p>
-<p>一般有两种创建表的方法：<br>1）使用具有交互式创建和管理表的工具<br>2）表也可以直接用MySQL语句操纵</p>
-<p>值得注意的是，在使用交互式工具时，实际上使用的是MySQL语句，但是这些语句不是用户编写的，界面工具会自动生成并执行相应的MySQL语句（更改现有表时也是这样）</p>
-<p>为利用CREATE TABLE创建表，必须给出下列信息：<br>1）新表的名字，在关键字CREATE TABLE之后给出<br>2）表列的名字和定义，用逗号分隔</p>
-<p>1）表的主键可以在创建表时用PRIMARY KEY关键字指定，为创建由多个列组成的主键，应该以逗号分隔的列表给出各列名；主键为其值唯一标识表中每个行的列，主键中只能使用不允许NULL值的列，允许NULL值的列不能作为唯一标识<br>CREATE TABLE customers<br>(<br>     custid              int                NOT NULL AUTOINCREMENT,<br>     cust_name        char(50)     NOT NULL,<br>     cust_address    char(50)     NULL,<br>     cust_city           char(50)     NULL,<br>     cust_state         char(5)       NULL,<br>     cust_zip             char(10)     NULL,<br>     cust_country     char(50)     NULL,<br>     cust_contact     char(50)     NULL,<br>     cust_email         char(255)   NULL,<br>     PRIMARY KEY (cust_id)<br>)ENGINE-InnoDB;</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwon1sojj30b4044jub.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwoulrokj30b402lwgb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp2xsdhj30b402l40a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp9p6ubj30b402l761.jpg"></p>
-<p>AUTOINCREMENT告诉MySQL，本列每当增加一行时自动增量。每次执行一个INSERT操作时，MySQL自动对该列增量（从而才有这个关键字AUTOINCREMENT），给该列赋予下一个可用的值。这样给每个行分配一个唯一的custid，从而可以用作主键值；每个表只允许一个AUTOINCREMENT列，而且它必须被索引（如通过使它成为主键）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwpk2xfbj30b40bjjz3.jpg"></p>
-<p>2）如果在插入行时没有给出值，MySQL允许指定此时使用的默认值。默认值用CREATE TABLE语句的列定义中的DEFAULT关键字指定<br>CREATE TABLE orderitems<br>(<br>     order_num        int                     NOT NULL,<br>     order_item        int                     NOT NULL,<br>     prod_id             char(10)           NOT NULL,<br>     quantity            int                     NOT NULL DEFAULT 1,<br>     item_price        decimal(8,2)    NOT NULL,<br>     PRIMARY KEY(ordernum,orderitem)<br>)ENGINE-InnoDB;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwptvtivj30b404d40w.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq1d6f2j30bw07ndis.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq88t37j30bw0f0wlh.jpg"></p>
-<p>3)更新表<br>为了使用ALTER TABLE更改表结构，必须给出下面的信息：<br>1）在ALTER TABLE之后给出要更改的表名（该表必须存在，否则将出错）<br>2）所做更改的列表</p>
-<p>ALTER TABLE vendors<br>ADD vend_phone CHAR(20);</p>
-<p>删除刚刚添加的列：<br>ALTER TABLE Vendors<br>DROP COLUMN vend_phone;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqhn92kj30bw08l76r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqphxx2j30bw01ldg7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqwbdwtj30bw07e0wg.jpg"></p>
-<p>4)删除表：删除整个表而不是其内容，删除表没有确认，也不能撤销，执行这条语句将永久删除该表</p>
-<p>DROP TABLE customers2;</p>
-<p>5)重命名表</p>
-<p>RENAME TABLE customers2 TO customers,<br>                            backup_vendors TO vendors;</p>
+        <p>更新和删除数据</p>
+<p>1）为了更新（修改）表中的数据，可使用UPDATE语句，可采用两种方式使用UPDATE：<br>更新表中特定行；<br>更新表中所有行；</p>
+<p>UPDATE语句的组成：<br>1）要更新的表<br>2）列名和它们的新值<br>3）确定要更新行的过滤条件</p>
+<p>UPDATE customers<br>SET cust_email=‘ <a href="mailto:&#x65;&#108;&#109;&#101;&#114;&#x40;&#x66;&#x75;&#x64;&#x64;&#46;&#x63;&#111;&#x6d;">&#x65;&#108;&#109;&#101;&#114;&#x40;&#x66;&#x75;&#x64;&#x64;&#46;&#x63;&#111;&#x6d;</a> ’<br>WHERE cust_id=10005;</p>
+<p>UPDATE customers<br>SET cust_name=’The Fudds’,<br>        cust_email=‘ <a href="mailto:&#101;&#x6c;&#109;&#101;&#114;&#64;&#x66;&#117;&#100;&#x64;&#46;&#x63;&#111;&#x6d;">&#101;&#x6c;&#109;&#101;&#114;&#64;&#x66;&#117;&#100;&#x64;&#46;&#x63;&#111;&#x6d;</a> ’<br>WHERE cust_id=10005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmjgrtzj30b705mjv7.jpg"></p>
+<p>为了删除某个列的值，可设置它为NULL（假定表定义允许NULL值）<br>UPDATE customers<br>SET cust_email=NULL<br>WHERE cust_id=10005;</p>
+<p>2）为了从一个表中删除（去掉）数据，可使用DELETE语句<br>从表中删除特定的行<br>从表中删除所有行</p>
+<p>DELETE FROM customers<br>WHERE cust_id =10006;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmsze4qj30b604rtbq.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwn2z6fvj30bs0c9jx3.jpg"></p>
 
       
     </div>
@@ -764,10 +684,10 @@
 
 
   
-    <article id="post-操作系统原理/操作系统原理/文件系统概念" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/文件系统概念" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" class="article-date">
+      <a  href="/2020/10/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/" class="article-date">
       <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
 </a>
 
@@ -782,7 +702,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/">文件系统概念</a>
+      <a  class="article-title" href="/2020/10/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5/">文件系统概念</a>
     </h1>
   
 
@@ -844,10 +764,90 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/使用视图" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《MySQL必知必会》/创建和操纵表" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/11/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/" class="article-date">
+      <a  href="/2020/10/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/" class="article-date">
+      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/">创建和操纵表</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>创建和操纵表</p>
+<p>一般有两种创建表的方法：<br>1）使用具有交互式创建和管理表的工具<br>2）表也可以直接用MySQL语句操纵</p>
+<p>值得注意的是，在使用交互式工具时，实际上使用的是MySQL语句，但是这些语句不是用户编写的，界面工具会自动生成并执行相应的MySQL语句（更改现有表时也是这样）</p>
+<p>为利用CREATE TABLE创建表，必须给出下列信息：<br>1）新表的名字，在关键字CREATE TABLE之后给出<br>2）表列的名字和定义，用逗号分隔</p>
+<p>1）表的主键可以在创建表时用PRIMARY KEY关键字指定，为创建由多个列组成的主键，应该以逗号分隔的列表给出各列名；主键为其值唯一标识表中每个行的列，主键中只能使用不允许NULL值的列，允许NULL值的列不能作为唯一标识<br>CREATE TABLE customers<br>(<br>     custid              int                NOT NULL AUTOINCREMENT,<br>     cust_name        char(50)     NOT NULL,<br>     cust_address    char(50)     NULL,<br>     cust_city           char(50)     NULL,<br>     cust_state         char(5)       NULL,<br>     cust_zip             char(10)     NULL,<br>     cust_country     char(50)     NULL,<br>     cust_contact     char(50)     NULL,<br>     cust_email         char(255)   NULL,<br>     PRIMARY KEY (cust_id)<br>)ENGINE-InnoDB;</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwon1sojj30b4044jub.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwoulrokj30b402lwgb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp2xsdhj30b402l40a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp9p6ubj30b402l761.jpg"></p>
+<p>AUTOINCREMENT告诉MySQL，本列每当增加一行时自动增量。每次执行一个INSERT操作时，MySQL自动对该列增量（从而才有这个关键字AUTOINCREMENT），给该列赋予下一个可用的值。这样给每个行分配一个唯一的custid，从而可以用作主键值；每个表只允许一个AUTOINCREMENT列，而且它必须被索引（如通过使它成为主键）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwpk2xfbj30b40bjjz3.jpg"></p>
+<p>2）如果在插入行时没有给出值，MySQL允许指定此时使用的默认值。默认值用CREATE TABLE语句的列定义中的DEFAULT关键字指定<br>CREATE TABLE orderitems<br>(<br>     order_num        int                     NOT NULL,<br>     order_item        int                     NOT NULL,<br>     prod_id             char(10)           NOT NULL,<br>     quantity            int                     NOT NULL DEFAULT 1,<br>     item_price        decimal(8,2)    NOT NULL,<br>     PRIMARY KEY(ordernum,orderitem)<br>)ENGINE-InnoDB;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwptvtivj30b404d40w.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq1d6f2j30bw07ndis.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq88t37j30bw0f0wlh.jpg"></p>
+<p>3)更新表<br>为了使用ALTER TABLE更改表结构，必须给出下面的信息：<br>1）在ALTER TABLE之后给出要更改的表名（该表必须存在，否则将出错）<br>2）所做更改的列表</p>
+<p>ALTER TABLE vendors<br>ADD vend_phone CHAR(20);</p>
+<p>删除刚刚添加的列：<br>ALTER TABLE Vendors<br>DROP COLUMN vend_phone;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqhn92kj30bw08l76r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqphxx2j30bw01ldg7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqwbdwtj30bw07e0wg.jpg"></p>
+<p>4)删除表：删除整个表而不是其内容，删除表没有确认，也不能撤销，执行这条语句将永久删除该表</p>
+<p>DROP TABLE customers2;</p>
+<p>5)重命名表</p>
+<p>RENAME TABLE customers2 TO customers,<br>                            backup_vendors TO vendors;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/操作系统原理/文件物理结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" class="article-date">
       <time datetime="2020-10-10T16:00:00.000Z" itemprop="datePublished">2020-10-11</time>
 </a>
 
@@ -862,7 +862,85 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/11/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/">使用视图</a>
+      <a  class="article-title" href="/2020/10/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/">文件物理结构</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>文件物理结构：</p>
+<p>类型：</p>
+<p>1）连续文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord0iwx21j30pe0hfdlu.jpg"></p>
+<p>连续文件的特点：文件建立时给出文件最大长度并登记文件起始位置</p>
+<p>优点：<br>1）简单<br>2）支持顺序存取和随机存取<br>3）顺序存取速度快：所需磁盘寻道次数和寻道时间最少</p>
+<p>缺点：<br>1）文件不易动态增长：预留空间过大造成浪费，过小又不合适，需要重新分配和移动<br>2）不利于文件插入和删除<br>3）外部碎片问题</p>
+<p>2）索引结构：文件存放在不连续的存储块中，建立索引表记录文件逻辑块和物理存储块的对应关系</p>
+<p>索引表单独放在存储块中<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord0wj18tj30ko0g042z.jpg"></p>
+<p>索引文件的特点：<br>1）文件=索引区+数据区<br>2）先访问索引，再访问数据<br>3）支持顺序存取和随机存取<br>4）支持文件动态增长、插入、删除</p>
+<p>3）串联文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord16p9fnj30vq0g6tgn.jpg"></p>
+<p>特点：<br>1）适用于顺序存取，随机存取较为困难<br>2）提高了磁盘空间利用率，不存在外部碎片问题<br>3）有利于文件动态扩充、插入和删除</p>
+<p>缺点：<br>1）存取速度慢，不适用于随机存取<br>2）可靠性问题：若next指针出错，则文件访问失败<br>3）next指针占用一定的空间</p>
+<p>串联文件的应用：FAT文件系统</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/使用视图" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/" class="article-date">
+      <time datetime="2020-10-10T16:00:00.000Z" itemprop="datePublished">2020-10-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE/">使用视图</a>
     </h1>
   
 
@@ -904,84 +982,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/文件物理结构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/" class="article-date">
-      <time datetime="2020-10-10T16:00:00.000Z" itemprop="datePublished">2020-10-11</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84/">文件物理结构</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>文件物理结构：</p>
-<p>类型：</p>
-<p>1）连续文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord0iwx21j30pe0hfdlu.jpg"></p>
-<p>连续文件的特点：文件建立时给出文件最大长度并登记文件起始位置</p>
-<p>优点：<br>1）简单<br>2）支持顺序存取和随机存取<br>3）顺序存取速度快：所需磁盘寻道次数和寻道时间最少</p>
-<p>缺点：<br>1）文件不易动态增长：预留空间过大造成浪费，过小又不合适，需要重新分配和移动<br>2）不利于文件插入和删除<br>3）外部碎片问题</p>
-<p>2）索引结构：文件存放在不连续的存储块中，建立索引表记录文件逻辑块和物理存储块的对应关系</p>
-<p>索引表单独放在存储块中<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord0wj18tj30ko0g042z.jpg"></p>
-<p>索引文件的特点：<br>1）文件=索引区+数据区<br>2）先访问索引，再访问数据<br>3）支持顺序存取和随机存取<br>4）支持文件动态增长、插入、删除</p>
-<p>3）串联文件<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gord16p9fnj30vq0g6tgn.jpg"></p>
-<p>特点：<br>1）适用于顺序存取，随机存取较为困难<br>2）提高了磁盘空间利用率，不存在外部碎片问题<br>3）有利于文件动态扩充、插入和删除</p>
-<p>缺点：<br>1）存取速度慢，不适用于随机存取<br>2）可靠性问题：若next指针出错，则文件访问失败<br>3）next指针占用一定的空间</p>
-<p>串联文件的应用：FAT文件系统</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
     </div>
 
       

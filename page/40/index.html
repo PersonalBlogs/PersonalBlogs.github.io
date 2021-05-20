@@ -228,10 +228,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-数据结构和算法/C实例/字符输入输出：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/字符输入输出：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A/">字符输入输出：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A/">字符输入输出：</a>
     </h1>
   
 
@@ -325,10 +325,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/序列前n项和：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/哥德巴赫猜想：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%BA%8F%E5%88%97%E5%89%8Dn%E9%A1%B9%E5%92%8C%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%93%A5%E5%BE%B7%E5%B7%B4%E8%B5%AB%E7%8C%9C%E6%83%B3%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -343,7 +343,276 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%BA%8F%E5%88%97%E5%89%8Dn%E9%A1%B9%E5%92%8C%EF%BC%9A/">序列前n项和：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%93%A5%E5%BE%B7%E5%B7%B4%E8%B5%AB%E7%8C%9C%E6%83%B3%EF%BC%9A/">哥德巴赫猜想：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kdonrxej30l90tzq5x.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kdugac4j30kk0acacr.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//验证100以内的正偶数都能分解为两个素数之和，即验证哥德巴赫猜想对100以内（大于二）的正偶数成立。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ss</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i&lt;=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">2</span>;j&lt;i;j++)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(i!=j+<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,j,k,flag1,flag2,n=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">4</span>;i&lt;<span class="number">100</span>;i+=<span class="number">2</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">2</span>;k&lt;=i/<span class="number">2</span>;k++)&#123;</span><br><span class="line">            </span><br><span class="line">            j=i-k;</span><br><span class="line">            flag1=ss(k);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(flag1)&#123;</span><br><span class="line">                </span><br><span class="line">                flag2=ss(j);</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span>(flag2)&#123;</span><br><span class="line">                    </span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%3d=%3d+%3d,&quot;</span>,i,k,j);</span><br><span class="line">                    n++;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span>(n%<span class="number">8</span>==<span class="number">0</span>)&#123;</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发实战/数据结构和算法/C实例/对小数进行四舍五入：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AF%B9%E5%B0%8F%E6%95%B0%E8%BF%9B%E8%A1%8C%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AF%B9%E5%B0%8F%E6%95%B0%E8%BF%9B%E8%A1%8C%E5%9B%9B%E8%88%8D%E4%BA%94%E5%85%A5%EF%BC%9A/">对小数进行四舍五入：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kbm9100j30ez0eu405.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请用户输入一个实数（浮点型），编写算法对这个实数进行四舍五入到个位的运算</span></span><br><span class="line"><span class="comment">//   12.56----13      12.45----12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//让用户输入一个小数</span></span><br><span class="line">    <span class="keyword">double</span> num=<span class="number">0.0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入一个小数：&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;num);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//对这个数进行四舍五入计算</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i=num;<span class="comment">//拿到整数部分</span></span><br><span class="line">    <span class="keyword">double</span> xiaoShu=num-i;<span class="comment">//小数部分</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(xiaoShu &gt;= <span class="number">0.5</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;i=%d\n&quot;</span>,i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发实战/数据结构和算法/C实例/学生管理系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">学生管理系统</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><strong>//</strong><br><strong>//  main.c</strong><br><strong>//**学生系统</strong>//**<br><strong>//  Created by</strong>廖家龙<strong>on 2020/6/15.</strong><br>**//  Copyright © 2020 liuyuecao. All rights reserved.**<br><strong>//</strong></p>
+<p><strong>#include &lt;stdio.h&gt;</strong><br><strong>#include &lt;string.h&gt;</strong><br><strong>#include &lt;stdlib.h&gt;</strong></p>
+<p><strong>#define NUM 20</strong></p>
+<p><strong>//**性别枚举，表示学员的性别</strong>typedef enum{**<br>**    GenderMale,**<br>**    GenderFemale**<br><strong>} Gender;</strong></p>
+<p><strong>//**学生结构体，表示一个学生数据</strong>typedef struct{**<br>**    int id;//<strong>学生编号</strong>    char *name;//<strong>学生姓名</strong>    int age;//<strong>学生年龄</strong>    Gender gender;//<strong>学生性别</strong>    int score;//<strong>学生成绩</strong>} Student;**</p>
+<p><strong>//**结构体数组，这个数组中存储的是</strong>10<strong>个学生的信息</strong>Student students[NUM]={**<br>**    {1,”jack”,18,GenderMale,100},**<br>**    {2,”rose”,21,GenderFemale,45},**<br>**    {3,”lily”,26,GenderFemale,23},**<br>**    {4,”jim1”,12,GenderMale,89},**<br>**    {5,”poly”,3,GenderMale,67},**<br>**    {6,”meimei”,19,GenderFemale,89},**<br>**    {7,”likai”,31,GenderMale,88},**<br>**    {8,”Qiang”,45,GenderMale,12},**<br>**    {9,”aDong”,29,GenderMale,76},**<br>**    {10,”asan”,35,GenderMale,91},**<br><strong>};</strong></p>
+<p><strong>//**代表数组中真正的存储了多少个学生的信息</strong>int realLength=10;**</p>
+<p><strong>//**显示一级菜单，并接收用户的选择</strong>int showMenu();**</p>
+<p><strong>//**查询学生</strong>void query();**</p>
+<p><strong>//**新增学生</strong>void addStudent();**</p>
+<p><strong>//**删除学生</strong>void deleteStudent();**</p>
+<p><strong>//**修改学生</strong>void modifyStudent();**</p>
+<p><strong>//**显示查询的二级菜单</strong>int showQueryMenu();**</p>
+<p><strong>//**查询所有的学生信息</strong>void queryAll();**</p>
+<p><strong>//**根据编号查询</strong>void queryById();**</p>
+<p><strong>//**根据姓名查询</strong>void queryByName();**</p>
+<p><strong>//**根据年龄查询</strong>void queryByAge();**</p>
+<p><strong>//**根据性别查询</strong>void queryByGender();**</p>
+<p><strong>//**根据成绩查询</strong>void queryByScore();**</p>
+<p>*<em>int main(int argc, const char * argv[]) {*</em></p>
+<p>**    while(1){**</p>
+<p>**    //1.<strong>显示操作菜单，并接收用户的选择</strong>    int userSelect=showMenu();**</p>
+<p>**    //2.<strong>判断用户的选择，根据用户的选择来做不同的事情</strong>    switch (userSelect) {**<br>**        case 1:**<br>**            //<strong>查询学生</strong>            query();**<br>**            break;**<br>**         case 2:**<br>**            //<strong>新增学生</strong>            addStudent();**<br>**            break;**<br>**         case 3:**<br>**            //<strong>删除学生</strong>            deleteStudent();**<br>**            break;**<br>**         case 4:**<br>**            //<strong>修改学生</strong>            modifyStudent();**<br>**            break;**<br>**        default:**<br>**            //<strong>结束程序</strong>            break;**<br>**    }**<br><strong>}</strong><br><strong>}</strong></p>
+<p><strong>//**显示一级菜单，并接收用户的选择</strong>int showMenu(){**<br>**    //1.<strong>显示菜单</strong>    printf(“*<strong>*<strong><strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);**<br>**    printf(“*</strong>欢迎使用学生管理系统*<strong>\n”);</strong><br>**    printf(“*              1.<strong>查询学生*<strong>\n”);</strong><br>**    printf(“*              2.<strong>新增学生*<strong>\n”);</strong><br>**    printf(“*              3.<strong>删除学生*<strong>\n”);</strong><br>**    printf(“*              4.<strong>修改学生*<strong>\n”);</strong><br>**    printf(“*              5.<strong>退出系统*<strong>\n”);</strong><br>**    printf(“*<strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);**<br>**    //<strong>接收用户的选择</strong>    printf(“<strong>请输入你的选择：</strong>”);**<br>**    int userSelect=0;**<br>**    scanf(“%d”,&amp;userSelect);**<br>**    //3.<strong>将用户的选择返回</strong>    return userSelect;**<br><strong>}</strong></p>
+<p><strong>//**查询学生</strong>void query(){**</p>
+<p>**    //1.<strong>显示查询的二级菜单，并接收用户的选择</strong>    int userSelect=showQueryMenu();**<br>**    //2.<strong>判断用户的选择，根据用户的选择作出不同的查询</strong>    switch (userSelect) {**<br>**        case 1:**<br>**            //<strong>查询所有学生信息</strong>            queryAll();**<br>**            break;**<br>**         case 2:**<br>**            //<strong>根据编号查询</strong>            queryById();**<br>**            break;**<br>**         case 3:**<br>**            //<strong>根据姓名查询</strong>            queryByName();**<br>**            break;**<br>**         case 4:**<br>**            //<strong>根据年龄查询</strong>            queryByAge();**<br>**            break;**<br>**         case 5:**<br>**            //<strong>根据性别查询</strong>            queryByGender();**<br>**            break;**<br>**        default:**<br>**            //<strong>根据成绩查询</strong>            queryByScore();**<br>**            break;**<br>**    }**<br><strong>}</strong></p>
+<p><strong>//**显示查询的二级菜单</strong>int showQueryMenu(){**</p>
+<p>**    //1.<strong>显示查询的二级菜单</strong>    printf(“*<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>**</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);**<br>**    printf(“*<strong>欢迎使用学生管理系统*<strong>\n”);</strong><br>**    printf(“*              1.<strong>查询所有学生信息*<strong>\n”);</strong><br>**    printf(“*              2.<strong>根据编号查询*<strong>\n”);</strong><br>**    printf(“*              3.<strong>根据姓名查询*<strong>\n”);</strong><br>**    printf(“*              4.<strong>根据年龄查询*<strong>\n”);</strong><br>**    printf(“*              5.<strong>根据性别查询*<strong>\n”);</strong><br>**    printf(“*              6.<strong>根据成绩查询*<strong>\n”);</strong><br>**    printf(“*<strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);**</p>
+<p>**    //2.<strong>接收用户的选择</strong>    printf(“<strong>请输入你要进行的查询编号：</strong>”);**<br>**    int userSelect=0;**<br>**    scanf(“%d”,&amp;userSelect);**<br>**    //3.<strong>返回用户的选择</strong>    return userSelect;**<br><strong>}</strong></p>
+<p><strong>//**新增学生</strong>void addStudent(){**<br>**    //1.<strong>输入要新增的学生的信息</strong>    //<strong>编号不输入，让系统自动生成<br>**    //1.1.**先输入姓名</strong>    printf(“<strong>请输入新增的学生的姓名：</strong>”);**</p>
+<p>**    char name1[10];**</p>
+<p>**    rewind(stdin);**</p>
+<p>**    fgets(name1,10,stdin);**<br>**    size_t len=strlen(name1);**</p>
+<p>**    if(name1[len-1] == ‘\n’){**<br>**        name1[len-1]=‘\0’;**<br>**    }**</p>
+<p>**    char *name=calloc(len+1,sizeof(char));**<br>**    strcpy(name, name1);**</p>
+<p>**    //1.2.<strong>输入年龄</strong>    printf(“<strong>请输入新增的学生的年龄：</strong>”);**<br>**    int age =0;**<br>**    scanf(“%d”,&amp;age);**</p>
+<p>**    //1.3.<strong>输入性别</strong>    printf(“<strong>请输入新增的学生的性别：</strong>0—&gt;<strong>男</strong>0—&gt;<strong>女</strong>”);**<br>**    int gender =0;**<br>**    scanf(“%d”,&amp;gender);**</p>
+<p>**    //1.4.<strong>输入成绩</strong>    printf(“<strong>请输入新增的学生的成绩：</strong>”);**<br>**    int score =0;**<br>**    scanf(“%d”,&amp;score);**</p>
+<p>**    //2.<strong>创建结构体变量</strong>    Student stu={students[realLength-1].id+1,name,age,gender,score};**</p>
+<p>**    //3.<strong>将输入的学生的信息保存在数组中</strong>    students[realLength]=stu;**<br>**    realLength++;**<br><strong>}</strong></p>
+<p><strong>//**删除学生</strong>void deleteStudent(){**</p>
+<p>**    printf(“<strong>请输入要删除的学生的编号：</strong>”);**<br>**    int id=0;**<br>**    scanf(“%d”,&amp;id);**</p>
+<p>**    int deleteIndex=-1;**<br>**    for(int I=0;i&lt;realLength;i++){**<br>**        if(students[I].id==id){**<br>**            deleteIndex=I;**<br>**            break;**<br>**        }**<br>**    }**</p>
+<p>**    if(deleteIndex==-1){**<br>**        printf(“<strong>你输入的编号有误</strong>”);**<br>**        return;**<br>**    }**</p>
+<p>**    for(int I=deleteIndex+1;i&lt;realLength;i++){**<br>**        students[i-1]=students[I];**<br>**    }**</p>
+<p>**    realLength—;**</p>
+<p><strong>}</strong></p>
+<p><strong>//**修改学生</strong>void modifyStudent(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**查询所有的学生信息</strong>void queryAll(){**</p>
+<p>**    printf(“<strong>编号</strong>\t\t<strong>姓名</strong>\t\t<strong>年龄</strong>\t\t<strong>性别</strong>\t\t<strong>成绩</strong>\t\t\n”);**</p>
+<p>**    for(int I=0;i&lt;realLength;i++){**</p>
+<p>**        printf(“%d\t\t%s\t\t%d\t\t%s\t\t%d\n”,**<br>**               students[I].id,**<br>**               students[I].name,**<br>**               students[I].age,**<br>**               students[I].gender==GenderMale ? “<strong>男</strong>”:”<strong>女</strong>”,**<br>**               students[I].score**<br>**               );**<br>**    }**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据编号查询</strong>void queryById(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据姓名查询</strong>void queryByName(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据年龄查询</strong>void queryByAge(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据性别查询</strong>void queryByGender(){**</p>
+<p><strong>}</strong></p>
+<p><strong>//**根据成绩查询</strong>void queryByScore(){**</p>
+<p>**    //1.<strong>让用户输入一个最小成绩，再让用户输入一个最大成绩</strong>    int min=0,max=0;**<br>**    printf(“<strong>请输入最小成绩和最大成绩，使用空格分隔：</strong>”);**<br>**    scanf(“%d%d”,&amp;min,&amp;max);**</p>
+<p>**    //3.<strong>打印</strong>    printf(“<strong>编号</strong>\t\t<strong>姓名</strong>\t\t<strong>年龄</strong>\t\t<strong>性别</strong>\t\t<strong>成绩</strong>\t\t\n”);**</p>
+<p>**    for(int I=0;i&lt;realLength;i++){**<br>**        if(students[I].score &gt;= min &amp;&amp; students[I].score &lt;= max){**<br>**            printf(“%d\t\t%s\t\t%d\t\t%s\t\t%d\n”,**<br>**               students[I].id,**<br>**               students[I].name,**<br>**               students[I].age,**<br>**               students[I].gender==GenderMale ? “<strong>男</strong>”:”<strong>女</strong>”,**<br>**               students[I].score**<br>**            );**<br>**        }**<br>**    }**</p>
+<p><strong>}</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发实战/数据结构和算法/C实例/序列前n项和：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%BA%8F%E5%88%97%E5%89%8Dn%E9%A1%B9%E5%92%8C%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%BA%8F%E5%88%97%E5%89%8Dn%E9%A1%B9%E5%92%8C%EF%BC%9A/">序列前n项和：</a>
     </h1>
   
 
@@ -400,10 +669,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/学生管理系统" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/将数组元素左边部分全是奇数，右边全是偶数，时间复杂度为O(n)：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%B0%86%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%B7%A6%E8%BE%B9%E9%83%A8%E5%88%86%E5%85%A8%E6%98%AF%E5%A5%87%E6%95%B0%EF%BC%8C%E5%8F%B3%E8%BE%B9%E5%85%A8%E6%98%AF%E5%81%B6%E6%95%B0%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO(n)%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -418,140 +687,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">学生管理系统</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><strong>//</strong><br><strong>//  main.c</strong><br><strong>//<strong>学生系统</strong>//</strong><br><strong>//  Created by</strong>廖家龙<strong>on 2020/6/15.</strong><br><strong>//  Copyright © 2020 liuyuecao. All rights reserved.</strong><br><strong>//</strong></p>
-<p><strong>#include &lt;stdio.h&gt;</strong><br><strong>#include &lt;string.h&gt;</strong><br><strong>#include &lt;stdlib.h&gt;</strong></p>
-<p><strong>#define NUM 20</strong></p>
-<p><strong>//<strong>性别枚举，表示学员的性别</strong>typedef enum{</strong><br>**    GenderMale,**<br>**    GenderFemale**<br><strong>} Gender;</strong></p>
-<p><strong>//<strong>学生结构体，表示一个学生数据</strong>typedef struct{</strong><br>**    int id;//<strong>学生编号</strong>    char <em>name;//<strong>学生姓名</strong>    int age;//<strong>学生年龄</strong>    Gender gender;//<strong>学生性别</strong>    int score;//<strong>学生成绩</strong>} Student;</em>*</p>
-<p><strong>//<strong>结构体数组，这个数组中存储的是</strong>10</strong>个学生的信息<strong>Student students[NUM]={</strong><br>**    {1,”jack”,18,GenderMale,100},**<br>**    {2,”rose”,21,GenderFemale,45},**<br>**    {3,”lily”,26,GenderFemale,23},**<br>**    {4,”jim1”,12,GenderMale,89},**<br>**    {5,”poly”,3,GenderMale,67},**<br>**    {6,”meimei”,19,GenderFemale,89},**<br>**    {7,”likai”,31,GenderMale,88},**<br>**    {8,”Qiang”,45,GenderMale,12},**<br>**    {9,”aDong”,29,GenderMale,76},**<br>**    {10,”asan”,35,GenderMale,91},**<br><strong>};</strong></p>
-<p><strong>//<strong>代表数组中真正的存储了多少个学生的信息</strong>int realLength=10;</strong></p>
-<p><strong>//<strong>显示一级菜单，并接收用户的选择</strong>int showMenu();</strong></p>
-<p><strong>//<strong>查询学生</strong>void query();</strong></p>
-<p><strong>//<strong>新增学生</strong>void addStudent();</strong></p>
-<p><strong>//<strong>删除学生</strong>void deleteStudent();</strong></p>
-<p><strong>//<strong>修改学生</strong>void modifyStudent();</strong></p>
-<p><strong>//<strong>显示查询的二级菜单</strong>int showQueryMenu();</strong></p>
-<p><strong>//<strong>查询所有的学生信息</strong>void queryAll();</strong></p>
-<p><strong>//<strong>根据编号查询</strong>void queryById();</strong></p>
-<p><strong>//<strong>根据姓名查询</strong>void queryByName();</strong></p>
-<p><strong>//<strong>根据年龄查询</strong>void queryByAge();</strong></p>
-<p><strong>//<strong>根据性别查询</strong>void queryByGender();</strong></p>
-<p><strong>//<strong>根据成绩查询</strong>void queryByScore();</strong></p>
-<p><strong>int main(int argc, const char * argv[]) {</strong></p>
-<p>**    while(1){**</p>
-<p>**    //1.<strong>显示操作菜单，并接收用户的选择</strong>    int userSelect=showMenu();**</p>
-<p>**    //2.<strong>判断用户的选择，根据用户的选择来做不同的事情</strong>    switch (userSelect) {**<br>**        case 1:**<br>**            //<strong>查询学生</strong>            query();**<br>**            break;**<br>**         case 2:**<br>**            //<strong>新增学生</strong>            addStudent();**<br>**            break;**<br>**         case 3:**<br>**            //<strong>删除学生</strong>            deleteStudent();**<br>**            break;**<br>**         case 4:**<br>**            //<strong>修改学生</strong>            modifyStudent();**<br>**            break;**<br>**        default:**<br>**            //<strong>结束程序</strong>            break;**<br>**    }**<br><strong>}</strong><br><strong>}</strong></p>
-<p><strong>//<strong>显示一级菜单，并接收用户的选择</strong>int showMenu(){</strong><br>**    //1.<strong>显示菜单</strong>    printf(“<strong><strong><strong><strong><strong><strong><strong><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><strong><em><strong><strong>\n”);</strong><br>**    printf(“</strong></em>欢迎使用学生管理系统</strong></em>\n”);</strong><br>**    printf(“</em>              1.<strong>查询学生</strong></em>\n”);</strong><br>**    printf(“</em>              2.<strong>新增学生</strong></em>\n”);</strong><br>**    printf(“</em>              3.<strong>删除学生</strong></em>\n”);</strong><br>**    printf(“</em>              4.<strong>修改学生</strong></em>\n”);</strong><br>**    printf(“</em>              5.<strong>退出系统</strong></em>\n”);</strong><br>**    printf(“</strong></strong></strong></strong></strong></strong>*******************************</strong>\n”);**<br>**    //<strong>接收用户的选择</strong>    printf(“<strong>请输入你的选择：</strong>”);**<br>**    int userSelect=0;**<br>**    scanf(“%d”,&amp;userSelect);**<br>**    //3.<strong>将用户的选择返回</strong>    return userSelect;**<br><strong>}</strong></p>
-<p><strong>//<strong>查询学生</strong>void query(){</strong></p>
-<p>**    //1.<strong>显示查询的二级菜单，并接收用户的选择</strong>    int userSelect=showQueryMenu();**<br>**    //2.<strong>判断用户的选择，根据用户的选择作出不同的查询</strong>    switch (userSelect) {**<br>**        case 1:**<br>**            //<strong>查询所有学生信息</strong>            queryAll();**<br>**            break;**<br>**         case 2:**<br>**            //<strong>根据编号查询</strong>            queryById();**<br>**            break;**<br>**         case 3:**<br>**            //<strong>根据姓名查询</strong>            queryByName();**<br>**            break;**<br>**         case 4:**<br>**            //<strong>根据年龄查询</strong>            queryByAge();**<br>**            break;**<br>**         case 5:**<br>**            //<strong>根据性别查询</strong>            queryByGender();**<br>**            break;**<br>**        default:**<br>**            //<strong>根据成绩查询</strong>            queryByScore();**<br>**            break;**<br>**    }**<br><strong>}</strong></p>
-<p><strong>//<strong>显示查询的二级菜单</strong>int showQueryMenu(){</strong></p>
-<p>**    //1.<strong>显示查询的二级菜单</strong>    printf(“<em><strong><strong><strong><strong><strong><strong><strong><strong><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><em><strong><em><strong><em><strong><strong>\n”);</strong><br>**    printf(“</strong></em>欢迎使用学生管理系统</strong></em>\n”);</strong><br>**    printf(“</em>              1.<strong>查询所有学生信息</strong></em>\n”);</strong><br>**    printf(“</em>              2.<strong>根据编号查询</strong></em>\n”);</strong><br>**    printf(“</em>              3.<strong>根据姓名查询</strong></em>\n”);</strong><br>**    printf(“</em>              4.<strong>根据年龄查询</strong></em>\n”);</strong><br>**    printf(“</em>              5.<strong>根据性别查询</strong></em>\n”);</strong><br>**    printf(“</em>              6.<strong>根据成绩查询</strong></em>\n”);</strong><br>**    printf(“</strong></strong></strong></strong></strong></strong></strong></strong>**********************************</em>\n”);**</p>
-<p>**    //2.<strong>接收用户的选择</strong>    printf(“<strong>请输入你要进行的查询编号：</strong>”);**<br>**    int userSelect=0;**<br>**    scanf(“%d”,&amp;userSelect);**<br>**    //3.<strong>返回用户的选择</strong>    return userSelect;**<br><strong>}</strong></p>
-<p><strong>//<strong>新增学生</strong>void addStudent(){</strong><br>**    //1.<strong>输入要新增的学生的信息</strong>    //<strong>编号不输入，让系统自动生成<br>**    //1.1.<strong>先输入姓名</strong>    printf(“</strong>请输入新增的学生的姓名：<strong>”);</strong></p>
-<p>**    char name1[10];**</p>
-<p>**    rewind(stdin);**</p>
-<p>**    fgets(name1,10,stdin);**<br>**    size_t len=strlen(name1);**</p>
-<p>**    if(name1[len-1] == ‘\n’){**<br>**        name1[len-1]=‘\0’;**<br>**    }**</p>
-<p>**    char <em>name=calloc(len+1,sizeof(char));*</em><br>**    strcpy(name, name1);**</p>
-<p>**    //1.2.<strong>输入年龄</strong>    printf(“<strong>请输入新增的学生的年龄：</strong>”);**<br>**    int age =0;**<br>**    scanf(“%d”,&amp;age);**</p>
-<p>**    //1.3.<strong>输入性别</strong>    printf(“<strong>请输入新增的学生的性别：</strong>0—&gt;<strong>男</strong>0—&gt;<strong>女</strong>”);**<br>**    int gender =0;**<br>**    scanf(“%d”,&amp;gender);**</p>
-<p>**    //1.4.<strong>输入成绩</strong>    printf(“<strong>请输入新增的学生的成绩：</strong>”);**<br>**    int score =0;**<br>**    scanf(“%d”,&amp;score);**</p>
-<p>**    //2.<strong>创建结构体变量</strong>    Student stu={students[realLength-1].id+1,name,age,gender,score};**</p>
-<p>**    //3.<strong>将输入的学生的信息保存在数组中</strong>    students[realLength]=stu;**<br>**    realLength++;**<br><strong>}</strong></p>
-<p><strong>//<strong>删除学生</strong>void deleteStudent(){</strong></p>
-<p>**    printf(“<strong>请输入要删除的学生的编号：</strong>”);**<br>**    int id=0;**<br>**    scanf(“%d”,&amp;id);**</p>
-<p>**    int deleteIndex=-1;**<br>**    for(int I=0;i&lt;realLength;i++){**<br>**        if(students[I].id==id){**<br>**            deleteIndex=I;**<br>**            break;**<br>**        }**<br>**    }**</p>
-<p>**    if(deleteIndex==-1){**<br>**        printf(“<strong>你输入的编号有误</strong>”);**<br>**        return;**<br>**    }**</p>
-<p>**    for(int I=deleteIndex+1;i&lt;realLength;i++){**<br>**        students[i-1]=students[I];**<br>**    }**</p>
-<p>**    realLength—;**</p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>修改学生</strong>void modifyStudent(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>查询所有的学生信息</strong>void queryAll(){</strong></p>
-<p>**    printf(“<strong>编号</strong>\t\t<strong>姓名</strong>\t\t<strong>年龄</strong>\t\t<strong>性别</strong>\t\t<strong>成绩</strong>\t\t\n”);**</p>
-<p>**    for(int I=0;i&lt;realLength;i++){**</p>
-<p>**        printf(“%d\t\t%s\t\t%d\t\t%s\t\t%d\n”,**<br>**               students[I].id,**<br>**               students[I].name,**<br>**               students[I].age,**<br>**               students[I].gender==GenderMale ? “<strong>男</strong>”:”<strong>女</strong>”,**<br>**               students[I].score**<br>**               );**<br>**    }**</p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据编号查询</strong>void queryById(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据姓名查询</strong>void queryByName(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据年龄查询</strong>void queryByAge(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据性别查询</strong>void queryByGender(){</strong></p>
-<p><strong>}</strong></p>
-<p><strong>//<strong>根据成绩查询</strong>void queryByScore(){</strong></p>
-<p>**    //1.<strong>让用户输入一个最小成绩，再让用户输入一个最大成绩</strong>    int min=0,max=0;**<br>**    printf(“<strong>请输入最小成绩和最大成绩，使用空格分隔：</strong>”);**<br>**    scanf(“%d%d”,&amp;min,&amp;max);**</p>
-<p>**    //3.<strong>打印</strong>    printf(“<strong>编号</strong>\t\t<strong>姓名</strong>\t\t<strong>年龄</strong>\t\t<strong>性别</strong>\t\t<strong>成绩</strong>\t\t\n”);**</p>
-<p>**    for(int I=0;i&lt;realLength;i++){**<br>**        if(students[I].score &gt;= min &amp;&amp; students[I].score &lt;= max){**<br>**            printf(“%d\t\t%s\t\t%d\t\t%s\t\t%d\n”,**<br>**               students[I].id,**<br>**               students[I].name,**<br>**               students[I].age,**<br>**               students[I].gender==GenderMale ? “<strong>男</strong>”:”<strong>女</strong>”,**<br>**               students[I].score**<br>**            );**<br>**        }**<br>**    }**</p>
-<p><strong>}</strong></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/将数组元素左边部分全是奇数，右边全是偶数，时间复杂度为O(n)：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%B0%86%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%B7%A6%E8%BE%B9%E9%83%A8%E5%88%86%E5%85%A8%E6%98%AF%E5%A5%87%E6%95%B0%EF%BC%8C%E5%8F%B3%E8%BE%B9%E5%85%A8%E6%98%AF%E5%81%B6%E6%95%B0%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO(n)%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%B0%86%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%B7%A6%E8%BE%B9%E9%83%A8%E5%88%86%E5%85%A8%E6%98%AF%E5%A5%87%E6%95%B0%EF%BC%8C%E5%8F%B3%E8%BE%B9%E5%85%A8%E6%98%AF%E5%81%B6%E6%95%B0%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO(n)%EF%BC%9A/">将数组元素左边部分全是奇数，右边全是偶数，时间复杂度为O(n)：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%B0%86%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%B7%A6%E8%BE%B9%E9%83%A8%E5%88%86%E5%85%A8%E6%98%AF%E5%A5%87%E6%95%B0%EF%BC%8C%E5%8F%B3%E8%BE%B9%E5%85%A8%E6%98%AF%E5%81%B6%E6%95%B0%EF%BC%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO(n)%EF%BC%9A/">将数组元素左边部分全是奇数，右边全是偶数，时间复杂度为O(n)：</a>
     </h1>
   
 
@@ -601,10 +737,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/尼科彻斯定理：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/打印三角形、乘法表：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%B0%BC%E7%A7%91%E5%BD%BB%E6%96%AF%E5%AE%9A%E7%90%86%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E5%8D%B0%E4%B8%89%E8%A7%92%E5%BD%A2%E3%80%81%E4%B9%98%E6%B3%95%E8%A1%A8%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -619,146 +755,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%B0%BC%E7%A7%91%E5%BD%BB%E6%96%AF%E5%AE%9A%E7%90%86%EF%BC%9A/">尼科彻斯定理：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8khwxtn2j30jx0q8q5f.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8ki59vbpj30cg02ot8v.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//尼科彻斯定理的内容是：任何一个整数的立方都可以写成一串连续奇数的和。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,k=<span class="number">0</span>,l,n,m,sum,flag=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input a number:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    </span><br><span class="line">    m=n*n*n;</span><br><span class="line">    i=m/<span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">        i=i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(flag==<span class="number">1</span>&amp;&amp;i&gt;=<span class="number">1</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        sum=<span class="number">0</span>;</span><br><span class="line">        k=<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">            </span><br><span class="line">            sum+=(i<span class="number">-2</span>*k);</span><br><span class="line">            k++;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum==m)&#123;</span><br><span class="line">                </span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d*%d*%d=%d=&quot;</span>,n,n,n,m);</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;k<span class="number">-1</span>;l++)&#123;</span><br><span class="line">                    </span><br><span class="line">                &#125;;</span><br><span class="line">                </span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d+&quot;</span>,i<span class="number">-1</span>*<span class="number">2</span>);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i-(k<span class="number">-1</span>)*<span class="number">2</span>);</span><br><span class="line">                </span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum&gt;m)&#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        i-=<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/打印最长的输入行" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E5%8D%B0%E6%9C%80%E9%95%BF%E7%9A%84%E8%BE%93%E5%85%A5%E8%A1%8C/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E5%8D%B0%E6%9C%80%E9%95%BF%E7%9A%84%E8%BE%93%E5%85%A5%E8%A1%8C/">打印最长的输入行</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">**#include&lt;stdio.h&gt;**</span><br><span class="line">**#define MAXLINE 1000//**允许输入行的最大长度**//getline**函数：将一行读入到**s**中并返回其长度**int getline1(char s[],int lim)&#123;**</span><br><span class="line">**    int c,i;**</span><br><span class="line">**    for(i=0;i&lt;lim-1 &amp;&amp; (c=getchar()) != EOF &amp;&amp; c != ‘\n’;++i)&#123;**</span><br><span class="line">**        s[i]=c;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(c==‘\n’)&#123;**</span><br><span class="line">**        s[I]=c;**</span><br><span class="line">**        ++I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    s[I]=‘\0’;**</span><br><span class="line">**    return I;**</span><br><span class="line">**&#125;**</span><br><span class="line"></span><br><span class="line">**//copy**函数：将**from**复制到**to**；这里假定**to**足够大**void copy(char to[],char from[])&#123;**</span><br><span class="line">**    int I;**</span><br><span class="line">**    I=0;**</span><br><span class="line">**    while((to[I]=from[I]) != ‘\0’)&#123;**</span><br><span class="line">**        ++I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**&#125;**</span><br><span class="line"></span><br><span class="line">**//**打印最长的输入行**main()&#123;**</span><br><span class="line">**    int len;//**当前行长度**    int max;//**目前为止发现的最长行的长度**    char line[MAXLINE];//**当前的输入行**    char longest[MAXLINE];//**用于保存最长的行    </span><br><span class="line">**    max=0;**</span><br><span class="line">**    while((len=getline1(line,MAXLINE)) &gt;0)&#123;**</span><br><span class="line">**        if(len&gt;max)&#123;**</span><br><span class="line">**            max=len;**</span><br><span class="line">**            copy(longest,line);**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(max&gt;0)&#123;     //**存在这样的行**        printf(“%s”,longest);**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    return 0;**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">**#include&lt;stdio.h&gt;**</span><br><span class="line">**#define MAXLINE 1000//**允许输入行的最大长度**  int max;//**目前为止发现的最长行的长度**  char line[MAXLINE];//**当前的输入行**  char longest[MAXLINE];//**用于保存最长的行**//getline**函数：将一行读入到**s**中并返回其长度**int getline1(void)&#123;**</span><br><span class="line">**    int c,i;**</span><br><span class="line">**    extern char line[];**</span><br><span class="line">    </span><br><span class="line">**    for(I=0;i&lt;MAXLINE-1 &amp;&amp; (c=getchar()) != EOF &amp;&amp; c != ‘\n’;++i)&#123;**</span><br><span class="line">**        line[I]=c;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(c==‘\n’)&#123;**</span><br><span class="line">**        line[I]=c;**</span><br><span class="line">**        ++I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    line[I]=‘\0’;**</span><br><span class="line">**    return I;**</span><br><span class="line">**&#125;**</span><br><span class="line"></span><br><span class="line">**//copy**函数：将**from**复制到**to**；这里假定**to**足够大**void copy(void)&#123;**</span><br><span class="line">**    int I;**</span><br><span class="line">**    extern char line[],longest[];**</span><br><span class="line">    </span><br><span class="line">**    I=0;**</span><br><span class="line">**    while((longest[I]=line[I]) != ‘\0’)&#123;**</span><br><span class="line">**        ++I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**&#125;**</span><br><span class="line"></span><br><span class="line">**//**打印最长的输入行**main()&#123;**</span><br><span class="line">**    int len;//**当前行长度**    extern int max;**</span><br><span class="line">**    extern char longest[];**</span><br><span class="line">    </span><br><span class="line">**    max=0;**</span><br><span class="line">**    while((len=getline1()) &gt;0)&#123;**</span><br><span class="line">**        if(len&gt;max)&#123;**</span><br><span class="line">**            max=len;**</span><br><span class="line">**            copy();**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(max&gt;0)&#123;     //**存在这样的行**        printf(“%s”,longest);**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    return 0;**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/打印三角形、乘法表：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E5%8D%B0%E4%B8%89%E8%A7%92%E5%BD%A2%E3%80%81%E4%B9%98%E6%B3%95%E8%A1%A8%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E5%8D%B0%E4%B8%89%E8%A7%92%E5%BD%A2%E3%80%81%E4%B9%98%E6%B3%95%E8%A1%A8%EF%BC%9A/">打印三角形、乘法表：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E5%8D%B0%E4%B8%89%E8%A7%92%E5%BD%A2%E3%80%81%E4%B9%98%E6%B3%95%E8%A1%A8%EF%BC%9A/">打印三角形、乘法表：</a>
     </h1>
   
 
@@ -821,10 +818,10 @@
 
 
   
-    <article id="post-数据结构和算法/C实例/打渔晒网问题：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/数据结构和算法/C实例/尼科彻斯定理：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E6%B8%94%E6%99%92%E7%BD%91%E9%97%AE%E9%A2%98%EF%BC%9A/" class="article-date">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%B0%BC%E7%A7%91%E5%BD%BB%E6%96%AF%E5%AE%9A%E7%90%86%EF%BC%9A/" class="article-date">
       <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
 </a>
 
@@ -839,7 +836,146 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E6%B8%94%E6%99%92%E7%BD%91%E9%97%AE%E9%A2%98%EF%BC%9A/">打渔晒网问题：</a>
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E5%B0%BC%E7%A7%91%E5%BD%BB%E6%96%AF%E5%AE%9A%E7%90%86%EF%BC%9A/">尼科彻斯定理：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8khwxtn2j30jx0q8q5f.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8ki59vbpj30cg02ot8v.jpg"></p>
+<p>源代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//尼科彻斯定理的内容是：任何一个整数的立方都可以写成一串连续奇数的和。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i,k=<span class="number">0</span>,l,n,m,sum,flag=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input a number:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    </span><br><span class="line">    m=n*n*n;</span><br><span class="line">    i=m/<span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">        i=i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(flag==<span class="number">1</span>&amp;&amp;i&gt;=<span class="number">1</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        sum=<span class="number">0</span>;</span><br><span class="line">        k=<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">            </span><br><span class="line">            sum+=(i<span class="number">-2</span>*k);</span><br><span class="line">            k++;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum==m)&#123;</span><br><span class="line">                </span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d*%d*%d=%d=&quot;</span>,n,n,n,m);</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;k<span class="number">-1</span>;l++)&#123;</span><br><span class="line">                    </span><br><span class="line">                &#125;;</span><br><span class="line">                </span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d+&quot;</span>,i<span class="number">-1</span>*<span class="number">2</span>);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i-(k<span class="number">-1</span>)*<span class="number">2</span>);</span><br><span class="line">                </span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(sum&gt;m)&#123;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        i-=<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发实战/数据结构和算法/C实例/打印最长的输入行" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E5%8D%B0%E6%9C%80%E9%95%BF%E7%9A%84%E8%BE%93%E5%85%A5%E8%A1%8C/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E5%8D%B0%E6%9C%80%E9%95%BF%E7%9A%84%E8%BE%93%E5%85%A5%E8%A1%8C/">打印最长的输入行</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">**#include&lt;stdio.h&gt;**</span><br><span class="line">**#define MAXLINE 1000&#x2F;&#x2F;**允许输入行的最大长度**&#x2F;&#x2F;getline**函数：将一行读入到**s**中并返回其长度**int getline1(char s[],int lim)&#123;**</span><br><span class="line">**    int c,i;**</span><br><span class="line">**    for(i&#x3D;0;i&lt;lim-1 &amp;&amp; (c&#x3D;getchar()) !&#x3D; EOF &amp;&amp; c !&#x3D; ‘\n’;++i)&#123;**</span><br><span class="line">**        s[i]&#x3D;c;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(c&#x3D;&#x3D;‘\n’)&#123;**</span><br><span class="line">**        s[I]&#x3D;c;**</span><br><span class="line">**        ++I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    s[I]&#x3D;‘\0’;**</span><br><span class="line">**    return I;**</span><br><span class="line">**&#125;**</span><br><span class="line"></span><br><span class="line">**&#x2F;&#x2F;copy**函数：将**from**复制到**to**；这里假定**to**足够大**void copy(char to[],char from[])&#123;**</span><br><span class="line">**    int I;**</span><br><span class="line">**    I&#x3D;0;**</span><br><span class="line">**    while((to[I]&#x3D;from[I]) !&#x3D; ‘\0’)&#123;**</span><br><span class="line">**        ++I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**&#125;**</span><br><span class="line"></span><br><span class="line">**&#x2F;&#x2F;**打印最长的输入行**main()&#123;**</span><br><span class="line">**    int len;&#x2F;&#x2F;**当前行长度**    int max;&#x2F;&#x2F;**目前为止发现的最长行的长度**    char line[MAXLINE];&#x2F;&#x2F;**当前的输入行**    char longest[MAXLINE];&#x2F;&#x2F;**用于保存最长的行    </span><br><span class="line">**    max&#x3D;0;**</span><br><span class="line">**    while((len&#x3D;getline1(line,MAXLINE)) &gt;0)&#123;**</span><br><span class="line">**        if(len&gt;max)&#123;**</span><br><span class="line">**            max&#x3D;len;**</span><br><span class="line">**            copy(longest,line);**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(max&gt;0)&#123;     &#x2F;&#x2F;**存在这样的行**        printf(“%s”,longest);**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    return 0;**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
+
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">**#include&lt;stdio.h&gt;**</span><br><span class="line">**#define MAXLINE 1000&#x2F;&#x2F;**允许输入行的最大长度**  int max;&#x2F;&#x2F;**目前为止发现的最长行的长度**  char line[MAXLINE];&#x2F;&#x2F;**当前的输入行**  char longest[MAXLINE];&#x2F;&#x2F;**用于保存最长的行**&#x2F;&#x2F;getline**函数：将一行读入到**s**中并返回其长度**int getline1(void)&#123;**</span><br><span class="line">**    int c,i;**</span><br><span class="line">**    extern char line[];**</span><br><span class="line">    </span><br><span class="line">**    for(I&#x3D;0;i&lt;MAXLINE-1 &amp;&amp; (c&#x3D;getchar()) !&#x3D; EOF &amp;&amp; c !&#x3D; ‘\n’;++i)&#123;**</span><br><span class="line">**        line[I]&#x3D;c;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(c&#x3D;&#x3D;‘\n’)&#123;**</span><br><span class="line">**        line[I]&#x3D;c;**</span><br><span class="line">**        ++I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    line[I]&#x3D;‘\0’;**</span><br><span class="line">**    return I;**</span><br><span class="line">**&#125;**</span><br><span class="line"></span><br><span class="line">**&#x2F;&#x2F;copy**函数：将**from**复制到**to**；这里假定**to**足够大**void copy(void)&#123;**</span><br><span class="line">**    int I;**</span><br><span class="line">**    extern char line[],longest[];**</span><br><span class="line">    </span><br><span class="line">**    I&#x3D;0;**</span><br><span class="line">**    while((longest[I]&#x3D;line[I]) !&#x3D; ‘\0’)&#123;**</span><br><span class="line">**        ++I;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**&#125;**</span><br><span class="line"></span><br><span class="line">**&#x2F;&#x2F;**打印最长的输入行**main()&#123;**</span><br><span class="line">**    int len;&#x2F;&#x2F;**当前行长度**    extern int max;**</span><br><span class="line">**    extern char longest[];**</span><br><span class="line">    </span><br><span class="line">**    max&#x3D;0;**</span><br><span class="line">**    while((len&#x3D;getline1()) &gt;0)&#123;**</span><br><span class="line">**        if(len&gt;max)&#123;**</span><br><span class="line">**            max&#x3D;len;**</span><br><span class="line">**            copy();**</span><br><span class="line">**        &#125;**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    if(max&gt;0)&#123;     &#x2F;&#x2F;**存在这样的行**        printf(“%s”,longest);**</span><br><span class="line">**    &#125;**</span><br><span class="line">**    return 0;**</span><br><span class="line">**&#125;**</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发实战/数据结构和算法/C实例/打渔晒网问题：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E6%B8%94%E6%99%92%E7%BD%91%E9%97%AE%E9%A2%98%EF%BC%9A/" class="article-date">
+      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/01/01/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%89%93%E6%B8%94%E6%99%92%E7%BD%91%E9%97%AE%E9%A2%98%EF%BC%9A/">打渔晒网问题：</a>
     </h1>
   
 
@@ -854,142 +990,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8k8gz7hzj30fx0h8gne.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8ka6mf1tj309q028gls.jpg"></p>
 <p>源代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果一个渔夫从2011年1月1日开始每三天打一次渔，两天晒一次网，</span></span><br><span class="line"><span class="comment">//编程实现当输入2011年1月1日以后的任意一天，输出该渔夫是在打渔还是在晒网。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">leap</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>((a % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; a % <span class="number">100</span> != <span class="number">0</span>) || a % <span class="number">400</span> == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">number</span><span class="params">(<span class="keyword">int</span> year,<span class="keyword">int</span> m,<span class="keyword">int</span> d)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> sum =<span class="number">0</span>,i,j;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">12</span>]=&#123;</span><br><span class="line">        <span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span></span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> b[<span class="number">12</span>]=&#123;</span><br><span class="line">        <span class="number">31</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span></span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(leap(year)==<span class="number">1</span>)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            </span><br><span class="line">            sum+=b[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            </span><br><span class="line">            sum+=a[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">2011</span>;j&lt;year;j++)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(leap(j)==<span class="number">1</span>)&#123;</span><br><span class="line">            </span><br><span class="line">            sum+=<span class="number">366</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            </span><br><span class="line">            sum+=<span class="number">365</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    sum+=d;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> year,month,day,n;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input year,month,day:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;year,&amp;month,&amp;day);</span><br><span class="line">    </span><br><span class="line">    n=number(year,month,day);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>((n%<span class="number">5</span>)&lt;<span class="number">4</span>&amp;&amp;(n%<span class="number">5</span>)&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d:%d:%d 打渔\n&quot;</span>,year,month,day);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d:%d:%d 晒网\n&quot;</span>,year,month,day);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/水仙花数：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0%EF%BC%9A/">水仙花数：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8knydoxkj30js0f5762.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//水仙花数是指一个N位正整数（N&gt;=3），它的每个位上的数字的N次幂之和等于它本身，例如：153=1^3+5^3+3^3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> hun, ten, ind, n;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;result is:\n&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>( n=<span class="number">100</span>; n&lt;<span class="number">1000</span>; n++ )&#123;  <span class="comment">/*整数的取值范围*/</span></span><br><span class="line">    </span><br><span class="line">        hun = n / <span class="number">100</span>;</span><br><span class="line">        ten = (n-hun*<span class="number">100</span>) / <span class="number">10</span>;</span><br><span class="line">        ind = n % <span class="number">10</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(n == hun*hun*hun + ten*ten*ten + ind*ind*ind)&#123;  <span class="comment">/*各位上的立方和是否与原数n相等*/</span></span><br><span class="line">           </span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d  &quot;</span>, n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/">数据结构和算法</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AE%9E%E4%BE%8B/" rel="tag">C实例</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构和算法/C实例/斐波那契数列：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%EF%BC%9A/" class="article-date">
-      <time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished">2019-01-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/C%E5%AE%9E%E4%BE%8B/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%EF%BC%9A/">斐波那契数列：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gl8kcydziej30mu0g7wge.jpg"></p>
-<p>源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//斐波那契数列的特点是：第1个和第2个数都为1，从第3个数开始，该数是前两个数之和。求这个数列的前30个元素。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">long</span> f[<span class="number">31</span>];</span><br><span class="line">    f[<span class="number">1</span>]=<span class="number">1</span>,f[<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;<span class="number">31</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        f[i]=f[i<span class="number">-1</span>]+f[i<span class="number">-2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">31</span>;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%ld  &quot;</span>,f[i]);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(i%<span class="number">5</span>==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     

@@ -228,10 +228,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-编程语言/Objective-C/点语法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/点语法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%82%B9%E8%AF%AD%E6%B3%95/" class="article-date">
+      <a  href="/2019/08/30/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E7%82%B9%E8%AF%AD%E6%B3%95/" class="article-date">
       <time datetime="2019-08-29T16:00:00.000Z" itemprop="datePublished">2019-08-30</time>
 </a>
 
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/30/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E7%82%B9%E8%AF%AD%E6%B3%95/">点语法</a>
+      <a  class="article-title" href="/2019/08/30/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E7%82%B9%E8%AF%AD%E6%B3%95/">点语法</a>
     </h1>
   
 
@@ -259,15 +259,15 @@
           
         <hr>
 <p>OC的对象如果要为属性赋值或者取值，就要调用对应的getter或者setter方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line">[p1 setName:@&quot;jack&quot;];</span><br><span class="line">[p1 setAge:18];</span><br><span class="line">[p1 setGender:GenderMale];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *p1&#x3D;[Person new];</span><br><span class="line"></span><br><span class="line">[p1 setName:@&quot;jack&quot;];</span><br><span class="line">[p1 setAge:18];</span><br><span class="line">[p1 setGender:GenderMale];</span><br></pre></td></tr></table></figure>
 
 <p>OC中使用点语法来访问对象的属性：</p>
 <p>语法：对象名.去掉下划线的属性名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p1.name=@&quot;jack&quot;;    //这个时候就会将@&quot;jack&quot;赋值给p1对象的_name属性</span><br><span class="line">NSString *name=p1.name;   //把p1对象的_name属性的值取出来</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p1.name&#x3D;@&quot;jack&quot;;    &#x2F;&#x2F;这个时候就会将@&quot;jack&quot;赋值给p1对象的_name属性</span><br><span class="line">NSString *name&#x3D;p1.name;   &#x2F;&#x2F;把p1对象的_name属性的值取出来</span><br></pre></td></tr></table></figure>
 
 <p>点语法的原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3tat0tqj30f206iad5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3thwrydj30f20400uh.jpg"></p>
 <p>注意：<br>1）在getter和setter中慎用点语法，因为有可能会造成无限递归，程序崩溃</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (void)setAge:(int)age&#123;</span><br><span class="line"></span><br><span class="line">   self.age=age;    //[self setAge:age];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (void)setAge:(int)age&#123;</span><br><span class="line"></span><br><span class="line">   self.age&#x3D;age;    &#x2F;&#x2F;[self setAge:age];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3tpwwz4j30ck03sjt9.jpg"><br>3）如果属性没有封装getter和setter是无法使用点语法的，因为点语法的本质是getter和setter方法</p>
 
       
@@ -305,10 +305,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/@property" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/@property" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@property/" class="article-date">
+      <a  href="/2019/08/29/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/@property/" class="article-date">
       <time datetime="2019-08-28T16:00:00.000Z" itemprop="datePublished">2019-08-29</time>
 </a>
 
@@ -323,7 +323,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/29/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@property/">property</a>
+      <a  class="article-title" href="/2019/08/29/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/@property/">property</a>
     </h1>
   
 
@@ -377,10 +377,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/@synthesize" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/@synthesize" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@synthesize/" class="article-date">
+      <a  href="/2019/08/28/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/@synthesize/" class="article-date">
       <time datetime="2019-08-27T16:00:00.000Z" itemprop="datePublished">2019-08-28</time>
 </a>
 
@@ -395,7 +395,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@synthesize/">synthesize</a>
+      <a  class="article-title" href="/2019/08/28/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/@synthesize/">synthesize</a>
     </h1>
   
 
@@ -453,10 +453,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/@property增强（Xcode4.4之后）" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/@property增强（Xcode4.4之后）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%A2%9E%E5%BC%BA%EF%BC%88Xcode4.4%E4%B9%8B%E5%90%8E%EF%BC%89/" class="article-date">
+      <a  href="/2019/08/27/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/@property%E5%A2%9E%E5%BC%BA%EF%BC%88Xcode4.4%E4%B9%8B%E5%90%8E%EF%BC%89/" class="article-date">
       <time datetime="2019-08-26T16:00:00.000Z" itemprop="datePublished">2019-08-27</time>
 </a>
 
@@ -471,7 +471,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%A2%9E%E5%BC%BA%EF%BC%88Xcode4.4%E4%B9%8B%E5%90%8E%EF%BC%89/">property增强（Xcode4.4之后）</a>
+      <a  class="article-title" href="/2019/08/27/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/@property%E5%A2%9E%E5%BC%BA%EF%BC%88Xcode4.4%E4%B9%8B%E5%90%8E%EF%BC%89/">property增强（Xcode4.4之后）</a>
     </h1>
   
 
@@ -521,10 +521,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/动态类型和静态类型" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/动态类型和静态类型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <a  href="/2019/08/26/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/" class="article-date">
       <time datetime="2019-08-25T16:00:00.000Z" itemprop="datePublished">2019-08-26</time>
 </a>
 
@@ -539,7 +539,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/26/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/">动态类型和静态类型</a>
+      <a  class="article-title" href="/2019/08/26/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/">动态类型和静态类型</a>
     </h1>
   
 
@@ -556,7 +556,7 @@
 <p>静态类型：指的是一个指针指向的对象是一个本类对象<br>动态类型：指的是一个指针指向的对象不是本类对象</p>
 <p>编译检查：编译器在编译的时候，能不能通过一个指针去调用指针指向的对象的方法？判断原则：看指针所属的类型之中是否有这个方法，如果有就认为可以调用，编译通过，如果这个类中没有，那么编译报错【苹果下的编译器的名字叫LLVM】</p>
 <p>我们可以将指针的类型做转换，来达到骗过编译器的目的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Animal *a1=[Pig new];</span><br><span class="line">[(Pig *)a1 eat];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Animal *a1&#x3D;[Pig new];</span><br><span class="line">[(Pig *)a1 eat];</span><br></pre></td></tr></table></figure>
 
 <p>运行检查：编译检查只是骗过了编译器，但是这个方法究竟能不能执行？<br>所以在运行的时候，会去检查对象中是否真的有这个方法，如果有就执行，如果没有就报错</p>
 <p>LSP父类指针指向子类对象，实际上任意的指针可以指向任意的对象，编译器是不会报错的；当一个子类指针指向一个父类对象的时候，编译器允许通过子类指针去调用子类独有的方法，但是在运行的时候是会出问题的，因为父类对象中根本没有子类成员</p>
@@ -596,10 +596,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/NSObject指针和id指针" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/NSObject指针和id指针" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/" class="article-date">
+      <a  href="/2019/08/25/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/" class="article-date">
       <time datetime="2019-08-24T16:00:00.000Z" itemprop="datePublished">2019-08-25</time>
 </a>
 
@@ -614,7 +614,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/25/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/">NSObject指针和id指针</a>
+      <a  class="article-title" href="/2019/08/25/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/">NSObject指针和id指针</a>
     </h1>
   
 
@@ -628,7 +628,7 @@
         <hr>
 <p>NSObject是OC中所有类的基类，根据LSP，NSObject指针就可以指向任意的OC对象，所以，NSObject指针是一个万能指针，可以指向任意的OC对象</p>
 <p>缺点：如果要调用指向的子类对象的独有的方法，就必须要做类型转换</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSObject *obj1=[Person new];</span><br><span class="line">[(Person *)obj1 sayHi];</span><br><span class="line"></span><br><span class="line">NSObject *obj2=[Student new];</span><br><span class="line">[(Student *)obj2 study];</span><br><span class="line"></span><br><span class="line">NSObject *obj3=@&quot;jack&quot;;</span><br><span class="line">[(NSString *)obj3 length];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSObject *obj1&#x3D;[Person new];</span><br><span class="line">[(Person *)obj1 sayHi];</span><br><span class="line"></span><br><span class="line">NSObject *obj2&#x3D;[Student new];</span><br><span class="line">[(Student *)obj2 study];</span><br><span class="line"></span><br><span class="line">NSObject *obj3&#x3D;@&quot;jack&quot;;</span><br><span class="line">[(NSString *)obj3 length];</span><br></pre></td></tr></table></figure>
 
 <p>id指针：是一个万能指针，可以指向任意的OC对象</p>
 <p>id是一个typedef自定义类型，在定义的时候已经加了<em>，所以，声明id指针的时候不需要再加</em>了</p>
@@ -671,10 +671,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/instancetype：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/instancetype：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/instancetype%EF%BC%9A/" class="article-date">
+      <a  href="/2019/08/24/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/instancetype%EF%BC%9A/" class="article-date">
       <time datetime="2019-08-23T16:00:00.000Z" itemprop="datePublished">2019-08-24</time>
 </a>
 
@@ -689,7 +689,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/24/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/instancetype%EF%BC%9A/">instancetype：</a>
+      <a  class="article-title" href="/2019/08/24/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/instancetype%EF%BC%9A/">instancetype：</a>
     </h1>
   
 
@@ -740,10 +740,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/动态类型检测：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/动态类型检测：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%EF%BC%9A/" class="article-date">
+      <a  href="/2019/08/23/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%EF%BC%9A/" class="article-date">
       <time datetime="2019-08-22T16:00:00.000Z" itemprop="datePublished">2019-08-23</time>
 </a>
 
@@ -758,7 +758,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%EF%BC%9A/">动态类型检测：</a>
+      <a  class="article-title" href="/2019/08/23/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%EF%BC%9A/">动态类型检测：</a>
     </h1>
   
 
@@ -817,10 +817,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/构造方法：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/构造方法：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%9A/" class="article-date">
+      <a  href="/2019/08/22/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%9A/" class="article-date">
       <time datetime="2019-08-21T16:00:00.000Z" itemprop="datePublished">2019-08-22</time>
 </a>
 
@@ -835,7 +835,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/22/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%9A/">构造方法：</a>
+      <a  class="article-title" href="/2019/08/22/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%9A/">构造方法：</a>
     </h1>
   
 
@@ -897,10 +897,10 @@
 
 
   
-    <article id="post-编程语言/Objective-C/内存管理概述：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/Objective-C/内存管理概述：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0%EF%BC%9A/" class="article-date">
+      <a  href="/2019/08/21/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0%EF%BC%9A/" class="article-date">
       <time datetime="2019-08-20T16:00:00.000Z" itemprop="datePublished">2019-08-21</time>
 </a>
 
@@ -915,7 +915,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0%EF%BC%9A/">内存管理概述：</a>
+      <a  class="article-title" href="/2019/08/21/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0%EF%BC%9A/">内存管理概述：</a>
     </h1>
   
 

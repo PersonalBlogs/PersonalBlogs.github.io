@@ -228,10 +228,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-iOS开发-项目/UI/超级猜图：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/UI/超级猜图：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/11/21/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E8%B6%85%E7%BA%A7%E7%8C%9C%E5%9B%BE%EF%BC%9A/" class="article-date">
+      <a  href="/2020/11/21/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/UI/%E8%B6%85%E7%BA%A7%E7%8C%9C%E5%9B%BE%EF%BC%9A/" class="article-date">
       <time datetime="2020-11-20T16:00:00.000Z" itemprop="datePublished">2020-11-21</time>
 </a>
 
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/11/21/iOS%E5%BC%80%E5%8F%91-%E9%A1%B9%E7%9B%AE/UI/%E8%B6%85%E7%BA%A7%E7%8C%9C%E5%9B%BE%EF%BC%9A/">超级猜图：</a>
+      <a  class="article-title" href="/2020/11/21/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/UI/%E8%B6%85%E7%BA%A7%E7%8C%9C%E5%9B%BE%EF%BC%9A/">超级猜图：</a>
     </h1>
   
 
@@ -260,13 +260,13 @@
         <hr>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxf1owfnj3061078ac1.jpg"></p>
 <p>1）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//改变状态栏的文字颜色为白色(默认是黑色)</span><br><span class="line">- (UIStatusBarStyle)preferredStatusBarStyle&#123;</span><br><span class="line">    **return** UIStatusBarStyleLightContent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//隐藏状态栏</span><br><span class="line">- (**BOOL**)prefersStatusBarHidden&#123;</span><br><span class="line">    **return** **YES**;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;改变状态栏的文字颜色为白色(默认是黑色)</span><br><span class="line">- (UIStatusBarStyle)preferredStatusBarStyle&#123;</span><br><span class="line">    **return** UIStatusBarStyleLightContent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;隐藏状态栏</span><br><span class="line">- (**BOOL**)prefersStatusBarHidden&#123;</span><br><span class="line">    **return** **YES**;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxf9g7baj30cd098wfq.jpg"></p>
 <p>2）User Interaction Enabled设置是否允许按钮和用户交互，把勾去掉后用户点击按钮无效果（金币按钮）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfhll10j307803r0sz.jpg"></p>
 <p>3）实现图片的相框效果<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfogfiqj302s02rjrt.jpg"><br>先添加按钮的白色背景图片，再把图片添加进按钮，设置内边距都为5</p>
 <p>4）把按钮的Highlighted Adjusts Image的勾去掉：可以和用户交互，但是点击按钮无反应（图片按钮）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxxfzi5sgj307601nmxa.jpg"></p>
 <p>5）实现大图/小图功能</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">//记录头像按钮原始的frame</span><br><span class="line">**@property**(**nonatomic**,**assign**) CGRect iconFrame;</span><br><span class="line">//用来引用那个阴影按钮的属性</span><br><span class="line">**@property**(**weak**,**nonatomic**) UIButton *cover;</span><br><span class="line"></span><br><span class="line">//显示大图</span><br><span class="line">- (**IBAction**)bigImage:(**id**)sender&#123;</span><br><span class="line">    </span><br><span class="line">    //记录一下头像按钮的原始frame</span><br><span class="line">    **self**.iconFrame=**self**.btnIcon.frame;</span><br><span class="line">    </span><br><span class="line">    //1.创建大小与self.view一样的按钮，把这个按钮作为一个阴影</span><br><span class="line">    UIButton *btnCover=[[UIButton alloc] init];</span><br><span class="line">    //设置按钮大小</span><br><span class="line">    btnCover.frame=**self**.view.bounds;</span><br><span class="line">    //设置按钮背景色</span><br><span class="line">    btnCover.backgroundColor=[UIColor blackColor];</span><br><span class="line">    //设置按钮透明度</span><br><span class="line">    btnCover.alpha=0.0;</span><br><span class="line">    </span><br><span class="line">    //把按钮加到self.view中</span><br><span class="line">    [**self**.view addSubview:btnCover];</span><br><span class="line">    </span><br><span class="line">    //为阴影按钮注册一个单击事件</span><br><span class="line">    [btnCover addTarget:**self** action:**@selector**(smallImage) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">    </span><br><span class="line">    //2.把图片设置到阴影的上面</span><br><span class="line">    //把self.view中的所有子控件中，只把self.btnIcon显示到最上层</span><br><span class="line">    [**self**.view bringSubviewToFront:**self**.btnIcon];</span><br><span class="line">    </span><br><span class="line">    //通过self.cover来引用btnCover</span><br><span class="line">    **self**.cover=btnCover;</span><br><span class="line">    </span><br><span class="line">    //3.通过动画的方式把图片变大</span><br><span class="line">    CGFloat iconW=**self**.view.frame.size.width;</span><br><span class="line">    CGFloat iconH=iconW;</span><br><span class="line">    CGFloat iconX=0;</span><br><span class="line">    CGFloat iconY=(**self**.view.frame.size.height-iconH)*0.5;</span><br><span class="line">    </span><br><span class="line">    [UIView animateWithDuration:0.7 animations:^&#123;</span><br><span class="line">        //设置按钮透明度</span><br><span class="line">        btnCover.alpha=0.6;</span><br><span class="line">        </span><br><span class="line">        //设置图片的新frame</span><br><span class="line">        **self**.btnIcon.frame=CGRectMake(iconX,iconY,iconW,iconH);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//阴影的单击事件</span><br><span class="line">- (**void**)smallImage&#123;</span><br><span class="line">    [UIView animateWithDuration:0.7 animations:^&#123;</span><br><span class="line">       //1.设置btnIcon(头像)按钮的frame还原</span><br><span class="line">       **self**.btnIcon.frame=**self**.iconFrame;</span><br><span class="line">       //2.让阴影按钮的透明度变成0</span><br><span class="line">        **self**.cover.alpha=0.0;</span><br><span class="line">    &#125;completion:^(**BOOL** finished)&#123;</span><br><span class="line">        **if**(finished)&#123;</span><br><span class="line">            //移除阴影按钮</span><br><span class="line">            [**self**.cover removeFromSuperview];</span><br><span class="line">            //当头像图片变成小图以后，再把self.cover设置成nil</span><br><span class="line">            **self**.cover=**nil**;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">//头像按钮的单击事件</span><br><span class="line">- (**IBAction**)btnIconClick:(**id**)sender&#123;</span><br><span class="line">    **if**(**self**.cover==**nil**)&#123;</span><br><span class="line">        //显示大图</span><br><span class="line">        [**self** bigImage:**nil**];</span><br><span class="line">    &#125;**else**&#123;</span><br><span class="line">        [**self** smallImage];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;记录头像按钮原始的frame</span><br><span class="line">**@property**(**nonatomic**,**assign**) CGRect iconFrame;</span><br><span class="line">&#x2F;&#x2F;用来引用那个阴影按钮的属性</span><br><span class="line">**@property**(**weak**,**nonatomic**) UIButton *cover;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;显示大图</span><br><span class="line">- (**IBAction**)bigImage:(**id**)sender&#123;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;记录一下头像按钮的原始frame</span><br><span class="line">    **self**.iconFrame&#x3D;**self**.btnIcon.frame;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;1.创建大小与self.view一样的按钮，把这个按钮作为一个阴影</span><br><span class="line">    UIButton *btnCover&#x3D;[[UIButton alloc] init];</span><br><span class="line">    &#x2F;&#x2F;设置按钮大小</span><br><span class="line">    btnCover.frame&#x3D;**self**.view.bounds;</span><br><span class="line">    &#x2F;&#x2F;设置按钮背景色</span><br><span class="line">    btnCover.backgroundColor&#x3D;[UIColor blackColor];</span><br><span class="line">    &#x2F;&#x2F;设置按钮透明度</span><br><span class="line">    btnCover.alpha&#x3D;0.0;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;把按钮加到self.view中</span><br><span class="line">    [**self**.view addSubview:btnCover];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;为阴影按钮注册一个单击事件</span><br><span class="line">    [btnCover addTarget:**self** action:**@selector**(smallImage) forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;2.把图片设置到阴影的上面</span><br><span class="line">    &#x2F;&#x2F;把self.view中的所有子控件中，只把self.btnIcon显示到最上层</span><br><span class="line">    [**self**.view bringSubviewToFront:**self**.btnIcon];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;通过self.cover来引用btnCover</span><br><span class="line">    **self**.cover&#x3D;btnCover;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;3.通过动画的方式把图片变大</span><br><span class="line">    CGFloat iconW&#x3D;**self**.view.frame.size.width;</span><br><span class="line">    CGFloat iconH&#x3D;iconW;</span><br><span class="line">    CGFloat iconX&#x3D;0;</span><br><span class="line">    CGFloat iconY&#x3D;(**self**.view.frame.size.height-iconH)*0.5;</span><br><span class="line">    </span><br><span class="line">    [UIView animateWithDuration:0.7 animations:^&#123;</span><br><span class="line">        &#x2F;&#x2F;设置按钮透明度</span><br><span class="line">        btnCover.alpha&#x3D;0.6;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;设置图片的新frame</span><br><span class="line">        **self**.btnIcon.frame&#x3D;CGRectMake(iconX,iconY,iconW,iconH);</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;阴影的单击事件</span><br><span class="line">- (**void**)smallImage&#123;</span><br><span class="line">    [UIView animateWithDuration:0.7 animations:^&#123;</span><br><span class="line">       &#x2F;&#x2F;1.设置btnIcon(头像)按钮的frame还原</span><br><span class="line">       **self**.btnIcon.frame&#x3D;**self**.iconFrame;</span><br><span class="line">       &#x2F;&#x2F;2.让阴影按钮的透明度变成0</span><br><span class="line">        **self**.cover.alpha&#x3D;0.0;</span><br><span class="line">    &#125;completion:^(**BOOL** finished)&#123;</span><br><span class="line">        **if**(finished)&#123;</span><br><span class="line">            &#x2F;&#x2F;移除阴影按钮</span><br><span class="line">            [**self**.cover removeFromSuperview];</span><br><span class="line">            &#x2F;&#x2F;当头像图片变成小图以后，再把self.cover设置成nil</span><br><span class="line">            **self**.cover&#x3D;**nil**;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;头像按钮的单击事件</span><br><span class="line">- (**IBAction**)btnIconClick:(**id**)sender&#123;</span><br><span class="line">    **if**(**self**.cover&#x3D;&#x3D;**nil**)&#123;</span><br><span class="line">        &#x2F;&#x2F;显示大图</span><br><span class="line">        [**self** bigImage:**nil**];</span><br><span class="line">    &#125;**else**&#123;</span><br><span class="line">        [**self** smallImage];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>6）动态创建“答案按钮”</p>
 
@@ -305,10 +305,10 @@
 
 
   
-    <article id="post-硬件基础/《汇编语言(第4版)》/基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《汇编语言(第4版)》/基础知识" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/31/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="article-date">
+      <a  href="/2020/10/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="article-date">
       <time datetime="2020-10-30T16:00:00.000Z" itemprop="datePublished">2020-10-31</time>
 </a>
 
@@ -323,7 +323,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/31/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
+      <a  class="article-title" href="/2020/10/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">基础知识</a>
     </h1>
   
 
@@ -400,10 +400,10 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/数据库基本术语" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/操作系统概述" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/" class="article-date">
+      <a  href="/2020/10/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/" class="article-date">
       <time datetime="2020-10-30T16:00:00.000Z" itemprop="datePublished">2020-10-31</time>
 </a>
 
@@ -418,85 +418,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">数据库基本术语</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort1gucs5j30m705e43y.jpg"></p>
-<p>数据库：保存有组织的数据的容器（通常是一个文件或一组文件）</p>
-<p>表：某种特定类型数据的结构化清单，数据库中的每个表都有一个名字，用来标识自己，此名字是唯一的，这表示数据库中没有其他表具有相同的名字【虽然在相同数据库中不能两次使用相同的表名，但在不同数据库中却可以使用相同的表名】</p>
-<p>模式：关于数据库和表的布局及特性的信息</p>
-<p>列：表中的一个字段，所有表都是由一个或多个列组成的</p>
-<p>数据类型：所容许的数据的类型，每个表列都有相应的数据类型，它限制（或容许）该列中存储的数据</p>
-<p>行：表中的一个记录</p>
-<p>主键：一列（或一组列），其值能够唯一区分表中每个行</p>
-<p>表中的任何列都可以作为主键，只要他满足以下条件：<br>1）任意两行都不具有相同的主键值<br>2）每个行都必须具有一个主键值（主键列不允许NULL值）</p>
-<p>ps aux | grep mysql</p>
-<p>/usr/local/mysql/bin/mysql -u root -p<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort1r34ntj30dm03tabl.jpg"></p>
-<p>关键字：作为MySQL语言组成部分的一个保留字，绝不要用关键字命名一个表或列</p>
-<p>SQL语句不区分大小写！！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/操作系统概述" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/31/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/" class="article-date">
-      <time datetime="2020-10-30T16:00:00.000Z" itemprop="datePublished">2020-10-31</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/31/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/">操作系统概述</a>
+      <a  class="article-title" href="/2020/10/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/">操作系统概述</a>
     </h1>
   
 
@@ -562,10 +484,88 @@
 
 
   
-    <article id="post-硬件基础/《汇编语言(第4版)》/寄存器(CPU工作原理)" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《MySQL必知必会》/数据库基本术语" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/30/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)/" class="article-date">
+      <a  href="/2020/10/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/" class="article-date">
+      <time datetime="2020-10-30T16:00:00.000Z" itemprop="datePublished">2020-10-31</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/">数据库基本术语</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort1gucs5j30m705e43y.jpg"></p>
+<p>数据库：保存有组织的数据的容器（通常是一个文件或一组文件）</p>
+<p>表：某种特定类型数据的结构化清单，数据库中的每个表都有一个名字，用来标识自己，此名字是唯一的，这表示数据库中没有其他表具有相同的名字【虽然在相同数据库中不能两次使用相同的表名，但在不同数据库中却可以使用相同的表名】</p>
+<p>模式：关于数据库和表的布局及特性的信息</p>
+<p>列：表中的一个字段，所有表都是由一个或多个列组成的</p>
+<p>数据类型：所容许的数据的类型，每个表列都有相应的数据类型，它限制（或容许）该列中存储的数据</p>
+<p>行：表中的一个记录</p>
+<p>主键：一列（或一组列），其值能够唯一区分表中每个行</p>
+<p>表中的任何列都可以作为主键，只要他满足以下条件：<br>1）任意两行都不具有相同的主键值<br>2）每个行都必须具有一个主键值（主键列不允许NULL值）</p>
+<p>ps aux | grep mysql</p>
+<p>/usr/local/mysql/bin/mysql -u root -p<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort1r34ntj30dm03tabl.jpg"></p>
+<p>关键字：作为MySQL语言组成部分的一个保留字，绝不要用关键字命名一个表或列</p>
+<p>SQL语句不区分大小写！！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《汇编语言(第4版)》/寄存器(CPU工作原理)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)/" class="article-date">
       <time datetime="2020-10-29T16:00:00.000Z" itemprop="datePublished">2020-10-30</time>
 </a>
 
@@ -580,7 +580,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/30/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)/">寄存器(CPU工作原理)</a>
+      <a  class="article-title" href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)/">寄存器(CPU工作原理)</a>
     </h1>
   
 
@@ -658,10 +658,10 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/SHOW语句HELP SHOW" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/操作系统逻辑结构" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/SHOW%E8%AF%AD%E5%8F%A5HELP%20SHOW/" class="article-date">
+      <a  href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" class="article-date">
       <time datetime="2020-10-29T16:00:00.000Z" itemprop="datePublished">2020-10-30</time>
 </a>
 
@@ -676,77 +676,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/30/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/SHOW%E8%AF%AD%E5%8F%A5HELP%20SHOW/">SHOW语句HELP SHOW</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>SHOW语句【HELP SHOW;】：</p>
-<p>可使用的数据库名：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort3y5xv0j308l04oglt.jpg"></p>
-<p>USE选择数据库（必须先使用USE打开数据库，才能读取其中的数据）</p>
-<p>SHOW TABLES；返回当前选择的数据库内可用表的列表<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort49cdbcj30dn0hiq44.jpg"></p>
-<p>SHOW COLUMNS FROM…….【DESCRIBE…..】（从某个表中查找）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort4k3h1oj30ge0dawga.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort4ti7vdj30eu0b93zh.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/操作系统逻辑结构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" class="article-date">
-      <time datetime="2020-10-29T16:00:00.000Z" itemprop="datePublished">2020-10-30</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/30/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/">操作系统逻辑结构</a>
+      <a  class="article-title" href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/">操作系统逻辑结构</a>
     </h1>
   
 
@@ -825,10 +755,80 @@
 
 
   
-    <article id="post-硬件基础/《汇编语言(第4版)》/实验1、查看CPU和内存，用机器指令和汇编指令编程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《MySQL必知必会》/SHOW语句HELP SHOW" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/29/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C1%E3%80%81%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/" class="article-date">
+      <a  href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/SHOW%E8%AF%AD%E5%8F%A5HELP%20SHOW/" class="article-date">
+      <time datetime="2020-10-29T16:00:00.000Z" itemprop="datePublished">2020-10-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/SHOW%E8%AF%AD%E5%8F%A5HELP%20SHOW/">SHOW语句HELP SHOW</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>SHOW语句【HELP SHOW;】：</p>
+<p>可使用的数据库名：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort3y5xv0j308l04oglt.jpg"></p>
+<p>USE选择数据库（必须先使用USE打开数据库，才能读取其中的数据）</p>
+<p>SHOW TABLES；返回当前选择的数据库内可用表的列表<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort49cdbcj30dn0hiq44.jpg"></p>
+<p>SHOW COLUMNS FROM…….【DESCRIBE…..】（从某个表中查找）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort4k3h1oj30ge0dawga.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort4ti7vdj30eu0b93zh.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《汇编语言(第4版)》/实验1、查看CPU和内存，用机器指令和汇编指令编程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C1%E3%80%81%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/" class="article-date">
       <time datetime="2020-10-28T16:00:00.000Z" itemprop="datePublished">2020-10-29</time>
 </a>
 
@@ -843,7 +843,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/29/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C1%E3%80%81%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/">实验1、查看CPU和内存，用机器指令和汇编指令编程</a>
+      <a  class="article-title" href="/2020/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C1%E3%80%81%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/">实验1、查看CPU和内存，用机器指令和汇编指令编程</a>
     </h1>
   
 
@@ -907,10 +907,10 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/检索数据SELECT语句" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/进程管理" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AESELECT%E8%AF%AD%E5%8F%A5/" class="article-date">
+      <a  href="/2020/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="article-date">
       <time datetime="2020-10-28T16:00:00.000Z" itemprop="datePublished">2020-10-29</time>
 </a>
 
@@ -925,78 +925,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AESELECT%E8%AF%AD%E5%8F%A5/">检索数据SELECT语句</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>检索数据【SELECT语句】：</p>
-<p>检索单个列：</p>
-<p>从db表中检索一个名为Host的列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6c7xeij306303a74d.jpg"><br>从db表中检索多个列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6kg84nj30ab03pglt.jpg"><br>从db表中检索所有列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6tsbinj30ev0d4dgj.jpg"></p>
-<p>检索不同的行？？<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort72pvf9j30ai0dljtw.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort79ppwjj30ai059myt.jpg"></p>
-<p>限制结果：<br>LIMIT 1；【指示MySQL返回不多于1行】<br>LIMIT 1，2；【第一个数为开始位置，第二个数为要检索的行数】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort7jl4ayj308b0a6aal.jpg"><br>1）所以，带一个值的LIMIT总是从第一行开始，给出的数为返回的行数。带两个值的LIMIT可以指定从行号为第一个值的位置开始<br>2）检索出来的第一行为行0而不是行1，因此，LIMIT 1，1将检索出第二行而不是第一行<br>3）LIMIT中指定要检索的行数为检索的最大行数，如果没有足够的行（例如，给出LIMIT 10，5，但只有13行），MySQL将只返回它能返回的那么多行</p>
-<p>使用完全限定的表名：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort7w68sij308b03w0sv.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/进程管理" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="article-date">
-      <time datetime="2020-10-28T16:00:00.000Z" itemprop="datePublished">2020-10-29</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">进程管理</a>
+      <a  class="article-title" href="/2020/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">进程管理</a>
     </h1>
   
 
@@ -1029,6 +958,77 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/检索数据SELECT语句" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AESELECT%E8%AF%AD%E5%8F%A5/" class="article-date">
+      <time datetime="2020-10-28T16:00:00.000Z" itemprop="datePublished">2020-10-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AESELECT%E8%AF%AD%E5%8F%A5/">检索数据SELECT语句</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>检索数据【SELECT语句】：</p>
+<p>检索单个列：</p>
+<p>从db表中检索一个名为Host的列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6c7xeij306303a74d.jpg"><br>从db表中检索多个列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6kg84nj30ab03pglt.jpg"><br>从db表中检索所有列：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort6tsbinj30ev0d4dgj.jpg"></p>
+<p>检索不同的行？？<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort72pvf9j30ai0dljtw.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort79ppwjj30ai059myt.jpg"></p>
+<p>限制结果：<br>LIMIT 1；【指示MySQL返回不多于1行】<br>LIMIT 1，2；【第一个数为开始位置，第二个数为要检索的行数】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort7jl4ayj308b0a6aal.jpg"><br>1）所以，带一个值的LIMIT总是从第一行开始，给出的数为返回的行数。带两个值的LIMIT可以指定从行号为第一个值的位置开始<br>2）检索出来的第一行为行0而不是行1，因此，LIMIT 1，1将检索出第二行而不是第一行<br>3）LIMIT中指定要检索的行数为检索的最大行数，如果没有足够的行（例如，给出LIMIT 10，5，但只有13行），MySQL将只返回它能返回的那么多行</p>
+<p>使用完全限定的表名：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort7w68sij308b03w0sv.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
     </div>
 
       

@@ -228,10 +228,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-硬件基础/《汇编语言(第4版)》/寄存器(内存访问)" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《汇编语言(第4版)》/寄存器(内存访问)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/28/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(%E5%86%85%E5%AD%98%E8%AE%BF%E9%97%AE)/" class="article-date">
+      <a  href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(%E5%86%85%E5%AD%98%E8%AE%BF%E9%97%AE)/" class="article-date">
       <time datetime="2020-10-27T16:00:00.000Z" itemprop="datePublished">2020-10-28</time>
 </a>
 
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/28/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(%E5%86%85%E5%AD%98%E8%AE%BF%E9%97%AE)/">寄存器(内存访问)</a>
+      <a  class="article-title" href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(%E5%86%85%E5%AD%98%E8%AE%BF%E9%97%AE)/">寄存器(内存访问)</a>
     </h1>
   
 
@@ -319,10 +319,10 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/排序检索数据" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/进程概念" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8E%92%E5%BA%8F%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/" class="article-date">
+      <a  href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%A6%82%E5%BF%B5/" class="article-date">
       <time datetime="2020-10-27T16:00:00.000Z" itemprop="datePublished">2020-10-28</time>
 </a>
 
@@ -337,79 +337,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8E%92%E5%BA%8F%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/">排序检索数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>排序检索数据</p>
-<p>子句：SQL语句由子句构成，有些子句是必须的，而有的是可选的。一个子句通常由一个关键字和所提供的数据组成。</p>
-<p>1）指示MySQL对列以字母顺序排序<br>SELECT 列名<br>FROM 表名<br>ORDER BY 列名;</p>
-<p>2）先按价格，再按名称排序：<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prodprice,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort918kmfj305z0670tw.jpg"></p>
-<p>3）按价格以降序排序<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prod_price DESC;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9a9f5aj305z0673zo.jpg"></p>
-<p>4）先按价格以降序排序，再对产品名排序<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prodprice DESC,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9jou7zj3064021aae.jpg"><br>DESC关键字只应用到直接位于其前面的列名，在上例中，只对prodprice列指定DESC，对prodname列不指定。因此，prodprice列以降序排序，而prodname列（在每个价格内）仍然按标准的升序排序</p>
-<p>5）prod_price DESC保证行是按照由最昂贵到最便宜检索的，而LIMIT 1告诉MySQL仅返回一行<br>SELECT prod_price<br>FROM products<br>ORDER BY prod_price DESC<br>LIMIT 1;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9vbhnrj302001hwei.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/进程概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/28/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2020-10-27T16:00:00.000Z" itemprop="datePublished">2020-10-28</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/28/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%A6%82%E5%BF%B5/">进程概念</a>
+      <a  class="article-title" href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%A6%82%E5%BF%B5/">进程概念</a>
     </h1>
   
 
@@ -468,10 +396,82 @@
 
 
   
-    <article id="post-硬件基础/《汇编语言(第4版)》/实验2、用机器指令和汇编指令编程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《MySQL必知必会》/排序检索数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/27/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C2%E3%80%81%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/" class="article-date">
+      <a  href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8E%92%E5%BA%8F%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-27T16:00:00.000Z" itemprop="datePublished">2020-10-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%8E%92%E5%BA%8F%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE/">排序检索数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>排序检索数据</p>
+<p>子句：SQL语句由子句构成，有些子句是必须的，而有的是可选的。一个子句通常由一个关键字和所提供的数据组成。</p>
+<p>1）指示MySQL对列以字母顺序排序<br>SELECT 列名<br>FROM 表名<br>ORDER BY 列名;</p>
+<p>2）先按价格，再按名称排序：<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prodprice,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort918kmfj305z0670tw.jpg"></p>
+<p>3）按价格以降序排序<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prod_price DESC;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9a9f5aj305z0673zo.jpg"></p>
+<p>4）先按价格以降序排序，再对产品名排序<br>SELECT prodid,prodprice,prod_name<br>FROM products<br>ORDER BY prodprice DESC,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9jou7zj3064021aae.jpg"><br>DESC关键字只应用到直接位于其前面的列名，在上例中，只对prodprice列指定DESC，对prodname列不指定。因此，prodprice列以降序排序，而prodname列（在每个价格内）仍然按标准的升序排序</p>
+<p>5）prod_price DESC保证行是按照由最昂贵到最便宜检索的，而LIMIT 1告诉MySQL仅返回一行<br>SELECT prod_price<br>FROM products<br>ORDER BY prod_price DESC<br>LIMIT 1;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort9vbhnrj302001hwei.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《汇编语言(第4版)》/实验2、用机器指令和汇编指令编程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C2%E3%80%81%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/" class="article-date">
       <time datetime="2020-10-26T16:00:00.000Z" itemprop="datePublished">2020-10-27</time>
 </a>
 
@@ -486,7 +486,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/27/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C2%E3%80%81%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/">实验2、用机器指令和汇编指令编程</a>
+      <a  class="article-title" href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C2%E3%80%81%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/">实验2、用机器指令和汇编指令编程</a>
     </h1>
   
 
@@ -541,10 +541,10 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/过滤数据" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/进程控制概念" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/" class="article-date">
+      <a  href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%A6%82%E5%BF%B5/" class="article-date">
       <time datetime="2020-10-26T16:00:00.000Z" itemprop="datePublished">2020-10-27</time>
 </a>
 
@@ -559,80 +559,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/27/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/">过滤数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>过滤数据</p>
-<p>1）只返回prod_price值为2.50的行<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price=2.50;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortb74hxbj304h01y0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbdgfqkj30b701y3zv.jpg"></p>
-<p>2）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbjxonjj308i05nwf2.jpg"></p>
-<p>3）MySQL在执行匹配时默认不区分大小写，所以fuses与Fuses匹配<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_name=‘fuses’;【注意单引号】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbtr4awj303t01jglq.jpg"></p>
-<p>4）<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price&lt;10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortc1kroej304h03oaai.jpg"></p>
-<p>5)列出不是由供应商1003制造的所有产品<br>SELECT vendid,prodname<br>FROM products<br>WHERE vend_id&lt;&gt;1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortc91h1jj303v03nwex.jpg"></p>
-<p>6）检索价格在5美元和10美元之间的所有产品<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price BETWEEN 5 AND 10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortcgfxiyj304j02vdg6.jpg"></p>
-<p>7）NULL：无值，它与字段包含0、空字符串或仅仅包含空格不同<br>这条语句返回没有价格（空prod_price字段，不是价格为0）的所有产品<br>SELECT prod_name<br>FROM products<br>WHERE prod_price IS NULL;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-操作系统原理/操作系统原理/进程控制概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2020-10-26T16:00:00.000Z" itemprop="datePublished">2020-10-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%A6%82%E5%BF%B5/">进程控制概念</a>
+      <a  class="article-title" href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%A6%82%E5%BF%B5/">进程控制概念</a>
     </h1>
   
 
@@ -693,10 +620,83 @@
 
 
   
-    <article id="post-硬件基础/《汇编语言(第4版)》/第一个程序" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《MySQL必知必会》/过滤数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/26/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="article-date">
+      <a  href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2020-10-26T16:00:00.000Z" itemprop="datePublished">2020-10-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/">过滤数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>过滤数据</p>
+<p>1）只返回prod_price值为2.50的行<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price=2.50;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortb74hxbj304h01y0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbdgfqkj30b701y3zv.jpg"></p>
+<p>2）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbjxonjj308i05nwf2.jpg"></p>
+<p>3）MySQL在执行匹配时默认不区分大小写，所以fuses与Fuses匹配<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_name=‘fuses’;【注意单引号】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbtr4awj303t01jglq.jpg"></p>
+<p>4）<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price&lt;10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortc1kroej304h03oaai.jpg"></p>
+<p>5)列出不是由供应商1003制造的所有产品<br>SELECT vendid,prodname<br>FROM products<br>WHERE vend_id&lt;&gt;1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortc91h1jj303v03nwex.jpg"></p>
+<p>6）检索价格在5美元和10美元之间的所有产品<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price BETWEEN 5 AND 10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortcgfxiyj304j02vdg6.jpg"></p>
+<p>7）NULL：无值，它与字段包含0、空字符串或仅仅包含空格不同<br>这条语句返回没有价格（空prod_price字段，不是价格为0）的所有产品<br>SELECT prod_name<br>FROM products<br>WHERE prod_price IS NULL;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">数据库系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《汇编语言(第4版)》/第一个程序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="article-date">
       <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
 </a>
 
@@ -711,7 +711,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/26/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">第一个程序</a>
+      <a  class="article-title" href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">第一个程序</a>
     </h1>
   
 
@@ -785,10 +785,10 @@
 
 
   
-    <article id="post-数据库系统原理/《MySQL必知必会》/数据过滤" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/操作系统原理/线程（Thread）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/" class="article-date">
+      <a  href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89/" class="article-date">
       <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
 </a>
 
@@ -803,7 +803,78 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/">数据过滤</a>
+      <a  class="article-title" href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89/">线程（Thread）</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>线程（Thread）：</p>
+<p>1）线程是可由CPU直接运行的实体<br>2）一个进程可以创建多个线程<br>3）多个线程共享CPU可以实现并发运行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5f3qwvj30b40840vb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5qwcg5j30cd06aaca.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5zacw1j30af04nab4.jpg"></p>
+<p>单线程程序：整个进程只有一个线程，Windows程序缺省只有一个线程（主线程，main线程）</p>
+<p>多线程程序：整个进程至少有2个线程，主线程和至少一个用户线程</p>
+<p>线程技术典型适用场景：<br>1）程序的多个功能需要并发运行<br>2）提高窗口程序的交互性<br>3）改善程序结构<br>4）多核CPU上的应用，充分发挥多核性能</p>
+<p>使用线程的麻烦：<br>1）程序难以调试<br>2）并发过程难以控制<br>3）线程安全问题</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/数据过滤" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/" class="article-date">
+      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/">数据过滤</a>
     </h1>
   
 
@@ -858,81 +929,10 @@
 
 
   
-    <article id="post-操作系统原理/操作系统原理/线程（Thread）" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机基础/《汇编语言(第4版)》/[BX]和loop指令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/10/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89/" class="article-date">
-      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/26/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89/">线程（Thread）</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>线程（Thread）：</p>
-<p>1）线程是可由CPU直接运行的实体<br>2）一个进程可以创建多个线程<br>3）多个线程共享CPU可以实现并发运行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5f3qwvj30b40840vb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5qwcg5j30cd06aaca.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorb5zacw1j30af04nab4.jpg"></p>
-<p>单线程程序：整个进程只有一个线程，Windows程序缺省只有一个线程（主线程，main线程）</p>
-<p>多线程程序：整个进程至少有2个线程，主线程和至少一个用户线程</p>
-<p>线程技术典型适用场景：<br>1）程序的多个功能需要并发运行<br>2）提高窗口程序的交互性<br>3）改善程序结构<br>4）多核CPU上的应用，充分发挥多核性能</p>
-<p>使用线程的麻烦：<br>1）程序难以调试<br>2）并发过程难以控制<br>3）线程安全问题</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/">操作系统原理</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-硬件基础/《汇编语言(第4版)》/[BX]和loop指令" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/25/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%5BBX%5D%E5%92%8Cloop%E6%8C%87%E4%BB%A4/" class="article-date">
+      <a  href="/2020/10/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%5BBX%5D%E5%92%8Cloop%E6%8C%87%E4%BB%A4/" class="article-date">
       <time datetime="2020-10-24T16:00:00.000Z" itemprop="datePublished">2020-10-25</time>
 </a>
 
@@ -947,7 +947,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/25/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%5BBX%5D%E5%92%8Cloop%E6%8C%87%E4%BB%A4/">BX和loop指令</a>
+      <a  class="article-title" href="/2020/10/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%5BBX%5D%E5%92%8Cloop%E6%8C%87%E4%BB%A4/">BX和loop指令</a>
     </h1>
   
 
@@ -971,8 +971,7 @@
 <p>loop指令的格式是：loop 标号<br>CPU执行loop指令的时候，要进行两步操作：(cx)=(cx)-1、判断cx中的值，不为零则转至标号处执行程序，如果为零则向下执行【通常，我们用loop指令来实现循环功能，cx中存放循环次数】</p>
 <p>assume cs:code<br>code segment<br>    mov ax,2<br>    mov cx,11<br>s:<br>    add ax,ax<br>    loop s</p>
 <pre><code>mov ax,4c00h
-int 21h
-</code></pre>
+int 21h</code></pre>
 <p>code ends<br>end<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9rb1gsqj30ch07zmyk.jpg"></p>
 <p>1）在cx中存放循环次数<br>2）loop指令中的标号所标识地址要在前面<br>3）要循环执行的程序段，要写在标号和loop指令的中间<br>——————————————</p>
 <p>在Debug中跟踪用loop指令实现的循环程序：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9rkgjpaj30cm0aa75q.jpg"></p>

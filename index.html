@@ -313,10 +313,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/UIView的外观属性" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/UIView的外观属性" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/30/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%A4%96%E8%A7%82%E5%B1%9E%E6%80%A7/" class="article-date">
+      <a  href="/2021/04/30/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E5%A4%96%E8%A7%82%E5%B1%9E%E6%80%A7/" class="article-date">
       <time datetime="2021-04-29T16:00:00.000Z" itemprop="datePublished">2021-04-30</time>
 </a>
 
@@ -331,7 +331,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/30/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%A4%96%E8%A7%82%E5%B1%9E%E6%80%A7/">UIView的外观属性</a>
+      <a  class="article-title" href="/2021/04/30/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E5%A4%96%E8%A7%82%E5%B1%9E%E6%80%A7/">UIView的外观属性</a>
     </h1>
   
 
@@ -343,7 +343,7 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UIView的外观属性：背景颜色、切边、透明度、显示与隐藏</span><br><span class="line">        </span><br><span class="line">        let view = UIView(frame: CGRect(x: 40, y: 80, width: 240, height: 240))</span><br><span class="line">        </span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        /* 将一张图片作为视图的背景颜色</span><br><span class="line">         let view = UIView(frame: CGRect(x: 40, y: 80, width: 240, height: 240))</span><br><span class="line">         let image = UIImage(named: &quot;logo&quot;)</span><br><span class="line">         view.backgroundColor = UIColor.init(patternImage: image!)</span><br><span class="line">         self.view.addSubview(view)  //使用UIColor类的init方法将加载的图片作为图案平铺在视图的背景中</span><br><span class="line">        */</span><br><span class="line">        </span><br><span class="line">        view.alpha = 0.3  //透明度</span><br><span class="line">        //当把alpha的值设置成0以后：当前的UIView及其子视图都会被隐藏，而不管子视图的alpha值为多少；当前的UIView会从响应者链中移除，而响应者链中的下一个会成为第一响应者</span><br><span class="line">        </span><br><span class="line">        view.isHidden = false  //表示UIView视图是否处于隐藏的状态</span><br><span class="line">        //当把值设为true时，当前的UIView及其子视图都会被隐藏，而不管子视图的hidden值为多少；当前的UIView会从响应者链中移除，而响应者链中的下一个会成为第一响应者</span><br><span class="line">        </span><br><span class="line">        let subView = UIView(frame: CGRect(x: 40, y: 40, width: 240, height: 240))</span><br><span class="line">        subView.backgroundColor = UIColor.green</span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        </span><br><span class="line">        view.clipsToBounds = true  //在默认情况下，当向一个视图中添加一个子视图时，如果子视图的区域超出了父视图的范围，子视图超出的部分仍然会在屏幕上正常显示；如果需要限制子视图的显示范围不超过父视图的显示区域，就需要设置父视图的clipsToBounds属性</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)  //通过addSubView()方法将设置背景色之后的视图添加到当前视图控制器的根视图中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;UIView的外观属性：背景颜色、切边、透明度、显示与隐藏</span><br><span class="line">        </span><br><span class="line">        let view &#x3D; UIView(frame: CGRect(x: 40, y: 80, width: 240, height: 240))</span><br><span class="line">        </span><br><span class="line">        view.backgroundColor &#x3D; UIColor.black</span><br><span class="line">        </span><br><span class="line">        &#x2F;* 将一张图片作为视图的背景颜色</span><br><span class="line">         let view &#x3D; UIView(frame: CGRect(x: 40, y: 80, width: 240, height: 240))</span><br><span class="line">         let image &#x3D; UIImage(named: &quot;logo&quot;)</span><br><span class="line">         view.backgroundColor &#x3D; UIColor.init(patternImage: image!)</span><br><span class="line">         self.view.addSubview(view)  &#x2F;&#x2F;使用UIColor类的init方法将加载的图片作为图案平铺在视图的背景中</span><br><span class="line">        *&#x2F;</span><br><span class="line">        </span><br><span class="line">        view.alpha &#x3D; 0.3  &#x2F;&#x2F;透明度</span><br><span class="line">        &#x2F;&#x2F;当把alpha的值设置成0以后：当前的UIView及其子视图都会被隐藏，而不管子视图的alpha值为多少；当前的UIView会从响应者链中移除，而响应者链中的下一个会成为第一响应者</span><br><span class="line">        </span><br><span class="line">        view.isHidden &#x3D; false  &#x2F;&#x2F;表示UIView视图是否处于隐藏的状态</span><br><span class="line">        &#x2F;&#x2F;当把值设为true时，当前的UIView及其子视图都会被隐藏，而不管子视图的hidden值为多少；当前的UIView会从响应者链中移除，而响应者链中的下一个会成为第一响应者</span><br><span class="line">        </span><br><span class="line">        let subView &#x3D; UIView(frame: CGRect(x: 40, y: 40, width: 240, height: 240))</span><br><span class="line">        subView.backgroundColor &#x3D; UIColor.green</span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        </span><br><span class="line">        view.clipsToBounds &#x3D; true  &#x2F;&#x2F;在默认情况下，当向一个视图中添加一个子视图时，如果子视图的区域超出了父视图的范围，子视图超出的部分仍然会在屏幕上正常显示；如果需要限制子视图的显示范围不超过父视图的显示区域，就需要设置父视图的clipsToBounds属性</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)  &#x2F;&#x2F;通过addSubView()方法将设置背景色之后的视图添加到当前视图控制器的根视图中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -379,10 +379,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/UIView的几何属性" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/UIView的几何属性" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/29/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%87%A0%E4%BD%95%E5%B1%9E%E6%80%A7/" class="article-date">
+      <a  href="/2021/04/29/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E5%87%A0%E4%BD%95%E5%B1%9E%E6%80%A7/" class="article-date">
       <time datetime="2021-04-28T16:00:00.000Z" itemprop="datePublished">2021-04-29</time>
 </a>
 
@@ -397,7 +397,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/29/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%87%A0%E4%BD%95%E5%B1%9E%E6%80%A7/">UIView的几何属性</a>
+      <a  class="article-title" href="/2021/04/29/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E5%87%A0%E4%BD%95%E5%B1%9E%E6%80%A7/">UIView的几何属性</a>
     </h1>
   
 
@@ -409,7 +409,7 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UIView的几何属性</span><br><span class="line">        //frame(origin,size)属性：定义了一个矩形区域，描述一个UIView的大小和在父坐标系的位置</span><br><span class="line">        //bounds(origin,size)属性：同样定义了一个矩形区域，描述一个UIView的大小和自身坐标系原点的位置，bounds.origin属性默认值是(0,0)，而bounds.size和frame.size是一致的</span><br><span class="line">        //center属性：用于确定一个视图的中心点位置，参照系也是其父视图的坐标系统，在对视图进行放大、缩小或旋转时，该属性的值不会改变</span><br><span class="line">        </span><br><span class="line">        let frame = CGRect(x: 0, y: 0, width: 250, height: 250)</span><br><span class="line">        let view = UIView(frame: frame)</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        view.bounds = CGRect(x: -50, y: -50, width: 250, height: 250)</span><br><span class="line">        view.bounds = CGRect(x: -50, y: -50, width: 200, height: 200)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        let subView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))</span><br><span class="line">        subView.backgroundColor = UIColor.green</span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;UIView的几何属性</span><br><span class="line">        &#x2F;&#x2F;frame(origin,size)属性：定义了一个矩形区域，描述一个UIView的大小和在父坐标系的位置</span><br><span class="line">        &#x2F;&#x2F;bounds(origin,size)属性：同样定义了一个矩形区域，描述一个UIView的大小和自身坐标系原点的位置，bounds.origin属性默认值是(0,0)，而bounds.size和frame.size是一致的</span><br><span class="line">        &#x2F;&#x2F;center属性：用于确定一个视图的中心点位置，参照系也是其父视图的坐标系统，在对视图进行放大、缩小或旋转时，该属性的值不会改变</span><br><span class="line">        </span><br><span class="line">        let frame &#x3D; CGRect(x: 0, y: 0, width: 250, height: 250)</span><br><span class="line">        let view &#x3D; UIView(frame: frame)</span><br><span class="line">        view.backgroundColor &#x3D; UIColor.black</span><br><span class="line">        view.bounds &#x3D; CGRect(x: -50, y: -50, width: 250, height: 250)</span><br><span class="line">        view.bounds &#x3D; CGRect(x: -50, y: -50, width: 200, height: 200)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        let subView &#x3D; UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))</span><br><span class="line">        subView.backgroundColor &#x3D; UIColor.green</span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -445,10 +445,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/导航控制器和标签控制器" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/导航控制器和标签控制器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/28/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/%E5%AF%BC%E8%88%AA%E6%8E%A7%E5%88%B6%E5%99%A8%E5%92%8C%E6%A0%87%E7%AD%BE%E6%8E%A7%E5%88%B6%E5%99%A8/" class="article-date">
+      <a  href="/2021/04/28/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%AF%BC%E8%88%AA%E6%8E%A7%E5%88%B6%E5%99%A8%E5%92%8C%E6%A0%87%E7%AD%BE%E6%8E%A7%E5%88%B6%E5%99%A8/" class="article-date">
       <time datetime="2021-04-28T03:35:35.000Z" itemprop="datePublished">2021-04-28</time>
 </a>
 
@@ -490,10 +490,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/UIView的嵌套和层次关系" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/UIView的嵌套和层次关系" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/28/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%B5%8C%E5%A5%97%E5%92%8C%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB/" class="article-date">
+      <a  href="/2021/04/28/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E5%B5%8C%E5%A5%97%E5%92%8C%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB/" class="article-date">
       <time datetime="2021-04-27T16:00:00.000Z" itemprop="datePublished">2021-04-28</time>
 </a>
 
@@ -508,7 +508,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/28/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%B5%8C%E5%A5%97%E5%92%8C%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB/">UIView的嵌套和层次关系</a>
+      <a  class="article-title" href="/2021/04/28/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E5%B5%8C%E5%A5%97%E5%92%8C%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB/">UIView的嵌套和层次关系</a>
     </h1>
   
 
@@ -520,7 +520,7 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UIView的嵌套和层次关系</span><br><span class="line">        </span><br><span class="line">        let firstView = UIView(frame: CGRect(x: 20, y: 40, width: 200, height: 200))</span><br><span class="line">        firstView.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        let secondView = UIView(frame: CGRect(x: 50, y: 70, width: 200, height: 200))</span><br><span class="line">        secondView.backgroundColor = UIColor.red</span><br><span class="line">        </span><br><span class="line">        let thirdView = UIView(frame: CGRect(x: 80, y: 100, width: 200, height: 200))</span><br><span class="line">        thirdView.backgroundColor = UIColor.green</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(firstView)</span><br><span class="line">        self.view.addSubview(secondView)</span><br><span class="line">        self.view.addSubview(thirdView)</span><br><span class="line">        </span><br><span class="line">        //self.view.insertSubview(secondView, at: 2)  //在指定的位置上插入视图</span><br><span class="line">        </span><br><span class="line">        //self.view.insertSubview(thirdView, aboveSubview: secondView)  //将第三个视图插入第二个视图的上方</span><br><span class="line">        //self.view.insertSubview(thirdView, belowSubview: secondView)  //将第三个视图插入第二个视图的下方</span><br><span class="line">        </span><br><span class="line">        //self.view.bringSubviewToFront(firstView)  //将第一个视图放置在所有子视图的上方</span><br><span class="line">        </span><br><span class="line">        //self.view.exchangeSubview(at: 2, withSubviewAt: 3)  //交换两个指定位置的子视图在父视图中的位置</span><br><span class="line">        </span><br><span class="line">        //firstView.removeFromSuperview()  //将第一个视图从其父视图中删除</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;UIView的嵌套和层次关系</span><br><span class="line">        </span><br><span class="line">        let firstView &#x3D; UIView(frame: CGRect(x: 20, y: 40, width: 200, height: 200))</span><br><span class="line">        firstView.backgroundColor &#x3D; UIColor.black</span><br><span class="line">        </span><br><span class="line">        let secondView &#x3D; UIView(frame: CGRect(x: 50, y: 70, width: 200, height: 200))</span><br><span class="line">        secondView.backgroundColor &#x3D; UIColor.red</span><br><span class="line">        </span><br><span class="line">        let thirdView &#x3D; UIView(frame: CGRect(x: 80, y: 100, width: 200, height: 200))</span><br><span class="line">        thirdView.backgroundColor &#x3D; UIColor.green</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(firstView)</span><br><span class="line">        self.view.addSubview(secondView)</span><br><span class="line">        self.view.addSubview(thirdView)</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;self.view.insertSubview(secondView, at: 2)  &#x2F;&#x2F;在指定的位置上插入视图</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;self.view.insertSubview(thirdView, aboveSubview: secondView)  &#x2F;&#x2F;将第三个视图插入第二个视图的上方</span><br><span class="line">        &#x2F;&#x2F;self.view.insertSubview(thirdView, belowSubview: secondView)  &#x2F;&#x2F;将第三个视图插入第二个视图的下方</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;self.view.bringSubviewToFront(firstView)  &#x2F;&#x2F;将第一个视图放置在所有子视图的上方</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;self.view.exchangeSubview(at: 2, withSubviewAt: 3)  &#x2F;&#x2F;交换两个指定位置的子视图在父视图中的位置</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;firstView.removeFromSuperview()  &#x2F;&#x2F;将第一个视图从其父视图中删除</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -556,10 +556,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/UIView的交互属性" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/UIView的交互属性" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/27/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E4%BA%A4%E4%BA%92%E5%B1%9E%E6%80%A7/" class="article-date">
+      <a  href="/2021/04/27/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E4%BA%A4%E4%BA%92%E5%B1%9E%E6%80%A7/" class="article-date">
       <time datetime="2021-04-26T16:00:00.000Z" itemprop="datePublished">2021-04-27</time>
 </a>
 
@@ -574,7 +574,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/27/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E4%BA%A4%E4%BA%92%E5%B1%9E%E6%80%A7/">UIView的交互属性</a>
+      <a  class="article-title" href="/2021/04/27/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E4%BA%A4%E4%BA%92%E5%B1%9E%E6%80%A7/">UIView的交互属性</a>
     </h1>
   
 
@@ -586,7 +586,7 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        // Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        //UIView的交互属性</span><br><span class="line">        </span><br><span class="line">        let touchView = UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        touchView.backgroundColor = UIColor.black</span><br><span class="line">        self.view.addSubview(touchView)</span><br><span class="line">        </span><br><span class="line">        let guesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.SingleTap))  //创建了一个UITapGestureRecognizer手势对象</span><br><span class="line">        touchView.addGestureRecognizer(guesture)  //通过addGestureRecognizer方法将手势对象指定给视图对象</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func SingleTap() &#123;</span><br><span class="line">        </span><br><span class="line">        print(&quot;You touched me.&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;UIView的交互属性</span><br><span class="line">        </span><br><span class="line">        let touchView &#x3D; UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        touchView.backgroundColor &#x3D; UIColor.black</span><br><span class="line">        self.view.addSubview(touchView)</span><br><span class="line">        </span><br><span class="line">        let guesture &#x3D; UITapGestureRecognizer(target: self, action: #selector(ViewController.SingleTap))  &#x2F;&#x2F;创建了一个UITapGestureRecognizer手势对象</span><br><span class="line">        touchView.addGestureRecognizer(guesture)  &#x2F;&#x2F;通过addGestureRecognizer方法将手势对象指定给视图对象</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @objc func SingleTap() &#123;</span><br><span class="line">        </span><br><span class="line">        print(&quot;You touched me.&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -622,10 +622,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/UIView的变形操作" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/UIView的变形操作" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/26/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%8F%98%E5%BD%A2%E6%93%8D%E4%BD%9C/" class="article-date">
+      <a  href="/2021/04/26/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E5%8F%98%E5%BD%A2%E6%93%8D%E4%BD%9C/" class="article-date">
       <time datetime="2021-04-25T16:00:00.000Z" itemprop="datePublished">2021-04-26</time>
 </a>
 
@@ -640,7 +640,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/26/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/UIView%E7%9A%84%E5%8F%98%E5%BD%A2%E6%93%8D%E4%BD%9C/">UIView的变形操作</a>
+      <a  class="article-title" href="/2021/04/26/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/UIView%E7%9A%84%E5%8F%98%E5%BD%A2%E6%93%8D%E4%BD%9C/">UIView的变形操作</a>
     </h1>
   
 
@@ -652,7 +652,7 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//UIView的变形操作</span><br><span class="line">        </span><br><span class="line">        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 50))</span><br><span class="line">        view.center = self.view.center</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line">        </span><br><span class="line">        let transform = view.transform</span><br><span class="line">        view.transform = transform.translatedBy(x: 0, y: 100)  //垂直方向上将视图的矩阵向下平移了100</span><br><span class="line">        </span><br><span class="line">        view.transform = transform.scaledBy(x: 1.5, y: 1.5)  //缩放仿射变换</span><br><span class="line">        </span><br><span class="line">        view.transform = transform.rotated(by: 3.14/4)  //参数angle表示在顺时针方向上旋转的角度，顺时针旋转45度</span><br><span class="line">        </span><br><span class="line">        //a、d：缩放；tx、ty：平移</span><br><span class="line">        //在水平和垂直方向上进行斜切操作</span><br><span class="line">        view.transform.b = 0.5</span><br><span class="line">        view.transform.c = 0.5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;UIView的变形操作</span><br><span class="line">        </span><br><span class="line">        let view &#x3D; UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 50))</span><br><span class="line">        view.center &#x3D; self.view.center</span><br><span class="line">        view.backgroundColor &#x3D; UIColor.black</span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line">        </span><br><span class="line">        let transform &#x3D; view.transform</span><br><span class="line">        view.transform &#x3D; transform.translatedBy(x: 0, y: 100)  &#x2F;&#x2F;垂直方向上将视图的矩阵向下平移了100</span><br><span class="line">        </span><br><span class="line">        view.transform &#x3D; transform.scaledBy(x: 1.5, y: 1.5)  &#x2F;&#x2F;缩放仿射变换</span><br><span class="line">        </span><br><span class="line">        view.transform &#x3D; transform.rotated(by: 3.14&#x2F;4)  &#x2F;&#x2F;参数angle表示在顺时针方向上旋转的角度，顺时针旋转45度</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;a、d：缩放；tx、ty：平移</span><br><span class="line">        &#x2F;&#x2F;在水平和垂直方向上进行斜切操作</span><br><span class="line">        view.transform.b &#x3D; 0.5</span><br><span class="line">        view.transform.c &#x3D; 0.5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -688,10 +688,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/CALayer边框" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/CALayer边框" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/25/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E8%BE%B9%E6%A1%86/" class="article-date">
+      <a  href="/2021/04/25/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/CALayer%E8%BE%B9%E6%A1%86/" class="article-date">
       <time datetime="2021-04-24T16:00:00.000Z" itemprop="datePublished">2021-04-25</time>
 </a>
 
@@ -706,7 +706,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/25/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E8%BE%B9%E6%A1%86/">CALayer边框</a>
+      <a  class="article-title" href="/2021/04/25/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/CALayer%E8%BE%B9%E6%A1%86/">CALayer边框</a>
     </h1>
   
 
@@ -718,7 +718,7 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//CALayer边框</span><br><span class="line">        </span><br><span class="line">        let view = UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.borderWidth = 20  //设置层的边缘宽度borderWidth为20</span><br><span class="line">        view.layer.borderColor = UIColor.lightGray.cgColor  //设置层的边缘颜色的值为浅灰色</span><br><span class="line">        //因为UIColor是定义在UIKit框架中的，只能在iOS中使用，而CALayer是定义在QuartzCore框架中的，所以需要使用具有跨平台特性的CGColorRef数据类型</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;CALayer边框</span><br><span class="line">        </span><br><span class="line">        let view &#x3D; UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor &#x3D; UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.borderWidth &#x3D; 20  &#x2F;&#x2F;设置层的边缘宽度borderWidth为20</span><br><span class="line">        view.layer.borderColor &#x3D; UIColor.lightGray.cgColor  &#x2F;&#x2F;设置层的边缘颜色的值为浅灰色</span><br><span class="line">        &#x2F;&#x2F;因为UIColor是定义在UIKit框架中的，只能在iOS中使用，而CALayer是定义在QuartzCore框架中的，所以需要使用具有跨平台特性的CGColorRef数据类型</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -754,10 +754,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/CALayer投影" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/CALayer投影" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/24/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E6%8A%95%E5%BD%B1/" class="article-date">
+      <a  href="/2021/04/24/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/CALayer%E6%8A%95%E5%BD%B1/" class="article-date">
       <time datetime="2021-04-23T16:00:00.000Z" itemprop="datePublished">2021-04-24</time>
 </a>
 
@@ -772,7 +772,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/24/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E6%8A%95%E5%BD%B1/">CALayer投影</a>
+      <a  class="article-title" href="/2021/04/24/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/CALayer%E6%8A%95%E5%BD%B1/">CALayer投影</a>
     </h1>
   
 
@@ -784,7 +784,7 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//CALayer投影</span><br><span class="line">        let view = UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.shadowColor = UIColor.black.cgColor  //设置阴影颜色为黑色</span><br><span class="line">        view.layer.shadowOffset = CGSize(width: 10.0, height: 10.0)  //设置阴影的偏移值，即在水平方向上向右侧偏移10，在垂直方向上向下偏移10，默认值为(0.0,-3.0)</span><br><span class="line">        view.layer.shadowOpacity = 0.45  //设置阴影的不透明度值，默认值为0.0</span><br><span class="line">        view.layer.shadowRadius = 5.0  //设置阴影的模糊半径，用来实现阴影的模糊效果，使阴影更加柔和、自然，默认值为3.0</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;CALayer投影</span><br><span class="line">        let view &#x3D; UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor &#x3D; UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.shadowColor &#x3D; UIColor.black.cgColor  &#x2F;&#x2F;设置阴影颜色为黑色</span><br><span class="line">        view.layer.shadowOffset &#x3D; CGSize(width: 10.0, height: 10.0)  &#x2F;&#x2F;设置阴影的偏移值，即在水平方向上向右侧偏移10，在垂直方向上向下偏移10，默认值为(0.0,-3.0)</span><br><span class="line">        view.layer.shadowOpacity &#x3D; 0.45  &#x2F;&#x2F;设置阴影的不透明度值，默认值为0.0</span><br><span class="line">        view.layer.shadowRadius &#x3D; 5.0  &#x2F;&#x2F;设置阴影的模糊半径，用来实现阴影的模糊效果，使阴影更加柔和、自然，默认值为3.0</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -820,10 +820,10 @@
 
 
   
-    <article id="post-代码仓库/iOS-功能demo/CALayer圆角" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS开发实战/《iOS移动开发从入门到精通(第2版)》/CALayer圆角" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2021/04/23/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E5%9C%86%E8%A7%92/" class="article-date">
+      <a  href="/2021/04/23/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/CALayer%E5%9C%86%E8%A7%92/" class="article-date">
       <time datetime="2021-04-22T16:00:00.000Z" itemprop="datePublished">2021-04-23</time>
 </a>
 
@@ -838,7 +838,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2021/04/23/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/iOS-%E5%8A%9F%E8%83%BDdemo/CALayer%E5%9C%86%E8%A7%92/">CALayer圆角</a>
+      <a  class="article-title" href="/2021/04/23/iOS%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/CALayer%E5%9C%86%E8%A7%92/">CALayer圆角</a>
     </h1>
   
 
@@ -850,7 +850,7 @@
       
           
         <hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//CALayer圆角</span><br><span class="line">        </span><br><span class="line">        let view = UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor = UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.cornerRadius = 40  //设置层的圆角半径为40</span><br><span class="line">        //从模拟器中的效果可以看出，虽然给黑色视图添加了圆角效果，但是由于子视图的存在，无法看到上方两个顶点的圆角效果，这是因为圆角效果只对视图的背景颜色和层的边框起作用，而不会对层中的内容起作用</span><br><span class="line">        //view.layer.cornerRadius = 100  //设置圆角半径时，如果设置为正方形宽度的一半，那么将会创建一个正圆形</span><br><span class="line">        //view.layer.cornerRadius = 200</span><br><span class="line">        </span><br><span class="line">        view.layer.masksToBounds = true  //这行代码会沿着圆角边缘对视图中的内容进行裁切</span><br><span class="line">        </span><br><span class="line">        let subView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))</span><br><span class="line">        subView.backgroundColor = UIColor.gray</span><br><span class="line">        </span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;CALayer圆角</span><br><span class="line">        </span><br><span class="line">        let view &#x3D; UIView(frame: CGRect(x: 60, y: 60, width: 200, height: 200))</span><br><span class="line">        view.backgroundColor &#x3D; UIColor.black</span><br><span class="line">        </span><br><span class="line">        view.layer.cornerRadius &#x3D; 40  &#x2F;&#x2F;设置层的圆角半径为40</span><br><span class="line">        &#x2F;&#x2F;从模拟器中的效果可以看出，虽然给黑色视图添加了圆角效果，但是由于子视图的存在，无法看到上方两个顶点的圆角效果，这是因为圆角效果只对视图的背景颜色和层的边框起作用，而不会对层中的内容起作用</span><br><span class="line">        &#x2F;&#x2F;view.layer.cornerRadius &#x3D; 100  &#x2F;&#x2F;设置圆角半径时，如果设置为正方形宽度的一半，那么将会创建一个正圆形</span><br><span class="line">        &#x2F;&#x2F;view.layer.cornerRadius &#x3D; 200</span><br><span class="line">        </span><br><span class="line">        view.layer.masksToBounds &#x3D; true  &#x2F;&#x2F;这行代码会沿着圆角边缘对视图中的内容进行裁切</span><br><span class="line">        </span><br><span class="line">        let subView &#x3D; UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))</span><br><span class="line">        subView.backgroundColor &#x3D; UIColor.gray</span><br><span class="line">        </span><br><span class="line">        view.addSubview(subView)</span><br><span class="line">        self.view.addSubview(view)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     

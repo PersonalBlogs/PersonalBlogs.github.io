@@ -228,6 +228,346 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机基础/操作系统原理/处理机调度概念、层次" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E6%A6%82%E5%BF%B5%E3%80%81%E5%B1%82%E6%AC%A1/" class="article-date">
+      <time datetime="2020-10-18T16:00:00.000Z" itemprop="datePublished">2020-10-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E6%A6%82%E5%BF%B5%E3%80%81%E5%B1%82%E6%AC%A1/">处理机调度概念、层次</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>当有一堆任务要处理，但由于资源有限，这些事情没法同时处理。这就需要确定某种规则来决定处理这些任务的顺序，这就是“调度”研究的问题</p>
+<h2 id="三个层次"><a href="#三个层次" class="headerlink" title="三个层次"></a>三个层次</h2><h3 id="高级调度（作业调度）"><a href="#高级调度（作业调度）" class="headerlink" title="高级调度（作业调度）"></a>高级调度（作业调度）</h3><p>作业：一个具体的任务</p>
+<p>用户向系统提交一个作业 = 用户让操作系统启动一个程序（来处理一个具体的任务）</p>
+<p>内存空间有限，有时无法将用户提交的作业全部放入内存？</p>
+<p>高级调度（作业调度）：按一定的原则从外存的作业后备队列中挑选一个作业调入内存，并创建进程。每个作业只调入一次，调出一次，作业调入时会建立PCB，调出时才撤销PCB</p>
+<h3 id="中级调度（内存调度）"><a href="#中级调度（内存调度）" class="headerlink" title="中级调度（内存调度）"></a>中级调度（内存调度）</h3><p>内存不够时，可将某些进程的数据调出外存，等内存空闲或者进程需要运行时再重新调入内存，暂时调到外存等待的进程状态为挂起状态，被挂起的进程PCB会被组织成挂起队列（为减轻系统负载，提高资源利用率）</p>
+<p>中级调度：按照某种策略决定将哪个处于挂起状态的进程重新调入内存，一个进程可能会被多次调出、调入内存，因此中级调度发生的频率要比高级调度更高</p>
+<h4 id="进程的挂起态与七状态模型"><a href="#进程的挂起态与七状态模型" class="headerlink" title="进程的挂起态与七状态模型"></a>进程的挂起态与七状态模型</h4><p>暂时调到外存等待的进程状态为挂起状态（挂起态，suspend），挂起状态又可以进一步细分为就绪挂起、阻塞挂起两种状态</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr45rbraq4j30wm0cwwpl.jpg"></p>
+<h3 id="低级调度（进程调度-处理机调度）"><a href="#低级调度（进程调度-处理机调度）" class="headerlink" title="低级调度（进程调度/处理机调度）"></a>低级调度（进程调度/处理机调度）</h3><p>按照某种策略从就绪队列中选取一个进程，将处理机分配给它</p>
+<p>进程调度是操作系统中最基本的一种调度，在一般的操作系统中都必须配置进程调度，进程调度的频率很高，一般几十毫秒一次</p>
+<h2 id="三层调度的联系、对比"><a href="#三层调度的联系、对比" class="headerlink" title="三层调度的联系、对比"></a>三层调度的联系、对比</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr45th3bwkj30s20a4gun.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/联结表、内部联结或等值联结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%81%94%E7%BB%93%E8%A1%A8%E3%80%81%E5%86%85%E9%83%A8%E8%81%94%E7%BB%93%E6%88%96%E7%AD%89%E5%80%BC%E8%81%94%E7%BB%93/" class="article-date">
+      <time datetime="2020-10-17T16:00:00.000Z" itemprop="datePublished">2020-10-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%81%94%E7%BB%93%E8%A1%A8%E3%80%81%E5%86%85%E9%83%A8%E8%81%94%E7%BB%93%E6%88%96%E7%AD%89%E5%80%BC%E8%81%94%E7%BB%93/">联结表、内部联结或等值联结</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>联结表【内部联结或等值联结】</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupddvpbj30bs05i762.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupl3ey2j30bs0hk45s.jpg"></p>
+<p>联结是一种机制，用来在一条SELECT语句中关联表，使用特殊的语法，可以联结多个表返回一组输出，联结在运行时关联表中正确的行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupv39x6j30b706lq7s.jpg"></p>
+<p>1）<br>SELECT vendname,prodname,prod_price<br>FROM vendors,products<br>WHERE vendors.vendid=products.vendid<br>ORDER BY vendname,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruq4vmywj306p01taac.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqcanemj306p04pgmk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqjjij8j30b701zdh8.jpg"></p>
+<p>笛卡尔积：由没有联结条件的表关系返回的结果为笛卡尔积，检索出的行的数目将是第一个表中的行数乘以第二个表中的行数<br>SELECT vendname,prodname,prod_price<br>FROM vendors,products<br>ORDER BY vendname,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqqkynyj30760c1ju2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqye64rj30760hen1d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorur7bbicj307602xt9c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorurf2qndj30bh06qjvh.jpg"></p>
+<p>2）<br>SELECT vendname,prodname,prod_price<br>FROM vendors INNER JOIN products<br>ON vendors.vendid=products.vendid;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorurn499nj30bc02g409.jpg"></p>
+<p>3)<br>SELECT prodname,vendname,prod_price,quantity<br>FROM orderitems,products,vendors<br>WHERE products.vendid=vendors.vendid<br>   AND orderitems.prodid=products.prodid<br>   AND order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruruabf9j308g02igm6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorus28tl7j30bf023jsx.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/操作系统原理/进程调度的时机、切换与进程调度方式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%E3%80%81%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F/" class="article-date">
+      <time datetime="2020-10-17T16:00:00.000Z" itemprop="datePublished">2020-10-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%E3%80%81%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F/">进程调度的时机、切换与进程调度方式</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="进程调度的时机"><a href="#进程调度的时机" class="headerlink" title="进程调度的时机"></a>进程调度的时机</h2><p>进程调度（低级调度），就是按照某种算法从就绪队列中选择一个进程为其分配处理机</p>
+<h3 id="需要进行进程调度与切换的情况"><a href="#需要进行进程调度与切换的情况" class="headerlink" title="需要进行进程调度与切换的情况"></a>需要进行进程调度与切换的情况</h3><ol>
+<li>当前运行的进程主动放弃处理机<ul>
+<li>进程正常终止</li>
+<li>运行过程中发生异常而终止</li>
+<li>进程主动请求阻塞（如等待I/O）</li>
+</ul>
+</li>
+<li>当前运行的进程被动放弃处理机<ul>
+<li>分给进程的时间片用完</li>
+<li>有更紧急的事需要处理（如I/O中断）</li>
+<li>有更高优先级的进程进入就绪队列</li>
+</ul>
+</li>
+</ol>
+<h3 id="不能进行进程调度与切换的情况"><a href="#不能进行进程调度与切换的情况" class="headerlink" title="不能进行进程调度与切换的情况"></a>不能进行进程调度与切换的情况</h3><ol>
+<li>在处理中断的过程中，中断处理过程复杂，与硬件密切相关，很难做到在中断处理过程中进行进程切换</li>
+<li>进程在操作系统内核程序临界区中</li>
+<li>在原子操作过程中（原语），原子操作不可中断，要一气呵成（如修改PCB中进程状态标志，并把PCB放到相应队列）</li>
+</ol>
+<p>进程在操作系统内核程序临界区中不能进行调度与切换✅</p>
+<p>进程处于临界区时不能进行处理机调度❌</p>
+<p>临界资源：一个时间段内只允许一个进程使用的资源，各进程需要互斥的访问临界资源</p>
+<p>临界区：访问临界资源的那段代码</p>
+<p>内核程序临界区一般是用来访问某种内核数据结构的，比如进程的就绪队列（由各就绪进程的PCB组成）</p>
+<p>假设就绪队列被上锁，进程还没有退出就绪队列（还没解锁）就进行进程调度，但是进程调度相关的程序也需要访问就绪队列，但此时就绪队列被锁住了，因此又无法顺利进行进程调度</p>
+<p>内核程序临界区访问的临界资源如果不尽快释放的话，极有可能影响到操作系统内核的其他管理工作，因此在访问内核程序临界区期间不能进行调度与切换</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr46w9ngh8j30dw098aee.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr46wtgjh2j30dw098jvi.jpg"></p>
+<p>有的系统中，只允许进程主动放弃处理机</p>
+<p>有的系统中，进程可以主动放弃处理机，当有更紧急的任务需要处理时，也会强行剥夺处理机（被动放弃）</p>
+<h2 id="进程调度的方式"><a href="#进程调度的方式" class="headerlink" title="进程调度的方式"></a>进程调度的方式</h2><ol>
+<li>非剥夺调度方式，又称非抢占方式，即只允许进程主动放弃处理机，在运行过程中即便有更紧迫的任务到达，当前进程依然会继续使用处理机，直到该进程终止或主动要求进入阻塞态<ul>
+<li>实现简单，系统开销小但是无法及时处理紧急任务，适合于早期的批处理系统</li>
+</ul>
+</li>
+<li>剥夺调度方式，又称抢占方式，可由操作系统剥夺当前进程的CPU使用权，当一个进程正在处理机上执行时，如果有一个更重要或更紧急的进程需要使用处理机，则立即暂停正在执行的进程，将处理机分配给更重要紧迫的那个进程<ul>
+<li>可以优先处理更紧急的进程，也可实现让各进程按时间片轮流执行的功能（通过时钟中断），适合于分时操作系统、实时操作系统</li>
+</ul>
+</li>
+</ol>
+<h2 id="进程的切换与过程"><a href="#进程的切换与过程" class="headerlink" title="进程的切换与过程"></a>进程的切换与过程</h2><p>“狭义的进程调度”：从就绪队列中选中一个要运行的进程（这个进程可以是刚刚被暂停执行的进程，也可能是另一个进程，后一种情况就需要进程切换）</p>
+<p>进程切换：一个进程让出处理机，由另一个进程占用处理机的过程</p>
+<p>“广义的进程调度”：包含了选择一个进程和进程切换两个步骤</p>
+<p>进程切换的过程主要完成了：</p>
+<ol>
+<li>对原来运行进程各种数据的保存</li>
+<li>对新的进程各种数据的恢复（如程序计数器、程序状态字、各种数据寄存器等处理机现场信息，这些信息一般保存在进程控制块）</li>
+</ol>
+<p>注意：进程切换、调度是有代价的，因此如果过于频繁的进行进程调度、切换，必然会使整个系统的效率降低，使系统大部分时间都花在了进程切换上，而真正用于执行进程的时间减少，并不是调度越频繁，并发度就越高</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/创建高级联结、自联结、自然联结、外部联结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93%E3%80%81%E5%A4%96%E9%83%A8%E8%81%94%E7%BB%93/" class="article-date">
+      <time datetime="2020-10-16T16:00:00.000Z" itemprop="datePublished">2020-10-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93%E3%80%81%E5%A4%96%E9%83%A8%E8%81%94%E7%BB%93/">创建高级联结、自联结、自然联结、外部联结</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>创建高级联结【自联结、自然联结、外部联结】</p>
+<p>别名除了用于列名和计算字段外，SQL还允许给表名起别名，这样做有两个主要理由：<br>1）缩短SQL语句<br>2）允许在单条SELECT语句中多次使用相同的表</p>
+<p>1）表别名不仅能用于WHERE子句，它还可以用于SELECT的列表、ORDER BY子句以及语句的其他部分，表别名只在查询执行中使用，与列别名不一样，表别名不返回到客户机<br>SELECT custname,custcontact<br>FROM customers AS c,orders AS o,orderitems AS oi<br>WHERE c.custid=o.custid<br>      AND oi.ordernum=o.ordernum<br>      AND prod_id=’TNT2’;</p>
+<p>2）自联结<br>首先找到生产ID为DTNTR的物品的供应商，然后找出这个供应商生产的其他物品<br>SELECT prodid,prodname<br>FROM products<br>WHERE vendid =(SELECT vendid<br>                                FROM products<br>                                WHERE prod_id=‘DTNTR’);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorutohlegj304403mjrs.jpg"></p>
+<p>SELECT p1.prodid,p1.prodname<br>FROM products AS p1,products AS p2<br>WHERE p1.vendid=p2.vendid<br>    AND p2.prod_id=‘DTNTR’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruu2ml4bj304403mdg8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruua9u4xj30br09bjwa.jpg"></p>
+<p>3)无论何时对表进行联结，应该至少有一个列出现在不止一个表中（被联结的列），标准的联结返回所有数据，甚至相同的列多次出现。自然联结排除多次出现，使每个列只返回一次<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruuhpe5zj30br07876z.jpg"></p>
+<p>4）联结包含了那些在相关表中没有关联行的行，这种类型的联结称为外部联结</p>
+<p>检索所有客户及其订单（内部联结）<br>SELECT customers.custid,orders.ordernum<br>FROM customers INNER JOIN orders<br>   ON customers.custid=orders.custid;</p>
+<p>为了检索所有客户，包括那些没有订单的客户（外部联结）：<br>SELECT customers.custid,orders.ordernum<br>FROM customers LEFT OUTER JOIN orders<br>   ON customers.custid=orders.custid;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruupdyqtj303d03a74l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruv1k1huj30bn0a7jwq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruv9ietej30b801gmy4.jpg"></p>
+<p>5)检索所有客户及每个客户所下的订单数<br>SELECT customers.cust_name,<br>               customers.cust_id,<br>               COUNT(orders.ordernum) AS numord<br>FROM customers INNER JOIN orders<br>   ON customers.custid=orders.custid<br>GROUP BY customers.cust_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvi4uihj305j02kgly.jpg"></p>
+<p>6)<br>SELECT customers.cust_name,<br>               customers.cust_id,<br>               COUNT(orders.ordernum) AS numord<br>FROM customers LEFT OUTER JOIN orders<br>   ON customers.custid=orders.custid<br>GROUP BY customers.cust_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvq5jggj305l01uglt.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvx2i46j305l01jaa8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruw3shg3j30bm06fjtn.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机基础/操作系统原理/调度算法的评价指标" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -738,418 +1078,6 @@
 <p>只要每条INSERT语句中的列名（和次序）相同，可以如下组合各语句：<br>INSERT INTO Customers(cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>VALUES(<br>               ‘Pep E.LaPew’,<br>               ‘100 Main Street’,<br>               ‘Los Angeles’,<br>               ‘CA’,<br>               ‘90046’,<br>               ‘USA’<br>              )，<br>              (<br>               ‘M.Martian’,<br>               ’42 Galaxy Way’,<br>               ’New York’,<br>               ‘NY’,<br>               ’11213’,<br>               ‘USA’<br>               );<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwkm47q6j30b7022ta4.jpg"></p>
 <p>3）插入检索出的数据<br>INSERT INTO Customers(cust_id,<br>         cust_contact,<br>         cust_email,<br>         cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country)<br>SELECT cust_id,<br>         cust_contact,<br>         cust_email,<br>         cust_name,<br>         cust_address,<br>         cust_city,<br>         cust_state,<br>         cust_zip,<br>         cust_country<br>FROM custnew;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwkxfdpej30bj05q0v4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwl5nalvj30b704a77c.jpg"></p>
 <p>INSERT SELECT中SELECT语句可包含WHERE子句以过滤插入的数据</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/操作系统原理/信号量机制" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/" class="article-date">
-      <time datetime="2020-10-13T16:00:00.000Z" itemprop="datePublished">2020-10-14</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/">信号量机制</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>1965年，荷兰学者Dijkstra提出了一种卓有成效的实现进程互斥、同步的方法：信号量机制</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr687eyo3vj30um0d0gwa.jpg"></p>
-<h2 id="整型信号量"><a href="#整型信号量" class="headerlink" title="整型信号量"></a>整型信号量</h2><p>用一个整数型的变量作为信号量，用来表示系统中某种资源的数量</p>
-<p>与普通整数变量的区别：对信号量的操作只有三种，初始化、P操作、V操作</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr68hvkdi5j30wm0dwgxt.jpg"></p>
-<h2 id="记录型信号量"><a href="#记录型信号量" class="headerlink" title="记录型信号量"></a>记录型信号量</h2><p>整型信号量的缺陷是存在“忙等”问题，因此人们又提出了“记录型信号量”，即用记录型数据结构表示的信号量</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr68or113ej60x80e0ani02.jpg"></p>
-<p>⭐️有多少资源就把信号量初始值设为多少</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr68sxn0t6j30xu0g47h5.jpg"></p>
-<p>执行signal原语时：</p>
-<ul>
-<li>S.value + 1 后 &lt;= 0，说明有进程在等待资源</li>
-<li>S.value + 1 后 &gt; 0，说明已经没有进程在等待资源</li>
-</ul>
-<p>注意：要能够自己推断在什么条件下需要执行block或wakeup</p>
-<p>⭐️记录型信号量遵循了“让权等待”原则，不会出现“忙等”现象</p>
-<h2 id="用信号量机制实现进程互斥"><a href="#用信号量机制实现进程互斥" class="headerlink" title="用信号量机制实现进程互斥"></a>用信号量机制实现进程互斥</h2><p>一个信号量对应一种资源</p>
-<p>信号量的值 = 这种资源的剩余数量（信号量的值如果小于0，说明此时有进程在等待这种资源）</p>
-<p>P(S)：申请一个资源S，如果资源不够就阻塞等待</p>
-<p>V(S)：释放一个资源S，如果有进程在等待该资源，则唤醒一个进程</p>
-<p>注意：</p>
-<ul>
-<li>对不同的临界资源需要设置不同的互斥信号量，如打印机这个临界资源设置mutex1 = 1，另一个摄像头临界资源设置mutex2 = 1</li>
-<li>P、V操作必须成对出现，缺少P(mutex)就不能保证临界资源的互斥访问。缺少V(mutex)会导致资源永不被释放，等待进程永不被唤醒</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr69lp2p57j30cs0ekdiu.jpg"></p>
-<h2 id="用信号量机制实现进程同步"><a href="#用信号量机制实现进程同步" class="headerlink" title="用信号量机制实现进程同步"></a>用信号量机制实现进程同步</h2><p>进程同步：要让各并发进程按要求有序的推进</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr69t0ky0hj30vi0bc43b.jpg"></p>
-<p>❗️在“前操作”之后执行V(S)，在“后操作”之前执行P(V)</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr69y11ehjj30uy0cwtk9.jpg"></p>
-<h2 id="用信号量机制实现进程的前驱关系（进程同步）"><a href="#用信号量机制实现进程的前驱关系（进程同步）" class="headerlink" title="用信号量机制实现进程的前驱关系（进程同步）"></a>用信号量机制实现进程的前驱关系（进程同步）</h2><p>前驱关系问题，本质上就是多级同步问题</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr6a4ohg3tj30xs0fik3d.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/《MySQL必知必会》/更新和删除数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%9B%B4%E6%96%B0%E5%92%8C%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">更新和删除数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>更新和删除数据</p>
-<p>1）为了更新（修改）表中的数据，可使用UPDATE语句，可采用两种方式使用UPDATE：<br>更新表中特定行；<br>更新表中所有行；</p>
-<p>UPDATE语句的组成：<br>1）要更新的表<br>2）列名和它们的新值<br>3）确定要更新行的过滤条件</p>
-<p>UPDATE customers<br>SET cust_email=‘ <a href="mailto:&#101;&#x6c;&#109;&#x65;&#x72;&#x40;&#102;&#x75;&#100;&#x64;&#46;&#99;&#111;&#x6d;">&#101;&#x6c;&#109;&#x65;&#x72;&#x40;&#102;&#x75;&#100;&#x64;&#46;&#99;&#111;&#x6d;</a> ’<br>WHERE cust_id=10005;</p>
-<p>UPDATE customers<br>SET cust_name=’The Fudds’,<br>        cust_email=‘ <a href="mailto:&#101;&#x6c;&#x6d;&#x65;&#x72;&#64;&#x66;&#x75;&#100;&#x64;&#46;&#99;&#111;&#109;">&#101;&#x6c;&#x6d;&#x65;&#x72;&#64;&#x66;&#x75;&#100;&#x64;&#46;&#99;&#111;&#109;</a> ’<br>WHERE cust_id=10005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmjgrtzj30b705mjv7.jpg"></p>
-<p>为了删除某个列的值，可设置它为NULL（假定表定义允许NULL值）<br>UPDATE customers<br>SET cust_email=NULL<br>WHERE cust_id=10005;</p>
-<p>2）为了从一个表中删除（去掉）数据，可使用DELETE语句<br>从表中删除特定的行<br>从表中删除所有行</p>
-<p>DELETE FROM customers<br>WHERE cust_id =10006;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwmsze4qj30b604rtbq.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwn2z6fvj30bs0c9jx3.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/操作系统原理/经典进程同步互斥问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BB%8F%E5%85%B8%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%BA%92%E6%96%A5%E9%97%AE%E9%A2%98/" class="article-date">
-      <time datetime="2020-10-12T16:00:00.000Z" itemprop="datePublished">2020-10-13</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%BB%8F%E5%85%B8%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%BA%92%E6%96%A5%E9%97%AE%E9%A2%98/">经典进程同步互斥问题</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="生产者-消费者问题（互斥、同步综合问题）"><a href="#生产者-消费者问题（互斥、同步综合问题）" class="headerlink" title="生产者-消费者问题（互斥、同步综合问题）"></a>生产者-消费者问题（互斥、同步综合问题）</h2><p>系统中有一组生产者进程和一组消费者进程，生产者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用</p>
-<ul>
-<li>生产者、消费者共享一个初始为空、大小为n的缓冲区</li>
-<li>只有缓冲区没满时，生产者才能把产品放入缓冲区，否则必须等待（进程同步：缓冲区没满 -&gt; 生产者生产）</li>
-<li>只有缓冲区不空时，消费者才能从中取出产品，否则必须等待（进程同步：缓冲区没空 -&gt; 消费者消费）</li>
-<li>缓冲区是临界资源，各进程必须互斥访问（如果两个生产者进程并发运行，同时往缓冲区的同一块区域放入数据，会出现问题）（互斥关系）</li>
-</ul>
-<p>❗️互斥信号量初值一般为1，同步信号量的初始值要看对应资源的初始值是多少</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr6laawr80j30sq09e432.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr6lq5y0m3j30zi08s10u.jpg"></p>
-<p>能否改变相邻P、V操作的顺序？</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr6m1k0or9j30uo0g8wpp.jpg"></p>
-<p>“生产一个产品”、“使用产品”这两句话逻辑上是可以放到PV操作之间，但是这样会增加临界区的代码，会导致进程的并发度降低，对系统的效能产生影响，造成不便</p>
-<h2 id="多生产者-多消费者问题"><a href="#多生产者-多消费者问题" class="headerlink" title="多生产者-多消费者问题"></a>多生产者-多消费者问题</h2><ul>
-<li>桌子上有一只盘子，每次只能向其中放入一个水果。（大小为1，初始为空的缓冲区）</li>
-<li>爸爸专向盘子中放苹果，妈妈专向盘子中放橘子，儿子专等着吃盘子中的橘子，女儿专等着吃盘子中的苹果。</li>
-<li>只有盘子空时，爸爸或妈妈才可向盘子中放一个水果。仅当盘子中有自己需要的水果时，儿子或女儿可以从盘子中取出水果。用PV操作实现上述过程</li>
-</ul>
-<blockquote>
-<p>互斥关系：对缓冲区（盘子）的访问要互斥的进行</p>
-<p>同步关系（一前一后）：</p>
-<ol>
-<li>盘子中有苹果，女儿才能取苹果</li>
-<li>盘子中有橘子，儿子才能取橘子</li>
-<li>只有盘子为空时，父亲或母亲才能放入水果（“盘子为空”这个事件可以由儿子或女儿触发，事件发生后才允许父亲或母亲放水果）</li>
-</ol>
-</blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr74k8k33bj30lk03otac.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr74kxspraj30yc08k0y4.jpg"></p>
-<p>问题：可不可以不用互斥信号量</p>
-<p>分析：刚开始，儿子、女儿进程即使上处理机运行也会被阻塞，如果刚开始是父亲进程先上处理机运行，则父亲P(plate)，可以访问盘子 -&gt; 母亲P(plate)，阻塞等待盘子 -&gt; 父亲放入苹果V(apple)，女儿进程被唤醒，其他进程即使运行也都会阻塞，暂时不能访问临界资源（盘子） -&gt; 女儿P(apple)，访问盘子，V(plate)，等待盘子的母亲进程被唤醒 -&gt; 母亲进程访问盘子（其他进程暂时无法进入临界区） -&gt; …</p>
-<p>结论：即使不设置专门的互斥变量mutex，也不会出现多个进程同时访问盘子的现象</p>
-<p>原因：本题中的缓冲区大小为1，在任何时刻，apple、orange、plate三个同步信号量中最多只有一个是1，因此在任何时刻，最多只有一个进程的P操作不会被阻塞，并顺利的进入临界区</p>
-<p>如果盘子的容量（缓冲区）设为2，可能出现两个进程同时访问缓冲区的情况，有可能导致两个进程写入缓冲区的数据相互覆盖的情况</p>
-<p>❗️因此，如果缓冲区大小大于1，就必须专门设置一个互斥信号量mutex来保证互斥访问缓冲区</p>
-<h2 id="吸烟者问题（可生产多种产品的单生产者-多消费者）"><a href="#吸烟者问题（可生产多种产品的单生产者-多消费者）" class="headerlink" title="吸烟者问题（可生产多种产品的单生产者-多消费者）"></a>吸烟者问题（可生产多种产品的单生产者-多消费者）</h2><p>假设一个系统有三个抽烟者进程和一个供应者进程。每个抽烟者不停的卷烟并抽掉它，但是要卷起并抽掉一支烟，抽烟者需要有三种材料：烟草、纸和胶水。三个抽烟者中，第一个拥有烟草、第二个拥有纸、第三个拥有胶水。供应者进程无限的提供三种材料，供应者每次将两种材料放桌子上，拥有剩下那种材料的抽烟者卷一根烟并抽掉它，并给供应者进程一个信号告诉它完成了，供应者就会放另外两种材料在桌上，这个过程一直重复（让三个抽烟者轮流的抽烟）</p>
-<blockquote>
-<p>互斥关系：桌子可以抽象为容量为1的缓冲区，要互斥访问（这个容量为1表示组合）</p>
-<ul>
-<li>组合一：纸+胶水</li>
-<li>组合二：烟草+胶水</li>
-<li>组合三：烟草+纸</li>
-</ul>
-<p>同步关系（从事件的角度来分析）：</p>
-<ul>
-<li>桌上有组合一，第一个抽烟者取走东西</li>
-<li>桌上有组合二，第二个抽烟者取走东西</li>
-<li>桌上有组合三，第三个抽烟者取走东西</li>
-<li>发出完成信号，供应者将下一个组合放到桌上</li>
-</ul>
-</blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr75zlril5j30m804g0ut.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr760fec1kj309u0ccmyx.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr760yojo9j30pi06wtcj.jpg"></p>
-<h2 id="读者-写者问题（复杂的互斥问题）"><a href="#读者-写者问题（复杂的互斥问题）" class="headerlink" title="读者-写者问题（复杂的互斥问题）"></a>读者-写者问题（复杂的互斥问题）</h2><p>有读者和写者两组并发进程，共享一个文件，当两个或两个以上的读进程同时访问共享数据时不会产生副作用，但若某个写进程和其他进程（读进程或写进程）同时访问共享数据时则可能导致数据不一致的错误，因此要求：</p>
-<ol>
-<li>允许多个读者可以同时对文件执行读操作（与消费者进程不同，读者进程在读数据后并不会将数据清空，并不会改变数据。因此多个读者进程可同时访问共享数据）</li>
-<li>只允许一个写者往文件中写信息</li>
-<li>任一写者在完成写操作之前不允许其他读者或写者工作（两个写进程同时共享数据，可能导致数据错误覆盖的问题）（读进程与写进程同时共享数据，可能导致读出的数据不一致的问题）</li>
-<li>写者执行写操作前，应让已有的读者和写者全部退出</li>
-</ol>
-<blockquote>
-<p>两类进程：写进程、读进程</p>
-<p>互斥关系：写进程-写进程、写进程-读进程（读进程-读进程不存在互斥问题）</p>
-</blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr76qrlmtuj30x602wmzl.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr76r4cgpuj30e0064ab7.jpg"></p>
-<p>思考：若两个读进程并发执行，则count=0时两个进程也许都能满足if条件，都会执行P(rw)，从而使第二个读进程阻塞的情况</p>
-<p>如何解决：出现上述问题的原因在于对count变量的检查和赋值无法一气呵成，因此可以设置另一个互斥信号量来保证各读者进程对count的访问是互斥的</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr76rhfoihj30i00cmjw7.jpg"></p>
-<p>潜在的问题：只要有读进程还在读，写进程就要一直阻塞等待，可能“饿死”。因此这种算法中，读进程是优先的</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr77xgaynfj30ko03owh8.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr77xwelc1j306u07u751.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr77y8mjfaj30by0ecmzv.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr77yv8mrwj60a405k75t02.jpg"></p>
-<p>结论；在这种算法中，连续进入的多个读者可以同时读文件；写者和其他进程不能同时访问文件；写者不会饥饿，但也并不是真正的“写优先”，而是相对公平的先来先服务原则。有的书上把这种算法称为“读写公平法”</p>
-<h2 id="哲学家进餐问题（解决进程死锁）"><a href="#哲学家进餐问题（解决进程死锁）" class="headerlink" title="哲学家进餐问题（解决进程死锁）"></a>哲学家进餐问题（解决进程死锁）</h2><p>一张圆桌上坐着5名哲学家，每两个哲学家之间的桌上摆一根筷子，桌子的中间是一碗米饭。哲学家们倾注毕生的精力用于思考和进餐，哲学家在思考时，并不影响其他人。只有当哲学家饥饿时，才试图拿起左、右两根筷子（一根一根的拿起）。如果筷子已在他人手上，则需等待。饥饿的哲学家只有同时拿起两根筷子才可以开始进餐，当进餐完毕后，放下筷子继续思考</p>
-<blockquote>
-<p>系统中有5个哲学家进程，5位哲学家与左右邻居对其中间筷子的访问是互斥关系</p>
-<p>这个问题中只有互斥关系，但与之前遇到的问题不同的是，每个哲学家进程需要同时持有两个临界资源才能开始吃饭。如何避免临界资源分配不当造成的死锁现象，是哲学家问题的精髓</p>
-<p>定义互斥信号量数组chopstick[5] = {1,1,1,1,1}，用于实现对5个筷子的互斥访问，并对哲学家按0～4编号，哲学家i左边的筷子编号为i，右边的筷子编号为(i+1) % 5</p>
-</blockquote>
-<p>如果5个哲学家并发的拿起了自己左手边的筷子，每位哲学家循环等待右边的人放下筷子（阻塞），发生“死锁”</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr7iaeeswoj30fm098tb3.jpg"></p>
-<p>解决方法：</p>
-<ol>
-<li><p>可以对哲学家进程施加一些限制条件，比如最多只允许四个哲学家同时进餐。这样可以保证至少有一个哲学家是可以拿到左右两只筷子的</p>
-</li>
-<li><p>要求奇数号哲学家先拿左边的筷子，然后再拿右边的筷子，而偶数号哲学家刚好相反。用这种方法可以保证如果相邻的两个奇偶号哲学家都想吃饭，那么只会有其中一个可以拿起第一支筷子，另一个会直接阻塞。这就避免了占有一支后再等待另一只的情况</p>
-</li>
-<li><p>仅当一个哲学家左右两支筷子都可用时才允许他抓起筷子</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr7im97i56j30gg0bsmzw.jpg"></p>
-</li>
-</ol>
-<p>画图可知，进程分别调度哲学家0、1、2时可发现，哲学家0可正常吃饭，哲学家1被阻塞，哲学家2虽然左右都有筷子，但是他也被阻塞</p>
-<p>进程分别调度0、4时，哲学家0可正常吃饭，哲学家4右边的筷子不可用，但是4仍然可以拿起左边的筷子，因此这种方法并不能保证只有两边的筷子都可用时，才允许哲学家拿起筷子</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/《MySQL必知必会》/创建和操纵表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/" class="article-date">
-      <time datetime="2020-10-11T16:00:00.000Z" itemprop="datePublished">2020-10-12</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E8%A1%A8/">创建和操纵表</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>创建和操纵表</p>
-<p>一般有两种创建表的方法：<br>1）使用具有交互式创建和管理表的工具<br>2）表也可以直接用MySQL语句操纵</p>
-<p>值得注意的是，在使用交互式工具时，实际上使用的是MySQL语句，但是这些语句不是用户编写的，界面工具会自动生成并执行相应的MySQL语句（更改现有表时也是这样）</p>
-<p>为利用CREATE TABLE创建表，必须给出下列信息：<br>1）新表的名字，在关键字CREATE TABLE之后给出<br>2）表列的名字和定义，用逗号分隔</p>
-<p>1）表的主键可以在创建表时用PRIMARY KEY关键字指定，为创建由多个列组成的主键，应该以逗号分隔的列表给出各列名；主键为其值唯一标识表中每个行的列，主键中只能使用不允许NULL值的列，允许NULL值的列不能作为唯一标识<br>CREATE TABLE customers<br>(<br>     custid              int                NOT NULL AUTOINCREMENT,<br>     cust_name        char(50)     NOT NULL,<br>     cust_address    char(50)     NULL,<br>     cust_city           char(50)     NULL,<br>     cust_state         char(5)       NULL,<br>     cust_zip             char(10)     NULL,<br>     cust_country     char(50)     NULL,<br>     cust_contact     char(50)     NULL,<br>     cust_email         char(255)   NULL,<br>     PRIMARY KEY (cust_id)<br>)ENGINE-InnoDB;</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwon1sojj30b4044jub.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwoulrokj30b402lwgb.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp2xsdhj30b402l40a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwp9p6ubj30b402l761.jpg"></p>
-<p>AUTOINCREMENT告诉MySQL，本列每当增加一行时自动增量。每次执行一个INSERT操作时，MySQL自动对该列增量（从而才有这个关键字AUTOINCREMENT），给该列赋予下一个可用的值。这样给每个行分配一个唯一的custid，从而可以用作主键值；每个表只允许一个AUTOINCREMENT列，而且它必须被索引（如通过使它成为主键）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwpk2xfbj30b40bjjz3.jpg"></p>
-<p>2）如果在插入行时没有给出值，MySQL允许指定此时使用的默认值。默认值用CREATE TABLE语句的列定义中的DEFAULT关键字指定<br>CREATE TABLE orderitems<br>(<br>     order_num        int                     NOT NULL,<br>     order_item        int                     NOT NULL,<br>     prod_id             char(10)           NOT NULL,<br>     quantity            int                     NOT NULL DEFAULT 1,<br>     item_price        decimal(8,2)    NOT NULL,<br>     PRIMARY KEY(ordernum,orderitem)<br>)ENGINE-InnoDB;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwptvtivj30b404d40w.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq1d6f2j30bw07ndis.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwq88t37j30bw0f0wlh.jpg"></p>
-<p>3)更新表<br>为了使用ALTER TABLE更改表结构，必须给出下面的信息：<br>1）在ALTER TABLE之后给出要更改的表名（该表必须存在，否则将出错）<br>2）所做更改的列表</p>
-<p>ALTER TABLE vendors<br>ADD vend_phone CHAR(20);</p>
-<p>删除刚刚添加的列：<br>ALTER TABLE Vendors<br>DROP COLUMN vend_phone;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqhn92kj30bw08l76r.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqphxx2j30bw01ldg7.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorwqwbdwtj30bw07e0wg.jpg"></p>
-<p>4)删除表：删除整个表而不是其内容，删除表没有确认，也不能撤销，执行这条语句将永久删除该表</p>
-<p>DROP TABLE customers2;</p>
-<p>5)重命名表</p>
-<p>RENAME TABLE customers2 TO customers,<br>                            backup_vendors TO vendors;</p>
 
       
     </div>

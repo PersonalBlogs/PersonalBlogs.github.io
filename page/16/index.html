@@ -228,6 +228,322 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机基础/操作系统原理/磁盘调度算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/09/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" class="article-date">
+      <time datetime="2020-09-24T16:00:00.000Z" itemprop="datePublished">2020-09-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/09/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/">磁盘调度算法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="一次磁盘读-写操作需要的时间"><a href="#一次磁盘读-写操作需要的时间" class="headerlink" title="一次磁盘读/写操作需要的时间"></a>一次磁盘读/写操作需要的时间</h2><p>寻找时间：（磁盘调度算法影响的指标）</p>
+<ul>
+<li><img src="https://tva1.sinaimg.cn/large/008i3skNly1grir0cwgx5j60iw08s7b802.jpg"></li>
+</ul>
+<p>延迟时间：</p>
+<ul>
+<li><img src="https://tva1.sinaimg.cn/large/008i3skNly1grir203z72j30kk05i7a6.jpg"></li>
+</ul>
+<p>传输时间：</p>
+<ul>
+<li><img src="https://tva1.sinaimg.cn/large/008i3skNly1grir49b40gj30iw0727b1.jpg"></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grir56qxjoj30ci01qgm6.jpg"></p>
+<p>延迟时间和传输时间都与磁盘转速相关，且为线性相关。而转速是硬件的固有属性，因此操作系统也无法优化延迟时间和传输时间</p>
+<p>但是操作系统的磁盘调度算法会直接影响寻道时间</p>
+<h2 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h2><h3 id="先来先服务FCFS"><a href="#先来先服务FCFS" class="headerlink" title="先来先服务FCFS"></a>先来先服务FCFS</h3><p>根据进程请求访问磁盘的先后顺序进行调度</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grircksch7j30v40e2qfb.jpg"></p>
+<h3 id="最短寻找时间优先SSTF"><a href="#最短寻找时间优先SSTF" class="headerlink" title="最短寻找时间优先SSTF"></a>最短寻找时间优先SSTF</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grirfxcgxkj30ue0f6tpt.jpg"></p>
+<h3 id="扫描算法SCAN"><a href="#扫描算法SCAN" class="headerlink" title="扫描算法SCAN"></a>扫描算法SCAN</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grirlg6djyj30us0gch82.jpg"></p>
+<h3 id="LOOK调度算法（解决SCAN算法的第一个缺点）"><a href="#LOOK调度算法（解决SCAN算法的第一个缺点）" class="headerlink" title="LOOK调度算法（解决SCAN算法的第一个缺点）"></a>LOOK调度算法（解决SCAN算法的第一个缺点）</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1griromjpp1j30us0f8tq6.jpg"></p>
+<h3 id="循环扫描算法C-SCAN（解决SCAN算法的第二个缺点）"><a href="#循环扫描算法C-SCAN（解决SCAN算法的第二个缺点）" class="headerlink" title="循环扫描算法C-SCAN（解决SCAN算法的第二个缺点）"></a>循环扫描算法C-SCAN（解决SCAN算法的第二个缺点）</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grirqflq52j30vw0f8158.jpg"></p>
+<h3 id="C-LOOK调度算法（解决C-SCAN算法的缺点）"><a href="#C-LOOK调度算法（解决C-SCAN算法的缺点）" class="headerlink" title="C-LOOK调度算法（解决C-SCAN算法的缺点）"></a>C-LOOK调度算法（解决C-SCAN算法的缺点）</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grirsetfs1j30vw0eqtqk.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/操作系统原理/减少延迟时间的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%87%8F%E5%B0%91%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4%E7%9A%84%E6%96%B9%E6%B3%95/" class="article-date">
+      <time datetime="2020-09-23T16:00:00.000Z" itemprop="datePublished">2020-09-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%87%8F%E5%B0%91%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4%E7%9A%84%E6%96%B9%E6%B3%95/">减少延迟时间的方法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gris7782ivj30ve0b6k8u.jpg"></p>
+<h3 id="方法1：交替编号"><a href="#方法1：交替编号" class="headerlink" title="方法1：交替编号"></a>方法1：交替编号</h3><p>若采用交替编号的策略，即让逻辑上相邻的扇区在物理上有一定的间隔，可以使读取连续的逻辑扇区所需要的延迟时间更小</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grisam1wnrj30c00bqth1.jpg"></p>
+<h3 id="磁盘地址结构的设计"><a href="#磁盘地址结构的设计" class="headerlink" title="磁盘地址结构的设计"></a>磁盘地址结构的设计</h3><p>为什么磁盘的物理地址是（柱面号，盘面号，扇区号），而不是（盘面号，柱面号，扇区号）？</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grisfrt28jj30c00d4th8.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grisg7zvifj30iq0ak7cy.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grisht1oe5j30eu0ck14j.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grisicqn8bj30j4080wmb.jpg"></p>
+<p>读取地址连续的磁盘块时，采用（柱面号，盘面号，扇区号）的地址结构可以减少磁头移动消耗的时间</p>
+<h3 id="方法2：错位命名"><a href="#方法2：错位命名" class="headerlink" title="方法2：错位命名"></a>方法2：错位命名</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grispm4294j30yg0gk1kx.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grisrfi4x5j30y40f27v4.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/操作系统原理/磁盘的管理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/09/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%A3%81%E7%9B%98%E7%9A%84%E7%AE%A1%E7%90%86/" class="article-date">
+      <time datetime="2020-09-22T16:00:00.000Z" itemprop="datePublished">2020-09-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/09/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E7%A3%81%E7%9B%98%E7%9A%84%E7%AE%A1%E7%90%86/">磁盘的管理</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="磁盘初始化"><a href="#磁盘初始化" class="headerlink" title="磁盘初始化"></a>磁盘初始化</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grit0ej5noj30wo0be4cw.jpg"></p>
+<h2 id="引导块"><a href="#引导块" class="headerlink" title="引导块"></a>引导块</h2><p>计算机开机时需要进行一系列初始化的工作，这些初始化的工作是通过执行初始化程序（自举程序）完成的</p>
+<p>初始化程序可以放在ROM（只读存储器）中，ROM中的数据在出厂时就写入了，并且以后不能再修改（ROM一般是出厂时就集成在主板上的）</p>
+<p>问题：万一需要更新自举程序，将会很不方便，因为ROM中的数据无法更改</p>
+<p>ROM中只存放很小的“自举装入程序”，完整的自举程序放在磁盘的启动块（即引导块/启动分区）上，启动块位于磁盘的固定位置，拥有启动分区的磁盘称为启动磁盘或系统磁盘（C:盘）</p>
+<p>开机时计算机先运行“自举装入程序”，通过执行该程序就可以找到引导块，并将完整的“自举程序”读入内存，完成初始化</p>
+<h2 id="坏块的管理"><a href="#坏块的管理" class="headerlink" title="坏块的管理"></a>坏块的管理</h2><p>坏了、无法正常使用的扇区就是“坏块”，这属于硬件故障，操作系统是无法修复的。应该将坏块标记出来，以免错误的使用到它</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grithfvydhj30vq0be1am.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/操作系统原理/I-O设备的基本概念和分类" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/09/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/I-O%E8%AE%BE%E5%A4%87%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%88%86%E7%B1%BB/" class="article-date">
+      <time datetime="2020-09-21T16:00:00.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/09/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/I-O%E8%AE%BE%E5%A4%87%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%88%86%E7%B1%BB/">I-O设备的基本概念和分类</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="什么是I-O设备"><a href="#什么是I-O设备" class="headerlink" title="什么是I/O设备"></a>什么是I/O设备</h2><p>I/O就是输入/输出（Input/Output）</p>
+<p>I/O设备就是可以将数据输入到计算机，或者可以接收计算机输出数据的外部设备，属于计算机中的硬件部件</p>
+<p>鼠标、键盘：典型的输入型设备</p>
+<p>显示器：输出型设备</p>
+<p>移动硬盘：既可输入又可输出的设备</p>
+<p>UNIX系统将外部设备抽象为一种特殊的文件，用户可以使用与文件操作相同的方式对外部设备进行操作【write操作：向外部设备写出数据，read操作：从外部设备读入数据】</p>
+<h2 id="按使用特性分类"><a href="#按使用特性分类" class="headerlink" title="按使用特性分类"></a>按使用特性分类</h2><p>人机交互类外部设备：鼠标、键盘、打印机（数据传输速度慢）</p>
+<p>存储设备：移动硬盘、光盘（数据传输速度快）</p>
+<p>网络通信设备：调制解调器（数据传输速度介于上述二者之间）</p>
+<h2 id="按传输速率分类"><a href="#按传输速率分类" class="headerlink" title="按传输速率分类"></a>按传输速率分类</h2><p>低速设备：鼠标、键盘，传输速率为每秒几个到几百字节</p>
+<p>中速设备：激光打印机，传输速率为每秒数千至上万个字节</p>
+<p>高速设备：磁盘，传输速率为每秒数千字节至千兆字节</p>
+<h2 id="按信息交换的单位分类"><a href="#按信息交换的单位分类" class="headerlink" title="按信息交换的单位分类"></a>按信息交换的单位分类</h2><p>块设备：磁盘，数据传输的基本单位是块（传输速率较高，可寻址，即对它可随机的读/写任一块）</p>
+<p>字符设备：鼠标、键盘，数据传输的基本单位是字符（传输速率较慢，不可寻址，在输入/输出时常采用中断驱动方式）</p>
+<p>中断驱动方式：I/O控制方式的一种</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机基础/操作系统原理/I-O控制器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -785,290 +1101,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/计算机网络原理/概念、功能、组成、分类" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A6%82%E5%BF%B5%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%84%E6%88%90%E3%80%81%E5%88%86%E7%B1%BB/" class="article-date">
-      <time datetime="2020-08-30T16:00:00.000Z" itemprop="datePublished">2020-08-31</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A6%82%E5%BF%B5%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E7%BB%84%E6%88%90%E3%80%81%E5%88%86%E7%B1%BB/">概念、功能、组成、分类</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>概念、功能、组成、分类：</p>
-<p>计算机网络：是一个将分散的、具有独立功能的计算机系统，通过通信设备与线路连接起来，由功能完善的软件实现资源共享和信息传递的系统</p>
-<p>计算机网络是互连的【互联互通、通信链路】、自治的【无主从关系】计算机集合</p>
-<p>计算机网络的功能：<br>1）数据通信（连通性）<br>2）资源共享（硬件、软件、数据）<br>3）分布式处理：多台计算机各自承担同一工作任务的不同部分（Hadoop平台）<br>4）提高可靠性<br>5）负载均衡（各计算机之间更亲密）</p>
-<p>计算机网络的组成：<br>1）按组成部分分类：硬件、软件、协议<br>2）按工作方式分类：边缘部分（用户直接使用：C/S方式、P2P方式）、核心部分（为边缘部分服务）<br>3）按功能组成分类：通信子网（实现数据通信）、资源子网（实现资源共享/数据处理）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosd9rga3qj30xg0gath7.jpg"></p>
-<p>计算机网络的分类：<br>1）按分布范围分：广域网（WAN、使用交换技术）、城域网（MAN）、局域网（LAN、使用广播技术）、个人区域网（PAN）<br>2）按使用者分：公用网、专用网<br>3）按交换技术分：电路交换、报文交换、分组交换<br>4）按拓扑结构分：总线型、星型、环型、网状型（常用于广域网）<br>5）按传输技术分：广播式网络（共享公共通信信道）、点对点网络（使用分组存储转发和路由选择机制）</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/计算机网络原理/标准化" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A0%87%E5%87%86%E5%8C%96/" class="article-date">
-      <time datetime="2020-08-29T16:00:00.000Z" itemprop="datePublished">2020-08-30</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/08/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%A0%87%E5%87%86%E5%8C%96/">标准化</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>标准化：</p>
-<p>要实现不同厂商的硬、软件之间相互连通，必须遵守统一的标准</p>
-<p>标准的分类：<br>1）法定标准（由权威机构制定的正式的、合法的标准：OSI）<br>2）事实标准（某些公司的产品在竞争中占据了主流，时间长了，这些产品中的协议和技术就成了标准：TCP/IP）</p>
-<p>RFC（Request For Comments）：因特网标准的形式</p>
-<p>RFC要上升为因特网正式标准的四个阶段：<br>1）因特网草案：这个阶段还不是RFC文档<br>2）建议标准：从这个阶段开始成为RFC文档<br>3）因特网标准</p>
-<p>标准化工作的相关组织：<br>1）国际标准化组织ISO：OSI参考模型、HDLC协议<br>2）国际电信联盟ITU：制定通信规则<br>3）国际电气电子工程师协会IEEE：学术机构、IEEE802系列标准、5G<br>4）Internet工程任务组IETF：负责因特网相关标准的制定</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/计算机网络原理/速率、带宽、吞吐量" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E9%80%9F%E7%8E%87%E3%80%81%E5%B8%A6%E5%AE%BD%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F/" class="article-date">
-      <time datetime="2020-08-28T16:00:00.000Z" itemprop="datePublished">2020-08-29</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/08/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E9%80%9F%E7%8E%87%E3%80%81%E5%B8%A6%E5%AE%BD%E3%80%81%E5%90%9E%E5%90%90%E9%87%8F/">速率、带宽、吞吐量</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>速率、带宽、吞吐量：</p>
-<p>速率：即数据率、数据传输率、比特率，连接在计算机网络上的主机在数字信道上传送数据位数的速率（b/s、kb/s、Mb/s、Gb/s、Tb/s）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosdbsjhmbj31cu09x0zr.jpg"></p>
-<p>带宽：原本指某个信号具有的频带宽度，即最高频率与最低频率之差，单位是赫兹（Hz）；计算机网络中，带宽用来表示网络的通信线路传送数据的能力，通常是指单位时间内从网络中的某一点到另一点所能通过的最高数据率（b/s、kb/s、Mb/s、Gb/s、Tb/s），网络设备所支持的最高速度</p>
-<p>吞吐量：表示在单位时间内通过某个网络（或信道、接口）的数据量（b/s、kb/s、Mb/s、Gb/s、Tb/s），吞吐量受网络的带宽或网络的额定速率的限制</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/计算机网络原理/时延、时延带宽积、往返时间RTT、利用率" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%97%B6%E5%BB%B6%E3%80%81%E6%97%B6%E5%BB%B6%E5%B8%A6%E5%AE%BD%E7%A7%AF%E3%80%81%E5%BE%80%E8%BF%94%E6%97%B6%E9%97%B4RTT%E3%80%81%E5%88%A9%E7%94%A8%E7%8E%87/" class="article-date">
-      <time datetime="2020-08-27T16:00:00.000Z" itemprop="datePublished">2020-08-28</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/08/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E6%97%B6%E5%BB%B6%E3%80%81%E6%97%B6%E5%BB%B6%E5%B8%A6%E5%AE%BD%E7%A7%AF%E3%80%81%E5%BE%80%E8%BF%94%E6%97%B6%E9%97%B4RTT%E3%80%81%E5%88%A9%E7%94%A8%E7%8E%87/">时延、时延带宽积、往返时间RTT、利用率</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>时延、时延带宽积、往返时间RTT、利用率</p>
-<p>时延：指数据（报文/分组/比特流）从网络（或链路）的一端传送到另一端所需的时间，也叫延迟或迟延，单位是s</p>
-<p>1）发送时延（传输时延）：从发送分组的第一个比特算起，到该分组的最后一个比特发送完毕所需的时间【计算公式：数据长度/信道带宽（发送速率）】<br>2）传播时延：取决于电磁波传播速度和链路长度【公式：信道长度/电磁波在信道上的传播速率】<br>3）排队时延：等待输出/入链路可用<br>4）处理时延：检错、找出口</p>
-<p>高速链路只是提高了信道带宽，减小了发送时延，但是传播时延和传播速率是不变的</p>
-<p>时延带宽积（bit）：传播时延（s）*带宽（b/s），又称为以比特为单位的链路长度，即“某段链路现在有多少比特”</p>
-<p>往返时延RTT：从发送方发送数据开始，到发送方收到接收方的确认（接收方收到数据后立即发送确认），总共经过的时延；RTT越大，在收到确认之前，可以发送的数据越多</p>
-<p>RTT包括：往返传播时延=传播时延*2、末端处理时间【不包括发送时延】</p>
-<p>利用率：信道利用率【有数据通过时间/有+无数据通过时间】、网络利用率（信道利用率加权平均值）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosdcy4qalj30ie0c80um.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
     </div>
 
       

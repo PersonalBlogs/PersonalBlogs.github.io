@@ -228,6 +228,270 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/使用AVPlayer播放影片" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/03/29/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BD%BF%E7%94%A8AVPlayer%E6%92%AD%E6%94%BE%E5%BD%B1%E7%89%87/" class="article-date">
+      <time datetime="2021-03-28T16:00:00.000Z" itemprop="datePublished">2021-03-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/03/29/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BD%BF%E7%94%A8AVPlayer%E6%92%AD%E6%94%BE%E5%BD%B1%E7%89%87/">使用AVPlayer播放影片</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line">import AVFoundation</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;在iOS开发中，播放视频通常采用两种方式，一种是使用MPMoviePlayerController，另一种是使用AVPlayer，MPMoviePlayerController播放方式的使用更加简单，但是功能不如AVPlayer强大，而且随着iOS版本的升级，MPMoviePlayerController将逐渐被丢弃</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;使用AVPlayer播放影片</span><br><span class="line">        let moviePath &#x3D; Bundle.main.path(forResource: &quot;movie&quot;, ofType: &quot;mp4&quot;)</span><br><span class="line">        let movieURL &#x3D; URL(fileURLWithPath: moviePath!)</span><br><span class="line">        </span><br><span class="line">        let avPlayer &#x3D; AVPlayer(url: movieURL as URL)  &#x2F;&#x2F;创建一个AVPlayer实例，并加载指定位置的视频文件</span><br><span class="line">        let avPlayerLayer &#x3D; AVPlayerLayer(player: avPlayer)  &#x2F;&#x2F;创建一个AVPlayerLayer视频播放层，AVPlayer是一个不可见的组件，要将视频文件显示在用户界面上，需要使用AVPlayerLayer类</span><br><span class="line">        </span><br><span class="line">        avPlayerLayer.frame &#x3D; self.view.bounds  &#x2F;&#x2F;设置边框大小与当前视图控制器根视图的边界属性保持一致，使视频的播放区域和设备的屏幕尺寸相同</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;AVLayerVideoGravity.resizeAspectFill：保留视频的宽高比，并对视频进行缩放，以填满层的范围区域</span><br><span class="line">        &#x2F;&#x2F;AVLayerVideoGravity.resizeAspect：在视频层的显示范围内缩放视频大小，以保持视频的原始宽高比</span><br><span class="line">        &#x2F;&#x2F;AVLayerVideoGravity.resize：将视频内容拉伸来匹配视频层的显示范围</span><br><span class="line">        avPlayerLayer.videoGravity &#x3D; AVLayerVideoGravity.resizeAspectFill</span><br><span class="line">        </span><br><span class="line">        self.view.layer.addSublayer(avPlayerLayer)</span><br><span class="line">        </span><br><span class="line">        avPlayer.play()  &#x2F;&#x2F;开始视频的播放</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/实现影片的画中画功能" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/03/28/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%AE%9E%E7%8E%B0%E5%BD%B1%E7%89%87%E7%9A%84%E7%94%BB%E4%B8%AD%E7%94%BB%E5%8A%9F%E8%83%BD/" class="article-date">
+      <time datetime="2021-03-27T16:00:00.000Z" itemprop="datePublished">2021-03-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/03/28/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%AE%9E%E7%8E%B0%E5%BD%B1%E7%89%87%E7%9A%84%E7%94%BB%E4%B8%AD%E7%94%BB%E5%8A%9F%E8%83%BD/">实现影片的画中画功能</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line">import AVFoundation</span><br><span class="line">import AVKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view, typically from a nib.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;实现影片的画中画功能</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;使用AVPlayer播放影片只是单纯的进行视频的播放，并不会提供视频播放控制器，如果需要对视频的播放进行暂停、继续播放等控制，就需要创建自定义的按钮了</span><br><span class="line">        &#x2F;&#x2F;Apple推出了一个ViewController的子类AVPlayerViewController，其不仅可以实现视频的播放，还额外提供了对视频播放进行管理的标准控制界面，还可以轻松的实现iPad中的画中画效果</span><br><span class="line">        let moviePath &#x3D; Bundle.main.path(forResource: &quot;Sunrise&quot;, ofType: &quot;mp4&quot;)</span><br><span class="line">        let movieURL &#x3D; URL(fileURLWithPath: moviePath!)</span><br><span class="line">        </span><br><span class="line">        let avPlayer &#x3D; AVPlayer(url: movieURL as URL)</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;创建一个AVPlayerViewController视频播放视图控制器</span><br><span class="line">        let playerVC &#x3D; AVPlayerViewController()</span><br><span class="line">        playerVC.player &#x3D; avPlayer</span><br><span class="line">        </span><br><span class="line">        playerVC.videoGravity &#x3D; AVLayerVideoGravity.resizeAspect</span><br><span class="line">        playerVC.allowsPictureInPicturePlayback &#x3D; true  &#x2F;&#x2F;允许在iPad中进行视频播放的画中画功能</span><br><span class="line">        playerVC.showsPlaybackControls &#x3D; true  &#x2F;&#x2F;在播放视频的过程中显示视频播放标准控制界面</span><br><span class="line">        </span><br><span class="line">        playerVC.view.frame &#x3D; self.view.bounds</span><br><span class="line">        </span><br><span class="line">        playerVC.player!.play()  &#x2F;&#x2F;实现视频的播放</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(playerVC.view)</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;为了激活在iPad中视频播放的画中画功能，还需要对项目进行一些设置操作，打开Signing &amp; Capabilities，激活Background Modes选项，勾选Audio,Airplay,and Picture in Picture</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/使用URLSession进行网络请求" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/03/27/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BD%BF%E7%94%A8URLSession%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" class="article-date">
+      <time datetime="2021-03-26T16:00:00.000Z" itemprop="datePublished">2021-03-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/03/27/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BD%BF%E7%94%A8URLSession%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/">使用URLSession进行网络请求</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    var label: UILabel!  &#x2F;&#x2F;用来显示接收到的网络数据</span><br><span class="line"></span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;HTTP定义了与服务器交互的不同方法，最基本的方法有4种，分别是GET、POST、PUT、DELETE，对应着对URL资源的查、改、增、删四个操作，GET一般用于获取&#x2F;查询资源信息，而POST一般用于更新资源信息</span><br><span class="line">        &#x2F;&#x2F;URL全称是资源描述符，一个URL地址描述一个网络上的资源</span><br><span class="line">        &#x2F;&#x2F;每个GET和POST都由一系列HTTP请求头组成，这些请求头定义了客户端从服务器请求了什么，而响应则是由一系列HTTP应答头和应答数据组成的，如果请求成功，就返回应答</span><br><span class="line">        </span><br><span class="line">        &#x2F;*</span><br><span class="line">         GET和POST的区别：</span><br><span class="line">         1.GET是从服务器上获取数据，POST是向服务器传送数据</span><br><span class="line">         2.GET方式通过URL提交数据，数据在URL中可以看到；POST方式是将数据放置在HTML HEADER内提交</span><br><span class="line">         3.GET方式提交的数据最多只能有1024字节，而POST则没有此限制</span><br><span class="line">         4.使用GET的时候，参数会显示出来，而POST不会，因此如果需要提交的数据是非敏感数据，那么可以使用GET方式；如果用户输入的数据包含敏感数据，那么还是推荐使用POST</span><br><span class="line">         </span><br><span class="line">         简单来说，GET请求是将参数直接写在访问路径上，特点是操作方便、简单，不过容易被外界看到，所以安全性不高；POST请求的操作相对复杂，需要将参数和地址分开，不过安全性高，参数放在body里面，不易被捕获，而且可以发送更多的数据</span><br><span class="line">         *&#x2F;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;同步意味着线程阻塞，在主线程中使用此方法会响应任何用户事件，以同步的方式从网络请求数据，一旦发送同步请求，应用程序将停止用户交互，直至服务器返回数据完成，才可以进行下一步操作。在同步请求过程中，应用程序的主线程不响应其他事件，直到同步请求结束</span><br><span class="line">        &#x2F;&#x2F;异步请求不会阻塞主线程，而会建立一个新的线程来操作，用户发出异步请求后，依然可以进行其他操作，应用程序可以继续运行，也就是说，异步请求不会阻塞主线程对其他事件的响应，所以用户体验会优于同步请求；在iOS开发中，异步请求会使用URLSession的委托协议URLSessionDelegate，在请求的不同阶段回调不同的委托对象方法</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;使用URLSession进行网络请求，URLSession类支持三种类型的任务：请求数据、下载和上传</span><br><span class="line">        label &#x3D; UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 568))</span><br><span class="line">        label.text &#x3D; &quot;Loading..&quot;</span><br><span class="line">        label.font &#x3D; UIFont(name: &quot;Arial&quot;, size: 14)</span><br><span class="line">        label.backgroundColor &#x3D; UIColor.orange</span><br><span class="line">        label.numberOfLines &#x3D; 0</span><br><span class="line">        label.lineBreakMode &#x3D; NSLineBreakMode.byWordWrapping</span><br><span class="line">        self.view.addSubview(label)</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;创建了一个URL网址对象</span><br><span class="line">        let urlString: String &#x3D; &quot;https:&#x2F;&#x2F;www.coolketang.com&quot;</span><br><span class="line">        let url: URL! &#x3D; URL(string: urlString)</span><br><span class="line">        </span><br><span class="line">        let request: URLRequest &#x3D; URLRequest(url: url)  &#x2F;&#x2F;根据URL网址初始化一个网络请求URLRequest对象</span><br><span class="line">        let session &#x3D; URLSession.shared  &#x2F;&#x2F;获得URLSession单例对象</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;通过session单例对象的方法创建一个任务，根据指定的URL请求远程内容，并在完成后调用尾部的闭包处理程序</span><br><span class="line">        let dataTask &#x3D; session.dataTask(with: request, completionHandler: &#123;(data, response, error) -&gt; Void in</span><br><span class="line">            if let error &#x3D; error &#123;</span><br><span class="line">                print(error.localizedDescription)  &#x2F;&#x2F;输出错误日志</span><br><span class="line">            &#125; else &#123;  &#x2F;&#x2F;处理请求成功的情况</span><br><span class="line">                </span><br><span class="line">                &#x2F;&#x2F;由于需要更改界面元素，因此通过DispatchQueue.main.async语句返回主线程并以异步的方式更新label对象的文字内容</span><br><span class="line">                DispatchQueue.main.async &#123;</span><br><span class="line">                    let str &#x3D; NSString(data: data!, encoding: String.Encoding.utf8.rawValue)</span><br><span class="line">                    self.label.text &#x3D; str as String?</span><br><span class="line">                &#125;</span><br><span class="line">                &#x2F;&#x2F;print(response)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        dataTask.resume()  &#x2F;&#x2F;开始执行请求任务</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/使用URLSession下载图片并显示进度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/03/26/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BD%BF%E7%94%A8URLSession%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87%E5%B9%B6%E6%98%BE%E7%A4%BA%E8%BF%9B%E5%BA%A6/" class="article-date">
+      <time datetime="2021-03-25T16:00:00.000Z" itemprop="datePublished">2021-03-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/03/26/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BD%BF%E7%94%A8URLSession%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87%E5%B9%B6%E6%98%BE%E7%A4%BA%E8%BF%9B%E5%BA%A6/">使用URLSession下载图片并显示进度</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;借助URLSessionDownloadDelegate中的代理方法实现下载进度的实时检测</span><br><span class="line">class ViewController: UIViewController, URLSessionDownloadDelegate &#123;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;添加三个控件，用来显示图片下载的进度</span><br><span class="line">    var backgroundView: UIView!</span><br><span class="line">    var foregroundView: UIView!</span><br><span class="line">    var progressLabel: UILabel!</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;添加第二个代理方法，该代理方法用来监听图片下载完成并存储在指定磁盘位置的事件</span><br><span class="line">    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) &#123;</span><br><span class="line">        do</span><br><span class="line">            &#123;</span><br><span class="line">                &#x2F;&#x2F;当图片完成下载后，首先获得图像的临时存储路径</span><br><span class="line">                let originalPath &#x3D; location.path</span><br><span class="line">                print(&quot;Original location: \(originalPath)&quot;)</span><br><span class="line">                </span><br><span class="line">                &#x2F;&#x2F;创建位于沙箱Documents目录下的一个图片路径，下载后的临时图片将从临时目录移动到该位置</span><br><span class="line">                let targetPath: String &#x3D; NSHomeDirectory() + &quot;&#x2F;Documents&#x2F;background.png&quot;</span><br><span class="line">                </span><br><span class="line">                &#x2F;&#x2F;将临时图片移动到指定的位置</span><br><span class="line">                let fileManager: FileManager &#x3D; FileManager.default</span><br><span class="line">                if !fileManager.fileExists(atPath: targetPath)</span><br><span class="line">                &#123;</span><br><span class="line">                    try fileManager.moveItem(atPath: originalPath, toPath: targetPath)</span><br><span class="line">                    print(&quot;new location: \(targetPath)&quot;)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        catch</span><br><span class="line">        &#123;</span><br><span class="line">            print(&quot;FileManager  error.&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;使用URLSession下载图片并显示进度：除了请求远程数据外，URLSession还具有下载和上传功能</span><br><span class="line">        backgroundView &#x3D; UIView(frame:CGRect(x: 16, y: 106, width: 288, height: 44))</span><br><span class="line">        backgroundView.backgroundColor &#x3D; UIColor.lightGray</span><br><span class="line">        </span><br><span class="line">        foregroundView &#x3D; UIView(frame:CGRect(x: 20, y: 110, width: 0, height: 36))</span><br><span class="line">        foregroundView.backgroundColor &#x3D; UIColor.green</span><br><span class="line">        </span><br><span class="line">        progressLabel &#x3D; UILabel(frame:CGRect(x: 20, y: 160, width: 280, height: 36))</span><br><span class="line">        progressLabel.textAlignment &#x3D; NSTextAlignment.center</span><br><span class="line">        </span><br><span class="line">        self.view.addSubview(backgroundView)</span><br><span class="line">        self.view.addSubview(foregroundView)</span><br><span class="line">        self.view.addSubview(progressLabel)</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;初始化了一个URLRequest网络请求对象，表示需要下载的一张图片素材的路径</span><br><span class="line">        let url &#x3D; URL(string: &quot;https:&#x2F;&#x2F;coolketang.com&#x2F;images&#x2F;img_bg_1.jpg&quot;)!</span><br><span class="line">        let request: URLRequest &#x3D; URLRequest(url: url)</span><br><span class="line">        </span><br><span class="line">        let urlSession &#x3D; self.buildSession() as Foundation.URLSession  &#x2F;&#x2F;urlSession对象是由视图控制器类的buildSession方法实现的</span><br><span class="line">        let task &#x3D; urlSession.downloadTask(with: request)</span><br><span class="line">        </span><br><span class="line">        task.resume()  &#x2F;&#x2F;开始下载任务的执行</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func buildSession() -&gt; Foundation.URLSession &#123;</span><br><span class="line">        </span><br><span class="line">        var session: URLSession? &#x3D; nil</span><br><span class="line">        let config &#x3D; URLSessionConfiguration.default</span><br><span class="line">        session &#x3D; URLSession(configuration: config, delegate: self, delegateQueue: nil)  &#x2F;&#x2F;设置其代理delegate为当前的视图控制器对象，由视图控制器对象实现代理中用来监听图片下载进度的方法</span><br><span class="line">        </span><br><span class="line">        return session!</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;添加用来监听图片下载进度的方法</span><br><span class="line">    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask,</span><br><span class="line">                    didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) &#123;</span><br><span class="line">        </span><br><span class="line">        let rate: CGFloat &#x3D; CGFloat(totalBytesWritten)&#x2F;CGFloat(totalBytesExpectedToWrite)  &#x2F;&#x2F;获得图像已经下载的字节占总字节的比例，totalBytesWritten表示已经下载的字节数，totalBytesExpectedToWrite表示需要下载的总字节数，两者之间的比例就是当前图片下载进度的百分比值</span><br><span class="line">        </span><br><span class="line">        DispatchQueue.main.async(execute: &#123; () in</span><br><span class="line">            </span><br><span class="line">            self.foregroundView.frame.size.width &#x3D; rate * 280  &#x2F;&#x2F;根据下载进度的百分比调整foregroundView进度条的宽度，随着下载百分比的增加，foregroundView进度条的宽度也随之增加，这样就实现了模拟图像下载进度的动画效果</span><br><span class="line">            if rate &#x3D;&#x3D; 1.0 &#123;</span><br><span class="line">                self.progressLabel.text &#x3D; &quot;Finished 😝&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/使用UIWebView加载网页" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -599,276 +863,6 @@
 
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqme9swai8j31km0u0khp.jpg"></p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/将信息写入plist文件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/03/19/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%B0%86%E4%BF%A1%E6%81%AF%E5%86%99%E5%85%A5plist%E6%96%87%E4%BB%B6/" class="article-date">
-      <time datetime="2021-03-18T16:00:00.000Z" itemprop="datePublished">2021-03-19</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/03/19/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%B0%86%E4%BF%A1%E6%81%AF%E5%86%99%E5%85%A5plist%E6%96%87%E4%BB%B6/">将信息写入plist文件</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;将信息写入plist文件</span><br><span class="line">        let dic: NSMutableDictionary &#x3D; NSMutableDictionary()  &#x2F;&#x2F;创建了一个NSMutableDictionary可变字典对象</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;以键值对的形式创建两个对象，并添加到可变字典对象中</span><br><span class="line">        dic.setObject(&quot;Bruce&quot;, forKey: &quot;Name&quot; as NSCopying)</span><br><span class="line">        dic.setObject(22, forKey: &quot;Age&quot; as NSCopying)</span><br><span class="line">        </span><br><span class="line">        let plistPath &#x3D; Bundle.main.path(forResource: &quot;demoPlist&quot;, ofType: &quot;plist&quot;)</span><br><span class="line">        dic.write(toFile: plistPath!, atomically: true)  &#x2F;&#x2F;将可变字典对象写入plist文件中</span><br><span class="line">        </span><br><span class="line">        let data: NSMutableDictionary &#x3D; NSMutableDictionary.init(contentsOfFile: plistPath!)!  &#x2F;&#x2F;将plist文件加载到内存中，并转换为可变字典对象，从而查看写入后的plist文件的内容</span><br><span class="line">        let message &#x3D; data.description</span><br><span class="line">        </span><br><span class="line">        print(plistPath!)  &#x2F;&#x2F;plist文件在项目中的位置，访达中定位该位置可以看到plist文件</span><br><span class="line">        print(message)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/创建CoreData实体并插入数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/03/18/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%88%9B%E5%BB%BACoreData%E5%AE%9E%E4%BD%93%E5%B9%B6%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2021-03-17T16:00:00.000Z" itemprop="datePublished">2021-03-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/03/18/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%88%9B%E5%BB%BACoreData%E5%AE%9E%E4%BD%93%E5%B9%B6%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/">创建CoreData实体并插入数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>⭐️注意：项目名称一定不能使用CoreData</p>
-<p>创建项目时记得选上Use Core Data选项</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqnj5owb30j30wv0u04a2.jpg"></p>
-<p>选择.xcdatamodeld文件，然后依次点击Editor、Create NSManagedObject subclass</p>
-<p>Codegen：Manual/None</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line">import CoreData  &#x2F;&#x2F;引入CoreData框架</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;创建Core Data实体并插入数据</span><br><span class="line">        let appDelegate: AppDelegate &#x3D; UIApplication.shared.delegate as! AppDelegate  &#x2F;&#x2F;从UIApplication中获得当前项目中的AppDelegate对象</span><br><span class="line">        let managedObjectContext &#x3D; appDelegate.persistentContainer.viewContext &#x2F;&#x2F;获得AppDelegate对象的managedObjectContext托管对象的上下文</span><br><span class="line">        </span><br><span class="line">        let newUser &#x3D; NSEntityDescription.insertNewObject(forEntityName: &quot;User&quot;, into: managedObjectContext) as! User  &#x2F;&#x2F;通过NSEntityDescription.insertNewObject在托管对象上下文中插入一条User实体对象</span><br><span class="line">        </span><br><span class="line">        newUser.userName &#x3D; &quot;John&quot;</span><br><span class="line">        newUser.password &#x3D; &quot;123456&quot;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;执行数据的存储操作</span><br><span class="line">        do &#123;</span><br><span class="line">            try managedObjectContext.save()  &#x2F;&#x2F;对newUser对象进行保存操作</span><br><span class="line">            print(&quot;成功保存数据。&quot;)</span><br><span class="line">            </span><br><span class="line">        &#125; catch &#123;</span><br><span class="line">            </span><br><span class="line">            print(&quot;保存数据失败。&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/检索Core_Data中的数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/03/17/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E6%A3%80%E7%B4%A2Core_Data%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2021-03-16T16:00:00.000Z" itemprop="datePublished">2021-03-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/03/17/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E6%A3%80%E7%B4%A2Core_Data%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/">检索Core_Data中的数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>项目的创建与上一节相同！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line">import CoreData  &#x2F;&#x2F;引入CoreData框架</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;检索Core Data中的数据</span><br><span class="line">        let appDelegate: AppDelegate &#x3D; UIApplication.shared.delegate as! AppDelegate</span><br><span class="line">        let managedObjectContext &#x3D; appDelegate.persistentContainer.viewContext</span><br><span class="line">        </span><br><span class="line">        let entity: NSEntityDescription? &#x3D; NSEntityDescription.entity(forEntityName: &quot;User&quot;,</span><br><span class="line">                                                                     in: managedObjectContext)  &#x2F;&#x2F;通过NSEntityDescription.entity获得托管对象上下文中的User实体</span><br><span class="line">        </span><br><span class="line">        let request &#x3D; NSFetchRequest&lt;User&gt;(entityName: &quot;User&quot;)  &#x2F;&#x2F;创建一个User类型的NSFetchRequest查询请求对象</span><br><span class="line">        request.fetchOffset &#x3D; 0  &#x2F;&#x2F;fetchOffset属性用于设置数据查询的偏移位置，例如返回结果有A、B、C、D四个结果，当设置fetchOffset为1时，仅返回B、C、D三个结果</span><br><span class="line">        request.fetchLimit &#x3D; 10  &#x2F;&#x2F;获取从偏移值为0的位置起的10条数据，如果总的数据量少于10条，就返回全部的数据</span><br><span class="line">        request.entity &#x3D; entity  &#x2F;&#x2F;设置request对象的entity为User类型的实体，即查询持久化存储中类型为User的符合查询条件的实体</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;创建一个Predicate断言，以查询userName为John的User类型的实体，如果不设置断言，就会查询所有类型的为User的实体</span><br><span class="line">        let predicate &#x3D; NSPredicate(format: &quot;userName&#x3D; &#39;John&#39; &quot;, &quot;&quot;)</span><br><span class="line">        request.predicate &#x3D; predicate</span><br><span class="line">        </span><br><span class="line">        do&#123;</span><br><span class="line">            let results:[AnyObject]? &#x3D; try managedObjectContext.fetch(request)  &#x2F;&#x2F;调用fetch方法，根据指定的断言查询符合条件的User类型的实体，并将查询的结果存储在一个名为results的AnyObject类型的数组中</span><br><span class="line">            </span><br><span class="line">            for user:User in results as! [User]&#123;</span><br><span class="line">                print(&quot;userName &#x3D; \(user.userName!)&quot;)</span><br><span class="line">                print(&quot;password &#x3D; \(user.password!)&quot;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch&#123;</span><br><span class="line">            print(&quot;获取数据失败。&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/修改Core_Data中的数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2021/03/16/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BF%AE%E6%94%B9Core_Data%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2021-03-15T16:00:00.000Z" itemprop="datePublished">2021-03-16</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2021/03/16/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BF%AE%E6%94%B9Core_Data%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/">修改Core_Data中的数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line">import CoreData  &#x2F;&#x2F;引入CoreData框架</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;修改Core Data中的数据</span><br><span class="line">        let appDelegate: AppDelegate &#x3D; UIApplication.shared.delegate as! AppDelegate</span><br><span class="line">        let managedObjectContext &#x3D; appDelegate.persistentContainer.viewContext</span><br><span class="line">        </span><br><span class="line">        let entity: NSEntityDescription? &#x3D; NSEntityDescription.entity(forEntityName: &quot;User&quot;,</span><br><span class="line">                                                                      in: managedObjectContext)  &#x2F;&#x2F;通过NSEntityDescription.entity获得托管对象上下文中的User实体</span><br><span class="line">        </span><br><span class="line">        let request &#x3D; NSFetchRequest&lt;User&gt;(entityName: &quot;User&quot;)  &#x2F;&#x2F;创建一个User类型的NSFetchRequest查询请求对象</span><br><span class="line">        request.fetchOffset &#x3D; 0  &#x2F;&#x2F;fetchOffset属性用于设置数据查询的偏移位置，例如返回结果有A、B、C、D四个结果，当设置fetchOffset为1时，仅返回B、C、D三个结果</span><br><span class="line">        request.fetchLimit &#x3D; 10  &#x2F;&#x2F;获取从偏移值为0的位置起的10条数据，如果总的数据量少于10条，就返回全部的数据</span><br><span class="line">        request.entity &#x3D; entity  &#x2F;&#x2F;设置request对象的entity为User类型的实体，即查询持久化存储中类型为User的符合查询条件的实体</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;创建一个Predicate断言，以查询userName为John的User类型的实体，如果不设置断言，就会查询所有类型的为User的实体</span><br><span class="line">        let predicate &#x3D; NSPredicate(format: &quot;userName&#x3D; &#39;John&#39; &quot;, &quot;&quot;)</span><br><span class="line">        request.predicate &#x3D; predicate</span><br><span class="line">        </span><br><span class="line">        do&#123;</span><br><span class="line">            let results:[AnyObject]? &#x3D; try managedObjectContext.fetch(request)  &#x2F;&#x2F;调用fetch方法，根据指定的断言查询符合条件的User类型的实体，并将查询的结果存储在一个名为results的AnyObject类型的数组中</span><br><span class="line">            </span><br><span class="line">            &#x2F;&#x2F;遍历查询到的results数组，并将数组中的User对象的userName修改为Peter</span><br><span class="line">            for user:User in results as! [User]&#123;</span><br><span class="line">                user.userName &#x3D; &quot;Peter&quot;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            try managedObjectContext.save()  &#x2F;&#x2F;被修改后的User对象仍然处于内存中，尚未被持久化，通过调用save()方法保存到序列化文件中</span><br><span class="line">            </span><br><span class="line">            request.predicate &#x3D; nil  &#x2F;&#x2F;重置断言，以查找所有的user实体</span><br><span class="line">            let newResults:[AnyObject]? &#x3D; try managedObjectContext.fetch(request)</span><br><span class="line">            </span><br><span class="line">            for user:User in newResults as! [User]&#123;</span><br><span class="line">                print(&quot;userName: \(user.userName!)&quot;)</span><br><span class="line">                print(&quot;password: \(user.password!)&quot;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        catch&#123;</span><br><span class="line">            print(&quot;获取数据失败。&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     

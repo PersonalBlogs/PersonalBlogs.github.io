@@ -228,6 +228,290 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-开发语言/Objective-C/第一个MRC程序：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%AC%AC%E4%B8%80%E4%B8%AAMRC%E7%A8%8B%E5%BA%8F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-19T16:00:00.000Z" itemprop="datePublished">2019-08-20</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%AC%AC%E4%B8%80%E4%B8%AAMRC%E7%A8%8B%E5%BA%8F%EF%BC%9A/">第一个MRC程序：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>要写MRC的程序，必须先把Xcode默认的ARC模式关闭，开启MRC</p>
+<p>在ARC机制下，retain，release，dealloc这些方法无法调用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly41osfo1j30m40lkgo4.jpg"></p>
+<p>重写dealloc方法的规范：<br>必须要调用父类的dealloc方法，并且要放在最后一句代码</p>
+<p>测试引用数据：<br>1）新创建一个对象，这个对象的引用计数器的值默认是1<br>2）当对象的引用计数器变为0的时候，对象就会被系统立即回收，并自动调用dealloc方法<br>3）为对象发送retain消息，对象的引用计数器就会+1<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly41xz6fwj30dc0bw42n.jpg"></p>
+<p>为对象发送release消息，并不是回收对象，而是让对象的引用计数器-1，当对象的引用计数器的值变为0的时候，对象才会被系统立即回收</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/内存管理的原则：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%8E%9F%E5%88%99%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-18T16:00:00.000Z" itemprop="datePublished">2019-08-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%8E%9F%E5%88%99%EF%BC%9A/">内存管理的原则：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）有对象的创建，就要匹配一个release<br>2）retain的次数和release的次数要匹配<br>3）谁用谁retain，谁不用谁release<br>4）只有在多一个人用的时候才retain，少一个人使用的时候才release</p>
+<p>有始有终，有加就有减，有retain就应该匹配一个release，一定要平衡</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/野指针与僵尸对象：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E9%87%8E%E6%8C%87%E9%92%88%E4%B8%8E%E5%83%B5%E5%B0%B8%E5%AF%B9%E8%B1%A1%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-17T16:00:00.000Z" itemprop="datePublished">2019-08-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E9%87%8E%E6%8C%87%E9%92%88%E4%B8%8E%E5%83%B5%E5%B0%B8%E5%AF%B9%E8%B1%A1%EF%BC%9A/">野指针与僵尸对象：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>C语言中的野指针：定义一个指针变量，没有初始化，这个指针变量的值是一个垃圾值，指向一块随机的空间，这个指针就叫做野指针</p>
+<p>OC中的野指针：指针指向的对象已经被回收了，这样的指针就叫做野指针</p>
+<p>内存回收的本质：申请一个变量实际上就是向系统申请指定字节数的空间，这些空间系统就不会再分配给别人了；当变量被回收的时候，代表变量占用的字节空间从此以后系统就可以分配给别人使用了，但是字节空间中存储的数据还在（这就是野指针的来源）</p>
+<p>对象回收的本质：对象占用的空间可以分配给别人，当这个对象占用的空间没有分配给别人之前，其实对象数据还在</p>
+<p>僵尸对象：一个已经被释放的对象，但是这个对象所占的空间还没有分配给别人，这样的对象叫做僵尸对象；我们通过野指针去访问僵尸对象的时候，有可能没问题，也有可能有问题，当僵尸对象占用的空间还没有分配给别人的时候就没问题</p>
+<p>我们认为只要对象成为了僵尸对象，无论如何都不允许访问了，就希望如果访问的是僵尸对象，无论如何都会报错</p>
+<p>Xcode有一个僵尸对象的实时检查机制，可以将这个机制打开，打开之后，只要访问的是僵尸对象，无论空间是否分配，就会报错<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly42ith55j30ow0f2n3m.jpg"></p>
+<p>为什么不默认打开僵尸对象检测：一旦打开僵尸对象检测，那么在每访问一个对象的时候，都会先检查这个对象是否为一个僵尸对象，这样是极其消耗性能的</p>
+<p>如何避免僵尸对象错误？<br>当一个指针成为野指针以后，将这个指针的值设置为nil<br>当一个指针的值为nil，通过这个指针去调用对象的方法（包括使用点语法）的时候，不会报错，只是没有任何反应；但是如果通过直接访问属性，就会报错</p>
+<p>无法复活一个僵尸对象</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/单个对象的内存管理：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/">单个对象的内存管理：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>内存泄露：指的是一个对象没有被及时的回收，在该回收的时候而没有被回收，一直驻留在内存中，直到程序结束的时候才回收</p>
+<p>单个对象的内存泄漏情况：<br>1）有对象的创建，而没有对应的release<br>2）retain的次数和release的次数不匹配<br>3）在不适当的时候，为指针赋值为nil<br>4）在方法中为传入的对象进行不适当的retain</p>
+<p>如何保证单个对象可以被回收：<br>1）有对象的创建就必须要匹配一个release<br>2）retain次数和release次数一定要匹配<br>3）只有在指针成为野指针的时候才赋值nil<br>4）在方法中不要随意的为传入的对象retain</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-开发语言/Objective-C/setter方法内存管理：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -638,281 +922,6 @@
 <p>强指针：默认情况下，我们声明一个指针，这个指针就是一个强指针，我们也可以用__strong(两个下划线)来显示的声明这是一个强指针</p>
 <p>弱指针：使用__weak标识的指针就叫做弱指针</p>
 <p>无论是强指针还是弱指针都是指针，都可以用来存储地址，这一点没有任何区别，都可以通过这个指针访问对象的成员；唯一的区别就是在ARC模式下，它们用来作为回收对象的基准：如果一个对象没有任何强类型的指针指向这个对象的时候，对象就会被立即释放</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Objective-C/ARC下的单个对象的内存管理：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/10/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/ARC%E4%B8%8B%E7%9A%84%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-09T16:00:00.000Z" itemprop="datePublished">2019-08-10</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/10/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/ARC%E4%B8%8B%E7%9A%84%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/">ARC下的单个对象的内存管理：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）当指向对象的所有的强指针被回收的时候，对象就会被立即回收<br>2）当所有指向对象的强指针赋值为nil的时候，对象就会被立即回收</p>
-<p>注意：不能创建对象用一个弱指针存储这个对象的指针，这样的话，刚创建出来的对象，就没有任何强指针指向，创建出来就被回收<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly48zujqsj309504rdh8.jpg"></p>
-<p>在ARC机制下，当对象被回收的时候，原来指向这个对象的弱指针会被自动设置为nil<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4988ujuj309w09a401.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Objective-C/@property另外两个参数：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/09/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%8F%A6%E5%A4%96%E4%B8%A4%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-08T16:00:00.000Z" itemprop="datePublished">2019-08-09</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/09/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%8F%A6%E5%A4%96%E4%B8%A4%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%9A/">property另外两个参数：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>在ARC的机制下，@property参数不能使用retain，因为retain代表生成的setter方法是MRC的标准内存管理代码</p>
-<p>ARC机制下关注的重点：当一个类的属性是一个OC对象的时候，这个属性应该声明为强类型的还是弱类型的，很明显应该声明为强类型的<br>【人未死车已报废】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly49rp7k7j307i05lwfd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly49yxjnzj307i04gaax.jpg"></p>
-<p>如何控制@property生成的私有属性是一个强类型的还是一个弱类型的？<br>使用参数：strong（默认值）和weak<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4a5pjxxj30700173yw.jpg"></p>
-<p>使用建议：<br>1）在ARC机制下，如果属性的类型是OC对象类型的，绝大多数场景下使用strong<br>2）在ARC机制下，如果属性的类型不是OC对象类型的，使用assign<br>3）strong和weak都是应用在属性的类型是OC对象的时候</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Objective-C/ARC机制下的循环引用：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/08/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/ARC%E6%9C%BA%E5%88%B6%E4%B8%8B%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-07T16:00:00.000Z" itemprop="datePublished">2019-08-08</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/08/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/ARC%E6%9C%BA%E5%88%B6%E4%B8%8B%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8%EF%BC%9A/">ARC机制下的循环引用：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4arxn6oj30dp09gdhw.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ay7aqoj307906gjsi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4b4emkpj307903laav.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ba4dckj304k049gm3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4bg8lkuj307903laat.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4bnl581j304k0490t7.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4buhqd3j30df095q59.jpg"></p>
-<p>在ARC机制下，当两个对象相互引用的时候，如果两边都使用strong，那么就会出现内存泄漏，解决方案：一端使用strong，一端使用weak</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Objective-C/MRC、ARC兼容与转换：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/08/07/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/MRC%E3%80%81ARC%E5%85%BC%E5%AE%B9%E4%B8%8E%E8%BD%AC%E6%8D%A2%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-06T16:00:00.000Z" itemprop="datePublished">2019-08-07</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/07/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/MRC%E3%80%81ARC%E5%85%BC%E5%AE%B9%E4%B8%8E%E8%BD%AC%E6%8D%A2%EF%BC%9A/">MRC、ARC兼容与转换：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>兼容：<br>如果程序使用的是ARC机制开发的，但是其中某个类使用的是MRC，这个时候双击使用MRC的那个文件输入命令：-fno-obj-arc<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4cda0y1j30rn0a73ze.jpg"></p>
-<p>MRC转换为ARC：Edit——&gt;Convert——&gt;To Objective-C ARC…</p>
 
       
     </div>

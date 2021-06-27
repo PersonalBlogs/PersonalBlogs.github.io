@@ -228,6 +228,292 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-开发语言/C++/C++文件操作：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-13T16:00:00.000Z" itemprop="datePublished">2019-06-14</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/">C++文件操作：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>程序运行时产生的数据都属于临时数据，程序一旦运行结束都会被释放，通过文件可以将数据持久化</p>
+<p>C++中对文件操作需要包含头文件<fstream></p>
+<p>文件类型分为两种：<br>1）文本文件：文件以文本的ASCII码形式存储在计算机中<br>2）二进制文件：文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们</p>
+<p>操作文件的三大类：<br>1）ofstream：写操作<br>2）ifstream：读操作<br>3）fstream：读写操作</p>
+<p>文本文件：</p>
+<p>写文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ofstream ofs;<br>3）打开文件：ofs.open(“文件路径”,打开方式);<br>4）写数据：ofs&lt;&lt;“写入的数据”;<br>5）关闭文件：ofs.close();</p>
+<p>文件打开方式【文件打开方式可以配合使用，利用|操作符】：<br>1）ios::in        为读文件而打开文件<br>2）ios::out     为写文件而打开文件<br>3）ios::ate     初始位置：文件尾<br>4）ios::app    追加方式写文件<br>5）ios::trunc  如果文件存在先删除，再创建<br>6）iOS::binary  二进制方式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm0am8yj30ia0c6dhe.jpg"></p>
+<p>读文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ifstream ifs;<br>3）打开文件并判断文件是否打开成功：ifs.open(“文件路径”,打开方式);<br>4）读数据：四种方式读取<br>5）关闭文件：ifs.close();<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm96dkdj30ke0q577p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmfzd6xj30h202cglr.jpg"></p>
+<p>二进制文件：以二进制的方式对文件进行读写操作，打开方式要指定为ios::binary</p>
+<p>二进制方式写文件主要利用流对象调用成员函数write<br>函数原型：ostream&amp; write(const char * buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmn0pr8j30j10et0uf.jpg"></p>
+<p>二进制方式读文件主要利用流对象调用成员函数read<br>函数原型：istream&amp; read(char *buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmtmxxsj30j10jemzg.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C++/职工管理系统：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-12T16:00:00.000Z" itemprop="datePublished">2019-06-13</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/">职工管理系统：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C++/函数模板：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-11T16:00:00.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/">函数模板：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>模板就是建立通用的模具，大大提高复用性</p>
+<p>模板的特点：模板不可以直接使用，它只是一个框架；模板的通用并不是万能的</p>
+<p>———————————————函数模板：</p>
+<p>C++另一种编程思想称为泛型编程，主要利用的技术就是模板</p>
+<p>C++提供两种模板机制：函数模板和类模板</p>
+<p>函数模板的作用：建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp03dz6j30cz0jewgr.jpg"></p>
+<p>函数模板注意事项：<br>1）自动类型推导，必须推导出一致的数据类型T才可以使用<br>2）模板必须要确定出T的数据类型，才可以使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp6w888j30ce0brgmr.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpd3x09j30gb0t50x2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpkhy0ej30ce01ljrh.jpg"></p>
+<p>普通函数与函数模板的区别：<br>1）普通函数调用时可以发生自动类型转换（隐式类型转换）<br>2）函数模板调用时，如果利用自动类型推导，不会发生隐式类型转换；如果利用显式指定类型的方式，可以发生隐式类型转换</p>
+<p>建议使用显示指定类型的方式，调用函数模板，因为可以自己确定通用类型T</p>
+<p>普通函数与函数模板的调用规则：<br>1）如果函数模板和普通函数都可以实现，优先调用普通函数<br>2）可以通过空模板参数列表来强制调用函数模板<br>3）函数模板也可以发生重载<br>4）如果函数模板可以产生更好的匹配，优先调用函数模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpql1y3j30nc0gmtb5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpwvalpj30ce01lglo.jpg"></p>
+<p>模板的局限性：模板的通用性并不是万能的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq2vig6j30q209bwgj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq8w0vbj30v9096wh4.jpg"></p>
+<p>因此C++为了解决这种问题，提供模板的重载，可以为这些特定的类型提供具体化的模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfqenxnvj30ij0soadu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfql68fyj30ce01lwej.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C++/类模板：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E7%B1%BB%E6%A8%A1%E6%9D%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-10T16:00:00.000Z" itemprop="datePublished">2019-06-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E7%B1%BB%E6%A8%A1%E6%9D%BF%EF%BC%9A/">类模板：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Apple、Linux/macOS、Ubuntu Server/macOS的一些使用小技巧：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -786,335 +1072,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizk6pwcij30c208pab4.jpg"></p>
 <p>tee：读取标准输入，再把读到的内容复制到标准输出（允许数据可以继续向下传输到管道中）和一个或更多的文件中去【标准输入—&gt;标准输出】</p>
 <p>在使用grep命令过滤管道内容之前，先使用tee命令来获取整个目录列表并输出到ls.txt文件中：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4i5ibpcuj30fg0aoq3m.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Apple、Linux/《Linux命令行大全》/扩展和引用：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/27/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E6%89%A9%E5%B1%95%E5%92%8C%E5%BC%95%E7%94%A8%EF%BC%9A/" class="article-date">
-      <time datetime="2018-10-26T16:00:00.000Z" itemprop="datePublished">2018-10-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/27/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E6%89%A9%E5%B1%95%E5%92%8C%E5%BC%95%E7%94%A8%EF%BC%9A/">扩展和引用：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>扩展：每次输入命令行按下Enter键时，bash都会在执行命令之前对文本进行多重处理，产生这个结果的处理过程称为扩展，有了扩展功能，在输入内容后，这些内容将在shell对其执行之前被扩展成其他内容</p>
-<p>echo:shell内置命令，把文本参数内容打印到标准输出<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizlv90o7j30c206kaat.jpg"></p>
-<p>路径名扩展：通过使用通配符来实现扩展的机制<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmabgl6j30c2076aae.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmhqyvqj30bj0833zm.jpg"></p>
-<p>波浪线扩展：如果把～用在一个单词的开头，那么它将被扩展为指定用户的主目录名，如果没有指定用户命名，则扩展为当前用户的主目录<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmpa600j306p02bmx1.jpg"></p>
-<p>算术扩展：shell支持通过扩展来运行算术表达式，这允许我们把shell提示符当作计算器来使用：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizn0yi1kj306700pwe9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizn83eygj30by0dbjsd.jpg"></p>
-<p>花括号扩展：可以按照花括号里面的模式创建多种文本字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliznh6ye2j30b400ywed.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliznog9xaj30ch0c5q4c.jpg"></p>
-<p>参数扩展：<br>命名为USER的变量包含你的用户名，为了触发参数扩展，并显示出USER的内容：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizo60m0lj30ch06b74o.jpg"></p>
-<p>命令替换：可以把一个命令的输出作为一个扩展模式使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizoeshhdj30ch0a5my8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizommplyj30ch02p0sq.jpg"></p>
-<hr>
-<p>引用：</p>
-<p>在第一个例子中，shell会对echo命令的参数列表进行单词分割，去除多余的空白；在第二个例子中，因为$1是一个未定义的变量，所以参数扩展将把$1的值替换为空字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4jbr4pelj30e4020q37.jpg"></p>
-<p>shell提供了一种称为引用（quoting）的机制，用来有选择性的避免不想要的扩展</p>
-<p>双引号：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizp18fyjj30ch06qdgm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizp8g70bj30ch0h9q4q.jpg"><br>在第一个例子中，没有加上引号的命令替换将导致命令行被识别为命令后面跟着38个参数；而在第二个例子中加了双引号，使得命令行被识别为命令后面只跟着一个参数，这个参数包含着嵌入空格和换行字符</p>
-<p>单引号：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizpo276cj30ch044q36.jpg"></p>
-<p>转义字符：</p>
-<p>有时候我们只是想要引用单个字符，这种情况可以通过在该字符前加上反斜杠来实现，这里的反斜杠称为转义字符，转义字符经常在双引号中用来有选择性的阻止扩展：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4jwvu1dtj30ii01a0sy.jpg"></p>
-<p>转义字符也常用来消除文件名中某个字符的特殊含义，比如文件名中可以使用在shell中通常具有特殊含义的字符，这些字符包括“$”、“!”、“&amp;”、空格等</p>
-<p>如果想要显示反斜杠字符，可以通过使用两个反斜杠“\”来实现，需要注意的是，单引号中的反斜杠将失去它的特殊含义，而只被当成一个普通字符</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizq34wvej30bh034mxg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizqb1nrij30bh08hjse.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Apple、Linux/《Linux命令行大全》/高级键盘技巧：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/26/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E9%AB%98%E7%BA%A7%E9%94%AE%E7%9B%98%E6%8A%80%E5%B7%A7%EF%BC%9A/" class="article-date">
-      <time datetime="2018-10-25T16:00:00.000Z" itemprop="datePublished">2018-10-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/26/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E9%AB%98%E7%BA%A7%E9%94%AE%E7%9B%98%E6%8A%80%E5%B7%A7%EF%BC%9A/">高级键盘技巧：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>光标移动：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizrdb7wkj30b304q74e.jpg"></p>
-<p>修改文本：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizrkw8gtj30b303njrg.jpg"></p>
-<p>剪切和粘贴文本：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizruja5cj30c30dbmyw.jpg"></p>
-<p>自动补齐功能：在输入命令时，按Tab键将触发自动补齐功能<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizs2bosij30c30cc3zn.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizsbamuxj30c3033t8t.jpg"></p>
-<p>使用历史命令：bash会保存使用过命令的历史记录，这些命令的历史记录列表保存在用户主目录的.bash_history文件中</p>
-<p>搜索历史命令：</p>
-<p>history | less：查看历史记录的内容列表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4urxz90fj30ft0dh3ze.jpg"></p>
-<p>bash默认会保存用户最近使用过的500个命令，其中500是个默认值</p>
-<p>找到用来列出/usr/bin目录下内容的命令：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4uve9539j30ft01sdg0.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4uy2xan2j30q60473yw.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizsxnarkj30cj0hp767.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizt5h42mj30cj03uq32.jpg"></p>
-<p>历史记录扩展：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliztcdou8j30cj0d7gn2.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Apple、Linux/《Linux命令行大全》/权限：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/25/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E6%9D%83%E9%99%90%EF%BC%9A/" class="article-date">
-      <time datetime="2018-10-24T16:00:00.000Z" itemprop="datePublished">2018-10-25</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/25/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E6%9D%83%E9%99%90%EF%BC%9A/">权限：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>传统的UNIX操作系统与那些传统的MS-DOS操作系统不同，区别在于它们不仅是多重任务处理系统，而且还是多用户系统,这意味着同一时间内可以有多个用户使用同一台计算机</p>
-<p>id命令可以获得用户身份标识的相关信息<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizu9qa41j30lz00x749.jpg"></p>
-<p>1）用户账户定义在文件/etc/passwd中，对于每一个用户账户，文件/etc/passwd中都定义了对应用户的用户（登录）名、uid、gid、账户的真实姓名、主目录以及登录shell信息<br>2）用户组定义在文件/etc/group中，如果查看文件/etc/passwd和文件/etc/group的内容，可以发现除了普通用户账户信息之外，文件中还有对应于超级用户（uid为0）和其他不同种类的系统用户的账户信息<br>3）在创建用户账户和群组时，这些文件随着文件/etc/shadow的变动而修改，文件/etc/shadow中保存了用户的密码信息</p>
-<p>对文件和目录的访问权限是按照读访问、写访问以及执行访问来定义的：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizuixqg3j30cb0gudhc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizuvora2j30cb0azjse.jpg"></p>
-<p>chmod：更改文件或者目录的模式（权限），只有文件所有者和超级用户才可以更改文件或者目录的模式<br>1）八进制数字表示法：使用八进制数字来设置所期望的权限模式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizv3e7itj30cb04uzk8.jpg"></p>
-<p>通过使用3位八进制数字，我们可以分别设置文件所有者、组成员和其他所有用户的文件模式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizvc9v8ej30b002nglq.jpg"></p>
-<p>2）符号表示法：分为三部分：更改会影响谁、要执行哪个操作、要设置哪种权限<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizvjhikhj30c007lwf2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizvpqhcgj30c006pdgh.jpg"></p>
-<p>umask命令控制着创建文件时指定给文件的默认权限，它使用八进制表示法来表示从文件模式属性中删除一个位掩码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizvxxw2dj30c00bp75h.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizw5zh8jj30c0075wf6.jpg"></p>
-<p>有三种方法用来转换身份：<br>1）注销系统并以其他用户的身份重新登录系统<br>2）使用su命令<br>3）使用sudo命令</p>
-<p>在shell会话状态下，使用su命令将允许你假定为另一个用户的身份，既可以以这个用户的ID来启动一个新的shell会话，也可以以这个用户的身份来发布一个命令<br>使用sudo命令将允许管理者创建一个称为/etc/sudoer的配置文件，并且定义一些特定的命令，这些命令只有被赋予为假定身份的特定用户才允许执行</p>
-<p>su：以其他用户和组ID的身份来运行shell<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizwesdzhj30c00d1myp.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizwn6pxpj30c0026746.jpg"></p>
-<p>sudo：以另一个用户的身份执行命令<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizwu31xvj30c00au75q.jpg"></p>
-<p>chown：更改文件或者目录的所有者和所属群组，需要超级用户的权限<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizx1ua7rj30c0053t91.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizx8o30ej30c008ldgs.jpg"></p>
-<p>chgrp：在更早的UNIX版本中，chown命令只能更改文件的所有者，而不能改变文件所属群组，为了达到这个目的，可以使用chgrp</p>
-<p>实例：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizxgbk8yj30c004iaah.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizxn0wz4j30c00hfabs.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizxun33nj30c00e5jt6.jpg"></p>
-<p>passwd：设置或者更改密码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizy2rqv9j30c009fdgm.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Apple、Linux/《Linux命令行大全》/进程：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/10/24/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E8%BF%9B%E7%A8%8B%EF%BC%9A/" class="article-date">
-      <time datetime="2018-10-23T16:00:00.000Z" itemprop="datePublished">2018-10-24</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/10/24/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E8%BF%9B%E7%A8%8B%EF%BC%9A/">进程：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>现代操作系统通常都支持多重任务处理，多重任务处理是指系统通过快速切换运行中的程序来实现多任务的同时执行，Linux内核通过使用进程来管理多重任务，进程是Linux用来安排不同程序等待CPU调度的一种组织方式</p>
-<p>进程如何工作：系统启动时，内核先把它的一些程序初始化为进程，然后运行一个称为init的程序，init程序将依次运行一系列称为脚本初始化的shell脚本(放在/etc目录下)，这些脚本将会启动所有的系统服务，其中的很多服务都是通过守护程序来实现的，而后台程序只是呆在后台做它们自己的事情，并且没有用户界面，因此，即使没有用户登录，系统也在忙于执行一些例行程序</p>
-<p>一个程序的运行可以触发其他程序的运行，在进程系统中这种情况被表述为父进程创建子进程</p>
-<p>内核会保存每个进程的信息以便确保任务有序进行，比如，每个进程将被分配一个称为进程ID(PID，process ID)的号码。进程ID是按递增的顺序来分配的，init进程的PID始终为1.内核也记录分配给每个进程的内存信息以及用来恢复运行的进程就绪信息。和文件系统类似，进程系统中也存在所有者、用户ID、有效用户ID等</p>
-<p>ps命令：查看进程信息（默认情况下，ps命令输出的信息并不是很多，只是输出和当前终端会话相关的进程信息）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj0006g2mj307n01twed.jpg"><br>1）TTY是teletype(电传打字机)的缩写，代表了进程的控制终端<br>2）UNIX在这里也显示了进程的运行时间，TIME字段表示了进程消耗的CPU时间总和</p>
-<p>添加x选项(注意这里没有前置的连字符)将告知ps命令显示所有的进程，而不需要关注它们是由哪个终端（如果有其他的情况）所控制的。TTY列中出现的“？”表示没有控制终端<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj007jv3fj30az03kt8s.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj00gxvimj30by0843zc.jpg"><br>这些进程状态的后面可以带其他的字符来表示不同的特殊进程特性</p>
-<p>ps aux：将会显示属于每个用户的进程信息，使用这些选项时不带前置连字符将使得命令以“BSD模式(BSD-style)”运行。ps命令的Linux版本可以模拟多种UNIX版本中ps程序的运行方式：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj00nd6mxj30i40gbacd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj00vqb5sj30bl03wwen.jpg"></p>
-<p>虽然ps命令可以显示有关机器运行情况的很多信息，但是它提供的只是在ps命令被执行时刻机器状态的一个快照。要查看机器运行情况的动态视图，可以使用top命令</p>
-<p>top程序将按照进程活动的顺序，以列表的形式持续更新显示系统进程的当前信息（默认每3秒更新一次），它主要用于查看系统“最高（top）”进程的运行情况，top命令显示的内容包含两个部分，顶部显示的是系统总体状态信息，下面显示的是一张按CPU活动时间排序的进程情况表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj013xn4ij30ht0fljtm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj01c9x5pj30bq08474w.jpg"></p>
-<p>top程序可以接受许多键盘指令，其中最常用的有两个：一个是h，输入后将显示程序的帮助界面；另一个是q，用来退出top命令</p>
-<p>主流的桌面环境都提供了用来显示类似top命令的输出信息的图形化应用程序，但是top命令优于图形化版本，这是因为top命令运行的更快，而且消耗的系统资源要少得多，毕竟，系统监控程序不应该减缓正在被监控的系统的处理速度</p>
-<p>控制进程：</p>
-<p>1）中断进程：在终端里按下Ctrl-C键将会中断一个程序，它意味着我们委婉的请求程序结束，许多（但不是所有）命令行程序都可以使用这种方法来实现中断</p>
-<p>2）使进程在后台运行：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj01tbtp6j30ch0bbdgy.jpg"></p>
-<p>3）使进程回到前台运行：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj02138isj30ch03bdfv.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj0290owaj30ch03b0ss.jpg"></p>
-<p>4）停止（暂停）进程：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj02g73wwj30ch0c5jsu.jpg"></p>
-<p>信号：</p>
-<p>kill命令通常用来“杀死”（终止）进程，它可以用来终止运行不正常的程序或者反过来拒绝终止的程序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj02nvarpj30bz084t9r.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj02u4h7bj30bz07ldgf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj033owauj30bz0gx75z.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj03ay3q2j30bz0703yx.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj03hman5j30c306r74n.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj03oj9q0j30c30493yr.jpg"></p>
 
       
     </div>

@@ -228,6 +228,309 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-开发语言/C语言/const修饰基本数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/09/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/const%E4%BF%AE%E9%A5%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <time datetime="2018-09-18T16:00:00.000Z" itemprop="datePublished">2018-09-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/09/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/const%E4%BF%AE%E9%A5%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">const修饰基本数据类型</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><code>const int num = 10;</code><br>一般情况下来说，被const修饰的变量具备一定程度上的不可变性【只能取值不能修改】</p>
+<p>const修饰数组：<code>const int arr[4]=&#123;10,20,30,40&#125;;</code>，数组的元素的值不能修改,数组变量已经是const的指针了，这里的const表明数组的每个单元都是const int，所以必须通过初始化进行赋值</p>
+<p>const修饰指针：<br>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna53uqy8yj30kl0dhjti.jpg"><br>2）<code>int const * p1=&amp;num;</code>效果同上<br>3）<code>int * const p1=&amp;num;</code><br>p1的值不能修改，但是可以通过p1去修改p1指向的变量的值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna5al9nfmj30at0cggmx.jpg"><br>4）<code>int const * const p1=&amp;num;</code><br>既不能修改p1的值，也不能通过p1去修改p1指向的变量的值</p>
+<p>当函数的参数是一个指针的时候，这个时候函数的内部是有可能会修改实参变量的值,所以要加一个const:<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna5jqxhtjj30d70amta0.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C语言/与申请字节空间有关的三个函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/09/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E4%B8%8E%E7%94%B3%E8%AF%B7%E5%AD%97%E8%8A%82%E7%A9%BA%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E4%B8%89%E4%B8%AA%E5%87%BD%E6%95%B0/" class="article-date">
+      <time datetime="2018-09-17T16:00:00.000Z" itemprop="datePublished">2018-09-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/09/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E4%B8%8E%E7%94%B3%E8%AF%B7%E5%AD%97%E8%8A%82%E7%A9%BA%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E4%B8%89%E4%B8%AA%E5%87%BD%E6%95%B0/">与申请字节空间有关的三个函数</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p><code>#include&lt;stdlib.h&gt;</code></p>
+<p>向堆区申请字节空间来使用：我们在堆区申请的字节空间，如果不主动释放，那么系统是不会释放掉的，除非程序结束</p>
+<p>1）malloc()：向堆空间申请指定连续的字节空间来使用【参数是size_t类型的，也就是unsigned long】<br>返回值是void *，返回的是创建的空间中第一个字节的地址<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna6x4706nj308202vq3c.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna6r77yjrj30ms0jltcc.jpg"></p>
+<p>2）calloc()：calloc申请的字节，申请完之后，系统会将字节中的数据清零<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna73t2s58j30cv0fb3zs.jpg"></p>
+<p>3）realloc()：当我们发现我们之前在堆区申请的字节空间不够用的时候，就可以使用realloc函数来为我们的字节空间扩容<br>【如果原来的空间后面还有剩余的空间，并且足够扩容，那么直接就扩容在后面；如果原来的空间后面有剩余空间但是剩下的空间不够扩容，就重新找一块足够的空间申请，将原来的数据拷贝过来，原来的空间被自动释放】</p>
+<p>空间由3个变成4个，扩容了一个：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna76tyrnxj30cv06e3z6.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C语言/结构体(struct)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/09/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93(struct)/" class="article-date">
+      <time datetime="2018-09-16T16:00:00.000Z" itemprop="datePublished">2018-09-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/09/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93(struct)/">结构体(struct)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>我们使用结构体仅仅是创建了一个新的数据类型而已，并没有声明变量，是在指定新的数据类型是由哪些成员组合而成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">struct Student&#123;</span><br><span class="line">   char *name;</span><br><span class="line">   int age;</span><br><span class="line">   int score;</span><br><span class="line">   float height;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct Student stu;  &#x2F;&#x2F;代表声明了一个struct Student类型的变量，变量名字叫做stu，这个时候stu才是一个变量，才会在内存中申请空间</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhvh4495j30h80hotb6.jpg"></p>
+<p>结构体初始化：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhv8x83jj30jd09vgn6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhuwh5gkj30ba0b975g.jpg"></p>
+<p>结构和数组有点像，数组用[]运算符和下标访问其成员，结构用.运算符和名字访问其成员</p>
+<p>匿名结构体：这个结构体类型没有名称，只能在声明结构体的同时就创建变量，不能单独的声明这个结构体类型的变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct&#123;</span><br><span class="line">   char *barnd;</span><br><span class="line">   char *color;</span><br><span class="line">   int price;</span><br><span class="line">&#125;fengshan1;</span><br></pre></td></tr></table></figure>
+
+<p>声明一个结构体变量，如果没有为这个结构体变量的成员赋值，那么成员是有值的，这个值是一个垃圾值；在声明结构体变量的同时，只要初始化一个成员，其他的成员就会被自动的初始化为0</p>
+<p>如果结构体类型是定义在函数的内部的，那么这个结构体类型只能在这个函数的内部使用，如果我们希望这个结构体类型可以用在所有的函数中，那么就把这个结构体类型定义在函数的外面</p>
+<p>结构体之间比较：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gogwvleyadj30g90h8myy.jpg"></p>
+<p>相同结构体类型的变量之间是可以相互赋值的【值传递】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">struct Student xiaoMing&#x3D;&#123;&quot;小明&quot;,19,100&#125;;</span><br><span class="line">struct Student xiaoHua&#x3D;xiaoMing;</span><br></pre></td></tr></table></figure>
+
+<p>结构体数组：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotrki2rqej30b10i9wg2.jpg"></p>
+<p>结构体指针：结构体变量是一个变量，<code>struct Student xiaoMing=&#123;“小明”,18,100&#125;;</code> xiaoMing首先是一个变量，类型是struct Student类型的，既然xiaoMing是一个变量，那么这个变量肯定是有地址的，既然有地址，那么就可以声明一个指针指向这个结构体变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhx01qhnj30g90e6q4p.jpg"></p>
+<p>结构指针：和数组不同，结构变量的名字并不是结构变量的地址，必须使用&amp;运算符<br><code>struct date *pDate=&amp;today;</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhx9fwlpj30bc08xq3v.jpg"></p>
+<p>结构体作为函数参数：<br><code>int numberOfDays(struct date d)</code><br>整个结构可以作为参数的值传入函数<br>这时候是在函数内新建一个结构变量，并复制调用者的结构的值<br>也可以返回一个结构<br>这与数组完全不同<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhxkvjyyj30jy0k0jve.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhxwivxvj30mv0kbn0u.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhy57d7vj30cm0f3dho.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhyd0uqtj30mr0jyn0h.jpg"></p>
+<p>结构体作为函数的参数【值传递】：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhyx4lttj308d03g750.jpg"></p>
+<p>改成指针后就是地址传递了</p>
+<p>结构体完全可以作为函数的返回值，在返回的时候，直接将这个结构体变量的值返回即可</p>
+<p>如果你要返回结构体变量的地址，那么就要把这个结构体变量创建在堆区：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gnai3lzs2oj30e60c6diw.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C语言/枚举(enum)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/09/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%9E%9A%E4%B8%BE(enum)/" class="article-date">
+      <time datetime="2018-09-15T16:00:00.000Z" itemprop="datePublished">2018-09-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/09/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%9E%9A%E4%B8%BE(enum)/">枚举(enum)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>支持新创建一种数据类型，这个数据类型的变量的取值被限定，枚举值的名称都以枚举类型来开头<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotryrxn87j309u0a2aat.jpg"></p>
+<p>每一个枚举值/枚举项都有一个对应的整型的数，默认从0开始，依次的递增【实际上可以手动的赋值】，无论是什么类型的枚举变量，都是占据4个字节，枚举变量中真正存储的是枚举值所对应的整型的数</p>
+<p>枚举类型名字通常并不真的使用，要用的是在大括号里的名字，因为它们就是常量符号，它们的类型是int，值依次从0到n<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi473xg2j307v09j74z.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi4hhd77j30ax0eh40i.jpg"></p>
+<p>虽然枚举类型可以当作类型使用，但是实际上很少用</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-开发语言/C语言/typedef" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

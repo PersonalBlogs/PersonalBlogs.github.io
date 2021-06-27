@@ -228,6 +228,335 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Apple、Linux/《Linux命令行大全》/扩展和引用：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/27/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E6%89%A9%E5%B1%95%E5%92%8C%E5%BC%95%E7%94%A8%EF%BC%9A/" class="article-date">
+      <time datetime="2018-10-26T16:00:00.000Z" itemprop="datePublished">2018-10-27</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/27/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E6%89%A9%E5%B1%95%E5%92%8C%E5%BC%95%E7%94%A8%EF%BC%9A/">扩展和引用：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>扩展：每次输入命令行按下Enter键时，bash都会在执行命令之前对文本进行多重处理，产生这个结果的处理过程称为扩展，有了扩展功能，在输入内容后，这些内容将在shell对其执行之前被扩展成其他内容</p>
+<p>echo:shell内置命令，把文本参数内容打印到标准输出<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizlv90o7j30c206kaat.jpg"></p>
+<p>路径名扩展：通过使用通配符来实现扩展的机制<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmabgl6j30c2076aae.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmhqyvqj30bj0833zm.jpg"></p>
+<p>波浪线扩展：如果把～用在一个单词的开头，那么它将被扩展为指定用户的主目录名，如果没有指定用户命名，则扩展为当前用户的主目录<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizmpa600j306p02bmx1.jpg"></p>
+<p>算术扩展：shell支持通过扩展来运行算术表达式，这允许我们把shell提示符当作计算器来使用：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizn0yi1kj306700pwe9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizn83eygj30by0dbjsd.jpg"></p>
+<p>花括号扩展：可以按照花括号里面的模式创建多种文本字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliznh6ye2j30b400ywed.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliznog9xaj30ch0c5q4c.jpg"></p>
+<p>参数扩展：<br>命名为USER的变量包含你的用户名，为了触发参数扩展，并显示出USER的内容：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizo60m0lj30ch06b74o.jpg"></p>
+<p>命令替换：可以把一个命令的输出作为一个扩展模式使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizoeshhdj30ch0a5my8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizommplyj30ch02p0sq.jpg"></p>
+<hr>
+<p>引用：</p>
+<p>在第一个例子中，shell会对echo命令的参数列表进行单词分割，去除多余的空白；在第二个例子中，因为$1是一个未定义的变量，所以参数扩展将把$1的值替换为空字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4jbr4pelj30e4020q37.jpg"></p>
+<p>shell提供了一种称为引用（quoting）的机制，用来有选择性的避免不想要的扩展</p>
+<p>双引号：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizp18fyjj30ch06qdgm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizp8g70bj30ch0h9q4q.jpg"><br>在第一个例子中，没有加上引号的命令替换将导致命令行被识别为命令后面跟着38个参数；而在第二个例子中加了双引号，使得命令行被识别为命令后面只跟着一个参数，这个参数包含着嵌入空格和换行字符</p>
+<p>单引号：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizpo276cj30ch044q36.jpg"></p>
+<p>转义字符：</p>
+<p>有时候我们只是想要引用单个字符，这种情况可以通过在该字符前加上反斜杠来实现，这里的反斜杠称为转义字符，转义字符经常在双引号中用来有选择性的阻止扩展：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4jwvu1dtj30ii01a0sy.jpg"></p>
+<p>转义字符也常用来消除文件名中某个字符的特殊含义，比如文件名中可以使用在shell中通常具有特殊含义的字符，这些字符包括“$”、“!”、“&amp;”、空格等</p>
+<p>如果想要显示反斜杠字符，可以通过使用两个反斜杠“\”来实现，需要注意的是，单引号中的反斜杠将失去它的特殊含义，而只被当成一个普通字符</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizq34wvej30bh034mxg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizqb1nrij30bh08hjse.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Apple、Linux/《Linux命令行大全》/高级键盘技巧：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/26/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E9%AB%98%E7%BA%A7%E9%94%AE%E7%9B%98%E6%8A%80%E5%B7%A7%EF%BC%9A/" class="article-date">
+      <time datetime="2018-10-25T16:00:00.000Z" itemprop="datePublished">2018-10-26</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/26/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E9%AB%98%E7%BA%A7%E9%94%AE%E7%9B%98%E6%8A%80%E5%B7%A7%EF%BC%9A/">高级键盘技巧：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>光标移动：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizrdb7wkj30b304q74e.jpg"></p>
+<p>修改文本：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizrkw8gtj30b303njrg.jpg"></p>
+<p>剪切和粘贴文本：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizruja5cj30c30dbmyw.jpg"></p>
+<p>自动补齐功能：在输入命令时，按Tab键将触发自动补齐功能<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizs2bosij30c30cc3zn.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizsbamuxj30c3033t8t.jpg"></p>
+<p>使用历史命令：bash会保存使用过命令的历史记录，这些命令的历史记录列表保存在用户主目录的.bash_history文件中</p>
+<p>搜索历史命令：</p>
+<p>history | less：查看历史记录的内容列表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4urxz90fj30ft0dh3ze.jpg"></p>
+<p>bash默认会保存用户最近使用过的500个命令，其中500是个默认值</p>
+<p>找到用来列出/usr/bin目录下内容的命令：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4uve9539j30ft01sdg0.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm4uy2xan2j30q60473yw.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizsxnarkj30cj0hp767.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizt5h42mj30cj03uq32.jpg"></p>
+<p>历史记录扩展：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gliztcdou8j30cj0d7gn2.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Apple、Linux/《Linux命令行大全》/权限：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/25/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E6%9D%83%E9%99%90%EF%BC%9A/" class="article-date">
+      <time datetime="2018-10-24T16:00:00.000Z" itemprop="datePublished">2018-10-25</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/25/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E6%9D%83%E9%99%90%EF%BC%9A/">权限：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>传统的UNIX操作系统与那些传统的MS-DOS操作系统不同，区别在于它们不仅是多重任务处理系统，而且还是多用户系统,这意味着同一时间内可以有多个用户使用同一台计算机</p>
+<p>id命令可以获得用户身份标识的相关信息<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizu9qa41j30lz00x749.jpg"></p>
+<p>1）用户账户定义在文件/etc/passwd中，对于每一个用户账户，文件/etc/passwd中都定义了对应用户的用户（登录）名、uid、gid、账户的真实姓名、主目录以及登录shell信息<br>2）用户组定义在文件/etc/group中，如果查看文件/etc/passwd和文件/etc/group的内容，可以发现除了普通用户账户信息之外，文件中还有对应于超级用户（uid为0）和其他不同种类的系统用户的账户信息<br>3）在创建用户账户和群组时，这些文件随着文件/etc/shadow的变动而修改，文件/etc/shadow中保存了用户的密码信息</p>
+<p>对文件和目录的访问权限是按照读访问、写访问以及执行访问来定义的：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizuixqg3j30cb0gudhc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizuvora2j30cb0azjse.jpg"></p>
+<p>chmod：更改文件或者目录的模式（权限），只有文件所有者和超级用户才可以更改文件或者目录的模式<br>1）八进制数字表示法：使用八进制数字来设置所期望的权限模式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizv3e7itj30cb04uzk8.jpg"></p>
+<p>通过使用3位八进制数字，我们可以分别设置文件所有者、组成员和其他所有用户的文件模式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizvc9v8ej30b002nglq.jpg"></p>
+<p>2）符号表示法：分为三部分：更改会影响谁、要执行哪个操作、要设置哪种权限<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizvjhikhj30c007lwf2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizvpqhcgj30c006pdgh.jpg"></p>
+<p>umask命令控制着创建文件时指定给文件的默认权限，它使用八进制表示法来表示从文件模式属性中删除一个位掩码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizvxxw2dj30c00bp75h.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizw5zh8jj30c0075wf6.jpg"></p>
+<p>有三种方法用来转换身份：<br>1）注销系统并以其他用户的身份重新登录系统<br>2）使用su命令<br>3）使用sudo命令</p>
+<p>在shell会话状态下，使用su命令将允许你假定为另一个用户的身份，既可以以这个用户的ID来启动一个新的shell会话，也可以以这个用户的身份来发布一个命令<br>使用sudo命令将允许管理者创建一个称为/etc/sudoer的配置文件，并且定义一些特定的命令，这些命令只有被赋予为假定身份的特定用户才允许执行</p>
+<p>su：以其他用户和组ID的身份来运行shell<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizwesdzhj30c00d1myp.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizwn6pxpj30c0026746.jpg"></p>
+<p>sudo：以另一个用户的身份执行命令<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizwu31xvj30c00au75q.jpg"></p>
+<p>chown：更改文件或者目录的所有者和所属群组，需要超级用户的权限<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizx1ua7rj30c0053t91.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizx8o30ej30c008ldgs.jpg"></p>
+<p>chgrp：在更早的UNIX版本中，chown命令只能更改文件的所有者，而不能改变文件所属群组，为了达到这个目的，可以使用chgrp</p>
+<p>实例：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizxgbk8yj30c004iaah.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizxn0wz4j30c00hfabs.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizxun33nj30c00e5jt6.jpg"></p>
+<p>passwd：设置或者更改密码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glizy2rqv9j30c009fdgm.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Apple、Linux/《Linux命令行大全》/进程：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2018/10/24/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E8%BF%9B%E7%A8%8B%EF%BC%9A/" class="article-date">
+      <time datetime="2018-10-23T16:00:00.000Z" itemprop="datePublished">2018-10-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2018/10/24/Apple%E3%80%81Linux/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/%E8%BF%9B%E7%A8%8B%EF%BC%9A/">进程：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>现代操作系统通常都支持多重任务处理，多重任务处理是指系统通过快速切换运行中的程序来实现多任务的同时执行，Linux内核通过使用进程来管理多重任务，进程是Linux用来安排不同程序等待CPU调度的一种组织方式</p>
+<p>进程如何工作：系统启动时，内核先把它的一些程序初始化为进程，然后运行一个称为init的程序，init程序将依次运行一系列称为脚本初始化的shell脚本(放在/etc目录下)，这些脚本将会启动所有的系统服务，其中的很多服务都是通过守护程序来实现的，而后台程序只是呆在后台做它们自己的事情，并且没有用户界面，因此，即使没有用户登录，系统也在忙于执行一些例行程序</p>
+<p>一个程序的运行可以触发其他程序的运行，在进程系统中这种情况被表述为父进程创建子进程</p>
+<p>内核会保存每个进程的信息以便确保任务有序进行，比如，每个进程将被分配一个称为进程ID(PID，process ID)的号码。进程ID是按递增的顺序来分配的，init进程的PID始终为1.内核也记录分配给每个进程的内存信息以及用来恢复运行的进程就绪信息。和文件系统类似，进程系统中也存在所有者、用户ID、有效用户ID等</p>
+<p>ps命令：查看进程信息（默认情况下，ps命令输出的信息并不是很多，只是输出和当前终端会话相关的进程信息）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj0006g2mj307n01twed.jpg"><br>1）TTY是teletype(电传打字机)的缩写，代表了进程的控制终端<br>2）UNIX在这里也显示了进程的运行时间，TIME字段表示了进程消耗的CPU时间总和</p>
+<p>添加x选项(注意这里没有前置的连字符)将告知ps命令显示所有的进程，而不需要关注它们是由哪个终端（如果有其他的情况）所控制的。TTY列中出现的“？”表示没有控制终端<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj007jv3fj30az03kt8s.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj00gxvimj30by0843zc.jpg"><br>这些进程状态的后面可以带其他的字符来表示不同的特殊进程特性</p>
+<p>ps aux：将会显示属于每个用户的进程信息，使用这些选项时不带前置连字符将使得命令以“BSD模式(BSD-style)”运行。ps命令的Linux版本可以模拟多种UNIX版本中ps程序的运行方式：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj00nd6mxj30i40gbacd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj00vqb5sj30bl03wwen.jpg"></p>
+<p>虽然ps命令可以显示有关机器运行情况的很多信息，但是它提供的只是在ps命令被执行时刻机器状态的一个快照。要查看机器运行情况的动态视图，可以使用top命令</p>
+<p>top程序将按照进程活动的顺序，以列表的形式持续更新显示系统进程的当前信息（默认每3秒更新一次），它主要用于查看系统“最高（top）”进程的运行情况，top命令显示的内容包含两个部分，顶部显示的是系统总体状态信息，下面显示的是一张按CPU活动时间排序的进程情况表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj013xn4ij30ht0fljtm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj01c9x5pj30bq08474w.jpg"></p>
+<p>top程序可以接受许多键盘指令，其中最常用的有两个：一个是h，输入后将显示程序的帮助界面；另一个是q，用来退出top命令</p>
+<p>主流的桌面环境都提供了用来显示类似top命令的输出信息的图形化应用程序，但是top命令优于图形化版本，这是因为top命令运行的更快，而且消耗的系统资源要少得多，毕竟，系统监控程序不应该减缓正在被监控的系统的处理速度</p>
+<p>控制进程：</p>
+<p>1）中断进程：在终端里按下Ctrl-C键将会中断一个程序，它意味着我们委婉的请求程序结束，许多（但不是所有）命令行程序都可以使用这种方法来实现中断</p>
+<p>2）使进程在后台运行：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj01tbtp6j30ch0bbdgy.jpg"></p>
+<p>3）使进程回到前台运行：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj02138isj30ch03bdfv.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj0290owaj30ch03b0ss.jpg"></p>
+<p>4）停止（暂停）进程：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj02g73wwj30ch0c5jsu.jpg"></p>
+<p>信号：</p>
+<p>kill命令通常用来“杀死”（终止）进程，它可以用来终止运行不正常的程序或者反过来拒绝终止的程序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj02nvarpj30bz084t9r.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj02u4h7bj30bz07ldgf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj033owauj30bz0gx75z.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj03ay3q2j30bz0703yx.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj03hman5j30c306r74n.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glj03oj9q0j30c30493yr.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Apple%E3%80%81Linux/">Apple、Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Apple、Linux/《Linux命令行大全》/环境：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -738,366 +1067,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8ALinux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8%E3%80%8B/" rel="tag">《Linux命令行大全》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/C语言/macOS终端下执行第一个C程序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/29/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/macOS%E7%BB%88%E7%AB%AF%E4%B8%8B%E6%89%A7%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F/" class="article-date">
-      <time datetime="2018-09-28T16:00:00.000Z" itemprop="datePublished">2018-09-29</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/29/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/macOS%E7%BB%88%E7%AB%AF%E4%B8%8B%E6%89%A7%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AAC%E7%A8%8B%E5%BA%8F/">macOS终端下执行第一个C程序</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>在其他操作系统中，编译，加载，运行等规则会有所不同！</p>
-<p>1）新建一个文件夹“C语言程序演示”</p>
-<p>2）在终端中cd进入这个新建的文件夹</p>
-<p>3）在新文件夹中touch hello.c建立一个后缀名为.c的源程序<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glfft27gloj30lz07ldhb.jpg"></p>
-<p>4）在hello.c源文件中写第一个C语言的代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glfft9zgknj30m704ogm2.jpg"></p>
-<p>5）通过cc hello.c命令进行编译，如果源程序没有什么错误，编译过程将顺利进行，并生成一个可执行文件a.out【cc -c 源文件名称：编译，生成.o文件，叫做目标文件，存储的是.c文件中的代码对应的二进制指令；cc 目标文件名称：连接，为.o的目标文件添加启动代码，告诉编译器，要调用的函数在什么地方】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffthb0i2j30mp07b0ue.jpg"></p>
-<p>6）然后我们输入./a.out，即可运行a.out，打印出程序结果</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/C语言/数据类型" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/28/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
-      <time datetime="2018-09-27T16:00:00.000Z" itemprop="datePublished">2018-09-28</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/28/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<h3 id="C数据类型、格式控制符整理"><a href="#C数据类型、格式控制符整理" class="headerlink" title="C数据类型、格式控制符整理"></a>C数据类型、格式控制符整理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">C数据类型：</span><br><span class="line"></span><br><span class="line">1⃣️基本数据类型：</span><br><span class="line">整型：char、short、int、long、long long(C99)</span><br><span class="line">浮点型：float、double、long double(C99)</span><br><span class="line">布尔型：bool(C99)</span><br><span class="line"></span><br><span class="line">1）char：字符类型，一个字节（一个字节&#x3D;八个比特），-128～+127</span><br><span class="line">2）short：短整型，通常为16位，两个字节，-32768～32767</span><br><span class="line">3）int：取值范围取决于具体的机器，通常代表特定机器中整数的自然长度，通常为16位，其取值范围在-2147483648 ～ +2147483647之间，也有用32位表示的int类型</span><br><span class="line">4）long：长整型，四个字节，至少占32位存储单元，在某些机器上int与long类型的长度相同</span><br><span class="line">5）long long：八个字节</span><br><span class="line">6）float类型：取值范围取决于具体的机器，通常是32位，可以存储有效位数不超过7位的小数，取值范围一般在10^(-38)~10^(+38)之间</span><br><span class="line">7）double：双精度浮点型，64位，可以存储有效位数不超过16位的小数</span><br><span class="line"></span><br><span class="line">2⃣️构造类型：数组、结构体、枚举</span><br><span class="line"></span><br><span class="line">3⃣️指针类型</span><br><span class="line"></span><br><span class="line">4⃣️空类型：void</span><br><span class="line"></span><br><span class="line">5⃣️typedef自定义类型</span><br><span class="line"></span><br><span class="line">C格式控制符：不同类型的数据在变量中存储的形式是不一样的，所以在读取变量中的数据的时候，类型不同读取的方式也不同</span><br><span class="line"></span><br><span class="line">%hd：short</span><br><span class="line"></span><br><span class="line">%d：读取int整型，以十进制输出</span><br><span class="line">%o：读取int整型，以八进制输出（一个以0开始的数字字面量是8进制）</span><br><span class="line">%x：读取int整型，以十六进制输出（一个以0x开始的数字字面量是16进制，8进制和16进制只是如何把数字表达为字符串，与内部如何表达数字无关）</span><br><span class="line"></span><br><span class="line">%ld：long</span><br><span class="line">%lld：long long</span><br><span class="line"></span><br><span class="line">%hu：unsigned short</span><br><span class="line">%u：unsigned int</span><br><span class="line">%lu：unsigned long</span><br><span class="line">%llu：unsigned long long</span><br><span class="line"></span><br><span class="line">float和double类型的printf都使用%f或%e，float的scanf使用%f，double的scanf使用%lf</span><br><span class="line"></span><br><span class="line">%c：char类型，表示字符</span><br><span class="line">%s表示字符串</span><br><span class="line"></span><br><span class="line">%p：地址</span><br><span class="line"></span><br><span class="line">%%表示百分号（%）本身</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="数据类型的一些注意点"><a href="#数据类型的一些注意点" class="headerlink" title="数据类型的一些注意点"></a>数据类型的一些注意点</h3><ol>
-<li><p>一个C语言程序，无论其大小如何，都是由函数和变量组成的，函数中包含一些语句，以指定所要执行的计算操作；变量则用于存储计算过程中使用的值。main是一个特殊的函数名，每个程序都从main函数的起点开始执行，每个程序都必须在某个位置包含一个main函数；函数之间进行数据交换的一种方法是调用函数向被调用函数提供一个值（称为参数）列表</p>
-</li>
-<li><p>变量的命名规则：变量名是由字母和数字组成的序列，但其第一个字符必须为字母，下划线“_”被看作是字母，通常用于命名较长的变量名，以提高其可读性。由于库例程的名字通常以下划线开头，因此变量名不要以下划线开头</p>
-</li>
-<li><p>变量就是内存中开辟的用来存储数据的那块空间，所以变量是用来存储数据的，我们声明一个变量，如果没有为这个变量赋值，这个变量是有值的，这个值是一个随机数、垃圾值</p>
-</li>
-<li><p>在同一个大括弧中不允许定义多个变量名相同的变量，不同大括弧可以</p>
-</li>
-<li><p>自动类型转换：当我们为变量赋值的时候，如果赋值的数据的类型和变量的类型不一致，这时候C系统会将赋值的数据的类型转换为变量的类型再赋值</p>
-</li>
-</ol>
-<p>如果某个算术运算符的所有操作数均为整型，则执行整型运算。但是，如果某个算术运算符有一个浮点型操作数和一个整型操作数，则在开始运算之前整型操作数将会被转换为浮点型</p>
-<p>强制类型转换：要把一个量强制转换成另一个类型（通常是较小的类型）:<code>(int)10.2</code>，注意这时候的安全性，小的变量不总能表达大的量：<code>(short)32768</code></p>
-<p>强制类型转换只是从那个变量计算出了一个新的类型的值，它并不改变那个变量，无论是值还是类型都不改变</p>
-<p>强制类型转换的优先级高于四则运算：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">double a&#x3D;1.0;</span><br><span class="line">double b&#x3D;2.0;</span><br><span class="line">int I&#x3D;(int)a&#x2F;b;</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li><p>在printf函数的参数中，只能用\n表示换行符，如果用程序的换行代替\n，C编译器将会产生一条错误信息。printf函数永远不会自动换行，这样我们可以多次调用该函数以分阶段得到一个长的输出行。<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh214vrcj30lp041aam.jpg"></p>
-</li>
-<li><p>printf函数并不是C语言本身的一部分，C语言本身并没有定义输入/输出功能。printf仅仅是标准库函数中一个有用的函数而已，这些标准库函数在C语言程序中通常都可以使用。</p>
-</li>
-<li><p>printf输出inf表示超过范围的浮点数，printf输出nan表示不存在的浮点数</p>
-</li>
-<li><p>scanf函数是一个阻塞式的函数，当CPU执行到这个函数的时候，CPU的执行就会暂停，不会继续往下执行了，并等待用户输入数据</p>
-</li>
-<li><p>scanf函数后面不要加\n</p>
-</li>
-<li><p>如果没有特殊需要，只使用double，现代CPU能直接对double做硬件运算，性能不会比float差，在64位的机器上，数据存储的速度也不比float慢</p>
-</li>
-<li><p><code>#include&lt;stdbool.h&gt;</code>之后就可以使用bool和true、false了</p>
-</li>
-<li><p>在C语言中如果我们直接写一个小数，那么这个小数的类型是double类型的，如果我们就是希望这个小数是一个float类型的，那么就在这个小数的后面加一个f/F</p>
-</li>
-<li><p>char类型的变量中只能存储单个字符，并且这单个字符还要用单引号引起来；如果char类型的变量中存储的字符超过一个，那么它只会保存最后一个字符（char变量中可以存储一个空格，无法存储中文，因为在C语言中，一个中文占3个字节）</p>
-</li>
-<li><p>字符型变量是用来存储字符常量的变量。将一个字符常量存储到一个字符变量中，实际上是将该字符的ASCII码值（无符号整数）存储到内存单元中。【‘A’——65、‘a’——97、‘0’——48，为char变量赋值的时候可以直接赋值ASCII码】</p>
-</li>
-<li><p>所有整型都包括signed(带符号)和unsigned(无符号)两种形式，且可以表示无符号常量与十六进制字符常量；</p>
-</li>
-</ol>
-<p>unsigned类型的数总是正值或0，如果char对象占用8位，那么unsigned char类型变量的取值范围为0～255，而signed char类型变量的取值范围则为-128～127（在采用对二的补码的机器上）</p>
-<p>如果一个字面量常数想要表达自己是unsigned，可以在后面加U【255U】，用l或L表示long(long)</p>
-<p>unsigned的初衷并非扩展数能表达的范围，而是为了做纯二进制运算，主要是为了移位</p>
-<ol start="17">
-<li>无论是float还是double，默认都只显示小数点后6位(不足的用0补齐，多余六位的只保留六位)<br><code>%.nf</code>：表示显示小数点后n位<br><code>%m.nf</code>：如果变量整体的位数(小数点默认显示n位，无n的默认显示6位，小数点不足6位的在后面补0，大于6位的按6位计算)小于m，不足的地方就会以空格补齐（正数在前面补齐，负数在后面补齐）；如果变量整体的位数大于字符宽，那么实际有多少位就显示多少位(%0mf，不足的地方以0补齐)</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/C语言/scanf输入多个数据出现的问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/scanf%E8%BE%93%E5%85%A5%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
-      <time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished">2018-09-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/scanf%E8%BE%93%E5%85%A5%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/">scanf输入多个数据出现的问题</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>如果使用scanf函数一次输入多个数据，只能是整型和浮点型，如果有char字符型混合输入，就会出现问题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffiv25wlj30e709fjsj.jpg"></p>
-<p>图中可以看到：num3的值并没有打印出来，出现这种情况的原因是什么呢？？？</p>
-<ol>
-<li><p>在执行scanf函数的时候，会让用户输入一个数据，数据输入完毕之后，并不是将这个数据直接赋值给变量，而是先将数据存储在缓冲区，输入的任何数据都会存储在缓冲区中</p>
-</li>
-<li><p>在执行scanf函数的时候，会先检查缓冲区中是否有数据，如果缓冲区中没有数据，那么就会让用户从键盘输入，如果缓冲区中有数据，直接从缓冲区中将数据拿出来，不会让用户输入数据</p>
-</li>
-<li><p>当从缓冲区中拿数据的时候，如果要拿的数据的类型是整型或者实型，如果拿到的数据的类型是空格、回车、Tab键，就会被自动忽略，继续往下拿；如果要拿的数据是字符型，不会忽略任何数据</p>
-</li>
-</ol>
-<p>我们来分析下面的一段程序：程序中要求用户输入一个整型数据num1，但是这个时候我们偏偏输入两个整型数据10、20，这个时候缓冲区其实有四个数据：10、空格、20、换行，执行第一个printf后结果为10，这是我们事先预料好的；当第二个scanf执行的时候，程序根本就不会让用户输入数据，因为缓冲区中已经有整型数据20了【当从缓冲区中拿数据的时候，如果要拿的数据的类型是整型或者实型，如果拿到的数据的类型是空格、回车、Tab键，就会被自动忽略，继续往下拿】，所以最终程序会直接打印出num2=20<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffj3ejggj30al0aj3zn.jpg"></p>
-<p>让我们再回头看第一个程序：为什么num3的值打印出来的结果为空？？？<br>执行完第11行程序以后，缓冲区中的数据为10、空格、2.5、空格、a、换行；打印num1、num2的值的时候，因为是整型或者浮点型，程序会自动忽略空格和换行，所以输出结果为num1=10，num2=2.500000；但是num3是一个字符型的数据，程序并不会忽略任何的数据，最后打印出来的结果为num3= ；【这里打印出来了一个空格，并不是空】</p>
-<p>那这个时候就有问题了，如果scanf输入多个数据中包含字符型数据时，我就是想要输出来字符型数据，该怎么做呢？？？</p>
-<p>解决方案：通过<code>rewind(stdin);</code>这行代码把缓冲区中的数据全部清空，这个时候缓冲区中没有任何数据了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffjeysa5j30cs0grdhv.jpg"></p>
-<p>写C代码时，如果遇到整型、浮点型、字符型同时出现在scanf函数中的时候，要十分注意缓冲区中数据的情况！！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/C语言/运算符和表达式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2018/09/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
-      <time datetime="2018-09-25T16:00:00.000Z" itemprop="datePublished">2018-09-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2018/09/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/">运算符和表达式</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<h3 id="C运算符、优先级整理"><a href="#C运算符、优先级整理" class="headerlink" title="C运算符、优先级整理"></a>C运算符、优先级整理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">C运算符：</span><br><span class="line"></span><br><span class="line">赋值运算符【&#x3D;、+&#x3D;、-&#x3D;、*&#x3D;、&#x2F;&#x3D;、%&#x3D;】</span><br><span class="line">算术运算符【+、-、*、&#x2F;、%】</span><br><span class="line">关系运算符【&#x3D;&#x3D;、!&#x3D;、&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;】</span><br><span class="line">自增自减运算符【++、—-】</span><br><span class="line">逗号运算符【,】</span><br><span class="line">逻辑运算符【&amp;&amp;(与)、||(或)、！】</span><br><span class="line">取地址运算符【&amp;】</span><br><span class="line"></span><br><span class="line">C优先级：</span><br><span class="line">1）（）：从左到右</span><br><span class="line">2）!  +  -  ++  —：从右到左（单目的+和-）</span><br><span class="line">3）*  &#x2F;  %：从左到右</span><br><span class="line">4）+  -：从左到右</span><br><span class="line">5）&lt;  &lt;&#x3D;  &gt;  &gt;&#x3D;：从左到右</span><br><span class="line">6）&#x3D;&#x3D;  !&#x3D;：从左到右</span><br><span class="line">7）&amp;&amp;：从左到右</span><br><span class="line">8）||：从左到右</span><br><span class="line">9）&#x3D;  +&#x3D;  -&#x3D;  *&#x3D;  &#x2F;&#x3D;  %&#x3D;：从右到左</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="运算符和表达式的一些注意点"><a href="#运算符和表达式的一些注意点" class="headerlink" title="运算符和表达式的一些注意点"></a>运算符和表达式的一些注意点</h3><p>1）逃逸字符：用来表达无法印出来的控制字符或特殊字符，它由一个反斜杠”\”开头，后面跟上另一个字符，这两个字符合起来，组成了一个字符：<code>printf(“请分别输入身高的英尺和英寸，”“如输入\“5 7 \”表示5英尺7英寸：“);</code></p>
-<p>\b：回退一格<br>\t：到下一个表格位<br>\n：换行<br>\r：回车<br>\”：双引号<br>\’：单引号<br>\：反斜杠本身</p>
-<p>转义符只能是小写字母，每个转义符只能看作一个字符</p>
-<p>垂直制表符“\v”和换页符“\f”对屏幕没有任何影响，但会影响打印机执行相应的操作</p>
-<p>在C语言程序中，通常会用转义符表示不可打印的字符</p>
-<p>2）如果参与算术表达式的操作数的类型不一致，那么这个算术表达式的结果的类型就是范围最大的那个类型</p>
-<p>3）m % n的结果一定是在0～（n-1）之间</p>
-<p>4）char类型的数据可以参与算术运算，当算术表达式中的操作数是一个char数据的时候，会先将这个char数据的ASCII码取出来代替，然后再参与算术运算，实际上它是一个int类型的数据在参与运算；char数据也可以参与比较运算</p>
-<p>5）const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了，如果你试图对常量做修改，把它放在赋值运算符的左边，就会被编译器发现，指出为一个错误</p>
-<p>6）无论是前自增表达式还是后自增表达式，都是将自身的值增加1<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh33jsm1j308l09qt9g.jpg"></p>
-<p>7）sizeof是一个运算符，给出某个类型或变量在内存中所占据的字节数：<code>sizeof(int)、sizeof(i)</code></p>
-<p>sizeof是静态运算符，它的结果在编译时刻就决定了，不要在sizeof的括号里做运算，这些运算不会做的</p>
-<p>8）逻辑运算是对逻辑量进行的运算，结果只有0或1，逻辑量是关系运算或逻辑运算的结果</p>
-<p>逻辑非！【!a，如果a是true，结果就是false，如果a是false，结果是true】<br>逻辑与&amp;&amp;【a &amp;&amp; b，如果a和b都是true，结果就是true，否则就是false】<br>逻辑或||【a || b，如果a和b有一个是true，结果为true，两个都是false，结果为false】</p>
-<p><code>x&gt;4 &amp;&amp; x&lt;6</code>：像4&lt;x&lt;6这样的式子，不是C能正确计算的式子，因为4&lt;x的结果是一个逻辑值(0或1)</p>
-<p>短路：逻辑运算是自左向右进行的，如果左边的结果已经能够决定结果了，就不会做右边的计算；对于&amp;&amp;，左边是false时就不做右边了；对于||，左边是true时就不做右边了</p>
-<p>不要把赋值，包括复合赋值组合进表达式！<code>a==6 &amp;&amp; b==1；a==6 &amp;&amp; b+=1</code></p>
-<p>9）三元表达式、条件运算符（可以部分代替if else）：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">count = (count&gt;<span class="number">20</span>) ? count<span class="number">-10</span> : count+<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(count &gt; <span class="number">20</span>)</span><br><span class="line">     count = count<span class="number">-10</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">     count = count+<span class="number">10</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>10）逗号运算符：逗号用来连接两个表达式，并以其右边的表达式的值作为它的结果。逗号的优先级是所有的运算符中最低的，所以它两边的表达式会先计算；逗号的组合关系是自左向右，所以左边的表达式会先计算，而右边的表达式的值就留下来作为逗号运算的结果<br><code>for（i=0，j=10；i&lt;j；i++，j—）</code></p>
-<p>逗号表达式的目的并不是想要前面表达式的结果，而只是想要前面的表达式执行，要最后一个表达式的结果<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh3kuorlj30as081dgg.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       

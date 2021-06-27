@@ -228,6 +228,294 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机基础/计算机网络原理/ALOHA协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/ALOHA%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-08-10T16:00:00.000Z" itemprop="datePublished">2020-08-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/08/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/ALOHA%E5%8D%8F%E8%AE%AE/">ALOHA协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>ALOHA协议：</p>
+<p>1）纯ALOHA协议：不监听信道，不按时间槽发送，随机重发【想发就发】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goseghu845j311q0em0z0.jpg"></p>
+<p>2）时隙ALOHA协议：把时间分成若干个相同的时间片，所有用户在时间片开始时刻同步接入网络信道，若发生冲突，则必须等到下一个时间片开始时刻再发送【控制想发就发的随意性】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosegr4c4ej30u208pdi4.jpg"></p>
+<p>纯ALOHA协议比时隙ALOHA吞吐量更低，效率更低<br>纯ALOHA想发就发，时隙ALOHA只有在时间片段开始时才能发</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/计算机网络原理/CSMA协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/CSMA%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-08-09T16:00:00.000Z" itemprop="datePublished">2020-08-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/CSMA%E5%8D%8F%E8%AE%AE/">CSMA协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>CSMA协议：</p>
+<p>载波监听多路访问协议CSMA</p>
+<p>CS：载波监听，每一个站在发送数据之前要检测一下总线上是否有其他计算机在发送数据【当几个站同时在总线上发送数据时，总线上的信号电压摆动值将会增大(互相叠加)，当一个站检测到的信号电压摆动值超过一定门限值时，就认为总线上至少有两个站同时在发送数据，表明产生了碰撞，即发生了冲突】</p>
+<p>MA：多点接入，表示许多计算机以多点接入的方式连接在一根总线上</p>
+<p>协议思想：发送帧之前，监听信道</p>
+<p>监听结果：<br>1）信道空闲：发送完整帧【1-坚持CSMA、非坚持CSMA、p-坚持CSMA】<br>2）信道忙：推迟发送</p>
+<p>1-坚持CSMA：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosehvypu9j312b0a1gs6.jpg"></p>
+<p>非坚持CSMA：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosei4q9m8j30vq08mwjx.jpg"></p>
+<p>p-坚持CSMA：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goseick36fj30w30b9jyd.jpg"></p>
+<p>有没有什么办法可以减少资源浪费，一冲突就能发现呢？？</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/计算机网络原理/CSMA-CD协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/CSMA-CD%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-08-08T16:00:00.000Z" itemprop="datePublished">2020-08-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/08/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/CSMA-CD%E5%8D%8F%E8%AE%AE/">CSMA-CD协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>CSMA-CD协议：</p>
+<p>载波监听多点接入/碰撞检测CSMA/CD</p>
+<p>CS：载波监听，每一个站在发送数据之前以及发送数据时都要检测一下总线上是否有其他计算机在发送数据</p>
+<p>MA：多点接入，表示许多计算机以多点接入的方式连接在一根总线上（总线型网络）</p>
+<p>CD：碰撞检测（冲突检测），“边发送边监听”，适配器边发送数据边检测信道上信号电压的变化情况，以便判断自己在发送数据时其他站是否也在发送数据（半双工网络）</p>
+<p>先听后发为什么还会冲突：因为电磁波在总线上总是以有限的速率传播的</p>
+<p>传播时延对载波监听的影响：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosejiwuzaj313d0i5wpx.jpg"></p>
+<p>如何确定碰撞后的重传时机：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosejs3s7jj31150fkqez.jpg"></p>
+<p>最小帧长问题：A站发了一个很短的帧，但发生了碰撞，不过帧在发送完毕后才检测到发生碰撞，没法停止发送，因为已经发完了。。。<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosek8exnrj30fw08n401.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/计算机网络原理/CSMA-CA协议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/08/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/CSMA-CA%E5%8D%8F%E8%AE%AE/" class="article-date">
+      <time datetime="2020-08-07T16:00:00.000Z" itemprop="datePublished">2020-08-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/08/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/CSMA-CA%E5%8D%8F%E8%AE%AE/">CSMA-CA协议</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>CSMA-CA协议：</p>
+<p>载波监听多点接入/碰撞避免CSMA/CA</p>
+<p>为什么有了CSMA-CD后还要有CSMA-CA：CSMA-CA多用于无线局域网，无线局域网无法做到360度全面检测碰撞、隐蔽站(当A和C都检测不到信号，认为信道空闲时，同时像终端B发送数据帧，就会导致冲突)</p>
+<p>CSMA-CA协议工作原理：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goseyqx7iqj310h0c8doe.jpg"></p>
+<p>CSMA-CD与CSMA-CA：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goseyywzz6j310d0ac46u.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机基础/计算机网络原理/轮询访问介质访问控制" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -638,302 +926,6 @@
 <p>2）多接口网桥—以太网交换机<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosfjdetqqj30sz0drwlf.jpg"></p>
 <p>以太网交换机的两种交换方式：<br>1）直通式交换机：查完目的地址(6B)就立刻转发；延迟小，可靠性低，无法支持具有不同速率的端口的交换<br>2）存储转发式交换机：将帧放入高速缓存，并检查是否正确，正确则转发，错误则丢弃；延迟大，可靠性高，可以支持具有不同速率的端口的交换</p>
 <p>冲突域和广播域：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosfjo9bmbj31220emwmn.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/计算机网络原理/网络层功能概述" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%8A%9F%E8%83%BD%E6%A6%82%E8%BF%B0/" class="article-date">
-      <time datetime="2020-07-31T16:00:00.000Z" itemprop="datePublished">2020-08-01</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%8A%9F%E8%83%BD%E6%A6%82%E8%BF%B0/">网络层功能概述</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>网络层功能概述：</p>
-<p>网络层主要任务是把分组从源端传到目的端，为分组交换网上的不同主机提供通信服务</p>
-<p>网络层传输单位是数据报</p>
-<p>功能：<br>1）路由选择与分组转发(最佳路径)<br>2）异构网络互联<br>3）拥塞控制：若所有结点都来不及接受分组，而要丢弃大量分组的话，网络就处于拥塞状态，因此要采取一定措施，缓解这种拥塞【开环控制(静)、闭环控制(动)】</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/计算机网络原理/电路交换、报文交换、分组交换" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2%E3%80%81%E6%8A%A5%E6%96%87%E4%BA%A4%E6%8D%A2%E3%80%81%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2/" class="article-date">
-      <time datetime="2020-07-30T16:00:00.000Z" itemprop="datePublished">2020-07-31</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2%E3%80%81%E6%8A%A5%E6%96%87%E4%BA%A4%E6%8D%A2%E3%80%81%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2/">电路交换、报文交换、分组交换</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>电路交换、报文交换、分组交换：</p>
-<p>如何使数据通过网络核心(路由器)从源主机到目的主机？——数据交换</p>
-<p>为什么要数据交换：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjekpeo8j312a0fcn56.jpg"></p>
-<p>数据交换方式：<br>1）电路交换<br>2）报文交换<br>3）分组交换：数据报方式、虚电路方式</p>
-<p>—————————————</p>
-<p>电路交换：电话网络(多路复用)</p>
-<p>电路交换的阶段：<br>1）建立连接（呼叫/电路建立）<br>2）通信<br>3）释放连接（拆除电路）</p>
-<p>特点：独占资源</p>
-<p>优点：通信时延小、有序传输、没有冲突、实时性强</p>
-<p>缺点：建立连接时间长、线路独占，使用效率低、灵活性差、无差错控制能力</p>
-<p>—————————————</p>
-<p>报文交换：</p>
-<p>报文：源应用发送的信息整体<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjeyl2ofj30xy063773.jpg"></p>
-<p>优点：<br>1）无需建立连接<br>2）存储转发，动态分配线路<br>3）线路可靠性较高<br>4）线路利用率较高<br>5）多目标服务</p>
-<p>缺点：<br>1）有存储转发时延<br>2）报文大小不定，需要网络节点有较大缓存空间</p>
-<p>—————————————</p>
-<p>分组交换：</p>
-<p>分组：把大的数据块分割成小的数据块<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjfnqa67j30wt064q56.jpg"></p>
-<p>优点：<br>1）无需建立连接<br>2）存储转发，动态分配线路<br>3）线路可靠性较高<br>4）线路利用率较高<br>5）相对于报文交换，存储管理更容易</p>
-<p>缺点：<br>1）有存储转发时延<br>2）需要传输额外的信息量<br>3）乱序到目的主机时，要对分组排序重组</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjfztu79j31330ge46c.jpg"></p>
-<p>————————————————</p>
-<p>数据报方式为网络层提供无连接服务【无连接服务：不事先为分组的传输确定传输路径，每个分组独立确定传输路径，不同分组传输路径可能不同】【每个分组携带源和目的地址】【路由器根据分组的目的地址转发分组：基于路由协议/算法构建转发表；检索转发表；每个分组独立选路】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjgapxlfj30qe0c678k.jpg"></p>
-<p>虚电路方式为网络层提供连接服务【连接服务：首先为分组的传输确定传输路径(建立连接)，然后沿该路径(连接)传输系列分组，系列分组传输路径相同，传输结束后拆除连接】</p>
-<p>虚电路将数据报方式和电路交换方式结合，以发挥两者优点</p>
-<p>虚电路：一条源主机到目的主机类似于电路的路径（逻辑连接），路径上所有的结点都要维持这条虚电路的建立，都维持一张虚电路表，每一项纪录了一个打开的虚电路信息</p>
-<p>通信过程：<br>1）建立连接（虚电路建立）：每个分组携带虚电路号，而非目的地址，源主机发送“呼叫请求”分组并收到“呼叫应答”分组后才算建立连接<br>2）数据传输（全双工通信）<br>3）释放连接（虚电路释放）：源主机发送“释放请求”分组以拆除虚电路</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjh0y8ioj310c0e8wm8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjhnh4wuj30g806y3z8.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/计算机网络原理/IP数据报格式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F/" class="article-date">
-      <time datetime="2020-07-29T16:00:00.000Z" itemprop="datePublished">2020-07-30</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F/">IP数据报格式</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>IP数据报格式：</p>
-<p>TCP/IP协议栈：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjjtwyb4j30jt0dwacj.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjkm3qhmj30ge0d3mz3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjl4k421j30ge0bfad4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjljkpd2j30ge09mdht.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/" rel="tag">计算机网络原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/计算机网络原理/IP数据报分片" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%88%86%E7%89%87/" class="article-date">
-      <time datetime="2020-07-28T16:00:00.000Z" itemprop="datePublished">2020-07-29</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/07/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%88%86%E7%89%87/">IP数据报分片</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gosjmx9f9hj30ge09hjse.jpg"></p>
 
       
     </div>

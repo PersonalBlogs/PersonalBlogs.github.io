@@ -228,6 +228,293 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-开发语言/C++/程序的内存分区模型：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA%E6%A8%A1%E5%9E%8B%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-23T16:00:00.000Z" itemprop="datePublished">2019-06-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA%E6%A8%A1%E5%9E%8B%EF%BC%9A/">程序的内存分区模型：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>C++程序在执行时，将内存大方向划分为4个区域<br>1）代码区：存放函数体的二进制代码，由操作系统进行管理<br>2）全局区：存放全局变量和静态变量以及常量【静态变量：static int s_a=10;】【常量分为字符串常量和const修饰的全局变量】<br>3）栈区：由编译器自动分配释放，存放函数的参数值，局部变量和const修饰的局部变量等<br>4）堆区：由程序员分配和释放，若程序不释放，程序结束时由操作系统回收</p>
+<p>内存四区的意义：不同区域存放的数据，赋予不同的生命周期，给我们更大的灵活编程</p>
+<p>程序运行前：在程序编译后，生成了exe可执行程序，未执行该程序前分为两个区域：<br>1）代码区：存放CPU执行的机器指令；代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可；代码区是只读的，使其只读的原因是防止程序意外的修改了它的指令<br>2）全局区：全局变量和静态变量存放在此；全局区还包含了常量区，字符串常量和其他常量也存放在此；该区域的数据在程序结束后由操作系统释放</p>
+<p>程序运行后：<br>1）栈区：由编译器自动分配释放，存放函数的参数值，局部变量等；不要返回局部变量的地址，栈区开辟的数据由编译器自动释放</p>
+<p>第一次可以打印正确的数字，是因为编译器做了保留；第二次这个数据就不再保留了：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwezd5rooj30s70ee0ua.jpg"><br>2）堆区：在C++中主要利用new在堆区开辟内存，释放利用操作符delete【利用new创建的数据，会返回该数据对应的类型的指针】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glweznbhmpj30ed0bwq3u.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwezuqgqjj30p80fyabi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf02rx3qj30gm0gj402.jpg"></p>
+<p>在堆区创建数组：int * arr = new int[10];<br>释放堆区数组：delete[] arr;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C++/C++中的引用：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-22T16:00:00.000Z" itemprop="datePublished">2019-06-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E4%B8%AD%E7%9A%84%E5%BC%95%E7%94%A8%EF%BC%9A/">C++中的引用：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>作用：给变量起别名<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf0uwff2j30e10deq40.jpg"></p>
+<p>引用注意事项：<br>1）引用必须初始化<br>2）引用在初始化后，不可以改变<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf12tkd6j30e30dsmyh.jpg"></p>
+<p>引用做函数参数：函数传参时，可以利用引用的技术让形参修饰实参，可以简化指针修改实参<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf1ay5anj30fu0ul78l.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf1hxdjgj30cu06tq3j.jpg"></p>
+<p>引用做函数返回值：不要返回局部变量引用；函数的调用可以作为左值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf1p4dcjj30lf0j0jug.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf1waev4j30qz063js2.jpg"></p>
+<p>引用的本质：在C++内部实现是一个指针常量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf235twfj30qz0fttb0.jpg"></p>
+<p>常量引用：常量引用主要用来修饰形参，防止误操作，在函数形参列表中，可以加const修饰形参，防止形参改变实参<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf2aaw26j30qz0ft40g.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C++/函数高级：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-21T16:00:00.000Z" itemprop="datePublished">2019-06-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7%EF%BC%9A/">函数高级：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>函数默认参数：在C++中，函数的形参列表中的形参是可以有默认值的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf2zheqwj30ke0dpabv.jpg"></p>
+<p>函数占位参数：C++中函数的形参列表里可以有占位参数，用来做占位，调用函数时必须填补该位置<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf37i58cj30hi09rq3x.jpg"></p>
+<p>函数重载：函数名可以相同，提高复用性</p>
+<p>函数重载满足条件：<br>1）同一个作用域下<br>2）函数名称相同<br>3）函数参数类型不同或者个数不同或者顺序不同</p>
+<p>注意：函数的返回值不可以作为重载的条件<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3etpelj30hj0bct9o.jpg"></p>
+<p>函数重载的注意事项：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3mo4i9j30gq0kfgoi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3tos4lj30hj025glt.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/C++/封装：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/06/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%B0%81%E8%A3%85%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-20T16:00:00.000Z" itemprop="datePublished">2019-06-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/06/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%B0%81%E8%A3%85%EF%BC%9A/">封装：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>C++面向对象的三大特征：封装、继承、多态</p>
+<p>C++认为万事万物皆为对象，对象上有其属性和行为</p>
+<p>封装的意义：<br>1）将属性和行为作为一个整体，表现生活中的事物<br>2）将属性和行为加以权限控制【public：公共权限(类内可以访问，类外可以访问)、protected：保护权限(类内可以访问，类外不可以访问)、private：私有权限(类内可以访问，类外不可以访问)】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf4k6q82j30k70j0wh5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf4rl4gbj30hj00xaa2.jpg"></p>
+<p>Struct和class的区别（都可以表示一个类）：<br>1）struct默认权限为公共<br>2）class默认权限为私有</p>
+<p>将成员属性设置为私有的优点：<br>1）可以自己控制读写权限【提供一个public接口让外界访问】<br>2）对于写权限，我们可以检测数据的有效性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf50rd05j30fr0pwgot.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf57kazjj30hj01x3ym.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-开发语言/C++/对象的初始化和清理：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -664,292 +951,6 @@
 <p>虚析构和纯虚析构共性：<br>1）可以解决父类指针释放子类对象<br>2）都需要有具体的函数实现</p>
 <p>虚析构和纯虚析构的区别：如果是纯虚析构，该类属于抽象类，无法实例化对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl0lls5j30kx10cjwj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl89z45j30df03dq3d.jpg"></p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/C++/C++文件操作：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-13T16:00:00.000Z" itemprop="datePublished">2019-06-14</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/">C++文件操作：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>程序运行时产生的数据都属于临时数据，程序一旦运行结束都会被释放，通过文件可以将数据持久化</p>
-<p>C++中对文件操作需要包含头文件<fstream></p>
-<p>文件类型分为两种：<br>1）文本文件：文件以文本的ASCII码形式存储在计算机中<br>2）二进制文件：文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们</p>
-<p>操作文件的三大类：<br>1）ofstream：写操作<br>2）ifstream：读操作<br>3）fstream：读写操作</p>
-<p>文本文件：</p>
-<p>写文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ofstream ofs;<br>3）打开文件：ofs.open(“文件路径”,打开方式);<br>4）写数据：ofs&lt;&lt;“写入的数据”;<br>5）关闭文件：ofs.close();</p>
-<p>文件打开方式【文件打开方式可以配合使用，利用|操作符】：<br>1）ios::in        为读文件而打开文件<br>2）ios::out     为写文件而打开文件<br>3）ios::ate     初始位置：文件尾<br>4）ios::app    追加方式写文件<br>5）ios::trunc  如果文件存在先删除，再创建<br>6）iOS::binary  二进制方式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm0am8yj30ia0c6dhe.jpg"></p>
-<p>读文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ifstream ifs;<br>3）打开文件并判断文件是否打开成功：ifs.open(“文件路径”,打开方式);<br>4）读数据：四种方式读取<br>5）关闭文件：ifs.close();<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm96dkdj30ke0q577p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmfzd6xj30h202cglr.jpg"></p>
-<p>二进制文件：以二进制的方式对文件进行读写操作，打开方式要指定为ios::binary</p>
-<p>二进制方式写文件主要利用流对象调用成员函数write<br>函数原型：ostream&amp; write(const char * buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmn0pr8j30j10et0uf.jpg"></p>
-<p>二进制方式读文件主要利用流对象调用成员函数read<br>函数原型：istream&amp; read(char *buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmtmxxsj30j10jemzg.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/C++/职工管理系统：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-12T16:00:00.000Z" itemprop="datePublished">2019-06-13</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/">职工管理系统：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/C++/函数模板：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-11T16:00:00.000Z" itemprop="datePublished">2019-06-12</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF%EF%BC%9A/">函数模板：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>模板就是建立通用的模具，大大提高复用性</p>
-<p>模板的特点：模板不可以直接使用，它只是一个框架；模板的通用并不是万能的</p>
-<p>———————————————函数模板：</p>
-<p>C++另一种编程思想称为泛型编程，主要利用的技术就是模板</p>
-<p>C++提供两种模板机制：函数模板和类模板</p>
-<p>函数模板的作用：建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp03dz6j30cz0jewgr.jpg"></p>
-<p>函数模板注意事项：<br>1）自动类型推导，必须推导出一致的数据类型T才可以使用<br>2）模板必须要确定出T的数据类型，才可以使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfp6w888j30ce0brgmr.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpd3x09j30gb0t50x2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpkhy0ej30ce01ljrh.jpg"></p>
-<p>普通函数与函数模板的区别：<br>1）普通函数调用时可以发生自动类型转换（隐式类型转换）<br>2）函数模板调用时，如果利用自动类型推导，不会发生隐式类型转换；如果利用显式指定类型的方式，可以发生隐式类型转换</p>
-<p>建议使用显示指定类型的方式，调用函数模板，因为可以自己确定通用类型T</p>
-<p>普通函数与函数模板的调用规则：<br>1）如果函数模板和普通函数都可以实现，优先调用普通函数<br>2）可以通过空模板参数列表来强制调用函数模板<br>3）函数模板也可以发生重载<br>4）如果函数模板可以产生更好的匹配，优先调用函数模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpql1y3j30nc0gmtb5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfpwvalpj30ce01lglo.jpg"></p>
-<p>模板的局限性：模板的通用性并不是万能的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq2vig6j30q209bwgj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfq8w0vbj30v9096wh4.jpg"></p>
-<p>因此C++为了解决这种问题，提供模板的重载，可以为这些特定的类型提供具体化的模板<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfqenxnvj30ij0soadu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfql68fyj30ce01lwej.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/C++/类模板：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/06/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E7%B1%BB%E6%A8%A1%E6%9D%BF%EF%BC%9A/" class="article-date">
-      <time datetime="2019-06-10T16:00:00.000Z" itemprop="datePublished">2019-06-11</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/06/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E7%B1%BB%E6%A8%A1%E6%9D%BF%EF%BC%9A/">类模板：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
       
     </div>
     

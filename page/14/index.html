@@ -228,6 +228,482 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机基础/操作系统原理/内存管理的概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%A6%82%E5%BF%B5/" class="article-date">
+      <time datetime="2020-10-08T16:00:00.000Z" itemprop="datePublished">2020-10-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%A6%82%E5%BF%B5/">内存管理的概念</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>操作系统作为系统资源的管理者，当然也需要对内存进行管理</p>
+<ol>
+<li><p>操作系统负责内存空间的分配与回收</p>
+<blockquote>
+<ol>
+<li>操作系统要怎么记录哪些内存区域已经被分配出去了，哪些又还空闲？</li>
+<li>内存中很多位置都可以存放，那新来的进程应该放在哪里？</li>
+<li>当进程运行结束之后，如何将进程占用的内存空间回收？</li>
+</ol>
+</blockquote>
+</li>
+<li><p>操作系统需要提供某种技术从逻辑上对内存空间进行扩充（虚拟性）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9goghkbvj30u208an6n.jpg"></p>
+</li>
+<li><p>操作系统需要提供地址转换功能，负责程序的逻辑地址与物理地址的转换</p>
+<blockquote>
+<p>为了使编程更方便，程序员写程序时应该只需要关注指令、数据的逻辑地址。而逻辑地址到物理地址的转换（这个过程称为地址重定位）应该由操作系统负责，这样就保证了程序员写程序时不需要关注物理内存的实际情况（三种装入方式）</p>
+</blockquote>
+</li>
+<li><p>操作系统需要提供内存保护功能，保证各进程在各自存储空间内运行，互不干扰</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9gln6rgbj30w20esk6e.jpg"></p>
+</li>
+</ol>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9gnoyq7gj30wy0fk15p.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/使用触发器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/" class="article-date">
+      <time datetime="2020-10-07T16:00:00.000Z" itemprop="datePublished">2020-10-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8/">使用触发器</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用触发器</p>
+<p>触发器是MySQL响应以下任意语句而自动执行的一条MySQL语句（或位于BEGIN和END语句之间的一组语句）：<br>                 DELETE;<br>                 INSERT;<br>                 UPDATE;<br>其他MySQL语句不支持触发器</p>
+<p>在创建触发器时，需要给出4条信息：<br>1）唯一的触发器名<br>2）触发器关联的表<br>3）触发器应该响应的活动（DELETE、INSERT、UPDATE）<br>4）触发器何时执行（处理之前或之后）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx7ksl98j30cq04341u.jpg"></p>
+<p>1）创建触发器<br>CREATE TRIGGER newproduct AFTER INSERT ON products<br>FOR EACH ROW SELECT ‘Product added’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx80epvrj30db04oq5e.jpg"></p>
+<p>只有表才支持触发器，视图不支持（临时表也不支持）；触发器按每个表每个事件每次的定义，每个表每个事件每次只允许一个触发器，因此每个表最多支持6个触发器（每条INSERT、UPDATE、DELETE的之前和之后）。单一触发器不能与多个事件或多个表关联，所以，如果你需要一个对INSERT和UPDATE操作执行的触发器，则应该定义两个触发器。<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8byu9ej30cs02bmz1.jpg"></p>
+<p>2）删除触发器<br>DROP TRIGGER newproduct;<br>触发器不能更新或覆盖，为了修改一个触发器，必须先删除它，然后再重新创建</p>
+<p>3）使用触发器<br>（1）INSERT触发器<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8l7mumj30d905ognh.jpg"><br>CREATE TRIGGER neworder AFTER INSERT ON orders<br>FOR EACH ROW SELECT NEW.order_num;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx8xpv7oj30d904340m.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorx95mnoxj30d908wq6k.jpg"></p>
+<p>(2)DELETE触发器</p>
+<p>【原书缺页？？？？】</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/操作系统原理/内存空间的分配与回收" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/" class="article-date">
+      <time datetime="2020-10-07T16:00:00.000Z" itemprop="datePublished">2020-10-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/">内存空间的分配与回收</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="连续分配管理方式"><a href="#连续分配管理方式" class="headerlink" title="连续分配管理方式"></a>连续分配管理方式</h2><p>连续分配：指为用户进程分配的必须是一个连续的内存空间</p>
+<h3 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h3><p>在单一连续分配方式中，内存被分为系统区和用户区。</p>
+<p>系统区通常位于内存的低地址部分，用于存放操作系统相关数据；用户区用于存放用户进程相关数据，内存中只能有一道用户程序，用户程序独占整个用户区空间</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9qcckbvej30dq0eatew.jpg"></p>
+<p>优点：实现简单，无外部碎片，可以采用覆盖技术扩充内存，不一定需要采取内存保护（MS-DOS）</p>
+<p>缺点：只能用于单用户、单任务的操作系统中，有内部碎片，存储器利用率极低（分配给某进程的内存区域中，如果有些部分没有用上，就是“内部碎片”）</p>
+<h3 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9qjw6ej7j30uw0fqkf1.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9qnmb5w7j30vc0f8qos.jpg"></p>
+<h3 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h3><p>动态分区分配又称为可变分区分配，这种分配方式不会预先划分内存分区，而是在进程装入内存时，根据进程的大小动态的建立分区，并使分区的大小正好适合进程的需要。因此系统分区的大小和数目是可变的</p>
+<p>假设某计算机内存大小为64MB，系统区8MB，用户区共56MB</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9qt3bidbj307o0cm77p.jpg"></p>
+<blockquote>
+<ol>
+<li><p>系统要用什么样的数据结构记录内存的使用情况？</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9qxxmtflj30w80e8ql7.jpg"></p>
+</li>
+<li><p>当很多个空闲分区都能满足需求时，应该选择哪个分区进行分配？</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9qzlvgqdj30uk0cqn8x.jpg"></p>
+</li>
+<li><p>如何进行分区的分配与回收操作？（假设系统采用的数据结构是“空闲分区表”）</p>
+<p>1）如何分配？</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9r21x40wj30r20d6wq3.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9r2xi71vj30r20d6akv.jpg"></p>
+<p>2）如何回收？（总之，相邻的空闲分区要合并）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9r5644xkj30r20ccjyp.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9r5pwl2lj30r20ccqdt.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9r6eyxgwj30r20cc13z.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9r7f75k0j30rm0ccdnv.jpg"></p>
+</li>
+</ol>
+</blockquote>
+<p>动态分区分配没有内部碎片，但是有外部碎片</p>
+<p>内部碎片：分配给某进程的内存区域中，如果有些部分没有用上</p>
+<p>外部碎片；是指内存中的某些空闲分区由于太小而难以利用</p>
+<p>如果内存中空闲空间的总和本来可以满足某进程的要求，但由于进程需要的是一整块连续的内存空间，因此这些“碎片”不能满足进程的需求。可以通过紧凑（拼凑）技术来解决外部碎片</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9rfzt5fvj30cq0cejwn.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9rgfv4thj307o0cejtq.jpg"></p>
+<h4 id="动态分区分配算法"><a href="#动态分区分配算法" class="headerlink" title="动态分区分配算法"></a>动态分区分配算法</h4><p>在动态分区分配方式中，当很多个空闲分区都能满足需求时，应该选择哪个分区进行分配？</p>
+<blockquote>
+<ol>
+<li><p>首次适应算法（First Fit）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9rzi4gejj30t80g2nel.jpg"></p>
+</li>
+<li><p>最佳适应算法（Best Fit）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9s3xsooej60t80g2k6002.jpg"></p>
+</li>
+<li><p>最坏适应算法（Worst Fit）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9s5yukpwj30t80g2avc.jpg"></p>
+</li>
+<li><p>邻近适应算法（Next Fit）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9sf54f45j30tu0g2h9g.jpg"></p>
+</li>
+</ol>
+<p>⭐️首次适应算法和邻近适应算法比最佳适应算法和最坏适应算法好的一点：不用每次都更新空闲分区链/表的排列顺序，减少开销</p>
+<p>❗️综合来看，四种算法中，首次适应算法的效果反而更好</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr9skmiivij30uo0f67r5.jpg"></p>
+</blockquote>
+<h2 id="非连续分配管理方式"><a href="#非连续分配管理方式" class="headerlink" title="非连续分配管理方式"></a>非连续分配管理方式</h2><p>非连续分配：为用户进程分配的可以是一些分散的内存空间</p>
+<h3 id="基本分页存储管理"><a href="#基本分页存储管理" class="headerlink" title="基本分页存储管理"></a>基本分页存储管理</h3><h4 id="什么是分页存储"><a href="#什么是分页存储" class="headerlink" title="什么是分页存储"></a>什么是分页存储</h4><p>将内存空间分为一个个大小相等的分区，每个分区就是一个“页框”（页框、页帧、内存块、物理块、物理页面），每个页框有一个编号，即“页框号”，页框号从0开始</p>
+<p>将进程的逻辑地址空间也分为与页框大小相等的一个个部分，每个部分称为一个“页”或“页面”。每个页面也有一个编号，即“页号”，页号也是从0开始</p>
+<p>操作系统以页框为单位为各个进程分配内存空间。进程的每个页面分别放入一个页框中。也就是说，进程的页面与内存的页框有一一对应的关系，各个页面不必连续存放，可以放到不相邻的各个页框中</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1granazofnjj30ey0gmk1z.jpg"></p>
+<h4 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h4><p>为了能知道进程的每个页面在内存中存放的位置，操作系统要为每个进程建立一张页表，页表通常存在PCB（进程控制块）中</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1granfhmgsoj30vq0eck5o.jpg"></p>
+<blockquote>
+<ol>
+<li><p>每个页表项多大，占几个字节？</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grannoss6kj30mu07a10z.jpg"></p>
+<p>页表项连续存放，因此页号可以是隐含的，不占存储空间（类比数组）</p>
+<p>假设页表中的各页表项从内存地址为X的地方开始连续存放，如何找到页号为i的页表项：X + 3*i</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1granzj5rb9j30ac07076s.jpg"></p>
+<p>由于页号是隐含的，因此每个页表项占3B，存储整个页表至少需要3*(n+1)B</p>
+<p>注意；页表记录的只是内存块号，而不是内存块的其实地址：J号内存块的起始地址 = J * 内存块大小</p>
+</li>
+<li><p>如何通过页表实现逻辑地址到物理地址的转换？（逻辑地址结构可拆分为页号P和页内偏移量W）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graocgnqc7j30wk0f4kba.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graogawladj30xa0egn6k.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graomtt11jj30wa0h21kx.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graoujpqdwj30yq0de1ia.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graoxeovrnj30ty07c13e.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grap0k8zhnj30x60byao3.jpg"></p>
+</li>
+</ol>
+</blockquote>
+<h4 id="基本地址变换机构（用于实现逻辑地址到物理地址转换的一组硬件机构）"><a href="#基本地址变换机构（用于实现逻辑地址到物理地址转换的一组硬件机构）" class="headerlink" title="基本地址变换机构（用于实现逻辑地址到物理地址转换的一组硬件机构）"></a>基本地址变换机构（用于实现逻辑地址到物理地址转换的一组硬件机构）</h4><p>基本地址变换机构可以借助进程的页表将逻辑地址转换为物理地址</p>
+<p>通常会在系统中设置一个页表寄存器PTR，存放页表在内存中的起始地址F和页表长度M。进程未执行时，页表的始址和页表长度放在进程控制块PCB中，当进程被调度时，操作系统内核会把它们放到页表寄存器中</p>
+<p>注意：假设页面大小是2的整数幂，设页面大小为L，逻辑地址A到物理地址E的变换过程如下：</p>
+<p>CPU第一次访问内存：查页表</p>
+<p>CPU第二次访问内存：访问目标内存单元</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grapqb7pirj30ya0i61fn.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graptaq5rlj30sq09ctnm.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grapwhn046j30v00dgap1.jpg"></p>
+<p>对页表项大小的进一步探讨：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graq4eqv42j30xc0gce68.jpg"></p>
+<h4 id="具有快表的地址变换机构（是基本地址变换机构的改进版本）"><a href="#具有快表的地址变换机构（是基本地址变换机构的改进版本）" class="headerlink" title="具有快表的地址变换机构（是基本地址变换机构的改进版本）"></a>具有快表的地址变换机构（是基本地址变换机构的改进版本）</h4><h5 id="什么是快表TLB"><a href="#什么是快表TLB" class="headerlink" title="什么是快表TLB"></a>什么是快表TLB</h5><p>快表，又称联想寄存器TLB，是一种访问速度比内存快很多的高速缓存，用来存放最近访问的一部分页表项的副本，可以加速地址变换的速度，与此对应，内存中的页表常称为慢表</p>
+<p>❗️TLB不是内存</p>
+<p>❗️TLB和普通Cache的区别：TLB中只有一部分页表项的副本，而普通Cache中可能会有其他各种数据的副本</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grascxlpeij30eo0dsn3e.jpg"></p>
+<h5 id="引入快表后，地址的变换过程"><a href="#引入快表后，地址的变换过程" class="headerlink" title="引入快表后，地址的变换过程"></a>引入快表后，地址的变换过程</h5><p>刚开始快表是为空的，当访问完慢表后，会把最近使用过的页表项放入快表中，下次若快表命中就不需要再访问内存了：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grash269e8j60ys0ja7rv02.jpg"></p>
+<p>❗️快表中存放的是页表的一部分副本，因为TLB造价比内存高</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grass0m7gtj30ui0707il.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grastl023ej30ui08kds4.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grasvyfmlpj30yk09qdon.jpg"></p>
+<h5 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graszaactwj30v80eqqm6.jpg"></p>
+<h4 id="两级页表"><a href="#两级页表" class="headerlink" title="两级页表"></a>两级页表</h4><h5 id="单极页表存在什么问题，如何解决？"><a href="#单极页表存在什么问题，如何解决？" class="headerlink" title="单极页表存在什么问题，如何解决？"></a>单极页表存在什么问题，如何解决？</h5><p>1）页表必须连续存放，因此当页表很大时，需要占用很多个连续的页框</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gratl08s44j30vk0goamm.jpg"></p>
+<p>2）根据局部性原理可知：很多时候，进程在一段时间内只需要访问某几个页面就可以正常运行了。因此没必要让整个页表都常驻内存</p>
+<p>第一个问题的解决方法：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grats76drej60uw0aetnj02.jpg"></p>
+<h5 id="两级页表的原理，逻辑地址结构（一级页号、二级页号、页内偏移量）"><a href="#两级页表的原理，逻辑地址结构（一级页号、二级页号、页内偏移量）" class="headerlink" title="两级页表的原理，逻辑地址结构（一级页号、二级页号、页内偏移量）"></a>两级页表的原理，逻辑地址结构（一级页号、二级页号、页内偏移量）</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gratz65d7rj30ws0h4ap9.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grau409000j30x20gy4hh.jpg"></p>
+<h5 id="如何实现地址变换？"><a href="#如何实现地址变换？" class="headerlink" title="如何实现地址变换？"></a>如何实现地址变换？</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grauo26twkj30xe0e0nds.jpg"></p>
+<p>第二个问题的解决方法：可以在需要访问页面时才把页面调入内存（虚拟存储技术），可以在页表项中增加一个标志位，用于表示该页面是否已经调入内存</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grauzy1mimj30va0aeqeg.jpg"></p>
+<h5 id="两级页表问题需要注意的几个细节？"><a href="#两级页表问题需要注意的几个细节？" class="headerlink" title="两级页表问题需要注意的几个细节？"></a>两级页表问题需要注意的几个细节？</h5><ol>
+<li><p>若采用多级页表机制，则各级页表的大小不能超过一个页面，若两级页表不够，可以分更多级</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grav6rsrh8j30uq0emk8d.jpg"></p>
+</li>
+<li><p>两级页表的访存次数分析（假设没有快表机构）（N级页表访问一个逻辑地址需要N+1次访存）</p>
+<ul>
+<li>第一次访存：访问内存中的页目录表</li>
+<li>第二次访存：访问内存中的二级页表</li>
+<li>第三次访存：访问目标内存单元</li>
+</ul>
+</li>
+</ol>
+<h3 id="基本分段存储管理"><a href="#基本分段存储管理" class="headerlink" title="基本分段存储管理"></a>基本分段存储管理</h3><p>与“分页”最大的区别就是离散分配时所分配地址空间的基本单位不同</p>
+<h4 id="什么是分段"><a href="#什么是分段" class="headerlink" title="什么是分段"></a>什么是分段</h4><p>进程的地址空间：按照程序自身的逻辑关系划分为若干个段，每个段都有一个段名（在低级语言中，程序员使用段名来编程），每段从0开始编址</p>
+<p>内存分配规则：以段为单位进行分配，每个段在内存中占据连续空间，但各段之间可以不相邻</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grayphvmhdj30wi0d07kc.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graysw4bxtj30wk0g4e02.jpg"></p>
+<h4 id="什么是段表"><a href="#什么是段表" class="headerlink" title="什么是段表"></a>什么是段表</h4><p>程序分多个段，各段离散的装入内存，为了保证程序能正常运行，就必须能从物理内存中找到各个逻辑段的存放位置。为此，需为每个进程建立一张段映射表，简称“段表”</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grayzmrysfj30uc0ec1cy.jpg"></p>
+<h4 id="如何实现地址变换"><a href="#如何实现地址变换" class="headerlink" title="如何实现地址变换"></a>如何实现地址变换</h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graz30j0soj30t60f21aa.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graz9vsu7bj30yo0js1kx.jpg"></p>
+<h4 id="分段、分页管理的对比"><a href="#分段、分页管理的对比" class="headerlink" title="分段、分页管理的对比"></a>分段、分页管理的对比</h4><ol>
+<li><p>页是信息的物理单位，分页的主要目的是为了实现离散分配，提高内存利用率。分页仅仅是系统管理上的需要，完全是系统行为，对用户是不可见的</p>
+<p>段是信息的逻辑单位，分段的主要目的是更好的满足用户需求，一个段通常包含着一组属于一个逻辑模块的信息。分段对用户是可见的，用户编程时需要显式的给出段名</p>
+</li>
+<li><p>页的大小固定且由系统决定，段的长度却不固定，决定于用户编写的程序</p>
+</li>
+<li><p>分页的用户进程地址空间是一维的，程序员只需给出一个记忆符即可表示一个地址</p>
+<p>分段的用户进程地址空间是二维的，程序员在标识一个地址时，既要给出段名，也要给出段内地址</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graznm0llzj30x009atjg.jpg"></p>
+</li>
+<li><p>分段比分页更容易实现信息的共享和保护</p>
+<p>不能被修改的代码称为纯代码或可重入代码（不属于临界资源），这样的代码是可以共享的。可修改的代码是不能共享的（比如有一个代码段中有很多变量，各进程并发的同时访问可能造成数据不一致）</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1graztcxy9nj30vg0d27ks.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grazvbfih6j30vm0f87pm.jpg"></p>
+</li>
+<li><p>访问一个逻辑地址需要几次访存？</p>
+<p>分页（单级页表）：第一次访存查内存中的页表，第二次访存访问目标内存单元，总共两次访存</p>
+<p>分段：第一次访存查内存中的段表，第二次访存访问目标内存单元，总共两次访存。与分页系统类似，分段系统中也可以引入快表机构，将近期访问过的段表项放到快表中，这样可以少一次访问，加快地址变换速度</p>
+</li>
+</ol>
+<h3 id="段页式存储管理"><a href="#段页式存储管理" class="headerlink" title="段页式存储管理"></a>段页式存储管理</h3><h4 id="分页、分段的优缺点"><a href="#分页、分段的优缺点" class="headerlink" title="分页、分段的优缺点"></a>分页、分段的优缺点</h4><p>分页管理：</p>
+<ul>
+<li>优点：内存空间利用率高，不会产生外部碎片，只会有少量的页内碎片</li>
+<li>缺点：不方便按照逻辑模块实现信息的共享和保护</li>
+</ul>
+<p>分段管理：</p>
+<ul>
+<li>优点：很方便按照逻辑模块实现信息的共享和保护</li>
+<li>缺点：如果段长过大，为其分配很大的连续空间会很不方便。另外，段式管理会产生外部碎片（分段管理中产生的外部碎片也可以用“紧凑”来解决，只是需要付出较大的时间代价）</li>
+</ul>
+<h4 id="分段-分页-段页式管理"><a href="#分段-分页-段页式管理" class="headerlink" title="分段 + 分页 = 段页式管理"></a>分段 + 分页 = 段页式管理</h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grbqzq718xj30vc0g4h2f.jpg"></p>
+<h4 id="段页式管理的逻辑地址结构"><a href="#段页式管理的逻辑地址结构" class="headerlink" title="段页式管理的逻辑地址结构"></a>段页式管理的逻辑地址结构</h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grbr2t0fp4j30vi0fq4k1.jpg"></p>
+<h4 id="段表、页表"><a href="#段表、页表" class="headerlink" title="段表、页表"></a>段表、页表</h4><p>一个进程对应一个段表，一个进程对应多个页表</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grbr6lskdkj60v80i2e4302.jpg"></p>
+<h4 id="地址变换"><a href="#地址变换" class="headerlink" title="地址变换"></a>地址变换</h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grbrbhedd2j30zo0j84qp.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/管理事务处理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/" class="article-date">
+      <time datetime="2020-10-06T16:00:00.000Z" itemprop="datePublished">2020-10-07</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/">管理事务处理</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>管理事务处理</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxalt67nj30cs04vq71.jpg"></p>
+<p>事务处理可以用来维护数据库的完整性，它保证成批的MySQL操作要么完全执行，要么完全不执行</p>
+<p>事务处理是一种机制，用来管理必须成批执行的MySQL操作，以保证数据库不包含不完整的操作结果，利用事务处理，可以保证一组操作不会中途停止，它们或者作为整体执行，或者完全不执行（除非明确指示），如果没有发生错误，整组语句提交给（写到）数据库表。如果发生错误，则进行回退（撤销）以恢复数据库到某个已知且安全的状态<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxatr9omj30dg06876c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxb1qcl4j30dg0cj41g.jpg"></p>
+<p>事务：指一组SQL语句<br>回退：指撤销指定SQL语句的过程<br>提交：指将未存储的SQL语句结果写入数据库表<br>保留点：指事务处理中设置的临时占位符，你可以对它发布回退（与回退整个事务处理不同）</p>
+<p>1）START TRANSACTION标识事务的开始</p>
+<p>2）MySQL的ROLLBACK命令用来回退（撤销）MySQL语句：<br>SELECT * FROM ordertotals;<br>START TRANSACTION;<br>DELETE FROM ordertotals;<br>SELECT * FROM ordertotals;<br>ROLLBACK;<br>SELECT * FROM ordertotals;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbcn65zj30dg08wwjg.jpg"></p>
+<p>3)一般的MySQL语句都是直接针对数据库表执行和编写的，这就是所谓的隐含提交，即提交（写或保存）操作是自动进行的；但是，在事务处理块中，提交不会隐含的进行。为进行明确的提交，使用COMMIT语句<br>START TRANSACTION;<br>DELETE FROM orderitems WHERE order_num=20010;<br>DELETE FROM orders WHERE order_num=20010;<br>COMMIT;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbll0v0j30dg03ign9.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxbtebtmj30cr01ogmw.jpg"></p>
+<p>使用保留点：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxc0363yj30dc05lacf.jpg"><br>这些占位符称为保留点</p>
+<p>创建占位符：<br>SAVEPOINT deletel;</p>
+<p>每个保留点都取标识它的唯一名字，以便在回退时，MySQL知道要回退到何处。为了回退到本例给出的保留点，可如下进行：<br>ROLLBACK TO deletel;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxcakymdj30cr05f78a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorxctcr4mj30dl083788.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机基础/操作系统原理/内存空间的扩充" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -755,367 +1231,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/操作系统原理/文件的逻辑结构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/" class="article-date">
-      <time datetime="2020-10-03T16:00:00.000Z" itemprop="datePublished">2020-10-04</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84/">文件的逻辑结构</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>所谓的“逻辑结构”，就是指在用户看来，文件内部的数据应该是如何组织起来的。而“物理结构”指的是在操作系统看来，文件的数据是如何存放在外存中的（类比于数据结构中的“逻辑结构”、“物理结构”）</p>
-<h2 id="无结构文件"><a href="#无结构文件" class="headerlink" title="无结构文件"></a>无结构文件</h2><p>文件内部的数据就是一系列二进制流或字符流组成，又称“流式文件”</p>
-<p>文件内部的数据其实就是一系列字符流，没有明显的结构特性。因此也不用探讨无结构文件的“逻辑结构”问题</p>
-<h2 id="有结构文件"><a href="#有结构文件" class="headerlink" title="有结构文件"></a>有结构文件</h2><p>由一组相似的记录组成，又称“记录式文件”，每条记录由若干个数据项组成，一般来说，每条记录有一个数据项可作为关键字（作为识别不同记录的ID）</p>
-<p>根据各条记录的长度（占用的存储空间）是否相等，又可分为定长记录和可变长记录两种</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gre3kxkwskj30x609qh02.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gre3m7fi66j30w609kqd4.jpg"></p>
-<p>根据有结构文件中的各条记录在逻辑上如何组织，可以分为三类：</p>
-<h3 id="顺序文件"><a href="#顺序文件" class="headerlink" title="顺序文件"></a>顺序文件</h3><p>文件中的记录一个接一个的顺序排列（逻辑上），记录可以是定长的或可变长的。各个记录在物理上可以是顺序存储或链式存储</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gre42zaewdj30vm04k7a0.jpg"></p>
-<ul>
-<li>串结构：记录之间的顺序与关键字无关，通常按照记录存入的时间决定记录的顺序</li>
-<li>顺序结构：记录之间的顺序按关键字顺序排列</li>
-</ul>
-<blockquote>
-<p>假设已经知道了文件的起始地址，也就是第一个记录存放的位置</p>
-<ol>
-<li><p>能否快速找到第i个记录对应的地址？（即能否实现随机存取）</p>
-</li>
-<li><p>能否快速找到某个关键字对应的记录存放的位置？</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gre4lt2aazj30ye07i47j.jpg"></p>
-<p>顺序文件的缺点是增加/删除一个记录比较困难，如果是串结构则相对简单</p>
-</li>
-</ol>
-</blockquote>
-<h3 id="索引文件"><a href="#索引文件" class="headerlink" title="索引文件"></a>索引文件</h3><p>对于可变长记录文件，要找到第i个记录，必须先顺序的查找前i-1个记录，但是很多应用场景中又必须使用可变长记录，如何解决这个问题？</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gre53mj668j30wc0b2qjf.jpg"></p>
-<p>解决了顺序文件不方便增/删记录的问题，同时让不定长记录的文件实现了随机存取，但索引表可能占用很多空间</p>
-<h3 id="索引顺序文件（多级索引顺序文件）"><a href="#索引顺序文件（多级索引顺序文件）" class="headerlink" title="索引顺序文件（多级索引顺序文件）"></a>索引顺序文件（多级索引顺序文件）</h3><p>索引文件的缺点：每个记录对应一个索引表项，因此索引表可能会很大，比如文件的每个记录平均只占8B，而每个索引表项占32个字节，那么索引表都要比文件内容本身大4倍，这样对存储空间的利用率就太低了</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gre5b23386j30wu0buar8.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gre5g4jstej30wc06uk2n.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gre5ijpkozj30wc0gcqid.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/《MySQL必知必会》/改善性能" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%94%B9%E5%96%84%E6%80%A7%E8%83%BD/" class="article-date">
-      <time datetime="2020-10-02T16:00:00.000Z" itemprop="datePublished">2020-10-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%94%B9%E5%96%84%E6%80%A7%E8%83%BD/">改善性能</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/操作系统原理/文件目录" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/" class="article-date">
-      <time datetime="2020-10-02T16:00:00.000Z" itemprop="datePublished">2020-10-03</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95/">文件目录</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ul>
-<li>文件之间的组织结构清晰，易于查找</li>
-<li>编程时也可以很方便的用文件路径找到一个文件，用户可以轻松实现“按名存取”</li>
-</ul>
-<p>从操作系统的角度来看，这些目录结构应该是如何实现的？</p>
-<h2 id="文件控制块（实现文件目录的关键数据结构）"><a href="#文件控制块（实现文件目录的关键数据结构）" class="headerlink" title="文件控制块（实现文件目录的关键数据结构）"></a>文件控制块（实现文件目录的关键数据结构）</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgfygq2e3j30my0f0ws8.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgg043dm1j30lu0fkwur.jpg"></p>
-<p>FCB实现了文件名和文件之间的映射，使用户（用户程序）可以实现“按名存取”</p>
-<p>需要对目录进行哪些操作：</p>
-<ul>
-<li>搜索：当用户要使用一个文件时，系统要根据文件名搜索目录，找到该文件对应的目录项</li>
-<li>创建文件：创建一个新文件时，需要在其所属的目录中增加一个目录项</li>
-<li>删除文件：当删除一个文件时，需要在目录中删除相应的目录项</li>
-<li>显示目录：用户可以请求显示目录的内容，如显示该目录中的所有文件及相应属性</li>
-<li>修改目录：某些文件属性保存在目录中，因此这些属性变化时需要修改相应的目录项（如文件重命名）</li>
-</ul>
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="单级目录结构"><a href="#单级目录结构" class="headerlink" title="单级目录结构"></a>单级目录结构</h3><p>早期操作系统并不支持多级目录，整个系统中只建立一张目录表，每个文件占一个目录项</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grggckm8hhj30v60b0497.jpg"></p>
-<h3 id="两级目录结构"><a href="#两级目录结构" class="headerlink" title="两级目录结构"></a>两级目录结构</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grggfr45pij30y20gonkt.jpg"></p>
-<h3 id="多级目录结构（树形目录结构）"><a href="#多级目录结构（树形目录结构）" class="headerlink" title="多级目录结构（树形目录结构）"></a>多级目录结构（树形目录结构）</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grggj412iij30vu0gkwv3.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grggkplkclj30vu0587e3.jpg"></p>
-<p>树形目录结构可以很方便的对文件进行分类，层次结构清晰，也能够更有效的进行文件的管理和保护。但是，树形结构不便于实现文件的共享。为此，提出了“无环图目录结构”</p>
-<h3 id="无环图目录结构"><a href="#无环图目录结构" class="headerlink" title="无环图目录结构"></a>无环图目录结构</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grggqfjjk6j60x40e04gh02.jpg"></p>
-<p>❗️只有共享计数器减为0时，才删除结点</p>
-<p>❗️共享文件不同于复制文件，在共享文件中，由于各用户指向的是同一个文件，因此只要其中一个用户修改了文件数据，那么所有用户都可以看到文件数据的变化</p>
-<h2 id="索引结点（对文件控制块的优化）"><a href="#索引结点（对文件控制块的优化）" class="headerlink" title="索引结点（对文件控制块的优化）"></a>索引结点（对文件控制块的优化）</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grggyfj0dlj30vi0geh42.jpg"></p>
-<p>由于目录项长度减小，因此每个磁盘块可以存放更多个目录项，因此检索文件时磁盘I/O的次数就少了很多</p>
-<p>当找到文件名对应的目录项时，才需要将索引结点调入内存，索引结点中记录了文件的各种信息，包括文件在外存中的存放位置，根据“存放位置”即可找到文件</p>
-<p>存放在外存中的索引结点称为“磁盘索引结点”，当索引结点放入内存后称为“内存索引结点”，相比之下内存索引结点中需要增加一些信息，比如文件是否被修改、此时有几个进程正在访问该文件等</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/操作系统原理/文件的物理结构(文件分配方式)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84(%E6%96%87%E4%BB%B6%E5%88%86%E9%85%8D%E6%96%B9%E5%BC%8F)/" class="article-date">
-      <time datetime="2020-10-01T16:00:00.000Z" itemprop="datePublished">2020-10-02</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%96%87%E4%BB%B6%E7%9A%84%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84(%E6%96%87%E4%BB%B6%E5%88%86%E9%85%8D%E6%96%B9%E5%BC%8F)/">文件的物理结构(文件分配方式)</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>操作系统需要对磁盘块进行哪些管理：</p>
-<ul>
-<li>对非空闲磁盘块的管理（存放了文件数据的磁盘块）：“文件的物理结构/文件分配方式要探讨的问题”</li>
-<li>对空闲磁盘块的管理：“文件存储空间管理要探讨的问题”</li>
-</ul>
-<p>类似于内存分页，磁盘中的存储单元也会被分为一个个“块/磁盘块/物理块”，很多操作系统中，磁盘块的大小与内存块、页面的大小相同</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgr5orivhj60li0d8dqh02.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgr99x1ngj30x00hkhaj.jpg"></p>
-<h2 id="连续分配"><a href="#连续分配" class="headerlink" title="连续分配"></a>连续分配</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgresoarsj30ws0fye08.jpg"></p>
-<p>连续分配的优点：</p>
-<ol>
-<li><p>连续分配支持顺序访问和直接访问（即随机访问）</p>
-</li>
-<li><p>读取某个磁盘块时，需要移动磁头，访问的两个磁盘块相隔越远，移动磁头所需时间就越长，连续分配的文件在顺序读/写时速度最快</p>
-</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgrjog296j30ao0bwwj4.jpg"></p>
-<p>连续分配的缺点：</p>
-<ol>
-<li><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgro74letj30w40dgh13.jpg"></li>
-<li><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgrpgtt4qj30s00bqk39.jpg"></li>
-</ol>
-<h2 id="链接分配"><a href="#链接分配" class="headerlink" title="链接分配"></a>链接分配</h2><p>链接分配采取离散分配的方式，可以为文件分配离散的磁盘块，分为隐式链接和显式链接两种</p>
-<h3 id="隐式链接"><a href="#隐式链接" class="headerlink" title="隐式链接"></a>隐式链接</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgrud0rwpj30xq0f21ir.jpg"></p>
-<p>是否方便拓展文件：若此时要拓展文件，则可以随便找一个空闲磁盘块，挂到文件的磁盘块链尾，并修改文件的的FCB</p>
-<p>结论：采用隐式链接的链接分配方式，很方便文件拓展，另外，所有的空闲磁盘块都可以被利用，不会有碎片问题，外存利用率高</p>
-<h3 id="显式链接"><a href="#显式链接" class="headerlink" title="显式链接"></a>显式链接</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgs3el8kvj30wc0g8dva.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgs7tq269j30va0g8ttg.jpg"></p>
-<p>缺点：文件分配表需要占用一定的存储空间</p>
-<h2 id="索引分配"><a href="#索引分配" class="headerlink" title="索引分配"></a>索引分配</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgsix3kbmj30wi0gkno0.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgslqtlopj30do0do44l.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgsnpidgfj30eu0cgq7t.jpg"></p>
-<h3 id="链接方案"><a href="#链接方案" class="headerlink" title="链接方案"></a>链接方案</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgss224amj30vy0g04j6.jpg"></p>
-<h3 id="多层索引"><a href="#多层索引" class="headerlink" title="多层索引"></a>多层索引</h3><p>![image-20210613181255832](/Users/liaojialong/Library/Application Support/typora-user-images/image-20210613181255832.png)</p>
-<p>采用K层索引结构，且顶级索引表未调入内存，则访问一个数据块只需要K+1次读磁盘操作</p>
-<p>缺点：即使是小文件，访问一个数据块依然需要K+1次读磁盘</p>
-<h3 id="混合索引"><a href="#混合索引" class="headerlink" title="混合索引"></a>混合索引</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgt76cljzj30xa0gkh6q.jpg"></p>
-<p>优点：对于小文件来说，访问一个数据块所需的读磁盘次数更少</p>
-<p>总结：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grgthhizxbj30wy0dmh8d.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
     </div>
 
       

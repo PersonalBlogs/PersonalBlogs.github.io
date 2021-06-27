@@ -228,6 +228,276 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/将信息写入plist文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/03/19/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%B0%86%E4%BF%A1%E6%81%AF%E5%86%99%E5%85%A5plist%E6%96%87%E4%BB%B6/" class="article-date">
+      <time datetime="2021-03-18T16:00:00.000Z" itemprop="datePublished">2021-03-19</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/03/19/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%B0%86%E4%BF%A1%E6%81%AF%E5%86%99%E5%85%A5plist%E6%96%87%E4%BB%B6/">将信息写入plist文件</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;将信息写入plist文件</span><br><span class="line">        let dic: NSMutableDictionary &#x3D; NSMutableDictionary()  &#x2F;&#x2F;创建了一个NSMutableDictionary可变字典对象</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;以键值对的形式创建两个对象，并添加到可变字典对象中</span><br><span class="line">        dic.setObject(&quot;Bruce&quot;, forKey: &quot;Name&quot; as NSCopying)</span><br><span class="line">        dic.setObject(22, forKey: &quot;Age&quot; as NSCopying)</span><br><span class="line">        </span><br><span class="line">        let plistPath &#x3D; Bundle.main.path(forResource: &quot;demoPlist&quot;, ofType: &quot;plist&quot;)</span><br><span class="line">        dic.write(toFile: plistPath!, atomically: true)  &#x2F;&#x2F;将可变字典对象写入plist文件中</span><br><span class="line">        </span><br><span class="line">        let data: NSMutableDictionary &#x3D; NSMutableDictionary.init(contentsOfFile: plistPath!)!  &#x2F;&#x2F;将plist文件加载到内存中，并转换为可变字典对象，从而查看写入后的plist文件的内容</span><br><span class="line">        let message &#x3D; data.description</span><br><span class="line">        </span><br><span class="line">        print(plistPath!)  &#x2F;&#x2F;plist文件在项目中的位置，访达中定位该位置可以看到plist文件</span><br><span class="line">        print(message)</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/创建CoreData实体并插入数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/03/18/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%88%9B%E5%BB%BACoreData%E5%AE%9E%E4%BD%93%E5%B9%B6%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2021-03-17T16:00:00.000Z" itemprop="datePublished">2021-03-18</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/03/18/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E5%88%9B%E5%BB%BACoreData%E5%AE%9E%E4%BD%93%E5%B9%B6%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE/">创建CoreData实体并插入数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>⭐️注意：项目名称一定不能使用CoreData</p>
+<p>创建项目时记得选上Use Core Data选项</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqnj5owb30j30wv0u04a2.jpg"></p>
+<p>选择.xcdatamodeld文件，然后依次点击Editor、Create NSManagedObject subclass</p>
+<p>Codegen：Manual/None</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line">import CoreData  &#x2F;&#x2F;引入CoreData框架</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;创建Core Data实体并插入数据</span><br><span class="line">        let appDelegate: AppDelegate &#x3D; UIApplication.shared.delegate as! AppDelegate  &#x2F;&#x2F;从UIApplication中获得当前项目中的AppDelegate对象</span><br><span class="line">        let managedObjectContext &#x3D; appDelegate.persistentContainer.viewContext &#x2F;&#x2F;获得AppDelegate对象的managedObjectContext托管对象的上下文</span><br><span class="line">        </span><br><span class="line">        let newUser &#x3D; NSEntityDescription.insertNewObject(forEntityName: &quot;User&quot;, into: managedObjectContext) as! User  &#x2F;&#x2F;通过NSEntityDescription.insertNewObject在托管对象上下文中插入一条User实体对象</span><br><span class="line">        </span><br><span class="line">        newUser.userName &#x3D; &quot;John&quot;</span><br><span class="line">        newUser.password &#x3D; &quot;123456&quot;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;执行数据的存储操作</span><br><span class="line">        do &#123;</span><br><span class="line">            try managedObjectContext.save()  &#x2F;&#x2F;对newUser对象进行保存操作</span><br><span class="line">            print(&quot;成功保存数据。&quot;)</span><br><span class="line">            </span><br><span class="line">        &#125; catch &#123;</span><br><span class="line">            </span><br><span class="line">            print(&quot;保存数据失败。&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/检索Core_Data中的数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/03/17/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E6%A3%80%E7%B4%A2Core_Data%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2021-03-16T16:00:00.000Z" itemprop="datePublished">2021-03-17</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/03/17/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E6%A3%80%E7%B4%A2Core_Data%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/">检索Core_Data中的数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>项目的创建与上一节相同！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line">import CoreData  &#x2F;&#x2F;引入CoreData框架</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;检索Core Data中的数据</span><br><span class="line">        let appDelegate: AppDelegate &#x3D; UIApplication.shared.delegate as! AppDelegate</span><br><span class="line">        let managedObjectContext &#x3D; appDelegate.persistentContainer.viewContext</span><br><span class="line">        </span><br><span class="line">        let entity: NSEntityDescription? &#x3D; NSEntityDescription.entity(forEntityName: &quot;User&quot;,</span><br><span class="line">                                                                     in: managedObjectContext)  &#x2F;&#x2F;通过NSEntityDescription.entity获得托管对象上下文中的User实体</span><br><span class="line">        </span><br><span class="line">        let request &#x3D; NSFetchRequest&lt;User&gt;(entityName: &quot;User&quot;)  &#x2F;&#x2F;创建一个User类型的NSFetchRequest查询请求对象</span><br><span class="line">        request.fetchOffset &#x3D; 0  &#x2F;&#x2F;fetchOffset属性用于设置数据查询的偏移位置，例如返回结果有A、B、C、D四个结果，当设置fetchOffset为1时，仅返回B、C、D三个结果</span><br><span class="line">        request.fetchLimit &#x3D; 10  &#x2F;&#x2F;获取从偏移值为0的位置起的10条数据，如果总的数据量少于10条，就返回全部的数据</span><br><span class="line">        request.entity &#x3D; entity  &#x2F;&#x2F;设置request对象的entity为User类型的实体，即查询持久化存储中类型为User的符合查询条件的实体</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;创建一个Predicate断言，以查询userName为John的User类型的实体，如果不设置断言，就会查询所有类型的为User的实体</span><br><span class="line">        let predicate &#x3D; NSPredicate(format: &quot;userName&#x3D; &#39;John&#39; &quot;, &quot;&quot;)</span><br><span class="line">        request.predicate &#x3D; predicate</span><br><span class="line">        </span><br><span class="line">        do&#123;</span><br><span class="line">            let results:[AnyObject]? &#x3D; try managedObjectContext.fetch(request)  &#x2F;&#x2F;调用fetch方法，根据指定的断言查询符合条件的User类型的实体，并将查询的结果存储在一个名为results的AnyObject类型的数组中</span><br><span class="line">            </span><br><span class="line">            for user:User in results as! [User]&#123;</span><br><span class="line">                print(&quot;userName &#x3D; \(user.userName!)&quot;)</span><br><span class="line">                print(&quot;password &#x3D; \(user.password!)&quot;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch&#123;</span><br><span class="line">            print(&quot;获取数据失败。&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/修改Core_Data中的数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2021/03/16/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BF%AE%E6%94%B9Core_Data%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/" class="article-date">
+      <time datetime="2021-03-15T16:00:00.000Z" itemprop="datePublished">2021-03-16</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2021/03/16/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(%E7%AC%AC2%E7%89%88)%E3%80%8B/%E4%BF%AE%E6%94%B9Core_Data%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/">修改Core_Data中的数据</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import UIKit</span><br><span class="line">import CoreData  &#x2F;&#x2F;引入CoreData框架</span><br><span class="line"></span><br><span class="line">class ViewController: UIViewController &#123;</span><br><span class="line">    </span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        &#x2F;&#x2F; Do any additional setup after loading the view.</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;修改Core Data中的数据</span><br><span class="line">        let appDelegate: AppDelegate &#x3D; UIApplication.shared.delegate as! AppDelegate</span><br><span class="line">        let managedObjectContext &#x3D; appDelegate.persistentContainer.viewContext</span><br><span class="line">        </span><br><span class="line">        let entity: NSEntityDescription? &#x3D; NSEntityDescription.entity(forEntityName: &quot;User&quot;,</span><br><span class="line">                                                                      in: managedObjectContext)  &#x2F;&#x2F;通过NSEntityDescription.entity获得托管对象上下文中的User实体</span><br><span class="line">        </span><br><span class="line">        let request &#x3D; NSFetchRequest&lt;User&gt;(entityName: &quot;User&quot;)  &#x2F;&#x2F;创建一个User类型的NSFetchRequest查询请求对象</span><br><span class="line">        request.fetchOffset &#x3D; 0  &#x2F;&#x2F;fetchOffset属性用于设置数据查询的偏移位置，例如返回结果有A、B、C、D四个结果，当设置fetchOffset为1时，仅返回B、C、D三个结果</span><br><span class="line">        request.fetchLimit &#x3D; 10  &#x2F;&#x2F;获取从偏移值为0的位置起的10条数据，如果总的数据量少于10条，就返回全部的数据</span><br><span class="line">        request.entity &#x3D; entity  &#x2F;&#x2F;设置request对象的entity为User类型的实体，即查询持久化存储中类型为User的符合查询条件的实体</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;创建一个Predicate断言，以查询userName为John的User类型的实体，如果不设置断言，就会查询所有类型的为User的实体</span><br><span class="line">        let predicate &#x3D; NSPredicate(format: &quot;userName&#x3D; &#39;John&#39; &quot;, &quot;&quot;)</span><br><span class="line">        request.predicate &#x3D; predicate</span><br><span class="line">        </span><br><span class="line">        do&#123;</span><br><span class="line">            let results:[AnyObject]? &#x3D; try managedObjectContext.fetch(request)  &#x2F;&#x2F;调用fetch方法，根据指定的断言查询符合条件的User类型的实体，并将查询的结果存储在一个名为results的AnyObject类型的数组中</span><br><span class="line">            </span><br><span class="line">            &#x2F;&#x2F;遍历查询到的results数组，并将数组中的User对象的userName修改为Peter</span><br><span class="line">            for user:User in results as! [User]&#123;</span><br><span class="line">                user.userName &#x3D; &quot;Peter&quot;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            try managedObjectContext.save()  &#x2F;&#x2F;被修改后的User对象仍然处于内存中，尚未被持久化，通过调用save()方法保存到序列化文件中</span><br><span class="line">            </span><br><span class="line">            request.predicate &#x3D; nil  &#x2F;&#x2F;重置断言，以查找所有的user实体</span><br><span class="line">            let newResults:[AnyObject]? &#x3D; try managedObjectContext.fetch(request)</span><br><span class="line">            </span><br><span class="line">            for user:User in newResults as! [User]&#123;</span><br><span class="line">                print(&quot;userName: \(user.userName!)&quot;)</span><br><span class="line">                print(&quot;password: \(user.password!)&quot;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        catch&#123;</span><br><span class="line">            print(&quot;获取数据失败。&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/iOS%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/">iOS开发项目</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AiOS%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A-%E7%AC%AC2%E7%89%88-%E3%80%8B/" rel="tag">《iOS移动开发从入门到精通(第2版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-iOS开发项目/《iOS移动开发从入门到精通(第2版)》/删除Core_Data中的数据" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1292,570 +1562,6 @@
 <h3 id="字符串连接字符"><a href="#字符串连接字符" class="headerlink" title="字符串连接字符"></a>字符串连接字符</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> varA: <span class="type">String</span> = <span class="string">&quot;Hello &quot;</span></span><br><span class="line"><span class="keyword">let</span> varB: <span class="type">Character</span> = <span class="string">&quot;G&quot;</span></span><br><span class="line"></span><br><span class="line">varA.append(varB)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(varA)</span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/" rel="tag">Swift</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Swift/Swift数组和字典" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/12/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Swift/Swift%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E5%85%B8/" class="article-date">
-      <time datetime="2020-12-25T16:00:00.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/12/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Swift/Swift%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E5%85%B8/">Swift数组和字典</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="Swift-数组"><a href="#Swift-数组" class="headerlink" title="Swift 数组"></a>Swift 数组</h2><p>Swift 数组使用有序列表存储同一类型的多个值。相同的值可以多次出现在一个数组的不同位置中。</p>
-<p>Swift 数组会强制检测元素的类型，如果类型不同则会报错，Swift 数组应该遵循像Array<Element>这样的形式，其中Element是这个数组中唯一允许存在的数据类型。</p>
-<p>如果创建一个数组，并赋值给一个变量，则创建的集合就是可以修改的。这意味着在创建数组后，可以通过添加、删除、修改的方式改变数组里的项目。如果将一个数组赋值给常量，数组就不可更改，并且数组的大小和内容都不可以修改。</p>
-<h3 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建了一个类型为Int，数量为3，初始值为0的空数组</span></span><br><span class="line"><span class="keyword">var</span> someInts1 = [<span class="type">Int</span>](repeating: <span class="number">0</span>, <span class="built_in">count</span>: <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> someInts2: [<span class="type">Int</span>] = []</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建了含有三个元素的数组</span></span><br><span class="line"><span class="keyword">var</span> someInts3: [<span class="type">Int</span>] = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="访问数组"><a href="#访问数组" class="headerlink" title="访问数组"></a>访问数组</h3><p>我们可以根据数组的索引来访问数组的元素，index索引从0开始，即索引0对应第一个元素，索引1对应第二个元素</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建了一个类型为Int，数量为3，初始值为10的空数组</span></span><br><span class="line"><span class="keyword">var</span> someInts = [<span class="type">Int</span>](repeating: <span class="number">10</span>, <span class="built_in">count</span>: <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(someInts[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(someInts[<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(someInts[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改数组"><a href="#修改数组" class="headerlink" title="修改数组"></a>修改数组</h3><p>你可以使用<code>append()</code>方法或者赋值运算符<code>+=</code>在数组末尾添加元素</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqx3wkbns0j30e60mmadb.jpg"></p>
-<h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqx44e7p52j30yh0u0wkx.jpg"></p>
-<h3 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h3><p>可以使用加法操作符（+）来合并两种已存在的相同类型数组。新数组的数据类型会从两个数组的数据类型中推断出来</p>
-<p>![image-20210527173142243](/Users/liaojialong/Library/Application Support/typora-user-images/image-20210527173142243.png)</p>
-<h3 id="count属性"><a href="#count属性" class="headerlink" title="count属性"></a>count属性</h3><p>可以使用count属性来计算数组元素的个数</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqx4clhhxkj30ki0ecdhn.jpg"></p>
-<h3 id="isEmpty属性"><a href="#isEmpty属性" class="headerlink" title="isEmpty属性"></a>isEmpty属性</h3><p>可以通过只读属性isEmpty来判断数组是否为空，返回布尔值</p>
-<h2 id="Swift-字典"><a href="#Swift-字典" class="headerlink" title="Swift 字典"></a>Swift 字典</h2><p>Swift 字典用来存储无序的相同类型数据的集合，Swift 字典会强制检测元素的类型，如果类型不同则会报错。</p>
-<p>Swift 字典每个值（value）都关联唯一的键（key），键作为字典中的这个值数据的标识符。</p>
-<p>和数组中的数据项不同，字典中的数据项并没有具体顺序。我们在需要通过标识符（键）访问数据的时候使用字典，这种方法很大程度上和我们在现实世界中使用字典查字义的方法一样。</p>
-<p>Swift 字典的key没有类型限制可以是整型或字符串，但必须是唯一的。</p>
-<p>如果创建一个字典，并赋值给一个变量，则创建的字典就是可以修改的。这意味着在创建字典后，可以通过添加、删除、修改的方式改变字典里的项目。如果将一个字典赋值给常量，字典就不可修改，并且字典的大小和内容都不可以修改</p>
-<h3 id="创建字典"><a href="#创建字典" class="headerlink" title="创建字典"></a>创建字典</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个空字典，键的类型为Int，值的类型为String</span></span><br><span class="line"><span class="keyword">var</span> someDict1 = [<span class="type">Int</span>: <span class="type">String</span>]()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> someDict2: [<span class="type">Int</span>: <span class="type">String</span>] = [:]</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> someDict3: [<span class="type">Int</span>: <span class="type">String</span>] = [<span class="number">1</span>: <span class="string">&quot;One&quot;</span>, <span class="number">2</span>: <span class="string">&quot;Two&quot;</span>, <span class="number">3</span>: <span class="string">&quot;Three&quot;</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="访问字典"><a href="#访问字典" class="headerlink" title="访问字典"></a>访问字典</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxw9bknbij60sm0fq0uz02.jpg"></p>
-<h3 id="修改字典"><a href="#修改字典" class="headerlink" title="修改字典"></a>修改字典</h3><p>我们可以使用 <strong>updateValue(forKey: )</strong> 增加或更新字典的内容。如果 key 不存在，则添加值，如果存在则修改 key 对应的值。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxwkuuzp3j30su0iugp2.jpg"></p>
-<p>也可以通过指定的key来修改字典的值</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxwow9d71j30su0iuq6c.jpg"></p>
-<h3 id="移除Key-Value对"><a href="#移除Key-Value对" class="headerlink" title="移除Key-Value对"></a>移除Key-Value对</h3><p>我们可以使用 <strong>removeValueForKey()</strong> 方法来移除字典 key-value 对。如果 key 存在该方法返回移除的值，如果不存在返回 nil </p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxwt4l01xj30su0fygoh.jpg"></p>
-<p>也可以通过指定键的值为nil来移除key-value对</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxwvtn30nj30su0fygo5.jpg"></p>
-<h3 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxx2c8mjij30w60o4wjn.jpg"></p>
-<h3 id="字典转换为数组"><a href="#字典转换为数组" class="headerlink" title="字典转换为数组"></a>字典转换为数组</h3><p>可以提取字典的键值(key-value)对，并转换为独立的数组</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxx8uoz8dj30sq0lmtcj.jpg"></p>
-<h3 id="count-属性"><a href="#count-属性" class="headerlink" title="count 属性"></a>count 属性</h3><p>可以使用只读的count属性来计算字典有多少个键值对</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxxb8l0bmj30sq0eiq4g.jpg"></p>
-<h3 id="isEmpty-属性"><a href="#isEmpty-属性" class="headerlink" title="isEmpty 属性"></a>isEmpty 属性</h3><p>可以通过只读属性 <strong>isEmpty</strong> 来判断字典是否为空，返回布尔值</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxxeuvzx5j30sq0eumzi.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/" rel="tag">Swift</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Swift/Swift函数和闭包" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/12/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Swift/Swift%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/" class="article-date">
-      <time datetime="2020-12-24T16:00:00.000Z" itemprop="datePublished">2020-12-25</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/12/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Swift/Swift%E5%87%BD%E6%95%B0%E5%92%8C%E9%97%AD%E5%8C%85/">Swift函数和闭包</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="Swift函数"><a href="#Swift函数" class="headerlink" title="Swift函数"></a>Swift函数</h2><p>Swift函数用来完成特定任务的独立的代码块</p>
-<ul>
-<li>函数声明：告诉编译器函数的名字、返回类型及参数</li>
-<li>函数定义：提供了函数的实体</li>
-</ul>
-<h3 id="函数定义和调用"><a href="#函数定义和调用" class="headerlink" title="函数定义和调用"></a>函数定义和调用</h3><p>Swift 定义函数使用关键字 <strong>func</strong>。</p>
-<p>定义函数的时候，可以指定一个或多个输入参数和一个返回值类型。</p>
-<p>每个函数都有一个函数名来描述它的功能。通过函数名以及对应类型的参数值来调用这个函数。函数的参数传递的顺序必须与参数列表相同。</p>
-<p>函数的实参传递的顺序必须与形参列表相同，**-&gt;** 后定义函数的返回值类型。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxydhh9ldj30jo0e60ud.jpg"></p>
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h3><p>函数可以接受一个或者多个参数，这些参数被包含在函数的括号中，以逗号分隔</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxyjowc6rj30qg0e676g.jpg"></p>
-<h3 id="不带参数的函数"><a href="#不带参数的函数" class="headerlink" title="不带参数的函数"></a>不带参数的函数</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxyp7yv8xj30dg0e6jsi.jpg"></p>
-<h3 id="元组作为函数的返回值"><a href="#元组作为函数的返回值" class="headerlink" title="元组作为函数的返回值"></a>元组作为函数的返回值</h3><p>函数返回值类型可以是字符串，整型，浮点型等。</p>
-<p>元组与数组类似，不同的是，元组中的元素可以是任意类型，使用的是圆括号。</p>
-<p>你可以用元组（tuple）类型让多个值作为一个复合值从函数中返回。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="comment">//在一个Int数组中找出最小值和最大值</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">minMax</span><span class="params">(array: [Int])</span></span> -&gt; (<span class="built_in">min</span>: <span class="type">Int</span>, <span class="built_in">max</span>: <span class="type">Int</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> currentMin = array[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">var</span> currentMax = array[<span class="number">0</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> array[<span class="number">1</span>..&lt;array.<span class="built_in">count</span>] &#123;</span><br><span class="line">        <span class="keyword">if</span> value &lt; currentMin &#123;</span><br><span class="line">            currentMin = value</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> value &gt; currentMax &#123;</span><br><span class="line">            currentMax = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (currentMin, currentMax)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> bounds = minMax(array: [<span class="number">8</span>, -<span class="number">6</span>, <span class="number">2</span>, <span class="number">109</span>, <span class="number">3</span>, <span class="number">71</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;最小值为 \(bounds.min) ，最大值为 \(bounds.max)&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果你不确定返回的元组一定不为nil，那么你可以返回一个可选的元组类型</span></span><br><span class="line"><span class="comment">//注意：可选元组类型如(Int, Int)?与元组包含可选类型如(Int?, Int?)是不同的.可选的元组类型，整个元组是可选的，而不只是元组中的每个元素值。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//前面的minMax(_:)函数返回了一个包含两个Int值的元组。但是函数不会对传入的数组执行任何安全检查，如果array参数是一个空数组，如上定义的minMax(_:)在试图访问array[0]时会触发一个运行时错误。为了安全地处理这个&quot;空数组&quot;问题，将minMax(_:)函数改写为使用可选元组返回类型，并且当数组为空时返回nil</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">minMax</span><span class="params">(array: [Int])</span></span> -&gt; (<span class="built_in">min</span>: <span class="type">Int</span>, <span class="built_in">max</span>: <span class="type">Int</span>)? &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> array.isEmpty &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> currentMin = array[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">var</span> currentMax = array[<span class="number">0</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> array[<span class="number">1</span>..&lt;array.<span class="built_in">count</span>] &#123;</span><br><span class="line">        <span class="keyword">if</span> value &lt; currentMin &#123;</span><br><span class="line">            currentMin = value</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> value &gt; currentMax &#123;</span><br><span class="line">            currentMax = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (currentMin, currentMax)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> bounds = minMax(array: [<span class="number">8</span>, -<span class="number">6</span>, <span class="number">2</span>, <span class="number">109</span>, <span class="number">3</span>, <span class="number">71</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;最小值为 \(bounds!.min) ，最大值为 \(bounds!.max)&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="没有返回值的函数"><a href="#没有返回值的函数" class="headerlink" title="没有返回值的函数"></a>没有返回值的函数</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">runoob</span><span class="params">(site: String)</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;菜鸟教程官网： \(site)&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">runoob(site: <span class="string">&quot;http://www.runoob.com&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数参数名称"><a href="#函数参数名称" class="headerlink" title="函数参数名称"></a>函数参数名称</h3><p>函数参数都有一个外部参数名和一个局部参数名</p>
-<h4 id="局部参数名在函数的实现内部使用"><a href="#局部参数名在函数的实现内部使用" class="headerlink" title="局部参数名在函数的实现内部使用"></a>局部参数名在函数的实现内部使用</h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxzjw8f1rj30i80gejtj.jpg"></p>
-<h4 id="外部参数名"><a href="#外部参数名" class="headerlink" title="外部参数名"></a>外部参数名</h4><p>可以在局部参数名前指定外部参数名，中间以空格分隔，外部参数名用于在函数调用时传递给函数的参数。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxzrhryerj30pe0h6goc.jpg"></p>
-<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>可变参数可以接受零个或多个值。函数调用时，你可以用可变参数来指定函数参数，其数量是不确定的。可变参数通过在变量类型名后面加入（…）的方式来定义。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqxzyhr9mbj30l60kw0vy.jpg"></p>
-<h3 id="常量、变量、I-O参数"><a href="#常量、变量、I-O参数" class="headerlink" title="常量、变量、I/O参数"></a>常量、变量、I/O参数</h3><p>一般默认在函数中定义的参数都是常量参数，也就是这个参数你只可以查询使用，不能改变它的值。如果想要声明一个变量参数，可以在参数定义前加 inout 关键字，这样就可以改变这个参数的值了。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy07v0ljfj31as0kgdku.jpg"></p>
-<h3 id="函数类型及使用"><a href="#函数类型及使用" class="headerlink" title="函数类型及使用"></a>函数类型及使用</h3><p>每个函数都有种特定的函数类型，由函数的参数类型和返回类型组成</p>
-<h4 id="使用函数类型"><a href="#使用函数类型" class="headerlink" title="使用函数类型"></a>使用函数类型</h4><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy0g0p7ayj30z60feadc.jpg"></p>
-<h3 id="函数类型作为参数类型，函数类型作为返回类型"><a href="#函数类型作为参数类型，函数类型作为返回类型" class="headerlink" title="函数类型作为参数类型，函数类型作为返回类型"></a>函数类型作为参数类型，函数类型作为返回类型</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy0nlakyxj30rw0j8n12.jpg"></p>
-<h3 id="函数嵌套"><a href="#函数嵌套" class="headerlink" title="函数嵌套"></a>函数嵌套</h3><p>函数嵌套指的是函数内定义一个新的函数，外部的函数可以调用函数内定义的函数。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy2qj7asoj30ra0kgwhx.jpg"></p>
-<h2 id="Swift闭包"><a href="#Swift闭包" class="headerlink" title="Swift闭包"></a>Swift闭包</h2><p>闭包是自包含的功能代码块，可以在代码中使用或者用来作为参数传值，全局函数和嵌套函数其实就是特殊的闭包</p>
-<p>闭包的形式：</p>
-<table>
-<thead>
-<tr>
-<th>全局函数</th>
-<th>嵌套函数</th>
-<th>闭包表达式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>有名字但不能捕获任何值。</td>
-<td>有名字，也能捕获封闭函数内的值。</td>
-<td>无名闭包，使用轻量级语法，可以根据上下文环境捕获值。</td>
-</tr>
-</tbody></table>
-<p>Swift中的闭包有很多优化的地方: </p>
-<ol>
-<li>根据上下文推断参数和返回值类型</li>
-<li>从单行表达式闭包中隐式返回（也就是闭包体只有一行代码，可以省略return）</li>
-<li>可以使用简化参数名，如$0, $1(从0开始，表示第i个参数…)</li>
-<li>提供了尾随闭包语法(Trailing closure syntax)</li>
-</ol>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy3c1w56bj30ik0k8771.jpg"></p>
-<h3 id="闭包表达式"><a href="#闭包表达式" class="headerlink" title="闭包表达式"></a>闭包表达式</h3><p>闭包表达式是一种利用简洁语法构建内联闭包的方式，闭包表达式提供了一些语法优化，使得撰写闭包变的简单明了</p>
-<h4 id="sorted-方法"><a href="#sorted-方法" class="headerlink" title="sorted 方法"></a>sorted 方法</h4><ol>
-<li><p>Swift 标准库提供了名为 <strong>sorted(by:)</strong> 的方法，会根据您提供的用于排序的闭包函数将已知类型数组中的值进行排序。 排序完成后，sorted(by:) 方法会返回一个与原数组大小相同，包含同类型元素且元素已正确排序的新数组。原数组不会被 sorted(by:) 方法修改。</p>
-</li>
-<li><p>sorted(by:)方法需要传入两个参数：</p>
-</li>
-<li><ul>
-<li>已知类型的数组</li>
-<li>闭包函数，该闭包函数需要传入与数组元素类型相同的两个值，并返回一个布尔类型值来表明当排序结束后传入的第一个参数排在第二个参数前面还是后面。如果第一个参数值出现在第二个参数值前面，排序闭包函数需要返回 <strong>true</strong>，反之返回 <strong>false</strong>。</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy3n6bhjij31na0hqjxq.jpg"></p>
-<h3 id="参数名称缩写"><a href="#参数名称缩写" class="headerlink" title="参数名称缩写"></a>参数名称缩写</h3><p>Swift自动为内联函数提供了参数名称缩写功能，可以直接通过<code>$0,$1,$2</code>来顺序调用闭包的参数</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy3v0zd98j30lg0eg0uv.jpg"></p>
-<h3 id="运算符函数"><a href="#运算符函数" class="headerlink" title="运算符函数"></a>运算符函数</h3><p>Swift 的<code>String</code>类型定义了关于大于号 (<code>&gt;</code>) 的字符串实现，其作为一个函数接受两个<code>String</code>类型的参数并返回<code>Bool</code>类型的值。 而这正好与<code>sort(_:)</code>方法的第二个参数需要的函数类型相符合。 因此，可以简单地传递一个大于号，Swift可以自动推断出您想使用大于号的字符串函数实现</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy3yike4nj30lg0egwg7.jpg"></p>
-<h3 id="尾随闭包"><a href="#尾随闭包" class="headerlink" title="尾随闭包"></a>尾随闭包</h3><p>尾随闭包是一个书写在函数括号之后的闭包表达式，函数支持将其作为最后一个参数调用</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy43w5sm0j30lg0eg0um.jpg"></p>
-<h3 id="捕获值"><a href="#捕获值" class="headerlink" title="捕获值"></a>捕获值</h3><ol>
-<li><p>闭包可以在其定义的上下文中捕获常量或变量。</p>
-</li>
-<li><p>即使定义这些常量和变量的原域已经不存在，闭包仍然可以在闭包函数体内引用和修改这些值。</p>
-</li>
-<li><p>Swift最简单的闭包形式是嵌套函数，也就是定义在其他函数的函数体内的函数。 </p>
-</li>
-<li><p>嵌套函数可以捕获其外部函数所有的参数以及定义的常量和变量。</p>
-</li>
-</ol>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">makeIncrementor</span><span class="params">(forIncrement amount: Int)</span></span> -&gt; () -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> runningTotal = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//incrementor函数并没有获取任何参数，但是在函数体内访问了runningTotal和amount变量。这是因为其通过捕获在包含它的函数体内已经存在的runningTotal和amount变量而实现。由于没有修改amount变量，incrementor实际上捕获并存储了该变量的一个副本，而该副本随着incrementor一同被存储。所以我们调用这个函数时会累加</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">incrementor</span><span class="params">()</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        runningTotal += amount</span><br><span class="line">        <span class="keyword">return</span> runningTotal</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> incrementor</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> incrementByTen = makeIncrementor(forIncrement: <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(incrementByTen())  <span class="comment">//返回值为10</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(incrementByTen())  <span class="comment">//返回值为20</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(incrementByTen())  <span class="comment">//返回值为30</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="闭包是引用类型"><a href="#闭包是引用类型" class="headerlink" title="闭包是引用类型"></a>闭包是引用类型</h3><ol>
-<li><p>上面的例子中，incrementByTen是常量，但是这些常量指向的闭包仍然可以增加其捕获的变量值。这是因为函数和闭包都是引用类型。</p>
-</li>
-<li><p>无论您将函数/闭包赋值给一个常量还是变量，您实际上都是将常量/变量的值设置为对应函数/闭包的引用。 上面的例子中，incrementByTen指向闭包的引用是一个常量，而并非闭包内容本身。这也意味着如果您将闭包赋值给了两个不同的常量/变量，两个值都会指向同一个闭包</p>
-</li>
-</ol>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">makeIncrementor</span><span class="params">(forIncrement amount: Int)</span></span> -&gt; () -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> runningTotal = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//incrementor函数并没有获取任何参数，但是在函数体内访问了runningTotal和amount变量。这是因为其通过捕获在包含它的函数体内已经存在的runningTotal和amount变量而实现。由于没有修改amount变量，incrementor实际上捕获并存储了该变量的一个副本，而该副本随着incrementor一同被存储。所以我们调用这个函数时会累加</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">incrementor</span><span class="params">()</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        runningTotal += amount</span><br><span class="line">        <span class="keyword">return</span> runningTotal</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> incrementor</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> incrementByTen = makeIncrementor(forIncrement: <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(incrementByTen())  <span class="comment">//返回值为10</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(incrementByTen())  <span class="comment">//返回值为20</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(incrementByTen())  <span class="comment">//返回值为30</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> alsoIncrementByTen = incrementByTen</span><br><span class="line"><span class="built_in">print</span>(alsoIncrementByTen())  <span class="comment">//返回值也为40</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这里的值没有发生改变，是因为函数被调用结束就被释放了，没有用一个常量或变量去引用它，相当于每次调用都是一个新的函数</span></span><br><span class="line"><span class="built_in">print</span>(makeIncrementor(forIncrement: <span class="number">20</span>)())  <span class="comment">//结果为20</span></span><br><span class="line"><span class="built_in">print</span>(makeIncrementor(forIncrement: <span class="number">20</span>)())  <span class="comment">//结果为20</span></span><br><span class="line"><span class="built_in">print</span>(makeIncrementor(forIncrement: <span class="number">20</span>)())  <span class="comment">//结果为20</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/" rel="tag">Swift</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Swift/Swift枚举和结构体" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/12/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Swift/Swift%E6%9E%9A%E4%B8%BE%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/" class="article-date">
-      <time datetime="2020-12-23T16:00:00.000Z" itemprop="datePublished">2020-12-24</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/12/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Swift/Swift%E6%9E%9A%E4%B8%BE%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93/">Swift枚举和结构体</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="Swift-枚举"><a href="#Swift-枚举" class="headerlink" title="Swift 枚举"></a>Swift 枚举</h2><p>枚举简单的说也是一种数据类型，只不过是这种数据类型只包含自定义的特定数据，它是一组有共同特性的数据的集合</p>
-<p>枚举的功能为：</p>
-<ul>
-<li>它声明在类中，可以通过实例化类来访问它的值。</li>
-<li>枚举也可以定义构造函数（initializers）来提供一个初始成员值；可以在原始的实现基础上扩展它们的功能。</li>
-<li>可以遵守协议（protocols）来提供标准的功能。</li>
-</ul>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义枚举</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">DaysofaWeek</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="type">Sunday</span>  <span class="comment">//case关键词表示一行新的成员值将被定义</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">Monday</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">TUESDAY</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">WEDNESDAY</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">THURSDAY</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">FRIDAY</span></span><br><span class="line">    <span class="keyword">case</span> <span class="type">Saturday</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> weekDay = <span class="type">DaysofaWeek</span>.<span class="type">THURSDAY</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> weekDay &#123;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">case</span> .<span class="type">Sunday</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;星期天&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="type">Monday</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;星期一&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="type">TUESDAY</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;星期二&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="type">WEDNESDAY</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;星期三&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="type">THURSDAY</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;星期四&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="type">FRIDAY</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;星期五&quot;</span>)</span><br><span class="line"><span class="keyword">case</span> .<span class="type">Saturday</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;星期六&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：和 C 和 Objective-C 不同，Swift 的枚举成员在被创建时不会被赋予一个默认的整型值。在上面的*<code>DaysofaWeek</code><em>例子中，</em><code>Sunday</code><em>，</em><code>Monday</code><em>，</em><code>……</code><em>和</em><code>Saturday</code><em>不会隐式地赋值为</em><code>0</code><em>，</em><code>1</code><em>，</em><code>……</code><em>和</em><code>6</code><em>。相反，这些枚举成员本身就有完备的值，这些值是已经明确定义好的</em><code>DaysofaWeek</code>*类型。</p>
-<p>枚举可分为相关值与原始值：</p>
-<table>
-<thead>
-<tr>
-<th align="left">相关值</th>
-<th align="left">原始值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">不同数据类型</td>
-<td align="left">相同数据类型</td>
-</tr>
-<tr>
-<td align="left">实例: enum {10,0.8,”Hello”}</td>
-<td align="left">实例: enum {10,35,50}</td>
-</tr>
-<tr>
-<td align="left">值的创建基于常量或变量</td>
-<td align="left">预先填充的值</td>
-</tr>
-<tr>
-<td align="left">相关值是当你在创建一个基于枚举成员的新常量或变量时才会被设置，并且每次当你这么做得时候，它的值可以是不同的。</td>
-<td align="left">原始值始终是相同的</td>
-</tr>
-</tbody></table>
-<h3 id="相关值"><a href="#相关值" class="headerlink" title="相关值"></a>相关值</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy7zaz6thj319u0n4wkk.jpg"></p>
-<h3 id="原始值"><a href="#原始值" class="headerlink" title="原始值"></a>原始值</h3><p>原始值可以是字符串，字符，或者任何整型值或浮点型值。每个原始值在它的枚举声明中必须是唯一的。</p>
-<p>在原始值为整数的枚举时，不需要显式的为每一个成员赋值，Swift会自动为你赋值。例如，当使用整数作为原始值时，隐式赋值的值依次递增1。如果第一个值没有被赋初值，将会被自动置为0。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqy83cuaq2j30ia0n4tbw.jpg"></p>
-<h2 id="Swift-结构体"><a href="#Swift-结构体" class="headerlink" title="Swift 结构体"></a>Swift 结构体</h2><p>Swift 结构体是构建代码所用的一种通用且灵活的构造体。我们可以为结构体定义属性（常量、变量）和添加方法，从而扩展结构体的功能。</p>
-<p>与 C 和 Objective C 不同的是：</p>
-<ul>
-<li>结构体不需要包含实现文件和接口。 </li>
-<li>结构体允许我们创建一个单一文件，且系统会自动生成面向其它代码的外部接口。 </li>
-</ul>
-<p>结构体总是通过被复制的方式在代码中传递，因此它的值是不可修改的。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MarkStruct</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> mark1: <span class="type">Int</span> = <span class="number">100</span></span><br><span class="line">    <span class="keyword">var</span> mark2: <span class="type">Int</span> = <span class="number">78</span></span><br><span class="line">    <span class="keyword">var</span> mark3: <span class="type">Int</span> = <span class="number">98</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//结构体实例化</span></span><br><span class="line"><span class="keyword">var</span> marks = <span class="type">MarkStruct</span>()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(marks.mark1, marks.mark2, marks.mark3)</span><br></pre></td></tr></table></figure>
-
-<h3 id="结构体应用"><a href="#结构体应用" class="headerlink" title="结构体应用"></a>结构体应用</h3><p>在代码中，你可以使用结构体来定义你的自定义数据类型，结构体实例总是通过值传递来定义你的自定义数据类型</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ReSolution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> height = <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个结构体</span></span><br><span class="line"><span class="keyword">let</span> hd = <span class="type">ReSolution</span>(width: <span class="number">1920</span>, height: <span class="number">1080</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结构体赋值,实际上做的是拷贝操作,cinema和hd结构体在内存中各自占用独立的空间</span></span><br><span class="line"><span class="keyword">var</span> cinema = hd</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改cinema结构体,不会影响hd结构体</span></span><br><span class="line">cinema.width = <span class="number">2048</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;cinema is now \(cinema.width) pixels wide&quot;</span>) <span class="comment">// return:2048</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hd is still \(hd.width) pixels wide&quot;</span>)       <span class="comment">// return:1920</span></span><br></pre></td></tr></table></figure>
-
-<p>与值类型不同，引用类型在被赋予到一个变量、常量或者被传递到一个函数时，操作的并不是其拷贝。因此，引用的是已存在的实例本身而不是其拷贝。类就是引用类型。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResolutionClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width = <span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> height = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(width: <span class="type">Int</span>,height: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.width = width</span><br><span class="line">        <span class="keyword">self</span>.height = height</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个类对象</span></span><br><span class="line"><span class="keyword">let</span> hdClass = <span class="type">ResolutionClass</span>(width: <span class="number">1920</span>, height: <span class="number">1080</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类对象赋值,引用同一个内存空间</span></span><br><span class="line"><span class="keyword">var</span> cinemaClass = hdClass</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改cinema对象,本质上也是修改hdClass对象</span></span><br><span class="line">cinemaClass.width = <span class="number">2048</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;cinemaClass is now \(cinemaClass.width) pixels wide&quot;</span>)  <span class="comment">// return: 2048</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hdClass is also \(hdClass.width) pixels wide&quot;</span>)         <span class="comment">// return: 2048</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/" rel="tag">Swift</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Swift/Swift类" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/12/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Swift/Swift%E7%B1%BB/" class="article-date">
-      <time datetime="2020-12-22T16:00:00.000Z" itemprop="datePublished">2020-12-23</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/12/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Swift/Swift%E7%B1%BB/">Swift类</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="Swift类"><a href="#Swift类" class="headerlink" title="Swift类"></a>Swift类</h2><p>Swift类是构建代码所用的一种通用且灵活的构造体，我们可以为类定义属性(常量、变量)和方法，与其他编程语言所不同的是，Swift并不要求你为自定义类去创建独立的接口和实现文件，你所要做的是在一个单一文件中定义一个类，系统会自动生成面向其他代码的外部接口</p>
-<h3 id="类和结构体对比"><a href="#类和结构体对比" class="headerlink" title="类和结构体对比"></a>类和结构体对比</h3><p>共同点：</p>
-<ul>
-<li>定义属性用于存储值</li>
-<li>定义方法用于提供功能</li>
-<li>定义附属脚本用于访问值</li>
-<li>定义构造器用于生成初始化值</li>
-<li>通过扩展以增加默认实现的功能</li>
-<li>符合协议以对某类提供标准功能</li>
-</ul>
-<p>类还具有的附加功能：</p>
-<ul>
-<li>继承允许一个类继承另一个类的特征</li>
-<li>类型转换允许在运行时检查和解释一个类实例的类型</li>
-<li>解构器允许一个类实例释放任何其所被分配的资源</li>
-<li>引用计数允许对一个类的多次引用</li>
-</ul>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> studname: <span class="type">String</span> = <span class="string">&quot;John&quot;</span></span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span> = <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化类</span></span><br><span class="line"><span class="keyword">let</span> studrecord = student()</span><br><span class="line"></span><br><span class="line"><span class="comment">//类的属性可以通过.来访问</span></span><br><span class="line"><span class="built_in">print</span>(studrecord.studname, studrecord.age)</span><br></pre></td></tr></table></figure>
-
-<h3 id="恒等运算符"><a href="#恒等运算符" class="headerlink" title="恒等运算符"></a>恒等运算符</h3><p>因为类是引用类型，有可能有多个常量和变量在后台同时引用某一个类实例，为了能够判定两个常量或者变量是否引用同一个类实例，Swift内建了两个恒等运算符</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>恒等运算符</strong></th>
-<th align="left"><strong>不恒等运算符</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">运算符为：===</td>
-<td align="left">运算符为：!==</td>
-</tr>
-<tr>
-<td align="left">如果两个常量或者变量引用同一个类实例则返回 true</td>
-<td align="left">如果两个常量或者变量引用不同一个类实例则返回 true</td>
-</tr>
-</tbody></table>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqz39bkyoxj60ia0ssn2j02.jpg"></p>
-<h2 id="Swift属性"><a href="#Swift属性" class="headerlink" title="Swift属性"></a>Swift属性</h2><p>Swift属性将值跟特定的类、结构或枚举关联</p>
-<p>属性可分为存储属性和计算属性：</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>存储属性</strong></th>
-<th align="left"><strong>计算属性</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">存储常量或变量作为实例的一部分</td>
-<td align="left">计算（而不是存储）一个值</td>
-</tr>
-<tr>
-<td align="left">用于类和结构体</td>
-<td align="left">用于类、结构体和枚举</td>
-</tr>
-</tbody></table>
-<h3 id="存储属性"><a href="#存储属性" class="headerlink" title="存储属性"></a>存储属性</h3><p>一个存储属性就是存储在特定类或结构体的实例里的一个常量或变量，存储属性可以是变量存储属性，也可以是常量存储属性</p>
-<ul>
-<li>可以在定义存储属性的时候指定默认值</li>
-<li>也可以在构造过程中设置或修改存储属性的值，甚至修改常量存储属性的值</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> digits: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> <span class="type">Pi</span> = <span class="number">3.1415</span>  <span class="comment">//代码中Pi在定义存储属性的时候指定默认值，所以不管你什么时候实例化结构体，它都不会改变</span></span><br><span class="line">    <span class="comment">//如果你定义的是一个常量存储属性，如果尝试修改它就会报错</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> n = <span class="type">Number</span>(digits: <span class="number">12345</span>)</span><br><span class="line">n.digits = <span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(n.digits, n.<span class="type">Pi</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="延迟存储属性"><a href="#延迟存储属性" class="headerlink" title="延迟存储属性"></a>延迟存储属性</h3><p>延迟存储属性是指当第一次被调用的时候才会计算其初始值的属性，在属性声明前使用<code>lazy</code>来标示一个延迟存储属性</p>
-<p>注意：必须将延迟存储属性声明成变量，因为属性的值在实例构造完成之前可能无法得到，，而常量属性在构造过程完成之前必须要有初始值，因此无法声明成延迟属性</p>
-<p>延迟存储属性一般用于：延迟对象的创建、当属性的值依赖于其他未知类</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sample</span> </span>&#123;</span><br><span class="line">    <span class="built_in">lazy</span> <span class="keyword">var</span> no = number()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">&quot;Swift&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> firstsample = sample()</span><br><span class="line"><span class="built_in">print</span>(firstsample.no.name)</span><br></pre></td></tr></table></figure>
-
-<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>除存储属性外，类、结构体和枚举可以定义计算属性，计算属性不直接存储值，而是提供一个getter来获取值，一个可选的setter来间接设置其他属性或变量的值</p>
-<p>![image-20210529110941684](/Users/liaojialong/Library/Application Support/typora-user-images/image-20210529110941684.png)</p>
-<h3 id="只读计算属性"><a href="#只读计算属性" class="headerlink" title="只读计算属性"></a>只读计算属性</h3><p>只有getter没有setter的计算属性就是只读计算属性，只读计算属性总是返回一个值，可以通过<code>.</code>运算符访问，但不能设置新的值</p>
-<p>![image-20210529111909855](/Users/liaojialong/Library/Application Support/typora-user-images/image-20210529111909855.png)</p>
-<h3 id="属性观察器"><a href="#属性观察器" class="headerlink" title="属性观察器"></a>属性观察器</h3><p>属性观察器监控和响应属性值的变化，每次属性被设置值的时候都会调用属性观察器，甚至新的值和现在的值相同的时候也不例外。可以为除了延迟存储属性之外的其他存储属性添加属性观察器，也可以通过重载属性的方式为继承的属性（包括存储属性和计算属性）添加属性观察器。</p>
-<p>注意：不需要为无法重载的计算属性添加属性观察器，因为可以通过 setter 直接监控和响应值的变化。</p>
-<p>可以为属性添加如下的一个或全部观察器：</p>
-<ul>
-<li><code>willSet</code>在设置新的值之前调用</li>
-<li><code>didSet</code>在新的值被设置之后立即调用</li>
-<li>willSet和didSet观察器在属性初始化过程中不会被调用</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqz4yplmdmj30p40rcn1z.jpg"></p>
-<h3 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h3><p>计算属性和属性观察器所描述的模式也可以用于全局变量和局部变量</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>局部变量</strong></th>
-<th align="left"><strong>全局变量</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">在函数、方法或闭包内部定义的变量。</td>
-<td align="left">函数、方法、闭包或任何类型之外定义的变量。</td>
-</tr>
-<tr>
-<td align="left">用于存储和检索值。</td>
-<td align="left">用于存储和检索值。</td>
-</tr>
-<tr>
-<td align="left">存储属性用于获取和设置值。</td>
-<td align="left">存储属性用于获取和设置值。</td>
-</tr>
-<tr>
-<td align="left">也用于计算属性。</td>
-<td align="left">也用于计算属性。</td>
-</tr>
-</tbody></table>
-<h3 id="类型属性"><a href="#类型属性" class="headerlink" title="类型属性"></a>类型属性</h3><p>属性可以直接用于类型本身，这种属性称为类型属性</p>
-<p>类型属性是作为类型定义的一部分写在类型最外层的花括号<code>&#123;&#125;</code>内。</p>
-<p>使用关键字 static 来定义值类型的类型属性，关键字 class 来为类定义类型属性。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Structname</span> </span>&#123;</span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">var</span> storedTypeProperty = <span class="string">&quot; &quot;</span></span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">var</span> computedTypeProperty: <span class="type">Int</span> &#123;</span><br><span class="line">      <span class="comment">// 这里返回一个 Int 值</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Enumname</span> </span>&#123;</span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">var</span> storedTypeProperty = <span class="string">&quot; &quot;</span></span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">var</span> computedTypeProperty: <span class="type">Int</span> &#123;</span><br><span class="line">      <span class="comment">// 这里返回一个 Int 值</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Classname</span> </span>&#123;</span><br><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">var</span> <span class="title">computedTypeProperty</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">      <span class="comment">// 这里返回一个 Int 值</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意：例子中的计算型类型属性是只读的，但也可以定义可读可写的计算型类型属性，跟实例计算属性的语法类似。</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="获取和设置类型属性的值"><a href="#获取和设置类型属性的值" class="headerlink" title="获取和设置类型属性的值"></a>获取和设置类型属性的值</h3><p>类似于实例的属性，类型属性的访问也是通过点运算符(.)来进行。但是，类型属性是通过类型本身来获取和设置，而不是通过实例。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">StudMarks</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">let</span> markCount = <span class="number">97</span></span><br><span class="line">   <span class="keyword">static</span> <span class="keyword">var</span> totalCount = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">   <span class="keyword">var</span> <span class="type">InternalMarks</span>: <span class="type">Int</span> = <span class="number">0</span> &#123;</span><br><span class="line">      <span class="keyword">didSet</span> &#123;</span><br><span class="line">         <span class="keyword">if</span> <span class="type">InternalMarks</span> &gt; <span class="type">StudMarks</span>.markCount &#123;</span><br><span class="line">            <span class="type">InternalMarks</span> = <span class="type">StudMarks</span>.markCount</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span> <span class="type">InternalMarks</span> &gt; <span class="type">StudMarks</span>.totalCount &#123;</span><br><span class="line">            <span class="type">StudMarks</span>.totalCount = <span class="type">InternalMarks</span></span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> stud1Mark1 = <span class="type">StudMarks</span>()</span><br><span class="line"><span class="keyword">var</span> stud1Mark2 = <span class="type">StudMarks</span>()</span><br><span class="line"></span><br><span class="line">stud1Mark1.<span class="type">InternalMarks</span> = <span class="number">98</span></span><br><span class="line"><span class="built_in">print</span>(stud1Mark1.<span class="type">InternalMarks</span>)  <span class="comment">//97</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">StudMarks</span>.markCount)  <span class="comment">//97</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">StudMarks</span>.totalCount)  <span class="comment">//97</span></span><br><span class="line"></span><br><span class="line">stud1Mark2.<span class="type">InternalMarks</span> = <span class="number">87</span></span><br><span class="line"><span class="built_in">print</span>(stud1Mark2.<span class="type">InternalMarks</span>)  <span class="comment">//87</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">StudMarks</span>.markCount)  <span class="comment">//97❓</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">StudMarks</span>.totalCount)  <span class="comment">//97❓</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Swift方法"><a href="#Swift方法" class="headerlink" title="Swift方法"></a>Swift方法</h2>
       
     </div>
     

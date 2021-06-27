@@ -228,6 +228,326 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机基础/操作系统原理/进程的概念、组成、特征" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%81%E7%BB%84%E6%88%90%E3%80%81%E7%89%B9%E5%BE%81/" class="article-date">
+      <time datetime="2020-10-23T16:00:00.000Z" itemprop="datePublished">2020-10-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%81%E7%BB%84%E6%88%90%E3%80%81%E7%89%B9%E5%BE%81/">进程的概念、组成、特征</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h2><p>程序：是静态的，就是个存放在磁盘里的可执行文件，就是一系列的指令集合</p>
+<p>进程（Process）：是动态的，是程序的一次执行过程，同一个程序多次执行会对应多个进程</p>
+<p>进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位（一个进程被调度，就是指操作系统决定让这个进程上CPU运行）</p>
+<h2 id="进程的组成：PCB、程序段、数据段"><a href="#进程的组成：PCB、程序段、数据段" class="headerlink" title="进程的组成：PCB、程序段、数据段"></a>进程的组成：PCB、程序段、数据段</h2><p>操作系统是进程的管理者，当进程被创建时，操作系统会为该进程分配一个唯一的、不重复的“身份证号”：PID（Process ID，进程ID）</p>
+<ul>
+<li>操作系统要记录PID、进程所属用户ID（UID）：基本的进程描述信息，可以让操作系统区分各个进程</li>
+<li>还要记录给进程分配了哪些资源（分配了多少内存、正在使用哪些I/O设备、正在使用哪些文件）：可用于实现操作系统对资源的管理</li>
+<li>还要记录进程的运行情况（CPU使用时间、磁盘使用情况、网络流量使用情况、进程当前的状态：就绪态/阻塞态/运行态）：可用于实现操作系统对进程的控制、调度</li>
+<li>处理机相关信息：PSW、PC等各种寄存器的值，用于实现进程切换</li>
+</ul>
+<p>这些信息都被保存在一个数据结构PCB（Process Control Block）中，即进程控制块，操作系统需要对各个并发运行的进程进行管理，但凡管理时所需要的信息，都会被放在PCB中</p>
+<p>PCB是进程存在的唯一标志，当进程被创建时，操作系统为其创建PCB，当进程结束时，会回收其PCB</p>
+<p>程序段：程序的代码（指令序列）</p>
+<p>数据段：运行过程中产生的各种数据（如程序中定义的变量）</p>
+<p>PCB是给操作系统用的，程序段和数据段是给进程自己用的，与进程自身的运行逻辑有关</p>
+<p>一个进程实体（进程映像）由PCB、程序段、数据段组成，进程是动态的，进程实体（进程映像）是静态的，进程实体反映了进程在某一时刻的状态</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr3o9azpgxj30wc0fyqd1.jpg"></p>
+<h2 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h2><p>程序是静态的，进程是动态的，相比于程序，进程拥有以下特征：</p>
+<ul>
+<li>动态性：进程是程序的一次执行过程，是动态的产生、变化和消亡的，动态性是进程最基本的特征</li>
+<li>并发性：内存中有多个进程实体，各进程可并发执行</li>
+<li>独立性：进程是能独立运行、独立获得资源、独立接受调度的基本单位</li>
+<li>异步性：各进程按各自独立的、不可预知的速度向前推进，操作系统要提供“进程同步机制”来解决异步问题</li>
+<li>结构性：每个进程都会配置一个PCB，结构上看，进程由程序段、数据段、PCB组成</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/创建计算字段" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/" class="article-date">
+      <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5/">创建计算字段</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>创建计算字段</p>
+<p>计算字段并不实际存在于数据库表中，计算字段是运行时在SELECT语句内创建的</p>
+<p>字段：基本上与列的意思相同，经常互换使用，不过数据库列一般称为列，而术语字段通常用在计算字段的连接上</p>
+<p>只有数据库知道SELECT语句中哪些列是实际的表列，哪些列是计算字段。从客户机（如应用程序）的角度来看，计算字段的数据是以与其他列的数据相同的方式返回的<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortz4hy7dj30b703576m.jpg"></p>
+<p>拼接：将值联结到一起构成单个值</p>
+<p>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3500nmj30b6024myn.jpg"><br>SELECT Concat(vendname，‘ （’，vendcountry，‘）’）<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3e6rfnj306s03cjrx.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3kvotqj30bi05mjt3.jpg"></p>
+<p>RTrim()函数去掉值右边的所有空格，通过使用RTrim()，各个列都进行了整理<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru3sjk96j30b7023q4d.jpg"></p>
+<p>2）别名是一个字段或值的替换名，别名用AS关键字赋予<br>SELECT Concat(RTrim(vendname)，‘ （’，RTrim(vendcountry)，‘）’）AS vend_title<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru41cau8j304203bt93.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru47rf4jj30b7022gn3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4djupzj30b701iab5.jpg"></p>
+<p>3)检索订单号20005中的所有物品<br>SELECT prodid,quantity,itemprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4l975mj305802maae.jpg"></p>
+<p>item_price列包含订单中每项物品的单价，如下汇总物品的价格（单价乘以订购数量）<br>SELECT prod_id,<br>              quantity,<br>              item_price,<br>              quantity*itemprice AS expandedprice<br>FROM orderitems<br>WHERE order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru4tqhgsj307r02i3yz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru50n0mwj307r038glv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru56chxej30b903lju1.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/操作系统原理/进程的状态与转换" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BD%AC%E6%8D%A2/" class="article-date">
+      <time datetime="2020-10-22T16:00:00.000Z" itemprop="datePublished">2020-10-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E4%B8%8E%E8%BD%AC%E6%8D%A2/">进程的状态与转换</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h2><p>创建状态：进程正在被创建时，它的状态是“创建态”，在这个阶段操作系统会为进程分配资源、初始化PCB</p>
+<p>就绪状态：当进程创建完成后，便进入了“就绪态”，处于就绪态的进程已经具备运行条件，但由于没有空闲CPU，就暂时不能运行</p>
+<p>运行状态：如果一个进程此时在CPU上运行，那么这个进程处于“运行态”，CPU会执行该进程对应的程序（执行指令序列）</p>
+<p>阻塞状态（等待态）：在进程运行过程中，可能会请求等待某个事件的发生（如等待某种系统资源的分配，或者等待其他进程的响应），在这个事件发生之前，进程无法继续往下执行，此时操作系统会让这个进程下CPU，并让它进入“阻塞态”，如果等待的某个事件发生了，进程就会由“阻塞态”变为“就绪态”，当CPU空闲时，会选择一个“就绪态”进程上CPU运行</p>
+<p>终止状态：一个进程可以执行exit系统调用，请求操作系统终止该进程，此时该进程会进入“终止态”，操作系统会让该进程下CPU，并回收内存空间等资源，最后还要回收该进程的PCB，当终止进程的工作完成之后，这个进程就彻底消失了（进程运行结束，或运行过程中遇到不可修复的错误）</p>
+<h2 id="状态间的转换"><a href="#状态间的转换" class="headerlink" title="状态间的转换"></a>状态间的转换</h2><p>就绪态 -&gt; 运行态</p>
+<p>运行态 -&gt; 就绪态（时间片到，或处理机被抢占）</p>
+<p>运行态 -&gt; 阻塞态</p>
+<p>阻塞态 -&gt; 就绪态</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr3peb968kj30q80ecajc.jpg"></p>
+<p>注意：不能由阻塞态直接转换为运行态，也不能由就绪态直接转换为阻塞态，因为进入阻塞态是进程主动请求的，必然需要进程在运行时才能发出这种请求</p>
+<p>三种基本状态：就绪态、运行态、阻塞态，进程的整个生命周期中大部分时间都处于三种基本状态</p>
+<p>单核CPU情况下，同一时刻只会有一个进程处于运行态，多核CPU情况下，可能有多个进程处于运行态</p>
+<p>进程PCB中，会有一个变量state来表示进程的当前状态：如1表示创建态、2表示就绪态、3表示运行态…为了对同一状态下的各个进程进行统一的管理，操作系统会将各个进程的PCB组织起来</p>
+<h2 id="进程的组织方式（各个进程PCB的组织方式）"><a href="#进程的组织方式（各个进程PCB的组织方式）" class="headerlink" title="进程的组织方式（各个进程PCB的组织方式）"></a>进程的组织方式（各个进程PCB的组织方式）</h2><h3 id="链接方式"><a href="#链接方式" class="headerlink" title="链接方式"></a>链接方式</h3><p>很多操作系统还会根据阻塞原因不同，再分为多个阻塞队列</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr3pswev9sj30tu0eo10e.jpg"></p>
+<h3 id="索引方式"><a href="#索引方式" class="headerlink" title="索引方式"></a>索引方式</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr3pu5xndaj30o00ew78h.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/使用数据处理函数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/" class="article-date">
+      <time datetime="2020-10-21T16:00:00.000Z" itemprop="datePublished">2020-10-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/">使用数据处理函数</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用数据处理函数</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6ay4lpj30b506j794.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6idywcj30b501nt94.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6p4zahj30b5042q49.jpg"></p>
+<p>1）文本处理函数Upper()<br>SELECT vendname,Upper(vendname) AS vendnameupcase<br>FROM vendors<br>ORDER BY vend_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru6x1hgbj305h039aal.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru753j8fj308403u3za.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7cb4a0j308402kmxn.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7jgpk6j30bh02qgmv.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru7uz31wj30bh0bddjf.jpg"></p>
+<p>2)日期和时间处理函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru82yiqgj30bh09lacf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8ah6a8j30b302iabx.jpg"></p>
+<p>SELECT custid,ordernum<br>FROM orders<br>WHERE order_date=‘2005-09-01’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8jfzvtj303d01ijrh.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru8ur7cfj30br06xjuf.jpg"><br>SELECT custid,ordernum<br>FROM orders<br>WHERE Date(order_date)=‘2005-09-01’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru93pk7ij30b603vwh9.jpg"></p>
+<p>检索出2005年9月下的所有订单<br>法1:<br>SELECT custid,ordernum<br>FROM orders<br>WHERE Date(order_date) BETWEEN ‘2005-09-01’ AND ‘2005-09-30’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9bxlpnj303e027mxc.jpg"></p>
+<p>法2:<br>SELECT custid,ordernum<br>FROM orders<br>WHERE Year(orderdate)=2005 AND Month(orderdate)=9;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9jol11j30b5022myj.jpg"></p>
+<p>3)数值处理函数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goru9qw82uj308005ndgt.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机基础/操作系统原理/进程控制" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -695,346 +1015,6 @@
 <p>法3:<br>SELECT custname,custcontact<br>FROM customers,orders,orderitems<br>WHERE customers.custid=orders.custid<br>   AND orderitems..ordernum=orders.ordernum<br>   AND prod_id=’TNT2’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruml1my3j304v01v0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorumuiofmj30b80340uy.jpg"></p>
 <p>2)显示customers表中每个客户的订单总数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorun2nb6vj30b9015dg7.jpg"><br>SELECT custname,custstate,<br>               (SELECT COUNT(*)<br>                FROM orders<br>                WHERE orders.custid=customers.custid) AS orders<br>FROM customers<br>ORDER BY cust_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorunb3wduj305y02wgm0.jpg"></p>
 <p>相关子查询：涉及外部查询的子查询<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorunjmhcjj30bs0ba422.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/操作系统原理/处理机调度概念、层次" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E6%A6%82%E5%BF%B5%E3%80%81%E5%B1%82%E6%AC%A1/" class="article-date">
-      <time datetime="2020-10-18T16:00:00.000Z" itemprop="datePublished">2020-10-19</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E6%A6%82%E5%BF%B5%E3%80%81%E5%B1%82%E6%AC%A1/">处理机调度概念、层次</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>当有一堆任务要处理，但由于资源有限，这些事情没法同时处理。这就需要确定某种规则来决定处理这些任务的顺序，这就是“调度”研究的问题</p>
-<h2 id="三个层次"><a href="#三个层次" class="headerlink" title="三个层次"></a>三个层次</h2><h3 id="高级调度（作业调度）"><a href="#高级调度（作业调度）" class="headerlink" title="高级调度（作业调度）"></a>高级调度（作业调度）</h3><p>作业：一个具体的任务</p>
-<p>用户向系统提交一个作业 = 用户让操作系统启动一个程序（来处理一个具体的任务）</p>
-<p>内存空间有限，有时无法将用户提交的作业全部放入内存？</p>
-<p>高级调度（作业调度）：按一定的原则从外存的作业后备队列中挑选一个作业调入内存，并创建进程。每个作业只调入一次，调出一次，作业调入时会建立PCB，调出时才撤销PCB</p>
-<h3 id="中级调度（内存调度）"><a href="#中级调度（内存调度）" class="headerlink" title="中级调度（内存调度）"></a>中级调度（内存调度）</h3><p>内存不够时，可将某些进程的数据调出外存，等内存空闲或者进程需要运行时再重新调入内存，暂时调到外存等待的进程状态为挂起状态，被挂起的进程PCB会被组织成挂起队列（为减轻系统负载，提高资源利用率）</p>
-<p>中级调度：按照某种策略决定将哪个处于挂起状态的进程重新调入内存，一个进程可能会被多次调出、调入内存，因此中级调度发生的频率要比高级调度更高</p>
-<h4 id="进程的挂起态与七状态模型"><a href="#进程的挂起态与七状态模型" class="headerlink" title="进程的挂起态与七状态模型"></a>进程的挂起态与七状态模型</h4><p>暂时调到外存等待的进程状态为挂起状态（挂起态，suspend），挂起状态又可以进一步细分为就绪挂起、阻塞挂起两种状态</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr45rbraq4j30wm0cwwpl.jpg"></p>
-<h3 id="低级调度（进程调度-处理机调度）"><a href="#低级调度（进程调度-处理机调度）" class="headerlink" title="低级调度（进程调度/处理机调度）"></a>低级调度（进程调度/处理机调度）</h3><p>按照某种策略从就绪队列中选取一个进程，将处理机分配给它</p>
-<p>进程调度是操作系统中最基本的一种调度，在一般的操作系统中都必须配置进程调度，进程调度的频率很高，一般几十毫秒一次</p>
-<h2 id="三层调度的联系、对比"><a href="#三层调度的联系、对比" class="headerlink" title="三层调度的联系、对比"></a>三层调度的联系、对比</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr45th3bwkj30s20a4gun.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/《MySQL必知必会》/联结表、内部联结或等值联结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%81%94%E7%BB%93%E8%A1%A8%E3%80%81%E5%86%85%E9%83%A8%E8%81%94%E7%BB%93%E6%88%96%E7%AD%89%E5%80%BC%E8%81%94%E7%BB%93/" class="article-date">
-      <time datetime="2020-10-17T16:00:00.000Z" itemprop="datePublished">2020-10-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%81%94%E7%BB%93%E8%A1%A8%E3%80%81%E5%86%85%E9%83%A8%E8%81%94%E7%BB%93%E6%88%96%E7%AD%89%E5%80%BC%E8%81%94%E7%BB%93/">联结表、内部联结或等值联结</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>联结表【内部联结或等值联结】</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupddvpbj30bs05i762.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupl3ey2j30bs0hk45s.jpg"></p>
-<p>联结是一种机制，用来在一条SELECT语句中关联表，使用特殊的语法，可以联结多个表返回一组输出，联结在运行时关联表中正确的行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorupv39x6j30b706lq7s.jpg"></p>
-<p>1）<br>SELECT vendname,prodname,prod_price<br>FROM vendors,products<br>WHERE vendors.vendid=products.vendid<br>ORDER BY vendname,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruq4vmywj306p01taac.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqcanemj306p04pgmk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqjjij8j30b701zdh8.jpg"></p>
-<p>笛卡尔积：由没有联结条件的表关系返回的结果为笛卡尔积，检索出的行的数目将是第一个表中的行数乘以第二个表中的行数<br>SELECT vendname,prodname,prod_price<br>FROM vendors,products<br>ORDER BY vendname,prodname;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqqkynyj30760c1ju2.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruqye64rj30760hen1d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorur7bbicj307602xt9c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorurf2qndj30bh06qjvh.jpg"></p>
-<p>2）<br>SELECT vendname,prodname,prod_price<br>FROM vendors INNER JOIN products<br>ON vendors.vendid=products.vendid;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorurn499nj30bc02g409.jpg"></p>
-<p>3)<br>SELECT prodname,vendname,prod_price,quantity<br>FROM orderitems,products,vendors<br>WHERE products.vendid=vendors.vendid<br>   AND orderitems.prodid=products.prodid<br>   AND order_num=20005;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruruabf9j308g02igm6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorus28tl7j30bf023jsx.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/操作系统原理/进程调度的时机、切换与进程调度方式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%E3%80%81%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F/" class="article-date">
-      <time datetime="2020-10-17T16:00:00.000Z" itemprop="datePublished">2020-10-18</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/18/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%E3%80%81%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E6%96%B9%E5%BC%8F/">进程调度的时机、切换与进程调度方式</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="进程调度的时机"><a href="#进程调度的时机" class="headerlink" title="进程调度的时机"></a>进程调度的时机</h2><p>进程调度（低级调度），就是按照某种算法从就绪队列中选择一个进程为其分配处理机</p>
-<h3 id="需要进行进程调度与切换的情况"><a href="#需要进行进程调度与切换的情况" class="headerlink" title="需要进行进程调度与切换的情况"></a>需要进行进程调度与切换的情况</h3><ol>
-<li>当前运行的进程主动放弃处理机<ul>
-<li>进程正常终止</li>
-<li>运行过程中发生异常而终止</li>
-<li>进程主动请求阻塞（如等待I/O）</li>
-</ul>
-</li>
-<li>当前运行的进程被动放弃处理机<ul>
-<li>分给进程的时间片用完</li>
-<li>有更紧急的事需要处理（如I/O中断）</li>
-<li>有更高优先级的进程进入就绪队列</li>
-</ul>
-</li>
-</ol>
-<h3 id="不能进行进程调度与切换的情况"><a href="#不能进行进程调度与切换的情况" class="headerlink" title="不能进行进程调度与切换的情况"></a>不能进行进程调度与切换的情况</h3><ol>
-<li>在处理中断的过程中，中断处理过程复杂，与硬件密切相关，很难做到在中断处理过程中进行进程切换</li>
-<li>进程在操作系统内核程序临界区中</li>
-<li>在原子操作过程中（原语），原子操作不可中断，要一气呵成（如修改PCB中进程状态标志，并把PCB放到相应队列）</li>
-</ol>
-<p>进程在操作系统内核程序临界区中不能进行调度与切换✅</p>
-<p>进程处于临界区时不能进行处理机调度❌</p>
-<p>临界资源：一个时间段内只允许一个进程使用的资源，各进程需要互斥的访问临界资源</p>
-<p>临界区：访问临界资源的那段代码</p>
-<p>内核程序临界区一般是用来访问某种内核数据结构的，比如进程的就绪队列（由各就绪进程的PCB组成）</p>
-<p>假设就绪队列被上锁，进程还没有退出就绪队列（还没解锁）就进行进程调度，但是进程调度相关的程序也需要访问就绪队列，但此时就绪队列被锁住了，因此又无法顺利进行进程调度</p>
-<p>内核程序临界区访问的临界资源如果不尽快释放的话，极有可能影响到操作系统内核的其他管理工作，因此在访问内核程序临界区期间不能进行调度与切换</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr46w9ngh8j30dw098aee.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr46wtgjh2j30dw098jvi.jpg"></p>
-<p>有的系统中，只允许进程主动放弃处理机</p>
-<p>有的系统中，进程可以主动放弃处理机，当有更紧急的任务需要处理时，也会强行剥夺处理机（被动放弃）</p>
-<h2 id="进程调度的方式"><a href="#进程调度的方式" class="headerlink" title="进程调度的方式"></a>进程调度的方式</h2><ol>
-<li>非剥夺调度方式，又称非抢占方式，即只允许进程主动放弃处理机，在运行过程中即便有更紧迫的任务到达，当前进程依然会继续使用处理机，直到该进程终止或主动要求进入阻塞态<ul>
-<li>实现简单，系统开销小但是无法及时处理紧急任务，适合于早期的批处理系统</li>
-</ul>
-</li>
-<li>剥夺调度方式，又称抢占方式，可由操作系统剥夺当前进程的CPU使用权，当一个进程正在处理机上执行时，如果有一个更重要或更紧急的进程需要使用处理机，则立即暂停正在执行的进程，将处理机分配给更重要紧迫的那个进程<ul>
-<li>可以优先处理更紧急的进程，也可实现让各进程按时间片轮流执行的功能（通过时钟中断），适合于分时操作系统、实时操作系统</li>
-</ul>
-</li>
-</ol>
-<h2 id="进程的切换与过程"><a href="#进程的切换与过程" class="headerlink" title="进程的切换与过程"></a>进程的切换与过程</h2><p>“狭义的进程调度”：从就绪队列中选中一个要运行的进程（这个进程可以是刚刚被暂停执行的进程，也可能是另一个进程，后一种情况就需要进程切换）</p>
-<p>进程切换：一个进程让出处理机，由另一个进程占用处理机的过程</p>
-<p>“广义的进程调度”：包含了选择一个进程和进程切换两个步骤</p>
-<p>进程切换的过程主要完成了：</p>
-<ol>
-<li>对原来运行进程各种数据的保存</li>
-<li>对新的进程各种数据的恢复（如程序计数器、程序状态字、各种数据寄存器等处理机现场信息，这些信息一般保存在进程控制块）</li>
-</ol>
-<p>注意：进程切换、调度是有代价的，因此如果过于频繁的进行进程调度、切换，必然会使整个系统的效率降低，使系统大部分时间都花在了进程切换上，而真正用于执行进程的时间减少，并不是调度越频繁，并发度就越高</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/《MySQL必知必会》/创建高级联结、自联结、自然联结、外部联结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93%E3%80%81%E5%A4%96%E9%83%A8%E8%81%94%E7%BB%93/" class="article-date">
-      <time datetime="2020-10-16T16:00:00.000Z" itemprop="datePublished">2020-10-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E8%81%94%E7%BB%93%E3%80%81%E8%87%AA%E7%84%B6%E8%81%94%E7%BB%93%E3%80%81%E5%A4%96%E9%83%A8%E8%81%94%E7%BB%93/">创建高级联结、自联结、自然联结、外部联结</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>创建高级联结【自联结、自然联结、外部联结】</p>
-<p>别名除了用于列名和计算字段外，SQL还允许给表名起别名，这样做有两个主要理由：<br>1）缩短SQL语句<br>2）允许在单条SELECT语句中多次使用相同的表</p>
-<p>1）表别名不仅能用于WHERE子句，它还可以用于SELECT的列表、ORDER BY子句以及语句的其他部分，表别名只在查询执行中使用，与列别名不一样，表别名不返回到客户机<br>SELECT custname,custcontact<br>FROM customers AS c,orders AS o,orderitems AS oi<br>WHERE c.custid=o.custid<br>      AND oi.ordernum=o.ordernum<br>      AND prod_id=’TNT2’;</p>
-<p>2）自联结<br>首先找到生产ID为DTNTR的物品的供应商，然后找出这个供应商生产的其他物品<br>SELECT prodid,prodname<br>FROM products<br>WHERE vendid =(SELECT vendid<br>                                FROM products<br>                                WHERE prod_id=‘DTNTR’);<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorutohlegj304403mjrs.jpg"></p>
-<p>SELECT p1.prodid,p1.prodname<br>FROM products AS p1,products AS p2<br>WHERE p1.vendid=p2.vendid<br>    AND p2.prod_id=‘DTNTR’;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruu2ml4bj304403mdg8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruua9u4xj30br09bjwa.jpg"></p>
-<p>3)无论何时对表进行联结，应该至少有一个列出现在不止一个表中（被联结的列），标准的联结返回所有数据，甚至相同的列多次出现。自然联结排除多次出现，使每个列只返回一次<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruuhpe5zj30br07876z.jpg"></p>
-<p>4）联结包含了那些在相关表中没有关联行的行，这种类型的联结称为外部联结</p>
-<p>检索所有客户及其订单（内部联结）<br>SELECT customers.custid,orders.ordernum<br>FROM customers INNER JOIN orders<br>   ON customers.custid=orders.custid;</p>
-<p>为了检索所有客户，包括那些没有订单的客户（外部联结）：<br>SELECT customers.custid,orders.ordernum<br>FROM customers LEFT OUTER JOIN orders<br>   ON customers.custid=orders.custid;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruupdyqtj303d03a74l.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruv1k1huj30bn0a7jwq.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruv9ietej30b801gmy4.jpg"></p>
-<p>5)检索所有客户及每个客户所下的订单数<br>SELECT customers.cust_name,<br>               customers.cust_id,<br>               COUNT(orders.ordernum) AS numord<br>FROM customers INNER JOIN orders<br>   ON customers.custid=orders.custid<br>GROUP BY customers.cust_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvi4uihj305j02kgly.jpg"></p>
-<p>6)<br>SELECT customers.cust_name,<br>               customers.cust_id,<br>               COUNT(orders.ordernum) AS numord<br>FROM customers LEFT OUTER JOIN orders<br>   ON customers.custid=orders.custid<br>GROUP BY customers.cust_id;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvq5jggj305l01uglt.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruvx2i46j305l01jaa8.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goruw3shg3j30bm06fjtn.jpg"></p>
 
       
     </div>

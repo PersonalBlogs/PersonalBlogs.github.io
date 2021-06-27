@@ -228,6 +228,349 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-计算机基础/《汇编语言(第4版)》/寄存器(CPU工作原理)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)/" class="article-date">
+      <time datetime="2020-10-29T16:00:00.000Z" itemprop="datePublished">2020-10-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AF%84%E5%AD%98%E5%99%A8(CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)/">寄存器(CPU工作原理)</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>—————————————————<br>2.1.通用寄存器<br>2.2.字在寄存器中的存储<br>2.3.几条汇编指令<br>2.4.物理地址<br>2.5.16位结构的CPU<br>2.6.8086CPU给出物理地址的方法<br>2.7.“段地址*16+偏移地址=物理地址”的本质含义<br>2.8.段的概念<br>2.9.段寄存器<br>2.10.CS和IP<br>2.11.修改CS、IP的指令<br>2.12.代码段<br>—————————————————</p>
+<p>一个典型的CPU由运算器、控制器、寄存器(CPU工作原理)等器件组成，这些器件靠内部总线相连</p>
+<p>内部总线实现CPU内部各个器件之间的联系，外部总线实现CPU和主板上其他器件的联系</p>
+<p>在CPU中：<br>1）运算器进行信息处理<br>2）寄存器进行信息存储<br>3）控制器控制各种器件进行工作<br>4）内部总线连接各种器件，在他们之间进行数据的传送</p>
+<p>对于一个汇编程序员来说，CPU中的主要部件是寄存器，寄存器是CPU中程序员可以用指令读写的部件，程序员通过改变各种寄存器中的内容来实现对CPU的控制</p>
+<p>8086CPU有14个寄存器，它们的名称为：<br>AX，BX，CX，DX，<br>SI，DI，SP，BP，<br>CS，IP，<br>SS，DS，ES，PSW</p>
+<p>8086CPU所有的寄存器都是16位的，可以存放两个字节，AX、BX、CX、DX通常用来存放一般性数据被称为通用寄存器<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8shcygwj30e903sdg9.jpg"></p>
+<p>一个16位寄存器可以存储一个16位的数据，所能存储的数据的最大值为2^16-1</p>
+<p>8086上一代CPU中的寄存器都是8位的，为保证兼容性，这四个通用寄存器都可以分为两个独立的8位寄存器使用<br>AX可以分为AH和AL<br>BX可以分为BH和BL<br>CX可以分为CH和CL<br>DX可以分为DH和DL<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8ss5p1mj30g605fwfz.jpg"><br>—————————</p>
+<p>出于对兼容性的考虑，8086CPU可以一次性处理以下两种尺寸的数据：<br>1）字节：记为byte，一个字节由8个bit组成，可以存在8位寄存器中<br>2）字：记为word，一个字由两个字节组成，这两个字节分别称为这个字的高位字节和低位字节<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8t4abvtj306802hgls.jpg"></p>
+<p>为了区分不同的进制，在十六进制表示的数据的后面加H，在二进制表示的数据的后面加B<br>—————————</p>
+<p>在写一条汇编指令或一个寄存器的名称时不区分大小写：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8tjwbmyj30ch03pt9m.jpg"><br>—————————</p>
+<p>CPU访问内存单元时，要给出内存单元的地址，所有的内存单元构成的存储空间是一个一维的线性空间，每一个内存单元在这个空间中都有唯一的地址，我们将这个唯一的地址称为物理地址</p>
+<p>CPU通过地址总线送入存储器的，必须是一个内存单元的物理地址。在CPU向地址总线上发出物理地址之前，必须要在内部先形成这个物理地址，不同的CPU可以有不同的形成物理地址的方式<br>—————————</p>
+<p>概括来讲，16位结构描述了一个CPU具有下面几方面的结构特性：<br>1）运算器一次最多可以处理16位的数据<br>2）寄存器的最大宽度为16位<br>3）寄存器和运算器之间的通路为16位<br>—————————</p>
+<p>8086CPU给出物理地址的方法：</p>
+<p>8086CPU有20位地址总线，又是16位结构，采用一种在内部用两个16位地址合成的方法来形成一个20位的物理地址<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8u1db7lj30aa06ydgo.jpg"></p>
+<p>当8086CPU要读写内存时：<br>1）CPU中的相关部件提供两个16位的地址，一个称为段地址，另一个称为偏移地址<br>2）段地址和偏移地址通过内部总线送入一个称为地址加法器的部件<br>3）地址加法器将两个16位地址合成为一个20位的物理地址<br>4）地址加法器通过内部总线将20位物理地址送入输入输出控制电路<br>5）输入输出控制电路将20位物理地址送上地址总线<br>6）20位物理地址被地址总线传送到存储器<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8ubj36tj30cj06y403.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8ukaiukj30bz08h42f.jpg"></p>
+<p>——————————</p>
+<p>“段地址<em>16+偏移地址=物理地址”的本质含义是：CPU在访问内存时，用一个基础地址（段地址</em>16）和一个相对于基础地址的偏移地址相加，给出内存单元的物理地址<br>——————————</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8uth09bj30au066aar.jpg"><br>在编程时可以根据需要，将若干地址连续的内存单元看作一个段，用段地址<em>16定位段的起始地址（基础地址），用偏移地址定位段中的内存单元<br>1）段地址</em>16必然是16的倍数，所以一个段的起始地址也一定是16的倍数<br>2）偏移地址为16位，16位地址的寻址能力为64KB，所以一个段的长度最大为64KB<br>——————————</p>
+<p>段地址在8086CPU的段寄存器中存放，8086CPU有4个段寄存器：CS，DS，SS，ES<br>——————————</p>
+<p>CS和IP是8086CPU中两个最关键的寄存器，它们指示了CPU当前要读取指令的地址，CS为代码段寄存器，IP为指令指针寄存器</p>
+<p>在8086PC机中，任意时刻，设CS中的内容为M，IP中的内容为N，8086CPU将从内存M*16+N单元开始，读取一条指令并执行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8w0hau0j30c409hju7.jpg"></p>
+<p>8086CPU读取、执行一条指令的过程：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8w92jsrj30c405kq4e.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8wgrgaxj30c405kmym.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8woipllj30c405kgmz.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8wvqrskj30c405k75o.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8x2wtnpj30c405fabk.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8x9k43hj30c405f0u6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8xguwhdj30c406f0uf.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8xntv5ij30c405edh6.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8xvhssgj30c405vq4c.jpg"></p>
+<p>1）从CS：IP指向的内存单元读取指令，读取的指令进入指令缓冲器<br>2）IP=IP+所读取指令的长度，从而指向下一条指令<br>3）执行指令，转到步骤1），重复这个过程<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8y47ydgj30c401jwey.jpg"></p>
+<p>CPU将CS：IP指向的内存单元中的内容看作指令<br>—————————</p>
+<p>程序员可以通过改变CS、IP中的内容来控制CPU执行目标指令</p>
+<p>8086CPU大部分寄存器的值，都可以用mov指令来改变，mov指令被称为传送指令，但是mov指令不能用于设置CS、IP的值；能够改变CS、IP的内容的指令被统称为转移指令（jmp指令）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8yjgr77j30c402z0tg.jpg"></p>
+<p>若想仅修改IP的内容，可用形如“jmp 某一合法寄存器”的指令完成：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8yskyiej30c40383z6.jpg"></p>
+<p>——————————<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor8z1g7l7j30cm087gnz.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《MySQL必知必会》/SHOW语句HELP SHOW" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/SHOW%E8%AF%AD%E5%8F%A5HELP%20SHOW/" class="article-date">
+      <time datetime="2020-10-29T16:00:00.000Z" itemprop="datePublished">2020-10-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/SHOW%E8%AF%AD%E5%8F%A5HELP%20SHOW/">SHOW语句HELP SHOW</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>SHOW语句【HELP SHOW;】：</p>
+<p>可使用的数据库名：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort3y5xv0j308l04oglt.jpg"></p>
+<p>USE选择数据库（必须先使用USE打开数据库，才能读取其中的数据）</p>
+<p>SHOW TABLES；返回当前选择的数据库内可用表的列表<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort49cdbcj30dn0hiq44.jpg"></p>
+<p>SHOW COLUMNS FROM…….【DESCRIBE…..】（从某个表中查找）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort4k3h1oj30ge0dawga.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gort4ti7vdj30eu0b93zh.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/操作系统原理/操作系统的四个特征" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81/" class="article-date">
+      <time datetime="2020-10-29T16:00:00.000Z" itemprop="datePublished">2020-10-30</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81/">操作系统的四个特征</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="操作系统的特征"><a href="#操作系统的特征" class="headerlink" title="操作系统的特征"></a>操作系统的特征</h2><ol>
+<li>并发</li>
+<li>共享</li>
+<li>虚拟</li>
+<li>异步</li>
+</ol>
+<p>并发和共享是操作系统两个最基本的特征，二者互为存在条件</p>
+<h3 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h3><p>并发是指两个或多个事件在同一时间间隔内发生，这些事件宏观上是同时发生的，但微观上是交替发生的</p>
+<p>并行是指两个或多个事件在同一时刻同时发生</p>
+<p>操作系统的并发性是指计算机系统中“同时”运行着多个程序，这些程序宏观上看是同时运行着的，而微观上看是交替运行的，操作系统就是伴随着“多道程序技术”而出现的，因此操作系统和程序并发是一起诞生的</p>
+<p>单核CPU同一时刻只能执行一个程序，各个程序只能并发的执行</p>
+<p>多核CPU同一时刻可以同时执行多个程序，多个程序可以并行的执行</p>
+<p>即使是对于4核CPU来说，只要有4个以上的程序需要“同时”运行，那么并发性依然是必不可少的，因此并发性是操作系统一个最基本的特性</p>
+<h3 id="共享"><a href="#共享" class="headerlink" title="共享"></a>共享</h3><p>共享即资源共享，是指系统中的资源可供内存中多个并发执行的进程共同使用</p>
+<ul>
+<li>互斥共享方式：系统中的某些资源，虽然可以提供给多个进程使用，但一个时间段内只允许一个进程访问该资源【摄像头】</li>
+<li>同时共享方式：系统中的某些资源，允许一个时间段内由多个进程“同时”对它们进行访问，所谓的“同时”往往是宏观上的，而在微观上，这些进程可能是交替的对该资源进行访问（即分时共享）【硬盘资源】</li>
+</ul>
+<h3 id="并发和共享的关系"><a href="#并发和共享的关系" class="headerlink" title="并发和共享的关系"></a>并发和共享的关系</h3><p>并发性指计算机系统中同时存在着多个运行着的程序</p>
+<p>共享性是指系统中的资源可供内存中多个并发执行的进程共同使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">使用QQ发送文件A，同时使用微信发送文件B</span><br><span class="line">1.两个进程正在并发执行（并发性）</span><br><span class="line">2.需要共享的访问硬盘资源（共享性）</span><br><span class="line"></span><br><span class="line">如果失去并发性，则系统中只有一个程序正在运行，则共享性失去存在的意义</span><br><span class="line">如果失去共享性，则QQ和微信不能同时访问硬盘资源，就无法实现同时发送文件，也就无法并发</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟"><a href="#虚拟" class="headerlink" title="虚拟"></a>虚拟</h3><p>虚拟是指把一个物理上的实体变成若干个逻辑上的对应物，物理实体是实际存在的，而逻辑上对应物是用户感受到的</p>
+<ul>
+<li>空分复用技术：如虚拟存储器技术</li>
+<li>时分复用技术：如虚拟处理器技术</li>
+<li>显然，如果失去了并发性，则一个时间段内系统中只需运行一道程序，那么就失去了实现虚拟性的意义了，因此，没有并发性，就谈不上虚拟性</li>
+</ul>
+<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步是指，在多道程序环境下，允许多个程序并发执行，但由于资源有限，进程的执行不是一贯到底的，而是走走停停，以不可预知的速度向前推进，这就是进程的异步性</p>
+<p>如果失去了并发性，即系统只能串行的运行各个程序，，那么每个程序的执行会一贯到底，只有系统拥有并发性，才有可能导致异步性</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-计算机基础/《汇编语言(第4版)》/实验1、查看CPU和内存，用机器指令和汇编指令编程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2020/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C1%E3%80%81%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/" class="article-date">
+      <time datetime="2020-10-28T16:00:00.000Z" itemprop="datePublished">2020-10-29</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2020/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E5%AE%9E%E9%AA%8C1%E3%80%81%E6%9F%A5%E7%9C%8BCPU%E5%92%8C%E5%86%85%E5%AD%98%EF%BC%8C%E7%94%A8%E6%9C%BA%E5%99%A8%E6%8C%87%E4%BB%A4%E5%92%8C%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A8%8B/">实验1、查看CPU和内存，用机器指令和汇编指令编程</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Debug是DOS、Windows都提供的实模式（8086方式）程序的调试工具，使用它可以查看CPU各种寄存器的内容、内存的情况和在机器码级跟踪程序的运行</p>
+<p>Debug功能：<br>1）R：查看、改变CPU寄存器的内容<br>2）D：查看内存中的内容<br>3）E：改写内存中的内容<br>4）U：将内存中的机器指令翻译成汇编指令<br>5）T：执行一条机器指令<br>6）A：以汇编指令的格式在内存中写入一条机器指令<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9276jodj30hs0bstb3.jpg"></p>
+<p>1）使用R命令查看、修改CPU中各个寄存器的内容：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor92hm5baj30hu05et8y.jpg"></p>
+<p>2）用Debug的D命令查看内存中的内容<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor92q99vmj30hu04i0sv.jpg"></p>
+<p>a.中间是从指定地址开始的128个内存单元的内容，用十六进制的格式输出，每行的输出从16的整数倍的地址开始，最多输出16个单元的内容<br>b.左边是每行的起始地址<br>c.右边是每个内存单元中的数据对应的可显示的ASCII码字符<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor930ucdxj30hu04ymxb.jpg"></p>
+<p>直接使用D命令，将列出Debug预设的地址处的内容<br>在使用“d 段地址：偏移地址”之后，接着使用D命令，可列出后续的内容<br>也可以指定D命令的查看范围：“d 段地址：起始偏移地址 结尾偏移地址”<br>只想查看内存单元10000H中的内容：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor93ch6c2j30hu0163yg.jpg"></p>
+<p>3）用Debug的E命令改写内存中的内容<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor93qxd7bj30hu02swej.jpg"></p>
+<p>也可以采用提问的方式一个一个的改写内存中的内容：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9420rjyj30hu03c74c.jpg"></p>
+<p>可以用E命令向内存中写入字符、字符串<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor94c34y2j30hu02qgln.jpg"></p>
+<p>4）用E命令向内存中写入机器码，用U命令查看内存中机器码的含义，用T命令执行内存中的机器码</p>
+<p>向内存中写入机器码：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor94lge2hj303z02hglo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor94yujp2j30hu00x748.jpg"></p>
+<p>查看写入的或内存中原有的机器码所对应的汇编指令：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor95a2d9vj30bv07fweq.jpg"></p>
+<p>U命令的显示输出分为3部分：每一条机器指令的地址、机器指令、机器指令所对应的汇编指令</p>
+<p>T命令可以执行一条或多条指令，简单的使用T命令，可以执行CS：IP指向的指令<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor95j1161j30ht04ft8w.jpg"></p>
+<p>若要用T命令控制CPU执行我们写到1000:0的指令，必须先让CS：IP指向1000:0<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor95rhjc9j30ht04mwel.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9610yqlj30ht0773yu.jpg"></p>
+<p>5）用Debug的A命令以汇编指令的形式在内存中写入机器指令<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor96bstguj30ht051dfy.jpg"></p>
+<p>简单的使用A命令，可以从一个预设的地址开始输入指令</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-计算机基础/《MySQL必知必会》/检索数据SELECT语句" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -700,333 +1043,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/《MySQL必知必会》/过滤数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2020-10-26T16:00:00.000Z" itemprop="datePublished">2020-10-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE/">过滤数据</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>过滤数据</p>
-<p>1）只返回prod_price值为2.50的行<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price=2.50;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortb74hxbj304h01y0sy.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbdgfqkj30b701y3zv.jpg"></p>
-<p>2）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbjxonjj308i05nwf2.jpg"></p>
-<p>3）MySQL在执行匹配时默认不区分大小写，所以fuses与Fuses匹配<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_name=‘fuses’;【注意单引号】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortbtr4awj303t01jglq.jpg"></p>
-<p>4）<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price&lt;10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortc1kroej304h03oaai.jpg"></p>
-<p>5)列出不是由供应商1003制造的所有产品<br>SELECT vendid,prodname<br>FROM products<br>WHERE vend_id&lt;&gt;1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortc91h1jj303v03nwex.jpg"></p>
-<p>6）检索价格在5美元和10美元之间的所有产品<br>SELECT prodname,prodprice<br>FROM products<br>WHERE prod_price BETWEEN 5 AND 10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortcgfxiyj304j02vdg6.jpg"></p>
-<p>7）NULL：无值，它与字段包含0、空字符串或仅仅包含空格不同<br>这条语句返回没有价格（空prod_price字段，不是价格为0）的所有产品<br>SELECT prod_name<br>FROM products<br>WHERE prod_price IS NULL;</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/操作系统原理/中断和异常" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8/" class="article-date">
-      <time datetime="2020-10-26T16:00:00.000Z" itemprop="datePublished">2020-10-27</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8/">中断和异常</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="中断的作用"><a href="#中断的作用" class="headerlink" title="中断的作用"></a>中断的作用</h2><p>“中断”是让操作系统内核夺回CPU使用权的唯一途径，中断会让CPU由用户态变为内核态</p>
-<p>如果没有“中断”机制，那么一旦应用程序上CPU运行，CPU就会一直运行这个应用程序，既如此，何来并发。</p>
-<h2 id="中断的类型"><a href="#中断的类型" class="headerlink" title="中断的类型"></a>中断的类型</h2><h3 id="内中断（也称“异常”）"><a href="#内中断（也称“异常”）" class="headerlink" title="内中断（也称“异常”）"></a>内中断（也称“异常”）</h3><ol>
-<li>陷阱、陷入（trap）：由陷入指令引发，是应用程序故意引发的</li>
-<li>故障（fault）：由错误条件引起的，可能被内核程序修复。内核程序修复故障后会把CPU使用权还给应用程序，让它继续执行下去（缺页故障）</li>
-<li>终止（abort）：由致命错误引起，内核程序无法修复该错误，因此一般不再将CPU使用权还给引发终止的应用程序（整数除0，非法使用特权指令）</li>
-</ol>
-<p>与当前执行的指令有关，中断信号来源于CPU内部</p>
-<p>若当前执行的指令是非法的，则会引发一个中断信号</p>
-<ul>
-<li>试图在用户态下执行特权指令</li>
-<li>执行除法指令时发现除数为0</li>
-<li>有时候应用程序想请求操作系统内核的服务，此时会执行一条特殊的指令：陷入指令，该指令会引发一个内部中断信号，执行陷入指令，意味着应用程序主动的将CPU控制权还给操作系统内核，“系统调用”就是通过陷入指令完成的（注意陷入指令并不是特权指令）（陷入指令 = trap指令 = 访管指令）</li>
-</ul>
-<h3 id="外中断（也称“中断”）"><a href="#外中断（也称“中断”）" class="headerlink" title="外中断（也称“中断”）"></a>外中断（也称“中断”）</h3><p>与当前执行的指令无关，中断信号来源于CPU外部</p>
-<ul>
-<li>时钟中断：由时钟部件发来的中断信号，时钟部件每隔一个时间片会给CPU发送一个时钟中断信号（多个应用程序的并发运行）</li>
-<li>I/O中断：由输入/输出设备发来的中断信号（打印机）</li>
-</ul>
-<h2 id="中断机制的基本原理"><a href="#中断机制的基本原理" class="headerlink" title="中断机制的基本原理"></a>中断机制的基本原理</h2><p>检查中断信号：</p>
-<p>内中断：CPU在执行指令时会检查是否有异常发生</p>
-<p>外中断：每一条指令执行结束时，CPU都会例行检查是否有外中断信号需要处理</p>
-<p>不同的中断信号，需要用不同的中断处理程序来处理。当CPU检测到中断信号后，会根据中断信号的类型去查询“中断向量表”，以此来找到相应的中断处理程序在内存中的存放位置</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gr2vu3rw3ej30qq0fwjz5.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" rel="tag">操作系统原理</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/《汇编语言(第4版)》/第一个程序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/" class="article-date">
-      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(%E7%AC%AC4%E7%89%88)%E3%80%8B/%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F/">第一个程序</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>———————————————————<br>4.1.一个源程序从写出到执行的过程<br>4.2.源程序<br>4.3.编辑源程序<br>4.4.编译<br>4.5.连接<br>4.6：1.exe的执行<br>4.7.谁将可执行文件中的程序装载进入内存并使它运行？<br>4.8.程序执行过程的跟踪<br>———————————————————</p>
-<p>1）编写汇编源程序：使用文本编辑器，用汇编语言编写汇编源程序，这一步工作的结果是产生了一个存储源程序的文本文件<br>2）对源程序进行编译连接：使用汇编语言编译程序对源程序文件中的源程序进行编译，产生目标文件；再用连接程序对目标文件进行连接，生成可在操作系统中直接运行的可执行文件</p>
-<p>可执行文件包含两部分内容：程序（从源程序中的汇编指令翻译过来的机器码）和数据（源程序中定义的数据）、相关的描述信息（比如程序有多大、要占用多少内存空间）</p>
-<p>这一步工作的结果，产生了一个可在操作系统中运行的可执行文件</p>
-<p>3）执行可执行文件中的程序，在操作系统中，执行可执行文件中的程序，操作系统依照可执行文件中的描述信息，将可执行文件中的机器码和数据加载入内存，并进行相关的初始化（比如设置CS：IP指向第一条要执行的指令），然后由CPU执行程序<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9iigj9yj30670aqq3q.jpg"><br>———————————————</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9irqdw3j30670640sz.jpg"><br>1）伪指令：在汇编语言源程序中，包含两种指令，一种是汇编指令，一种是伪指令。汇编指令是有对应的机器码的指令，可以被编译为机器指令，最终为CPU所执行。而伪指令没有对应的机器指令，最终不被CPU所执行，伪指令是由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作</p>
-<p>segment和ends是一对成对使用的伪指令，功能是定义一个段<br>end是一个汇编程序的结束标记，标记整个程序的结束<br>assume假设某一段寄存器和程序中的某一个用segment…ends定义的段相关联<br>2）源程序中的“程序”<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9j41kahj30bh06vgmu.jpg"></p>
-<p>3）标号：一个标号指代了一个地址，比如codesg在segment的前面，作为一个段的名称，这个段的名称最终将被编译、连接程序处理为一个段的段地址<br>4）程序的结构<br>5）程序返回：一个程序结束后，将CPU的控制权交还给使它得以运行的程序，称这个过程为程序返回<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jdcrjsj30cv03674y.jpg"></p>
-<p>6）语法错误和逻辑错误<br>程序在编译时被编译器发现的错误是语法错误<br>在源程序编译后，在运行时发生的错误是逻辑错误，语法错误容易发现，也容易解决，而逻辑错误通常不容易被发现<br>——————————————</p>
-<p>编辑源程序：</p>
-<p>可以用任意的文本编辑器来编辑源程序，只要最终将其存储为纯文本文件即可<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jpk741j30hr0brdgo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9jyhfazj30hr0brt9d.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9k6ml35j30hu0brmy2.jpg"></p>
-<p>———————————————</p>
-<p>编译：<br>在编译过程中，我们提供了一个输入，即源程序文件，最多可以得到3个输出：目标文件（.obj）、列表文件（.lst）、交叉引用文件（.crf），这3个输出文件中，目标文件是我们最终要得到的结果，而另外两个只是中间结果<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9khvb94j30hr06s3yq.jpg"></p>
-<p>———————————————</p>
-<p>连接：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9kr11m2j30hr05l0sw.jpg"><br>连接的作用：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9kz6alvj30ce04hwg7.jpg"></p>
-<p>最终生成3个文件：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9l7tndej305p02kaa2.jpg"><br>————————————————</p>
-<p>1.exe的执行：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lgim9oj30hu011zk7.jpg"><br>————————————————</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lo749pj30by081adv.jpg"><br>在DOS中直接执行1.exe时，是正在运行的command，将1.exe中的程序加载入内存，command设置CPU的CS：IP指向程序的第一条指令（即程序的入口），从而使程序得以运行，程序运行结束后，返回到command中，CPU继续运行command<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9lz4scxj30bz022q3u.jpg"></p>
-<p>————————————————</p>
-<p>程序执行过程的跟踪（Debug）：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9masapnj30c302j750.jpg"></p>
-<p>为了观察程序的运行过程，可以使用Debug，Debug可以将程序加载入内存，设置CS：IP指向程序的入口，但Debug并不放弃对CPU的控制</p>
-<p>CX中存放的是程序的长度，1.exe中程序的机器码共有15个字节<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9mmcsm7j30hu02tt8s.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9mv2tlaj30cg0gvdkj.jpg"></p>
-<p>DS的值为075A，则PSP的地址为075A：0，程序的地址为076A：0（即075A+10:0）</p>
-<p>源程序中的指令是mov ax,0123H，在Debug中记为mov ax,0123，这是因为Debug默认所有数据都用十六进制表示</p>
-<p>可以用U命令看一下其他指令：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9n62hfrj30bz07laac.jpg"></p>
-<p>T命令单步执行程序中的每一条指令：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9neti40j30ht0bpgmm.jpg"></p>
-<p>到了int 21，我们要用P命令执行：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9np1chlj30ht044mx9.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gor9nwyahtj30cw044q3w.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8A%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%AC%AC4%E7%89%88-%E3%80%8B/" rel="tag">《汇编语言(第4版)》</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-计算机基础/《MySQL必知必会》/数据过滤" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/" class="article-date">
-      <time datetime="2020-10-25T16:00:00.000Z" itemprop="datePublished">2020-10-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/10/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/">数据过滤</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>数据过滤</p>
-<p>操作符：用来联结或改变WHERE子句中的子句的关键字，也称为逻辑操作符</p>
-<p>1）AND:用在WHERE子句中的关键字，用来指示检索满足所有给定条件的行<br>SELECT prodid,prodname,prod_price<br>FROM products<br>WHERE vendid=1003 AND prodprice&lt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortdqrq6dj306402zjrw.jpg"></p>
-<p>2)OR：用来表示检索匹配任一给定条件的行<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vendid=1002 OR vendid=1003;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortdy8cwwj304k04edgd.jpg"></p>
-<p>3）<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vendid=1002 OR vendid=1003 AND prod_price&gt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorte6be0aj304k03cgm0.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorted4pwej30bo03z0uo.jpg"></p>
-<p>SELECT prodname,prodprice<br>FROM products<br>WHERE (vendid=1002 OR vendid=1003) AND prod_price&gt;=10;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gorteko0dsj304n02lmxh.jpg"></p>
-<p>4)IN WHERE子句中用来指定要匹配值的清单的关键字，功能与OR相当<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vend_id IN(1002,1003)<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortevao5yj304m04fq3h.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortf1wwppj30aq03a75q.jpg"></p>
-<p>5）NOT WHERE子句中用来否定后跟条件的关键字<br>SELECT prodname,prodprice<br>FROM products<br>WHERE vend_id NOT IN(1002,1003)<br>ORDER BY prod_name;<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortf9n2m6j304c02w0t3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gortfgap23j30ba021abh.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%80%8AMySQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" rel="tag">《MySQL必知必会》</a></li></ul>
     </div>
 
       

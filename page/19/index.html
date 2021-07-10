@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-数据结构、算法笔记/二叉树的遍历" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/@synthesize" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/" class="article-date">
-      <time datetime="2019-12-28T16:00:00.000Z" itemprop="datePublished">2019-12-29</time>
+      <a  href="/2019/08/28/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@synthesize/" class="article-date">
+      <time datetime="2019-08-27T16:00:00.000Z" itemprop="datePublished">2019-08-28</time>
 </a>
 
     </div>
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">二叉树的遍历</a>
+      <a  class="article-title" href="/2019/08/28/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@synthesize/">synthesize</a>
     </h1>
   
 
@@ -258,13 +258,16 @@
       
           
         <hr>
-<p>二叉树的遍历：按某条搜索路径访问树中的每个结点，树的每个结点均被访问一次，而且只访问一次</p>
-<p>先序遍历(递归实现)：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopd2tyr52j31830u0ac3.jpg"></p>
-<p>中序遍历(递归实现)：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopd38ntk9j31ac0mtdhj.jpg"></p>
-<p>中序遍历非递归算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopd59z6y6j30u00v4n0s.jpg"></p>
-<p>后序遍历(递归实现)：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopd3wuuajj31ac0komyv.jpg"></p>
-<p>层次遍历：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopd5qwrfvj30v30u0whs.jpg"></p>
-<p>由遍历序列构造二叉树：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopd79baymj31ac0i00u5.jpg"></p>
+<p>作用：自动生成getter、setter方法的实现，所以应该写在类的实现之中</p>
+<p>语法：<code>@synthesize @property名称;</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3vbvx6cj307005975d.jpg"></p>
+<p>@synthesize做的事情：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3vjw8cij307008ign5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3vqcbuyj30es03u76r.jpg"></p>
+<p>问题：<br>希望@synthesize不要去自动生成私有属性了，getter和setter的实现中操作我们已经写好的属性就可以了</p>
+<p>语法：@synthesize @property名称 = 已经存在的属性名;【@synthesize age=_age;】<br>1）不会再去生成私有属性<br>2）直接生成setter和getter的实现<br>Setter的实现：把参数的值直接赋值给指定的属性，是没有做任何逻辑验证的<br>Getter的实现：直接返回指定的属性的值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3vxa8p7j305y058q3o.jpg"></p>
+<p>如果setter或者getter有自己的逻辑验证，那么就自己在类的实现中重写就可以了</p>
+<p>批量声明：<br>1）如果多个@property的类型一致，可以批量声明</p>
+<p><code>@property float height,weight;</code></p>
+<p>2）@synthesize也可以批量声明（类型不一致也可以）</p>
+<p><code>@synthesize name = _name,age = _age,weight = _weight,height = _height;</code></p>
 
       
     </div>
@@ -273,11 +276,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -297,11 +304,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/线索二叉树" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/@property增强（Xcode4.4之后）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/" class="article-date">
-      <time datetime="2019-12-27T16:00:00.000Z" itemprop="datePublished">2019-12-28</time>
+      <a  href="/2019/08/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%A2%9E%E5%BC%BA%EF%BC%88Xcode4.4%E4%B9%8B%E5%90%8E%EF%BC%89/" class="article-date">
+      <time datetime="2019-08-26T16:00:00.000Z" itemprop="datePublished">2019-08-27</time>
 </a>
 
     </div>
@@ -315,7 +322,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/28/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/">线索二叉树</a>
+      <a  class="article-title" href="/2019/08/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%A2%9E%E5%BC%BA%EF%BC%88Xcode4.4%E4%B9%8B%E5%90%8E%EF%BC%89/">property增强（Xcode4.4之后）</a>
     </h1>
   
 
@@ -327,7 +334,8 @@
       
           
         <hr>
-<p>线索化：若无左子树，则将左指针指向其前驱结点；若无右子树，则将右指针指向其后继结点<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopgr2lc96j30yz0u0n1a.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gopgs3t0jxj31780u0418.jpg"></p>
+<p>只需要写一个@property，编译器就会自动的<br>1）生成私有属性<br>2）生成getter、setter的声明<br>3）生成getter、setter的实现<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wfia8pj307j03vaav.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wm8ffrj30he04dwh7.jpg"></p>
+<p>使用注意：<br>1）@property的类型一定要和属性的类型一致，名称要和属性的名称一致，只是去掉下划线<br>2）也可以批量声明相同类型的@property<br>3）@property生成的方法实现没有做任何的逻辑验证<br>setter：直接赋值<br>getter：直接返回<br>所以我么可以重写setter来自定义验证逻辑，如果重写了setter还会自动生成getter，如果重写了getter还会自动生成setter；如果同时重写setter和getter，那么就不会自动生成私有属性了，那么就自己定义一个私有属性就可以了<br>4）如果你想为类写一个属性，并且为这个属性封装setter和getter，一个@property就搞定<br>5）父类的@property一样可以被子类继承，@property生成的属性是私有的，在子类的内部无法直接访问生成的私有属性，但是可以通过setter和getter来访问<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wsxxq1j305m04dt9c.jpg"></p>
 
       
     </div>
@@ -336,11 +344,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -360,11 +372,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/树的存储结构" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/动态类型和静态类型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="article-date">
-      <time datetime="2019-12-26T16:00:00.000Z" itemprop="datePublished">2019-12-27</time>
+      <a  href="/2019/08/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <time datetime="2019-08-25T16:00:00.000Z" itemprop="datePublished">2019-08-26</time>
 </a>
 
     </div>
@@ -378,7 +390,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">树的存储结构</a>
+      <a  class="article-title" href="/2019/08/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/">动态类型和静态类型</a>
     </h1>
   
 
@@ -390,18 +402,15 @@
       
           
         <hr>
-<p>双亲表示法：采用一组连续的存储空间来存储每个结点，同时在每个结点中增设一个伪指针，指示双亲结点在数组中的位置，根结点的下标为0，其伪指针域为-1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#define MAX_TREE_SIZE 100</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int data;</span><br><span class="line">    int parent;</span><br><span class="line">&#125;PINode;</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    PINode nodes[MAX_TREE_SIZE];</span><br><span class="line">    int n;</span><br><span class="line">&#125;PTree;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>OC是一门弱语言：编译器在编译的时候，语法检查的时候没有那么严格，不管你怎么写都是可以的</p>
+<p>强类型的语言：编译器在编译的时候，做语法检查的时候，行就是行，不行就是不行</p>
+<p>静态类型：指的是一个指针指向的对象是一个本类对象<br>动态类型：指的是一个指针指向的对象不是本类对象</p>
+<p>编译检查：编译器在编译的时候，能不能通过一个指针去调用指针指向的对象的方法？判断原则：看指针所属的类型之中是否有这个方法，如果有就认为可以调用，编译通过，如果这个类中没有，那么编译报错【苹果下的编译器的名字叫LLVM】</p>
+<p>我们可以将指针的类型做转换，来达到骗过编译器的目的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Animal *a1&#x3D;[Pig new];</span><br><span class="line">[(Pig *)a1 eat];</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goq3k7mun6j30vm0kot9p.jpg"></p>
-<p>孩子表示法：将每个结点的孩子结点都用单链表连接起来形成一个线性结构，n个结点具有n个孩子链表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#define MAX_TREE_SIZE 100</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int child;</span><br><span class="line">    struct CNode *next;</span><br><span class="line">&#125;CNode;</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct CNode *child;</span><br><span class="line">&#125;PNode;</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    PNode nodes[MAX_TREE_SIZE];</span><br><span class="line">    int n;</span><br><span class="line">&#125;CTree;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goq40hujrgj31ac0ol3zu.jpg"></p>
-<p>孩子兄弟表示法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goq4czekfgj311z0u0gnq.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct CSNode&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct CSNode *firstchild,*nextsibling;</span><br><span class="line">&#125;CSNode,CSTRee;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>双亲表示法：寻找结点的双亲结点效率高，寻找结点的孩子结点效率低<br>孩子表示法：寻找结点的孩子结点效率高，寻找结点的双亲结点效率低<br>孩子兄弟表示法：寻找结点的孩子结点效率高，方便实现树转换为二叉树，寻找双亲结点的效率低</p>
+<p>运行检查：编译检查只是骗过了编译器，但是这个方法究竟能不能执行？<br>所以在运行的时候，会去检查对象中是否真的有这个方法，如果有就执行，如果没有就报错</p>
+<p>LSP父类指针指向子类对象，实际上任意的指针可以指向任意的对象，编译器是不会报错的；当一个子类指针指向一个父类对象的时候，编译器允许通过子类指针去调用子类独有的方法，但是在运行的时候是会出问题的，因为父类对象中根本没有子类成员</p>
 
       
     </div>
@@ -410,11 +419,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -434,11 +447,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/树和森林" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/NSObject指针和id指针" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/" class="article-date">
-      <time datetime="2019-12-25T16:00:00.000Z" itemprop="datePublished">2019-12-26</time>
+      <a  href="/2019/08/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/" class="article-date">
+      <time datetime="2019-08-24T16:00:00.000Z" itemprop="datePublished">2019-08-25</time>
 </a>
 
     </div>
@@ -452,7 +465,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97/">树和森林</a>
+      <a  class="article-title" href="/2019/08/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/">NSObject指针和id指针</a>
     </h1>
   
 
@@ -464,18 +477,337 @@
       
           
         <hr>
-<p>树与二叉树的转换：左孩子右兄弟<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou2mauf1hj312c0u0mzz.jpg"></p>
-<p>森林与二叉树的转换：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou3jdpte1j31390u0n0c.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou3jmsedkj30y60u0ad3.jpg"></p>
-<p>树的遍历：按照某种方式访问树中的每个结点，且仅访问一次</p>
-<ol>
-<li>先根遍历：若树非空，则先访问根结点，再按从左到右的顺序遍历根结点的每棵子树</li>
-<li>后根遍历：若树非空，则先按从左到右的顺序遍历根结点的每棵子树，再访问根结点</li>
-<li>层次遍历<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou401u3tyj30sc0lq752.jpg"></li>
+<p>NSObject是OC中所有类的基类，根据LSP，NSObject指针就可以指向任意的OC对象，所以，NSObject指针是一个万能指针，可以指向任意的OC对象</p>
+<p>缺点：如果要调用指向的子类对象的独有的方法，就必须要做类型转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSObject *obj1&#x3D;[Person new];</span><br><span class="line">[(Person *)obj1 sayHi];</span><br><span class="line"></span><br><span class="line">NSObject *obj2&#x3D;[Student new];</span><br><span class="line">[(Student *)obj2 study];</span><br><span class="line"></span><br><span class="line">NSObject *obj3&#x3D;@&quot;jack&quot;;</span><br><span class="line">[(NSString *)obj3 length];</span><br></pre></td></tr></table></figure>
+
+<p>id指针：是一个万能指针，可以指向任意的OC对象</p>
+<p>id是一个typedef自定义类型，在定义的时候已经加了<em>，所以，声明id指针的时候不需要再加</em>了</p>
+<p>通过NSObject指针去调用对象的方法的时候，编译器会做编译检查<br>通过id类型的指针去调用对象的方法的时候，编译器直接通过，无论你调用什么方法【该运行错误的还是运行错误】</p>
+<p>注意：id指针只能调用对象的方法，不能使用点语法，如果使用点语法就会直接报编译错误</p>
+<p>如果我们要声明一个万能指针，不要使用NSObject，而是使用id</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/instancetype：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/instancetype%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-23T16:00:00.000Z" itemprop="datePublished">2019-08-24</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/instancetype%EF%BC%9A/">instancetype：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>父类中的类方法创建一个父类对象返回:<br>1）如果返回值写为父类类型的，那么子类来调用这个方法得到的就是父类指针，解决方式：把返回值改为id类型的<br>2）方法的内部创建对象的时候，不要写死了，因为写死创建的对象就固定了，我们希望哪一个类来调用这个方法就创建哪一个类的对象，解决方式：把类名写为self，哪一个类来调用这个方法，self就指的是哪一个类，创建的就是哪一个类的对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3xl2ab3j305401u3yr.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3xsac6yj308o04k3zo.jpg"><br>3）方法的返回值是id类型的，问题就是任意指针都可以接收这个方法的返回值，编译器连个警告都没有<br>解决方式：如果方法的返回值是instancetype，代表方法的返回值是当前这个类的对象</p>
+<p>使用建议：<br>1）如果方法内部是在创建当前类的对象，不要写死成类名[类名 new];而是用self代替类名<br>2）如果方法的返回值是当前类的对象，也不要写死了，而是写成instancetype</p>
+<p>id和instancetype的区别：<br>1）instancetype只能作为方法的返回值，不能在其他地方使用<br>id既可以声明指针变量，也可以作为参数，也可以作为返回值<br>2）instancetype是一个有类型的，代表当前类的对象<br>id是一个无类型的指针，仅仅是一个地址</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/动态类型检测：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-22T16:00:00.000Z" itemprop="datePublished">2019-08-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%B5%8B%EF%BC%9A/">动态类型检测：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>编译——运行</p>
+<p>我们就希望，可以写代码来先判断一下对象中是否有这个方法，如果有再去执行，如果没有就不去执行</p>
+<p>1）判断对象中是否有指定的对象方法【最常用】<br><code>* (BOOL)respondsToSelector:(SEL)aSelector;</code></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3yinfucj30ck081q4i.jpg"></p>
+<p>2）判断类中是否有指定的类方法【最常用】<br><code>+ (BOOL)instancesRespondToSelector:(SEL)aSelector;</code></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3yr2d5dj30c701jjru.jpg"></p>
+<p>3）判断指定的对象是否为指定类的对象或者子类对象<br><code>* (BOOL)isKindOfClass:(Class)aClass;【判断s1对象是否为NSObject对象或者NSObject的子类对象】</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3yyfn8kj30ck03eq3s.jpg"></p>
+<p>4）判断对象是否为指定类的对象，不包括子类<br><code>* (BOOL)isMemberOfClass:(Class)aClass;</code></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3z5pubqj30ck03e3zb.jpg"></p>
+<p>5）判断类是否为另外一个类的子类<br><code>+ (BOOL)isSubclassOfClass:(Class)aClass;</code></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3zdfgttj309l01jwet.jpg"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/构造方法：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-21T16:00:00.000Z" itemprop="datePublished">2019-08-22</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%9A/">构造方法：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>类名 *指针名=[类名 new];</p>
+<p>new方法的内部，其实是先调用的alloc方法，再调用的init方法</p>
+<p>alloc方法是一个类方法，作用：哪一个类调用这个方法，就创建哪个类的对象，并把对象返回<br>init方法是一个对象方法，作用：初始化对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3zv5vdcj306r023q3h.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4014u9pj308p0233z0.jpg"></p>
+<p>创建对象的完整步骤：应该先使用alloc创建一个对象，然后再使用init初始化这个对象，才可以使用这个对象；虽然没有初始化的对象有的时候也可以使用，但是千万不要这么做，使用一个未经初始化的对象是极其危险的</p>
+<hr>
+<p>init方法（构造方法）：</p>
+<p>作用：初始化对象，为对象的属性赋初始值</p>
+<p>所以我们创建一个对象如果没有为这个对象的属性赋值，这个对象的属性是有默认值的，我们每次新创建一个对象，这个对象的属性都被初始化了</p>
+<p>我们想要让创建的对象的属性的默认值不是nil、NULL、0，而是我们自定义的，那么这个时候，我们就可以重写init方法<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly407m6y2j30eq04iwh1.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly40euuvyj306105rjsj.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly40kv6zwj307e03nmy0.jpg"></p>
+<p>调用父类init方法的原因：因为父类的init方法会初始化父类的属性，所以必须要保证当前对象中的父类属性也同时被初始化</p>
+<p>赋值给self的原因是调用父类的init方法，会返回初始化成功的对象，实际上返回的就是当前对象，但是我们要判断是否初始化成功</p>
+<p>重写init方法以后，这样每次创建出来的对象的属性都是一样的<br>但是，我想创建对象的时候，对象的属性的值由创建对象的人来指定，而不是写死在init方法中</p>
+<p>自定义构造方法的规范：<br>1）自定义构造方法的返回值必须是instancetype<br>2）自定义构造方法的名称必须以initWith开头<br>3）方法的实现和init的要求一样<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly40s4tcgj30dr01ddga.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly40z8d3jj30dr03kmyc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly415rr3gj30cd01ct93.jpg"><br>这个时候就不能直接[Dog new]了</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/内存管理概述：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/08/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-20T16:00:00.000Z" itemprop="datePublished">2019-08-21</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/08/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%A6%82%E8%BF%B0%EF%BC%9A/">内存管理概述：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>内存的作用：存储数据</p>
+<p>1）如何将数据存储到内存之中：声明一个变量<br>2）当数据不再被使用的时候，占用的内存空间如何被释放？</p>
+<p>内存中的五大区域：<br>1）栈：局部变量，当局部变量的作用域被执行完毕之后，这个局部变量就会被系统立即回收<br>2）堆：OC对象，使用C函数申请的空间<br>3）BSS段：未初始化的全局变量、静态变量，一旦初始化就回收，并转存到数据段之中<br>4）数据段：已经初始化的全局变量、静态变量，直到程序结束的时候才会被回收<br>5）代码段：代码，程序结束的时候，系统会自动回收存储在代码段中的数据</p>
+<p>栈、BSS段、数据段、代码段，存储在它们中的数据的回收是由系统自动完成的，不需要我们干预</p>
+<p>分配在堆区中的OC对象是肯定需要被回收的，但系统不会自动回收，直到程序结束的时候才会被回收【轰炸机的小游戏，肯定不能等到程序结束才回收，因为有些人玩的时间很长】</p>
+<p>内存管理的范围：只需要管理存储在堆中的OC对象的回收，其他区域中的数据的回收是系统自动管理的</p>
+<p>对象应该什么时候被回收：当有人使用这个对象的时候，这个对象就千万不能回收；只有在没有任何人使用这个对象的时候才可以回收</p>
+<h3 id="引用计数器："><a href="#引用计数器：" class="headerlink" title="引用计数器："></a>引用计数器：</h3><ol>
+<li>每一个对象都有一个属性，叫做retainCount，叫做引用计数器，类型是unsigned long，占据8个字节</li>
 </ol>
-<p>森林的遍历：</p>
+<p>引用计数器的作用：用来记录当前这个对象有多少个人在使用它，默认情况下，创建一个对象出来，这个对象的引用计数器的默认值是1</p>
+<ol start="2">
+<li><p>当多一个人使用这个对象的时候，应该先让这个对象的引用计数器的值+1，代表这个对象多一个人使用</p>
+</li>
+<li><p>当这个对象少一个人使用的时候，应该先让这个对象的引用计数器的值-1，代表这个对象少一个人使用</p>
+</li>
+<li><p>当这个对象的引用计数器变为0的时候，代表这个对象无人使用，这个时候系统就会自动回收这个对象，在对象被回收的时候，会自动调用对象的dealloc方法</p>
+</li>
+</ol>
+<p>如何操作引用计数器：</p>
 <ol>
-<li>先序遍历：若森林非空，则访问森林中第一棵树的根结点，先序遍历第一棵树的子树森林，先序遍历除去第一棵树之后剩余的树构成的子树森林</li>
-<li>后序遍历：若森林非空，则后序遍历第一棵树的根结点的子树森林，访问第一棵树的根结点，后序遍历除去第一棵树之后剩余的树构成的子树森林<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou4d68vgij30s50gxq3l.jpg"></li>
+<li>为对象发送一条retain消息，对象的引用计数器就会+1，当多一个人使用对象的时候才发</li>
+<li>为对象发送一条release消息，对象的引用计数器就会-1，当少一个人使用对象的时候才发</li>
+<li>为对象发送一条retainCount消息，就可以取到对象的引用计数器的值</li>
+</ol>
+<h3 id="内存管理的分类："><a href="#内存管理的分类：" class="headerlink" title="内存管理的分类："></a>内存管理的分类：</h3><ol>
+<li><p>MRC：Manual Reference Counting手动引用计数，手动内存管理（2011年以前，iOS5之前）：当多一个人使用对象的时候，要求程序员手动的发送retain消息，少一个人使用的时候程序员手动的发送release消息</p>
+</li>
+<li><p>ARC：Automatic Reference Counting自动引用计数，自动内存管理：系统自动的在合适的地方发送retain，release消息</p>
+</li>
 </ol>
 
       
@@ -485,11 +817,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -509,11 +845,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/二叉排序树" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/第一个MRC程序：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/" class="article-date">
-      <time datetime="2019-12-24T16:00:00.000Z" itemprop="datePublished">2019-12-25</time>
+      <a  href="/2019/08/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%AC%AC%E4%B8%80%E4%B8%AAMRC%E7%A8%8B%E5%BA%8F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-19T16:00:00.000Z" itemprop="datePublished">2019-08-20</time>
 </a>
 
     </div>
@@ -527,7 +863,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">二叉排序树</a>
+      <a  class="article-title" href="/2019/08/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%AC%AC%E4%B8%80%E4%B8%AAMRC%E7%A8%8B%E5%BA%8F%EF%BC%9A/">第一个MRC程序：</a>
     </h1>
   
 
@@ -539,14 +875,11 @@
       
           
         <hr>
-<p>二叉排序树：BST，也称二叉查找树</p>
-<p>二叉排序树或者为空树，或者为非空树，当为非空树时有如下特点：<br>1）若左子树非空，则左子树上所有结点关键字值均小于根结点的关键字<br>2）若右子树非空，则右子树上所有结点关键字值均大于根结点的关键字<br>3）左、右子树本身也分别是一棵二叉排序树<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou53m3s0kj30ys0lcmxy.jpg"></p>
-<p>二叉排序树的查找：二叉树非空时，查找根结点，若相等则查找成功；若不等，则当小于根结点值时查找左子树，当大于根结点的值时，查找右子树，当查找到叶结点仍没查找到相应的值，则查找失败<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou5av09hij30zj0b974t.jpg"></p>
-<p>二叉排序树的插入：若二叉排序树为空，则直接插入结点；若二叉排序树非空，当值小于根结点时，插入左子树；当值大于根结点时，插入右子树；当值等于根结点时不进行插入<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou5fqb17zj30wl0c7wf8.jpg"></p>
-<p>构造二叉排序树：读入一个元素并建立结点，若二叉树为空将其作为根结点；若二叉排序树非空，当值小于根结点时，插入左子树；当值大于根结点时，插入右子树；当值等于根结点时不进行插入<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou5ldmn02j30mk07n0su.jpg"></p>
-<p>二叉排序树的删除：<br>1）若被删除结点z是叶子结点，则直接删除<br>2）若被删除结点z只有一棵子树，则让z的子树成为z父结点的子树，代替z结点<br>3）若被删除结点z有两棵子树，则让z的‘中序序列直接后继’代替z，并删去直接后继结点</p>
-<p>在二叉排序树中删除并插入某结点，得到的二叉排序树与原来不一定相同</p>
-<p>二叉排序树的查找效率：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou61x1ebyj30p40fjt94.jpg"></p>
+<p>要写MRC的程序，必须先把Xcode默认的ARC模式关闭，开启MRC</p>
+<p>在ARC机制下，retain，release，dealloc这些方法无法调用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly41osfo1j30m40lkgo4.jpg"></p>
+<p>重写dealloc方法的规范：<br>必须要调用父类的dealloc方法，并且要放在最后一句代码</p>
+<p>测试引用数据：<br>1）新创建一个对象，这个对象的引用计数器的值默认是1<br>2）当对象的引用计数器变为0的时候，对象就会被系统立即回收，并自动调用dealloc方法<br>3）为对象发送retain消息，对象的引用计数器就会+1<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly41xz6fwj30dc0bw42n.jpg"></p>
+<p>为对象发送release消息，并不是回收对象，而是让对象的引用计数器-1，当对象的引用计数器的值变为0的时候，对象才会被系统立即回收</p>
 
       
     </div>
@@ -555,11 +888,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -579,11 +916,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/平衡二叉树" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/内存管理的原则：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" class="article-date">
-      <time datetime="2019-12-23T16:00:00.000Z" itemprop="datePublished">2019-12-24</time>
+      <a  href="/2019/08/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%8E%9F%E5%88%99%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-18T16:00:00.000Z" itemprop="datePublished">2019-08-19</time>
 </a>
 
     </div>
@@ -597,7 +934,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">平衡二叉树</a>
+      <a  class="article-title" href="/2019/08/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%8E%9F%E5%88%99%EF%BC%9A/">内存管理的原则：</a>
     </h1>
   
 
@@ -609,14 +946,8 @@
       
           
         <hr>
-<p>平衡二叉树：AVL，任意结点的平衡因子的绝对值不超过1（平衡因子：左子树高度-右子树高度）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou6840xspj30dk0aiaa1.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou6bn8q64j30j10bvgls.jpg"></p>
-<p>平衡二叉树的判断：利用递归的后续遍历过程<br>1）判断左子树是一棵平衡二叉树<br>2）判断右子树是一棵平衡二叉树<br>3）判断以该结点为根的二叉树为平衡二叉树【判断条件：若左子树和右子树均为平衡二叉树，且左子树与右子树高度差的绝对值小于等于1，则平衡】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gou6lc5ruij30h70fv74s.jpg"></p>
-<p>平衡二叉树的插入：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gouqd2fjabj30p20btdg3.jpg"></p>
-<p>1）LL平衡旋转(右单旋转)<br>原因：在结点A的左孩子的左子树上插入了新结点<br>调整方法：右旋操作，将A的左孩子B代替A，将A结点称为B的右子树根结点，而B的原右子树则作为A的左子树<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gouqdd41lej30n90bkjro.jpg"></p>
-<p>2）RR平衡旋转(左单旋转)<br>原因：在结点A的右孩子的右子树上插入了新结点<br>调整方法：左旋操作，将A的右孩子B代替A，将A结点称为B的左子树根结点，而B的原左子树则作为A的右子树<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gour4j4l4rj30og0bomxg.jpg"></p>
-<p>3）LR平衡旋转(先左后右双旋转)<br>原因：在结点A的左孩子的右子树上插入了新结点<br>调整方法：先左旋后右旋操作，将A的左孩子B的右孩子结点C代替B，然后再将C结点向上代替A的位置<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gour4uj3wpj31ac0f6my1.jpg"></p>
-<p>4）RL平衡旋转(先右后左双旋转)<br>原因：在结点A的右孩子的左子树上插入了新结点<br>调整方法：先右旋后左旋操作，将A的右孩子B的左孩子结点C代替B，然后再将C结点向上代替A的位置<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gour51jstfj31ac0e4my0.jpg">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </p>
+<p>1）有对象的创建，就要匹配一个release<br>2）retain的次数和release的次数要匹配<br>3）谁用谁retain，谁不用谁release<br>4）只有在多一个人用的时候才retain，少一个人使用的时候才release</p>
+<p>有始有终，有加就有减，有retain就应该匹配一个release，一定要平衡</p>
 
       
     </div>
@@ -625,292 +956,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构、算法笔记/哈夫曼树" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" class="article-date">
-      <time datetime="2019-12-22T16:00:00.000Z" itemprop="datePublished">2019-12-23</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">哈夫曼树</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>路径长度：路径上所经历边的个数<br>结点的权：结点被赋予的数值</p>
-<p>树的带权路径长度：WPL，树中所有叶结点的带权路径长度之和</p>
-<p>哈夫曼树：也称最优二叉树，含有n个带权叶子结点带权路径长度最小的二叉树</p>
-<p>哈夫曼树的构造算法：<br>1）将n个结点作为n棵仅含有一个根结点的二叉树，构造森林F<br>2）生成一个新结点，并从F中找出根结点权值最小的两棵树作为它的左右子树，且新结点的权值为两棵子树根结点的权值之和<br>3）从F中删除这两棵树，并将新生成的树加入到F中<br>4）重复2，3步骤，直到F中只有一棵树为止<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gours4il6rj309a08aq2t.jpg"></p>
-<p>哈夫曼树的性质：<br>1）每个初始结点都会成为叶结点，双支结点都为新生成的结点<br>2）权值越大离根结点越近，反之权值越小离根结点越远<br>3）哈夫曼树中没有结点的度为1<br>4）n个叶子结点的哈夫曼树的结点总数为2n-1，其中度为2的结点数为n-1</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gouspxqtltj30u011z0w6.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
     </div>
 
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构、算法笔记/图的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2019-12-21T16:00:00.000Z" itemprop="datePublished">2019-12-22</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">图的基本概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>图G由顶点集V和边集E组成，记为G=(V,E)，其中V(G)表示图G中顶点的有限非空集；E(G)表示图G中顶点之间的关系(边)集合<br>|V|表示图G中顶点的个数，也称图G的阶；|E|表示图G中边的条数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gout3e8caxj31ac0egdgt.jpg"></p>
-<p>无向图和有向图：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goutf7ahhzj31ac0nv75z.jpg"></p>
-<p>简单图和多重图：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goutm3cwpij31ac0dm75k.jpg"></p>
-<p>在图中，权通常是对边赋予的有意义的数值量，边上带权的图称为带权图或网图：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gouuu12czwj30wx0b2aag.jpg"></p>
-<p>完全图：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gouttrttklj31ac0fogmy.jpg"></p>
-<p>稠密图、稀疏图</p>
-<p>顶点的度：以该顶点为一个端点的边的数目</p>
-<p>无向图顶点v的度为以v为端点的边的个数，记为TD(v)；n顶点、e条边的无向图中度的总数为2e</p>
-<p>有向图：出度指以v为起点的有向边的条数，记OD(v)；入度指以v为终点的有向边的条数，记ID(v)；TD(v)=OD(v)+ID(v)；n顶点、e条边的有向图中出度、入度为e</p>
-<p>有向树：一个顶点的入度为0，其余顶点的入度均为1的有向图<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gouuysmqjpj30ok0d9dfv.jpg"></p>
-<p>路径：图中顶点v到顶点w的顶点序列，序列中顶点不重复的路径称为简单路径</p>
-<p>路径长度：路径上边的数目，若该路径最短则称其为距离</p>
-<p>回路：第一个顶点和最后一个顶点相同的路径</p>
-<p>除了第一个顶点和最后一个顶点之外，其余顶点不重复出现的回路称为简单回路</p>
-<p>子图：设有两个图G=(V,E)和G’=(V’,E’)，若V’是V的子集，且E’是E的子集，则称G’为G的子图；且若V(G)=V(G’)则称G’为G的生成子图</p>
-<p>无向图只有连通：若从顶点v到顶点w有路径存在，则称v和w是连通【连通图：任意两个结点之间都是连通的】【连通分量：极大连通子图】</p>
-<p>有向图只有强连通：若从顶点v到顶点w和顶点w到顶点v都有路径存在，则称v和w是强连通【强连通图：任意两个结点之间都是强连通的】【强连通分量：极大强连通子图】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gouu8hmcf9j31ac0eb0tb.jpg"></p>
-<p>对于G的一个(强)连通子图G’，如果不存在G的另一个(强)连通子图G’’，使得G’属于G’’，则称G’为G的(强)连通分量</p>
-<p>极小连通子图：连通子图且包含的边最少</p>
-<p>生成树：连通图包含全部顶点的一个极小连通子图(n个顶点图的生成树有n-1条边)</p>
-<p>生成森林：非连通图所有连通分量的生成树组成连通森林</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构、算法笔记/邻接矩阵法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E6%B3%95/" class="article-date">
-      <time datetime="2019-12-20T16:00:00.000Z" itemprop="datePublished">2019-12-21</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E6%B3%95/">邻接矩阵法</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>图的邻接矩阵存储也称数组表示法，用一个一维数组存储图中的顶点，用一个二维数组存储图中的边，存储顶点之间邻接关系的二维数组称为邻接矩阵<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gov3c5t0isj30w90u0jur.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gov3ceke29j30l60ay0t8.jpg"></p>
-<p>邻接矩阵的性质：<br>1）邻接矩阵的空间复杂度为O(n^2)，适用于稠密图<br>2）无向图的邻接矩阵为对称矩阵<br>3）无向图中第i行(或第i列)非0元素(非正无穷)的个数为第i个顶点的度<br>4）有向图中第i行(或第i列)非0元素(非正无穷)的个数为第i个顶点的出度(入度)</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gov42msmkcj31ac0qo76z.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构、算法笔记/邻接表法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/12/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%82%BB%E6%8E%A5%E8%A1%A8%E6%B3%95/" class="article-date">
-      <time datetime="2019-12-19T16:00:00.000Z" itemprop="datePublished">2019-12-20</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%82%BB%E6%8E%A5%E8%A1%A8%E6%B3%95/">邻接表法</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>邻接矩阵法存储稀疏图会有许多空间浪费</p>
-<p>邻接表法：为每一个顶点建立一个单链表存放与它相邻的边<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govv2mmd3kj30yy0u0td3.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govv2vt07ej30ka0dk0tf.jpg"></p>
-<p>邻接表的特点：<br>1）若G为无向图，存储空间为O(|V|+2|E|)<br>若G为有向图，存储空间为O(|V|+|E|)<br>2）邻接表更加适用于稀疏图<br>3）若G为无向图，则结点的度为该结点边表的长度<br>若G为有向图，则结点的出度为该结点边表的长度，计算入度则要遍历整个邻接表<br>4）邻接表不唯一，边表结点的顺序根据算法和输入的不同可能会不同</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
-    </div>
-
-
-      
       
       <div class="clearfix"></div>
     </div>
@@ -932,7 +986,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/18/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/20/"></a>
+      <a class="extend prev" rel="prev" href="/page/18/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/20/"></a>
     </nav>
   
 
@@ -958,7 +1012,7 @@
 
                 <a href="https://hexo.io/zh-cn/index.html" target="_blank">「Hexo文档」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
-                <a href="https://liao-hexo.github.io/archives/" target="_blank">「个人博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+                <a href="https://liao-hexo.github.io/archives/" target="_blank">「我的博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
                 <a href="https://github.com/Liao-Hexo" target="_blank">「GitHub』&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 

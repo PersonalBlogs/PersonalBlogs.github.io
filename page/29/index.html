@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-开发语言/Objective-C/延展(Extension)：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/scanf输入多个数据出现的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/03/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%BB%B6%E5%B1%95(Extension)%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-02T16:00:00.000Z" itemprop="datePublished">2019-08-03</time>
+      <a  href="/2018/09/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/scanf%E8%BE%93%E5%85%A5%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
+      <time datetime="2018-09-26T16:00:00.000Z" itemprop="datePublished">2018-09-27</time>
 </a>
 
     </div>
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/03/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%BB%B6%E5%B1%95(Extension)%EF%BC%9A/">延展(Extension)：</a>
+      <a  class="article-title" href="/2018/09/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/scanf%E8%BE%93%E5%85%A5%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/">scanf输入多个数据出现的问题</a>
     </h1>
   
 
@@ -258,13 +258,21 @@
       
           
         <hr>
-<p>1）是一个特殊的分类，所以延展也是类的一部分<br>2）特殊之处：没有名字；只有声明没有实现，和本类共享一个实现</p>
-<p>语法：<br>             @interface 本类名（）</p>
-<pre><code>         @end</code></pre>
-<p>没有实现，和本类共享一个实现<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4gvnfu5j30xm0j4n6p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4h2dpt9j30xm0j4dnc.jpg"></p>
-<p>延展和分类的区别：<br>1）分类有名字，延展没有名字，是一个匿名的分类<br>2）每一个分类都有单独的声明和实现，而延展只有声明，没有单独的实现，和本类共享一个实现<br>3）分类中只能新增方法，而延展中任意的成员都可以写<br>4）分类中可以写@property，但是只会生成getter、setter的声明；延展中写@property，会自动生成私有属性，也会生成getter、setter的声明和实现</p>
-<p>延展的应用场景：<br>1）要为类写一个私有的@property，生成的getter、setter方法只能在类的内部访问，不能在外部访问【@property生成私有属性、生成getter、setter的实现，不要声明】<br>2）延展不会独占一个文件，都是将延展直接写在本类的实现文件中，这个时候写在延展中的成员，就相当于是这个类的私有成员，只能在本类的实现中访问，外部不能访问</p>
-<p>注意：<br>1）如果想要为类写一个真私有属性，虽然我们可以定义在@implementation之中，但是不要这么写，这样很不规范，写一个延展，将这个私有属性定义在延展中<br>2）如果要为类写一个私有方法，建议将声明写在延展中，实现写在本类的实现中，提高代码的阅读性<br>3）如果想要为类写一个私有的@property，就直接写在延展中就可以了<br>4）延展天生就是来私有化类的成员的，如果类的成员只希望在类的内部访问，那么就将其定义在延展中，如果类的成员允许被外界访问，定义在本类的@interface中</p>
+<p>如果使用scanf函数一次输入多个数据，只能是整型和浮点型，如果有char字符型混合输入，就会出现问题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffiv25wlj30e709fjsj.jpg"></p>
+<p>图中可以看到：num3的值并没有打印出来，出现这种情况的原因是什么呢？？？</p>
+<ol>
+<li><p>在执行scanf函数的时候，会让用户输入一个数据，数据输入完毕之后，并不是将这个数据直接赋值给变量，而是先将数据存储在缓冲区，输入的任何数据都会存储在缓冲区中</p>
+</li>
+<li><p>在执行scanf函数的时候，会先检查缓冲区中是否有数据，如果缓冲区中没有数据，那么就会让用户从键盘输入，如果缓冲区中有数据，直接从缓冲区中将数据拿出来，不会让用户输入数据</p>
+</li>
+<li><p>当从缓冲区中拿数据的时候，如果要拿的数据的类型是整型或者实型，如果拿到的数据的类型是空格、回车、Tab键，就会被自动忽略，继续往下拿；如果要拿的数据是字符型，不会忽略任何数据</p>
+</li>
+</ol>
+<p>我们来分析下面的一段程序：程序中要求用户输入一个整型数据num1，但是这个时候我们偏偏输入两个整型数据10、20，这个时候缓冲区其实有四个数据：10、空格、20、换行，执行第一个printf后结果为10，这是我们事先预料好的；当第二个scanf执行的时候，程序根本就不会让用户输入数据，因为缓冲区中已经有整型数据20了【当从缓冲区中拿数据的时候，如果要拿的数据的类型是整型或者实型，如果拿到的数据的类型是空格、回车、Tab键，就会被自动忽略，继续往下拿】，所以最终程序会直接打印出num2=20<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffj3ejggj30al0aj3zn.jpg"></p>
+<p>让我们再回头看第一个程序：为什么num3的值打印出来的结果为空？？？<br>执行完第11行程序以后，缓冲区中的数据为10、空格、2.5、空格、a、换行；打印num1、num2的值的时候，因为是整型或者浮点型，程序会自动忽略空格和换行，所以输出结果为num1=10，num2=2.500000；但是num3是一个字符型的数据，程序并不会忽略任何的数据，最后打印出来的结果为num3= ；【这里打印出来了一个空格，并不是空】</p>
+<p>那这个时候就有问题了，如果scanf输入多个数据中包含字符型数据时，我就是想要输出来字符型数据，该怎么做呢？？？</p>
+<p>解决方案：通过<code>rewind(stdin);</code>这行代码把缓冲区中的数据全部清空，这个时候缓冲区中没有任何数据了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffjeysa5j30cs0grdhv.jpg"></p>
+<p>写C代码时，如果遇到整型、浮点型、字符型同时出现在scanf函数中的时候，要十分注意缓冲区中数据的情况！！</p>
 
       
     </div>
@@ -279,7 +287,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -301,11 +309,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/block的基本使用：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/运算符和表达式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/02/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-01T16:00:00.000Z" itemprop="datePublished">2019-08-02</time>
+      <a  href="/2018/09/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
+      <time datetime="2018-09-25T16:00:00.000Z" itemprop="datePublished">2018-09-26</time>
 </a>
 
     </div>
@@ -319,7 +327,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/02/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%9A/">block的基本使用：</a>
+      <a  class="article-title" href="/2018/09/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/">运算符和表达式</a>
     </h1>
   
 
@@ -331,14 +339,30 @@
       
           
         <hr>
-<p>1）block是一个数据类型，我们可以声明一个block类型的变量<br>2）不同类型的变量中可以存储不同类型的数据，block类型的变量中专门存储一段代码，这段代码可以有参数，可以有返回值</p>
-<p>Block变量的声明：<br>1）虽然block变量中是用来存储一段代码的，但是一个block变量中并不是任意的一段代码都可以存进去的，而是有限定的；也就是说，声明block变量的时候，必须要指定这个block变量存储的代码是否有参数，是否有返回值，一旦指定以后，这个block变量中就只能存储这样的代码段了<br>2）语法：返回值类型 (^block变量的名称)(参数列表);<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4hpakdcj30fg02j3zi.jpg"></p>
-<p>初始化block变量：<br>1）原理：写一个符合block要求的代码段，存储到block变量中就可以了<br>2）代码段的书写格式：</p>
-<pre><code>          ^返回值类型(参数类型)&#123;
-                    代码段;
-          &#125;;</code></pre>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4i0b989j303y02i0t6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4i7bl9oj305j01vglz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4idsc7nj305j01v74m.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ikffggj30b901vdgd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4iq8m2dj30e209wt9y.jpg"></p>
-<p>  如何执行存储在block变量中的代码段：<br>语法格式：block变量名();<br>【有参数就传参数，有返回值就接】</p>
+<h3 id="C运算符、优先级整理"><a href="#C运算符、优先级整理" class="headerlink" title="C运算符、优先级整理"></a>C运算符、优先级整理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">C运算符：</span><br><span class="line"></span><br><span class="line">赋值运算符【&#x3D;、+&#x3D;、-&#x3D;、*&#x3D;、&#x2F;&#x3D;、%&#x3D;】</span><br><span class="line">算术运算符【+、-、*、&#x2F;、%】</span><br><span class="line">关系运算符【&#x3D;&#x3D;、!&#x3D;、&gt;、&gt;&#x3D;、&lt;、&lt;&#x3D;】</span><br><span class="line">自增自减运算符【++、—-】</span><br><span class="line">逗号运算符【,】</span><br><span class="line">逻辑运算符【&amp;&amp;(与)、||(或)、！】</span><br><span class="line">取地址运算符【&amp;】</span><br><span class="line"></span><br><span class="line">C优先级：</span><br><span class="line">1）（）：从左到右</span><br><span class="line">2）!  +  -  ++  —：从右到左（单目的+和-）</span><br><span class="line">3）*  &#x2F;  %：从左到右</span><br><span class="line">4）+  -：从左到右</span><br><span class="line">5）&lt;  &lt;&#x3D;  &gt;  &gt;&#x3D;：从左到右</span><br><span class="line">6）&#x3D;&#x3D;  !&#x3D;：从左到右</span><br><span class="line">7）&amp;&amp;：从左到右</span><br><span class="line">8）||：从左到右</span><br><span class="line">9）&#x3D;  +&#x3D;  -&#x3D;  *&#x3D;  &#x2F;&#x3D;  %&#x3D;：从右到左</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="运算符和表达式的一些注意点"><a href="#运算符和表达式的一些注意点" class="headerlink" title="运算符和表达式的一些注意点"></a>运算符和表达式的一些注意点</h3><p>1）逃逸字符：用来表达无法印出来的控制字符或特殊字符，它由一个反斜杠”\”开头，后面跟上另一个字符，这两个字符合起来，组成了一个字符：<code>printf(“请分别输入身高的英尺和英寸，”“如输入\“5 7 \”表示5英尺7英寸：“);</code></p>
+<p>\b：回退一格<br>\t：到下一个表格位<br>\n：换行<br>\r：回车<br>\”：双引号<br>\’：单引号<br>\：反斜杠本身</p>
+<p>转义符只能是小写字母，每个转义符只能看作一个字符</p>
+<p>垂直制表符“\v”和换页符“\f”对屏幕没有任何影响，但会影响打印机执行相应的操作</p>
+<p>在C语言程序中，通常会用转义符表示不可打印的字符</p>
+<p>2）如果参与算术表达式的操作数的类型不一致，那么这个算术表达式的结果的类型就是范围最大的那个类型</p>
+<p>3）m % n的结果一定是在0～（n-1）之间</p>
+<p>4）char类型的数据可以参与算术运算，当算术表达式中的操作数是一个char数据的时候，会先将这个char数据的ASCII码取出来代替，然后再参与算术运算，实际上它是一个int类型的数据在参与运算；char数据也可以参与比较运算</p>
+<p>5）const是一个修饰符，加在int的前面，用来给这个变量加上一个const（不变的）的属性。这个const的属性表示这个变量的值一旦初始化，就不能再修改了，如果你试图对常量做修改，把它放在赋值运算符的左边，就会被编译器发现，指出为一个错误</p>
+<p>6）无论是前自增表达式还是后自增表达式，都是将自身的值增加1<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh33jsm1j308l09qt9g.jpg"></p>
+<p>7）sizeof是一个运算符，给出某个类型或变量在内存中所占据的字节数：<code>sizeof(int)、sizeof(i)</code></p>
+<p>sizeof是静态运算符，它的结果在编译时刻就决定了，不要在sizeof的括号里做运算，这些运算不会做的</p>
+<p>8）逻辑运算是对逻辑量进行的运算，结果只有0或1，逻辑量是关系运算或逻辑运算的结果</p>
+<p>逻辑非！【!a，如果a是true，结果就是false，如果a是false，结果是true】<br>逻辑与&amp;&amp;【a &amp;&amp; b，如果a和b都是true，结果就是true，否则就是false】<br>逻辑或||【a || b，如果a和b有一个是true，结果为true，两个都是false，结果为false】</p>
+<p><code>x&gt;4 &amp;&amp; x&lt;6</code>：像4&lt;x&lt;6这样的式子，不是C能正确计算的式子，因为4&lt;x的结果是一个逻辑值(0或1)</p>
+<p>短路：逻辑运算是自左向右进行的，如果左边的结果已经能够决定结果了，就不会做右边的计算；对于&amp;&amp;，左边是false时就不做右边了；对于||，左边是true时就不做右边了</p>
+<p>不要把赋值，包括复合赋值组合进表达式！<code>a==6 &amp;&amp; b==1；a==6 &amp;&amp; b+=1</code></p>
+<p>9）三元表达式、条件运算符（可以部分代替if else）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">count = (count&gt;<span class="number">20</span>) ? count<span class="number">-10</span> : count+<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(count &gt; <span class="number">20</span>)</span><br><span class="line">     count = count<span class="number">-10</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">     count = count+<span class="number">10</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>10）逗号运算符：逗号用来连接两个表达式，并以其右边的表达式的值作为它的结果。逗号的优先级是所有的运算符中最低的，所以它两边的表达式会先计算；逗号的组合关系是自左向右，所以左边的表达式会先计算，而右边的表达式的值就留下来作为逗号运算的结果<br><code>for（i=0，j=10；i&lt;j；i++，j—）</code></p>
+<p>逗号表达式的目的并不是想要前面表达式的结果，而只是想要前面的表达式执行，要最后一个表达式的结果<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh3kuorlj30as081dgg.jpg"></p>
 
       
     </div>
@@ -353,7 +377,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -375,11 +399,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/block的简写：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/控制流" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/01/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E7%AE%80%E5%86%99%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-31T16:00:00.000Z" itemprop="datePublished">2019-08-01</time>
+      <a  href="/2018/09/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8E%A7%E5%88%B6%E6%B5%81/" class="article-date">
+      <time datetime="2018-09-24T16:00:00.000Z" itemprop="datePublished">2018-09-25</time>
 </a>
 
     </div>
@@ -393,7 +417,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/01/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E7%9A%84%E7%AE%80%E5%86%99%EF%BC%9A/">block的简写：</a>
+      <a  class="article-title" href="/2018/09/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8E%A7%E5%88%B6%E6%B5%81/">控制流</a>
     </h1>
   
 
@@ -405,8 +429,39 @@
       
           
         <hr>
-<p>1）如果我们写的代码段没有返回值，那么代码段的void可以省略【既没有参数也没有返回值，代码段的void和小括弧都省略，只写一个^】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4jb918tj305501vwes.jpg"><br>注意：这里说的是代码段的返回值如果是void可以省略，声明block变量的返回值无论是什么都不可以省略<br>2）如果我们写的代码段没有参数，那么代码段的小括弧可以省略<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4jj02nbj305501vaad.jpg"><br>3）声明block变量的时候，如果有指定参数，可以只写参数的类型而不写参数的名称<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4jpbdmzj309k01vaal.jpg"><br>注意：这个地方我们说的是声明block变量的时候，代码段的类型和名称都要写<br>4）无论代码段是否有返回值，在写代码的时候，可以不写返回值类型，省略；如果在写代码段的时候，省略了返回值，这个时候系统会自动的确定返回值的类型，如果代码段中没有返回任何数据，那么它会认为这个代码段是没有返回值的，如果代码段中有返回数据，返回的数据是什么类型它就会认为这个代码段是什么类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4jviexhj309k01v0t6.jpg"></p>
-<p>建议：仍然按照我们最标准的写法来写block变量和block代码段，因为这样可以提高代码的阅读性</p>
+<h3 id="C选择结构、循环结构整理"><a href="#C选择结构、循环结构整理" class="headerlink" title="C选择结构、循环结构整理"></a>C选择结构、循环结构整理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">1）if-else if-else</span><br><span class="line"></span><br><span class="line">2）switch-case：选择结构</span><br><span class="line"></span><br><span class="line">switch(表达式)&#123;</span><br><span class="line"></span><br><span class="line">    case 值1:</span><br><span class="line">         执行代码;</span><br><span class="line">         break;</span><br><span class="line"></span><br><span class="line">    case 值2:</span><br><span class="line">         执行代码;</span><br><span class="line">         break;</span><br><span class="line"></span><br><span class="line">    case 值3:</span><br><span class="line">         执行代码;</span><br><span class="line">         break;</span><br><span class="line"></span><br><span class="line">    default:</span><br><span class="line">         执行代码;</span><br><span class="line">         break;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">3）while循环</span><br><span class="line"></span><br><span class="line">4）do while循环【当循环体无论如何至少要执行一次的时候使用】</span><br><span class="line"></span><br><span class="line">do&#123;</span><br><span class="line"></span><br><span class="line">    循环体;</span><br><span class="line">&#125;while(条件表达式);</span><br><span class="line"></span><br><span class="line">5）for循环【当循环次数确定的时候，一般使用for循环；当循环次数不确定的时候，一般使用while循环】</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="控制流的一些注意点"><a href="#控制流的一些注意点" class="headerlink" title="控制流的一些注意点"></a>控制流的一些注意点</h3><p>1）小技巧：Xcode中选中要对齐的代码：control+i，就会自动对齐</p>
+<p>2）while循环应用场景：</p>
+<p>-循环体确定，循环次数也确定<br>-循环体确定，循环的次数不确定，但是循环继续或者结束的条件确定<br>-遍历指定范围的数<br>-找出指定范围中符合特定条件的数<br>-求累加和与平均值<br>-找一堆数中的最大数和最小数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh49zsp4j30ah0fuq4f.jpg"><br>-计数<br>-穷举【一个一个试】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh4kw3e2j30ah0c0wfe.jpg"></p>
+<p>3）定义在一个大括弧中的变量，只能在这个大括弧中访问，出了大括弧，CPU立即将变量回收，无法访问到了:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> num=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(num &gt; <span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;age=%d\n&quot;</span>,age);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;age=%d\n&quot;</span>,age);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>我们可以自定义一个作用域来提前释放一个变量:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;i=%d\n&quot;</span>,i);</span><br><span class="line">&#125;   <span class="comment">//这个时候，i就会在这里释放</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>4）无大括号else的匹配：else总是和最近的那个if匹配</p>
+<p>5）if-else与switch-case的区别：前者从头开始遍历，后者直接跳转到符合要求处<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh4xnkazj30a60bsdgw.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh58mcvwj30a60cw3zv.jpg"></p>
+<p>每一个case块后面的break在语法上是可以不写的，break的意思代表立即结束整个switch-case结构，如果case块中没有break，那么就会直接穿透到下一个case中执行代码，直到遇到break才会结束switch结构，或者执行完</p>
+<p>如果多个case块的处理逻辑是一样的，那么我们可以利用case穿透简写代码</p>
+<p>switch后面的表达式任何类型都是可以的，除了实型</p>
+<p>如果case块中要声明变量，那么这个case块就必须要使用大括弧</p>
+<p>switch结构只能做等值判断，不能直接做范围判断，并且case后面的数据不能有变量</p>
+<p>break的作用：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh5fvmj6j309u0cf3zj.jpg"></p>
+<p>6）break和continue的区别：</p>
+<p>如果在循环体中遇到了break，就会立即结束当前循环结构，但是还会继续外层循环</p>
+<p>continue只能使用在循环体中，如果遇到了continue，会立即结束本次循环，然后回去判断循环条件【注意一下while循环体和for循环体不一样(前者可能包括i++，后者不包括)】</p>
+<p>break和continue都只能作用于当前循环体！</p>
+<p>一道比较有意思的面试题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh5o8fj7j309y07g0te.jpg"></p>
+<p>7）while和do-while的区别：前者先判断条件后进循环体，后者先进循环体再判断条件</p>
+<p>8）for循环中，三个表达式都可以省略，但是分号不能省略；如果第二个表达式省略，那么循环条件默认就是成立的</p>
+<p>for循环三个表达式其实可以是任意的C语句：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotjwcr25nj30e40c2dgf.jpg"></p>
+<p>9）goto：可以将CPU的执行跳转到当前函数的别的地方继续执行</p>
+<p>当执行到goto语句的时候，CPU就会跳转到指定的标签的地方继续往下执行</p>
+<p>goto语句也可以实现循环操作<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotk2627j4j30bg09tjsd.jpg"></p>
+<p>goto可以往前跳，也可以往后跳，但是只能在当前函数中跳</p>
+<p>取标签名下面的那一句代码不能是声明变量：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotk3hqcfrj30cg09tdgu.jpg"></p>
+<p>10）break和goto：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh67f0xwj30hz0dstai.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh6f018yj30hz0dsjt1.jpg"></p>
 
       
     </div>
@@ -421,7 +476,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -443,11 +498,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/简化block变量的复杂定义：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/数组" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/31/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%AE%80%E5%8C%96block%E5%8F%98%E9%87%8F%E7%9A%84%E5%A4%8D%E6%9D%82%E5%AE%9A%E4%B9%89%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-30T16:00:00.000Z" itemprop="datePublished">2019-07-31</time>
+      <a  href="/2018/09/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84/" class="article-date">
+      <time datetime="2018-09-23T16:00:00.000Z" itemprop="datePublished">2018-09-24</time>
 </a>
 
     </div>
@@ -461,7 +516,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/31/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%AE%80%E5%8C%96block%E5%8F%98%E9%87%8F%E7%9A%84%E5%A4%8D%E6%9D%82%E5%AE%9A%E4%B9%89%EF%BC%9A/">简化block变量的复杂定义：</a>
+      <a  class="article-title" href="/2018/09/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%95%B0%E7%BB%84/">数组</a>
     </h1>
   
 
@@ -473,8 +528,43 @@
       
           
         <hr>
-<p>定义block变量的时候，类型很长：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4kfk6v3j306v029gm2.jpg"></p>
-<p>Typedef的使用场景：将一个长类型定义为一个短类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4kl9atoj306v029t96.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4kqxm5wj307v02h0te.jpg"></p>
+<p>局部变量的回收：在大括弧执行完毕之后，定义在这个大括弧中的变量就会被系统立即回收，声明变量的时候，其实是找系统为你从高地址向低地址分配指定字节数的连续空间，当变量回收的时候，其实就是告诉系统变量占用的字节不再使用了，可以分配给别的变量了，变量所占用的字节的数据是不会清空的【垃圾值的由来】</p>
+<p>当将全局变量声明出来以后，系统会自动的将全局变量中的数据清零</p>
+<p>一维数组：</p>
+<p><code>int arr[3];</code>，其中所有的元素具有相同的数据类型，一旦创建，不能改变大小</p>
+<p>数组中的元素在内存中是连续依次排列的：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotkioh0zmj30ji0cwq31.jpg"></p>
+<p>遍历数组：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh93cc4nj30a80an751.jpg"></p>
+<p>一维数组的初始化：<br>1）使用这种方式初始化，数组的长度就不能使用变量了，但是使用宏可以【也可以干脆直接省略数组中的长度，这样数组的长度就是由大括弧中的数据的个数来决定的】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int len&#x3D;3;</span><br><span class="line">int arr[len]&#x3D;&#123;10,20,30&#125;;  &#x2F;&#x2F;错误</span><br></pre></td></tr></table></figure>
+
+<p>2）<code>int arr[3]=&#123;10&#125;;</code><br>这个时候数组的第0个元素的值是10，其他的元素的值被自动初始化为0，所以如果我们要将数组中的所有元素全部初始化为0，只需要在大括弧中写一个0就可以了</p>
+<p>3）指定下标的初始化，其他的元素的值就自动初始化为0：<br><code>int arr[3]=&#123;[1]=10,[2]=20&#125;;</code></p>
+<p>声明一个数组，在内存中从高字节向低字节申请连续的（数组的长度*每个元素的字节数）个字节的空间</p>
+<p>数组的元素的本质就是一个普通类型的变量，一个数组就是由多个普通类型的变量联合而成的</p>
+<p>C语言的数组名中存储的就是数组的地址！<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh9jcmngj30cs0a7t9s.jpg"></p>
+<p>数组的大小：<code>sizeof(a)/sizeof(a[0])</code><br>sizeof给出整个数组所占据的内容的大小，单位是字节；sizeof(a[0])给出数组中单个元素的大小，于是相除就得到了数组的单元个数；这样的代码，一旦修改数组中初始的数据，不需要修改遍历的代码</p>
+<p>数组的赋值：数组变量本身不能被赋值，要把一个数组的所有元素交给另一个数组，必须采用遍历</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">     b[i]=a[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>二维数组：</p>
+<p>二维数组的长度一般认为是元素的个数【行*列】</p>
+<p>二维数组的遍历：a[i][j]是一个int，表示第i行第j列上的单元<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxh9v4el4j307402jdfy.jpg"></p>
+<p>二维数组的初始化：</p>
+<p>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxha9wqxbj305s01zwej.jpg"><br>1.列数是必须给出的，行数可以由编译器来数<br>2.每行一个{}，逗号分隔<br>3.最后的逗号可以存在，有古老的传统</p>
+<p>2）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">3</span>][<span class="number">4</span>]=&#123;&#123;<span class="number">10</span>&#125;,&#123;<span class="number">20</span>&#125;,&#123;<span class="number">30</span>&#125;&#125;;</span><br><span class="line">a[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">10</span></span><br><span class="line">a[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">20</span></span><br><span class="line">a[<span class="number">2</span>][<span class="number">0</span>]=<span class="number">30</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>其他元素会自动初始化为0<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhb8rvt3j30a60a5gmg.jpg"></p>
+<p>3）<br><code>int arr[3][4]=&#123;10,20,30,40,50&#125;;</code><br>按照顺序去初始化每一个元素，其他的元素的值就会被自动初始化为0<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhbelj0nj30a60a5gmh.jpg"></p>
+<p>4）<br><code>int arr[3][4]=&#123;[1]=&#123;10,20,30,40&#125;,[2]=&#123;50,60,70,80&#125;&#125;;</code><br>给指定的行初始化，其他的元素自动初始化为0<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhc1anppj30d20a5t9o.jpg"></p>
+<p>二维数组从高地址向低地址申请了连续的（行<em>列</em>每一个元素占用的字节）个字节空间</p>
+<p>二维数组在内存中仍然是一块连续的空间，并不是一个表格<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhcaulzwj307309pq4i.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhcl3fthj30h60a13zp.jpg"></p>
+<p>求二维数组的长度的方法与一维数组一样：<code>sizeof(arr)/sizeof(arr[0][0]);</code></p>
+<p>求二维数组的行数：<code>sizeof(arr)/sizeof(arr[0]);</code></p>
+<p>求二维数组的列数：<code>sizeof(arr[0])/sizeof(arr[0][0]);</code></p>
+<p>如果函数的参数是一个一维数组，那么我们在传递的时候可以传递二维数组的某一行，二维数组的行其实是一个一维数组</p>
+<p>二维数组也可以作为函数的参数【与一维数组类似】，但是其中形参的行数可以省略，列数不能省略，实参与形参的行数可以任意，实参的列数与形参的列数必须一致</p>
+<p>解决方案【与一维数组稍微不同！】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotl11m25ij30ec0ejta1.jpg"></p>
 
       
     </div>
@@ -489,7 +579,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -511,11 +601,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/关于block块访问外部变量的值的问题" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/函数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/30/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%85%B3%E4%BA%8Eblock%E5%9D%97%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
-      <time datetime="2019-07-29T16:00:00.000Z" itemprop="datePublished">2019-07-30</time>
+      <a  href="/2018/09/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0/" class="article-date">
+      <time datetime="2018-09-22T16:00:00.000Z" itemprop="datePublished">2018-09-23</time>
 </a>
 
     </div>
@@ -529,7 +619,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/30/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%85%B3%E4%BA%8Eblock%E5%9D%97%E8%AE%BF%E9%97%AE%E5%A4%96%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/">关于block块访问外部变量的值的问题</a>
+      <a  class="article-title" href="/2018/09/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%87%BD%E6%95%B0/">函数</a>
     </h1>
   
 
@@ -541,7 +631,19 @@
       
           
         <hr>
-<p>1）在block代码块的内部可以取定义在外部的变量的值，包括定义在外部的局部变量和全局变量<br>2）在block代码块的内部可以修改全局变量的值，但是不能修改定义在外部的局部变量的值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4l9a64rj307v091mz1.jpg"><br>3）如果你希望我们定义的局部变量可以允许在block代码的内部去修改，那么就为这个局部变量加一个__block(两个下划线)的修饰符<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4lhnhysj307v01c0sv.jpg"></p>
+<p>函数：函数是一块代码，接收零个或多个参数，做一件事情，并返回零个或一个值</p>
+<p>循环：同一段代码反复不停的执行<br>重用/复用：有一段代码，多个地方都要执行一次，但是不是反复不停的执行</p>
+<p>定义在函数内部的变量，我们就叫做局部变量<br>定义在函数外部的变量，我们就叫做全局变量，直接定义在源文件下面</p>
+<p>局部变量只能在当前函数的内部访问<br>全局变量从定义的地方开始，后面的所有函数中都可以访问这个全局变量</p>
+<p>声明一个局部变量，如果没有为这个局部变量赋初始值，那么这个局部变量中的值是一个垃圾值；声明一个全局变量，如果没有为这个全局变量赋初始值，那么这个全局变量的初始值为0</p>
+<p>如果全局变量的类型是char类型，并且我们也没有初始化，那么系统就会自动的为这个char变量赋值一个‘\0’，代表一个不可见的字符，这个字符的ASCII码就是0</p>
+<p>CPU执行声明局部变量的那句话的时候，才会在内存中声明局部变量，当作用域结束以后，就会自动回收；程序一启动，就在内存中创建全局变量，程序结束的时候全局变量才会被回收</p>
+<p>可以定义一个和全局变量名称相同的局部变量【不建议】</p>
+<p>声明在函数名称后面的小括弧中的变量就叫做这个函数的参数，参数实际上就是定义在函数内部的局部变量，所以在函数的内部不能再定义一个局部变量的名称和参数的名称一样</p>
+<p>形参：声明在函数名的小括弧中的参数<br>实参：在调用函数的时候，实际上为形参赋的值</p>
+<p>return关键字用在函数体中，在函数体中如果遇到了return关键字，就会立即结束这个函数的执行<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotmep4m79j30an091wf6.jpg"></p>
+<p>函数的声明(.h)和实现(.c)</p>
+<p>当我们的程序的函数过多的时候，就要考虑分模块开发，一个模块至少包含两个文件，.h文件专门写函数的声明，.c文件专门写函数的实现 ，其他人想要调用函数，只需要导入头文件就可以了</p>
 
       
     </div>
@@ -556,7 +658,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -578,11 +680,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/block作为函数的参数：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/值传递、地址传递" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/29/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-28T16:00:00.000Z" itemprop="datePublished">2019-07-29</time>
+      <a  href="/2018/09/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%80%BC%E4%BC%A0%E9%80%92%E3%80%81%E5%9C%B0%E5%9D%80%E4%BC%A0%E9%80%92/" class="article-date">
+      <time datetime="2018-09-21T16:00:00.000Z" itemprop="datePublished">2018-09-22</time>
 </a>
 
     </div>
@@ -596,7 +698,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/29/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A/">block作为函数的参数：</a>
+      <a  class="article-title" href="/2018/09/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%80%BC%E4%BC%A0%E9%80%92%E3%80%81%E5%9C%B0%E5%9D%80%E4%BC%A0%E9%80%92/">值传递、地址传递</a>
     </h1>
   
 
@@ -608,9 +710,15 @@
       
           
         <hr>
-<p>定义：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4m5ef33j307v05xta6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4maxin7j307v05x402.jpg"></p>
-<p>调用：<br>1）如果要调用的函数的参数是block类型的，那么要求在调用的时候传入一个和形参block要求的代码段<br>2）调用的时候，可以先将代码段存储到一个block变量中，然后再传递这个block变量；也可以直接将符合要求的代码段写在小括弧中传递<br>3）小技巧：通过Xcode提示可以快速的生成block代码段的框架<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4mhp6yxj30860cj0v8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4mq35tjj30et0brtbg.jpg"></p>
-<p>将block作为函数的参数可以实现什么效果：可以将调用者自己写的一段代码传递到函数的内部去执行</p>
+<p>值传递：当函数参数的类型是int、float、double、char类型的时候，调用者传入一个实参变量，函数执行完毕之后，对实参变量的值没有影响</p>
+<p>我们来分析下面一段代码：为啥test函数和main函数中num的值不一样呢？？<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffk6urjqj30be0drwfn.jpg"></p>
+<p>程序执行原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffkohma6j314x0r7h0l.jpg"></p>
+<p>地址传递：数组作为函数的参数时是地址传递，在传值的时候，是把实参数组名传递进来，数组名代表数组地址，所以这个时候传值传的是数组的地址，把数组的地址传递给了函数的参数，所以函数的参数也指向了实参数组【当数组作为函数的参数的时候，在函数的内部去修改这个参数数组的元素，其实修改的就是实参数组的元素】</p>
+<p>当数组作为函数的参数的时候，那么在传递的时候，会丢失数组的长度，在函数的内部使用sizeof计算参数数组的字节数，得到的永远都是8<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffl328kkj30mv0eygnk.jpg"></p>
+<p>内部原理：如果函数的参数是一个数组，在声明这个参数的时候，并不会去真正的创建数组，而是去声明一个用来存储数组地址的指针变量，这个指针变量在内存中占据8个字节<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffliqdhdj30j40cqabp.jpg"></p>
+<p>那我们函数内部想要得到原来的数组长度该怎么办呢？？</p>
+<p>如果我们的函数的参数是一个数组，这个时候还必须得加一个参数，让调用者将这个数组的长度传递进来<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffltm3edj30b70c6wfn.jpg"></p>
+<p>如果我们为函数写了一个数组作为参数，其实编译器在编译的时候，已经把这个数组换成了指针【所以，以后为函数写一个数组参数的时候，不要写数组了，直接按照下图写一个指针】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotlugi84bj30an0acwfh.jpg"></p>
 
       
     </div>
@@ -625,7 +733,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -647,11 +755,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/应用实例：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/指针作为函数的参数、返回值" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/28/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-27T16:00:00.000Z" itemprop="datePublished">2019-07-28</time>
+      <a  href="/2018/09/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E3%80%81%E8%BF%94%E5%9B%9E%E5%80%BC/" class="article-date">
+      <time datetime="2018-09-20T16:00:00.000Z" itemprop="datePublished">2018-09-21</time>
 </a>
 
     </div>
@@ -665,7 +773,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/28/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B%EF%BC%9A/">应用实例：</a>
+      <a  class="article-title" href="/2018/09/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E3%80%81%E8%BF%94%E5%9B%9E%E5%80%BC/">指针作为函数的参数、返回值</a>
     </h1>
   
 
@@ -677,10 +785,16 @@
       
           
         <hr>
-<p>写一个数组类，给这个数组类提供一个方法，将一个国家字符串数组进行排序：</p>
-<p>比较j和j+1这两个字符串，我们直接比较的是字母顺序，但是这么写的话就写死了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4n7iz3dj30qm0mo7e9.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4newe30j30qm0mo7dh.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nl63s9j30qm0moak6.jpg"></p>
-<p>比较这两个字符串的大小，不要方法的内部自己写代码去比，因为不管写什么代码都会写死的，让调用者自己写一段代码来比较这两个字符串的大小</p>
-<p>当方法的内部需要执行一个功能，但是这个功能具体的实现函数的内部不确定，那么这个时候，就使用block让调用者将这个功能的具体实现传递进来<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nrq4dij30qm0mogwa.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4nynd5hj30qm0motic.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4o6dc03j30qm0mo7ek.jpg"></p>
+<p>指针作为函数的参数：</p>
+<p>当我们调用一个函数的时候，如果这个函数的参数是一个指针，那么我们就必须要为这个指针传递一个和指针类型相同的普通变量的地址，这个时候，在函数的内部去访问参数指针指向的变量的时候，其实访问的就是实参变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffo9ym4oj30bc0auwfb.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffomb06ij30au08j74n.jpg"></p>
+<p>下面的程序遇到了一个问题：函数内部只能返回一个数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffpcykhkj30mu0hsac6.jpg"></p>
+<p>当函数需要返回多个数据的时候就可以使用指针作为函数的参数</p>
+<p>解决方法：使用指针作为函数的参数，让调用者将自己的变量的地址传递到函数的内部，函数的内部通过指针就可以修改实参变量的值<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffpnj5coj30gk0hsac8.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffpzfmnaj30l10ihmzz.jpg"></p>
+<p>指针作为函数的返回值：</p>
+<p>可以返回局部变量的值，但是不能返回局部变量的地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffqcr895j30mt0d7dh7.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffqobzh0j30gv0880tt.jpg"></p>
+<p>如果你就是要返回一个指针，那么你就要保证这个指针指向的空间在函数结束以后仍然存在，那么这个时候，就可以将空间申请在堆区，然后返回堆区的地址【使用完后一定要记得free】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffqwsyqoj30b50fwgn1.jpg"></p>
 
       
     </div>
@@ -695,7 +809,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -717,11 +831,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/block作为函数的返回值" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/指针" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/" class="article-date">
-      <time datetime="2019-07-26T16:00:00.000Z" itemprop="datePublished">2019-07-27</time>
+      <a  href="/2018/09/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88/" class="article-date">
+      <time datetime="2018-09-19T16:00:00.000Z" itemprop="datePublished">2018-09-20</time>
 </a>
 
     </div>
@@ -735,7 +849,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E4%BD%9C%E4%B8%BA%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/">block作为函数的返回值</a>
+      <a  class="article-title" href="/2018/09/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%8C%87%E9%92%88/">指针</a>
     </h1>
   
 
@@ -747,7 +861,41 @@
       
           
         <hr>
-<p>当将block作为函数的返回值的时候，返回值的类型就必须要使用typedef定义的短类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4oobs8cj307506sgmp.jpg"></p>
+<p>变量的值：存储在变量中的数据叫做变量的值<br>变量的地址：一个变量是由一个或多个字节组成的，组成这个变量的低字节的地址，就是这个变量的地址</p>
+<p>变量的地址就叫做指针，指针变量就是专门用来存储地址的变量，专门用来存储另外一个变量的地址，那么我们就说这个指针变量指向了另外一个变量【它自己也有一个地址】，通过指针变量可以间接的访问指针变量指向的另外一个变量</p>
+<p><code>int* p1;</code>，代表声明了一个叫做p1的指针变量，这个指针变量的类型是int<em>，这个</em>代表这个变量不是一个普通变量，而是一个专门用来存储地址的指针变量【只能存储int变量的地址】</p>
+<p>指针变量初始化只能给他一个地址：<code>int* p1=&amp;num;</code><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn91mcrhboj30ae0bodh3.jpg"></p>
+<p>使用指针间接的操作指向的变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int num &#x3D; 10;</span><br><span class="line">int* p1&#x3D;&amp;num;</span><br><span class="line">*p1&#x3D;100;  &#x2F;&#x2F;*p1代表指向的变量，也就是num</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>运算符&amp;：获得变量的地址，它的操作数必须是变量:<code>int i;printf(“%p”,&amp;i);</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhj9ui8ij307q09odgd.jpg"></p>
+<p>*是一个单目运算符，用来访问指针的值所表示的地址上的变量,可以做右值也可以做左值<br><code>int k=*p;</code><br><code>*p=k+1;</code></p>
+<p>指针的一些注意点：</p>
+<p>1）【指针+1】并不是在指针地址的基础之上加一个字节的地址，而是在这个指针地址的基础之上加一个单位变量占用的字节数【这个时候p1指向的就是num1】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhg7ivdkj30c90bkq5b.jpg"></p>
+<p>2）<em>p++的意思是取出p所指的那个数据，之后再把p移到下一个位置去，</em>的优先级虽然高，但是没有++高，常用于数组类的连续空间操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhm5m48oj30bb0a0ab0.jpg"></p>
+<p>3）<code>int* p1;</code><br>我们声明一个指针变量，如果没有为其初始化，那么这个时候这个指针变量是有值的，这个值是一个垃圾值，，这个时候，这个指针变量就有可能指向了一块随机的空间，像这样的指针我们就叫做野指针【最好给他初始化一下：<code>int *p1=NULL;</code>NULL值代表指针变量不指向内存中的任何地址】</p>
+<p>4）多个指针指向同一变量：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn91xcb2vdj315g0ni0to.jpg"></p>
+<p>5）指针分好多类型，但无论指针什么类型，在内存中都是占据着8个字节，指向不同类型的指针是不能直接互相赋值的，这是为了避免用错指针</p>
+<p>6）p1指针变量中存储的是num变量的地址，也就是num变量的低字节的地址，这个时候p1指针能操作多少个字节是根据指针的类型来决定的【这就是为什么指针要分类型，还必须跟指向的普通变量的类型一致】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhf08v8wj30b7084taf.jpg"></p>
+<p>一级指针和多级指针：</p>
+<p>一个指针变量中存储的是一个普通变量的地址，像这样的指针，我们就叫做一级指针<br>一个指针变量中存储的是一个一级指针变量的地址，像这样的指针，我们就叫做二级指针<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn92ltsw2wj31120mcmxz.jpg"></p>
+<p>声明多级指针：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn998qjxb7j30af0icdho.jpg"></p>
+<p>一级指针只能存储普通变量的地址，二级指针只能存储一级指针变量的地址</p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn98zgc3j9j318a0rlaby.jpg"></p>
+<p>指针与数组：</p>
+<p>使用指针来遍历数组：<br>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn99jgtfkfj30fr0c43zp.jpg"><br>2）本方法中不能换成*(arr++)，数组名代表数组的地址，而数组一旦创建，数组的地址就确定了，不能改变，所以我们不能为数组名赋值，不能修改数组名的值，但是可以使用数组名的值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn99mgl7u2j30aj0c4dgp.jpg"><br>3）此方法跟前两种不一样<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn99qqsj9pj30aj0hl3zt.jpg"></p>
+<p>中括弧的本质【数组arr[0]等价于*(arr+0)，操作数组我们虽然使用中括弧下标来操作，实际上内部仍然是使用指针来操作】：<br>指针变量后面可以使用中括弧，在中括弧中写上下标来访问数据：p1[n]完全等价于*(p1+n)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn99xbws2zj30ar0as3zf.jpg"></p>
+<p>函数参数表中的数组实际上是指针,但是可以用数组的运算符[]进行运算</p>
+<p>数组变量是特殊的指针：<br>1）数组变量本身表达地址，所以<code>int a[10];int *p=a;</code>无需用&amp;取地址，但是数组的单元表达的是变量，需要用&amp;取地址<br>2）[]运算符可以对数组做，也可以对指针做<br>3）*运算符可以对指针做，也可以对数组做<br>4）数组变量是const的指针，所以不能被赋值：<code>int a[];int * const a;</code></p>
+<p>如果一个数组是用来存储指针类型的数据的话，那么这个数组就叫做存储指针的数组：<code>int* arr[3];</code><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9a4ckuynj30ar0cejsi.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9agvrf6oj30l40ee0uo.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9b10dl9tj312r0u0jt3.jpg"></p>
+<p>指针之间的运算：指针与指针之间只能做减法运算，不能做加乘除运算，可以做比较运算</p>
+<p>指针与指针之间可以做减法运算，结果是一个long类型的数据，代表两个指针指向的变量之间相差多少个单位变量<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9b7tzxtoj30b90a4wfi.jpg"></p>
+<p>如果参与减法运算的两个指针不指向同一个数组，先求出两个指针的差/每一个指针变量对应的普通变量占用的字节数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9c45qb5jj30820b9q3s.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9cb0hgoej30wj0o5gm5.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhlrqxiyj309l0ea400.jpg"></p>
+<p>指针的比较运算：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gn9cewazj5j30aw0aiq3r.jpg"></p>
+<p>指向函数的指针：<br>程序在运行的时候，会将程序加载到内存，程序中的函数肯定存在于内存的代码段中，我们可以声明一个指针，存储这个函数的地址，让这个指针指向这个函数，使用指针来间接的调用函数</p>
+<p>一个指向函数的指针，并不是任意的函数都可以指向，要求指向的函数的返回值类型和参数类型必须要与指针的描述一样<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna41zr25bj30ci0cemy8.jpg"><br>函数的名称就代表这个函数的地址：【注意不要在函数名后加小括弧，如果加了小括弧，就代表指向这个函数，拿到这个函数的返回值】</p>
+<p>如果指向的函数有参数有返回值，调用的时候有参数就传参，有返回值就接！</p>
 
       
     </div>
@@ -762,7 +910,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -784,11 +932,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/block与函数的异同：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/const修饰基本数据类型" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E5%90%8C%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-25T16:00:00.000Z" itemprop="datePublished">2019-07-26</time>
+      <a  href="/2018/09/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/const%E4%BF%AE%E9%A5%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+      <time datetime="2018-09-18T16:00:00.000Z" itemprop="datePublished">2018-09-19</time>
 </a>
 
     </div>
@@ -802,7 +950,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/block%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E5%90%8C%EF%BC%9A/">block与函数的异同：</a>
+      <a  class="article-title" href="/2018/09/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/const%E4%BF%AE%E9%A5%B0%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">const修饰基本数据类型</a>
     </h1>
   
 
@@ -814,8 +962,10 @@
       
           
         <hr>
-<p>相同点：都是封装一段代码</p>
-<p>不同的：<br>1）block是一个数据类型，可以声明block类型的变量；而函数就只是函数<br>2）block可以作为函数的参数，而函数不能直接作为函数的参数</p>
+<p><code>const int num = 10;</code><br>一般情况下来说，被const修饰的变量具备一定程度上的不可变性【只能取值不能修改】</p>
+<p>const修饰数组：<code>const int arr[4]=&#123;10,20,30,40&#125;;</code>，数组的元素的值不能修改,数组变量已经是const的指针了，这里的const表明数组的每个单元都是const int，所以必须通过初始化进行赋值</p>
+<p>const修饰指针：<br>1）<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna53uqy8yj30kl0dhjti.jpg"><br>2）<code>int const * p1=&amp;num;</code>效果同上<br>3）<code>int * const p1=&amp;num;</code><br>p1的值不能修改，但是可以通过p1去修改p1指向的变量的值<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna5al9nfmj30at0cggmx.jpg"><br>4）<code>int const * const p1=&amp;num;</code><br>既不能修改p1的值，也不能通过p1去修改p1指向的变量的值</p>
+<p>当函数的参数是一个指针的时候，这个时候函数的内部是有可能会修改实参变量的值,所以要加一个const:<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna5jqxhtjj30d70amta0.jpg"></p>
 
       
     </div>
@@ -830,7 +980,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -852,11 +1002,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/协议的基本使用(protocol)：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/与申请字节空间有关的三个函数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(protocol)%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-24T16:00:00.000Z" itemprop="datePublished">2019-07-25</time>
+      <a  href="/2018/09/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E4%B8%8E%E7%94%B3%E8%AF%B7%E5%AD%97%E8%8A%82%E7%A9%BA%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E4%B8%89%E4%B8%AA%E5%87%BD%E6%95%B0/" class="article-date">
+      <time datetime="2018-09-17T16:00:00.000Z" itemprop="datePublished">2018-09-18</time>
 </a>
 
     </div>
@@ -870,7 +1020,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8(protocol)%EF%BC%9A/">协议的基本使用(protocol)：</a>
+      <a  class="article-title" href="/2018/09/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E4%B8%8E%E7%94%B3%E8%AF%B7%E5%AD%97%E8%8A%82%E7%A9%BA%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E4%B8%89%E4%B8%AA%E5%87%BD%E6%95%B0/">与申请字节空间有关的三个函数</a>
     </h1>
   
 
@@ -882,20 +1032,13 @@
       
           
         <hr>
-<p>作用：专门用来声明一大堆方法（不能声明属性，也不能实现方法，只能用来写方法的声明），只要某个类遵守了这个协议，就相当于拥有这个协议中的所有的方法声明，而不用自己去定义</p>
-<p>协议的声明：</p>
-<p>@protocol 协议名称 <NSObject></p>
-<p>方法的声明;</p>
-<p>@end<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4pbw8nij30ku06smzn.jpg"></p>
-<p>在协议中，只能用来声明方法，就是专门用来写方法声明的，就是用来被类遵守的</p>
-<p>如果想要让一个类拥有协议中定义的所有的方法声明，那么就让这个类遵守这个协议，类只要遵守一个协议，那么这个类就拥有了这个协议中定义的所有的方法的声明</p>
-<p>@interface 类名 ： 父类名 &lt;协议名称&gt;</p>
-<p>@end</p>
-<p>：表示继承<br>&lt;&gt;表示遵守的协议</p>
-<p>这个类只是拥有了这个协议中的方法的声明而已，没有实现，所以这个类还应该实现协议中的方法</p>
-<p>如果类不实现协议中的方法，其实也不会报错，编译器只是会报警告；但是当创建对象，来调用这个没有实现的协议中的方法的时候，就会报错</p>
-<p>类是单继承，但是协议可以多遵守<br>@interface 类名：父类名 &lt;协议名称1，协议名称2……&gt;</p>
-<p>@end</p>
+<p><code>#include&lt;stdlib.h&gt;</code></p>
+<p>向堆区申请字节空间来使用：我们在堆区申请的字节空间，如果不主动释放，那么系统是不会释放掉的，除非程序结束</p>
+<p>1）malloc()：向堆空间申请指定连续的字节空间来使用【参数是size_t类型的，也就是unsigned long】<br>返回值是void *，返回的是创建的空间中第一个字节的地址<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna6x4706nj308202vq3c.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna6r77yjrj30ms0jltcc.jpg"></p>
+<p>2）calloc()：calloc申请的字节，申请完之后，系统会将字节中的数据清零<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna73t2s58j30cv0fb3zs.jpg"></p>
+<p>3）realloc()：当我们发现我们之前在堆区申请的字节空间不够用的时候，就可以使用realloc函数来为我们的字节空间扩容<br>【如果原来的空间后面还有剩余的空间，并且足够扩容，那么直接就扩容在后面；如果原来的空间后面有剩余空间但是剩下的空间不够扩容，就重新找一块足够的空间申请，将原来的数据拷贝过来，原来的空间被自动释放】</p>
+<p>空间由3个变成4个，扩容了一个：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gna76tyrnxj30cv06e3z6.jpg"></p>
 
       
     </div>
@@ -910,7 +1053,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -934,7 +1077,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/28/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/30/"></a>
+      <a class="extend prev" rel="prev" href="/page/28/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/30/"></a>
     </nav>
   
 
@@ -960,7 +1103,7 @@
 
                 <a href="https://hexo.io/zh-cn/index.html" target="_blank">「Hexo文档」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
-                <a href="https://liao-hexo.github.io/archives/" target="_blank">「个人博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+                <a href="https://liao-hexo.github.io/archives/" target="_blank">「我的博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
                 <a href="https://github.com/Liao-Hexo" target="_blank">「GitHub』&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 

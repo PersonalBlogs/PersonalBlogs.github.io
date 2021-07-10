@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-开发语言/Objective-C/@required与@optional" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/结构体(struct)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@required%E4%B8%8E@optional/" class="article-date">
-      <time datetime="2019-07-23T16:00:00.000Z" itemprop="datePublished">2019-07-24</time>
+      <a  href="/2018/09/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93(struct)/" class="article-date">
+      <time datetime="2018-09-16T16:00:00.000Z" itemprop="datePublished">2018-09-17</time>
 </a>
 
     </div>
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@required%E4%B8%8E@optional/">required与optional</a>
+      <a  class="article-title" href="/2018/09/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E7%BB%93%E6%9E%84%E4%BD%93(struct)/">结构体(struct)</a>
     </h1>
   
 
@@ -258,11 +258,30 @@
       
           
         <hr>
-<p>当一个类遵守了一份协议，这个类只是拥有了这个协议中的方法的声明而已，没有实现，所以这个类还应该实现协议中的方法；如果类不实现协议中的方法，其实也不会报错，编译器只是会报警告；但是当创建对象，来调用这个没有实现的协议中的方法的时候，就会报错</p>
-<p>这两个修饰符是专门用来修饰协议中的方法的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4pvf6jmj306l04udgl.jpg"></p>
-<p>在协议中，如果方法的声明被@required修饰，那么遵守这个协议的类必须要实现这个方法，否则编译器会发出警告；<br>如果方法的声明被@optional修饰，那么遵守这个协议的类如果不实现这个方法，编译器也不会发出警告</p>
-<p>这两个关键字的主要作用：在于程序员沟通，告诉遵守协议的类，哪些方法是必须要实现的（@required必须实现，@optional可实现可不实现），因为这些方法我会调用</p>
-<p>默认的是：@required</p>
+<p>我们使用结构体仅仅是创建了一个新的数据类型而已，并没有声明变量，是在指定新的数据类型是由哪些成员组合而成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">struct Student&#123;</span><br><span class="line">   char *name;</span><br><span class="line">   int age;</span><br><span class="line">   int score;</span><br><span class="line">   float height;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct Student stu;  &#x2F;&#x2F;代表声明了一个struct Student类型的变量，变量名字叫做stu，这个时候stu才是一个变量，才会在内存中申请空间</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhvh4495j30h80hotb6.jpg"></p>
+<p>结构体初始化：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhv8x83jj30jd09vgn6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhuwh5gkj30ba0b975g.jpg"></p>
+<p>结构和数组有点像，数组用[]运算符和下标访问其成员，结构用.运算符和名字访问其成员</p>
+<p>匿名结构体：这个结构体类型没有名称，只能在声明结构体的同时就创建变量，不能单独的声明这个结构体类型的变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct&#123;</span><br><span class="line">   char *barnd;</span><br><span class="line">   char *color;</span><br><span class="line">   int price;</span><br><span class="line">&#125;fengshan1;</span><br></pre></td></tr></table></figure>
+
+<p>声明一个结构体变量，如果没有为这个结构体变量的成员赋值，那么成员是有值的，这个值是一个垃圾值；在声明结构体变量的同时，只要初始化一个成员，其他的成员就会被自动的初始化为0</p>
+<p>如果结构体类型是定义在函数的内部的，那么这个结构体类型只能在这个函数的内部使用，如果我们希望这个结构体类型可以用在所有的函数中，那么就把这个结构体类型定义在函数的外面</p>
+<p>结构体之间比较：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gogwvleyadj30g90h8myy.jpg"></p>
+<p>相同结构体类型的变量之间是可以相互赋值的【值传递】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">struct Student xiaoMing&#x3D;&#123;&quot;小明&quot;,19,100&#125;;</span><br><span class="line">struct Student xiaoHua&#x3D;xiaoMing;</span><br></pre></td></tr></table></figure>
+
+<p>结构体数组：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotrki2rqej30b10i9wg2.jpg"></p>
+<p>结构体指针：结构体变量是一个变量，<code>struct Student xiaoMing=&#123;“小明”,18,100&#125;;</code> xiaoMing首先是一个变量，类型是struct Student类型的，既然xiaoMing是一个变量，那么这个变量肯定是有地址的，既然有地址，那么就可以声明一个指针指向这个结构体变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhx01qhnj30g90e6q4p.jpg"></p>
+<p>结构指针：和数组不同，结构变量的名字并不是结构变量的地址，必须使用&amp;运算符<br><code>struct date *pDate=&amp;today;</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhx9fwlpj30bc08xq3v.jpg"></p>
+<p>结构体作为函数参数：<br><code>int numberOfDays(struct date d)</code><br>整个结构可以作为参数的值传入函数<br>这时候是在函数内新建一个结构变量，并复制调用者的结构的值<br>也可以返回一个结构<br>这与数组完全不同<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhxkvjyyj30jy0k0jve.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhxwivxvj30mv0kbn0u.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhy57d7vj30cm0f3dho.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhyd0uqtj30mr0jyn0h.jpg"></p>
+<p>结构体作为函数的参数【值传递】：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxhyx4lttj308d03g750.jpg"></p>
+<p>改成指针后就是地址传递了</p>
+<p>结构体完全可以作为函数的返回值，在返回的时候，直接将这个结构体变量的值返回即可</p>
+<p>如果你要返回结构体变量的地址，那么就要把这个结构体变量创建在堆区：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gnai3lzs2oj30e60c6diw.jpg"></p>
 
       
     </div>
@@ -277,7 +296,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -299,11 +318,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/协议之间的继承：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/枚举(enum)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-22T16:00:00.000Z" itemprop="datePublished">2019-07-23</time>
+      <a  href="/2018/09/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%9E%9A%E4%B8%BE(enum)/" class="article-date">
+      <time datetime="2018-09-15T16:00:00.000Z" itemprop="datePublished">2018-09-16</time>
 </a>
 
     </div>
@@ -317,7 +336,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/23/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E7%BB%A7%E6%89%BF%EF%BC%9A/">协议之间的继承：</a>
+      <a  class="article-title" href="/2018/09/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E6%9E%9A%E4%B8%BE(enum)/">枚举(enum)</a>
     </h1>
   
 
@@ -329,14 +348,10 @@
       
           
         <hr>
-<p>协议与协议之间可以相互继承</p>
-<p>语法：</p>
-<p>@protocol 协议名称 &lt;父协议名称&gt;</p>
-<p>@end</p>
-<p>效果：子协议中不仅有自己的方法的声明，还有父协议中的所有的方法的声明；如果某个类遵守了某份协议，那么这个类就拥有了这个协议和这个协议的父协议中的所有方法的声明</p>
-<p>类的名称可以和协议的名称一致：<br>在Foundation框架中，有一个类叫做NSObject，是所有OC类的基类<br>在Foundation框架中，有一个协议叫做NSObject</p>
-<p>NSObject协议被NSObject类遵守，所以，NSObject协议中的所有的方法全部的OC类都拥有了，这么说，所有的OC类都遵守了NSObject协议，NSObject协议也叫做基协议</p>
-<p>写协议的规范：要求所有的协议都必须直接的或间接的从NSObject基协议继承</p>
+<p>支持新创建一种数据类型，这个数据类型的变量的取值被限定，枚举值的名称都以枚举类型来开头<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gotryrxn87j309u0a2aat.jpg"></p>
+<p>每一个枚举值/枚举项都有一个对应的整型的数，默认从0开始，依次的递增【实际上可以手动的赋值】，无论是什么类型的枚举变量，都是占据4个字节，枚举变量中真正存储的是枚举值所对应的整型的数</p>
+<p>枚举类型名字通常并不真的使用，要用的是在大括号里的名字，因为它们就是常量符号，它们的类型是int，值依次从0到n<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi473xg2j307v09j74z.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi4hhd77j30ax0eh40i.jpg"></p>
+<p>虽然枚举类型可以当作类型使用，但是实际上很少用</p>
 
       
     </div>
@@ -351,7 +366,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -373,11 +388,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/协议的类型限制(代理设计模式)：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/typedef" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%B1%BB%E5%9E%8B%E9%99%90%E5%88%B6(%E4%BB%A3%E7%90%86%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-21T16:00:00.000Z" itemprop="datePublished">2019-07-22</time>
+      <a  href="/2018/09/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/typedef/" class="article-date">
+      <time datetime="2018-09-14T16:00:00.000Z" itemprop="datePublished">2018-09-15</time>
 </a>
 
     </div>
@@ -391,7 +406,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%B1%BB%E5%9E%8B%E9%99%90%E5%88%B6(%E4%BB%A3%E7%90%86%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)%EF%BC%9A/">协议的类型限制(代理设计模式)：</a>
+      <a  class="article-title" href="/2018/09/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/typedef/">typedef</a>
     </h1>
   
 
@@ -403,9 +418,9 @@
       
           
         <hr>
-<p>NSObject&lt;协议名称1，协议名称2….&gt;  *指针名;<br>Id&lt;协议名称1，协议名称2….&gt;  指针名;</p>
-<p>这个时候，这个指针可以指向遵守了指定协议的任意对象，如果指定的对象没有遵守这个协议，会报一个警告【多个协议必须同时遵守，只遵守一个也会报警告】</p>
-<p>为什么要做协议的类型限制：<br>1）遵守了某个协议的类，，就相当于这个类拥有了这个协议所定义的行为<br>2）因为我要调用这个对象中的协议方法，只有类遵守了协议，这个类中才一定会有协议方法<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4qhkaw7j309x011weq.jpg"></p>
+<p>为一个已经存在的数据类型取一个别名【为结构体和枚举取一个别名】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi4qiiifj30bu095mzv.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi4yx9dsj30be0543zo.jpg"></p>
+<p>size_t其实就是unsigned long</p>
+<p>C语言提供了一个叫做typedef的功能来声明一个已有的数据类型的新名字，比如 typedef int Length;</p>
 
       
     </div>
@@ -420,7 +435,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -442,11 +457,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/框架" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/联合(union)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E6%A1%86%E6%9E%B6/" class="article-date">
-      <time datetime="2019-07-20T16:00:00.000Z" itemprop="datePublished">2019-07-21</time>
+      <a  href="/2018/09/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%81%94%E5%90%88(union)/" class="article-date">
+      <time datetime="2018-09-13T16:00:00.000Z" itemprop="datePublished">2018-09-14</time>
 </a>
 
     </div>
@@ -460,7 +475,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E6%A1%86%E6%9E%B6/">框架</a>
+      <a  class="article-title" href="/2018/09/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%81%94%E5%90%88(union)/">联合(union)</a>
     </h1>
   
 
@@ -472,8 +487,7 @@
       
           
         <hr>
-<p>框架：苹果或者第三方事先写好了一些功能很厉害的类，把这些类交给我们使用，这些类的集合我们叫做框架</p>
-<p>Foundation框架：是一个包，这里面有很多类、函数、定义了一些数据类型，这个框架中的类都是一些最基础的类(NSString、NSObject)，其他的框架都是基于Foundation框架的</p>
+<p>所有的成员共享一个空间<br>同一时间只有一个成员是有效的<br>union的大小是其最大的成员<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi57et9dj309h0a1my5.jpg"></p>
 
       
     </div>
@@ -488,7 +502,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -510,11 +524,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/NSString类：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/进制" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/NSString%E7%B1%BB%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-19T16:00:00.000Z" itemprop="datePublished">2019-07-20</time>
+      <a  href="/2018/09/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%BF%9B%E5%88%B6/" class="article-date">
+      <time datetime="2018-09-12T16:00:00.000Z" itemprop="datePublished">2018-09-13</time>
 </a>
 
     </div>
@@ -528,7 +542,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/NSString%E7%B1%BB%EF%BC%9A/">NSString类：</a>
+      <a  class="article-title" href="/2018/09/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E8%BF%9B%E5%88%B6/">进制</a>
     </h1>
   
 
@@ -540,14 +554,57 @@
       
           
         <hr>
-<p>NSString是一个数据类型，保存OC字符串的，实际上NSString的本质是一个类<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4rhv2ywj3081022756.jpg"><br>使用这种方式创建的字符串是一个空的字符@“”</p>
-<p>当我们调用NSString的类方法来创建对象的时候，创建的字符串对象是存储在堆区</p>
-<p>OC提供了一种更为快速的创建字符串对象的方式，使用前缀@</p>
-<p>@“jack”;<br>本质上这是一个NSString对象，这个NSString对象中存储的是”jack”这个字符串，这个字符串对象是存储在常量区（数据段）的</p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4rpku0sj30gi096mye.jpg"></p>
-<p>NSString的恒定性：当在内存中创建一个字符串对象以后，这个字符串对象的内容就无法更改，当我们重新为字符串指针初始化值的时候，并不是修改原来的字符串对象，而是重新的创建一个字符串对象，将这个字符串对象的地址重新赋值给字符串指针变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4rxdc8kj30eg0ae756.jpg"></p>
-<p>当系统准备要在内存中创建字符串对象的时候，会先检查内存中是否有相同内容的字符串对象，如果有直接指向，如果没有才会重新创建</p>
-<p>存储在常量区的数据不会被回收，所以存储在常量区的字符串对象也不会被回收【堆区也一样】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4s4r2d6j30ck08tdjc.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4scarf2j30dj09i77o.jpg"></p>
+<p>C语言可以识别的进制：<br>1）二进制【C语言中如果要写二进制，就加一个0b的前缀】<br>2）八进制【加一个0前缀】<br>3）十进制<br>4）十六进制【加一个0x前缀】</p>
+<p>%d：将整型变量中的数据以十进制的形式输出来<br>%o：将整型变量中的数据以八进制的形式输出来<br>%x：将整型变量中的数据以十六进制的形式输出来</p>
+<p>数码：指的是这个数据的每一位数字<br>数位：数码在这个数中的位置，从右到左依次递增，从0开始<br>基数：就是进制<br>位权：数码*（基数的数位次方）</p>
+<p>进制转换：</p>
+<p>1）十进制转换为二进制(除2取余法)：将这个数除以2，直到商为0，然后将余数倒序 【十进制转换为八进制/十六进制类似】</p>
+<p>2）二进制转换为十进制(加权法)：将这个二进制的每个数码的位权相加【八进制/十六进制转换为十进制类似】</p>
+<p>3）二进制转换为八进制(三合一)：将这个二进制从低位到高位每三个分成一组，高位不够补0，将每一组转换为十进制，将每一组的十进制连起来（二进制转换为十六进制类似）</p>
+<p>4）八进制转换为二进制(一拆三)（十六进制转换为二进制类似）</p>
+<p>5）八进制—&gt;十六进制；八—&gt;二—&gt;十六</p>
+<p>6）十六进制—&gt;八进制：十六—&gt;二—&gt;八</p>
+<p>内存中的数据存储单元是由一个一个的二进制位组成的，每一个二进制位只能存储0或者1；把内存中的八个二进制位分为一组，叫做一个字节，作为存储数据的最小基本单元</p>
+<p>如果要往内存中存储数据的话，就至少要使用一个字节，这时候一个字节最多可以表示256种数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">单位换算：</span><br><span class="line">1字节(byte)&#x3D;8bit</span><br><span class="line">1KB&#x3D;1024byte</span><br><span class="line">1MB&#x3D;1024KB</span><br><span class="line">1GB&#x3D;1024MB</span><br><span class="line">1TB&#x3D;1024GB</span><br></pre></td></tr></table></figure>
+
+<p>我们在声明变量的时候，并不是去开辟一块空间，而是向系统在内存中申请一块指定字节数的连续的字节空间</p>
+<p>char——1个字节<br>int——4个字节<br>float—4个字节<br>double—8个字节</p>
+<p>sizeof：计算常量、变量在当前系统上内存中占用的字节数【sizeof(数据类型)、sizeof(变量名)、sizeof(常量) 】</p>
+<p>char类型的变量在内存中占据一个字节，char类型的常量在内存中占据四个字节</p>
+<p>变量在内存中占据的字节数，会因为系统版本、编译器的不同而发生变化</p>
+<p>原码、反码、补码都是二进制，只不过是二进制的不同表现形式，数据是以补码的二进制存储的</p>
+<p>int类型的变量，在内存中占据4个字节，32位，为了可以表示正负性，使用最高位来表示正负，最高位为0，表示正，最高位为1，表示负，所以用来表示数据的只有31位，2^31，最小值为-2147483648，最大值为2147483647</p>
+<p>原码：最高位表示符号位，剩下的位数是这个数的绝对值的二进制<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi69iy5bj307a02ot9e.jpg"></p>
+<p>反码：正数的反码就是其原码，负数的反码就是在其原码的基础之上，符号位不变，其他位取反</p>
+<p>补码：正数的补码就是其原码，负数的补码就是在其反码的基础上+1</p>
+<p>为什么数据要以补码的形式存储呢？因为计算机中只有加法没有减法，为了更加低成本的计算出结果，所以使用补码来存储数据</p>
+<p>位运算指的是一个二进制数据的每一位来参与运算，前提是这个数必须是一个二进制</p>
+<p>注意：<br>1）参与位运算的二进制数据必须是补码形式<br>2）位运算的结果也是二进制的补码形式</p>
+<p>1）按位与(&amp;)：参与按位与的两个二进制数，如果都为1，那么结果就为1，只要有一位为0，那么结果就为0【3 &amp; 2 = 2】</p>
+<p>任何数按位与1的结果是这个数的最低位，偶数的最低位一定是0，奇数的最低位一定是1，所以如果要判断这个数是奇数还是偶数，只要用这个数按位与1就可以了，如果结果为1，那么就是奇数，如果结果为0，那么就是偶数</p>
+<p>2）按位或(|)：参与按位或的二进制数据，只要有一位是1，那么结果就为1，只有当两位都是0的时候结果才为0</p>
+<p>3）按位取反(~)：单目运算符，将这个二进制数的每一位取反</p>
+<p>4）按位异或(^)：参与按位异或的二进制的位，相同为0，不同为1</p>
+<p>交换两个变量的值可以用异或运算</p>
+<p>5）按位左移(&lt;&lt;)：参与按位左移运算的二进制数据，向左移动指定的位数，低位不够补0，高位溢出丢弃【左移运算有可能会改变其正负性；将一个数左移n位，相当于将这个数乘以2的n次方】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi6k91e2j307w02zmxr.jpg"></p>
+<p>6）按位右移(&gt;&gt;)：参与按位右移运算的二进制数据，向右移动指定的位数，低位溢出丢弃，高位补符号位【右移运算不会改变其正负性；将一个数右移n位，相当于将这个数除以2的n次方】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi6ste1mj307c03g3zi.jpg"></p>
+<p>变量的存储：</p>
+<p>变量占用的字节空间一定是连续的，内存中存储数据的最小基本单位是字节，每个字节都有一个独一无二的内存地址，是一个十六进制的数</p>
+<p>在为变量分配字节空间的时候，是从高地址向低地址分配的</p>
+<p>存储在变量中的数据是以数据的二进制补码形式存储进去的【低位存储在低字节，高位存储在高字节】</p>
+<p>变量的地址：</p>
+<p>是组成这个变量的低字节的地址，使用&amp;取地址可以取出变量的地址</p>
+<p>%p：取地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi71lgauj30hv0b2dhy.jpg"></p>
+<p>声明变量就会占用内存空间，实际上程序在运行的时候，并不是说只有我们的代码才会声明变量，系统自己也会在内存中申请空间存储数据</p>
+<p>short int：在内存中占据两个字节【最高位表示符号位，2^15，所以最小值：-32768，最大值：32767】【%hd来输出，%d可能会有问题】</p>
+<p>long short：在32位系统下占4个字节，在64位占8个字节【%ld来输出】</p>
+<p>long long int：在32位和64位下都占据8个字节【%lld来输出】</p>
+<p>unsigned int，2^32，最高位不用来表示符号位了，所以最小值为0【%u来输出】</p>
+<p>unsigned short int【%hu来输出】</p>
+<p>字符数据在内存中存储的是这个字符所对应的ASCII码的二进制补码【实际上就是一个整数，可以用%d输出】</p>
+<p>char变量是一个有符号的，最高位表示符号位</p>
+<p>%c读取的时候，先从变量中读取出存储在变量中的整数，然后再去ASCII码表中去查找这个整数对应的字符，再显示这个字符</p>
 
       
     </div>
@@ -562,7 +619,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -584,11 +641,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/字符串对象常用方法：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/字符串" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-18T16:00:00.000Z" itemprop="datePublished">2019-07-19</time>
+      <a  href="/2018/09/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
+      <time datetime="2018-09-11T16:00:00.000Z" itemprop="datePublished">2018-09-12</time>
 </a>
 
     </div>
@@ -602,7 +659,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%9A/">字符串对象常用方法：</a>
+      <a  class="article-title" href="/2018/09/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
     </h1>
   
 
@@ -614,15 +671,76 @@
       
           
         <hr>
-<p>1）使用拼接的方式创建一个NSString对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4syggh6j30g8033jsk.jpg"><br>2）得到字符串的长度<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4t5fjwdj307001i3ys.jpg"><br>3）得到字符串中指定下标的字符<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4tdcp6rj307x01iaam.jpg"><br>4）判断两个字符串的内容是否相等【不能使用==去比较，因为==比较的是字符串指针变量的值，而我们要比的是两个字符串指针指向的字符串对象的内容是否相同】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4tl3zi6j30bc05n40g.jpg"><br>5）将C语言的字符串转换为OC字符串对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4trsvb6j30b8047wfp.jpg"><br>6）将OC字符串对象转换为C语言的字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ty3h0jj309h02pwf4.jpg"></p>
-<p>7）将字符串内容写入到磁盘上的某一个文件之中</p>
-<p>参数1:将字符串内容写入到哪一个文件之中，写上文件的路径</p>
-<p>参数2:YES，先将内容写入到一个临时文件，如果成功再将这个文件搬到指定的目录【安全，效率低】；NO，直接将内容写入到指定的文件【不安全，效率高】；推荐使用NO</p>
-<p>参数3:指定写入的时候使用的编码</p>
-<p>参数4:二级指针，要传递一个NSError指针的地址，<br>如果写入成功，这个指针的值就是nil，如果写入失败，这个指针就会指向一个错误的对象，这个对象描述了发生错误的信息【这个对象的localizedDescription方法可以得到发生错误的简要信息】，所以我们要判断是否写入成功，也可以判断这个指针的值是否为nil</p>
-<p>如果不想知道发生错误的原因，那么第四个参数给nil就可以了</p>
-<p>返回值是BOOL类型的，代表是否写入成功<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4u5a1g9j30it093jtr.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ucm95tj30ls0b7q8f.jpg"></p>
-<p>8）从磁盘上的文件中读取文件中的内容<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4uk68hpj30kp09tjuv.jpg"></p>
+<h3 id="字符串数据在C中的存储方式："><a href="#字符串数据在C中的存储方式：" class="headerlink" title="字符串数据在C中的存储方式："></a>字符串数据在C中的存储方式：</h3><p>内存中的五大区域：</p>
+<ol>
+<li>栈：是专门用来存储局部变量的，所有的局部变量都是声明在栈区域中</li>
+<li>堆：允许程序员手动的从堆申请指定字节数的空间来使用</li>
+<li>BSS段：是用来存储未初始化的全局变量和静态变量，声明一个全局变量，如果我们没有初始化，在程序运行最开始的时候，这个全局变量是没有初始化的，存储在BSS段【程序运行后系统就自动的初始化为0，并把初始化后的全局变量存储在数据段中】</li>
+<li>数据段/常量区：用来存储已经初始化的全局变量、静态变量和常量数据</li>
+<li>代码段：用来存储程序的代码/指令</li>
+</ol>
+<p>字符串数据在C语言中有两种存储方式：</p>
+<ol>
+<li><p>使用字符数组来存储：将字符串数据的每一个字符存储到字符数组中，并追加一个’\0’代表存储结束<br><code>char name[]=“jack”;</code></p>
+</li>
+<li><p>使用字符指针来存储字符串数据：直接将一个字符串数据初始化给一个字符指针<br><code>char* name =“jack”;</code></p>
+</li>
+</ol>
+<p>1）当它们都是局部变量的时候：</p>
+<p>字符数组是申请在栈区，字符串的每一个字符存储在这个字符数组的每一个元素中；<br>指针变量是声明在栈区的，字符串数据是以字符数组的形式存储在常量区的，指针变量中存储的是字符串在常量区的地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffrlt05vj30k30ebdgq.jpg"></p>
+<p>2）当它们作为全局变量的时候：</p>
+<p>字符数组是存储在常量区的，字符串的每一个字符存储在这个字符数组的每一个元素中；<br>指针变量也是存储在常量区的，字符串数据是以字符数组的形式存储在常量区的，指针变量中存储的是字符串在常量区的地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffruf6mdj30bb0d20tf.jpg"></p>
+<p>3）<br>以字符数组的形式存储字符串数据，不管是全局的还是局部的，都可以使用下标去修改字符数组中的每一个元素；<br>以字符指针的形式存储字符串数据，不管是全局的还是局部的，都不能通过指针去修改指向的字符串数据</p>
+<p>当我们以字符指针的形式要将字符串数据存储到常量区的时候，并不是直接将字符串存储到常量区，而是先检查常量区中是否有相同内容的字符串，如果有直接将这个字符串的地址拿过来返回，如果没有，才会将这个字符串数据存储在常量区中</p>
+<p>当我们重新为字符指针初始化一个字符串的时候，并不是修改原来的字符串，而是重新的创建了一个字符串，把这个新的字符串的地址赋值给它<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffs2gcrdj30hj0dwmyx.jpg"></p>
+<p>几个比较容易混的点：</p>
+<ol>
+<li><p>这样是可以的，但是不是把“jack”改成了“rose”，而是重新创建了一个“rose”，把“rose”的地址赋值给name<br><code>char *name = &quot;jack&quot;;</code><br><code>name = &quot;rose&quot;;</code></p>
+</li>
+<li><p>这样是不行的，name是数组名，代表数组的地址，不能为数组名赋值<br><code>char name[]=&quot;jack&quot;;</code><br><code>name = &quot;rose&quot;;</code></p>
+</li>
+<li><p>这样做是可以的，直接修改数组的元素<br><code>name[0]=&#39;r&#39;;</code><br><code>name[1]=&#39;o&#39;;</code><br><code>name[2]=&#39;s&#39;;</code><br><code>name[3]=&#39;e&#39;;</code><br><code>name[4]=&#39;\0&#39;;</code></p>
+</li>
+</ol>
+<hr>
+<h3 id="统计字符串中某一个字符出现的次数："><a href="#统计字符串中某一个字符出现的次数：" class="headerlink" title="统计字符串中某一个字符出现的次数："></a>统计字符串中某一个字符出现的次数：</h3><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffsbyo8oj30lt0da75z.jpg"></p>
+<hr>
+<h3 id="使用字符指针数组来存储多个字符串数据："><a href="#使用字符指针数组来存储多个字符串数据：" class="headerlink" title="使用字符指针数组来存储多个字符串数据："></a>使用字符指针数组来存储多个字符串数据：</h3><p>这是一个一维数组，每一个元素的类型是char指针：<br><code>char* names[4] = &#123;&quot;jack&quot;,&quot;rose&quot;,&quot;lily&quot;,&quot;lilei&quot;&#125;;</code></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glffskcpb7j30iw0b00u6.jpg"></p>
+<hr>
+<p>在声明字符数组的同时，如果初始化了部分元素，那么其他的字符会被初始化为’\0’，‘\0’是一个字符，是一个不可见的字符，打印出来啥都没有，这个字符的ASCII码是0</p>
+<p>在C语言中字符串数据必须要用双引号引起来</p>
+<p>C语言中存储字符串数据：将字符串数据的每一个字符存储到字符数组中，并在后面追加一个’\0’代表字符串存储完毕<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi8i55dkj30db05zaap.jpg"></p>
+<p>最根本的方式存储字符串：<br><code>char name[5]=&#123;‘j’,’a’,’c’,’k’,’\0’&#125;;</code></p>
+<p><code>char name[]=&#123;“jack”&#125;;</code><br>系统会自动的将这个字符串中的每一个字符存储到字符数组中，并自动的追加一个’\0’</p>
+<p>最常用的方式：<br><code>char name[]=“jack”;</code></p>
+<p>如果我们使用字符数组存储字符串数据的时候，没有指定这个字符数组的长度，那么这个时候这个字符数组的长度为字符串长度+1</p>
+<p>我们在使用字符数组存储字符串数据的时候，最好不要指定长度了</p>
+<p>如果在声明一个字符数组的同时我们就初始化一个字符数据给这个数组，那么这个时候是可以用中文的【这个字符数组的长度为7，因为一个中文占3个字节】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi8rla1wj3050014jrg.jpg"></p>
+<p>使用格式控制符%s就可以输出存储在字符数组中的字符串数据【%s从给定的数组的地址开始，一个字节一个字节的输出，直到遇到’\0’为止】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi91mct2j3092056gm5.jpg"></p>
+<p>无需&amp;<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi9bfcgxj304n04ijrv.jpg"></p>
+<p>使用scanf函数：<br>1）如果用户输入的字符串数据在给定的字符数组中存储不下的时候，就会运行报错<br>2）用户在输入字符串的时候，如果输入了空格，就会认为输入结束</p>
+<p>不能使用sizeof去计算字符数组的长度来得到字符串的长度，因为有可能字符串数据存储在字符数组中只占了一部分空间<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi9jg8u9j308707xt9x.jpg"><br>解决方法：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxi9se9s7j30930bnq4h.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxia1pfybj30h10c741i.jpg"></p>
+<p>字符串常量：<br>“Hello”会被编译器变成一个字符数组放在某处，这个数组的长度是6，结尾还有表示结束的0<br>两个相邻的字符串常量会被自动连接起来</p>
+<p>C语言的字符串是以字符数组的形态存在的，不能用运算符对字符串做运算，通过数组的方式可以遍历字符串，唯一特殊的地方是字符串字面量可以用来初始化字符数组</p>
+<p><code>char *s=“Hello,world!”;</code><br>s是一个指针，初始化为指向一个字符串常量，由于这个常量所在的地方，所以实际上s是const char *s，但是由于历史的原因，编译器接受不带const的写法，但是试图对s所指的字符串做写入会导致严重的后果<br>如果需要修改字符串，应该用数组：char s[]=“Hello,world!”;<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxia9htm4j309h0bbt9t.jpg"><br>数组：这个字符串在这里，作为本地变量空间自动被回收<br>指针：这个字符串不知道在哪里，处理参数，动态分配空间</p>
+<p>如果要构造一个字符串，用数组<br>如果要处理一个字符串，用指针<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiakld2vj30fp0a8tb0.jpg"></p>
+<p>在%和s之间的数字表示最多允许读入的字符的数量，这个数字应该比数组的大小小一<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiasvnmmj30b708cab2.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxib200p8j30gr0b2gnl.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxib903fkj30dc0adt9x.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxibg4a5qj30pk06kabt.jpg"></p>
+<h3 id="stdio-h文件："><a href="#stdio-h文件：" class="headerlink" title="stdio.h文件："></a>stdio.h文件：</h3><p>puts()函数：用来输出字符串的【优点是输出完毕之后自动换行，缺点是只能输出字符串，也不能使用占位符】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxibov60sj308c04i0tg.jpg"></p>
+<p>fputs()函数：将字符串数据输出到指定的流中【标准输出流：控制台；文件流：磁盘上的文件】<br>输出到标准输出流中：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxibzbnetj308v04aaaw.jpg"><br>将字符串存储到文件中：<br>1）要先声明一个文件指针，指向磁盘上的文件【fopen函数可以创建一个指向文件的指针】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxicgau45j30cf04ajto.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxicneawlj30cc036jsu.jpg"><br>2）使用fputs()函数将字符串写入到指定的文件流中<br>3）写完之后一定要记得使用fclose()函数将这个文件关闭<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxicvtjlej30dr07o0ue.jpg"></p>
+<p>gets()函数：从控制台接收用户输入一个字符串数据【优点是当用户输入的数据包含空格的时候，会连空格一起接收；缺点是和scanf函数一样不安全，当用来存储字符串的数据的字符数组的长度不够的时候，程序就会崩溃】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxid4nt7oj30cd05rjt7.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxidd0fioj305d068my6.jpg"></p>
+<p>fgets()函数：从指定的流中读取字符串，这个流可以是标准输入流：控制台，也可以是文件流<br>1）从标准输入流中读取数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxidlb0bhj30e701j0tw.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxidswxpij3094049wfb.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxidzv4r0j30hr04ptba.jpg"><br>解决方案：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxie6ulcrj30aa01e3z8.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiednglnj308m0aumzb.jpg"><br>2）从文件流中读取数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiekzz5jj30dq09xtby.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxieru4tnj30an03ydgj.jpg"></p>
+<h3 id="string-h头文件：strlen-strcmp-strcpy-strcat-strchr-strstr"><a href="#string-h头文件：strlen-strcmp-strcpy-strcat-strchr-strstr" class="headerlink" title="string.h头文件：strlen,strcmp,strcpy,strcat,strchr,strstr"></a>string.h头文件：strlen,strcmp,strcpy,strcat,strchr,strstr</h3><p>strlen:<br><code>size_t strlen(const char *s);</code><br>返回s的字符串长度（不包括结尾的0）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxiezump7j30a00a73zm.jpg"></p>
+<p>strcmp:<br><code>int strcmp(const char *s1,const char *s2);</code><br>比较两个字符串，返回：<br>0:  s1==s2<br>1:   s1&gt;s2<br>-1:  s1&lt;s2<br><code>int strncmp(const char *s1,const char *s2,size_t n);</code>只比较前几个字符<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxifahbiyj30fd0grgo7.jpg"></p>
+<p>strcpy:【存储字符串1的字符数组长度不够，无法存储字符串2，这个时候运行就会崩溃】<br><code>char *strcpy(char *restrict dst,const char *restrict src);</code><br>把src的字符串拷贝到dst，restrict表明src和dst不重叠<br>返回dst,为了能链起代码来</p>
+<p>复制一个字符串：<br><code>char *dst=(char *)malloc(strlen(src)+1);</code><br><code>strcpy(dst,src);</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxigx7as1j30at0f4dh5.jpg"><br>把name2拷贝到name1:<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxih2cxooj30h107idhj.jpg"></p>
+<p>strcat:【接的时候会把第一个字符串后的’\0’干掉】<br><code>char *strcat(char *restrict s1,const char *restrict s2);</code><br>把s2拷贝到s1的后面，接成一个长的字符串<br>返回s1<br>s1必须具有足够的空间</p>
+<p>strcpy,strcat不安全！！</p>
+<p>安全版本：<br><code>char *strncpy(char *restrict dst,const char *restrict src,size_t n);</code><br><code>char *strncat(char *restrict s1,const char *restrict s2,size_t n);</code></p>
+<p>字符串中找字符：<br><code>char *strchr(const char *s,int c);</code><br><code>char *strrchr(const char *s,int c);</code><br>返回NULL表示没有找到<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxihcb8s7j30b90hmjt5.jpg"></p>
+<p>字符串中找字符串：<br><code>char *strstr(const char *s1,const char *s2);</code><br><code>char *strcasestr(const char *s1,const char *s2);</code></p>
 
       
     </div>
@@ -637,7 +755,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -659,11 +777,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/使用URL来读写字符串数据" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C语言/预处理指令" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/07/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E4%BD%BF%E7%94%A8URL%E6%9D%A5%E8%AF%BB%E5%86%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE/" class="article-date">
-      <time datetime="2019-07-17T16:00:00.000Z" itemprop="datePublished">2019-07-18</time>
+      <a  href="/2018/09/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E9%A2%84%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4/" class="article-date">
+      <time datetime="2018-09-10T16:00:00.000Z" itemprop="datePublished">2018-09-11</time>
 </a>
 
     </div>
@@ -677,7 +795,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E4%BD%BF%E7%94%A8URL%E6%9D%A5%E8%AF%BB%E5%86%99%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE/">使用URL来读写字符串数据</a>
+      <a  class="article-title" href="/2018/09/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C%E8%AF%AD%E8%A8%80/%E9%A2%84%E5%A4%84%E7%90%86%E6%8C%87%E4%BB%A4/">预处理指令</a>
     </h1>
   
 
@@ -689,8 +807,39 @@
       
           
         <hr>
-<p>优势：既可以读写本地磁盘文件，还可以读写网页文件、ftp服务器上的文件<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4v5t795j30br02pq4i.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4vb18afj30js04675w.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4vgr3ssj30jz039ac6.jpg"></p>
+<p>C语言的代码主要分为两类：<br>1）C代码<br>2）预处理代码：以#开头的代码</p>
+<p>预处理指令的分类：<br>1）文件包含指令：#include<br>2）宏定义：#define【可以将一段C代码定义为一个标识，使用这个标识就可以使用这段代码】<br>3）条件编译指令：#if【只编译指定的C代码为二进制指令】</p>
+<p>预处理指令的特点：<br>1）都是以#开头<br>2）预处理指令的后面没有分号</p>
+<h3 id="文件包含指令："><a href="#文件包含指令：" class="headerlink" title="文件包含指令："></a>文件包含指令：</h3><p>文件包含指令作用：可以将指定的文件的内容拷贝到写指令的地方<br><code>#include”文件路径”</code><br><code>#include&lt;文件路径&gt;</code></p>
+<p>绝对路径：路径从根目录开始<br>相对路径：相对于当前这个文件夹的路径，和当前文件路径相同的部分删除【一般把导入文件放到和main.c相同的文件夹下】</p>
+<p><code>#include”文件路径”和#include&lt;文件路径&gt;</code>的寻找指定文件的方式不一样：<br>1）前者先去当前源文件所在的目录中查找这个文件，如果有直接包含，如果没有再去系统自带的编译器目录中查找，如果有直接包含，如果没有报错<br>2）后者直接去编译器目录中查找，如果有包含，没有报错</p>
+<h3 id="宏定义："><a href="#宏定义：" class="headerlink" title="宏定义："></a>宏定义：</h3><p>它是一个预处理指令，所以它在编译之前执行，可以将一段C代码定义为一个标识，使用这个标识就可以使用这段代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxijf41hgj308005tdgi.jpg"></p>
+<p>宏的原理：在预编译的时候，就会执行源文件中的预处理指令，会将C代码中使用宏名的地方替换为宏值【任意的C代码】，将C代码中的宏名替换为宏值的过程叫做宏替换/宏代换</p>
+<p>在定义宏的时候不会去检查语法，只有当完成了宏替换的时候，才会去检查替换以后是否符合语法规范</p>
+<p>如果宏值是一个表达式，那么宏值并不是这个表达式的结果，而是这个表达式本身</p>
+<p>如果宏值中包括一个变量名，那么在使用这个宏之前必须要保证这个变量已经存在</p>
+<p>【默认情况下，宏从定义的地方一直到文件结束都可以使用，#undef 宏名可以让指定的宏提前失效】<br><code>#define N 10</code></p>
+<p>只能在中间使用这个宏，#undef N下面宏失效</p>
+<p><code>#undef N</code></p>
+<p>字符串中如果出现了宏名，系统不会认为这是一个宏，而是认为是字符串的一部分<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxijrlkunj30i40570tm.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxik0ojunj308u023jrv.jpg"></p>
+<p>如果宏后面跟了分号，那么就会把分号作为宏值的一部分</p>
+<p>我们在定义宏的时候，宏名是可以带参数的，在这个宏值中可以直接使用这个参数，如果使用的宏有参数，那么就必须要在使用它的时候为这个宏的参数传值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxik7s408j308804njsj.jpg"></p>
+<p>宏不是函数，所以宏的参数不需要加类型说明符</p>
+<p>为带参数的宏传值的时候，是本色传递，如果传递一个变量，并不是传递这个变量的值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxikggxayj308907lmyp.jpg"></p>
+<h3 id="条件编译指令："><a href="#条件编译指令：" class="headerlink" title="条件编译指令："></a>条件编译指令：</h3><p>默认的情况下，所有的C代码都会被编译为二进制代码，条件编译指令可以让编译器只编译指定部分的代码</p>
+<p>在预编译的时候，如果条件成立，就会将其中的C代码编译成二进制指令，如果条件不成立，就不会将其中的C代码编译成二进制指令【条件只能是宏，不能是变量】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxikpk32qj308l0agdhp.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxikxggnsj30im0auq53.jpg"></p>
+<p>If语句无论如何全部都要被编译为二进制指令，条件编译指令只会将符合条件的C代码编译为二进制指令</p>
+<p>如果定义了指定的宏，就编译其中的代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxil58iv2j308a08mjte.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxilbvot6j308a02r3z1.jpg"></p>
+<p>无论一个文件被#include多少次，只希望它最终只会被包含一次<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxilixiwnj308a038jrv.jpg"></p>
+<h3 id="static和extern："><a href="#static和extern：" class="headerlink" title="static和extern："></a>static和extern：</h3><p>C语言中的关键字，用来修饰变量和函数</p>
+<p>如果局部变量被static修饰，这个变量就叫做静态变量，静态变量不再存储在栈区域，而是存储在常量区，当函数执行完之后，这个静态变量不会被回收，后面再去执行这个函数的时候，声明静态变量的这句话就不会再执行了，直接略过，直接使用这个静态变量的值【静态变量只有一份】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glxilridhgj30ic0c0tas.jpg"></p>
+<p>extern不能修饰局部变量</p>
+<p>当我们分模块开发的时候，如果要在模块中声明全局变量，全局变量的声明要写在.h文件中，全局变量的实现要写在.c文件中【如果将全局变量定义在模块中，这个全局变量就必须要使用static或者extern修饰】</p>
+<p>如果定义在模块中的全局变量使用extern修饰，这个模块中的全局变量就可以跨模块访问；使用static修饰，这个模块中的全局变量就只能在当前模块中访问</p>
+<p>如果函数被extern修饰，那么这个函数可以跨模块调用；如果函数被static修饰，那么这个函数只能在当前模块中调用，无法跨模块调用</p>
+<p>如果函数没有写static或者extern，那么这个函数默认就是extern</p>
 
       
     </div>
@@ -705,212 +854,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Objective-C/字符串的比较：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-16T16:00:00.000Z" itemprop="datePublished">2019-07-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83%EF%BC%9A/">字符串的比较：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4vy1kf8j308o081tak.jpg"><br>2）忽略大小写的比较<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4w5qs9wj30bk093gni.jpg"><br>3）只比较字符串中数字的大小【格式相同】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4wefctkj30af024wf7.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Objective-C/字符串的开始和结束判断：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BC%80%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F%E5%88%A4%E6%96%AD%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-15T16:00:00.000Z" itemprop="datePublished">2019-07-16</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BC%80%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F%E5%88%A4%E6%96%AD%EF%BC%9A/">字符串的开始和结束判断：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>判断字符串是否以指定的字符串开头：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4wvn0qrj30a7033t9t.jpg"></p>
-<p>判断字符串是否以指定的字符串结尾：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4x19zmej30at02pab9.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发语言/Objective-C/字符串的搜索：" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2019/07/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%90%9C%E7%B4%A2%EF%BC%9A/" class="article-date">
-      <time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished">2019-07-15</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2019/07/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%90%9C%E7%B4%A2%EF%BC%9A/">字符串的搜索：</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>在主串中搜索子串：</p>
-<p>1）这个方法是从前往后搜索，第一次匹配的子串：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xgefenj308n04dq4j.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xmsu37j308o06cgn9.jpg"></p>
-<p>2）从后往前搜索<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4xtjkr0j30dc069mz7.jpg"><br>NSRange结构体：是Foundation框架中定义的一个结构体，结构体变量一般用来表示一段范围</p>
-<p>声明并初始化结构体变量的方式：<br>1）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4y13jrrj304701laaa.jpg"><br>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4y87sdpj304n01lglp.jpg"><br>3）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4yf6eo7j308c01lt8x.jpg"><br>4）Foundation框架中定义了一个函数，这个函数可以快速的创建一个NSRange结构体变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ylayunj30bw01kwf1.jpg"><br>5）Foundation框架中定义了一个函数，可以将一个NSRange结构体变量转换为NSString<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4ysii0yj30bw01xwf7.jpg"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li></ul>
     </div>
 
       
@@ -934,7 +878,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/29/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="page-number current">30</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/31/"></a>
+      <a class="extend prev" rel="prev" href="/page/29/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="page-number current">30</span>
     </nav>
   
 
@@ -960,7 +904,7 @@
 
                 <a href="https://hexo.io/zh-cn/index.html" target="_blank">「Hexo文档」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
-                <a href="https://liao-hexo.github.io/archives/" target="_blank">「个人博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+                <a href="https://liao-hexo.github.io/archives/" target="_blank">「我的博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
                 <a href="https://github.com/Liao-Hexo" target="_blank">「GitHub』&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 

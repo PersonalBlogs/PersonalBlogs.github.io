@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-开发语言/Objective-C/结构体和类的区别：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/函数高级：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/09/02/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A/" class="article-date">
-      <time datetime="2019-09-01T16:00:00.000Z" itemprop="datePublished">2019-09-02</time>
+      <a  href="/2019/06/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-21T16:00:00.000Z" itemprop="datePublished">2019-06-22</time>
 </a>
 
     </div>
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/02/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A/">结构体和类的区别：</a>
+      <a  class="article-title" href="/2019/06/22/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7%EF%BC%9A/">函数高级：</a>
     </h1>
   
 
@@ -258,14 +258,13 @@
       
           
         <hr>
-<h3 id="相同点：都可以将多个数据封装为一个整体"><a href="#相同点：都可以将多个数据封装为一个整体" class="headerlink" title="相同点：都可以将多个数据封装为一个整体"></a>相同点：都可以将多个数据封装为一个整体</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Date</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>函数默认参数：在C++中，函数的形参列表中的形参是可以有默认值的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf2zheqwj30ke0dpabv.jpg"></p>
+<p>函数占位参数：C++中函数的形参列表里可以有占位参数，用来做占位，调用函数时必须填补该位置<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf37i58cj30hi09rq3x.jpg"></p>
+<p>函数重载：函数名可以相同，提高复用性</p>
+<p>函数重载满足条件：<br>1）同一个作用域下<br>2）函数名称相同<br>3）函数参数类型不同或者个数不同或者顺序不同</p>
+<p>注意：函数的返回值不可以作为重载的条件<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3etpelj30hj0bct9o.jpg"></p>
+<p>函数重载的注意事项：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3mo4i9j30gq0kfgoi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf3tos4lj30hj025glt.jpg"></p>
 
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Date</span>:<span class="title">NSObject</span></span>&#123;</span><br><span class="line">       <span class="keyword">int</span> year;</span><br><span class="line">       <span class="keyword">int</span> month;</span><br><span class="line">       <span class="keyword">int</span> day;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h3><p>1）结构体只能封装数据，而类不仅可以封装数据还可以封装行为【如果表示的这个实体，不仅是由多个数据组成，这个实体还具有行为，只能使用类】</p>
-<p>2）结构体变量分配在栈空间（如果是一个局部变量的情况下），而对象分配在堆空间<br>【栈的特点：空间相对较小，但是存储在栈中的数据访问的效率更高一些；堆的特点：空间相对较大，但是存储在堆中的数据访问的效率相对较低】</p>
-<p>3）赋值不同：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//结构体：Student</span></span><br><span class="line"><span class="comment">//类：Person</span></span><br><span class="line"></span><br><span class="line">Student s1=&#123;“jack”,<span class="number">19</span>,GenderMale&#125;;</span><br><span class="line">Student s2=s1;</span><br><span class="line"></span><br><span class="line">Person *p1=[Person new];</span><br><span class="line">Person *p2=p1;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -279,7 +278,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -301,11 +300,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/类的本质：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/封装：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/09/01/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-31T16:00:00.000Z" itemprop="datePublished">2019-09-01</time>
+      <a  href="/2019/06/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%B0%81%E8%A3%85%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-20T16:00:00.000Z" itemprop="datePublished">2019-06-21</time>
 </a>
 
     </div>
@@ -319,7 +318,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/09/01/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%9A/">类的本质：</a>
+      <a  class="article-title" href="/2019/06/21/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%B0%81%E8%A3%85%EF%BC%9A/">封装：</a>
     </h1>
   
 
@@ -331,24 +330,11 @@
       
           
         <hr>
-<p>1）类第一次被访问的时候，就会被加载到代码段中存储（类加载）<br>2）类一旦被加载到代码段之后是不会被回收的，除非程序结束</p>
-<p>类是以什么样的形式存储在代码段的：<br>1）任何存储在内存中的数据都有一个数据类型<br>2）任何在内存中申请的空间也有自己的类型<br><code>Person *p1=[Person new];</code><br>3)在代码段存储类的那块空间是什么类型？</p>
-<p>在代码段中存储类的步骤：<br>1）先在代码段中创建一个Class对象，Class是Foundation框架中的一个类，这个Class对象就是用来存储类信息的<br>2）将类的信息存储在这个Class对象之中，这个Class对象至少有三个属性：存储的这个类的名称，存储的这个类的属性，存储的这个类的方法</p>
-<p>所以类是以Class对象的形式存储在代码段的，存储类的这个Class对象，我们也叫做类对象，用来存储类的一个对象</p>
-<p>所以存储类的类对象也有一个叫做isa指针的属性，这个指针指向存储父类的类对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ri3eq9j307d0ch3yx.jpg"></p>
-<h3 id="如何拿到存储在代码段中的类对象："><a href="#如何拿到存储在代码段中的类对象：" class="headerlink" title="如何拿到存储在代码段中的类对象："></a>如何拿到存储在代码段中的类对象：</h3><p>1）调用类的类方法class就可以得到存储类的类对象的地址【声明Class指针的时候不需要加<em>，因为在typedef的时候已经加</em>了】</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c1&#x3D;[Person class];</span><br><span class="line">NSLog(@&quot;c1 &#x3D; %p&quot;,c1);</span><br></pre></td></tr></table></figure>
-
-<p>2）调用对象的对象方法class，就可以得到存储这个对象所属的类的Class对象的地址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person *p1&#x3D;[Person new];</span><br><span class="line">Class c2&#x3D;[p1 class];</span><br></pre></td></tr></table></figure>
-
-<p>3）对象中的isa指针的值其实就是代码段中存储类的类对象的地址</p>
-<h3 id="如何使用类对象："><a href="#如何使用类对象：" class="headerlink" title="如何使用类对象："></a>如何使用类对象：</h3><p>1）拿到存储类的类对象以后，<code>Class c1=[Person class];</code><br>c1对象就是Person类，c1完全等价于Person</p>
-<p>2）使用类对象来调用类的类方法</p>
-<p>3）可以使用类对象来调用new方法，创建存储在类对象中的类的对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c1&#x3D;[Person class];</span><br><span class="line">Person *p1&#x3D;[c1 new];</span><br></pre></td></tr></table></figure>
-
-<p>4）注意：使用类对象只能调用类的类方法，因为类对象就等价于存在其中的类</p>
+<p>C++面向对象的三大特征：封装、继承、多态</p>
+<p>C++认为万事万物皆为对象，对象上有其属性和行为</p>
+<p>封装的意义：<br>1）将属性和行为作为一个整体，表现生活中的事物<br>2）将属性和行为加以权限控制【public：公共权限(类内可以访问，类外可以访问)、protected：保护权限(类内可以访问，类外不可以访问)、private：私有权限(类内可以访问，类外不可以访问)】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf4k6q82j30k70j0wh5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf4rl4gbj30hj00xaa2.jpg"></p>
+<p>Struct和class的区别（都可以表示一个类）：<br>1）struct默认权限为公共<br>2）class默认权限为私有</p>
+<p>将成员属性设置为私有的优点：<br>1）可以自己控制读写权限【提供一个public接口让外界访问】<br>2）对于写权限，我们可以检测数据的有效性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf50rd05j30fr0pwgot.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf57kazjj30hj01x3ym.jpg"></p>
 
       
     </div>
@@ -363,7 +349,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -385,11 +371,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/SEL" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/对象的初始化和清理：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/31/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/SEL/" class="article-date">
-      <time datetime="2019-08-30T16:00:00.000Z" itemprop="datePublished">2019-08-31</time>
+      <a  href="/2019/06/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%B8%85%E7%90%86%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-19T16:00:00.000Z" itemprop="datePublished">2019-06-20</time>
 </a>
 
     </div>
@@ -403,7 +389,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/31/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/SEL/">SEL</a>
+      <a  class="article-title" href="/2019/06/20/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E6%B8%85%E7%90%86%EF%BC%9A/">对象的初始化和清理：</a>
     </h1>
   
 
@@ -415,23 +401,29 @@
       
           
         <hr>
-<p>SEL全称叫做selector选择器，是一个数据类型，所以要在内存中申请空间存储数据</p>
-<p>SEL其实是一个类，SEL对象是用来存储一个方法的</p>
-<p>如何将方法存储在类对象之中：<br>1）先创建一个SEL对象<br>2）将方法的信息存储在这个SEL对象之中<br>3）再将这个SEL对象作为类对象的属性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3s7o0v8j30990bv75r.jpg"></p>
-<p>因为SEL是一个typedef类型的，在自定义的时候已经加<em>了，所以我们在声明SEL指针的时候不需要加</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SEL s1&#x3D;@selector(sayHi);</span><br><span class="line">NSLog(@&quot;s1 &#x3D; %p&quot;,s1);</span><br></pre></td></tr></table></figure>
+<p>—————1、构造函数和析构函数：</p>
+<p>C++中的面向对象来源于生活，每个对象也都会有初始设置以及对象销毁前的清理数据的设置</p>
+<p>构造函数和析构函数：对象的初始化和清理是两个非常重要的安全问题，一个对象或者变量没有初始状态，对其使用后果是未知的，同样的使用完一个对象或变量没有及时清理，也会造成一定的安全问题；C++利用了构造函数和析构函数解决上述问题，这两个函数将会被编译器自动调用，完成对象初始化和清理工作；</p>
+<p>对象的初始化和清理工作是编译器强制要我们做的事情，因此如果我们不提供构造和析构，编译器会提供；但是编译器提供的构造函数和析构函数是空实现</p>
+<p>构造函数：主要作用于创建对象时为对象的成员属性赋值，构造函数由编译器自动调用，无须手动调用<br>析构函数：主要作用在对象销毁前系统自动调用，执行一些清理工作</p>
+<p>构造函数语法：类名(){}<br>1）构造函数没有返回值也不写void<br>2）函数名称与类名相同<br>3）构造函数可以有参数，因此可以发生重载<br>4）程序在调用对象时会自动调用构造，无须手动调用，而且只会调用一次</p>
+<p>析构函数语法：～类名(){}<br>1）析构函数没有返回值也不写void<br>2）函数名称与类名相同，在名称前加上符号～<br>3）析构函数不可以有参数，因此不可以发生重载<br>4）程序在对象销毁前会自动调用析构，无须手动调用，而且只会调用一次<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf5w62rwj30ng0ja77a.jpg"></p>
+<p>——————————2、构造函数的分类及调用：</p>
+<p>两种分类方式：<br>1）按参数分类：有参构造和无参构造<br>2）按类型分类：普通构造和拷贝构造</p>
+<p>三种调用方式：括号法、显示法、隐式转换法<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf69o0y8j30si10tahi.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6eitw1j30ng0bg76h.jpg"></p>
+<p>——————3、拷贝构造函数调用时机：</p>
+<p>C++中拷贝构造函数调用时机通常有三种情况：<br>1）使用一个已经创建完毕的对象来初始化一个新对象<br>2）值传递的方式给函数参数传值<br>3）以值方式返回局部对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6ly3kzj30ma0yqaeu.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6sxmzfj30cm038t8y.jpg"><br>—————————4、构造函数调用规则：</p>
+<p>默认情况下，C++编译器至少给一个类添加三个函数：<br>1）默认构造函数（无参，函数体为空）<br>2）默认析构函数（无参，函数体为空）<br>3）默认拷贝构造函数，对属性进行值拷贝</p>
+<p>构造函数调用规则：<br>1）如果用户定义有参构造函数，C++不再提供默认无参构造函数，但是会提供默认拷贝构造<br>2）如果用户定义拷贝构造函数，C++不会再提供其他构造函数</p>
+<p>—————————5、深拷贝与浅拷贝</p>
+<p>浅拷贝：简单的赋值拷贝操作<br>深拷贝：在堆区重新申请空间，进行拷贝操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf6zji4uj30na0xgagk.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf77h74qj30fp03q0tc.jpg"><br>—————————6、初始化列表：</p>
+<p>C++提供了初始化列表语法，用来初始化属性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7dnq68j30fp0jzac3.jpg"></p>
+<p>———————————7、类对象作为类成员</p>
+<p>C++类中的成员可以是另一个类的对象，我们称该成员为对象成员<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7kcayoj309p03et8w.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7qliq9j30ma0nyadf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf7xfr3fj309p03eaag.jpg"></p>
+<p>————8、静态成员</p>
+<p>静态成员就是在成员变量和成员函数前加上关键字static，称为静态成员</p>
+<p>静态成员分为：<br>1）静态成员变量：所有对象共享同一份数据，在编译阶段分配内存，类内声明，类外初始化<br>2）静态成员函数：所有对象共享同一个函数，静态成员函数只能访问静态成员变量<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf8483bqj30hj0kb40y.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf8cyj27j30hj0jsgo8.jpg"></p>
 
-<h3 id="调用方法的本质："><a href="#调用方法的本质：" class="headerlink" title="调用方法的本质："></a>调用方法的本质：</h3><p><code>[p1 sayHi];</code></p>
-<p>内部的原理：<br>1）先拿到存储sayHi方法的SEL对象，也就是拿到存储sayHi方法的SEL数据，SEL消息<br>2）将这个SEL消息发送给p1对象<br>3）这个时候，p1对象接收到SEL消息以后，就知道要调用方法<br>4）根据对象的isa指针找到存储类的类对象<br>5）找到这个类对象以后，在这个类对象中去搜寻是否有和传入的SEL数据相匹配的，如果有就执行，如果没有再找父类，直到NSObject<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3sgiec7j30iv0bata9.jpg"></p>
-<p>OC最重要的一个机制：消息机制，调用方法的本质其实就是为对象发送SEL消息<br><code>[p1 sayHi];</code>  为p1对象发送一条sayHi消息</p>
-<p>手动的为对象发送SEL消息：<br>1）先得到方法的SEL数据<br>2）将这个SEL消息发送给p1对象</p>
-<p>调用对象的方法，将SEL数据发送给对象：<code>- (id)performSelector:(SEL)aSelector;</code></p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line">SEL s1=<span class="keyword">@selector</span>(sayHi);</span><br><span class="line">[p1 performSelector:s1];</span><br><span class="line"></span><br><span class="line">[p1 sayHi];</span><br></pre></td></tr></table></figure>
-
-<p>调用一个对象的方法有两种：<br>1）[对象名 方法名];<br>2）手动的为对象发送SEL消息</p>
-<p>注意：<br>1）如果方法有参数，那么方法名是带了冒号的<br>2）如果方法有参数，要传递参数就调用另外一个方法<br><code>* (id)performSelector:(SEL)aSelector withObject:(id)object;</code></p>
-<p><code>* (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;</code><br>3)如果有多个参数，那就重新创建一个类把多个参数封装进去</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line">SEL s1=<span class="keyword">@selector</span>(eatWithFood:);</span><br><span class="line">[p1 performSelector:s1 withObject:<span class="string">@&quot;红烧肉&quot;</span>];</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -445,7 +437,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -467,11 +459,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/点语法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/C++对象模型和this指针：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/30/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%82%B9%E8%AF%AD%E6%B3%95/" class="article-date">
-      <time datetime="2019-08-29T16:00:00.000Z" itemprop="datePublished">2019-08-30</time>
+      <a  href="/2019/06/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E5%92%8Cthis%E6%8C%87%E9%92%88%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-18T16:00:00.000Z" itemprop="datePublished">2019-06-19</time>
 </a>
 
     </div>
@@ -485,7 +477,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/30/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%82%B9%E8%AF%AD%E6%B3%95/">点语法</a>
+      <a  class="article-title" href="/2019/06/19/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E5%92%8Cthis%E6%8C%87%E9%92%88%EF%BC%9A/">C++对象模型和this指针：</a>
     </h1>
   
 
@@ -497,17 +489,20 @@
       
           
         <hr>
-<p>OC的对象如果要为属性赋值或者取值，就要调用对应的getter或者setter方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *p1&#x3D;[Person new];</span><br><span class="line"></span><br><span class="line">[p1 setName:@&quot;jack&quot;];</span><br><span class="line">[p1 setAge:18];</span><br><span class="line">[p1 setGender:GenderMale];</span><br></pre></td></tr></table></figure>
-
-<p>OC中使用点语法来访问对象的属性：</p>
-<p>语法：对象名.去掉下划线的属性名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p1.name&#x3D;@&quot;jack&quot;;    &#x2F;&#x2F;这个时候就会将@&quot;jack&quot;赋值给p1对象的_name属性</span><br><span class="line">NSString *name&#x3D;p1.name;   &#x2F;&#x2F;把p1对象的_name属性的值取出来</span><br></pre></td></tr></table></figure>
-
-<p>点语法的原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3tat0tqj30f206iad5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3thwrydj30f20400uh.jpg"></p>
-<p>注意：<br>1）在getter和setter中慎用点语法，因为有可能会造成无限递归，程序崩溃</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (void)setAge:(int)age&#123;</span><br><span class="line"></span><br><span class="line">   self.age&#x3D;age;    &#x2F;&#x2F;[self setAge:age];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3tpwwz4j30ck03sjt9.jpg"><br>3）如果属性没有封装getter和setter是无法使用点语法的，因为点语法的本质是getter和setter方法</p>
+<p>——————成员变量和成员函数分开存储：</p>
+<p>在C++中，类内的成员变量和成员函数分开存储</p>
+<p>只有非静态成员变量才属于类的对象上<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf92weytj30mg0jbq5x.jpg"></p>
+<p>—————————this指针：</p>
+<p>每一个非静态成员函数只会诞生一份函数实例，也就是说多个同类型的对象会共用一块代码，那么这一块代码是如何区分哪个对象调用自己的呢？</p>
+<p>C++通过提供特殊的对象指针，this指针，解决上述问题，this指针指向被调用的成员函数所属的对象</p>
+<p>This指针是隐含每一个非静态成员函数内的一种指针，不需要定义，直接使用即可</p>
+<p>This指针的用途：<br>1）当形参和成员变量同名时，可用this指针来区分<br>2）在类的非静态成员函数中返回对象本身，可使用return *this；<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9a7upvj30mg0jb41f.jpg"></p>
+<p>———————————空指针访问成员函数：</p>
+<p>C++中空指针也是可以调用成员函数的，但是也要注意有没有用到this指针</p>
+<p>如果用到this指针，需要加以判断保证代码的健壮性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9i6gh7j30mu0jb76s.jpg"></p>
+<p>——————————const修饰成员函数：</p>
+<p>常函数：成员函数后加const后我们称这个函数为常函数；常函数内不可以修改成员属性；成员属性声明时加关键字mutable后，在常函数中依然可以修改</p>
+<p>常对象：声明对象前加const称该对象为常对象，常对象只能调用常函数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9oy6mhj30mu0ot420.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwf9vpitfj307v01v3ym.jpg"></p>
 
       
     </div>
@@ -522,7 +517,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -544,11 +539,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/@property" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/友元：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/29/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property/" class="article-date">
-      <time datetime="2019-08-28T16:00:00.000Z" itemprop="datePublished">2019-08-29</time>
+      <a  href="/2019/06/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%8F%8B%E5%85%83%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-17T16:00:00.000Z" itemprop="datePublished">2019-06-18</time>
 </a>
 
     </div>
@@ -562,7 +557,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/29/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property/">property</a>
+      <a  class="article-title" href="/2019/06/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%8F%8B%E5%85%83%EF%BC%9A/">友元：</a>
     </h1>
   
 
@@ -574,13 +569,13 @@
       
           
         <hr>
-<p>写一个类：<br>1）要先为类写属性<br>2）再声明属性的getter和setter<br>3）再实现getter和setter</p>
-<p>@property</p>
-<p>作用：自动生成getter、setter方法的声明，因为是生成方法的声明，所以应该写在@interface类的声明之中</p>
-<p>语法：@property 数据类型 名称；<code>@property int age;</code></p>
-<p>原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3uk8pkvj30c4049764.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3urj5vpj30gr059juq.jpg"></p>
-
+<p>在程序里，有些私有属性也想让类外特殊的一些函数或者类进行访问，就需要用到友元的技术</p>
+<p>友元的目的就是让一个函数或者类访问另一个类中的私有成员，友元的关键字为friend</p>
+<p>友元的三种实现：<br>1）全局函数做友元<br>2）类做友元<br>3）成员函数做友元</p>
+<p>全局函数做友元：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfao4s65j30kw0k1mzz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfav93vaj307v01vdfy.jpg"></p>
+<p>友元类（类做友元）：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfb1nwqjj30je0qeadj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfb7w54qj307v01vwem.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbe60cvj30j00j4n01.jpg"></p>
+<p>成员函数做友元【为啥顺序不能变？？】：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbl7rcej30ko0von1h.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfbse9jgj30fe02k74l.jpg"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">**using** **namespace** std;</span><br><span class="line"></span><br><span class="line">**class** Building;</span><br><span class="line"></span><br><span class="line">**class** goodGay&#123;</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    </span><br><span class="line">    Building *building;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;可访问Building中的私有成员</span><br><span class="line">    **void** visit();</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;不可访问Building中的私有成员</span><br><span class="line">    **void** visit1();</span><br><span class="line">    </span><br><span class="line">    goodGay();</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">**class** Building</span><br><span class="line">&#123;</span><br><span class="line">    **friend** **void** goodGay::visit();&#x2F;&#x2F;表示goodGay类中的成员函数visit()作为本类的好朋友</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    </span><br><span class="line">    Building()&#123;</span><br><span class="line">        SittingRoom &#x3D; “客厅”;</span><br><span class="line">        BedRoom &#x3D; “卧室”;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">**public**:</span><br><span class="line">    string SittingRoom;</span><br><span class="line">    </span><br><span class="line">**private**:</span><br><span class="line">    string BedRoom;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">goodGay::goodGay()</span><br><span class="line">&#123;</span><br><span class="line">    building &#x3D; **new** Building;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** goodGay::visit()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;SittingRoom&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**void** goodGay::visit1()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;“visit2函数正在访问：”&lt;&lt;building-&gt;SittingRoom&lt;&lt;endl;</span><br><span class="line">    &#x2F;&#x2F;cout&lt;&lt;“visit函数正在访问：”&lt;&lt;building-&gt;BedRoom&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**int** main()</span><br><span class="line">&#123;</span><br><span class="line">    goodGay gg;</span><br><span class="line">    gg.visit();</span><br><span class="line">    gg.visit1();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -594,7 +589,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -616,11 +611,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/@synthesize" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/C++运算符重载：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/28/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@synthesize/" class="article-date">
-      <time datetime="2019-08-27T16:00:00.000Z" itemprop="datePublished">2019-08-28</time>
+      <a  href="/2019/06/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-16T16:00:00.000Z" itemprop="datePublished">2019-06-17</time>
 </a>
 
     </div>
@@ -634,7 +629,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/28/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@synthesize/">synthesize</a>
+      <a  class="article-title" href="/2019/06/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%EF%BC%9A/">C++运算符重载：</a>
     </h1>
   
 
@@ -646,16 +641,15 @@
       
           
         <hr>
-<p>作用：自动生成getter、setter方法的实现，所以应该写在类的实现之中</p>
-<p>语法：<code>@synthesize @property名称;</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3vbvx6cj307005975d.jpg"></p>
-<p>@synthesize做的事情：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3vjw8cij307008ign5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3vqcbuyj30es03u76r.jpg"></p>
-<p>问题：<br>希望@synthesize不要去自动生成私有属性了，getter和setter的实现中操作我们已经写好的属性就可以了</p>
-<p>语法：@synthesize @property名称 = 已经存在的属性名;【@synthesize age=_age;】<br>1）不会再去生成私有属性<br>2）直接生成setter和getter的实现<br>Setter的实现：把参数的值直接赋值给指定的属性，是没有做任何逻辑验证的<br>Getter的实现：直接返回指定的属性的值<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3vxa8p7j305y058q3o.jpg"></p>
-<p>如果setter或者getter有自己的逻辑验证，那么就自己在类的实现中重写就可以了</p>
-<p>批量声明：<br>1）如果多个@property的类型一致，可以批量声明</p>
-<p><code>@property float height,weight;</code></p>
-<p>2）@synthesize也可以批量声明（类型不一致也可以）</p>
-<p><code>@synthesize name = _name,age = _age,weight = _weight,height = _height;</code></p>
+<p>运算符重载：对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型</p>
+<p>加号运算符重载：实现两个自定义数据类型相加的计算【对于内置的数据类型的表达式的运算符是不可能改变的；不要滥用运算符重载】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfcl18rxj30mt101n2t.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfcslrrij30fe02kmxc.jpg"></p>
+<p>左移运算符重载：可以输出自定义数据类型<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfd0w3paj30fy0jwq5k.jpg"></p>
+<p>递增运算符重载：通过重载递增运算符，实现自己的整型数据<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfd825xnj30is0wndki.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdf91ztj30e702pdfw.jpg"></p>
+<p>赋值运算符重载：</p>
+<p>C++编译器至少给一个类添加4个函数：<br>1）默认构造函数（无参，函数体为空）<br>2）默认析构函数（无参，函数体为空）<br>3）默认拷贝构造函数，对属性进行值拷贝<br>4）赋值运算符operator=，对属性进行值拷贝</p>
+<p>如果类中有属性指向堆区，做赋值操作时也会出现深浅拷贝问题<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdm6b31j30l10sdwie.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfdsxtw4j30e702p74i.jpg"></p>
+<p>关系运算符重载：重载关系运算符，可以让两个自定义类型对象进行对比操作<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfe2izalj30kx0tf0wg.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfe8hjcqj30e702p0sx.jpg"></p>
+<p>函数调用运算符()重载：由于重载后使用的方式非常像函数的调用，因此称为仿函数；仿函数没有固定的写法，非常灵活<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfej56i2j30ke0pxdjd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfeok31vj30e702pt8u.jpg"></p>
 
       
     </div>
@@ -670,7 +664,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -692,11 +686,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/@property增强（Xcode4.4之后）" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/继承：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%A2%9E%E5%BC%BA%EF%BC%88Xcode4.4%E4%B9%8B%E5%90%8E%EF%BC%89/" class="article-date">
-      <time datetime="2019-08-26T16:00:00.000Z" itemprop="datePublished">2019-08-27</time>
+      <a  href="/2019/06/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E7%BB%A7%E6%89%BF%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-15T16:00:00.000Z" itemprop="datePublished">2019-06-16</time>
 </a>
 
     </div>
@@ -710,7 +704,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/27/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%A2%9E%E5%BC%BA%EF%BC%88Xcode4.4%E4%B9%8B%E5%90%8E%EF%BC%89/">property增强（Xcode4.4之后）</a>
+      <a  class="article-title" href="/2019/06/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E7%BB%A7%E6%89%BF%EF%BC%9A/">继承：</a>
     </h1>
   
 
@@ -722,8 +716,17 @@
       
           
         <hr>
-<p>只需要写一个@property，编译器就会自动的<br>1）生成私有属性<br>2）生成getter、setter的声明<br>3）生成getter、setter的实现<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wfia8pj307j03vaav.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wm8ffrj30he04dwh7.jpg"></p>
-<p>使用注意：<br>1）@property的类型一定要和属性的类型一致，名称要和属性的名称一致，只是去掉下划线<br>2）也可以批量声明相同类型的@property<br>3）@property生成的方法实现没有做任何的逻辑验证<br>setter：直接赋值<br>getter：直接返回<br>所以我么可以重写setter来自定义验证逻辑，如果重写了setter还会自动生成getter，如果重写了getter还会自动生成setter；如果同时重写setter和getter，那么就不会自动生成私有属性了，那么就自己定义一个私有属性就可以了<br>4）如果你想为类写一个属性，并且为这个属性封装setter和getter，一个@property就搞定<br>5）父类的@property一样可以被子类继承，@property生成的属性是私有的，在子类的内部无法直接访问生成的私有属性，但是可以通过setter和getter来访问<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3wsxxq1j305m04dt9c.jpg"></p>
+<p>继承是面向对象三大特性之一</p>
+<p>定义某些类时，下级别的成员除了拥有上一级的共性，还有自己的特性，这个时候我们就可以考虑利用继承的技术，减少重复代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfg9czzxj30hx125wjm.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgfbr0rj30e707pdgu.jpg"></p>
+<p>继承方式：公共继承、保护继承、私有继承<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfglvd97j30hn0cwjud.jpg"></p>
+<p>继承中的对象模型：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgse4qoj30dz0isdhm.jpg"></p>
+<p>继承中的构造和析构顺序：子类继承父类后，当创建子类对象，也会调用父类的构造函数；先构造父类，再构造子类，析构的顺序与构造的顺序相反<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfgzbqddj30ii0k9ac5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfh6ivubj30dz02nq38.jpg"></p>
+<p>继承同名成员处理方式：</p>
+<p>当子类与父类出现同名的成员，如何通过子类对象访问到子类或者父类中同名的数据呢？<br>1）访问子类同名成员，直接访问即可<br>2）访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhdadvij30n80yxgq3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhk4mgpj30dz033q3a.jpg"></p>
+<p>继承同名静态成员处理方式：静态成员和非静态成员出现同名，处理方式一致；访问子类同名成员，直接访问即可；访问父类同名成员，需要加作用域<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhr4rmzj30nb11hgrf.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfhzmn2lj30dz072759.jpg"></p>
+<p>多继承：C++允许一个类继承多个类，多继承可能会引发父类中有同名成员出现，需要加作用域区分；C++实际开发中不建议用多继承<br>class Son:public Base1,public Base2</p>
+<p>菱形继承：两个派生类继承同一个基类，又有某个类同时继承着两个派生类，这种继承被称为菱形继承，或者钻石继承</p>
+<p>出现的问题：<br>1）羊继承了动物的数据，驼同样继承了动物的数据，当羊驼使用数据时，就会产生二义性<br>2）羊驼继承自动物的数据继承了两份，但是这份数据我们只需要一份就可以<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfi72uyrj30iw0mctc0.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfidoddzj30df01z74f.jpg"></p>
 
       
     </div>
@@ -738,7 +741,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -760,11 +763,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/动态类型和静态类型" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/多态：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/" class="article-date">
-      <time datetime="2019-08-25T16:00:00.000Z" itemprop="datePublished">2019-08-26</time>
+      <a  href="/2019/06/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%A4%9A%E6%80%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-14T16:00:00.000Z" itemprop="datePublished">2019-06-15</time>
 </a>
 
     </div>
@@ -778,7 +781,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/26/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8A%A8%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B/">动态类型和静态类型</a>
+      <a  class="article-title" href="/2019/06/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E5%A4%9A%E6%80%81%EF%BC%9A/">多态：</a>
     </h1>
   
 
@@ -790,15 +793,19 @@
       
           
         <hr>
-<p>OC是一门弱语言：编译器在编译的时候，语法检查的时候没有那么严格，不管你怎么写都是可以的</p>
-<p>强类型的语言：编译器在编译的时候，做语法检查的时候，行就是行，不行就是不行</p>
-<p>静态类型：指的是一个指针指向的对象是一个本类对象<br>动态类型：指的是一个指针指向的对象不是本类对象</p>
-<p>编译检查：编译器在编译的时候，能不能通过一个指针去调用指针指向的对象的方法？判断原则：看指针所属的类型之中是否有这个方法，如果有就认为可以调用，编译通过，如果这个类中没有，那么编译报错【苹果下的编译器的名字叫LLVM】</p>
-<p>我们可以将指针的类型做转换，来达到骗过编译器的目的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Animal *a1&#x3D;[Pig new];</span><br><span class="line">[(Pig *)a1 eat];</span><br></pre></td></tr></table></figure>
-
-<p>运行检查：编译检查只是骗过了编译器，但是这个方法究竟能不能执行？<br>所以在运行的时候，会去检查对象中是否真的有这个方法，如果有就执行，如果没有就报错</p>
-<p>LSP父类指针指向子类对象，实际上任意的指针可以指向任意的对象，编译器是不会报错的；当一个子类指针指向一个父类对象的时候，编译器允许通过子类指针去调用子类独有的方法，但是在运行的时候是会出问题的，因为父类对象中根本没有子类成员</p>
+<p>多态是C++面向对象三大特性之一</p>
+<p>多态分为两类：<br>1）静态多态：函数重载和运算符重载属于静态多态，复用函数名<br>2）动态多态：派生类和虚函数实现运行时多态</p>
+<p>静态多态和动态多态的区别：<br>1）静态多态的函数地址早绑定，编译阶段确定函数地址<br>2）动态多态的函数地址晚绑定，运行阶段确定函数地址<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjeqhc7j30l50o2wi6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjmkiwbj30df01z0st.jpg"></p>
+<p>多态的底层原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfjthhbpj30n90q042l.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfk02il6j30df01zq32.jpg"></p>
+<p>分别利用普通写法和多态技术，设计实现两个操作数进行运算的计算器类：</p>
+<p>多态的优点：代码组织结构清晰、可读性强、利于前期和后期的扩展以及维护<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfk8x4hfj30ku1kztgz.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfkg0659j30df02uq32.jpg"></p>
+<p>纯虚函数和抽象类：在多态中，通常父类中虚函数的实现是毫无意义的，主要都是调用子类重写的内容，因此可以将虚函数改为纯虚函数，当类中有了纯虚函数，这个类也称为抽象类</p>
+<p>抽象类特点：<br>1）无法实例化对象<br>2）子类必须重写抽象类中的纯虚函数，否则也属于抽象类<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfkmuqnij30je0m9go6.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfku0kk3j30df02u0sw.jpg"></p>
+<p>虚析构和纯虚析构：</p>
+<p>多态使用时，如果子类中有属性开辟到堆区，那么父类指针在释放时无法调用到子类的析构代码</p>
+<p>解决方式：将父类中的析构函数改为虚析构或者纯虚析构</p>
+<p>虚析构和纯虚析构共性：<br>1）可以解决父类指针释放子类对象<br>2）都需要有具体的函数实现</p>
+<p>虚析构和纯虚析构的区别：如果是纯虚析构，该类属于抽象类，无法实例化对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl0lls5j30kx10cjwj.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfl89z45j30df03dq3d.jpg"></p>
 
       
     </div>
@@ -813,7 +820,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -835,11 +842,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/NSObject指针和id指针" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/C++文件操作：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/" class="article-date">
-      <time datetime="2019-08-24T16:00:00.000Z" itemprop="datePublished">2019-08-25</time>
+      <a  href="/2019/06/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-13T16:00:00.000Z" itemprop="datePublished">2019-06-14</time>
 </a>
 
     </div>
@@ -853,7 +860,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/25/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/NSObject%E6%8C%87%E9%92%88%E5%92%8Cid%E6%8C%87%E9%92%88/">NSObject指针和id指针</a>
+      <a  class="article-title" href="/2019/06/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/C++%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%EF%BC%9A/">C++文件操作：</a>
     </h1>
   
 
@@ -865,15 +872,17 @@
       
           
         <hr>
-<p>NSObject是OC中所有类的基类，根据LSP，NSObject指针就可以指向任意的OC对象，所以，NSObject指针是一个万能指针，可以指向任意的OC对象</p>
-<p>缺点：如果要调用指向的子类对象的独有的方法，就必须要做类型转换</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSObject *obj1&#x3D;[Person new];</span><br><span class="line">[(Person *)obj1 sayHi];</span><br><span class="line"></span><br><span class="line">NSObject *obj2&#x3D;[Student new];</span><br><span class="line">[(Student *)obj2 study];</span><br><span class="line"></span><br><span class="line">NSObject *obj3&#x3D;@&quot;jack&quot;;</span><br><span class="line">[(NSString *)obj3 length];</span><br></pre></td></tr></table></figure>
-
-<p>id指针：是一个万能指针，可以指向任意的OC对象</p>
-<p>id是一个typedef自定义类型，在定义的时候已经加了<em>，所以，声明id指针的时候不需要再加</em>了</p>
-<p>通过NSObject指针去调用对象的方法的时候，编译器会做编译检查<br>通过id类型的指针去调用对象的方法的时候，编译器直接通过，无论你调用什么方法【该运行错误的还是运行错误】</p>
-<p>注意：id指针只能调用对象的方法，不能使用点语法，如果使用点语法就会直接报编译错误</p>
-<p>如果我们要声明一个万能指针，不要使用NSObject，而是使用id</p>
+<p>程序运行时产生的数据都属于临时数据，程序一旦运行结束都会被释放，通过文件可以将数据持久化</p>
+<p>C++中对文件操作需要包含头文件<fstream></p>
+<p>文件类型分为两种：<br>1）文本文件：文件以文本的ASCII码形式存储在计算机中<br>2）二进制文件：文件以文本的二进制形式存储在计算机中，用户一般不能直接读懂它们</p>
+<p>操作文件的三大类：<br>1）ofstream：写操作<br>2）ifstream：读操作<br>3）fstream：读写操作</p>
+<p>文本文件：</p>
+<p>写文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ofstream ofs;<br>3）打开文件：ofs.open(“文件路径”,打开方式);<br>4）写数据：ofs&lt;&lt;“写入的数据”;<br>5）关闭文件：ofs.close();</p>
+<p>文件打开方式【文件打开方式可以配合使用，利用|操作符】：<br>1）ios::in        为读文件而打开文件<br>2）ios::out     为写文件而打开文件<br>3）ios::ate     初始位置：文件尾<br>4）ios::app    追加方式写文件<br>5）ios::trunc  如果文件存在先删除，再创建<br>6）iOS::binary  二进制方式<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm0am8yj30ia0c6dhe.jpg"></p>
+<p>读文件的步骤：<br>1）包含头文件：#include<fstream><br>2）创建流对象：ifstream ifs;<br>3）打开文件并判断文件是否打开成功：ifs.open(“文件路径”,打开方式);<br>4）读数据：四种方式读取<br>5）关闭文件：ifs.close();<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfm96dkdj30ke0q577p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmfzd6xj30h202cglr.jpg"></p>
+<p>二进制文件：以二进制的方式对文件进行读写操作，打开方式要指定为ios::binary</p>
+<p>二进制方式写文件主要利用流对象调用成员函数write<br>函数原型：ostream&amp; write(const char * buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmn0pr8j30j10et0uf.jpg"></p>
+<p>二进制方式读文件主要利用流对象调用成员函数read<br>函数原型：istream&amp; read(char *buffer,int len);<br>参数解释：字符指针buffer指向内存中的一段存储空间，len是读写的字节数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1glwfmtmxxsj30j10jemzg.jpg"></p>
 
       
     </div>
@@ -888,7 +897,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -910,11 +919,11 @@
 
 
   
-    <article id="post-开发语言/Objective-C/instancetype：" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/C++/职工管理系统：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/08/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/instancetype%EF%BC%9A/" class="article-date">
-      <time datetime="2019-08-23T16:00:00.000Z" itemprop="datePublished">2019-08-24</time>
+      <a  href="/2019/06/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/" class="article-date">
+      <time datetime="2019-06-12T16:00:00.000Z" itemprop="datePublished">2019-06-13</time>
 </a>
 
     </div>
@@ -928,7 +937,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/08/24/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/instancetype%EF%BC%9A/">instancetype：</a>
+      <a  class="article-title" href="/2019/06/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/C++/%E8%81%8C%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%9A/">职工管理系统：</a>
     </h1>
   
 
@@ -939,11 +948,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <hr>
-<p>父类中的类方法创建一个父类对象返回:<br>1）如果返回值写为父类类型的，那么子类来调用这个方法得到的就是父类指针，解决方式：把返回值改为id类型的<br>2）方法的内部创建对象的时候，不要写死了，因为写死创建的对象就固定了，我们希望哪一个类来调用这个方法就创建哪一个类的对象，解决方式：把类名写为self，哪一个类来调用这个方法，self就指的是哪一个类，创建的就是哪一个类的对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3xl2ab3j305401u3yr.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3xsac6yj308o04k3zo.jpg"><br>3）方法的返回值是id类型的，问题就是任意指针都可以接收这个方法的返回值，编译器连个警告都没有<br>解决方式：如果方法的返回值是instancetype，代表方法的返回值是当前这个类的对象</p>
-<p>使用建议：<br>1）如果方法内部是在创建当前类的对象，不要写死成类名[类名 new];而是用self代替类名<br>2）如果方法的返回值是当前类的对象，也不要写死了，而是写成instancetype</p>
-<p>id和instancetype的区别：<br>1）instancetype只能作为方法的返回值，不能在其他地方使用<br>id既可以声明指针变量，也可以作为参数，也可以作为返回值<br>2）instancetype是一个有类型的，代表当前类的对象<br>id是一个无类型的指针，仅仅是一个地址</p>
-
+        
       
     </div>
     
@@ -957,7 +962,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
     </div>
 
       
@@ -981,7 +986,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/25/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/27/"></a>
+      <a class="extend prev" rel="prev" href="/page/25/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/27/"></a>
     </nav>
   
 
@@ -1007,7 +1012,7 @@
 
                 <a href="https://hexo.io/zh-cn/index.html" target="_blank">「Hexo文档」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
-                <a href="https://liao-hexo.github.io/archives/" target="_blank">「个人博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+                <a href="https://liao-hexo.github.io/archives/" target="_blank">「我的博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
                 <a href="https://github.com/Liao-Hexo" target="_blank">「GitHub』&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 

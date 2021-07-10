@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-数据结构、算法笔记/十字链表" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/野指针与僵尸对象：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/" class="article-date">
-      <time datetime="2019-12-18T16:00:00.000Z" itemprop="datePublished">2019-12-19</time>
+      <a  href="/2019/08/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E9%87%8E%E6%8C%87%E9%92%88%E4%B8%8E%E5%83%B5%E5%B0%B8%E5%AF%B9%E8%B1%A1%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-17T16:00:00.000Z" itemprop="datePublished">2019-08-18</time>
 </a>
 
     </div>
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/19/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/">十字链表</a>
+      <a  class="article-title" href="/2019/08/18/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E9%87%8E%E6%8C%87%E9%92%88%E4%B8%8E%E5%83%B5%E5%B0%B8%E5%AF%B9%E8%B1%A1%EF%BC%9A/">野指针与僵尸对象：</a>
     </h1>
   
 
@@ -258,7 +258,16 @@
       
           
         <hr>
-<p>十字链表：有向图的一种链式存储结构<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govxr00ilej30u00yrn2e.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govxrlmiedj30gu0czmxs.jpg"></p>
+<p>C语言中的野指针：定义一个指针变量，没有初始化，这个指针变量的值是一个垃圾值，指向一块随机的空间，这个指针就叫做野指针</p>
+<p>OC中的野指针：指针指向的对象已经被回收了，这样的指针就叫做野指针</p>
+<p>内存回收的本质：申请一个变量实际上就是向系统申请指定字节数的空间，这些空间系统就不会再分配给别人了；当变量被回收的时候，代表变量占用的字节空间从此以后系统就可以分配给别人使用了，但是字节空间中存储的数据还在（这就是野指针的来源）</p>
+<p>对象回收的本质：对象占用的空间可以分配给别人，当这个对象占用的空间没有分配给别人之前，其实对象数据还在</p>
+<p>僵尸对象：一个已经被释放的对象，但是这个对象所占的空间还没有分配给别人，这样的对象叫做僵尸对象；我们通过野指针去访问僵尸对象的时候，有可能没问题，也有可能有问题，当僵尸对象占用的空间还没有分配给别人的时候就没问题</p>
+<p>我们认为只要对象成为了僵尸对象，无论如何都不允许访问了，就希望如果访问的是僵尸对象，无论如何都会报错</p>
+<p>Xcode有一个僵尸对象的实时检查机制，可以将这个机制打开，打开之后，只要访问的是僵尸对象，无论空间是否分配，就会报错<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly42ith55j30ow0f2n3m.jpg"></p>
+<p>为什么不默认打开僵尸对象检测：一旦打开僵尸对象检测，那么在每访问一个对象的时候，都会先检查这个对象是否为一个僵尸对象，这样是极其消耗性能的</p>
+<p>如何避免僵尸对象错误？<br>当一个指针成为野指针以后，将这个指针的值设置为nil<br>当一个指针的值为nil，通过这个指针去调用对象的方法（包括使用点语法）的时候，不会报错，只是没有任何反应；但是如果通过直接访问属性，就会报错</p>
+<p>无法复活一个僵尸对象</p>
 
       
     </div>
@@ -267,11 +276,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -291,11 +304,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/邻接多重表" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/单个对象的内存管理：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/" class="article-date">
-      <time datetime="2019-12-17T16:00:00.000Z" itemprop="datePublished">2019-12-18</time>
+      <a  href="/2019/08/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished">2019-08-17</time>
 </a>
 
     </div>
@@ -309,7 +322,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8/">邻接多重表</a>
+      <a  class="article-title" href="/2019/08/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/">单个对象的内存管理：</a>
     </h1>
   
 
@@ -321,8 +334,9 @@
       
           
         <hr>
-<p>用邻接表存储无向图，每条边的两个顶点分别在该边所依附的两个顶点的边表中，这种重复存储给图的某些操作带来不便，例如对已访问过的边做标记，或者要删除图中某一条边等，都需要找到表示同一条边的两个边表结点。</p>
-<p>邻接多重表：主要用于存储无向图<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govyq7k2ogj311s0u0gpe.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govyqftxvwj30g10dt3z4.jpg"></p>
+<p>内存泄露：指的是一个对象没有被及时的回收，在该回收的时候而没有被回收，一直驻留在内存中，直到程序结束的时候才回收</p>
+<p>单个对象的内存泄漏情况：<br>1）有对象的创建，而没有对应的release<br>2）retain的次数和release的次数不匹配<br>3）在不适当的时候，为指针赋值为nil<br>4）在方法中为传入的对象进行不适当的retain</p>
+<p>如何保证单个对象可以被回收：<br>1）有对象的创建就必须要匹配一个release<br>2）retain次数和release次数一定要匹配<br>3）只有在指针成为野指针的时候才赋值nil<br>4）在方法中不要随意的为传入的对象retain</p>
 
       
     </div>
@@ -331,11 +345,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -355,11 +373,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/图的基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/setter方法内存管理：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="article-date">
-      <time datetime="2019-12-16T16:00:00.000Z" itemprop="datePublished">2019-12-17</time>
+      <a  href="/2019/08/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/setter%E6%96%B9%E6%B3%95%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-15T16:00:00.000Z" itemprop="datePublished">2019-08-16</time>
 </a>
 
     </div>
@@ -373,7 +391,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">图的基本操作</a>
+      <a  class="article-title" href="/2019/08/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/setter%E6%96%B9%E6%B3%95%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/">setter方法内存管理：</a>
     </h1>
   
 
@@ -385,24 +403,22 @@
       
           
         <hr>
-<ol>
-<li><p><code>Adjacent(G,x,y)</code>：判断图G是否存在边&lt;x,y&gt;或(x,y)【邻接矩阵效率高】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govz59y8zpj30yi0ax3zc.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govz5g8iq4j30vo0axgmc.jpg"></p>
-</li>
-<li><p><code>Neighbors(G,x)</code>：列出图G中与结点x邻接的边【无向图邻接表效率高，有向图邻接矩阵效率高】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govze732hgj30ys0alta5.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzefer7jj30vq0axt9k.jpg"></p>
-</li>
-<li><p><code>InsertVertex(G,x)</code>：在图G中插入顶点x<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzgx0q7gj30zb0cejsd.jpg"></p>
-</li>
-<li><p><code>DeleteVertex(G,x)</code>：从图G中删除顶点x<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzogix1xj30yy0bdmxt.jpg"></p>
-</li>
-<li><p><code>AddEdge(G,x,y)</code>：若无向边(x,y)或者有向边&lt;x,y&gt;不存在，则向图G中添加该边<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzpu4c2tj30yq0b0js8.jpg"></p>
-</li>
-<li><p><code>RemoveEdge(G,x,y)</code>：若无向边(x,y)或者有向边&lt;x,y&gt;存在，则在图G中删除该边【邻接矩阵效率高】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzqe3r4gj30va0azt9f.jpg"></p>
-</li>
-<li><p><code>FirstNeighbor(G,x)</code>：求图G中顶点x的第一个邻接点，若有则返回顶点号，若没有邻接点或图不存在x，则返回-1<br><code>NextNeighbor(G,x)</code>：假设图G中顶点y是顶点x的一个邻接点，返回除y之外顶点x的下一个邻接点的顶点号，若y是x的最后一个邻接点，则返回-1<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1govzxm5sd7j30yo0at753.jpg"></p>
-</li>
-<li><p><code>Get_edge_value(G,x,y)</code>：获取图G中边(x,y)或&lt;x,y&gt;对应的权值v<br><code>Set_edge_value(G,x,y)</code>：设置图G中边(x,y)或&lt;x,y&gt;对应的权值为v<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow0301r31j31030ajjs9.jpg"></p>
-</li>
-</ol>
+<p>这辆车多了一个人使用：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly439s1xfj30f20az40u.jpg"></p>
+<p>当传进来的对象赋值给当前对象的属性，代表传入的对象多了一个人使用，所以我们应该先为这个传入的对象发送一条retain消息，再赋值；当当前对象销毁的时候，代表属性指向的对象少一个人使用，就应该在dealloc中release<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly43jfs8aj30bj0b50w7.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly43qq5edj30f20azdjm.jpg"></p>
+<p>宝马车未被销毁，发生内存泄露：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly43xxjs3j30eh0csgod.jpg"><br>当我们将传入的Car对象赋值给_car属性的时候，有两重意思：一个是_car属性原本指向的对象少一个人使用，另一个是新传入的对象多一个人使用；所以我们应该先将_car属性原本指向的对象release，再将传入的新对象retain</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4453h1pj30b304pwg3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly44cdm33j30eh0csgqq.jpg"></p>
+<p>出现僵尸对象错误的原因：在于新旧对象是同一个对象<br>解决的方案：当发现新旧对象是同一个对象的时候，什么都不用做；只有当新旧对象不是同一个对象的时候，才release旧的，retain新的<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly44k48nfj30en0b4wi1.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly44qyyydj306x0680tu.jpg"></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import<span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"><span class="meta">#import <span class="meta-string">&quot;Person.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc,<span class="keyword">const</span> <span class="keyword">char</span> * argv[])&#123;</span><br><span class="line">    </span><br><span class="line">    Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line">    Car *bmw=[Car new];</span><br><span class="line">    bmw.speed=<span class="number">100</span>;</span><br><span class="line">    p1.car=bmw;</span><br><span class="line"></span><br><span class="line">    [bmw release];</span><br><span class="line"></span><br><span class="line">    bmw.speed=<span class="number">200</span>;</span><br><span class="line">    p1.car=bmw;</span><br><span class="line"></span><br><span class="line">    [p1 release];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import<span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Car</span> : <span class="title">NSObject</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> _speed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setSpeed:(<span class="keyword">int</span>)speed;</span><br><span class="line">- (<span class="keyword">int</span>)speed;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)run;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&quot;Car.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Car</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)dealloc&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;速度为%d的车子销毁了.&quot;</span>,_speed);</span><br><span class="line">    [<span class="keyword">super</span> dealloc];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setSpeed:(<span class="keyword">int</span>)speed&#123;</span><br><span class="line"></span><br><span class="line">    _speed=speed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">int</span>)speed&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _speed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)run&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;速度为%d的车正在行驶&quot;</span>,_speed);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import<span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></span><br><span class="line"><span class="meta">#import <span class="meta-string">&quot;Car.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span> : <span class="title">NSObject</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    Car *_car;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setCar:(Car *)car;</span><br><span class="line">- (Car *)car;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)drive;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&quot;Person.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Person</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)dealloc&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;人死了&quot;</span>);</span><br><span class="line">    [_car release];</span><br><span class="line">    [<span class="keyword">super</span> dealloc];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setCar:(Car *)car&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//说明新旧对象不是同一个对象</span></span><br><span class="line">    <span class="keyword">if</span>(_car != car)&#123;</span><br><span class="line"></span><br><span class="line">        [_car release];   <span class="comment">//才去release旧的</span></span><br><span class="line">        _car = [car <span class="keyword">retain</span>];    <span class="comment">//retain新的</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (Car *)car&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _car;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)drive&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;走啊，去拉萨&quot;</span>);</span><br><span class="line">    [_car run];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+<p>特别注意：我们内存管理的范围是OC对象，所以，只有属性的类型是OC对象的时候，这个属性的setter方法才要像上面那样写【对象类型就是类或协议所声明的指针类型，例如:NSString *string ,其中，NSString是一个类，NSString *是它指针类型或叫对象类型。】</p>
 
       
     </div>
@@ -411,11 +427,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -435,11 +455,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/广度优先搜索" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/@property参数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="article-date">
-      <time datetime="2019-12-15T16:00:00.000Z" itemprop="datePublished">2019-12-16</time>
+      <a  href="/2019/08/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%8F%82%E6%95%B0/" class="article-date">
+      <time datetime="2019-08-14T16:00:00.000Z" itemprop="datePublished">2019-08-15</time>
 </a>
 
     </div>
@@ -453,7 +473,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a>
+      <a  class="article-title" href="/2019/08/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%8F%82%E6%95%B0/">property参数</a>
     </h1>
   
 
@@ -465,12 +485,19 @@
       
           
         <hr>
-<p>图的遍历：从图中某一顶点出发，按照某种搜索方法沿着图中的边对图中的所有顶点访问一次且仅访问一次</p>
-<p>广度优先搜索(BFS)：<br>1）首先访问起始顶点v<br>2）接着由v出发依次访问v的各个未被访问过的邻接顶点w1，w2…wi<br>3）然后依次访问w1，w2…wi的所有未被访问过的邻接顶点<br>4）从这些访问过的顶点出发，访问它们所有未被访问过的邻接顶点，以此类推<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow8s8unjej318x0u0dim.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow8sjduhyj30nc0gtjs4.jpg"></p>
-<p>BFS算法的性能分析：<br>1）空间复杂度：O(|V|)<br>2）时间复杂度：邻接矩阵法O(|V|^2)，邻接表法O(|V|+|E|)</p>
-<p>无权图单源最短路径问题：定义从顶点u到顶点v的最短路径d(u,v)为从u到v的任何路径中最少的边数，若从u到v没有通路，则d(u,v)=正无穷<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow9abckurj30nm0bnt96.jpg"></p>
-<p>广度优先生成树：在广度遍历过程中，我们可以得到一棵遍历树，称为广度优先生成树(生成森林)【邻接矩阵法的广度优先生成树唯一，邻接表法的不唯一】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow9ajudnoj30tk0a2mxb.jpg"></p>
+<p>1）@property可以带参数的：@property(参数1，参数2，参数3…..)  数据类型 名称;</p>
+<p>@property的四组参数：<br>1）与多线程相关的两个参数：atomic（默认值）、nonatomic<br>2）与生成的setter方法的实现相关的参数：assign（默认值）、retain<br>3）与生成只读、读写相关的参数：readonly、readwrite（默认值）<br>4）与生成的getter、setter方法名字相关的参数：getter、setter</p>
+<p>使用参数注意：<br>1）同一组参数只能使用一个（getter、setter可以同时使用）<br>2）参数的顺序可以随意（一般默认顺序就好）</p>
+<p>Atomic：如果写atomic，这个时候生成的setter方法的代码就会被加上一把线程安全锁；特点：安全但效率低下<br>Nonatomic：如果写nonatomic，这个时候生成的setter方法的代码就不会加线程安全锁；特点：不安全但效率高</p>
+<p>建议：要效率，选择使用nonatomic</p>
+<p>Assign：生成的setter方法的实现就是直接赋值<br>Retain：生成的setter方法的实现就是标准的MRC内存管理代码，也就是先判断新旧对象是否为同一个对象，如果不是则release旧的，retain新的</p>
+<p>当属性的类型是OC对象类型的时候，那么就使用retain<br>当属性的类型是非OC对象的时候，使用assign</p>
+<p>千万注意：retain参数只是生成标准的setter方法为标准的MRC内存管理代码，不会自动的在dealloc中生成release的代码，所以，我们还要自己手动的在dealloc中release</p>
+<p>readwrite：代表同时生成getter、setter<br>readonly：只会生成getter，不会生成setter</p>
+<p>默认情况下，@property生成的getter、setter方法的名字都是最标准的名字，其实我们可以通过参数来指定@property生成的方法的名字</p>
+<p>getter=getter方法名字，用来指定@property生成的getter方法的名字<br>setter=setter方法名字，用来指定@property生成的setter方法的名字（注意，setter方法是带参数的，所以要加一个冒号！！）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly45ayietj30b206ewf4.jpg"></p>
+<p>如果使用getter、setter修改了生成的方法的名字，在使用点语法的时候，编译器会转换成调用修改后的名字的代码<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly45n8047j302o014wel.jpg"></p>
+<p>一般情况下不要去改名字：<br>1）无论什么情况都不要改setter方法的名字，因为默认情况下生成的名字就已经是最标准的了<br>2）什么时候修改getter方法的名字：当属性的类型是一个BOOL类型的时候，就修改这个getter的名字以is开头提高代码的阅读性</p>
 
       
     </div>
@@ -479,11 +506,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -503,11 +534,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/深度优先搜索" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/@class和循环retain" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="article-date">
-      <time datetime="2019-12-14T16:00:00.000Z" itemprop="datePublished">2019-12-15</time>
+      <a  href="/2019/08/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@class%E5%92%8C%E5%BE%AA%E7%8E%AFretain/" class="article-date">
+      <time datetime="2019-08-13T16:00:00.000Z" itemprop="datePublished">2019-08-14</time>
 </a>
 
     </div>
@@ -521,7 +552,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a>
+      <a  class="article-title" href="/2019/08/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@class%E5%92%8C%E5%BE%AA%E7%8E%AFretain/">class和循环retain</a>
     </h1>
   
 
@@ -533,11 +564,12 @@
       
           
         <hr>
-<p>深度优先搜索DFS：【与树的先序遍历类似】<br>1）首先访问起始顶点v<br>2）接着由v出发访问v的任意一个邻接且未被访问的邻接顶点wi<br>3）然后再访问与wi邻接且未被访问的任意顶点yi<br>4）若wi没有邻接且未被访问的顶点时，退回到它的上一层顶点v<br>5）重复上述过程，直到所有顶点被访问为止</p>
-<p>借助递归(栈)+辅助标记数组来实现：【邻接矩阵法的DFS(BFS)序列唯一，邻接表法的不唯一】<br>DFS序列：ACDEB<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gow9uakq4bj30vz0bwjs1.jpg"></p>
-<p>DFS算法的性能分析：<br>1）空间复杂度：O(|V|)<br>2）时间复杂度：邻接矩阵法O(|V|^2)，邻接表法O(|V|+|E|)</p>
-<p>深度优先生成树：在深度遍历过程中，我们可以得到一棵遍历树，称为深度优先生成树（生成森林）【邻接矩阵法的深度优先生成树唯一，邻接表法的不唯一】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowa1kzpwtj30l208t3yj.jpg"></p>
-<p>遍历与连通性问题：<br>1）在无向图中，在任意结点出发进行一次遍历(调用一次BFS或DFS)，若能访问全部结点，说明该无向图是连通的<br>2）在无向图中，调用遍历函数(BFS或DFS)的次数为连通分量的个数<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowa9mwx28j30ek0akt8p.jpg"><br>有向图中上面两个结论都不成立：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowa9z735zj30mb0fsq39.jpg"></p>
+<p>当两个类相互包含的时候：Person.h中包含Book.h，而Book.h中又包含Person.h，这个时候就会出现循环引用的问题，就会造成无限递归，而导致无法编译通过</p>
+<p>解决方案：<br>.h头文件：<br>其中一边不要使用#import引入对方的头文件，而是使用@class 类名；来标注这是一个类，这样子就可以在不引入对方头文件的情况下告诉编译器这是一个类【@class Book;（有分号）】<br>.m头文件：<br>在.m文件中再<code># import</code>对方的头文件就可以使用了【#import “Book.h”】(其实不引入也可以，只是会有警告)</p>
+<p>@class与@import的区别：<br>1）#import是将指定的文件的内容拷贝到写指令的地方<br>2）@class并不会拷贝任何内容，只是告诉编译器这是一个类，这样编译器在编译的时候才可以知道这是一个类</p>
+<p>当两个对象相互引用的时候（A对象的属性是B对象，B对象的属性是A对象），这个时候，如果两边都使用retain，那么就会发生内存泄露<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly467uxfuj30db09zdid.jpg"></p>
+<p>解决方案：一端使用retain，另外一端使用assign，使用assign的那一端在dealloc中不再需要release了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly46gdexrj307s04fq40.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly46nkjtpj305606amyc.jpg"></p>
+<p>注意：这里有一个很特别的点<br>[p1 read];要放在[b1 release];之前，否则会出现僵尸对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly46ummt7j307n0883zv.jpg"></p>
 
       
     </div>
@@ -546,11 +578,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -570,11 +606,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/最小生成树" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/自动释放池：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="article-date">
-      <time datetime="2019-12-13T16:00:00.000Z" itemprop="datePublished">2019-12-14</time>
+      <a  href="/2019/08/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E8%87%AA%E5%8A%A8%E9%87%8A%E6%94%BE%E6%B1%A0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-12T16:00:00.000Z" itemprop="datePublished">2019-08-13</time>
 </a>
 
     </div>
@@ -588,7 +624,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
+      <a  class="article-title" href="/2019/08/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E8%87%AA%E5%8A%A8%E9%87%8A%E6%94%BE%E6%B1%A0%EF%BC%9A/">自动释放池：</a>
     </h1>
   
 
@@ -600,13 +636,13 @@
       
           
         <hr>
-<p>生成树：连通图包含全部顶点的一个极小连通子图</p>
-<p>最小生成树：对于带权无向连通图G=(V,E)，G的所有生成树当中边的权值之和最小的生成树为G的最小生成树（MST）</p>
-<p>性质：<br>1）最小生成树不一定唯一，即最小生成树的树形不一定唯一，当带权无向连通图G的各边权值不等时或G只有结点数-1条边时，MST唯一<br>2）最小生成树的权值是唯一的，且是最小<br>3）最小生成树的边数为顶点数-1</p>
-<p>Prim算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowhea9abpj30w40u0god.jpg"></p>
-<p>时间复杂度：O(|V|^2)，适用于稠密图<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowhfo3re7j30md0gq3za.jpg"></p>
-<p>Kruskal算法：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowi1mjjyoj30we0u0gos.jpg"></p>
-<p>时间复杂度：O(|E|log|E|)，适用于稀疏图<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowi59pmhwj30l50bamxo.jpg"></p>
+<p>原理：存入到自动释放池中的对象，在自动释放池被销毁的时候，会自动调用存储在该自动释放池中的所有对象的release方法</p>
+<p>可以解决的问题：将创建的对象，存入到自动释放池之中，就不再需要手动的release这个对象了，因为池子销毁的时候，就会自动的调用池中所有的对象的release</p>
+<p>如何创建自动释放池：<br>@autoreleasepool{</p>
+<p>}<br>这对大括弧代表这个自动释放池的范围</p>
+<p>如何将对象存储到自动释放池之中：在自动释放池之中调用对象的autorelease方法，就会将这个对象存入到当前自动释放池之中</p>
+<p>这个autorelease方法返回的是对象本身，所以我们可以这么写：<br>@autoreleasepool{<br>      Person *p1=[[[Person alloc] init] autorelease];<br>}<br>这个时候，当这个自动释放池执行完毕之后，就会立即为这个自动释放池中的对象发送一条release消息<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly47ex751j309h03ajry.jpg"></p>
+<p>八大注意：<br>1）只有在自动释放池中调用了对象的autorelease方法，这个对象才会被存储到这个自动释放池之中，如果只是将对象的创建代码写在自动释放池之中，而没有调用对象的autorelease方法，是不会将这个对象存储到这个自动释放池之中的<br>2）对象的创建可以在自动释放池的外面，在自动释放池之中调用对象的autorelease方法，就可以将这个对象存储到这个自动释放池之中<br>3）如果对象的autorelease方法的调用放在自动释放池的外面，是无法将其存储到这个自动释放池之中的，autorelease的调用只有放在自动释放池之中，才可以将其存储到自动释放池<br>4）当自动释放池结束的时候，仅仅是对存储在自动释放池中的对象发送一条release消息，而不是销毁对象<br>5）如果在自动释放池中调用同一个对象的autorelease方法多次，就会将对象存储多次到自动释放池之中，在自动释放池结束的时候，会为对象发送多条release消息，那么这个时候就会出现僵尸对象错误<br>6）如果在自动释放池中调用了存储到自动释放池中的对象的release方法，在自动释放池结束的时候，还会再调用对象的release方法，这个时候就有可能会造成野指针操作（也可以调用存储在自动释放池中的对象的retain方法）<br>7）将对象存储到自动释放池并不会使对象的引用计数器+1，所以其好处就是：创建对象将对象存储在自动释放池，就不需要再写一个release了<br>8）自动释放池可以嵌套，调用对象的autorelease方法，会将对象加入到当前自动释放池之中，只有在当前自动释放池结束的时候才会向对象发送release消息</p>
 
       
     </div>
@@ -615,11 +651,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -639,11 +679,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/最短路径" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/类方法的规范：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" class="article-date">
-      <time datetime="2019-12-12T16:00:00.000Z" itemprop="datePublished">2019-12-13</time>
+      <a  href="/2019/08/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E6%96%B9%E6%B3%95%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-11T16:00:00.000Z" itemprop="datePublished">2019-08-12</time>
 </a>
 
     </div>
@@ -657,7 +697,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">最短路径</a>
+      <a  class="article-title" href="/2019/08/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E6%96%B9%E6%B3%95%E7%9A%84%E8%A7%84%E8%8C%83%EF%BC%9A/">类方法的规范：</a>
     </h1>
   
 
@@ -669,13 +709,7 @@
       
           
         <hr>
-<p>最短路径：两个顶点之间带权路径长度最短的路径为最短路径</p>
-<p>在带权图当中，把从一个顶点v到另一个顶点u所经历的边的权值之和称为路径的带权路径长度</p>
-<p>Dijkstra算法：带权图单源最短路径<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowjaudro9j31030u0n0s.jpg"></p>
-<p>时间复杂度：O(|V|^2)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowjb45bhuj30gs0dawey.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowjh8y76uj30p80f7dgh.jpg"></p>
-<p>Dijkstra算法并不适用于含有负权边的图</p>
-<p>Floyd算法：各顶点之间的最短路径<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowk6v7wodj315i0u0q5r.jpg"></p>
-<p>时间复杂度：O(|V|^3)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowjwpdsq2j30lc0a60td.jpg"></p>
+<p>一般情况下，要求提供与自定义构造方法相同功能的类方法，这样可以快速的创建一个对象；使用类方法创建的对象，要求这个对象在方法中就已经被autorelease过了，这样，我们只要在自动释放池中调用类方法来创建对象，那么创建的对象就会被自动的加入到自动释放池中<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly482dqqwj30f106m76p.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly488qmluj30fa0a6n03.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly48f8eabj30d603o0tu.jpg"></p>
 
       
     </div>
@@ -684,11 +718,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -708,11 +746,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/拓扑排序" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/ARC机制概述" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="article-date">
-      <time datetime="2019-12-11T16:00:00.000Z" itemprop="datePublished">2019-12-12</time>
+      <a  href="/2019/08/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/ARC%E6%9C%BA%E5%88%B6%E6%A6%82%E8%BF%B0/" class="article-date">
+      <time datetime="2019-08-10T16:00:00.000Z" itemprop="datePublished">2019-08-11</time>
 </a>
 
     </div>
@@ -726,7 +764,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
+      <a  class="article-title" href="/2019/08/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/ARC%E6%9C%BA%E5%88%B6%E6%A6%82%E8%BF%B0/">ARC机制概述</a>
     </h1>
   
 
@@ -738,15 +776,13 @@
       
           
         <hr>
-<p>有向无环图：不存在环的有向图，简称DAG图</p>
-<p>在一个表示工程的有向图中，用顶点表示活动，用弧表示活动之间的优先关系，称这样的有向图为顶点表示活动的网，简称AOV网</p>
-<p>在AOV网中，不能出现回路</p>
-<p>若从顶点vi到vj有一条路径，则在顶点序列中顶点vi必在vj之前，对一个有向图构造拓扑序列的过程称为拓扑排序</p>
-<p>基本思想：<br>1）从AOV网中选择一个没有前驱的顶点并输出<br>2）从AOV网中删去该顶点以及所有以该顶点为尾的弧<br>3）重复上述两步，直到全部顶点都被输出，或AOV网中不存在没有前驱的顶点<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowln5hklwj315v0u0gp7.jpg"></p>
-<p>算法结束时没有访问所有顶点，则存在以剩下顶点组成的环</p>
-<p>拓扑排序的结果不一定唯一</p>
-<p>时间复杂度：O(|V|+|E|)<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gowlq1g686j30mt0g1t9e.jpg"></p>
-<p>若邻接矩阵为三角矩阵，则存在拓扑排序，反之不一定成立</p>
+<p>Automatic Reference Counting，自动引用计数，即ARC，系统自动的帮助我们去计算对象的引用计数器的值</p>
+<p>在程序中使用ARC非常简单，只需要向往常那样编写代码，只不过永远不要写retain，release，autorelease这三个关键字就好，永远不要手动的调用dealloc【在dealloc方法中不要调用父类dealloc】，这是ARC最基本的原则，当ARC开启时，编译器就会自动的在合适的地方插入retain，release，autorelease代码，编译器自动为对象做引用计数</p>
+<p>ARC机制下，对象何时被释放：<br>本质：对象的引用计数器为0的时候，自动释放<br>表象：只要没有强指针指向这个对象，这个对象就会立即回收</p>
+<p>强指针与弱指针：</p>
+<p>强指针：默认情况下，我们声明一个指针，这个指针就是一个强指针，我们也可以用__strong(两个下划线)来显示的声明这是一个强指针</p>
+<p>弱指针：使用__weak标识的指针就叫做弱指针</p>
+<p>无论是强指针还是弱指针都是指针，都可以用来存储地址，这一点没有任何区别，都可以通过这个指针访问对象的成员；唯一的区别就是在ARC模式下，它们用来作为回收对象的基准：如果一个对象没有任何强类型的指针指向这个对象的时候，对象就会被立即释放</p>
 
       
     </div>
@@ -755,11 +791,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -779,11 +819,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/关键路径" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/ARC下的单个对象的内存管理：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" class="article-date">
-      <time datetime="2019-12-10T16:00:00.000Z" itemprop="datePublished">2019-12-11</time>
+      <a  href="/2019/08/10/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/ARC%E4%B8%8B%E7%9A%84%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-09T16:00:00.000Z" itemprop="datePublished">2019-08-10</time>
 </a>
 
     </div>
@@ -797,7 +837,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">关键路径</a>
+      <a  class="article-title" href="/2019/08/10/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/ARC%E4%B8%8B%E7%9A%84%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%EF%BC%9A/">ARC下的单个对象的内存管理：</a>
     </h1>
   
 
@@ -809,10 +849,9 @@
       
           
         <hr>
-<p>在一个表示工程的带权有向图中，用顶点表示事件，用有向边表示活动，边上的权值表示活动的持续时间，称这样的有向图为边表示活动的网，简称AOE网</p>
-<p>在AOE网中，所有活动都完成才能到达终点，因此完成整个工程所必须花费的时间(即最短工期)应该为源点到终点的最大路径长度，具有最大路径长度的路径称为关键路径，关键路径上的活动称为关键活动<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gox69o7az9j30u00wltdl.jpg"></p>
-<p>缩短关键活动时间可以加快整个工程，但缩短到一定大小时关键路径会发生改变</p>
-<p>当网中关键路径不唯一时，只有加快的关键活动或关键活动组合包括在所有的关键路径上才能缩短工期</p>
+<p>1）当指向对象的所有的强指针被回收的时候，对象就会被立即回收<br>2）当所有指向对象的强指针赋值为nil的时候，对象就会被立即回收</p>
+<p>注意：不能创建对象用一个弱指针存储这个对象的指针，这样的话，刚创建出来的对象，就没有任何强指针指向，创建出来就被回收<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly48zujqsj309504rdh8.jpg"></p>
+<p>在ARC机制下，当对象被回收的时候，原来指向这个对象的弱指针会被自动设置为nil<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4988ujuj309w09a401.jpg"></p>
 
       
     </div>
@@ -821,11 +860,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -845,11 +888,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/查找的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/@property另外两个参数：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2019-12-09T16:00:00.000Z" itemprop="datePublished">2019-12-10</time>
+      <a  href="/2019/08/09/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%8F%A6%E5%A4%96%E4%B8%A4%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-08T16:00:00.000Z" itemprop="datePublished">2019-08-09</time>
 </a>
 
     </div>
@@ -863,7 +906,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%9F%A5%E6%89%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">查找的基本概念</a>
+      <a  class="article-title" href="/2019/08/09/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property%E5%8F%A6%E5%A4%96%E4%B8%A4%E4%B8%AA%E5%8F%82%E6%95%B0%EF%BC%9A/">property另外两个参数：</a>
     </h1>
   
 
@@ -875,13 +918,10 @@
       
           
         <hr>
-<p>查找：在数据集合中寻找满足某种条件的数据元素的过程，查找结果分为查找成功和查找失败</p>
-<p>查找表：用于查找的数据集合，由同一种数据类型(或记录)组成，可以是一个数组或链表等数据类型</p>
-<p>查找表的操作：<br>1）查询某个特定的数据元素是否在查找表中<br>2）检索满足条件的某个特定的数据元素的各种属性<br>3）从查找表中插入一个数据元素<br>4）从查找表中删除一个数据元素</p>
-<p>不涉及插入和删除操作的查找称为静态查找，涉及插入和删除操作的查找称为动态查找</p>
-<p>关键字：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的</p>
-<p>平均查找长度：查找时，关键字比较次数的平均值</p>
-<p>线性表：适用于静态查找，主要采用顺序查找技术、折半查找技术<br>树表：适用于动态查找，主要采用二叉排序树、平衡二叉树、B树等查找技术<br>散列表：静态查找和动态查找均适用，主要采用散列查找技术</p>
+<p>在ARC的机制下，@property参数不能使用retain，因为retain代表生成的setter方法是MRC的标准内存管理代码</p>
+<p>ARC机制下关注的重点：当一个类的属性是一个OC对象的时候，这个属性应该声明为强类型的还是弱类型的，很明显应该声明为强类型的<br>【人未死车已报废】<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly49rp7k7j307i05lwfd.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly49yxjnzj307i04gaax.jpg"></p>
+<p>如何控制@property生成的私有属性是一个强类型的还是一个弱类型的？<br>使用参数：strong（默认值）和weak<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly4a5pjxxj30700173yw.jpg"></p>
+<p>使用建议：<br>1）在ARC机制下，如果属性的类型是OC对象类型的，绝大多数场景下使用strong<br>2）在ARC机制下，如果属性的类型不是OC对象类型的，使用assign<br>3）strong和weak都是应用在属性的类型是OC对象的时候</p>
 
       
     </div>
@@ -890,11 +930,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -916,7 +960,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/19/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/21/"></a>
+      <a class="extend prev" rel="prev" href="/page/19/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/21/"></a>
     </nav>
   
 
@@ -942,7 +986,7 @@
 
                 <a href="https://hexo.io/zh-cn/index.html" target="_blank">「Hexo文档」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
-                <a href="https://liao-hexo.github.io/archives/" target="_blank">「个人博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+                <a href="https://liao-hexo.github.io/archives/" target="_blank">「我的博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
                 <a href="https://github.com/Liao-Hexo" target="_blank">「GitHub』&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 

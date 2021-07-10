@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-数据结构、算法笔记/顺序表和链表的比较" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/NSString：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E6%AF%94%E8%BE%83/" class="article-date">
-      <time datetime="2020-01-17T16:00:00.000Z" itemprop="datePublished">2020-01-18</time>
+      <a  href="/2019/09/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/NSString%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-16T16:00:00.000Z" itemprop="datePublished">2019-09-17</time>
 </a>
 
     </div>
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E6%AF%94%E8%BE%83/">顺序表和链表的比较</a>
+      <a  class="article-title" href="/2019/09/17/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/NSString%EF%BC%9A/">NSString：</a>
     </h1>
   
 
@@ -258,308 +258,35 @@
       
           
         <hr>
-<p>逻辑结构：都属于线性表，都是线性结构</p>
-<p>存储结构：</p>
+<p>1）NSString是一个数据类型，用来保存OC字符串<br>2）NSString是Foundation框架中的一个类，作用是存储OC字符串的，所以OC中的字符串本质上是用NSString对象来存储的</p>
+<p>其实完整的标准的创建NSString对象的方式：<br>NSString *str0=[NSString new];<br>NSString *str1=[NSString string];<br>这种方式创建的字符串是空字符串 @“”</p>
+<p>但是，NSString是我们最常用的一个对象，所以OC使用了一种更为简单的方式来创建字符串对象：直接使用@来表示一个OC字符串<br>@“jack”;(这个其实本质上是一个NSString对象)</p>
+<p>NSString *str=@“jack”;【str的值是这个对象的地址，%p打印的是指针变量的值；%@打印的是指针变量指向的对象】<br>NSString *str1=[NSString stringWithFormat:@“jack”];</p>
+<hr>
+<p>NSString最常用的类方法：</p>
 <ol>
-<li>顺序表：顺序存储，优点是支持随机存取，存储密度高；缺点是大片连续空间分配不方便，改变容量不方便</li>
-<li>链表：链式存储，优点是离散的小空间分配方便，改变容量方便；缺点是不可随机存取，存储密度低</li>
-</ol>
-<p>使用场景：</p>
-<ol>
-<li>链表：表长难以预估，经常要增加/删除元素</li>
-<li>顺序表：表长可预估，查询(搜索)操作较多</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构、算法笔记/栈的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/01/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2020-01-16T16:00:00.000Z" itemprop="datePublished">2020-01-17</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">栈的基本概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>栈(Stack)是只允许在一端进行插入或删除操作的线性表【空栈、栈顶：允许插入和删除的一端、栈底：不允许插入和删除的一端】</p>
-<p>特点：后进先出【Last In First Out(LIFO)】</p>
-<p>栈的基本操作：</p>
-<ol>
-<li><p><code>InitStack(&amp;S)</code>：初始化栈，构造一个空栈S，分配内存空间</p>
+<li><p><code>+ (instancetype)stringWithUTF8String:(const char *)nullTerminatedCString;</code><br>Instancetype作为返回值，代表返回的是当前这个类的对象<br>作用：将C语言的字符串转换为OC字符串对象</p>
 </li>
-<li><p><code>DestroyStack(&amp;L)</code>：销毁栈，销毁并释放栈S所占用的内存空间</p>
-</li>
-<li><p><code>Push(&amp;S,x)</code>：进栈，若栈S未满，则将x加入使之成为新栈顶</p>
-</li>
-<li><p><code>Pop(&amp;S,&amp;x)</code>：出栈，若栈S非空，则弹出栈顶元素，并用x返回【删除栈顶元素】</p>
-</li>
-<li><p><code>GetTop(S,&amp;x)</code>：读栈顶元素，若栈S非空，则用x返回栈顶元素【不删除栈顶元素，查栈的使用场景中大多只访问栈顶元素】</p>
-</li>
-<li><p><code>StackEmpty(S)</code>：判读一个栈S是否为空，若S为空，则返回true，否则返回false</p>
+<li><p><code>+ (instancetype)stringWithFormat:(NSString *)format,….</code><br>作用：拼接一个字符串对象，使用变量或者其他数据拼接成OC字符串<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3llywhfj30hj05ctav.jpg"></p>
 </li>
 </ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构、算法笔记/栈的顺序存储实现" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/01/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E5%AE%9E%E7%8E%B0/" class="article-date">
-      <time datetime="2020-01-15T16:00:00.000Z" itemprop="datePublished">2020-01-16</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E5%AE%9E%E7%8E%B0/">栈的顺序存储实现</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>顺序栈的缺点：栈的大小不可变<br><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gom26d6r2mj20fm0wfju1.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">#define MaxSize 10  &#x2F;&#x2F;定义栈中元素的最大个数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;顺序栈的定义</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int data[MaxSize];  &#x2F;&#x2F;静态数组存放栈中元素</span><br><span class="line">    int top;  &#x2F;&#x2F;栈顶指针，top指向当前栈顶元素</span><br><span class="line">&#125;SqStack;  &#x2F;&#x2F;Sq：sequence，顺序</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;初始化栈</span><br><span class="line">void InitStack(SqStack *S)&#123;</span><br><span class="line">    S-&gt;top&#x3D;-1;  &#x2F;&#x2F;初始化栈顶指针</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;判断栈空</span><br><span class="line">bool StackEmpty(SqStack *S)&#123;</span><br><span class="line">    if(S-&gt;top &#x3D;&#x3D; -1)&#123;</span><br><span class="line">        return true;  &#x2F;&#x2F;栈空</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;不空</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;进栈操作</span><br><span class="line">bool Push(SqStack *S,int x)&#123;</span><br><span class="line">    if(S-&gt;top&#x3D;&#x3D;MaxSize-1)&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;栈满，报错</span><br><span class="line">    &#125;</span><br><span class="line">    S-&gt;top&#x3D;S-&gt;top+1;  &#x2F;&#x2F;指针先+1</span><br><span class="line">    S-&gt;data[S-&gt;top]&#x3D;x;  &#x2F;&#x2F;新元素入栈</span><br><span class="line">    </span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;出栈操作,并用x返回</span><br><span class="line">bool Pop(SqStack *S,int *x)&#123;</span><br><span class="line">    if(S-&gt;top&#x3D;&#x3D;-1)&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;栈空，报错</span><br><span class="line">    &#125;</span><br><span class="line">    (*x)&#x3D;S-&gt;data[S-&gt;top];  &#x2F;&#x2F;栈顶元素先出栈</span><br><span class="line">    S-&gt;top&#x3D;S-&gt;top-1;  &#x2F;&#x2F;指针再-1，数据还残留在内存中，只是逻辑上被删除了</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;读栈顶元素操作</span><br><span class="line">bool GetTop(SqStack *S,int *x)&#123;</span><br><span class="line">    if(S-&gt;top&#x3D;&#x3D;-1)&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;栈空，报错</span><br><span class="line">    &#125;</span><br><span class="line">    (*x)&#x3D;S-&gt;data[S-&gt;top];  &#x2F;&#x2F;x记录栈顶元素</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    SqStack S;  &#x2F;&#x2F;声明一个顺序栈(分配空间)</span><br><span class="line">    InitStack(&amp;S);</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;...后续操作</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>共享栈：<br><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gom2dl9esmj20a40e10ud.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">#define MaxSize 10  &#x2F;&#x2F;定义栈中元素的最大个数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;共享栈：两个栈共享同一片空间</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int data[MaxSize];  &#x2F;&#x2F;静态数组存放栈中元素</span><br><span class="line">    int top0;  &#x2F;&#x2F;0号栈顶指针</span><br><span class="line">    int top1;  &#x2F;&#x2F;1号栈顶指针</span><br><span class="line">&#125;ShStack;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;初始化栈</span><br><span class="line">void InitStack(ShStack *S)&#123;</span><br><span class="line">    S-&gt;top0&#x3D;-1;  &#x2F;&#x2F;初始化栈顶指针</span><br><span class="line">    S-&gt;top1&#x3D;MaxSize;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;栈满条件：top0+1&#x3D;&#x3D;top1</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    ShStack S;  &#x2F;&#x2F;声明一个顺序栈(分配空间)</span><br><span class="line">    InitStack(&amp;S);</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;...后续操作</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构、算法笔记/栈的链式存储实现" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AE%9E%E7%8E%B0/" class="article-date">
-      <time datetime="2020-01-14T16:00:00.000Z" itemprop="datePublished">2020-01-15</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AE%9E%E7%8E%B0/">栈的链式存储实现</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>进栈操作：头插法建立单链表(对头结点的后插操作)</p>
-<p>出栈操作：单链表的删除操作(对头结点的后删操作)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;链栈的定义(带头结点的初始化，不带头结点的初始化)</span><br><span class="line">typedef struct Linknode&#123;</span><br><span class="line">   int data;  &#x2F;&#x2F;数据域</span><br><span class="line">   struct Linknode *next;  &#x2F;&#x2F;指针域</span><br><span class="line">&#125;*Listack;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构、算法笔记/队列的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2020/01/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%98%9F%E5%88%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2020-01-13T16:00:00.000Z" itemprop="datePublished">2020-01-14</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%98%9F%E5%88%97%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">队列的基本概念</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>队列的定义：是只允许在一端进行插入，在另一端删除的线性表【空队列、队头：允许删除的一端、队尾：允许插入的一端】</p>
-<p>特点：先进入队列的元素先出队【First In First Out(FIFO)】</p>
-<p>队列的基本操作：</p>
+<hr>
+<p>NSString最常用的对象方法：</p>
 <ol>
-<li><p><code>InitQueue(&amp;Q)</code>：初始化队列，构造一个空队列Q</p>
+<li><p>length方法，返回值为NSUInteger，其实就是unsigned long<br>得到字符串的字符的个数，可以处理中文<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3lx9vl5j308x044myd.jpg"></p>
 </li>
-<li><p><code>DestroyQueue(&amp;Q)</code>：销毁队列，销毁并释放队列Q所占用的内存空间</p>
-</li>
-<li><p><code>EnQueue(&amp;Q,x)</code>：入队，若队列Q未满，则将x加入使之成为新队尾</p>
-</li>
-<li><p><code>DeQueue(&amp;Q,&amp;x)</code>：出队，若队列Q非空，则删除队头元素，并用x返回【删除队头元素】</p>
-</li>
-<li><p><code>GetHead(Q,&amp;x)</code>：读队头元素，若队列Q非空，则用x返回队头元素【不删除队头元素，查队列的使用场景中大多只访问队头元素】</p>
-</li>
-<li><p><code>QueueEmpty(Q)</code>：判断一个队列是否为空，若Q为空，则返回true，否则返回false</p>
+<li><p>得到字符串中指定下标的字符<br><code>* (unichar)characterAtIndex:(NSUInteger)index;</code><br>返回值是unichar，其实就是unsinged short，占据两个字节</p>
 </li>
 </ol>
+<p>如果要输出unichar变量的值使用%C(中文输出)<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3m5g3snj309h04ldh3.jpg"></p>
+<ol start="3">
+<li>判断两个字符串的内容是否相同，不要用==去判断，因为这样有可能会出问题：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3me1e4aj30co06ywgl.jpg"></li>
+</ol>
+<p>判断相等的方式：<br><code>* (BOOL)isEqualToString:(NSString *)aString;</code><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3mkylqvj30cr0900v4.jpg"></p>
+<ol start="4">
+<li>比较字符串的大小</li>
+</ol>
+<p><code>* (NSComparisonResult)compare:(NSString *)string;</code><br>完全可以使用int来接收结果，因为返回值是一个枚举<br>返回值如果是-1（小于），0（等于），1（大于）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ms9hzuj308o054gn3.jpg"></p>
 
       
     </div>
@@ -568,11 +295,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -592,11 +323,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/队列的顺序实现" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/匿名对象：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0/" class="article-date">
-      <time datetime="2020-01-12T16:00:00.000Z" itemprop="datePublished">2020-01-13</time>
+      <a  href="/2019/09/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-15T16:00:00.000Z" itemprop="datePublished">2019-09-16</time>
 </a>
 
     </div>
@@ -610,7 +341,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0/">队列的顺序实现</a>
+      <a  class="article-title" href="/2019/09/16/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A/">匿名对象：</a>
     </h1>
   
 
@@ -622,8 +353,11 @@
       
           
         <hr>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gom5pdlefmj20ms15kgq2.jpg"><br><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gom5wuc6quj21400u0tc7.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">#define MaxSize 10  &#x2F;&#x2F;定义队列中元素的最大个数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;队列的顺序实现【front指向队头元素，rear指向队尾元素的后一个位置；还有一种情况是rear指向队尾元素】</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    int data[MaxSize];  &#x2F;&#x2F;用静态数组存放队列元素</span><br><span class="line">    int front,rear;  &#x2F;&#x2F;队头指针和队尾指针</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;int size;  &#x2F;&#x2F;第二种判断队列已满&#x2F;已空的方法，定义一个size：队列当前长度</span><br><span class="line">    &#x2F;&#x2F;int tag;  &#x2F;&#x2F;第三种判断队列已满&#x2F;已空的方法：最近进行的是删除还是插入</span><br><span class="line">&#125;SqQueue;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;初始化队列</span><br><span class="line">void InitQueue(SqQueue *Q)&#123;</span><br><span class="line">    Q-&gt;front&#x3D;Q-&gt;rear&#x3D;0;  &#x2F;&#x2F;初始时队头、队尾指针指向0</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;Q-&gt;size&#x3D;0;  &#x2F;&#x2F;第二种判断队列已满&#x2F;已空的方法，插入成功size++，删除成功size--,队空条件:size&#x3D;&#x3D;0，队满条件：size&#x3D;&#x3D;MaxSize</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;Q-&gt;tag&#x3D;0;  &#x2F;&#x2F;第三种判断队列已满&#x2F;已空的方法：每次删除操作成功时，都令tag&#x3D;0,每次插入操作成功时都令tag&#x3D;1；只有删除操作，才可能导致队空，只有插入操作，才可能导致队满；队空条件：front&#x3D;&#x3D;rear &amp;&amp; tag&#x3D;&#x3D;0，队满条件：front&#x3D;&#x3D;rear &amp;&amp; tag&#x3D;&#x3D;1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;判断队列是否为空</span><br><span class="line">bool QueueEmpty(SqQueue *Q)&#123;</span><br><span class="line">    if(Q-&gt;rear&#x3D;&#x3D;Q-&gt;front)&#123;  &#x2F;&#x2F;队空条件</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;循环队列：入队操作</span><br><span class="line">bool EnQueue(SqQueue *Q,int x)&#123;</span><br><span class="line">    if((Q-&gt;rear+1)%MaxSize &#x3D;&#x3D; Q-&gt;front)&#123;  &#x2F;&#x2F;队列已满的条件：队尾指针的再下一个位置是队头，代价：牺牲一个存储单元</span><br><span class="line">        return false;  &#x2F;&#x2F;队满则报错</span><br><span class="line">    &#125;</span><br><span class="line">    Q-&gt;data[Q-&gt;rear]&#x3D;x;  &#x2F;&#x2F;新元素插入队尾</span><br><span class="line">    Q-&gt;rear&#x3D;(Q-&gt;rear+1)%MaxSize;  &#x2F;&#x2F;队尾指针+1取模,用模运算将存储空间在逻辑上变成了“环状”</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;这是rear指向队尾元素的情况</span><br><span class="line">    &#x2F;&#x2F;Q-&gt;rear&#x3D;(Q-&gt;rear+1)%MaxSize;</span><br><span class="line">    &#x2F;&#x2F;Q-&gt;data[Q-&gt;rear]&#x3D;x;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;循环队列：出队操作</span><br><span class="line">&#x2F;&#x2F;出队：删除一个队头元素，并用x返回</span><br><span class="line">bool DeQueue(SqQueue *Q,int *x)&#123;</span><br><span class="line">    if(Q-&gt;rear&#x3D;&#x3D;Q-&gt;front)&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;队空则报错</span><br><span class="line">    &#125;</span><br><span class="line">    (*x)&#x3D;Q-&gt;data[Q-&gt;front];</span><br><span class="line">    Q-&gt;front&#x3D;(Q-&gt;front+1)%MaxSize;  &#x2F;&#x2F;队头指针后移</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;获取队头元素的值，用x返回</span><br><span class="line">bool GetHead(SqQueue *Q,int *x)&#123;</span><br><span class="line">    if(Q-&gt;rear&#x3D;&#x3D;Q-&gt;front)&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    (*x)&#x3D;Q-&gt;data[Q-&gt;front];</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;队列元素个数：(rear+MaxSize-front)%MaxSize</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    SqQueue Q;  &#x2F;&#x2F;声明一个队列，顺序存储</span><br><span class="line">    </span><br><span class="line">    InitQueue(&amp;Q);</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;...后续操作</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>如果我们创建一个对象，没有用一个指针存储这个对象的地址，也就是没有任何指针指向这个对象，那么这个对象就叫做匿名对象</p>
+<p>因为new实际上是一个类方法，这个方法做的事情就是创建对象，返回值是创建的对象的地址，[Person new]这句代码的结果实际上就是创建的那个对象的指针，那我们可以直接使用<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3n9yn0aj308o060gn2.jpg"></p>
+<p>注意点：<br>1）匿名对象只能使用一次<br>2）每次创建匿名对象都是不同的对象</p>
+<p>什么时候使用匿名对象：<br>1）如果某个对象的成员只会被我们使用一次，用完之后这个对象再也不需要了，那么就可以使用匿名对象<br>2）如果方法的参数是一个对象，而调用者为这个参数赋值的对象就是专门来给这个方法传递的并且这个对象调用者不会再使用，那么这个时候就可以直接为方法传递一个匿名对象（上帝杀人）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3nhsewpj308o03q0tg.jpg"></p>
+
       
     </div>
     
@@ -631,11 +365,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -655,11 +393,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/队列的链式实现" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/面向对象的三大特征：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0/" class="article-date">
-      <time datetime="2020-01-11T16:00:00.000Z" itemprop="datePublished">2020-01-12</time>
+      <a  href="/2019/09/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-14T16:00:00.000Z" itemprop="datePublished">2019-09-15</time>
 </a>
 
     </div>
@@ -673,7 +411,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AE%9E%E7%8E%B0/">队列的链式实现</a>
+      <a  class="article-title" href="/2019/09/15/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81%EF%BC%9A/">面向对象的三大特征：</a>
     </h1>
   
 
@@ -685,9 +423,22 @@
       
           
         <hr>
-<p>顺序存储：预分配的空间耗尽时队满<br>链式存储：一般不会队满，除非内存不足</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gom7u5es8zj20k01jnq84.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;队列的链式实现(带头结点和不带头结点)</span><br><span class="line">typedef struct LinkNode&#123;  &#x2F;&#x2F;链式队列结点</span><br><span class="line">    int data;</span><br><span class="line">    struct LinkNode *next;</span><br><span class="line">&#125;LinkNode;</span><br><span class="line"></span><br><span class="line">typedef struct&#123;  &#x2F;&#x2F;链式队列</span><br><span class="line">    LinkNode *front,*rear;  &#x2F;&#x2F;队列的队头和队尾指针</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;int length;  &#x2F;&#x2F;求队列的长度</span><br><span class="line">&#125;LinkQueue;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;初始化队列(带头结点)</span><br><span class="line">void InitQueue(LinkQueue *Q)&#123;</span><br><span class="line">    &#x2F;&#x2F;初始时，front、rear都指向头结点</span><br><span class="line">    Q-&gt;front&#x3D;Q-&gt;rear&#x3D;(LinkNode *)malloc(sizeof(LinkNode));</span><br><span class="line">    Q-&gt;front-&gt;next&#x3D;NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;判断队列是否为空</span><br><span class="line">bool IsEmpty(LinkQueue *Q)&#123;</span><br><span class="line">    if(Q-&gt;front&#x3D;&#x3D;Q-&gt;rear)&#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;初始化(不带头结点)</span><br><span class="line">&#x2F;&#x2F;void InitQueue(LinkQueue *Q)&#123;</span><br><span class="line">&#x2F;&#x2F;    &#x2F;&#x2F;初始时，front、rear都指向NULL</span><br><span class="line">&#x2F;&#x2F;    Q-&gt;front&#x3D;NULL;</span><br><span class="line">&#x2F;&#x2F;    Q-&gt;rear&#x3D;NULL;</span><br><span class="line">&#x2F;&#x2F;&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;判断队列是否为空(不带头结点)</span><br><span class="line">&#x2F;&#x2F;bool IsEmpty(LinkQueue *Q)&#123;</span><br><span class="line">&#x2F;&#x2F;    if(Q-&gt;front&#x3D;&#x3D;NULL)&#123;</span><br><span class="line">&#x2F;&#x2F;        return true;</span><br><span class="line">&#x2F;&#x2F;    &#125;</span><br><span class="line">&#x2F;&#x2F;    else&#123;</span><br><span class="line">&#x2F;&#x2F;        return false;</span><br><span class="line">&#x2F;&#x2F;    &#125;</span><br><span class="line">&#x2F;&#x2F;&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;新元素入队(带头结点)</span><br><span class="line">void EnQueue(LinkQueue *Q,int x)&#123;</span><br><span class="line">    LinkNode *s&#x3D;(LinkNode *)malloc(sizeof(LinkNode));</span><br><span class="line">    s-&gt;data&#x3D;x;</span><br><span class="line">    s-&gt;next&#x3D;NULL;</span><br><span class="line">    Q-&gt;rear-&gt;next&#x3D;s;  &#x2F;&#x2F;新结点插入到rear之后</span><br><span class="line">    Q-&gt;rear&#x3D;s;  &#x2F;&#x2F;修改表尾指针</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;新元素入队(不带头结点)</span><br><span class="line">&#x2F;&#x2F;void EnQueue(LinkQueue *Q,int x)&#123;</span><br><span class="line">&#x2F;&#x2F;    LinkNode *s&#x3D;(LinkNode *)malloc(sizeof(LinkNode));</span><br><span class="line">&#x2F;&#x2F;    s-&gt;data&#x3D;x;</span><br><span class="line">&#x2F;&#x2F;    s-&gt;next&#x3D;NULL;</span><br><span class="line">&#x2F;&#x2F;    if(Q-&gt;front &#x3D;&#x3D; NULL)&#123;  &#x2F;&#x2F;在空队列中插入第一个元素</span><br><span class="line">&#x2F;&#x2F;        Q-&gt;front&#x3D;s;  &#x2F;&#x2F;修改队头队尾指针</span><br><span class="line">&#x2F;&#x2F;        Q-&gt;rear&#x3D;s;  &#x2F;&#x2F;不带头结点的队列，第一个元素入队时需要特别处理</span><br><span class="line">&#x2F;&#x2F;    &#125;else&#123;</span><br><span class="line">&#x2F;&#x2F;        Q-&gt;rear-&gt;next&#x3D;s;  &#x2F;&#x2F;新结点插入到rear之后</span><br><span class="line">&#x2F;&#x2F;        Q-&gt;rear&#x3D;s;  &#x2F;&#x2F;修改rear指针</span><br><span class="line">&#x2F;&#x2F;    &#125;</span><br><span class="line">&#x2F;&#x2F;&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;队头元素出队(带头结点)</span><br><span class="line">bool DeQueue(LinkQueue *Q,int *x)&#123;</span><br><span class="line">    if(Q-&gt;front&#x3D;&#x3D;Q-&gt;rear)&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;空队</span><br><span class="line">    &#125;</span><br><span class="line">    LinkNode *p&#x3D;Q-&gt;front-&gt;next;</span><br><span class="line">    *x&#x3D;p-&gt;data;  &#x2F;&#x2F;用变量x返回队头元素</span><br><span class="line">    Q-&gt;front-&gt;next&#x3D;p-&gt;next;  &#x2F;&#x2F;修改头结点的next指针</span><br><span class="line">    if(Q-&gt;rear&#x3D;&#x3D;p)&#123;  &#x2F;&#x2F;此次是最后一个结点出队</span><br><span class="line">        Q-&gt;rear&#x3D;Q-&gt;front;  &#x2F;&#x2F;修改rear指针</span><br><span class="line">    &#125;</span><br><span class="line">    free(p);  &#x2F;&#x2F;释放结点空间</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;队头元素出队(不带头结点)</span><br><span class="line">&#x2F;&#x2F;bool DeQueue(LinkQueue *Q,int *x)&#123;</span><br><span class="line">&#x2F;&#x2F;    if(Q-&gt;front&#x3D;&#x3D;NULL)&#123;</span><br><span class="line">&#x2F;&#x2F;        return false;  &#x2F;&#x2F;空队</span><br><span class="line">&#x2F;&#x2F;    &#125;</span><br><span class="line">&#x2F;&#x2F;    LinkNode *p&#x3D;Q-&gt;front;  &#x2F;&#x2F;p指向此次出队的结点</span><br><span class="line">&#x2F;&#x2F;    *x&#x3D;p-&gt;data;  &#x2F;&#x2F;用变量x返回队头元素</span><br><span class="line">&#x2F;&#x2F;    Q-&gt;front&#x3D;p-&gt;next;  &#x2F;&#x2F;修改front指针</span><br><span class="line">&#x2F;&#x2F;    if(Q-&gt;rear&#x3D;&#x3D;p)&#123;  &#x2F;&#x2F;此次是最后一个结点出队</span><br><span class="line">&#x2F;&#x2F;        Q-&gt;front&#x3D;NULL;  &#x2F;&#x2F;front指向NULL</span><br><span class="line">&#x2F;&#x2F;        Q-&gt;rear&#x3D;NULL;  &#x2F;&#x2F;rear指向NULL</span><br><span class="line">&#x2F;&#x2F;    &#125;</span><br><span class="line">&#x2F;&#x2F;    free(p);  &#x2F;&#x2F;释放结点空间</span><br><span class="line">&#x2F;&#x2F;    return true;</span><br><span class="line">&#x2F;&#x2F;&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    LinkQueue Q;  &#x2F;&#x2F;声明一个队列</span><br><span class="line">    InitQueue(&amp;Q);  &#x2F;&#x2F;初始化队列</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;...后续操作</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>封装：类就是更高级别的封装，类将数据和行为封装为了一个整体</p>
+<p>优点：</p>
+<ol>
+<li>屏蔽内部的实现，外界不需要知道内部是如何实现的，只需要知道这个对象有什么用</li>
+<li>方便操作</li>
+<li>后期的维护十分的便利</li>
+</ol>
+<p>属性的封装：</p>
+<p>存在的问题：为对象的属性赋值的时候，语法上其实只要数据的类型是属性的类型就是可以的，但是情理上这么做是不合的（人的年龄）</p>
+<p>解决问题：<br>1）将属性的@public去掉<br>2）为类提供一个方法，这个方法专门为这个属性赋值，这个方法我们叫做setter</p>
+<p>setter方法：<br>1）这个方法是一个对象方法，因为这个方法要为属性赋值；<br>2）这个方法没有返回值；<br>3）这个方法的名称必须以set开头，跟上去掉下划线首字母大写的属性名；<br>4）这个方法一定是有参数的，参数的类型和属性的类型一致，参数的名称和属性的名称一致（去掉下划线）<br>5）在方法的实现中，判断传入的数据是否符合逻辑，如果符合逻辑则赋值，否则做默认处理<br>6）外界想要为对象的属性赋值，那么就调用这个对象的setter方法，将要赋值的数据传入这个方法</p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3o30cn3j308o06v0u1.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3oaai7pj309w08xabx.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ogduznj308k06s75l.jpg"></p>
+<p>以上又有一个问题：在外界无法取出属性的值了</p>
+<p>getter方法：<br>1）是一个对象方法，因为这个方法做的事情是拿到属性的值返回<br>2）有返回值，返回值的类型和属性的类型一致<br>3）这个方法的名称直接就是属性的名称（去掉下划线）<br>4）这个方法没有参数<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3on7kdlj303u00saa3.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3oudea4j303u01yq33.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3p1a4z4j309k01omxi.jpg"></p>
+<p>只要属性需要被外界访问，就要为这个属性封装setter和getter，哪怕在赋值或者取值的时候没有任何逻辑验证</p>
+<p>只读封装：为属性封装的时候，只提供getter，不提供setter<br>只写封装：为属性封装的时候，只提供setter，不提供getter</p>
 
       
     </div>
@@ -696,11 +447,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -720,11 +475,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/双端队列" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/对象与对象之间的关系：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/" class="article-date">
-      <time datetime="2020-01-10T16:00:00.000Z" itemprop="datePublished">2020-01-11</time>
+      <a  href="/2019/09/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-13T16:00:00.000Z" itemprop="datePublished">2019-09-14</time>
 </a>
 
     </div>
@@ -738,7 +493,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/">双端队列</a>
+      <a  class="article-title" href="/2019/09/14/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A/">对象与对象之间的关系：</a>
     </h1>
   
 
@@ -750,10 +505,12 @@
       
           
         <hr>
-<p>双端队列：只允许从两端插入、两端删除的线性表【若只使用其中一端的插入、删除操作，则效果等同于栈】</p>
-<p>输入受限的双端队列：只允许从一端插入、两端删除的线性表</p>
-<p>输出受限的双端队列：只允许从两端插入、一端删除的线性表</p>
-<p>在栈中合法的输出序列，在双端队列中必定合法</p>
+<p>组合关系：一个类是由其他的几个类联合起来组合而成【计算机由主板、显卡等组成】</p>
+<p>依赖关系：一个对象的方法的参数是另外一个对象【人依赖于手机】</p>
+<p>耦合度：当修改一个对象的时候对另外一个对象的影响程度【低耦合，高耦合】</p>
+<p>高内聚：一个对象仅仅做与自己相关的事情【单一职责原则】</p>
+<p>关联关系：一个类作为另外一个类的属性，但是它们不是组合关系，而是一个拥有的关系【人拥有狗】</p>
+<p>继承关系</p>
 
       
     </div>
@@ -762,11 +519,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -786,11 +547,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/栈在括号匹配中的应用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/static关键字：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E5%9C%A8%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
-      <time datetime="2020-01-09T16:00:00.000Z" itemprop="datePublished">2020-01-10</time>
+      <a  href="/2019/09/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/static%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-12T16:00:00.000Z" itemprop="datePublished">2019-09-13</time>
 </a>
 
     </div>
@@ -804,7 +565,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E5%9C%A8%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">栈在括号匹配中的应用</a>
+      <a  class="article-title" href="/2019/09/13/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/static%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%9A/">static关键字：</a>
     </h1>
   
 
@@ -816,11 +577,10 @@
       
           
         <hr>
-<p>括号匹配问题：<br><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gomone1p69j20yl0ff3zd.jpg"></p>
-<p>遇到左括号就入栈，遇到右括号就消耗一个左括号</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gomp183stjj31400u076v.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gomw17pzozj30u80q9gn4.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gomr7os02jj30jw12odjb.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;万一存满了，可以用链栈</span><br><span class="line">#define MaxSize 10  &#x2F;&#x2F;定义栈中元素的最大个数</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char data[MaxSize];  &#x2F;&#x2F;静态数组存放栈中元素</span><br><span class="line">    int top;  &#x2F;&#x2F;栈顶指针</span><br><span class="line">&#125;SqStack;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;初始化栈</span><br><span class="line">void InitStack(SqStack *S)&#123;</span><br><span class="line">    S-&gt;top&#x3D;-1;  &#x2F;&#x2F;初始化栈顶指针</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;判断栈空</span><br><span class="line">bool StackEmpty(SqStack *S)&#123;</span><br><span class="line">    if(S-&gt;top &#x3D;&#x3D; -1)&#123;</span><br><span class="line">        return true;  &#x2F;&#x2F;栈空</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;不空</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;新元素入栈</span><br><span class="line">bool Push(SqStack *S,char x)&#123;</span><br><span class="line">    if(S-&gt;top&#x3D;&#x3D;MaxSize-1)&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;栈满，报错</span><br><span class="line">    &#125;</span><br><span class="line">    S-&gt;top&#x3D;S-&gt;top+1;  &#x2F;&#x2F;指针先+1</span><br><span class="line">    S-&gt;data[S-&gt;top]&#x3D;x;  &#x2F;&#x2F;新元素入栈</span><br><span class="line">    </span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;栈顶元素出栈，用x返回</span><br><span class="line">bool Pop(SqStack *S,char *x)&#123;</span><br><span class="line">    if(S-&gt;top&#x3D;&#x3D;-1)&#123;</span><br><span class="line">        return false;  &#x2F;&#x2F;栈空，报错</span><br><span class="line">    &#125;</span><br><span class="line">    (*x)&#x3D;S-&gt;data[S-&gt;top];  &#x2F;&#x2F;栈顶元素先出栈</span><br><span class="line">    S-&gt;top&#x3D;S-&gt;top-1;  &#x2F;&#x2F;指针再-1，数据还残留在内存中，只是逻辑上被删除了</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool bracketCheck(char str[],int length)&#123;</span><br><span class="line">    SqStack S;</span><br><span class="line">    InitStack(&amp;S);  &#x2F;&#x2F;初始化一个栈</span><br><span class="line">    for(int i&#x3D;0;i&lt;length;i++)&#123;</span><br><span class="line">        if(str[i]&#x3D;&#x3D;&#39;(&#39; || str[i]&#x3D;&#x3D;&#39;[&#39; || str[i]&#x3D;&#x3D;&#39;&#123;&#39;)&#123;</span><br><span class="line">            Push(&amp;S,str[i]);  &#x2F;&#x2F;扫描到左括号，入栈</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            if(StackEmpty(&amp;S))&#123;  &#x2F;&#x2F;扫描到右括号，且当前栈空</span><br><span class="line">                return false;  &#x2F;&#x2F;匹配失败</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            char topElem;</span><br><span class="line">            Pop(&amp;S,&amp;topElem);  &#x2F;&#x2F;栈顶元素出栈</span><br><span class="line">            if(str[i]&#x3D;&#x3D;&#39;)&#39; &amp;&amp; topElem !&#x3D; &#39;)&#39;)&#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            if(str[i]&#x3D;&#x3D;&#39;]&#39; &amp;&amp; topElem !&#x3D; &#39;[&#39;)&#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            if(str[i]&#x3D;&#x3D;&#39;&#125;&#39; &amp;&amp; topElem !&#x3D; &#39;&#123;&#39;)&#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return StackEmpty(&amp;S);  &#x2F;&#x2F;检索完全部括号后，栈空说明匹配成功</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>static不能修饰属性，也不能修饰方法，可以修饰方法中的局部变量</p>
+<p>如果方法中的局部变量被static修饰，那么这个变量就会被变成静态变量，存储在常量区，当方法执行完毕之后，不会回收，下次再执行这个方法的时候，直接使用而不用再声明了</p>
+<p>如果方法的返回值是当前类的对象，那么方法的返回值就写instancetype</p>
+
       
     </div>
     
@@ -828,11 +588,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -852,11 +616,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/栈在表达式求值中的应用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/self关键字" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E5%9C%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
-      <time datetime="2020-01-08T16:00:00.000Z" itemprop="datePublished">2020-01-09</time>
+      <a  href="/2019/09/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/self%E5%85%B3%E9%94%AE%E5%AD%97/" class="article-date">
+      <time datetime="2019-09-11T16:00:00.000Z" itemprop="datePublished">2019-09-12</time>
 </a>
 
     </div>
@@ -870,7 +634,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E5%9C%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">栈在表达式求值中的应用</a>
+      <a  class="article-title" href="/2019/09/12/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/self%E5%85%B3%E9%94%AE%E5%AD%97/">self关键字：</a>
     </h1>
   
 
@@ -882,13 +646,18 @@
       
           
         <hr>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gomx4a52isj30yk0g3jse.jpg"></p>
-<p>可以不用界限符也能无歧义的表达运算顺序？【逆波兰表达式=后缀表达式，波兰表达式=前缀表达式】</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gon07fc37kj30wt0u0adt.jpg"></p>
-<p>中缀表达式转后缀表达式：<br>初始化一个栈，用于保存暂时还不能确定运算顺序的运算符<br>从左到右处理各个元素，直到末尾，可能遇到三种情况：<br>1.遇到操作数，直接加入后缀表达式<br>2.遇到界限符，遇到“(”直接入栈，遇到“)”则依次弹出栈内运算符并加入后缀表达式，直到弹出”(“为止，注意：”(“不加入后缀表达式<br>3.遇到运算符，依次弹出栈中优先级高于或等于当前运算符的所有运算符，并加入后缀表达式，若碰到“(”或栈空则停止，之后再把当前运算符入栈<br>按上述方法处理完所有字符后，将栈中剩余运算符依次弹出，并加入后缀表达式</p>
-<p>用栈实现后缀表达式的计算：【栈是用于存放当前暂时还不能确定运算次序的操作数】<br>1.从左到右扫描下一个元素，直到处理完所有元素<br>2.若扫描到操作数则压入栈，并回到1；否则执行3<br>3.若扫描到运算符，则弹出两个栈顶元素，执行相应运算[注意先出栈的是右操作数]，运算结果压回栈底，回到1<br>若表达式合法，则最后栈中只会留下一个元素，就是最终结果</p>
-<p>用栈实现中缀表达式的计算：（中缀转后缀+后缀表达式求值，两个算法的结合）<br>初始化两个栈，操作数栈和运算符栈<br>若扫描到操作数，压入操作数栈<br>若扫描到运算符或界限符，则按照“中缀转后缀”相同相同的逻辑压入运算符栈（期间也会弹出运算符，每当弹出一个运算符时，就需要再弹出两个操作数栈的栈顶元素并执行相应运算，运算结果再压回操作数栈）</p>
-<p>用栈实现前缀表达式的计算：<br>1.从右往左扫描下一个元素，直到处理完所有元素<br>2.若扫描到操作数则压入栈，并回到1，否则执行3<br>3.若扫描到运算符，则弹出两个栈顶元素，执行相应运算[先出栈的是左操作数]，运算结果压回栈底，回到1</p>
+<p>在方法的内部可以定义一个和属性名相同的局部变量，这个时候，如果在方法中访问这个同名的变量，访问的是局部变量，如果需要访问属性就需要使用关键字self</p>
+<p>self可以在对象方法和类方法中使用，self是一个指针，在对象方法中self指向当前对象，在类方法中self指向当前类</p>
+<h3 id="self在对象方法中使用："><a href="#self在对象方法中使用：" class="headerlink" title="self在对象方法中使用："></a>self在对象方法中使用：</h3><p>作用：<br>1）可以使用self显示的访问当前对象的属性：self-&gt;属性，代表访问的是当前对象的这个属性<br>2）可以使用self来调用当前对象的其他的对象方法</p>
+<p>必须使用self的场景：<br>1）如果在方法中存在和属性同名的局部变量，你如果想要访问同名的局部变量，直接写就可以了，你如果想要访问当前对象的同名属性，必须使用self<br>2）在对象方法中，如果要调用当前对象的其他的对象方法，必须使用self</p>
+<p>属性要求以下划线开头，局部变量不要求以下划线开头，按照这个规范来，实际上是不会重名的</p>
+<h3 id="self在类方法中使用："><a href="#self在类方法中使用：" class="headerlink" title="self在类方法中使用："></a>self在类方法中使用：</h3><p>self是一个指针，指向当前这个类在代码段中的地址【就相当于这个类】</p>
+<p>作用：可以在类方法中使用self来显示的调用本类的其他的类方法</p>
+<p>总结取到类在代码段中的地址的方式：<br>1）调试查看对象的isa指针的值<br>2）在类方法中查看self的值<br>3）调用对象的对象方法class，就会返回这个对象所属的类在代码段中的地址<br>4）调用类的类方法class，就会返回这个类在代码段中的地址</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@&quot;%p&quot;</span>,[p1 <span class="keyword">class</span>]);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@&quot;%p&quot;</span>,[Person <span class="keyword">class</span>]);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>对象方法可以声明多次，但是只会认为有一次，只能实现一次，否则会报错【对象方法之间是不能重名的；类方法之间也不能重名；但是对象方法和类方法是可以重名的，通过类名来调用，调用的就是类方法，通过对象名来调，调用的就是对象方法】</p>
+<p>注意：<br>1）在对象方法中，self代表当前对象，所以可以通过self访问当前对象的成员，在对象方法中，不能使用self调用本类的类方法<br>2）在类方法中，self代表当前这个类，所以，可以通过self调用当前类的其他的类方法，在类方法中，不能通过self访问对象的成员，不能直接去访问属性和调用对象的方法</p>
 
       
     </div>
@@ -897,11 +666,325 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/继承、NSObject：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%A7%E6%89%BF%E3%80%81NSObject%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-10T16:00:00.000Z" itemprop="datePublished">2019-09-11</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/11/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%A7%E6%89%BF%E3%80%81NSObject%EF%BC%9A/">继承、NSObject：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>继承的目的：儿子类想拥有父亲类中的所有的成员，但是不想自己去定义，而是想凭空拥有</p>
+<p>继承的语法：<br><code>@interface 子类名：父类名 </code></p>
+<p>@end</p>
+<p>术语：<br><code>@interface Student:Person</code><br>1）Student类从Person类继承，Student类是Person类的子类，Person类是Student类的父类<br>2）Student类从Person类派生，Student类是Person类的派生类，Person类是Student类的基类</p>
+<p>在新创建类模版的时候指定父类，Xcode就会自动的帮助你完成一系列事情</p>
+<p>继承是类在继承，而不是对象在继承，我们创建对象，对象与对象之间是毫无关系的，只是子类对象中拥有父类对象中的同样的成员</p>
+<p>千万不要为了继承而去继承，不要为了仅仅是得到某个类的成员你就不顾伦理去乱继承（人继承狗类？）</p>
+<p>子类从父类继承，就意味着子类拥有了父类的所有成员，包括属性和方法 </p>
+<p>如果有一个成员不是所有的子类都拥有的，那么这个成员就不应该定义在父类之中，因为一旦定义在父类之中，那么所有的子类全都有了，父类中只定义所有的子类都拥有的</p>
+<p>继承的特点：<br>1）单根性：一个类只能有一个父类，不能有多个父类<br>2）传递性：A类从B类继承，B类从C类继承，那么A类就同时拥有B、C类的成员</p>
+<hr>
+<p>NSObject类是OC中所有类的祖宗类，因为OC中的类全部都是直接的或者间接的从它继承</p>
+<p>NSObject类：这是Foundation框架中的类，在这个类中有一个类方法new，这个方法是用来创建对象的，方法的返回值是创建的这个对象的指针；也就是说，如果要创建类的对象，就必须要调用这个new方法，如果我们想要让我们的类具备创建对象的能力，就必须要让我们的类直接或者间接的从NSObject类继承</p>
+<p>在NSObject类之中，还定义了一个属性，这个属性叫做isa指针，所以每一个子类对象中都有一个叫做isa指针</p>
+<p>子类中不能存在和父类同名的属性</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/super关键字（特指这个方法是从父类继承过来的）：" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/10/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/super%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%88%E7%89%B9%E6%8C%87%E8%BF%99%E4%B8%AA%E6%96%B9%E6%B3%95%E6%98%AF%E4%BB%8E%E7%88%B6%E7%B1%BB%E7%BB%A7%E6%89%BF%E8%BF%87%E6%9D%A5%E7%9A%84%EF%BC%89%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-09T16:00:00.000Z" itemprop="datePublished">2019-09-10</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/10/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/super%E5%85%B3%E9%94%AE%E5%AD%97%EF%BC%88%E7%89%B9%E6%8C%87%E8%BF%99%E4%B8%AA%E6%96%B9%E6%B3%95%E6%98%AF%E4%BB%8E%E7%88%B6%E7%B1%BB%E7%BB%A7%E6%89%BF%E8%BF%87%E6%9D%A5%E7%9A%84%EF%BC%89%EF%BC%9A/">super关键字（特指这个方法是从父类继承过来的）：</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>1）可以用在类方法和对象方法之中</p>
+<p>2）在对象方法中可以使用super关键字调用当前对象从父类继承过来的对象方法</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">self</span> sayHi];</span><br><span class="line">[<span class="keyword">super</span> sayHi];</span><br></pre></td></tr></table></figure>
+
+<p>3）在类方法中，super关键字可以调用当前类从父类继承过来的类方法【类方法也能被子类继承，父类中的类方法可以使用父类名来调用，也可以使用子类名调用】</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Person hehe];</span><br><span class="line">[Student hehe];</span><br><span class="line">[<span class="keyword">self</span> hehe];</span><br><span class="line">[<span class="keyword">super</span> hehe];</span><br></pre></td></tr></table></figure>
+
+<p>4）super只能用来调用父类的对象方法或者类方法，不能用来访问属性</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/访问修饰符：用来修饰属性" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/09/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%9A%E7%94%A8%E6%9D%A5%E4%BF%AE%E9%A5%B0%E5%B1%9E%E6%80%A7/" class="article-date">
+      <time datetime="2019-09-08T16:00:00.000Z" itemprop="datePublished">2019-09-09</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/09/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%9A%E7%94%A8%E6%9D%A5%E4%BF%AE%E9%A5%B0%E5%B1%9E%E6%80%A7/">访问修饰符：用来修饰属性</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>可以限定对象的属性在哪一段范围之中访问</p>
+<ol>
+<li><p>@private私有的，被@private修饰的属性只能在本类的内部访问，只能在本类的方法实现中访问</p>
+</li>
+<li><p>@protected受保护的，被@protected修饰的属性只能在本类和本类的子类中访问，只能在本类和子类的方法实现中访问</p>
+</li>
+<li><p>@package：被@package修饰的属性，可以在当前框架中访问</p>
+</li>
+<li><p>@public：公共的，被@public修饰的属性可以在任意的地方访问</p>
+</li>
+</ol>
+<p>如果不为属性指定访问修饰符，那么默认的就是@protected</p>
+<p>子类仍然可以继承父类的私有属性，只不过在子类中无法去直接访问从父类继承过来的私有属性，但是如果父类中有一个方法在为属性赋值或者取值，那么子类可以调用这个方法间接的访问父类的私有属性</p>
+<p>访问修饰符的作用域：从写访问修饰符的地方开始往下，直到遇到另外一个访问修饰符或者结束大括弧为止，中间的所有的属性都应用于这个访问修饰符</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span>:<span class="title">NSObject</span></span>&#123;</span><br><span class="line">   <span class="keyword">@private</span></span><br><span class="line">   <span class="built_in">NSString</span> *_name;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">@public</span></span><br><span class="line">   <span class="keyword">int</span> _age;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">int</span> _x;</span><br><span class="line">   <span class="keyword">@protected</span></span><br><span class="line">   <span class="keyword">int</span> _y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用建议：<br>1）@public无论什么情况下都不要使用，属性不要直接暴露给外界<br>2）@private如果属性只想在本类中使用，不想在子类中使用，那么就使用它<br>3）@protected：如果你希望属性只在本类和本类的子类中使用<br>推荐使用默认的@protected</p>
+<p>访问修饰符只能用来修饰属性，不能用来修饰方法</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发语言/Objective-C/私有属性和私有方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2019/09/08/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/" class="article-date">
+      <time datetime="2019-09-07T16:00:00.000Z" itemprop="datePublished">2019-09-08</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a  class="article-title" href="/2019/09/08/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95/">私有属性和私有方法</a>
+    </h1>
+  
+
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>我们刚才讲的@private修饰的属性叫做私有属性，只能在类的内部访问，但是在外界的时候，Xcode仍然会提示这个对象中有这个属性，只不过没权访问，我们想要实现的效果是真私有，让外界不知道对象里面有这么一个属性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3q1ab8zj30cq059myg.jpg"></p>
+<p>其实在@implementation之中也可以写一个大括弧，把属性定义在@implementation的大括弧之中，这里面的属性，是一个私有属性，各种访问修饰符无效，外界根本就不会提示</p>
+<p>将属性定义在@implementation之中和将属性定义在@interface之中并标记为@private唯一的区别：提示和不提示，都不能在外界访问</p>
+<hr>
+<p>私有方法：方法不写声明只写实现，那么这个方法就是一个私有方法，只能在本类的其他方法中调用，不能在外界调用</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -923,7 +1006,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/16/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/18/"></a>
+      <a class="extend prev" rel="prev" href="/page/16/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/18/"></a>
     </nav>
   
 
@@ -949,7 +1032,7 @@
 
                 <a href="https://hexo.io/zh-cn/index.html" target="_blank">「Hexo文档」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
-                <a href="https://liao-hexo.github.io/archives/" target="_blank">「个人博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+                <a href="https://liao-hexo.github.io/archives/" target="_blank">「我的博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
                 <a href="https://github.com/Liao-Hexo" target="_blank">「GitHub』&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 

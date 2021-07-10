@@ -228,11 +228,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-数据结构、算法笔记/栈在递归中的应用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/里氏替换原则—LSP" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E5%9C%A8%E9%80%92%E5%BD%92%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
-      <time datetime="2020-01-07T16:00:00.000Z" itemprop="datePublished">2020-01-08</time>
+      <a  href="/2019/09/07/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99%E2%80%94LSP/" class="article-date">
+      <time datetime="2019-09-06T16:00:00.000Z" itemprop="datePublished">2019-09-07</time>
 </a>
 
     </div>
@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%88%E5%9C%A8%E9%80%92%E5%BD%92%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">栈在递归中的应用</a>
+      <a  class="article-title" href="/2019/09/07/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99%E2%80%94LSP/">里氏替换原则—LSP</a>
     </h1>
   
 
@@ -258,11 +258,21 @@
       
           
         <hr>
-<p>递归函数调用的特点：最后被调用的函数最先执行结束(LIFO)</p>
-<p>函数调用时，需要用一个栈存储：调用返回地址、实参、局部变量</p>
-<p>适合用“递归”算法解决：可以把原始问题转换为属性相同，但规模较小的问题</p>
-<p>递归调用时，函数调用栈可称为“递归工作栈”，每进入一层递归，就将递归调用所需信息压入栈顶，每退出一层递归，就从栈顶弹出相应信息【缺点：效率低，太多层递归可能会导致栈溢出，可能包含很多重复计算】</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gon58v3uluj308k0bcgmi.jpg"><br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gon5d1zbqdj308l0bzaay.jpg"></p>
+<p>子类可以替换父类的位置，并且程序的功能不受影响</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line">Student *s1=[Student new];</span><br><span class="line"></span><br><span class="line">Person *p2=[Student new];</span><br></pre></td></tr></table></figure>
+
+<p>为什么？<br>1）父类指针迫切的需求要一个父类对象，而我们给了一个子类对象，这是完全没有问题的【你想要一个人，我给你一个学生】<br>2）因为父类中拥有的成员子类都有，所以不会影响程序的功能</p>
+<p>里氏替换原则的表现形式：<br>当一个父类指针指向一个子类对象的时候，这里就有里氏替换原则</p>
+<p>里氏替换原则的作用：<br>1）一个指针中不仅可以存储本类对象的地址还可以存储子类对象的地址<br>2）如果一个指针的类型是NSObject类型的，那么这个指针中可以存储任意的OC对象的地址<br>3）如果一个数组的元素的类型是一个OC指针类型的，那么这个数组中不仅可以存储本类对象还可以存储子类对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *ps[3];</span><br><span class="line"></span><br><span class="line">ps[0]&#x3D;[Person new];</span><br><span class="line">ps[1]&#x3D;[Student new];</span><br><span class="line">ps[2]&#x3D;[ItCastStu new];</span><br></pre></td></tr></table></figure>
+
+<p>4）如果一个数组的元素是NSObject指针类型，那么意味着任意的OC对象都可以存储到这个数组之中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSObject *objs[4];</span><br><span class="line"></span><br><span class="line">objs[0]&#x3D;[Person new];</span><br><span class="line">objs[1]&#x3D;[Student new];</span><br><span class="line">objs[2]&#x3D;[ItCastStu new];</span><br><span class="line">objs[3]&#x3D;@&quot;jack&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>5）如果一个方法的参数是一个对象，那么我们在为这个参数传值的时候可以传递一个本类对象，也可以传递一个子类对象，对方法中的代码不会有丝毫的影响</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">God *ys&#x3D;[God new];</span><br><span class="line"></span><br><span class="line">Person *p1&#x3D;[Person new];</span><br><span class="line">[p1 setName:@&quot;大狗&quot;];</span><br><span class="line"></span><br><span class="line">Student *s1&#x3D;[Student new];</span><br><span class="line">[s1 setName:@&quot;小明&quot;];</span><br><span class="line"></span><br><span class="line">ItCastStu *stu&#x3D;[ItCastStu new];</span><br><span class="line">[stu setName:@&quot;小东&quot;];</span><br><span class="line"></span><br><span class="line">[ys killWithPerson:stu];</span><br></pre></td></tr></table></figure>
+
+<p>当一个父类指针指向一个子类对象的时候，通过这个父类指针就只能去调用子类对象中的父类成员，子类独有的成员无法访问</p>
 
       
     </div>
@@ -271,11 +281,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -295,11 +309,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/队列的应用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/方法重写：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
-      <time datetime="2020-01-06T16:00:00.000Z" itemprop="datePublished">2020-01-07</time>
+      <a  href="/2019/09/06/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-05T16:00:00.000Z" itemprop="datePublished">2019-09-06</time>
 </a>
 
     </div>
@@ -313,7 +327,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/">队列的应用</a>
+      <a  class="article-title" href="/2019/09/06/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99%EF%BC%9A/">方法重写：</a>
     </h1>
   
 
@@ -325,13 +339,9 @@
       
           
         <hr>
-<p>队列的应用：</p>
-<ol>
-<li>树的层次遍历</li>
-<li>图的广度优先遍历</li>
-<li>队列在操作系统中的应用：多个进程争抢着使用有限的系统资源时，FCFS（First Come First Service，先来先服务）是一种常用策略</li>
-<li>打印数据缓冲区：打印机缓冲区用“队列”组织打印数据，可缓解主机与打印机速度不匹配的问题【先来先打印】</li>
-</ol>
+<p>子类从父类继承，子类就继承了父类的方法，就意味着子类拥有了这个功能，但是有的时候，虽然子类也拥有父类的这个行为，但是这个行为的具体的实现和父类不同</p>
+<p>如何重写：直接在自己类的实现中将这个方法重新实现一遍就可以了</p>
+<p>当一个父类指针指向一个子类对象的时候，通过这个父类指针调用的方法如果在子类对象中重写了，那么调用的就是子类重写的方法</p>
 
       
     </div>
@@ -340,11 +350,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -364,11 +378,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/特殊矩阵的压缩存储" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/多态：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" class="article-date">
-      <time datetime="2020-01-05T16:00:00.000Z" itemprop="datePublished">2020-01-06</time>
+      <a  href="/2019/09/05/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%A4%9A%E6%80%81%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-04T16:00:00.000Z" itemprop="datePublished">2019-09-05</time>
 </a>
 
     </div>
@@ -382,7 +396,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/">特殊矩阵的压缩存储</a>
+      <a  class="article-title" href="/2019/09/05/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%A4%9A%E6%80%81%EF%BC%9A/">多态：</a>
     </h1>
   
 
@@ -394,18 +408,8 @@
       
           
         <hr>
-<p>普通矩阵的存储：可用二维数组存储【描述矩阵元素时，行、列号通常从1开始，而描述数组时通常下标从0开始】</p>
-<p>特殊矩阵（某些特殊矩阵可以压缩存储空间）：</p>
-<ol>
-<li><p>对称矩阵<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gonri8rmdtj30u0113gro.jpg"></p>
-</li>
-<li><p>三角矩阵<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gons7x429jj30zi0u078o.jpg"></p>
-</li>
-<li><p>三对角矩阵<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gont4iafobj314h0u077w.jpg"></p>
-</li>
-<li><p>稀疏矩阵<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gonto99il3j30u00uzadx.jpg"></p>
-</li>
-</ol>
+<p>指的是同一个行为，对于不同的事物具有完全不同的表现形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Person *p1&#x3D;[Chinese new];</span><br><span class="line">Person *p2&#x3D;[Japanese new];</span><br><span class="line">Person *p3&#x3D;[Korea new];</span><br><span class="line"></span><br><span class="line">[p1 sayHi];</span><br><span class="line">[p2 sayHi];</span><br><span class="line">[p3 sayHi];</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -414,11 +418,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -438,11 +446,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/串的定义和基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/Description方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="article-date">
-      <time datetime="2020-01-04T16:00:00.000Z" itemprop="datePublished">2020-01-05</time>
+      <a  href="/2019/09/04/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/Description%E6%96%B9%E6%B3%95/" class="article-date">
+      <time datetime="2019-09-03T16:00:00.000Z" itemprop="datePublished">2019-09-04</time>
 </a>
 
     </div>
@@ -456,7 +464,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">串的定义和基本操作</a>
+      <a  class="article-title" href="/2019/09/04/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/Description%E6%96%B9%E6%B3%95/">Description方法</a>
     </h1>
   
 
@@ -468,36 +476,11 @@
       
           
         <hr>
-<p>串：即字符串(String)，是由零个或多个字符组成的有限序列，串中字符的个数n称为串的长度，n=0时的串称为空串</p>
-<p><code>S=&quot;Hello World!&quot;</code>，有的地方用双引号(Java、C)，有的地方用单引号(Python)，注意里面包含空格，空格也是字符</p>
-<p>子串：串中任意个连续的字符组成的子序列<br>主串：包含子串的串<br>字符在主串中的位置：字符在串中的序号<br>子串在主串中的位置：子串的第一个字符在主串中的位置【注意位序从1开始，而不是从0开始】</p>
-<p>空串：M=””<br>空格串：N=”  “，[每个空格字符占1B]</p>
-<p>串是一种特殊的线性表，数据元素之间呈线性关系，串的数据对象限定为字符集(如中文字符、英文字符、数字字符、标点字符)</p>
-<p>串的基本操作。如增删改查等通常以子串为操作对象</p>
-<p>串的基本操作：</p>
-<ol>
-<li><p><code>StrAssign(&amp;T,chars)</code>：赋值操作，把串T赋值为chars</p>
-</li>
-<li><p><code>StrCopy(&amp;T,S)</code>：复制操作，由串S复制得到串T</p>
-</li>
-<li><p><code>StrEmpty(S)</code>：判空操作，若S为空串，则返回true，否则返回False</p>
-</li>
-<li><p><code>StrLength(S)</code>：求串长，返回串S的元素个数</p>
-</li>
-<li><p><code>ClearString(&amp;S)</code>：清空操作，将S清为空串</p>
-</li>
-<li><p><code>DestroyString(&amp;S)</code>：销毁串，将串S销毁(回收存储空间)</p>
-</li>
-<li><p><code>Concat(&amp;T,S1,S2)</code>：串联接，用T返回由S1和S2联接而成的新串【问题：存储空间扩展？】</p>
-</li>
-<li><p><code>SubString(&amp;Sub,S,pos,len)</code>：求子串，用Sub返回串S的第pos个字符起长度为len的子串</p>
-</li>
-<li><p><code>Index(S,T)</code>：定位操作，若主串S中存在与串T值相同的子串，则返回它在主串S中第一次出现的位置；否则函数值为0</p>
-</li>
-<li><p><code>StrCompare(S,T)</code>：比较操作，若S&gt;T，则返回值&gt;0；若S=T，则返回值=0；若S&lt;T，则返回值&lt;0【从第一个字符开始往后依次对比，先出现更大字符的串就更大；长串的前缀与短串相同时，长串更大；只有两个串完全相同时才相等】</p>
-</li>
-</ol>
-<p>字符集：英文字符(ASCII字符)、中英文(Unicode字符集，UIF-8,UIF-16)</p>
+<p>%p打印的是指针变量的值<br>%@打印的是指针指向的对象</p>
+<p>如果我们使用%@打印一个对象，发现输出的格式：<code>&lt;对象所属的类名：对象的地址&gt;</code></p>
+<p>当我们使用%@打印一个对象的时候，NSLog函数的底层实现：<br>1）调用传入的对象的Description方法<br>2）拿到这个方法的返回值，这个返回值是一个字符串<br>3）将这个字符串输出</p>
+<p>Description方法是定义在NSObject类之中的，所以每一个OC对象都有这个方法，这个方法在NSObject类中的实现是这样的：返回的字符串格式   <code>@“&lt;对象所属的类名：对象的地址&gt;”</code></p>
+<p>如果使用%@打印一个对象的时候，你希望这个对象打印的格式是我们自己自定义的，那么就可以重写Description方法</p>
 
       
     </div>
@@ -506,11 +489,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -530,11 +517,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/串的存储结构" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/创建一个对象，这个对象在内存中是如何分配的?" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="article-date">
-      <time datetime="2020-01-03T16:00:00.000Z" itemprop="datePublished">2020-01-04</time>
+      <a  href="/2019/09/03/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E7%9A%84?/" class="article-date">
+      <time datetime="2019-09-02T16:00:00.000Z" itemprop="datePublished">2019-09-03</time>
 </a>
 
     </div>
@@ -548,7 +535,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">串的存储结构</a>
+      <a  class="article-title" href="/2019/09/03/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E8%BF%99%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E7%9A%84?/">创建一个对象，这个对象在内存中是如何分配的?</a>
     </h1>
   
 
@@ -560,14 +547,9 @@
       
           
         <hr>
-<p>串的顺序存储：【默认使用方案四】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gonwq62wcbj31ac0r1juc.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gonwryrdbvj30f20fgwgm.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAXIEN 255  &#x2F;&#x2F;预定义最大串长为255</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;静态数组实现(定长顺序存储)</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char ch[MAXIEN];  &#x2F;&#x2F;每个分量存储一个字符</span><br><span class="line">    int length;  &#x2F;&#x2F;串的实际长度</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;动态数组实现(堆分配存储)</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char *ch;  &#x2F;&#x2F;按串长分配存储区，ch指向串的基地址</span><br><span class="line">    int length;  &#x2F;&#x2F;串的长度</span><br><span class="line">&#125;HString;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;初始化动态数组</span><br><span class="line">void Init(HString *S)&#123;</span><br><span class="line">    </span><br><span class="line">    S-&gt;ch&#x3D;(char *)malloc(MAXIEN * sizeof(char));  &#x2F;&#x2F;用完需要手动free</span><br><span class="line">    S-&gt;length&#x3D;0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    </span><br><span class="line">    HString S;</span><br><span class="line">    Init(&amp;S);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>串的基本操作实现：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goob7yygk1j30ik0xoadi.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAXIEN 255  &#x2F;&#x2F;预定义最大串长为255</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;静态数组实现(定长顺序存储)</span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char ch[MAXIEN];  &#x2F;&#x2F;每个分量存储一个字符</span><br><span class="line">    int length;  &#x2F;&#x2F;串的实际长度</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;基本操作的实现</span><br><span class="line">&#x2F;&#x2F;1.求子串：用Sub返回串S的第pos个字符起长度为len的子串</span><br><span class="line">bool SubString(SString *Sub,SString *S,int pos,int len)&#123;</span><br><span class="line">    &#x2F;&#x2F;子串范围越界</span><br><span class="line">    if(pos+len-1 &gt; S-&gt;length)&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i&#x3D;pos-1;i&lt;pos+len-1;i++)&#123;</span><br><span class="line">        Sub-&gt;ch[i-pos+1]&#x3D;S-&gt;ch[i];</span><br><span class="line">    &#125;</span><br><span class="line">    Sub-&gt;length&#x3D;len;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;2.比较操作：若S&gt;T，则返回值&gt;0；若S&#x3D;T，则返回值&#x3D;0；若S&lt;T，则返回值&lt;0</span><br><span class="line">int StrCompare(SString *S,SString *T)&#123;</span><br><span class="line">    for(int i&#x3D;1;i&lt;&#x3D;S-&gt;length &amp;&amp; i&lt;&#x3D;T-&gt;length;i++)&#123;</span><br><span class="line">        if(S-&gt;ch[i] !&#x3D; T-&gt;ch[i])&#123;</span><br><span class="line">            return S-&gt;ch[i]-T-&gt;ch[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;扫描过的所有字符都相同，则长度长的串更大</span><br><span class="line">    return S-&gt;length-T-&gt;length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;求串长，返回串S的元素个数[未完成代码]</span><br><span class="line">int StrLength(SString *S)&#123;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;3.定位操作，若主串S中存在与串T值相同的子串，则返回它在主串S中第一次出现的位置，否则函数值为0</span><br><span class="line">int Index(SString *S,SString *T)&#123;</span><br><span class="line">    int i&#x3D;1,n&#x3D;StrLength(S),m&#x3D;StrLength(T);</span><br><span class="line">    SString sub;  &#x2F;&#x2F;用于暂存字符串</span><br><span class="line">    while(i&lt;&#x3D;n-m+1)&#123;</span><br><span class="line">        SubString(&amp;sub, S, i, m);</span><br><span class="line">        if(StrCompare(&amp;sub, T) !&#x3D; 0)&#123;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return i;  &#x2F;&#x2F;返回子串在主串中的位置</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;  &#x2F;&#x2F;S中不存在与T相等的子串</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    SString S&#x3D;&#123;&quot;hello world!&quot;,12&#125;;</span><br><span class="line">    </span><br><span class="line">    SString Sub&#x3D;&#123;&quot;&quot;,0&#125;;  &#x2F;&#x2F;初始化时清空数组</span><br><span class="line">    if(SubString(&amp;Sub, &amp;S, 3, 5))&#123;</span><br><span class="line">        printf(&quot;%s\n&quot;,Sub.ch);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>串的链式存储：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gonwzq5qfqj30dp076jsb.jpg"></p>
+<p>1）子类对象中有自己的属性和所有父类的属性</p>
+<p>2）代码段中的每一个类都有一个叫做isa的指针，这个指针指向它的父类，一直指到NSObject</p>
+<p>子类方法重写以后，调用的就是子类重写的方法了<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3qvna2bj30il0chdhq.jpg"></p>
 
       
     </div>
@@ -576,11 +558,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -600,11 +586,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/串的朴素模式匹配算法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/结构体和类的区别：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E6%9C%B4%E7%B4%A0%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/" class="article-date">
-      <time datetime="2020-01-02T16:00:00.000Z" itemprop="datePublished">2020-01-03</time>
+      <a  href="/2019/09/02/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A/" class="article-date">
+      <time datetime="2019-09-01T16:00:00.000Z" itemprop="datePublished">2019-09-02</time>
 </a>
 
     </div>
@@ -618,7 +604,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%B8%B2%E7%9A%84%E6%9C%B4%E7%B4%A0%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/">串的朴素模式匹配算法</a>
+      <a  class="article-title" href="/2019/09/02/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A/">结构体和类的区别：</a>
     </h1>
   
 
@@ -630,15 +616,14 @@
       
           
         <hr>
-<p>一定是主串中存在的才叫“子串”</p>
-<p>模式串：想尝试在主串中找到的串，未必存在</p>
-<p>串的模式匹配：在主串中找到与模式串相同的子串，并返回其所在位置【就是定位操作】</p>
-<p>朴素模式匹配算法：</p>
-<p>【比较好的情况：每个子串的第一个字符就与模式串不匹配，若模式串长度为m，主串长度为n，则匹配成功的最好时间复杂度：O(m)，匹配失败的最好时间复杂度：O(n-m+1)=O(n-m)=O(n)】</p>
-<p>【若模式串长度为m，主串长度为n，则直接匹配成功/匹配失败最多需要(n-m+1)*m次比较，最坏时间复杂度：O(nm)，这种情况就是每个子串的前m-1个字符都和模式串匹配，只有第m个字符不匹配，所以指针需要回溯重新来匹配】<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goodb75sqfj310t0dm3zc.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goocyb6bt9j30g70i2go0.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAXIEN 255  &#x2F;&#x2F;预定义最大串长为255</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char ch[MAXIEN];  &#x2F;&#x2F;每个分量存储一个字符</span><br><span class="line">    int length;  &#x2F;&#x2F;串的实际长度</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;只要有一个字符不同，就可以停止检查当前子串，所有对应位置的字符都相同，则匹配成功，返回k</span><br><span class="line">int Index(SString *S,SString *T)&#123;</span><br><span class="line">    int k&#x3D;1;  &#x2F;&#x2F;k记录当前检查的子串起始位置</span><br><span class="line">    int i&#x3D;k,j&#x3D;1;</span><br><span class="line">    while(i&lt;&#x3D;S-&gt;length &amp;&amp; j&lt;&#x3D;S-&gt;length)&#123;</span><br><span class="line">        if(S-&gt;ch[i] &#x3D;&#x3D; T-&gt;ch[i])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;  &#x2F;&#x2F;继续比较后继字符</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            k++;  &#x2F;&#x2F;检查下一个子串</span><br><span class="line">            i&#x3D;k;</span><br><span class="line">            j&#x3D;1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(j&lt;T-&gt;length)&#123;</span><br><span class="line">        return k;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    SString S;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="相同点：都可以将多个数据封装为一个整体"><a href="#相同点：都可以将多个数据封装为一个整体" class="headerlink" title="相同点：都可以将多个数据封装为一个整体"></a>相同点：都可以将多个数据封装为一个整体</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Date</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Date</span>:<span class="title">NSObject</span></span>&#123;</span><br><span class="line">       <span class="keyword">int</span> year;</span><br><span class="line">       <span class="keyword">int</span> month;</span><br><span class="line">       <span class="keyword">int</span> day;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h3><p>1）结构体只能封装数据，而类不仅可以封装数据还可以封装行为【如果表示的这个实体，不仅是由多个数据组成，这个实体还具有行为，只能使用类】</p>
+<p>2）结构体变量分配在栈空间（如果是一个局部变量的情况下），而对象分配在堆空间<br>【栈的特点：空间相对较小，但是存储在栈中的数据访问的效率更高一些；堆的特点：空间相对较大，但是存储在堆中的数据访问的效率相对较低】</p>
+<p>3）赋值不同：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//结构体：Student</span></span><br><span class="line"><span class="comment">//类：Person</span></span><br><span class="line"></span><br><span class="line">Student s1=&#123;“jack”,<span class="number">19</span>,GenderMale&#125;;</span><br><span class="line">Student s2=s1;</span><br><span class="line"></span><br><span class="line">Person *p1=[Person new];</span><br><span class="line">Person *p2=p1;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -646,11 +631,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -670,11 +659,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/KMP算法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/类的本质：" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/KMP%E7%AE%97%E6%B3%95/" class="article-date">
-      <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">2020-01-02</time>
+      <a  href="/2019/09/01/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%9A/" class="article-date">
+      <time datetime="2019-08-31T16:00:00.000Z" itemprop="datePublished">2019-09-01</time>
 </a>
 
     </div>
@@ -688,7 +677,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/KMP%E7%AE%97%E6%B3%95/">KMP算法</a>
+      <a  class="article-title" href="/2019/09/01/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%B1%BB%E7%9A%84%E6%9C%AC%E8%B4%A8%EF%BC%9A/">类的本质：</a>
     </h1>
   
 
@@ -700,17 +689,24 @@
       
           
         <hr>
-<p>朴素模式匹配算法的缺点：当某些子串与模式串能部分匹配时，主串的扫描指针i经常回溯，导致时间开销增加</p>
-<p>改进思路：主串指针不回溯，只有模式串指针回溯</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooexhl0i6j31970u0wi9.jpg"></p>
-<p>求模式串的next数组：当模式串的第j个字符匹配失败时，令模式串跳到next[j]再继续匹配</p>
-<p>串的前缀：包含第一个字符，且不包含最后一个字符的子串<br>串的后缀：包含最后一个字符，且不包含第一个字符的子串</p>
-<p>手写求next：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1googecuxk4j30ny0ev74q.jpg"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goohhr9anej30i20r30uz.jpg"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line"></span><br><span class="line">#define MAXIEN 255  &#x2F;&#x2F;预定义最大串长为255</span><br><span class="line"></span><br><span class="line">typedef struct&#123;</span><br><span class="line">    char ch[MAXIEN];  &#x2F;&#x2F;每个分量存储一个字符</span><br><span class="line">    int length;  &#x2F;&#x2F;串的实际长度</span><br><span class="line">&#125;SString;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;求模式串T的next数组</span><br><span class="line">void get_next(SString *T,int next[])&#123;</span><br><span class="line">    int i&#x3D;1,j&#x3D;0;</span><br><span class="line">    next[1]&#x3D;0;</span><br><span class="line">    while(i&lt;T-&gt;length)&#123;</span><br><span class="line">        if(j&#x3D;&#x3D;0 || T-&gt;ch[i] &#x3D;&#x3D; T-&gt;ch[j])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">            &#x2F;&#x2F;若pi&#x3D;pj，则next[j+1]&#x3D;next[j]+1</span><br><span class="line">            next[i]&#x3D;j;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            &#x2F;&#x2F;否则令j&#x3D;next[j]，循环继续</span><br><span class="line">            j&#x3D;next[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;KMP算法代码【平均时间复杂度O(n+m)】</span><br><span class="line">int Index_KMP(SString *S,SString *T)&#123;</span><br><span class="line">    int i&#x3D;1,j&#x3D;1;</span><br><span class="line">    int next[T-&gt;length+1];</span><br><span class="line">    get_next(T, next);  &#x2F;&#x2F;求模式串的next数组</span><br><span class="line">    while(i&lt;&#x3D;S-&gt;length &amp;&amp; j&lt;&#x3D;T-&gt;length)&#123;</span><br><span class="line">        if(j&#x3D;&#x3D;0 || S-&gt;ch[i] &#x3D;&#x3D; T-&gt;ch[i])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;  &#x2F;&#x2F;继续比较后继字符</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            j&#x3D;next[j];  &#x2F;&#x2F;模式串向右移动</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(j&gt;T-&gt;length)&#123;</span><br><span class="line">        return i-T-&gt;length;  &#x2F;&#x2F;匹配成功</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    SString S;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>1）类第一次被访问的时候，就会被加载到代码段中存储（类加载）<br>2）类一旦被加载到代码段之后是不会被回收的，除非程序结束</p>
+<p>类是以什么样的形式存储在代码段的：<br>1）任何存储在内存中的数据都有一个数据类型<br>2）任何在内存中申请的空间也有自己的类型<br><code>Person *p1=[Person new];</code><br>3)在代码段存储类的那块空间是什么类型？</p>
+<p>在代码段中存储类的步骤：<br>1）先在代码段中创建一个Class对象，Class是Foundation框架中的一个类，这个Class对象就是用来存储类信息的<br>2）将类的信息存储在这个Class对象之中，这个Class对象至少有三个属性：存储的这个类的名称，存储的这个类的属性，存储的这个类的方法</p>
+<p>所以类是以Class对象的形式存储在代码段的，存储类的这个Class对象，我们也叫做类对象，用来存储类的一个对象</p>
+<p>所以存储类的类对象也有一个叫做isa指针的属性，这个指针指向存储父类的类对象<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3ri3eq9j307d0ch3yx.jpg"></p>
+<h3 id="如何拿到存储在代码段中的类对象："><a href="#如何拿到存储在代码段中的类对象：" class="headerlink" title="如何拿到存储在代码段中的类对象："></a>如何拿到存储在代码段中的类对象：</h3><p>1）调用类的类方法class就可以得到存储类的类对象的地址【声明Class指针的时候不需要加<em>，因为在typedef的时候已经加</em>了】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c1&#x3D;[Person class];</span><br><span class="line">NSLog(@&quot;c1 &#x3D; %p&quot;,c1);</span><br></pre></td></tr></table></figure>
 
-<p>KMP算法存在的问题：多进行了一次无意义的对比</p>
-<p>KMP算法进一步优化：nextval数组<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooihh0098j30u00zbwh9.jpg"></p>
+<p>2）调用对象的对象方法class，就可以得到存储这个对象所属的类的Class对象的地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person *p1&#x3D;[Person new];</span><br><span class="line">Class c2&#x3D;[p1 class];</span><br></pre></td></tr></table></figure>
+
+<p>3）对象中的isa指针的值其实就是代码段中存储类的类对象的地址</p>
+<h3 id="如何使用类对象："><a href="#如何使用类对象：" class="headerlink" title="如何使用类对象："></a>如何使用类对象：</h3><p>1）拿到存储类的类对象以后，<code>Class c1=[Person class];</code><br>c1对象就是Person类，c1完全等价于Person</p>
+<p>2）使用类对象来调用类的类方法</p>
+<p>3）可以使用类对象来调用new方法，创建存储在类对象中的类的对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c1&#x3D;[Person class];</span><br><span class="line">Person *p1&#x3D;[c1 new];</span><br></pre></td></tr></table></figure>
+
+<p>4）注意：使用类对象只能调用类的类方法，因为类对象就等价于存在其中的类</p>
 
       
     </div>
@@ -719,11 +715,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -743,11 +743,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/树的基本概念" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/SEL" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+      <a  href="/2019/08/31/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/SEL/" class="article-date">
+      <time datetime="2019-08-30T16:00:00.000Z" itemprop="datePublished">2019-08-31</time>
 </a>
 
     </div>
@@ -761,7 +761,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">树的基本概念</a>
+      <a  class="article-title" href="/2019/08/31/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/SEL/">SEL</a>
     </h1>
   
 
@@ -773,30 +773,23 @@
       
           
         <hr>
-<p>树是n(n&gt;=0)个结点的有限集合，n=0时，称为空树</p>
-<p>而任意非空树应满足：</p>
-<ol>
-<li>有且仅有一个特定的称为根的结点</li>
-<li>当n&gt;1时，其余结点可分为m(m&gt;0)个互不相交的有限集合，其中每一个集合本身又是一棵树，称为根结点的子树</li>
-</ol>
-<p>基本术语：</p>
-<p>祖先结点和子孙结点、双亲结点和孩子结点、兄弟结点</p>
-<p>树中一个结点的子结点的个数称为该结点的度；<br>树中各结点度的最大值称为树的度</p>
-<p>度大于0的结点称为分支结点<br>度为0的结点称为叶子结点</p>
-<p>结点的层数【自顶向下】<br>结点的高度【自底向上】<br>结点的深度【自顶向下】<br>树的高度(深度)是树中结点的最大层数<br>树中每一层结点个数的最大值称为树的宽度</p>
-<p>路径：树中两个结点之间的路径是由这两个结点之间所经过的结点序列构成的【树中的分支是有向的，即从双亲结点指向孩子结点，所以路径一定是自上而下的】</p>
-<p>路径长度：路径上所经历边的个数</p>
-<p>有序树：树中任意结点的子结点之间有顺序关系<br>无序树：树中任意结点的子结点之间没有顺序关系，也叫自由树</p>
-<p>树的性质：</p>
-<ol>
-<li>n个结点的树中只有n-1条边</li>
-<li>树中的结点数等于所有结点的度数+1</li>
-<li>度为m的树中第i层上至多有m^(i-1)个结点(i&gt;=1)</li>
-<li>高度为h的m叉树至多有(m^h-1)/(m-1)个结点</li>
-<li>具有n个结点的m叉树的最小高度为<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1goox9wo751j30bs03ca9w.jpg"></li>
-</ol>
-<p>森林：m(m&gt;=0)棵互不相交的树的集合</p>
+<p>SEL全称叫做selector选择器，是一个数据类型，所以要在内存中申请空间存储数据</p>
+<p>SEL其实是一个类，SEL对象是用来存储一个方法的</p>
+<p>如何将方法存储在类对象之中：<br>1）先创建一个SEL对象<br>2）将方法的信息存储在这个SEL对象之中<br>3）再将这个SEL对象作为类对象的属性<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3s7o0v8j30990bv75r.jpg"></p>
+<p>因为SEL是一个typedef类型的，在自定义的时候已经加<em>了，所以我们在声明SEL指针的时候不需要加</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SEL s1&#x3D;@selector(sayHi);</span><br><span class="line">NSLog(@&quot;s1 &#x3D; %p&quot;,s1);</span><br></pre></td></tr></table></figure>
 
+<h3 id="调用方法的本质："><a href="#调用方法的本质：" class="headerlink" title="调用方法的本质："></a>调用方法的本质：</h3><p><code>[p1 sayHi];</code></p>
+<p>内部的原理：<br>1）先拿到存储sayHi方法的SEL对象，也就是拿到存储sayHi方法的SEL数据，SEL消息<br>2）将这个SEL消息发送给p1对象<br>3）这个时候，p1对象接收到SEL消息以后，就知道要调用方法<br>4）根据对象的isa指针找到存储类的类对象<br>5）找到这个类对象以后，在这个类对象中去搜寻是否有和传入的SEL数据相匹配的，如果有就执行，如果没有再找父类，直到NSObject<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3sgiec7j30iv0bata9.jpg"></p>
+<p>OC最重要的一个机制：消息机制，调用方法的本质其实就是为对象发送SEL消息<br><code>[p1 sayHi];</code>  为p1对象发送一条sayHi消息</p>
+<p>手动的为对象发送SEL消息：<br>1）先得到方法的SEL数据<br>2）将这个SEL消息发送给p1对象</p>
+<p>调用对象的方法，将SEL数据发送给对象：<code>- (id)performSelector:(SEL)aSelector;</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line">SEL s1=<span class="keyword">@selector</span>(sayHi);</span><br><span class="line">[p1 performSelector:s1];</span><br><span class="line"></span><br><span class="line">[p1 sayHi];</span><br></pre></td></tr></table></figure>
+
+<p>调用一个对象的方法有两种：<br>1）[对象名 方法名];<br>2）手动的为对象发送SEL消息</p>
+<p>注意：<br>1）如果方法有参数，那么方法名是带了冒号的<br>2）如果方法有参数，要传递参数就调用另外一个方法<br><code>* (id)performSelector:(SEL)aSelector withObject:(id)object;</code></p>
+<p><code>* (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;</code><br>3)如果有多个参数，那就重新创建一个类把多个参数封装进去</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Person *p1=[Person new];</span><br><span class="line"></span><br><span class="line">SEL s1=<span class="keyword">@selector</span>(eatWithFood:);</span><br><span class="line">[p1 performSelector:s1 withObject:<span class="string">@&quot;红烧肉&quot;</span>];</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -804,11 +797,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -828,11 +825,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/二叉树的概念" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/点语法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5/" class="article-date">
-      <time datetime="2019-12-30T16:00:00.000Z" itemprop="datePublished">2019-12-31</time>
+      <a  href="/2019/08/30/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%82%B9%E8%AF%AD%E6%B3%95/" class="article-date">
+      <time datetime="2019-08-29T16:00:00.000Z" itemprop="datePublished">2019-08-30</time>
 </a>
 
     </div>
@@ -846,7 +843,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/31/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5/">二叉树的概念</a>
+      <a  class="article-title" href="/2019/08/30/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/%E7%82%B9%E8%AF%AD%E6%B3%95/">点语法</a>
     </h1>
   
 
@@ -858,33 +855,17 @@
       
           
         <hr>
-<p>二叉树是n(n&gt;=0)个结点的有限集合<br>1）n=0时，二叉树为空<br>2）n&gt;0时，由根结点和两个互不相交的被称为根的左子树和右子树组成，左子树和右子树也分别是一棵二叉树</p>
-<p>特点：</p>
-<ol>
-<li>每个结点最多有两颗子树，所以二叉树中不存在度大于2的结点</li>
-<li>二叉树的左右子树不能任意颠倒，如果某结点只有一棵子树，一定要指明它是左子树还是右子树</li>
-</ol>
-<p>二叉树 VS 度为2的有序树：<br>1）二叉树可以为空，而度为2的有序树至少有三个结点<br>2）二叉树的孩子结点始终有左右之分，而度为2的有序树的孩子结点次序是相对的</p>
-<p>斜树：所有结点都只有左子树的二叉树称为左斜树，所有结点都只有右子树的二叉树称为右斜树</p>
-<ol>
-<li>每一层只有一个结点</li>
-<li>斜树的结点个数与其深度相同</li>
-</ol>
-<p>满二叉树：一棵高度为h，且含有2^h-1个结点的二叉树为满二叉树【在一棵二叉树中，所有分支结点都存在左子树和右子树，并且所有叶子都在同一层上】</p>
-<ol>
-<li>叶子只能出现在最下一层</li>
-<li>只有度为0和度为2的结点</li>
-</ol>
-<p>完全二叉树：设一个高度为h、有n个结点的二叉树，当且仅当其每个结点都与高度为h的满二叉树中编号1～n的结点一一对应时，称为完全二叉树</p>
-<ol>
-<li>深度为k的完全二叉树在k-1层是满二叉树</li>
-<li>叶子结点只能出现在最下两层，且最下层的叶子结点都集中在左侧连续的位置</li>
-<li>如果有度为1的结点，只可能有一个，且该结点只有左孩子<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooy3q1zfpj31ex0gawfe.jpg"></li>
-</ol>
-<p>完全二叉树的性质：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooy8enjvwj30sh0ct3zp.jpg"></p>
-<p>二叉排序树：一棵二叉树，若树非空则具有如下性质：对任意结点若存在左子树或右子树，则其左子树上所有结点的关键字均小于该结点，右子树上所有结点的关键字均大于该结点<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gooyenczv9j30k20gbdfz.jpg"></p>
-<p>平衡二叉树：树上任意结点的左子树和右子树的高度差不超过1</p>
-<p>二叉树的性质：<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gop2wubrjzj31100u0jvq.jpg"></p>
+<p>OC的对象如果要为属性赋值或者取值，就要调用对应的getter或者setter方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person *p1&#x3D;[Person new];</span><br><span class="line"></span><br><span class="line">[p1 setName:@&quot;jack&quot;];</span><br><span class="line">[p1 setAge:18];</span><br><span class="line">[p1 setGender:GenderMale];</span><br></pre></td></tr></table></figure>
+
+<p>OC中使用点语法来访问对象的属性：</p>
+<p>语法：对象名.去掉下划线的属性名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p1.name&#x3D;@&quot;jack&quot;;    &#x2F;&#x2F;这个时候就会将@&quot;jack&quot;赋值给p1对象的_name属性</span><br><span class="line">NSString *name&#x3D;p1.name;   &#x2F;&#x2F;把p1对象的_name属性的值取出来</span><br></pre></td></tr></table></figure>
+
+<p>点语法的原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3tat0tqj30f206iad5.jpg"><br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3thwrydj30f20400uh.jpg"></p>
+<p>注意：<br>1）在getter和setter中慎用点语法，因为有可能会造成无限递归，程序崩溃</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (void)setAge:(int)age&#123;</span><br><span class="line"></span><br><span class="line">   self.age&#x3D;age;    &#x2F;&#x2F;[self setAge:age];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2）<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3tpwwz4j30ck03sjt9.jpg"><br>3）如果属性没有封装getter和setter是无法使用点语法的，因为点语法的本质是getter和setter方法</p>
 
       
     </div>
@@ -893,11 +874,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -917,11 +902,11 @@
 
 
   
-    <article id="post-数据结构、算法笔记/二叉树的存储结构" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-开发语言/Objective-C/@property" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/12/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="article-date">
-      <time datetime="2019-12-29T16:00:00.000Z" itemprop="datePublished">2019-12-30</time>
+      <a  href="/2019/08/29/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property/" class="article-date">
+      <time datetime="2019-08-28T16:00:00.000Z" itemprop="datePublished">2019-08-29</time>
 </a>
 
     </div>
@@ -935,7 +920,7 @@
         
   
     <h1 itemprop="name">
-      <a  class="article-title" href="/2019/12/30/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">二叉树的存储结构</a>
+      <a  class="article-title" href="/2019/08/29/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/Objective-C/@property/">property</a>
     </h1>
   
 
@@ -947,8 +932,12 @@
       
           
         <hr>
-<p>二叉树的顺序存储：用一组连续的存储单元依次自上而下、自左至右存储完全二叉树上的结点元素<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gop5yj8qyqj30y80u0ad0.jpg"></p>
-<p>二叉树的链式存储：用链表来存放一棵二叉树，二叉树中每个结点用链表的一个链结点来存储<br><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gop6b68tj1j31ac0ni0ue.jpg"></p>
+<p>写一个类：<br>1）要先为类写属性<br>2）再声明属性的getter和setter<br>3）再实现getter和setter</p>
+<p>@property</p>
+<p>作用：自动生成getter、setter方法的声明，因为是生成方法的声明，所以应该写在@interface类的声明之中</p>
+<p>语法：@property 数据类型 名称；<code>@property int age;</code></p>
+<p>原理：<br><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3uk8pkvj30c4049764.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gly3urj5vpj30gr059juq.jpg"></p>
 
       
     </div>
@@ -957,11 +946,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">数据结构、算法笔记</a>
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">开发语言</a>
     </div>
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/" rel="tag">Objective-C</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -983,7 +976,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/17/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/19/"></a>
+      <a class="extend prev" rel="prev" href="/page/17/"></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/19/"></a>
     </nav>
   
 
@@ -1009,7 +1002,7 @@
 
                 <a href="https://hexo.io/zh-cn/index.html" target="_blank">「Hexo文档」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
-                <a href="https://liao-hexo.github.io/archives/" target="_blank">「个人博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
+                <a href="https://liao-hexo.github.io/archives/" target="_blank">「我的博客网站」&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
                 <a href="https://github.com/Liao-Hexo" target="_blank">「GitHub』&nbsp;&nbsp;</a><a href="" target="_blank"></a> 
 
